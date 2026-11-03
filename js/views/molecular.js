@@ -12,7 +12,7 @@
   const TH_LTP = 0.18, TH_LTD = 0.62;
   const PROTOCOLS = {
     pf: { label: 'Parallel fibers alone', ca: 0.38, refs: ['coesmans2004', 'hansel2001'],
-      text: 'Parallel-fiber activity alone raises spine Ca²⁺ only modestly: above the LTP threshold but below the LTD threshold. Result: potentiation; AMPA receptors are inserted.' },
+      text: 'Parallel-fiber activity alone raises spine Ca²⁺ only modestly: above the LTP threshold but below the LTD threshold. Result: potentiation (LTP), drawn here as added AMPA receptors.' },
     pfcf: { label: 'Parallel fibers + climbing fiber', ca: 0.86, refs: ['ito1982', 'coesmans2004', 'wang2000', 'aiba1994'],
       text: 'The climbing fiber adds a dendritic Ca²⁺ spike. Together with mGluR1 → PLCβ → PKC signaling, high Ca²⁺ triggers GluA2 phosphorylation and clathrin-mediated AMPA-receptor endocytosis: LTD.' },
     pfcfmli: { label: 'PF + CF + interneuron inhibition', ca: 0.5, refs: ['rowan2018'],
@@ -37,7 +37,7 @@
     root.appendChild(h('div', { class: 'page' },
       h('div', { class: 'page-head' }, h('div', {},
         h('h2', {}, 'Cells & molecules'),
-        h('p', {}, 'At the parallel fiber–Purkinje synapse, calcium decides the sign of plasticity: low calcium potentiates, high calcium (with a climbing-fiber spike) depresses. Click any molecule for its evidence and links upward to circuits, behavior and disease.'))),
+        h('p', {}, 'At the parallel fiber–Purkinje synapse, calcium decides the sign of plasticity: low calcium potentiates, high calcium (with a climbing-fiber spike) depresses. Below, a matrix shows which neuromodulators, neuropeptides and other slow messengers act on which cells. Click any molecule for its evidence and links upward to circuits, behavior and disease.'))),
       h('div', { class: 'lab-grid' },
         h('div', { class: 'svgwrap', style: { padding: '6px' } }, svg),
         h('div', { class: 'card' },
@@ -52,6 +52,9 @@
               outcome, explain, h('div', { id: 'mol-refs' }))),
           h('h4', {}, 'Purkinje-cell module'), zb,
           h('p', { class: 'small muted', id: 'zeb-text', style: { marginTop: '8px' } }))),
+      h('h3', { style: { marginTop: '28px' } }, 'Neuromodulators, neuropeptides and other slow messengers'),
+      h('p', { class: 'small muted', style: { maxWidth: '920px' } }, (CA.D.neuromodulation || {}).desc || ''),
+      h('div', { class: 'card' }, neuromodMatrix()),
       h('h3', { style: { marginTop: '28px' } }, 'Where the cells come from'),
       h('div', { class: 'svgwrap', style: { padding: '6px' } }, lineage()),
       h('h3', { style: { marginTop: '28px' } }, 'Genes, cells and disease'),
@@ -167,13 +170,68 @@
     svg.querySelector('#trpc').setAttribute('opacity', zebrin === 'minus' ? 1 : 0.35);
     if (!t) return;
     CA.clear(t).append(zebrin === 'plus'
-      ? 'Zebrin+ Purkinje cells express PLCβ3, fire simple spikes at lower rates and are proposed to learn mainly by depression ("downbound"). '
-      : 'Zebrin− Purkinje cells express PLCβ4 and stronger TRPC3 signaling, fire at higher rates and are proposed to learn mainly by potentiation ("upbound"). ',
-    ...CA.citeChips(['sarna2006', 'zhou2014', 'dezeeuw2021']));
+      ? 'Zebrin+ Purkinje cells express PLCβ3 and fire simple and complex spikes at lower rates than zebrin− cells. Zebrin+ modules are linked to VOR adaptation. '
+      : 'Zebrin− Purkinje cells express PLCβ4 and fire at higher rates, a difference that depends on TRPC3. They support eyeblink conditioning, in which the learned eyelid closure relies on suppressed Purkinje firing. ',
+    ...CA.citeChips(zebrin === 'plus' ? ['sarna2006', 'zhou2014', 'wu2019'] : ['sarna2006', 'zhou2014', 'wu2019', 'grasselli2020']),
+    h('br'), 'De Zeeuw proposes that each microzone is bound either to increase ("upbound") or to decrease ("downbound") its activity early in learning. ',
+    ...CA.citeChips(['dezeeuw2021']));
   }
 
   function paintSel() {
-    root.querySelectorAll('.mc-el').forEach((g) => g.classList.toggle('sel', g.dataset.entity === CA.selected));
+    root.querySelectorAll('.mc-el, .nm-row, .nmx th.col').forEach((g) => g.classList.toggle('sel', g.dataset.entity === CA.selected));
+  }
+
+  /* ------------------------------------------------------------------ neuromodulator matrix */
+  // Rows: messengers. Columns: cells and pathways. A cell is a curated link (messenger → target), tinted by evidence
+  // grade and showing the sign of the effect and the receptor. Sources and other effects are the messenger's remaining links.
+  function neuromodMatrix() {
+    const NM = CA.D.neuromodulation;
+    if (!NM) return h('p', { class: 'muted' }, 'No neuromodulator data.');
+    const targets = NM.targets, tset = new Set(targets.map((t) => t.id));
+    const dashed = (st) => st === 'debated' || st === 'hypothesis';
+    // drop the trailing parenthetical (receptor names are in the cells; full name in the title and panel)
+    const short = (id) => CA.ent[id].name.replace(/\s*\([^)]*\)$/, '');
+    const tipHtml = (l) => {
+      const st = CA.statusById[l.status];
+      const meta = [l.via ? 'Receptor: ' + CA.esc(l.via) : '', l.sign ? 'Effect: ' + CA.signGlyph[l.sign] + ' ' + CA.esc(NM.signs[l.sign]) : ''].filter(Boolean).join('<br>');
+      return `<b>${CA.esc(CA.ent[l.s].name)} → ${CA.esc(CA.ent[l.t].name)}</b><br>${CA.esc(l.rel)}${meta ? '<br>' + meta : ''}` +
+        `<br><span style="color:${st.color}">${st.label}</span> · ${(l.refs || []).length} paper(s) · click for evidence`;
+    };
+    const hover = (l) => ({ onmousemove: (ev) => CA.tip.show(tipHtml(l), ev), onmouseleave: () => CA.tip.hide() });
+    const linkChip = (l, other) => h('a', Object.assign({ class: 'chip', href: '#', onclick: (ev) => { ev.preventDefault(); CA.tip.hide(); CA.showLink(l.id); } }, hover(l)),
+      h('span', { class: 'dot', style: { background: CA.statusColor(l.status) } }), short(other));
+    const cell = (l) => {
+      const c = CA.statusColor(l.status);
+      return h('td', Object.assign({
+        class: 'nmc', style: { background: c + '2e', borderLeft: `3px ${dashed(l.status) ? 'dashed' : 'solid'} ${c}` },
+        onclick: () => { CA.tip.hide(); CA.showLink(l.id); },
+      }, hover(l)), h('b', {}, l.sign ? CA.signGlyph[l.sign] : '•'), l.via ? h('span', { class: 'via' }, l.via) : null);
+    };
+    const rows = [];
+    NM.groups.forEach((g) => {
+      rows.push(h('tr', { class: 'grp' }, h('td', { colspan: targets.length + 3 }, g.label)));
+      g.rows.forEach((id) => {
+        const out = CA.out[id] || [];
+        const byT = {};
+        out.forEach((l) => { if (tset.has(l.t)) byT[l.t] = l; });
+        rows.push(h('tr', { class: 'nm-row', 'data-entity': id },
+          h('th', { class: 'rowh' }, CA.entChip(id, { label: short(id) })),
+          h('td', { class: 'side' }, (CA.inc[id] || []).map((l) => linkChip(l, l.s))),
+          targets.map((t) => (byT[t.id] ? cell(byT[t.id]) : h('td', { class: 'nme' }))),
+          h('td', { class: 'side' }, out.filter((l) => !tset.has(l.t)).map((l) => linkChip(l, l.t)))));
+      });
+    });
+    const table = h('table', { class: 'nmx' },
+      h('tr', {}, h('th', { class: 'rowh' }, 'Messenger'), h('th', { class: 'sideh' }, 'Source'),
+        targets.map((t) => h('th', { class: 'col', 'data-entity': t.id, title: CA.ent[t.id].name, onclick: () => CA.select(t.id) }, t.label)),
+        h('th', { class: 'sideh' }, 'Other effects')),
+      rows);
+    const legend = h('div', { class: 'nmx-legend' },
+      CA.D.statuses.filter((st) => st.id !== 'gap').map((st) => h('span', {},
+        h('span', { class: 'sw', style: { background: st.color + '2e', borderLeft: `3px ${dashed(st.id) ? 'dashed' : 'solid'} ${st.color}` } }), st.label)),
+      Object.entries(NM.signs).map(([k, v]) => h('span', {}, h('b', { style: { color: 'var(--text)' } }, CA.signGlyph[k]), ' ', v)),
+      h('span', {}, h('b', { style: { color: 'var(--text)' } }, '•'), ' effect not graded'));
+    return h('div', {}, h('div', { class: 'nmx-wrap' }, table), legend, h('p', { class: 'small muted', style: { marginTop: '8px' } }, NM.note));
   }
 
   /* ------------------------------------------------------------------ lineage */
@@ -213,11 +271,12 @@
       ['tsc1', 'purkinje', 'Loss lowers Purkinje excitability; rapamycin-preventable autistic-like behavior', 'c-asd', 'tsai2012'],
       ['shank2', 'purkinje', 'Loss of LTP and intrinsic plasticity; irregular simple spikes', 'c-asd', 'peter2016'],
       ['fmr1', 'purkinje', 'Enhanced LTD, elongated spines, impaired eyeblink conditioning', 'c-fxs', 'koekkoek2005'],
-      ['shh', 'granule', 'Over-active Sonic hedgehog pathway in granule precursors', 'c-medullo', 'wechslerreya1999'],
+      ['shh', 'granule', 'Purkinje-derived Shh drives granule-precursor division; activating mutations cause SHH medulloblastoma', 'c-medullo', ['wechslerreya1999', 'hendrikse2022']],
+      ['cacna1a', 'purkinje', 'Mutations that disrupt the reading frame; in a mouse model, stress-released noradrenaline triggers attacks through Purkinje-cell α1 receptors', 'c-ea2', ['ophoff1996', 'snell2022']],
     ];
     return h('table', { class: 'data' },
       h('tr', {}, h('th', {}, 'Gene'), h('th', {}, 'Cell'), h('th', {}, 'Mechanism'), h('th', {}, 'Disorder'), h('th', {}, 'Evidence')),
       rows.map(([g, c, m, d, ref]) => h('tr', {},
-        h('td', {}, CA.entChip(g)), h('td', {}, CA.entChip(c)), h('td', { class: 'small' }, m), h('td', {}, CA.entChip(d)), h('td', {}, CA.citeChips([ref])))));
+        h('td', {}, CA.entChip(g)), h('td', {}, CA.entChip(c)), h('td', { class: 'small' }, m), h('td', {}, CA.entChip(d)), h('td', {}, CA.citeChips([].concat(ref))))));
   }
 })();

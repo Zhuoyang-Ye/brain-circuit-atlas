@@ -382,6 +382,14 @@ def extra_anchors(species, meshes, helpers):
         a['vestibular-nuclei'] = sided([0.55 * v4hi[0], v4c[1], v4c[2] + 0.1])
         a['labyrinth'] = sided([0.3 * width, pc[1], pc[2] - 0.35])
         a['eyes'] = sided([0.22 * width, blo[1] + 0.42 * (bhi[1] - blo[1]), bhi[2] - 0.3])
+        # neuromodulator sources, placed from neighboring structures (y up, z anterior)
+        tlo, thi, _ = bbox(meshes, 'pons-teg')
+        slo, _, sc = bbox(meshes, 'stn')
+        a['lc'] = sided([0.3, thi[1] - 0.3 * (thi[1] - tlo[1]), tlo[2] + 0.2 * (thi[2] - tlo[2])])   # rostral dorsal pons, by the 4th ventricle
+        a['ppn'] = sided([0.5, mlo[1] + 0.1 * (mhi[1] - mlo[1]), mlo[2] + 0.4 * (mhi[2] - mlo[2])])  # caudal midbrain tegmentum, lateral
+        a['ser-neurons'] = sided([0.0, dhi[1] - 0.2 * (dhi[1] - dlo[1]), dlo[2] + 0.55 * (dhi[2] - dlo[2])])  # rostral medullary reticular formation
+        a['tmn'] = sided([0.25, slo[1] - 0.15, sc[2] + 0.15])   # posterior hypothalamus, below and in front of the STN
+        a['lh'] = sided([0.45, sc[1] - 0.05, sc[2] + 0.45])     # lateral hypothalamus, in front of the STN
         start = np.array([0.0, dlo[1] + 0.1, dc[2]])
         spine = [start, start + [0, -1.6, -0.15], start + [0, -3.2, -0.25]]
     else:
@@ -389,6 +397,8 @@ def extra_anchors(species, meshes, helpers):
         vlo, vhi, vc = bbox(meshes, 'vnc')
         a['labyrinth'] = sided([0.45 * width, vc[1] - 0.15, vc[2]])
         a['eyes'] = sided([0.42 * width, blo[1] + 0.55 * (bhi[1] - blo[1]), bhi[2] - 0.3 * (bhi[2] - blo[2])])
+        if 'grn' in helpers:  # serotonergic afferents arise mainly in the medullary reticular formation (rat)
+            a['ser-neurons'] = sided([0.0, *helpers['grn'][2][1:]])
         start = np.array([0.0, io_c[1] + 0.15, blo[2] + 0.15])
         spine = [start, start + [0, -0.25, -1.6], start + [0, -0.35, -3.2]]
     end = spine[-1]

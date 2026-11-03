@@ -133,7 +133,7 @@
     return h('a', {
       class: 'chip' + (opts && opts.on ? ' on' : ''), href: '#', title: (CA.levelById[e.level] || {}).label + ': ' + e.name,
       onclick: (ev) => { ev.preventDefault(); ev.stopPropagation(); (opts && opts.onclick ? opts.onclick : CA.select)(id); },
-    }, h('span', { class: 'dot', style: { background: CA.levelColor(e.level) } }), e.name);
+    }, h('span', { class: 'dot', style: { background: CA.levelColor(e.level) } }), (opts && opts.label) || e.name);
   };
   CA.citeChips = (refs) => (refs || []).map((k) => {
     const p = CA.paper[k];
@@ -298,6 +298,17 @@
     setHash('p/' + key);
   };
 
+  /** Neuromodulatory links carry a transmitter (tx), a receptor (via) and a sign of effect. */
+  CA.signGlyph = { '+': '↑', '-': '↓', '±': '±', '~': '~' };
+  CA.linkMeta = function (l) {
+    const nm = D.neuromodulation || {};
+    const parts = [];
+    if (l.tx && nm.tx && nm.tx[l.tx]) parts.push(['Transmitter', `${nm.tx[l.tx].label} (${l.tx})`]);
+    if (l.via) parts.push(['Receptor', l.via]);
+    if (l.sign && nm.signs && nm.signs[l.sign]) parts.push(['Effect', `${CA.signGlyph[l.sign]} ${nm.signs[l.sign]}`]);
+    return parts.length ? h('div', { class: 'linkmeta' }, parts.map(([k, v]) => h('span', {}, h('span', { class: 'muted' }, k + ': '), v))) : null;
+  };
+
   CA.showLink = function (id) {
     const l = CA.link[id];
     if (!l) return;
@@ -306,6 +317,7 @@
       h('div', { class: 'row' }, CA.statusBadge(l.status), h('span', { class: 'small muted' }, l.kind + ' link')),
       h('h2', { style: { marginTop: '8px' } }, CA.ent[l.s].name, h('span', { class: 'muted' }, ' → '), CA.ent[l.t].name),
       h('p', { class: 'summary' }, l.rel),
+      CA.linkMeta(l),
       l.note ? h('p', { class: 'small', style: { borderLeft: '3px solid ' + st.color, paddingLeft: '8px' } }, l.note) : null,
       h('p', { class: 'small muted' }, st.label + ': ' + st.desc),
       h('div', { class: 'row' }, CA.entChip(l.s), h('span', { class: 'muted' }, '→'), CA.entChip(l.t)),

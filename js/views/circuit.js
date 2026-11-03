@@ -212,10 +212,10 @@
   const S = Float64Array.from({ length: NT }, (_, k) => Math.max(1e-9, G.reduce((a, g) => a + g[k], 0)));
   const GBAR = G.map((g) => g.reduce((a, b) => a + b, 0) / NT);
   const SCEN = {
-    classic: { label: 'Wild type', ltd: true, other: false, ref: ['mccormick1984', 'ito1982', 'medina2008'],
+    classic: { label: 'Wild type', ltd: true, other: false, ref: ['mccormick1984', 'ito1982', 'medina2008', 'grasselli2020'],
       text: 'LTD at parallel-fiber synapses active just before the climbing-fiber (air-puff) signal creates a well-timed pause in Purkinje firing; the disinhibited nuclei drive the learned eyelid closure.' },
     mglur1: { label: 'mGluR1 knockout (no LTD induction)', ltd: false, other: false, ref: ['aiba1994'],
-      text: 'mGluR1-knockout mice lack LTD and show impaired eyeblink conditioning (Aiba et al., 1994). Caution: they are also ataxic and keep multiple climbing fibers, so other defects contribute.' },
+      text: 'mGluR1-knockout mice lack LTD and show impaired eyeblink conditioning (Aiba et al., 1994). Caution: they are also ataxic, so motor deficits beyond the loss of LTD may contribute.' },
     expr: { label: 'LTD-expression mutant + other plasticity', ltd: false, other: true, ref: ['schonewille2011', 'gao2012', 'rowan2018'],
       text: 'Mutants that cannot internalize AMPA receptors lack LTD yet learn normally (Schonewille et al., 2011). Here a second, climbing-fiber-gated mechanism (e.g., interneuron or intrinsic plasticity) takes over. In this toy it is slower; in the mice, learning was not impaired.' },
   };

@@ -12,7 +12,11 @@
     context: { color: 0x8b949e, opacity: 0.2 },
     target: { color: 0x58a6ff, opacity: 0.9 },
     cortex: { color: 0xb392f0, opacity: 0.55 },
+    modulator: { color: 0xf778ba, opacity: 0.9 },
   };
+  const NM = D.neuromodulation || { tx: {}, sources: [] };
+  const MOD_SRC = new Set(NM.sources || []);   // neuromodulator source nuclei (drawn pink)
+  const BODY_ANCHORS = ['spinal', 'body', 'gut', 'eyes', 'labyrinth'];
   // distinguishable warm tones for cerebellar subdivisions
   const CB_TONES = {
     'zone-vermis': 0xf5d76e, 'zone-paravermis': 0xe9a23b, 'zone-lateral': 0xd9822b,
@@ -28,6 +32,7 @@
       back: { pos: [0, 1.5, -17], target: [0, -1.2, 0] },
       top: { pos: [0, 17, -0.01], target: [0, 0, 0] },
       below: { pos: [0.01, -16, 2], target: [0, -1, 0] },
+      modulators: { pos: [7.4, 0.9, -1.6], target: [0.45, -2.0, -1.1] },   // right side, close to brainstem and cerebellum
     },
     mouse: {
       overview: { pos: [-10, 7, -9], target: [0, -0.5, -0.5] },
@@ -36,6 +41,7 @@
       back: { pos: [0, 2, -16], target: [0, -0.5, 0] },
       top: { pos: [0, 16, -0.01], target: [0, 0, 0] },
       below: { pos: [0.01, -15, 1], target: [0, 0, 0] },
+      modulators: { pos: [6.5, -6.0, -1.0], target: [0.5, -1.3, -2.2] },   // right side from below, under hippocampus and striatum
     },
   };
 
@@ -138,15 +144,20 @@
         circuitId = c.id; CA.store.set('atlas.circuit', c.id);
         circs.querySelectorAll('.circ').forEach((b) => b.classList.toggle('on', b.dataset.c === c.id));
         el.circDesc.textContent = c.desc || '';
+        // some circuits run inside the cerebellum or under other structures: see through it and move the camera close
+        if (c.xray && !opts.xray) { opts.xray = true; CA.store.set('atlas.opts', opts); el.xrayBox.checked = true; applyMaterials(); }
+        if (c.view && VIEWS[species][c.view]) flyTo(c.view);
         rebuildLinks();
       },
     }, c.name)));
     el.circDesc = h('div', { class: 'desc' }, (all.find((c) => c.id === circuitId) || {}).desc || '');
-    const check = (key, label, fn) => h('label', { class: 'check small' },
+    const check = (key, label, fn, title) => h('label', { class: 'check small', title },
       h('input', { type: 'checkbox', checked: opts[key], onchange: (ev) => { opts[key] = ev.target.checked; CA.store.set('atlas.opts', opts); fn(); } }), label);
     const views = h('div', { class: 'chips' }, [['overview', 'Overview'], ['cerebellum', 'Cerebellum'], ['left', 'Left'], ['back', 'Back'], ['top', 'Top'], ['below', 'Below']]
       .map(([k, label]) => h('span', { class: 'chip', onclick: () => flyTo(k) }, label)));
     el.credit = h('div', { class: 'atlas-credit' });
+    const xrayLabel = check('xray', 'X-ray cerebellum (see nuclei)', applyMaterials);
+    el.xrayBox = xrayLabel.querySelector('input');
     box.append(
       h('h4', {}, 'Species'), seg, el.speciesNote,
       h('h4', {}, 'Circuits'), circs, el.circDesc,
@@ -154,10 +165,10 @@
       check('shell', 'Brain surface', applyMaterials),
       h('input', { type: 'range', min: 0.03, max: 0.35, step: 0.01, value: opts.opacity, style: { width: '100%' },
         oninput: (ev) => { opts.opacity = +ev.target.value; CA.store.set('atlas.opts', opts); applyMaterials(); } }),
-      check('xray', 'X-ray cerebellum (see nuclei)', applyMaterials),
+      xrayLabel,
       check('labels', 'Labels', () => {}),
       check('bodyParts', 'Body & senses', () => markerObjs.forEach((m) => { m.visible = opts.bodyParts || !m.userData.body; })),
-      check('animate', 'Animate signals', () => {}),
+      check('animate', 'Animate signal flow', () => {}, 'Dots travel along each pathway from source to target to show its direction. Dot color follows the evidence grade, and hypothetical links move at half speed. The motion is schematic, not real conduction timing.'),
       h('h4', {}, 'Camera'), views, el.credit);
     return box;
   }
@@ -167,6 +178,9 @@
       h('span', { class: 'sw', style: { borderColor: s.color, borderTopStyle: (s.id === 'debated' || s.id === 'hypothesis') ? 'dashed' : 'solid' } }), s.label));
     items.push(h('div', { class: 'lg' }, h('span', { class: 'sw', style: { borderColor: '#8b949e', borderTopStyle: 'dashed' } }), 'functional / route unknown'));
     items.push(h('div', { class: 'lg' }, h('span', { style: { fontStyle: 'italic' } }, 'italic ≈'), 'approximate position'));
+    items.push(h('div', { class: 'lg' }, h('span', { class: 'dot', style: { background: '#f778ba' } }), 'neuromodulator source'));
+    el.txLegend = h('div', { class: 'lg txlg', style: { display: 'none' } });
+    items.push(el.txLegend);
     return h('div', { class: 'atlas-legend' }, items);
   }
 
@@ -234,8 +248,9 @@
       buildScene(sp, bundle);
       el.msg.style.display = 'none';
       const r = CA.parseHash();
+      const circ = A3.circuits.find((c) => c.id === circuitId);
       if (r.kind === 'e' && CA.ent[r.id]) focusEntity(r.id, true);
-      else jumpTo('overview');
+      else jumpTo(circ && circ.view && VIEWS[sp][circ.view] ? circ.view : 'overview');
     }).catch((e) => {
       el.msg.innerHTML = '<div><h3>Could not load 3D data</h3><p class="small">' + CA.esc(e.message) + '</p><p class="small">Run <code>python tools/build_meshes.py</code> to generate the mesh files.</p></div>';
     });
@@ -324,7 +339,7 @@
       }
     });
     Object.entries(bundle.anchors || {}).forEach(([id, a]) => {
-      if (!positions[id]) positions[id] = { c: new T.Vector3(...a[0]), l: new T.Vector3(...a[1]), r: new T.Vector3(...a[2]), approx: species === 'human' && !['spinal', 'body', 'gut', 'eyes', 'labyrinth'].includes(id) };
+      if (!positions[id]) positions[id] = { c: new T.Vector3(...a[0]), l: new T.Vector3(...a[1]), r: new T.Vector3(...a[2]), approx: !BODY_ANCHORS.includes(id) };
     });
   }
 
@@ -377,7 +392,7 @@
     Object.entries(positions).forEach(([id, p]) => {
       if (!p.approx) return;
       const side = sideOf(id);
-      const m = new T.Mesh(new T.OctahedronGeometry(human ? 0.16 : 0.12), mat(0x3fb9a5, 0.95));
+      const m = new T.Mesh(new T.OctahedronGeometry(human ? 0.16 : 0.12), mat(MOD_SRC.has(id) ? GROUP.modulator.color : 0x3fb9a5, 0.95));
       m.position.copy(side === 'R' ? p.r : side === 'L' ? p.l : p.c);
       add(m, id, false);
       m.userData.approx = true;
@@ -443,17 +458,26 @@
     labelEls.forEach((l) => l.el.remove()); labelEls = [];
     const human = species === 'human';
     const sel = CA.selected;
-    const drawn = new Set();
-    activeLinks().forEach((l) => {
+    const drawn = new Set(), txSeen = new Set();
+    const keyOf = (s, t) => [resolve(s), sideOf(s), resolve(t), sideOf(t)].join('|');
+    const links = activeLinks();
+    const keys = new Set(links.map((l) => keyOf(l.s, l.t)));
+    links.forEach((l) => {
       const a = posOf(l.s), b = posOf(l.t);
       if (!a || !b || a.distanceTo(b) < 0.08) return;
-      const key = [resolve(l.s), sideOf(l.s), resolve(l.t), sideOf(l.t)].join('|');
+      const key = keyOf(l.s, l.t);
       if (drawn.has(key)) return;   // e.g. dentate and DCN share one position in the human atlas
       drawn.add(key);
       const dist = a.distanceTo(b);
       const mid = a.clone().add(b).multiplyScalar(0.5);
       const out = mid.clone(); if (out.length() < 0.01) out.set(0, 1, 0);
-      const ctrl = mid.add(out.normalize().multiplyScalar(0.16 * dist + 0.35));
+      out.normalize();
+      const ctrl = mid.clone().add(out.clone().multiplyScalar(0.16 * dist + 0.35));
+      // a pathway drawn in both directions: bow the two curves apart (the cross product flips with direction)
+      if (keys.has(keyOf(l.t, l.s))) {
+        const perp = b.clone().sub(a).cross(out);
+        if (perp.length() > 1e-6) ctrl.add(perp.normalize().multiplyScalar(0.12 * dist + 0.2));
+      }
       const curve = new T.QuadraticBezierCurve3(a, ctrl, b);
       const color = new T.Color(CA.statusColor(l.status));
       const focus = sel && (l.s === sel || l.t === sel);
@@ -480,7 +504,19 @@
         pulses.push({ mesh: s, curve, offset: k / n, speed: 0.22 / Math.max(1, dist / 4) * (l.status === 'hypothesis' ? 0.5 : 1) });
       }
       [l.s, l.t].forEach((id) => addLabel(id));
+      if (l.tx && NM.tx[l.tx]) {   // transmitter tag at the middle of the pathway
+        const tag = h('div', { class: 'alabel tx' }, l.tx);
+        el.labels.appendChild(tag);
+        labelEls.push({ id: 'tx:' + l.id, el: tag, pos: curve.getPoint(0.5), tag: true });
+        txSeen.add(l.tx);
+      }
     });
+    if (el.txLegend) {
+      CA.clear(el.txLegend);
+      el.txLegend.style.display = txSeen.size ? '' : 'none';
+      if (txSeen.size) el.txLegend.append(h('span', { class: 'alabel tx static' }, 'tag'),
+        Object.keys(NM.tx).filter((c) => txSeen.has(c)).map((c) => (c === NM.tx[c].label ? c : c + ' ' + NM.tx[c].label.toLowerCase())).join(' · '));
+    }
     if (sel) addLabel(sel);
     if (opts.labels && circuitId === 'none' && !sel) Object.keys(positions).forEach((id) => { if (CA.ent[id] && !['body', 'gut', 'spinal'].includes(id)) addLabel(id); });
   }
@@ -518,7 +554,8 @@
   function describe(o) {
     if (o.userData.link) {
       const l = o.userData.link, st = CA.statusById[l.status];
-      return `<b>${CA.esc(CA.ent[l.s].name)} → ${CA.esc(CA.ent[l.t].name)}</b><br>${CA.esc(l.rel)}<br><span style="color:${st.color}">${st.label}</span> · ${(l.refs || []).length} paper(s)`;
+      const tx = l.tx && NM.tx[l.tx] ? `<br>Transmitter: ${CA.esc(NM.tx[l.tx].label)} (${CA.esc(l.tx)})` : '';
+      return `<b>${CA.esc(CA.ent[l.s].name)} → ${CA.esc(CA.ent[l.t].name)}</b><br>${CA.esc(l.rel)}${tx}<br><span style="color:${st.color}">${st.label}</span> · ${(l.refs || []).length} paper(s)`;
     }
     const rec = o.userData.rec;
     const ent = CA.ent[o.userData.entity];
@@ -559,7 +596,7 @@
     const v = VIEWS[species][name];
     camera.position.fromArray(v.pos); controls.target.fromArray(v.target); controls.update();
   }
-  function flyTo(name) { if (camera) startTween(VIEWS[species][name]); }
+  function flyTo(v) { if (camera) startTween(typeof v === 'string' ? VIEWS[species][v] : v); }   // a preset name or { pos, target }
   function startTween(to) {
     tween = { t0: performance.now(), dur: 900, fromPos: camera.position.clone(), fromTarget: controls.target.clone(),
       toPos: new window.THREE.Vector3(...to.pos), toTarget: new window.THREE.Vector3(...to.target) };
@@ -600,18 +637,21 @@
       l.el.style.display = show ? '' : 'none';
       if (show) { l.x = (v.x + 1) / 2 * w; l.y = (1 - v.y) / 2 * ht; vis.push(l); }
     });
-    // greedy de-collision: the selected label keeps its place, others step down below any label they would cover
+    // greedy de-collision: the selected label keeps its place, structure names come before transmitter tags, and a
+    // label that would cover another steps down; a tag with no free spot nearby is hidden. Boxes are compared by their
+    // centers: names sit above their anchor point, tags are centered on the pathway.
     const LH = 20, placed = [];
-    vis.sort((a, b) => (b.id === CA.selected) - (a.id === CA.selected) || a.y - b.y).forEach((l) => {
+    vis.sort((a, b) => (b.id === CA.selected) - (a.id === CA.selected) || (a.tag ? 1 : 0) - (b.tag ? 1 : 0) || a.y - b.y).forEach((l) => {
       if (!l.w) l.w = l.el.offsetWidth;
-      const lw = l.w || 100;
-      let y = l.y;
-      for (let k = 0; k < 6; k++) {
-        const hit = placed.find((p) => Math.abs(p.x - l.x) < (p.w + lw) / 2 + 4 && Math.abs(p.y - y) < LH);
-        if (!hit) break;
-        y = hit.y + LH;
+      const lw = l.w || 100, dy = l.tag ? 0 : -14;
+      let y = l.y, free = false;
+      for (let k = 0; k < (l.tag ? 2 : 6); k++) {
+        const hit = placed.find((p) => Math.abs(p.x - l.x) < (p.w + lw) / 2 + 4 && Math.abs(p.cy - (y + dy)) < LH);
+        if (!hit) { free = true; break; }
+        y = hit.cy - dy + LH;
       }
-      placed.push({ x: l.x, y, w: lw });
+      if (l.tag && !free) { l.el.style.display = 'none'; return; }
+      placed.push({ x: l.x, cy: y + dy, w: lw });
       l.el.style.left = l.x + 'px'; l.el.style.top = y + 'px';
     });
   }

@@ -15,6 +15,41 @@
   "volume": "22",
   "year": 1999
  },
+ "10230796": {
+  "authors": [
+   "Miyata M",
+   "Okada D",
+   "Hashimoto K",
+   "Kano M",
+   "Ito M"
+  ],
+  "doi": "10.1016/s0896-6273(00)80735-7",
+  "issue": "4",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "763-75",
+  "pmc": "",
+  "pmid": "10230796",
+  "title": "Corticotropin-releasing factor plays a permissive role in cerebellar long-term depression",
+  "volume": "22",
+  "year": 1999
+ },
+ "10684885": {
+  "authors": [
+   "Dieudonné S",
+   "Dumoulin A"
+  ],
+  "doi": "10.1523/JNEUROSCI.20-05-01837.2000",
+  "issue": "5",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "1837-48",
+  "pmc": "PMC6772906",
+  "pmid": "10684885",
+  "title": "Serotonin-driven long-range inhibitory connections in the cerebellar cortex",
+  "volume": "20",
+  "year": 2000
+ },
  "10774731": {
   "authors": [
    "Wang YT",
@@ -30,6 +65,40 @@
   "title": "Expression of cerebellar long-term depression requires postsynaptic clathrin-mediated endocytosis",
   "volume": "25",
   "year": 2000
+ },
+ "11024094": {
+  "authors": [
+   "Saitow F",
+   "Satake S",
+   "Yamada J",
+   "Konishi S"
+  ],
+  "doi": "10.1152/jn.2000.84.4.2016",
+  "issue": "4",
+  "journal": "J Neurophysiol",
+  "journalFull": "Journal of neurophysiology",
+  "pages": "2016-25",
+  "pmc": "",
+  "pmid": "11024094",
+  "title": "beta-adrenergic receptor-mediated presynaptic facilitation of inhibitory GABAergic transmission at cerebellar interneuron-Purkinje cell synapses",
+  "volume": "84",
+  "year": 2000
+ },
+ "11301030": {
+  "authors": [
+   "Kreitzer AC",
+   "Regehr WG"
+  ],
+  "doi": "10.1016/s0896-6273(01)00246-x",
+  "issue": "3",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "717-27",
+  "pmc": "",
+  "pmid": "11301030",
+  "title": "Retrograde inhibition of presynaptic calcium influx by endogenous cannabinoids at excitatory synapses onto Purkinje cells",
+  "volume": "29",
+  "year": 2001
  },
  "11319554": {
   "authors": [
@@ -84,6 +153,60 @@
   "volume": "12",
   "year": 2001
  },
+ "11487628": {
+  "authors": [
+   "Dumoulin A",
+   "Triller A",
+   "Dieudonné S"
+  ],
+  "doi": "10.1523/JNEUROSCI.21-16-06045.2001",
+  "issue": "16",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "6045-57",
+  "pmc": "PMC6763194",
+  "pmid": "11487628",
+  "title": "IPSC kinetics at identified GABAergic and mixed GABAergic and glycinergic synapses onto cerebellar Golgi cells",
+  "volume": "21",
+  "year": 2001
+ },
+ "11516402": {
+  "authors": [
+   "Maejima T",
+   "Hashimoto K",
+   "Yoshida T",
+   "Aiba A",
+   "Kano M"
+  ],
+  "doi": "10.1016/s0896-6273(01)00375-0",
+  "issue": "3",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "463-75",
+  "pmc": "",
+  "pmid": "11516402",
+  "title": "Presynaptic inhibition caused by retrograde signal from metabotropic glutamate to cannabinoid receptors",
+  "volume": "31",
+  "year": 2001
+ },
+ "12048250": {
+  "authors": [
+   "Lev-Ram V",
+   "Wong ST",
+   "Storm DR",
+   "Tsien RY"
+  ],
+  "doi": "10.1073/pnas.122206399",
+  "issue": "12",
+  "journal": "Proc Natl Acad Sci U S A",
+  "journalFull": "Proceedings of the National Academy of Sciences of the United States of America",
+  "pages": "8389-93",
+  "pmc": "PMC123077",
+  "pmid": "12048250",
+  "title": "A new form of cerebellar long-term potentiation is postsynaptic and depends on nitric oxide but not cAMP",
+  "volume": "99",
+  "year": 2002
+ },
  "12797962": {
   "authors": [
    "Hashimoto K",
@@ -116,6 +239,41 @@
   "volume": "23",
   "year": 2003
  },
+ "1362601": {
+  "authors": [
+   "Ikai Y",
+   "Takada M",
+   "Shinonaga Y",
+   "Mizuno N"
+  ],
+  "doi": "10.1016/0306-4522(92)90310-x",
+  "issue": "3",
+  "journal": "Neuroscience",
+  "journalFull": "Neuroscience",
+  "pages": "719-28",
+  "pmc": "",
+  "pmid": "1362601",
+  "title": "Dopaminergic and non-dopaminergic neurons in the ventral tegmental area of the rat project, respectively, to the cerebellar cortex and deep cerebellar nuclei",
+  "volume": "51",
+  "year": 1992
+ },
+ "15003388": {
+  "authors": [
+   "Schweighofer N",
+   "Doya K",
+   "Kuroda S"
+  ],
+  "doi": "10.1016/j.brainresrev.2003.10.004",
+  "issue": "2-3",
+  "journal": "Brain Res Brain Res Rev",
+  "journalFull": "Brain research. Brain research reviews",
+  "pages": "103-16",
+  "pmc": "",
+  "pmid": "15003388",
+  "title": "Cerebellar aminergic neuromodulation: towards a functional understanding",
+  "volume": "44",
+  "year": 2004
+ },
  "15470143": {
   "authors": [
    "Sugihara I",
@@ -130,6 +288,24 @@
   "pmid": "15470143",
   "title": "Molecular, topographic, and functional organization of the cerebellar cortex: a study with combined aldolase C and olivocerebellar labeling",
   "volume": "24",
+  "year": 2004
+ },
+ "15537737": {
+  "authors": [
+   "Cartford MC",
+   "Samec A",
+   "Fister M",
+   "Bickford PC"
+  ],
+  "doi": "10.1101/lm.83104",
+  "issue": "6",
+  "journal": "Learn Mem",
+  "journalFull": "Learning & memory (Cold Spring Harbor, N.Y.)",
+  "pages": "732-7",
+  "pmc": "PMC534701",
+  "pmid": "15537737",
+  "title": "Cerebellar norepinephrine modulates learning of delay classical eyeblink conditioning: evidence for post-synaptic signaling via PKA",
+  "volume": "11",
   "year": 2004
  },
  "15541316": {
@@ -309,6 +485,60 @@
   "volume": "8",
   "year": 2005
  },
+ "16301180": {
+  "authors": [
+   "Safo PK",
+   "Regehr WG"
+  ],
+  "doi": "10.1016/j.neuron.2005.09.020",
+  "issue": "4",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "647-59",
+  "pmc": "",
+  "pmid": "16301180",
+  "title": "Endocannabinoids control the induction of cerebellar LTD",
+  "volume": "48",
+  "year": 2005
+ },
+ "16497381": {
+  "authors": [
+   "Zhu JN",
+   "Yung WH",
+   "Kwok-Chong Chow B",
+   "Chan YS",
+   "Wang JJ"
+  ],
+  "doi": "10.1016/j.brainresrev.2006.01.003",
+  "issue": "1",
+  "journal": "Brain Res Rev",
+  "journalFull": "Brain research reviews",
+  "pages": "93-106",
+  "pmc": "",
+  "pmid": "16497381",
+  "title": "The cerebellar-hypothalamic circuits: potential pathways underlying cerebellar involvement in somatic-visceral integration",
+  "volume": "52",
+  "year": 2006
+ },
+ "16533576": {
+  "authors": [
+   "Song YN",
+   "Li HZ",
+   "Zhu JN",
+   "Guo CL",
+   "Wang JJ"
+  ],
+  "doi": "10.1016/j.neuroscience.2006.01.045",
+  "issue": "1",
+  "journal": "Neuroscience",
+  "journalFull": "Neuroscience",
+  "pages": "33-43",
+  "pmc": "",
+  "pmid": "16533576",
+  "title": "Histamine improves rat rota-rod and balance beam performances through H(2) receptors in the cerebellar interpositus nucleus",
+  "volume": "140",
+  "year": 2006
+ },
  "16566000": {
   "authors": [
    "Sarna JR",
@@ -327,6 +557,22 @@
   "volume": "496",
   "year": 2006
  },
+ "16928872": {
+  "authors": [
+   "Kishimoto Y",
+   "Kano M"
+  ],
+  "doi": "10.1523/JNEUROSCI.1236-06.2006",
+  "issue": "34",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "8829-37",
+  "pmc": "PMC6674369",
+  "pmid": "16928872",
+  "title": "Endogenous cannabinoid signaling through the CB1 receptor is essential for cerebellum-dependent discrete motor learning",
+  "volume": "26",
+  "year": 2006
+ },
  "16957067": {
   "authors": [
    "Morton SM",
@@ -342,6 +588,74 @@
   "title": "Cerebellar contributions to locomotor adaptations during splitbelt treadmill walking",
   "volume": "26",
   "year": 2006
+ },
+ "1702879": {
+  "authors": [
+   "Shibuki K",
+   "Okada D"
+  ],
+  "doi": "10.1038/349326a0",
+  "issue": "6307",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "326-8",
+  "pmc": "",
+  "pmid": "1702879",
+  "title": "Endogenous nitric oxide release required for long-term synaptic depression in the cerebellum",
+  "volume": "349",
+  "year": 1991
+ },
+ "17347275": {
+  "authors": [
+   "Wall MJ",
+   "Dale N"
+  ],
+  "doi": "10.1113/jphysiol.2006.126417",
+  "issue": "Pt 2",
+  "journal": "J Physiol",
+  "journalFull": "The Journal of physiology",
+  "pages": "553-65",
+  "pmc": "PMC2075183",
+  "pmid": "17347275",
+  "title": "Auto-inhibition of rat parallel fibre-Purkinje cell synapses by activity-dependent adenosine release",
+  "volume": "581",
+  "year": 2007
+ },
+ "17383102": {
+  "authors": [
+   "Cameron DB",
+   "Galas L",
+   "Jiang Y",
+   "Raoult E",
+   "Vaudry D",
+   "Komuro H"
+  ],
+  "doi": "10.1016/j.neuroscience.2007.02.025",
+  "issue": "2",
+  "journal": "Neuroscience",
+  "journalFull": "Neuroscience",
+  "pages": "697-712",
+  "pmc": "PMC1951536",
+  "pmid": "17383102",
+  "title": "Cerebellar cortical-layer-specific control of neuronal migration by pituitary adenylate cyclase-activating polypeptide",
+  "volume": "146",
+  "year": 2007
+ },
+ "17428980": {
+  "authors": [
+   "Piet R",
+   "Jahr CE"
+  ],
+  "doi": "10.1523/JNEUROSCI.0462-07.2007",
+  "issue": "15",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "4027-35",
+  "pmc": "PMC2671228",
+  "pmid": "17428980",
+  "title": "Glutamatergic and purinergic receptor-mediated calcium transients in Bergmann glial cells",
+  "volume": "27",
+  "year": 2007
  },
  "17507504": {
   "authors": [
@@ -386,6 +700,28 @@
   "pmid": "17766532",
   "title": "Does cerebellar injury in premature infants contribute to the high prevalence of long-term cognitive, learning, and behavioral disability in survivors?",
   "volume": "120",
+  "year": 2007
+ },
+ "17913916": {
+  "authors": [
+   "Andreescu CE",
+   "Milojkovic BA",
+   "Haasdijk ED",
+   "Kramer P",
+   "De Jong FH",
+   "Krust A",
+   "De Zeeuw CI",
+   "De Jeu MT"
+  ],
+  "doi": "10.1523/JNEUROSCI.2588-07.2007",
+  "issue": "40",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "10832-9",
+  "pmc": "PMC6672828",
+  "pmid": "17913916",
+  "title": "Estradiol improves cerebellar memory formation by activating estrogen receptor beta",
+  "volume": "27",
   "year": 2007
  },
  "18319727": {
@@ -435,6 +771,46 @@
   "volume": "44",
   "year": 2009
  },
+ "19046367": {
+  "authors": [
+   "Morara S",
+   "Wang LP",
+   "Filippov V",
+   "Dickerson IM",
+   "Grohovaz F",
+   "Provini L",
+   "Kettenmann H"
+  ],
+  "doi": "10.1111/j.1460-9568.2008.06514.x",
+  "issue": "11",
+  "journal": "Eur J Neurosci",
+  "journalFull": "The European journal of neuroscience",
+  "pages": "2213-20",
+  "pmc": "PMC4461196",
+  "pmid": "19046367",
+  "title": "Calcitonin gene-related peptide (CGRP) triggers Ca2+ responses in cultured astrocytes and in Bergmann glial cells from cerebellar slices",
+  "volume": "28",
+  "year": 2008
+ },
+ "19126760": {
+  "authors": [
+   "Kano M",
+   "Ohno-Shosaku T",
+   "Hashimotodani Y",
+   "Uchigashima M",
+   "Watanabe M"
+  ],
+  "doi": "10.1152/physrev.00019.2008",
+  "issue": "1",
+  "journal": "Physiol Rev",
+  "journalFull": "Physiological reviews",
+  "pages": "309-80",
+  "pmc": "",
+  "pmid": "19126760",
+  "title": "Endocannabinoid-mediated control of synaptic transmission",
+  "volume": "89",
+  "year": 2009
+ },
  "19226510": {
   "authors": [
    "Azevedo FA",
@@ -456,6 +832,22 @@
   "pmid": "19226510",
   "title": "Equal numbers of neuronal and nonneuronal cells make the human brain an isometrically scaled-up primate brain",
   "volume": "513",
+  "year": 2009
+ },
+ "19376071": {
+  "authors": [
+   "Carey MR",
+   "Regehr WG"
+  ],
+  "doi": "10.1016/j.neuron.2009.02.022",
+  "issue": "1",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "112-22",
+  "pmc": "PMC2837271",
+  "pmid": "19376071",
+  "title": "Noradrenergic control of associative synaptic plasticity by selective modulation of instructive signals",
+  "volume": "62",
   "year": 2009
  },
  "19457380": {
@@ -494,6 +886,24 @@
   "volume": "32",
   "year": 2009
  },
+ "19571144": {
+  "authors": [
+   "Kim YS",
+   "Shin JH",
+   "Hall FS",
+   "Linden DJ"
+  ],
+  "doi": "10.1523/JNEUROSCI.0468-09.2009",
+  "issue": "26",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "8530-8",
+  "pmc": "PMC2720617",
+  "pmid": "19571144",
+  "title": "Dopamine signaling is required for depolarization-induced slow current in cerebellar Purkinje cells",
+  "volume": "29",
+  "year": 2009
+ },
  "19592571": {
   "authors": [
    "Krienen FM",
@@ -508,6 +918,26 @@
   "pmid": "19592571",
   "title": "Segregated fronto-cerebellar circuits revealed by intrinsic functional connectivity",
   "volume": "19",
+  "year": 2009
+ },
+ "19675244": {
+  "authors": [
+   "Bagnall MW",
+   "Zingg B",
+   "Sakatos A",
+   "Moghadam SH",
+   "Zeilhofer HU",
+   "du Lac S"
+  ],
+  "doi": "10.1523/JNEUROSCI.2087-09.2009",
+  "issue": "32",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "10104-10",
+  "pmc": "PMC3196611",
+  "pmid": "19675244",
+  "title": "Glycinergic projection neurons of the cerebellum",
+  "volume": "29",
   "year": 2009
  },
  "19693030": {
@@ -560,6 +990,25 @@
   "pmid": "19857577",
   "title": "Evolution of the cerebellar cortex: the selective expansion of prefrontal-projecting cerebellar lobules",
   "volume": "49",
+  "year": 2010
+ },
+ "19921532": {
+  "authors": [
+   "Yu L",
+   "Zhang XY",
+   "Zhang J",
+   "Zhu JN",
+   "Wang JJ"
+  ],
+  "doi": "10.1007/s12311-009-0146-0",
+  "issue": "1",
+  "journal": "Cerebellum",
+  "journalFull": "Cerebellum (London, England)",
+  "pages": "88-95",
+  "pmc": "",
+  "pmid": "19921532",
+  "title": "Orexins excite neurons of the rat cerebellar nucleus interpositus via orexin 2 receptors in vitro",
+  "volume": "9",
   "year": 2010
  },
  "20300467": {
@@ -620,6 +1069,28 @@
   "volume": "107",
   "year": 2010
  },
+ "20960054": {
+  "authors": [
+   "D'Antoni S",
+   "Zambusi L",
+   "Codazzi F",
+   "Zacchetti D",
+   "Grohovaz F",
+   "Provini L",
+   "Catania MV",
+   "Morara S"
+  ],
+  "doi": "10.1007/s11064-010-0294-0",
+  "issue": "12",
+  "journal": "Neurochem Res",
+  "journalFull": "Neurochemical research",
+  "pages": "2135-43",
+  "pmc": "",
+  "pmid": "20960054",
+  "title": "Calcitonin gene-related peptide (CGRP) stimulates purkinje cell dendrite growth in culture",
+  "volume": "35",
+  "year": 2010
+ },
  "20965257": {
   "authors": [
    "Diedrichsen J",
@@ -642,6 +1113,27 @@
   "volume": "54",
   "year": 2011
  },
+ "21084685": {
+  "authors": [
+   "Carey MR",
+   "Myoga MH",
+   "McDaniels KR",
+   "Marsicano G",
+   "Lutz B",
+   "Mackie K",
+   "Regehr WG"
+  ],
+  "doi": "10.1152/jn.00980.2010",
+  "issue": "2",
+  "journal": "J Neurophysiol",
+  "journalFull": "Journal of neurophysiology",
+  "pages": "958-63",
+  "pmc": "PMC3059182",
+  "pmid": "21084685",
+  "title": "Presynaptic CB1 receptors regulate synaptic plasticity at cerebellar parallel fiber synapses",
+  "volume": "105",
+  "year": 2011
+ },
  "21227230": {
   "authors": [
    "Wolpert DM",
@@ -658,6 +1150,31 @@
   "title": "Internal models in the cerebellum",
   "volume": "2",
   "year": 1998
+ },
+ "21460832": {
+  "authors": [
+   "Kakegawa W",
+   "Miyoshi Y",
+   "Hamase K",
+   "Matsuda S",
+   "Matsuda K",
+   "Kohda K",
+   "Emi K",
+   "Motohashi J",
+   "Konno R",
+   "Zaitsu K",
+   "Yuzaki M"
+  ],
+  "doi": "10.1038/nn.2791",
+  "issue": "5",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "603-11",
+  "pmc": "",
+  "pmid": "21460832",
+  "title": "D-serine regulates cerebellar LTD and motor coordination through the δ2 glutamate receptor",
+  "volume": "14",
+  "year": 2011
  },
  "21482355": {
   "authors": [
@@ -686,6 +1203,24 @@
   "volume": "70",
   "year": 2011
  },
+ "21562921": {
+  "authors": [
+   "Turner JR",
+   "Ortinski PI",
+   "Sherrard RM",
+   "Kellar KJ"
+  ],
+  "doi": "10.1007/s12311-011-0285-y",
+  "issue": "4",
+  "journal": "Cerebellum",
+  "journalFull": "Cerebellum (London, England)",
+  "pages": "748-57",
+  "pmc": "PMC5094176",
+  "pmid": "21562921",
+  "title": "Cerebellar nicotinic cholinergic receptors are intrinsic to the cerebellum: implications for diverse functional roles",
+  "volume": "10",
+  "year": 2011
+ },
  "21795627": {
   "authors": [
    "Buckner RL",
@@ -703,6 +1238,23 @@
   "pmid": "21795627",
   "title": "The organization of the human cerebellum estimated by intrinsic functional connectivity",
   "volume": "106",
+  "year": 2011
+ },
+ "21878518": {
+  "authors": [
+   "Oostland M",
+   "Sellmeijer J",
+   "van Hooft JA"
+  ],
+  "doi": "10.1113/jphysiol.2011.217307",
+  "issue": "Pt 20",
+  "journal": "J Physiol",
+  "journalFull": "The Journal of physiology",
+  "pages": "4837-46",
+  "pmc": "PMC3224878",
+  "pmid": "21878518",
+  "title": "Transient expression of functional serotonin 5-HT3 receptors by glutamatergic granule cells in the early postnatal mouse cerebellum",
+  "volume": "589",
   "year": 2011
  },
  "21907811": {
@@ -741,6 +1293,28 @@
   "title": "Cerebellum shapes hippocampal spatial code",
   "volume": "334",
   "year": 2011
+ },
+ "22323747": {
+  "authors": [
+   "Zesiewicz TA",
+   "Greenstein PE",
+   "Sullivan KL",
+   "Wecker L",
+   "Miller A",
+   "Jahan I",
+   "Chen R",
+   "Perlman SL"
+  ],
+  "doi": "10.1212/WNL.0b013e318247cc7a",
+  "issue": "8",
+  "journal": "Neurology",
+  "journalFull": "Neurology",
+  "pages": "545-50",
+  "pmc": "",
+  "pmid": "22323747",
+  "title": "A randomized trial of varenicline (Chantix) for the treatment of spinocerebellar ataxia type 3",
+  "volume": "78",
+  "year": 2012
  },
  "22763451": {
   "authors": [
@@ -817,6 +1391,74 @@
   "title": "Zebrin II: a polypeptide antigen expressed selectively by Purkinje cells reveals compartments in rat and fish cerebellum",
   "volume": "291",
   "year": 1990
+ },
+ "23318873": {
+  "authors": [
+   "Oostland M",
+   "Buijink MR",
+   "van Hooft JA"
+  ],
+  "doi": "10.1113/jphysiol.2012.246413",
+  "issue": "7",
+  "journal": "J Physiol",
+  "journalFull": "The Journal of physiology",
+  "pages": "1793-807",
+  "pmc": "PMC3624851",
+  "pmid": "23318873",
+  "title": "Serotonergic control of Purkinje cell maturation and climbing fibre elimination by 5-HT3 receptors in the juvenile mouse cerebellum",
+  "volume": "591",
+  "year": 2013
+ },
+ "23741401": {
+  "authors": [
+   "Prestori F",
+   "Bonardi C",
+   "Mapelli L",
+   "Lombardo P",
+   "Goselink R",
+   "De Stefano ME",
+   "Gandolfi D",
+   "Mapelli J",
+   "Bertrand D",
+   "Schonewille M",
+   "De Zeeuw C",
+   "D'Angelo E"
+  ],
+  "doi": "10.1371/journal.pone.0064828",
+  "issue": "5",
+  "journal": "PLoS One",
+  "journalFull": "PloS one",
+  "pages": "e64828",
+  "pmc": "PMC3669396",
+  "pmid": "23741401",
+  "title": "Gating of long-term potentiation by nicotinic acetylcholine receptors at the cerebellum input stage",
+  "volume": "8",
+  "year": 2013
+ },
+ "23912185": {
+  "authors": [
+   "Nisimaru N",
+   "Mittal C",
+   "Shirai Y",
+   "Sooksawate T",
+   "Anandaraj P",
+   "Hashikawa T",
+   "Nagao S",
+   "Arata A",
+   "Sakurai T",
+   "Yamamoto M",
+   "Ito M"
+  ],
+  "doi": "10.1073/pnas.1312804110",
+  "issue": "35",
+  "journal": "Proc Natl Acad Sci U S A",
+  "journalFull": "Proceedings of the National Academy of Sciences of the United States of America",
+  "pages": "14124-31",
+  "pmc": "PMC3761613",
+  "pmid": "23912185",
+  "title": "Orexin-neuromodulated cerebellar circuit controls redistribution of arterial blood flows for defense behavior in rabbits",
+  "volume": "110",
+  "year": 2013
  },
  "23968462": {
   "authors": [
@@ -909,6 +1551,41 @@
   "pmid": "24843004",
   "title": "Cerebellar modules operate at different frequencies",
   "volume": "3",
+  "year": 2014
+ },
+ "25009273": {
+  "authors": [
+   "Husson Z",
+   "Rousseau CV",
+   "Broll I",
+   "Zeilhofer HU",
+   "Dieudonné S"
+  ],
+  "doi": "10.1523/JNEUROSCI.0401-14.2014",
+  "issue": "28",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "9418-31",
+  "pmc": "PMC6608357",
+  "pmid": "25009273",
+  "title": "Differential GABAergic and glycinergic inputs of inhibitory interneurons and Purkinje cells to principal cells of the cerebellar nuclei",
+  "volume": "34",
+  "year": 2014
+ },
+ "25017945": {
+  "authors": [
+   "Ciriello J",
+   "Caverson MM"
+  ],
+  "doi": "10.1016/j.brainres.2014.07.008",
+  "issue": "",
+  "journal": "Brain Res",
+  "journalFull": "Brain research",
+  "pages": "20-34",
+  "pmc": "",
+  "pmid": "25017945",
+  "title": "Hypothalamic orexin-A (hypocretin-1) neuronal projections to the vestibular complex and cerebellum in the rat",
+  "volume": "1579",
   "year": 2014
  },
  "25102558": {
@@ -1071,6 +1748,74 @@
   "volume": "16",
   "year": 2015
  },
+ "25633097": {
+  "authors": [
+   "Zhang J",
+   "Zhuang QX",
+   "Li B",
+   "Wu GY",
+   "Yung WH",
+   "Zhu JN",
+   "Wang JJ"
+  ],
+  "doi": "10.1007/s12035-015-9096-3",
+  "issue": "2",
+  "journal": "Mol Neurobiol",
+  "journalFull": "Molecular neurobiology",
+  "pages": "1386-1401",
+  "pmc": "",
+  "pmid": "25633097",
+  "title": "Selective Modulation of Histaminergic Inputs on Projection Neurons of Cerebellum Rapidly Promotes Motor Coordination via HCN Channels",
+  "volume": "53",
+  "year": 2016
+ },
+ "25965178": {
+  "authors": [
+   "Ankri L",
+   "Husson Z",
+   "Pietrajtis K",
+   "Proville R",
+   "Léna C",
+   "Yarom Y",
+   "Dieudonné S",
+   "Uusisaari MY"
+  ],
+  "doi": "10.7554/eLife.06262",
+  "issue": "",
+  "journal": "Elife",
+  "journalFull": "eLife",
+  "pages": "",
+  "pmc": "PMC4461794",
+  "pmid": "25965178",
+  "title": "A novel inhibitory nucleo-cortical circuit controls cerebellar Golgi cell activity",
+  "volume": "4",
+  "year": 2015
+ },
+ "26131933": {
+  "authors": [
+   "Schwarz LA",
+   "Miyamichi K",
+   "Gao XJ",
+   "Beier KT",
+   "Weissbourd B",
+   "DeLoach KE",
+   "Ren J",
+   "Ibanes S",
+   "Malenka RC",
+   "Kremer EJ",
+   "Luo L"
+  ],
+  "doi": "10.1038/nature14600",
+  "issue": "7563",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "88-92",
+  "pmc": "PMC4587569",
+  "pmid": "26131933",
+  "title": "Viral-genetic tracing of the input-output organization of a central noradrenaline circuit",
+  "volume": "524",
+  "year": 2015
+ },
  "26158416": {
   "authors": [
    "Kloth AD",
@@ -1135,6 +1880,23 @@
   "volume": "18",
   "year": 2015
  },
+ "26331029": {
+  "authors": [
+   "Li B",
+   "Zhu JN",
+   "Wang JJ"
+  ],
+  "doi": "10.1186/2053-8871-1-5",
+  "issue": "",
+  "journal": "Cerebellum Ataxias",
+  "journalFull": "Cerebellum & ataxias",
+  "pages": "5",
+  "pmc": "PMC4549136",
+  "pmid": "26331029",
+  "title": "Histaminergic afferent system in the cerebellum: structure and function",
+  "volume": "1",
+  "year": 2014
+ },
  "26439486": {
   "authors": [
    "Leto K",
@@ -1178,6 +1940,23 @@
   "volume": "15",
   "year": 2016
  },
+ "26445872": {
+  "authors": [
+   "Libster AM",
+   "Title B",
+   "Yarom Y"
+  ],
+  "doi": "10.1152/jn.00745.2015",
+  "issue": "6",
+  "journal": "J Neurophysiol",
+  "journalFull": "Journal of neurophysiology",
+  "pages": "3339-50",
+  "pmc": "PMC6712579",
+  "pmid": "26445872",
+  "title": "Corticotropin-releasing factor increases Purkinje neuron excitability by modulating sodium, potassium, and Ih currents",
+  "volume": "114",
+  "year": 2015
+ },
  "26469054": {
   "authors": [
    "Herzfeld DJ",
@@ -1211,6 +1990,45 @@
   "title": "Climbing fibers encode a temporal-difference prediction error during cerebellar learning in mice",
   "volume": "18",
   "year": 2015
+ },
+ "26948890": {
+  "authors": [
+   "Ingram M",
+   "Wozniak EAL",
+   "Duvick L",
+   "Yang R",
+   "Bergmann P",
+   "Carson R",
+   "O'Callaghan B",
+   "Zoghbi HY",
+   "Henzler C",
+   "Orr HT"
+  ],
+  "doi": "10.1016/j.neuron.2016.02.011",
+  "issue": "6",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "1194-1207",
+  "pmc": "PMC4795980",
+  "pmid": "26948890",
+  "title": "Cerebellar Transcriptome Profiles of ATXN1 Transgenic Mice Reveal SCA1 Disease Progression and Protection Pathways",
+  "volume": "89",
+  "year": 2016
+ },
+ "26970080": {
+  "authors": [
+   "Stephens GJ"
+  ],
+  "doi": "10.1113/JP271106",
+  "issue": "16",
+  "journal": "J Physiol",
+  "journalFull": "The Journal of physiology",
+  "pages": "4631-41",
+  "pmc": "PMC4983615",
+  "pmid": "26970080",
+  "title": "Does modulation of the endocannabinoid system have potential therapeutic utility in cerebellar ataxia?",
+  "volume": "594",
+  "year": 2016
  },
  "27346533": {
   "authors": [
@@ -1278,6 +2096,23 @@
   "pmid": "27551099",
   "title": "Reassessment of long-term depression in cerebellar Purkinje cells in mice carrying mutated GluA2 C terminus",
   "volume": "113",
+  "year": 2016
+ },
+ "27559688": {
+  "authors": [
+   "Zhang C",
+   "Zhou P",
+   "Yuan T"
+  ],
+  "doi": "10.1515/revneuro-2016-0008",
+  "issue": "8",
+  "journal": "Rev Neurosci",
+  "journalFull": "Reviews in the neurosciences",
+  "pages": "769-776",
+  "pmc": "",
+  "pmid": "27559688",
+  "title": "The cholinergic system in the cerebellum: from structure to function",
+  "volume": "27",
   "year": 2016
  },
  "27581745": {
@@ -1544,6 +2379,27 @@
   "volume": "23",
   "year": 2018
  },
+ "28844644": {
+  "authors": [
+   "Wang Y",
+   "Chen ZP",
+   "Zhuang QX",
+   "Zhang XY",
+   "Li HZ",
+   "Wang JJ",
+   "Zhu JN"
+  ],
+  "doi": "10.1016/j.cub.2017.07.035",
+  "issue": "17",
+  "journal": "Curr Biol",
+  "journalFull": "Current biology : CB",
+  "pages": "2661-2669.e5",
+  "pmc": "",
+  "pmid": "28844644",
+  "title": "Role of Corticotropin-Releasing Factor in Cerebellar Motor Control and Ataxia",
+  "volume": "27",
+  "year": 2017
+ },
  "29061964": {
   "authors": [
    "Cayco-Gajic NA",
@@ -1628,6 +2484,31 @@
   "volume": "7",
   "year": 2017
  },
+ "29381778": {
+  "authors": [
+   "Hedges VL",
+   "Chen G",
+   "Yu L",
+   "Krentzel AA",
+   "Starrett JR",
+   "Zhu JN",
+   "Suntharalingam P",
+   "Remage-Healey L",
+   "Wang JJ",
+   "Ebner TJ",
+   "Mermelstein PG"
+  ],
+  "doi": "10.1210/en.2018-00039",
+  "issue": "3",
+  "journal": "Endocrinology",
+  "journalFull": "Endocrinology",
+  "pages": "1328-1338",
+  "pmc": "PMC5839732",
+  "pmid": "29381778",
+  "title": "Local Estrogen Synthesis Regulates Parallel Fiber-Purkinje Cell Neurotransmission Within the Cerebellar Cortex",
+  "volume": "159",
+  "year": 2018
+ },
  "29478701": {
   "authors": [
    "Locke TM",
@@ -1686,6 +2567,45 @@
   "volume": "21",
   "year": 2018
  },
+ "29662214": {
+  "authors": [
+   "Albergaria C",
+   "Silva NT",
+   "Pritchett DL",
+   "Carey MR"
+  ],
+  "doi": "10.1038/s41593-018-0129-x",
+  "issue": "5",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "725-735",
+  "pmc": "PMC5923878",
+  "pmid": "29662214",
+  "title": "Locomotor activity modulates associative learning in mouse cerebellum",
+  "volume": "21",
+  "year": 2018
+ },
+ "29802362": {
+  "authors": [
+   "Ezra-Nevo G",
+   "Volk N",
+   "Ramot A",
+   "Kuehne C",
+   "Tsoory M",
+   "Deussing J",
+   "Chen A"
+  ],
+  "doi": "10.1038/s41398-018-0145-3",
+  "issue": "1",
+  "journal": "Transl Psychiatry",
+  "journalFull": "Translational psychiatry",
+  "pages": "107",
+  "pmc": "PMC5970254",
+  "pmid": "29802362",
+  "title": "Inferior olive CRF plays a role in motor performance under challenging conditions",
+  "volume": "8",
+  "year": 2018
+ },
  "29809137": {
   "authors": [
    "Smaers JB",
@@ -1718,6 +2638,29 @@
   "pmid": "29986160",
   "title": "Computational Principles of Supervised Learning in the Cerebellum",
   "volume": "41",
+  "year": 2018
+ },
+ "30034323": {
+  "authors": [
+   "Wang HW",
+   "Zhao JT",
+   "Li BX",
+   "Su SS",
+   "Bing YH",
+   "Chu CP",
+   "Wang WM",
+   "Li YZ",
+   "Qiu DL"
+  ],
+  "doi": "10.3389/fncel.2018.00184",
+  "issue": "",
+  "journal": "Front Cell Neurosci",
+  "journalFull": "Frontiers in cellular neuroscience",
+  "pages": "184",
+  "pmc": "PMC6043798",
+  "pmid": "30034323",
+  "title": "Corticotrophin-Releasing Factor Modulates Cerebellar Purkinje Cells Simple Spike Activity in Vivo in Mice",
+  "volume": "12",
   "year": 2018
  },
  "30087345": {
@@ -1755,6 +2698,23 @@
   "title": "Functional gradients of the cerebellum",
   "volume": "7",
   "year": 2018
+ },
+ "30117095": {
+  "authors": [
+   "Pickford J",
+   "Apps R",
+   "Bashir ZI"
+  ],
+  "doi": "10.1007/s11064-018-2613-9",
+  "issue": "3",
+  "journal": "Neurochem Res",
+  "journalFull": "Neurochemical research",
+  "pages": "627-635",
+  "pmc": "PMC6420442",
+  "pmid": "30117095",
+  "title": "Muscarinic Receptor Modulation of the Cerebellar Interpositus Nucleus In Vitro",
+  "volume": "44",
+  "year": 2019
  },
  "30122378": {
   "authors": [
@@ -1869,6 +2829,22 @@
   "volume": "7",
   "year": 2018
  },
+ "30281395": {
+  "authors": [
+   "Fleming E",
+   "Hull C"
+  ],
+  "doi": "10.1152/jn.00492.2018",
+  "issue": "1",
+  "journal": "J Neurophysiol",
+  "journalFull": "Journal of neurophysiology",
+  "pages": "105-114",
+  "pmc": "PMC6383657",
+  "pmid": "30281395",
+  "title": "Serotonin regulates dynamics of cerebellar granule cell activity by modulating tonic inhibition",
+  "volume": "121",
+  "year": 2019
+ },
  "30306129": {
   "authors": [
    "Boele HJ",
@@ -1913,6 +2889,24 @@
   "title": "A cortico-cerebellar loop for motor planning",
   "volume": "563",
   "year": 2018
+ },
+ "30382582": {
+  "authors": [
+   "Kono M",
+   "Kakegawa W",
+   "Yoshida K",
+   "Yuzaki M"
+  ],
+  "doi": "10.1113/JP276794",
+  "issue": "3",
+  "journal": "J Physiol",
+  "journalFull": "The Journal of physiology",
+  "pages": "903-920",
+  "pmc": "PMC6355717",
+  "pmid": "30382582",
+  "title": "Interneuronal NMDA receptors regulate long-term depression and motor learning in the cerebellum",
+  "volume": "597",
+  "year": 2019
  },
  "30425170": {
   "authors": [
@@ -2499,6 +3493,24 @@
   "volume": "106",
   "year": 2020
  },
+ "32111698": {
+  "authors": [
+   "Fore TR",
+   "Taylor BN",
+   "Brunel N",
+   "Hull C"
+  ],
+  "doi": "10.1523/JNEUROSCI.2148-19.2020",
+  "issue": "14",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "2882-2894",
+  "pmc": "PMC7117893",
+  "pmid": "32111698",
+  "title": "Acetylcholine Modulates Cerebellar Granule Cell Spiking by Regulating the Balance of Synaptic Excitation and Inhibition",
+  "volume": "40",
+  "year": 2020
+ },
  "32223891": {
   "authors": [
    "Hull C"
@@ -2513,6 +3525,24 @@
   "title": "Prediction signals in the cerebellum: beyond supervised motor learning",
   "volume": "9",
   "year": 2020
+ },
+ "32470477": {
+  "authors": [
+   "Miyazaki T",
+   "Yamasaki M",
+   "Tanaka KF",
+   "Watanabe M"
+  ],
+  "doi": "10.1016/j.neuroscience.2020.05.026",
+  "issue": "",
+  "journal": "Neuroscience",
+  "journalFull": "Neuroscience",
+  "pages": "89-105",
+  "pmc": "",
+  "pmid": "32470477",
+  "title": "Compartmentalized Input-Output Organization of Lugaro Cells in the Cerebellar Cortex",
+  "volume": "462",
+  "year": 2021
  },
  "32632709": {
   "authors": [
@@ -2652,6 +3682,24 @@
   "volume": "11",
   "year": 2020
  },
+ "33077026": {
+  "authors": [
+   "Albergaria C",
+   "Silva NT",
+   "Darmohray DM",
+   "Carey MR"
+  ],
+  "doi": "10.7554/eLife.61821",
+  "issue": "",
+  "journal": "Elife",
+  "journalFull": "eLife",
+  "pages": "",
+  "pmc": "PMC7575324",
+  "pmid": "33077026",
+  "title": "Cannabinoids modulate associative cerebellar learning via alterations in behavioral state",
+  "volume": "9",
+  "year": 2020
+ },
  "33169031": {
   "authors": [
    "Kim OA",
@@ -2683,6 +3731,22 @@
   "title": "Bidirectional learning in upbound and downbound microzones of the cerebellum",
   "volume": "22",
   "year": 2021
+ },
+ "33259288": {
+  "authors": [
+   "Turecek J",
+   "Regehr WG"
+  ],
+  "doi": "10.7554/eLife.61672",
+  "issue": "",
+  "journal": "Elife",
+  "journalFull": "eLife",
+  "pages": "",
+  "pmc": "PMC7707816",
+  "pmid": "33259288",
+  "title": "Cerebellar and vestibular nuclear synapses in the inferior olive have distinct release kinetics and neurotransmitters",
+  "volume": "9",
+  "year": 2020
  },
  "33335034": {
   "authors": [
@@ -2735,6 +3799,23 @@
   "pmid": "33427596",
   "title": "The detailed organization of the human cerebellum estimated by intrinsic functional connectivity within the individual",
   "volume": "125",
+  "year": 2021
+ },
+ "33558582": {
+  "authors": [
+   "Duarte-Neves J",
+   "Cavadas C",
+   "Pereira de Almeida L"
+  ],
+  "doi": "10.1038/s41598-021-82339-5",
+  "issue": "1",
+  "journal": "Sci Rep",
+  "journalFull": "Scientific reports",
+  "pages": "3345",
+  "pmc": "PMC7870889",
+  "pmid": "33558582",
+  "title": "Neuropeptide Y (NPY) intranasal delivery alleviates Machado-Joseph disease",
+  "volume": "11",
   "year": 2021
  },
  "34140698": {
@@ -2790,6 +3871,32 @@
   "pmid": "34168340",
   "title": "Cerebellar granule cell axons support high-dimensional representations",
   "volume": "24",
+  "year": 2021
+ },
+ "34421548": {
+  "authors": [
+   "Flace P",
+   "Livrea P",
+   "Basile GA",
+   "Galletta D",
+   "Bizzoca A",
+   "Gennarini G",
+   "Bertino S",
+   "Branca JJV",
+   "Gulisano M",
+   "Bianconi S",
+   "Bramanti A",
+   "Anastasi G"
+  ],
+  "doi": "10.3389/fnsys.2021.650614",
+  "issue": "",
+  "journal": "Front Syst Neurosci",
+  "journalFull": "Frontiers in systems neuroscience",
+  "pages": "650614",
+  "pmc": "PMC8375553",
+  "pmid": "34421548",
+  "title": "The Cerebellar Dopaminergic System",
+  "volume": "15",
   "year": 2021
  },
  "34542410": {
@@ -2862,6 +3969,32 @@
   "volume": "598",
   "year": 2021
  },
+ "34644575": {
+  "authors": [
+   "Wozniak EAL",
+   "Chen Z",
+   "Paul S",
+   "Yang P",
+   "Figueroa KP",
+   "Friedrich J",
+   "Tschumperlin T",
+   "Berken M",
+   "Ingram M",
+   "Henzler C",
+   "Pulst SM",
+   "Orr HT"
+  ],
+  "doi": "10.1016/j.celrep.2021.109831",
+  "issue": "2",
+  "journal": "Cell Rep",
+  "journalFull": "Cell reports",
+  "pages": "109831",
+  "pmc": "PMC8916043",
+  "pmid": "34644575",
+  "title": "Cholecystokinin 1 receptor activation restores normal mTORC1 signaling and is protective to Purkinje cells of SCA mice",
+  "volume": "37",
+  "year": 2021
+ },
  "34789878": {
   "authors": [
    "Low AYT",
@@ -2899,6 +4032,46 @@
   "volume": "600",
   "year": 2021
  },
+ "34808268": {
+  "authors": [
+   "Bai J",
+   "Ye T",
+   "Wei YB",
+   "Yang Y",
+   "Yang HM",
+   "Lan Y"
+  ],
+  "doi": "10.1016/j.neulet.2021.136356",
+  "issue": "",
+  "journal": "Neurosci Lett",
+  "journalFull": "Neuroscience letters",
+  "pages": "136356",
+  "pmc": "",
+  "pmid": "34808268",
+  "title": "Opioid receptors modulate parallel fiber-Purkinje cell synaptic transmission in mouse cerebellum",
+  "volume": "770",
+  "year": 2022
+ },
+ "35318076": {
+  "authors": [
+   "Cui LN",
+   "Zhang XD",
+   "Xu YH",
+   "Li BY",
+   "Qiu DL",
+   "Chu CP"
+  ],
+  "doi": "10.1016/j.neulet.2022.136584",
+  "issue": "",
+  "journal": "Neurosci Lett",
+  "journalFull": "Neuroscience letters",
+  "pages": "136584",
+  "pmc": "",
+  "pmid": "35318076",
+  "title": "Activation CRF-R2 augments cerebellar climbing fiber-Purkinje cell synaptic transmission via presynaptic PKA pathway in mice",
+  "volume": "777",
+  "year": 2022
+ },
  "35325616": {
   "authors": [
    "Kostadinov D",
@@ -2913,6 +4086,76 @@
   "pmid": "35325616",
   "title": "Reward signals in the cerebellum: Origins, targets, and functional implications",
   "volume": "110",
+  "year": 2022
+ },
+ "35442745": {
+  "authors": [
+   "Snell HD",
+   "Vitenzon A",
+   "Tara E",
+   "Chen C",
+   "Tindi J",
+   "Jordan BA",
+   "Khodakhah K"
+  ],
+  "doi": "10.1126/sciadv.abh2675",
+  "issue": "16",
+  "journal": "Sci Adv",
+  "journalFull": "Science advances",
+  "pages": "eabh2675",
+  "pmc": "PMC9020779",
+  "pmid": "35442745",
+  "title": "Mechanism of stress-induced attacks in an episodic neurologic disorder",
+  "volume": "8",
+  "year": 2022
+ },
+ "35546898": {
+  "authors": [
+   "Yang Y",
+   "Bai J",
+   "Sun JY",
+   "Ye T",
+   "Zhang L",
+   "Wu FY",
+   "Nan J",
+   "Lan Y"
+  ],
+  "doi": "10.3389/fnsyn.2022.862704",
+  "issue": "",
+  "journal": "Front Synaptic Neurosci",
+  "journalFull": "Frontiers in synaptic neuroscience",
+  "pages": "862704",
+  "pmc": "PMC9083459",
+  "pmid": "35546898",
+  "title": "Mechanisms Underlying Mu Opioid Receptor Effects on Parallel Fiber-Purkinje Cell Synaptic Transmission in Mouse Cerebellar Cortex",
+  "volume": "14",
+  "year": 2022
+ },
+ "35710984": {
+  "authors": [
+   "Cutando L",
+   "Puighermanal E",
+   "Castell L",
+   "Tarot P",
+   "Belle M",
+   "Bertaso F",
+   "Arango-Lievano M",
+   "Ango F",
+   "Rubinstein M",
+   "Quintana A",
+   "Chédotal A",
+   "Mameli M",
+   "Valjent E"
+  ],
+  "doi": "10.1038/s41593-022-01092-8",
+  "issue": "7",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "900-911",
+  "pmc": "",
+  "pmid": "35710984",
+  "title": "Cerebellar dopamine D2 receptors regulate social behaviors",
+  "volume": "25",
   "year": 2022
  },
  "36131014": {
@@ -3106,6 +4349,50 @@
   "volume": "609",
   "year": 2022
  },
+ "36322758": {
+  "authors": [
+   "Ninomiya A",
+   "Amano I",
+   "Kokubo M",
+   "Takatsuru Y",
+   "Ishii S",
+   "Hirai H",
+   "Hosoi N",
+   "Koibuchi N"
+  ],
+  "doi": "10.1073/pnas.2210645119",
+  "issue": "45",
+  "journal": "Proc Natl Acad Sci U S A",
+  "journalFull": "Proceedings of the National Academy of Sciences of the United States of America",
+  "pages": "e2210645119",
+  "pmc": "PMC9659369",
+  "pmid": "36322758",
+  "title": "Long-term depression-inductive stimulation causes long-term potentiation in mouse Purkinje cells with a mutant thyroid hormone receptor",
+  "volume": "119",
+  "year": 2022
+ },
+ "36959176": {
+  "authors": [
+   "Li C",
+   "Saliba NB",
+   "Martin H",
+   "Losurdo NA",
+   "Kolahdouzan K",
+   "Siddiqui R",
+   "Medeiros D",
+   "Li W"
+  ],
+  "doi": "10.1038/s41467-023-37319-w",
+  "issue": "1",
+  "journal": "Nat Commun",
+  "journalFull": "Nature communications",
+  "pages": "1613",
+  "pmc": "PMC10036610",
+  "pmid": "36959176",
+  "title": "Purkinje cell dopaminergic inputs to astrocytes regulate cerebellar-dependent behavior",
+  "volume": "14",
+  "year": 2023
+ },
  "37083692": {
   "authors": [
    "King M",
@@ -3264,6 +4551,24 @@
   "volume": "27",
   "year": 2024
  },
+ "38397008": {
+  "authors": [
+   "Li ZH",
+   "Li B",
+   "Zhang XY",
+   "Zhu JN"
+  ],
+  "doi": "10.3390/ijms25042332",
+  "issue": "4",
+  "journal": "Int J Mol Sci",
+  "journalFull": "International journal of molecular sciences",
+  "pages": "",
+  "pmc": "PMC10889816",
+  "pmid": "38397008",
+  "title": "Neuropeptides and Their Roles in the Cerebellum",
+  "volume": "25",
+  "year": 2024
+ },
  "38412857": {
   "authors": [
    "Wang C",
@@ -3346,6 +4651,25 @@
   "volume": "112",
   "year": 2024
  },
+ "38943193": {
+  "authors": [
+   "Inutsuka A",
+   "Hattori A",
+   "Yoshida M",
+   "Takayanagi Y",
+   "Onaka T"
+  ],
+  "doi": "10.1186/s13041-024-01114-5",
+  "issue": "1",
+  "journal": "Mol Brain",
+  "journalFull": "Molecular brain",
+  "pages": "41",
+  "pmc": "PMC11214225",
+  "pmid": "38943193",
+  "title": "Cerebellar damage with inflammation upregulates oxytocin receptor expression in Bergmann Glia",
+  "volume": "17",
+  "year": 2024
+ },
  "38987435": {
   "authors": [
    "Mishra I",
@@ -3377,6 +4701,54 @@
   "pmid": "38987435",
   "title": "The cerebellum modulates thirst",
   "volume": "27",
+  "year": 2024
+ },
+ "39048016": {
+  "authors": [
+   "Chen C",
+   "Niehaus JK",
+   "Dinc F",
+   "Huang KL",
+   "Barnette AL",
+   "Tassou A",
+   "Shuster SA",
+   "Wang L",
+   "Lemire A",
+   "Menon V",
+   "Ritola K",
+   "Hantman AW",
+   "Zeng H",
+   "Schnitzer MJ",
+   "Scherrer G"
+  ],
+  "doi": "10.1038/s41586-024-07816-z",
+  "issue": "8027",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "1092-1100",
+  "pmc": "PMC11358037",
+  "pmid": "39048016",
+  "title": "Neural circuit basis of placebo pain relief",
+  "volume": "632",
+  "year": 2024
+ },
+ "39048594": {
+  "authors": [
+   "Takeuchi E",
+   "Hatanaka T",
+   "Iijima T",
+   "Kimura M",
+   "Katoh A"
+  ],
+  "doi": "10.1038/s41598-024-66736-0",
+  "issue": "1",
+  "journal": "Sci Rep",
+  "journalFull": "Scientific reports",
+  "pages": "17056",
+  "pmc": "PMC11269602",
+  "pmid": "39048594",
+  "title": "The effects of corticotropin-releasing factor on motor learning",
+  "volume": "14",
   "year": 2024
  },
  "39325889": {
@@ -3516,6 +4888,52 @@
   "title": "Within-individual organization of the human cognitive cerebellum: Evidence for closely juxtaposed, functionally specialized regions",
   "volume": "10",
   "year": 2024
+ },
+ "39748107": {
+  "authors": [
+   "Kim SH",
+   "Lee J",
+   "Jang M",
+   "Roh SE",
+   "Kim S",
+   "Lee JH",
+   "Seo J",
+   "Baek J",
+   "Hwang JY",
+   "Baek IS",
+   "Lee YS",
+   "Shigetomi E",
+   "Lee CJ",
+   "Koizumi S",
+   "Kim SK",
+   "Kim SJ"
+  ],
+  "doi": "10.1038/s41593-024-01807-z",
+  "issue": "2",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "336-345",
+  "pmc": "",
+  "pmid": "39748107",
+  "title": "Cerebellar Bergmann glia integrate noxious information and modulate nocifensive behaviors",
+  "volume": "28",
+  "year": 2025
+ },
+ "3986565": {
+  "authors": [
+   "Bishop GA",
+   "Ho RH"
+  ],
+  "doi": "10.1016/0006-8993(85)91545-8",
+  "issue": "2",
+  "journal": "Brain Res",
+  "journalFull": "Brain research",
+  "pages": "195-207",
+  "pmc": "",
+  "pmid": "3986565",
+  "title": "The distribution and origin of serotonin immunoreactivity in the rat cerebellum",
+  "volume": "331",
+  "year": 1985
  },
  "39984491": {
   "authors": [
@@ -3886,6 +5304,24 @@
   "volume": "394",
   "year": 2026
  },
+ "4347049": {
+  "authors": [
+   "Hoffer BJ",
+   "Siggins GR",
+   "Oliver AP",
+   "Bloom FE"
+  ],
+  "doi": "",
+  "issue": "3",
+  "journal": "J Pharmacol Exp Ther",
+  "journalFull": "The Journal of pharmacology and experimental therapeutics",
+  "pages": "553-69",
+  "pmc": "",
+  "pmid": "4347049",
+  "title": "Activation of the pathway from locus coeruleus to rat cerebellar Purkinje neurons: pharmacological evidence of noradrenergic central inhibition",
+  "volume": "184",
+  "year": 1973
+ },
  "5784296": {
   "authors": [
    "Marr D"
@@ -3900,6 +5336,24 @@
   "title": "A theory of cerebellar cortex",
   "volume": "202",
   "year": 1969
+ },
+ "6173801": {
+  "authors": [
+   "Schulman JA",
+   "Finger TE",
+   "Brecha NC",
+   "Karten HJ"
+  ],
+  "doi": "10.1016/0306-4522(81)90026-9",
+  "issue": "11",
+  "journal": "Neuroscience",
+  "journalFull": "Neuroscience",
+  "pages": "2407-16",
+  "pmc": "",
+  "pmid": "6173801",
+  "title": "Enkephalin immunoreactivity in Golgi cells and mossy fibers of mammalian, avian, amphibian and teleost cerebellum",
+  "volume": "6",
+  "year": 1981
  },
  "6298664": {
   "authors": [
@@ -3932,6 +5386,25 @@
   "title": "Cerebellum: essential involvement in the classically conditioned eyelid response",
   "volume": "223",
   "year": 1984
+ },
+ "7646893": {
+  "authors": [
+   "Lev-Ram V",
+   "Makings LR",
+   "Keitz PF",
+   "Kao JP",
+   "Tsien RY"
+  ],
+  "doi": "10.1016/0896-6273(95)90044-6",
+  "issue": "2",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "407-15",
+  "pmc": "",
+  "pmid": "7646893",
+  "title": "Long-term depression in cerebellar Purkinje neurons results from coincidence of nitric oxide and depolarization-induced Ca2+ transients",
+  "volume": "15",
+  "year": 1995
  },
  "7736576": {
   "authors": [
@@ -4055,6 +5528,36 @@
   "volume": "119 ( Pt 4)",
   "year": 1996
  },
+ "8898206": {
+  "authors": [
+   "Ophoff RA",
+   "Terwindt GM",
+   "Vergouwe MN",
+   "van Eijk R",
+   "Oefner PJ",
+   "Hoffman SM",
+   "Lamerdin JE",
+   "Mohrenweiser HW",
+   "Bulman DE",
+   "Ferrari M",
+   "Haan J",
+   "Lindhout D",
+   "van Ommen GJ",
+   "Hofker MH",
+   "Ferrari MD",
+   "Frants RR"
+  ],
+  "doi": "10.1016/s0092-8674(00)81373-2",
+  "issue": "3",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "543-52",
+  "pmc": "",
+  "pmid": "8898206",
+  "title": "Familial hemiplegic migraine and episodic ataxia type-2 are caused by mutations in the Ca2+ channel gene CACNL1A4",
+  "volume": "87",
+  "year": 1996
+ },
  "8987769": {
   "authors": [
    "Schmahmann JD",
@@ -4093,6 +5596,50 @@
   "pmid": "8988170",
   "title": "Autosomal dominant cerebellar ataxia (SCA6) associated with small polyglutamine expansions in the alpha 1A-voltage-dependent calcium channel",
   "volume": "15",
+  "year": 1997
+ },
+ "9193139": {
+  "authors": [
+   "Jaarsma D",
+   "Ruigrok TJ",
+   "Caffé R",
+   "Cozzari C",
+   "Levey AI",
+   "Mugnaini E",
+   "Voogd J"
+  ],
+  "doi": "10.1016/s0079-6123(08)63359-2",
+  "issue": "",
+  "journal": "Prog Brain Res",
+  "journalFull": "Progress in brain research",
+  "pages": "67-96",
+  "pmc": "",
+  "pmid": "9193139",
+  "title": "Cholinergic innervation and receptors in the cerebellum",
+  "volume": "114",
+  "year": 1997
+ },
+ "9193210": {
+  "authors": [
+   "Trouillas P",
+   "Xie J",
+   "Adeleine P",
+   "Michel D",
+   "Vighetto A",
+   "Honnorat J",
+   "Dumas R",
+   "Nighoghossian N",
+   "Laurent B"
+  ],
+  "doi": "10.1001/archneur.1997.00550180059013",
+  "issue": "6",
+  "journal": "Arch Neurol",
+  "journalFull": "Archives of neurology",
+  "pages": "749-52",
+  "pmc": "",
+  "pmid": "9193210",
+  "title": "Buspirone, a 5-hydroxytryptamine1A agonist, is active in cerebellar ataxia. Results of a double-blind drug placebo study in patients with cerebellar cortical atrophy",
+  "volume": "54",
   "year": 1997
  },
  "9367153": {

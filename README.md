@@ -21,14 +21,14 @@ The page loads about 4.5 MB, mostly 3D meshes. These load only when you open the
 
 | View | What it shows |
 | --- | --- |
-| **3D atlas** | Human and mouse brains with the cerebellum, deep nuclei and their partners. Human lobules and nuclei come from the SUIT probabilistic atlas, fitted to the Allen Human Reference Atlas; mouse structures come from the Allen CCFv3. Choose a circuit (cerebro-cerebellar loops, olive, basal ganglia and substantia nigra, VTA/reward, fear and anxiety, navigation, feeding, vestibular, body) to see evidence-graded pathways with animated signal flow. Eyes, inner ear, gut and body are shown as approximate markers. |
+| **3D atlas** | Human and mouse brains with the cerebellum, deep nuclei and their partners. Human lobules and nuclei come from the SUIT probabilistic atlas, fitted to the Allen Human Reference Atlas; mouse structures come from the Allen CCFv3. Choose a circuit (cerebro-cerebellar loops, olive, basal ganglia and substantia nigra, VTA/reward, fear and anxiety, navigation, feeding, vestibular, body, neuromodulators) to see evidence-graded pathways. *Animate signal flow* sends dots along each pathway from source to target to show its direction; the timing is schematic. In the neuromodulator circuit, a tag on each pathway names the transmitter it carries. Eyes, inner ear, gut and body are shown as approximate markers. |
 | **Functional map** | A schematic flatmap of human cerebellar cortex (SUIT-style). Overlays show the motor, oculomotor, executive, language, social and emotional territories, plus a lesion map. |
 | **Microcircuit** | The canonical circuit (mossy/parallel fibers, climbing fibers, Purkinje, Golgi, MLI, UBC, nuclei, olive), with animated signals and a toy eyeblink-conditioning model. You can switch off LTD and watch learning partly survive. |
-| **Cells & molecules** | The parallel-fiber–Purkinje synapse: calcium sets the sign of plasticity (LTP vs. LTD), with zebrin modules, developmental lineage and disease genes. |
-| **Across scales** | All 103 entities in seven level columns, linked by 182 graded connections, with 16 highlighted mechanistic chains. |
+| **Cells & molecules** | The parallel-fiber–Purkinje synapse: calcium sets the sign of plasticity (LTP vs. LTD), with zebrin modules, developmental lineage and disease genes. A matrix shows which neuromodulators (noradrenaline, serotonin, dopamine, acetylcholine, histamine), neuropeptides (orexin, CRF, CGRP, opioids, oxytocin, CCK, NPY, PACAP), retrograde and glial messengers, hormones and glycine act on which cells, with receptor, sign of effect and evidence grade. |
+| **Across scales** | All 132 entities in seven level columns, linked by 290 graded connections, with 20 highlighted mechanistic chains. |
 | **Evidence & gaps** | A domain × level matrix of curated papers, plus live PubMed counts fetched from your browser. It lists untested bridges, the weakest links, and open questions. |
 | **Hypothesis lab** | Chain entities across levels. Each step is checked against the knowledge graph; the weakest step becomes the critical experiment, with predictions, alternative routes and methods. Export the result as Markdown. |
-| **Library** | The 179 papers, filterable by level, domain, evidence type, species and year. Exports BibTeX. |
+| **Library** | The 257 papers, filterable by level, domain, evidence type, species and year. Exports BibTeX. |
 
 Every entity, link and paper opens in the side panel. Links in the panel are shareable (for example `#/scales/e/dentate`). Press `/` to search and `Esc` to close the panel.
 
@@ -94,6 +94,8 @@ If you edit the JSON with a script, run `python3 tools/jsonfmt.py data/*.json` a
 
 `s` and `t` are entity ids. `status` is one of the ids in `statuses` at the top of `knowledge.json`. `kind` is one of `mechanistic`, `anatomical`, `causal`, `functional`, `clinical`, `developmental`, `localization`, `theoretical` or `evolutionary`.
 
+Neuromodulatory links can also carry `tx` (a transmitter code from `neuromodulation.tx`, drawn as a tag in the 3D view), `via` (the receptor, free text) and `sign` (`+`, `-`, `±` or `~`). A link from a messenger listed in `neuromodulation.groups` to a cell or pathway listed in `neuromodulation.targets` appears in the matrix in Cells & molecules.
+
 **Add an entity, chain or open question.** Follow the existing records in `entities`, `chains` and `questions`. To place a new entity in the 3D view, add it to `atlas3d.sides` (which hemisphere) or to `atlas3d.aliases`.
 
 ## Rebuilding the 3D meshes (rarely needed)
@@ -133,6 +135,7 @@ Before you publish, read the terms below.
 ## Caveats
 
 - The entity summaries, findings, link statuses and map scores were **drafted with AI assistance from PubMed abstracts**. They need review by cerebellum researchers before the site is used for teaching or published. Every claim is linked to its sources so it can be checked.
-- The library is a curated core of about 180 papers, not a systematic review. Use the live PubMed counts in Evidence & gaps to see the wider literature.
+- Each paper's one-sentence finding was checked against its PubMed abstract. Albus (1971) is not in PubMed, and Hoffer et al. (1973) and Schulman et al. (1981) have no PubMed abstract, so their findings rest on the titles and say so.
+- The library is a curated core of about 260 papers, not a systematic review. Use the live PubMed counts in Evidence & gaps to see the wider literature. The neuromodulator layer is thin in places: many effects come from a single slice study in one species, and where the oxytocin receptor is expressed in the cerebellum is still debated.
 - Diagrams are schematic. The eyeblink model is a toy model for intuition, not a fitted model.
-- Human lobules and nuclei come from a group probabilistic atlas fitted to a different brain, so their boundaries are approximate. The fastigial nucleus is barely resolved in SUIT and is drawn from a low probability threshold. Brainstem nuclei and body structures without meshes are placed approximately (italic labels).
+- Human lobules and nuclei come from a group probabilistic atlas fitted to a different brain, so their boundaries are approximate. The fastigial nucleus is barely resolved in SUIT and is drawn from a low probability threshold. Brainstem nuclei, the human neuromodulator source nuclei and body structures without meshes are placed approximately (italic labels).

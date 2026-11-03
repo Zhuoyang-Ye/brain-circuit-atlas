@@ -92,6 +92,8 @@ kbd { background: var(--bg3); border: 1px solid var(--line); border-radius: 4px;
 .cite { display: inline-block; font-size: .8rem; color: var(--accent); background: rgba(56,139,253,.1); border: 1px solid rgba(56,139,253,.25);
   border-radius: 4px; padding: 0 5px; margin: 1px 2px; cursor: pointer; white-space: nowrap; }
 .cite:hover { background: rgba(56,139,253,.2); }
+.linkmeta { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 10px; }
+.linkmeta span { font-size: .8rem; border: 1px solid var(--line2); border-radius: 999px; padding: 1px 9px; background: var(--bg2); }
 .badge { display: inline-flex; align-items: center; gap: 5px; font-size: .75rem; padding: 1px 8px; border-radius: 999px; border: 1px solid; white-space: nowrap; }
 .lvl { display: inline-block; font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; padding: 1px 7px; border-radius: 4px; color: #0d1117; font-weight: 650; }
 label.check { display: flex; align-items: center; gap: 7px; cursor: pointer; padding: 2px 0; }
@@ -142,6 +144,10 @@ select:focus, input.text:focus { border-color: var(--accent); }
   background: rgba(13,17,23,.78); border: 1px solid rgba(139,148,158,.35); color: var(--text); }
 .alabel.sel { border-color: var(--accent); background: rgba(31,111,235,.35); }
 .alabel.approx { font-style: italic; }
+/* transmitter tag at the middle of a neuromodulatory pathway */
+.alabel.tx { transform: translate(-50%, -50%); font-size: .66rem; font-weight: 600; letter-spacing: .02em; padding: 0 5px; border-radius: 999px;
+  border-color: rgba(247,120,186,.8); color: #ffc7e3; background: rgba(13,17,23,.88); }
+.alabel.tx.static { position: static; transform: none; display: inline-block; }
 .atlas-controls { position: absolute; top: 12px; left: 12px; width: 268px; max-height: calc(100% - 24px); overflow: auto; background: rgba(22,27,34,.92);
   border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 14px; backdrop-filter: blur(6px); }
 .atlas-controls h4:first-child { margin-top: 0; }
@@ -153,6 +159,8 @@ select:focus, input.text:focus { border-color: var(--accent); }
   padding: 8px 12px; font-size: .78rem; display: grid; grid-template-columns: auto auto; gap: 3px 14px; }
 .atlas-legend .lg { display: flex; align-items: center; gap: 6px; }
 .atlas-legend .sw { width: 22px; height: 0; border-top: 3px solid; }
+.atlas-legend .dot { width: 9px; height: 9px; margin: 0 6px 0 7px; transform: rotate(45deg); border-radius: 1px; }
+.atlas-legend .txlg { grid-column: 1 / -1; max-width: 440px; }
 /* Footer between the controls column (292px) and the side panel, so it stays visible when the panel is open. */
 .atlas-foot { position: absolute; left: 292px; right: calc(var(--panel-w) + 12px); bottom: 8px; display: flex; flex-direction: column;
   align-items: center; gap: 5px; pointer-events: none; }
@@ -213,6 +221,27 @@ table.data tr.click:hover td { background: var(--bg3); }
 .matrix td.zero { border: 1px dashed var(--line2); color: var(--faint); }
 .progress { height: 6px; background: var(--bg3); border-radius: 3px; overflow: hidden; }
 .progress > i { display: block; height: 100%; background: var(--accent); width: 0; transition: width .2s; }
+
+/* ---------- neuromodulator matrix (Cells & molecules) ---------- */
+.nmx-wrap { overflow-x: auto; }
+.nmx { border-collapse: separate; border-spacing: 3px; font-size: .82rem; min-width: 1040px; }
+.nmx th { font-weight: 600; color: var(--muted); padding: 4px 5px; font-size: .74rem; vertical-align: bottom; text-align: center; line-height: 1.2; }
+.nmx th.col { cursor: pointer; max-width: 86px; }
+.nmx th.col:hover, .nmx th.col.sel { color: var(--text); }
+.nmx th.col.sel { box-shadow: inset 0 -2px 0 var(--accent); }
+.nmx th.rowh { text-align: left; white-space: nowrap; vertical-align: middle; }
+.nmx th.sideh { text-align: left; padding-left: 8px; }
+.nmx tr.grp td { color: var(--muted); font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; padding: 12px 4px 3px; border-bottom: 1px solid var(--line); }
+.nmx td.nmc { min-width: 62px; height: 38px; text-align: center; border-radius: 5px; cursor: pointer; border: 1px solid transparent; padding: 2px 4px; line-height: 1.15; color: var(--text); }
+.nmx td.nmc:hover { outline: 1px solid #fff; }
+.nmx td.nmc b { font-size: .95rem; }
+.nmx td.nmc .via { display: block; font-size: .68rem; color: var(--muted); }
+.nmx td.nme { border: 1px dashed rgba(110,118,129,.22); border-radius: 5px; }
+.nmx td.side { vertical-align: middle; width: 165px; }
+.nmx td.side .chip { font-size: .72rem; padding: 1px 7px; margin: 1px 2px; white-space: normal; border-radius: 9px; line-height: 1.25; }
+.nmx tr.nm-row.sel th.rowh .chip { border-color: var(--accent); background: rgba(56,139,253,.14); }
+.nmx-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; font-size: .78rem; color: var(--muted); margin-top: 10px; }
+.nmx-legend .sw { display: inline-block; width: 16px; height: 12px; border-radius: 3px; vertical-align: -2px; margin-right: 5px; }
 
 /* ---------- hypothesis lab ---------- */
 .chain { display: flex; align-items: stretch; gap: 0; overflow-x: auto; padding: 6px 2px 12px; }

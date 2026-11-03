@@ -196,6 +196,30 @@ def validate(kb, papers, meshes, ck):
             if lid not in link_ids:
                 ck.err(f"3D circuit {c['id']}: link {lid} not in knowledge base")
 
+    # neuromodulator matrix, and the optional transmitter / receptor / sign fields on links
+    nm = kb.get('neuromodulation', {})
+    for t in nm.get('targets', []):
+        if t['id'] not in ents:
+            ck.err(f"neuromodulation target: unknown entity {t['id']!r}")
+    for g in nm.get('groups', []):
+        for r in g['rows']:
+            if r not in ents:
+                ck.err(f"neuromodulation group {g['label']!r}: unknown entity {r!r}")
+    for code, v in nm.get('tx', {}).items():
+        if v.get('entity') not in ents:
+            ck.err(f"neuromodulation tx {code}: unknown entity {v.get('entity')!r}")
+    for i in nm.get('sources', []):
+        if i not in ents:
+            ck.err(f'neuromodulation source: unknown entity {i!r}')
+    for l in kb['links']:
+        lid = f"{l['s']}>{l['t']}"
+        if 'tx' in l and l['tx'] not in nm.get('tx', {}):
+            ck.err(f"{lid}: unknown transmitter code {l['tx']!r}")
+        if 'sign' in l and l['sign'] not in nm.get('signs', {}):
+            ck.err(f"{lid}: unknown sign {l['sign']!r}")
+        if 'via' in l and not (isinstance(l['via'], str) and l['via']):
+            ck.err(f'{lid}: via must be a non-empty string')
+
     for sp, spec in meshes.items():
         for it in spec['items']:
             for k in ('entity', 'related'):
