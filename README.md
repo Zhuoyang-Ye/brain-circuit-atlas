@@ -2,6 +2,8 @@
 
 An interactive, evidence-linked map of the cerebellum and its connections to the rest of the brain and body. It runs from molecules and cells through circuits and brain-wide loops to behavior, cognition and disease. Every connection carries an evidence grade and links to the PubMed papers behind it, and a hypothesis lab turns weak or missing links into testable experiments.
 
+**Live site:** <https://zhuoyang-ye.github.io/cerebellum-atlas/>
+
 ## Run it
 
 Open `index.html` in a browser. There is no build step and no server code, and it works straight from disk.
@@ -105,15 +107,17 @@ On the first run the script downloads the Allen CCFv3 structure meshes, the Brai
 
 ## Publishing
 
-The site is static, so any static host works. It is set up for GitHub Pages, served from the root of the `main` branch. The `.nojekyll` file tells Pages to serve the files as they are, and all paths are relative, so the site also works under a project subpath. With the [GitHub CLI](https://cli.github.com/):
+The site is static, so any static host works. It is published with GitHub Pages at <https://zhuoyang-ye.github.io/cerebellum-atlas/>, built from the root of the `main` branch. The repository is private, but the site, and every file in the repository, is public. Every push to `main` republishes the site. The `.nojekyll` file tells Pages to serve the files as they are, and all paths are relative, so the site also works under a project subpath.
+
+To publish a copy from another account with the [GitHub CLI](https://cli.github.com/):
 
 ```bash
-gh repo create cerebellum-atlas --public --source . --push
+gh repo create cerebellum-atlas --private --source . --push   # or --public
 gh api "repos/$(gh api user --jq .login)/cerebellum-atlas/pages" -X POST \
   -f "source[branch]=main" -f "source[path]=/"
 ```
 
-After a minute or two, the site is live at `https://<your-github-username>.github.io/cerebellum-atlas/`. Every push to `main` republishes it. On a free GitHub plan, Pages needs a public repository.
+Pages from a private repository needs a paid GitHub plan. On a free plan, use `--public`.
 
 Before you publish, read the terms below.
 
