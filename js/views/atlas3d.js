@@ -40,6 +40,14 @@
   };
 
   let root, el = {}, renderer, scene, camera, controls, raf = 0, ro, clock, pointer = null, pointerDirty = false;
+  // Source credits shown on the canvas itself, as the Allen Institute citation policy asks (same page, linked to the data).
+  const ATTRIB = {
+    human: [['https://atlas.brain-map.org/', 'Allen Human Reference Atlas'], ' © Allen Institute for Brain Science, via ',
+      ['https://gin.g-node.org/brainglobe/atlases', 'BrainGlobe'], ' · lobules and nuclei: ',
+      ['https://github.com/DiedrichsenLab/cerebellar_atlases', 'SUIT atlas'], ' (Diedrichsen et al.; CC BY)'],
+    mouse: [['https://download.alleninstitute.org/informatics-archive/current-release/mouse_ccf/', 'Allen Mouse Brain CCFv3'],
+      ' (Wang et al., 2020) © Allen Institute for Brain Science'],
+  };
   let species = CA.store.get('atlas.species', 'human');
   let opts = Object.assign({ shell: true, xray: false, labels: true, bodyParts: true, animate: true, opacity: 0.09 }, CA.store.get('atlas.opts', {}));
   let circuitId = CA.store.get('atlas.circuit', 'loops');
@@ -60,7 +68,8 @@
     el.controls = buildControls();
     el.legend = buildLegend();
     el.hint = h('div', { class: 'atlas-hint' }, 'Drag to rotate · scroll to zoom · right-drag to pan · click a structure');
-    wrap.append(el.canvas, el.labels, el.controls, el.legend, el.hint, el.msg);
+    el.attrib = h('div', { class: 'atlas-attrib' });
+    wrap.append(el.canvas, el.labels, el.controls, el.legend, h('div', { class: 'atlas-foot' }, el.hint, el.attrib), el.msg);
     if (!CA.store.get('intro.dismissed', false)) wrap.append(buildIntro());
     root.appendChild(wrap);
 
@@ -273,6 +282,8 @@
     const T = window.THREE;
     clearScene();
     el.credit.textContent = 'Anatomy: ' + bundle.credit;
+    CA.clear(el.attrib);
+    el.attrib.append('Anatomy: ', ...ATTRIB[sp].map((x) => (Array.isArray(x) ? h('a', { href: x[0], target: '_blank', rel: 'noopener' }, x[1]) : x)));
     bundle.meshes.forEach((rec) => {
       const style = GROUP[rec.group] || GROUP.context;
       let color = style.color;

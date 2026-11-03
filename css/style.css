@@ -153,10 +153,13 @@ select:focus, input.text:focus { border-color: var(--accent); }
   padding: 8px 12px; font-size: .78rem; display: grid; grid-template-columns: auto auto; gap: 3px 14px; }
 .atlas-legend .lg { display: flex; align-items: center; gap: 6px; }
 .atlas-legend .sw { width: 22px; height: 0; border-top: 3px solid; }
-.atlas-hint { position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%); font-size: .8rem; color: var(--muted); background: rgba(13,17,23,.7);
-  padding: 3px 10px; border-radius: 999px; pointer-events: none; white-space: nowrap; }
+/* Footer between the controls column (292px) and the side panel, so it stays visible when the panel is open. */
+.atlas-foot { position: absolute; left: 292px; right: calc(var(--panel-w) + 12px); bottom: 8px; display: flex; flex-direction: column;
+  align-items: center; gap: 5px; pointer-events: none; }
+.atlas-hint { font-size: .8rem; color: var(--muted); background: rgba(13,17,23,.7); padding: 3px 10px; border-radius: 999px; white-space: nowrap; }
 .atlas-msg { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--muted); text-align: center; padding: 30px; }
 .atlas-credit { font-size: .72rem; color: var(--faint); margin-top: 10px; }
+.atlas-attrib { font-size: .7rem; color: var(--muted); text-align: center; pointer-events: auto; background: rgba(13,17,23,.75); padding: 2px 8px; border-radius: 6px; }
 .intro { position: absolute; top: 12px; right: 12px; width: 380px; background: rgba(22,27,34,.94); border: 1px solid var(--line); border-radius: var(--radius);
   padding: 16px 18px; z-index: 5; }
 .intro h2 { font-size: 1.15rem; }
@@ -247,6 +250,7 @@ table.data tr.click:hover td { background: var(--bg3); }
   .brand small { display: none; }
   .search { display: none; }
   .atlas-controls { width: 220px; font-size: .9rem; }
+  .atlas-foot { left: 244px; right: 12px; }
   .intro { display: none; }
   :root { --panel-w: 100vw; }
 }
