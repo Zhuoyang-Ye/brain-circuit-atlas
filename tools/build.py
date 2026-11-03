@@ -8,8 +8,8 @@ Build js/data/bundle.js from the curated data files.
     python3 tools/build.py --add 12345678 23456789
                                         # print papers.json templates for new PMIDs
 
-Inputs:  data/papers.json     curated annotations (evidence type, levels, domains, finding)
-         data/knowledge.json  entities, evidence-graded links, chains, questions, map overlays
+Inputs:  data/papers.json     curated annotations (evidence type, levels, domains, finding, regions)
+         data/knowledge.json  regions, entities, evidence-graded links, chains, questions, map overlays
          data/meshes.json     3D atlas catalog (only checked here)
 Output:  js/data/bundle.js    window.CA_DATA, loadable from file:// without a server
 
@@ -31,6 +31,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA = ROOT / 'data'
 CACHE = DATA / 'pubmed_cache.json'
 OUT = ROOT / 'js' / 'data' / 'bundle.js'
+VIEW_IDS = {'atlas', 'map', 'circuit', 'molecules', 'scales', 'gaps', 'lab', 'library'}   # views registered in js/views/
 ESUMMARY = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi'
 
 
@@ -97,7 +98,11 @@ def validate(kb, papers, meshes, ck):
     statuses = {s['id'] for s in kb['statuses']}
     evidence = {e['id'] for e in kb['evidence']}
     domains = {d['id'] for d in kb['domains']}
-    keys = set()
+    regions = kb.get('regions') or []
+    region_ids = {r.get('id') for r in regions}
+    if not regions or None in region_ids or len(region_ids) != len(regions):
+        ck.err('knowledge.json needs a regions list with unique ids')
+    keys, paper_regions = set(), {}
     for p in papers:
         k = p.get('key')
         if not k or k in keys:
@@ -115,6 +120,10 @@ def validate(kb, papers, meshes, ck):
                 ck.err(f'{k}: unknown domain {d!r}')
         if not p.get('finding'):
             ck.err(f'{k}: missing finding')
+        prs = p.get('regions')
+        if not prs or any(r not in region_ids for r in prs):
+            ck.err(f'{k}: regions must list known region ids, got {prs!r}')
+        paper_regions[k] = set(prs or [])
 
     def refs_ok(where, refs):
         for r in refs or []:
@@ -132,6 +141,27 @@ def validate(kb, papers, meshes, ck):
             if d not in domains:
                 ck.err(f"{e['id']}: unknown domain {d!r}")
         refs_ok(e['id'], e.get('refs'))
+        if e.get('region') and e['region'] not in region_ids:
+            ck.err(f"{e['id']}: unknown region {e['region']!r}")
+        elif e.get('region'):
+            for r in e.get('refs', []):
+                if r in paper_regions and e['region'] not in paper_regions[r]:
+                    ck.warn(f"{e['id']} (region {e['region']}) cites {r}, which is not tagged with that region")
+
+    for r in regions:
+        rid = r.get('id')
+        for f in ('label', 'query', 'entity', 'view', 'views', 'intro'):
+            if not r.get(f):
+                ck.err(f'region {rid}: missing {f}')
+        if r.get('entity') and r['entity'] not in ents:
+            ck.err(f"region {rid}: unknown entity {r['entity']!r}")
+        for v in r.get('views', []):
+            if v not in VIEW_IDS:
+                ck.err(f'region {rid}: unknown view {v!r}')
+        for f in ('levelDesc', 'levelQueries', 'methods'):
+            for l in r.get(f, {}):
+                if l not in levels:
+                    ck.err(f'region {rid}: {f} has unknown level {l!r}')
 
     link_ids = set()
     degree = {i: 0 for i in ents}
@@ -191,7 +221,12 @@ def validate(kb, papers, meshes, ck):
         for a, b in amap.items():
             if a not in ents or b not in ents:
                 ck.err(f'atlas3d alias {sp}: {a} -> {b} unknown')
+    for parent, kids in a3.get('composite', {}).items():
+        if parent not in ents or not kids or any(k not in ents for k in kids):
+            ck.err(f'atlas3d composite {parent}: unknown entity in {kids!r}')
     for c in a3['circuits']:
+        if c.get('region') not in region_ids:
+            ck.err(f"3D circuit {c['id']}: unknown region {c.get('region')!r}")
         for lid in c['links']:
             if lid not in link_ids:
                 ck.err(f"3D circuit {c['id']}: link {lid} not in knowledge base")
@@ -238,6 +273,44 @@ def validate(kb, papers, meshes, ck):
         cited.update(o['refs'])
     for k in keys - cited:
         ck.warn(f'paper {k} is not cited by any entity or link')
+
+
+def derive_regions(kb, papers):
+    """Region membership, computed for the bundle (not stored in the data files).
+
+    Untagged entities are shared between regions. A link belongs to the regions of its region-tagged
+    endpoints and to the regions that all its papers share (else to every region they name). A chain or
+    question belongs to the regions of its tagged entities (else of its links or papers). A region's
+    entities are its tagged ones plus those its links, chains and questions use."""
+    order = [r['id'] for r in kb['regions']]
+    ordered = lambda s: [r for r in order if r in s] or list(order)
+    preg = {p['key']: set(p['regions']) for p in papers}
+    ereg = {e['id']: e['region'] for e in kb['entities'] if e.get('region')}
+
+    def from_papers(refs):
+        sets = [preg[r] for r in refs or [] if r in preg]
+        return set.intersection(*sets) or set.union(*sets) if sets else set()
+
+    links = []
+    for l in kb['links']:
+        s = {ereg[x] for x in (l['s'], l['t']) if x in ereg} | from_papers(l.get('refs'))
+        links.append(dict(l, regions=ordered(s)))
+    lreg = {f"{l['s']}>{l['t']}": set(l['regions']) for l in links}
+    chains = []
+    for c in kb['chains']:
+        s = {ereg[n] for n in c['nodes'] if n in ereg}
+        for a, b in ([] if s else zip(c['nodes'], c['nodes'][1:])):
+            s |= lreg.get(f'{a}>{b}', set()) | lreg.get(f'{b}>{a}', set())
+        chains.append(dict(c, regions=ordered(s)))
+    questions = [dict(q, regions=ordered({ereg[n] for n in q['entities'] if n in ereg} or from_papers(q.get('refs'))))
+                 for q in kb['questions']]
+    members = {r: {i for i, x in ereg.items() if x == r} for r in order}
+    for items, nodes in ((links, lambda l: (l['s'], l['t'])), (chains, lambda c: c['nodes']), (questions, lambda q: q['entities'])):
+        for it in items:
+            for r in it['regions']:
+                members[r].update(nodes(it))
+    ids = [e['id'] for e in kb['entities']]
+    return links, chains, questions, {r: [i for i in ids if i in members[r]] for r in order}
 
 
 def add_templates(pmids):
@@ -310,6 +383,7 @@ def main():
 
     bundle = dict(kb)
     bundle['papers'] = out_papers
+    bundle['links'], bundle['chains'], bundle['questions'], bundle['regionEntities'] = derive_regions(kb, papers)
     bundle['mesh3d'] = {sp: {'label': spec['label'], 'credit': spec['credit'],
                              'entities': sorted({it['entity'] for it in spec['items'] if it.get('entity')})}
                         for sp, spec in meshes.items()}
@@ -320,6 +394,10 @@ def main():
                    encoding='utf-8')
     print(f"wrote {OUT.relative_to(ROOT)}: {len(kb['entities'])} entities, {len(kb['links'])} links, "
           f"{len(out_papers)} papers ({OUT.stat().st_size / 1024:.0f} KB)")
+    for r in kb['regions']:
+        rid = r['id']
+        print(f"  {r['label']}: {len(bundle['regionEntities'][rid])} entities, "
+              f"{sum(rid in l['regions'] for l in bundle['links'])} links, {sum(rid in p['regions'] for p in out_papers)} papers")
 
 
 if __name__ == '__main__':

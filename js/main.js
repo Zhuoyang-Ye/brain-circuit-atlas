@@ -3,10 +3,10 @@
   'use strict';
   const CA = window.CA, D = CA.D, h = CA.h;
   const NAV = [
-    ['atlas', '3D atlas', 'The cerebellum in a real brain, with evidence-graded connections to brain and body'],
+    ['atlas', '3D atlas', 'Each region in a real brain, with evidence-graded connections to brain and body'],
     ['map', 'Functional map', 'Flattened cerebellar cortex: motor, cognitive, social and affective territories'],
-    ['circuit', 'Microcircuit', 'The canonical circuit, animated, with a simulated learning experiment'],
-    ['molecules', 'Cells & molecules', 'Plasticity at the parallel-fiber synapse, neuromodulators, development and disease genes'],
+    ['circuit', 'Microcircuit', 'The canonical cerebellar circuit, animated, with a simulated learning experiment'],
+    ['molecules', 'Cells & molecules', 'Cerebellar plasticity at the parallel-fiber synapse, neuromodulators, development and disease genes'],
     ['scales', 'Across scales', 'Every entity from genes to disorders and the links between them'],
     ['gaps', 'Evidence & gaps', 'Where the evidence is dense, thin or missing, with live PubMed counts'],
     ['lab', 'Hypothesis lab', 'Chain entities across levels and draft a testable hypothesis'],
@@ -16,6 +16,11 @@
   function buildNav() {
     const nav = document.getElementById('nav');
     NAV.filter(([id]) => CA.views[id]).forEach(([id, label, desc]) => nav.appendChild(h('a', { href: '#/' + id, 'data-view': id, title: desc }, label)));
+    const pick = document.getElementById('region');
+    D.regions.forEach((r) => pick.appendChild(h('option', { value: r.id }, r.label)));
+    pick.value = CA.region.id;
+    pick.addEventListener('change', () => { CA.setRegion(pick.value); pick.blur(); });
+    CA.on('region', (r) => { pick.value = r.id; });
   }
 
   /* ---------- global search ---------- */
@@ -34,7 +39,7 @@
       box.classList.remove('hidden');
       if (!results.length) {
         box.appendChild(h('div', { class: 'sr muted' }, 'Nothing in the atlas. ',
-          h('a', { href: CA.pubmedSearchUrl(`(${q}) AND cerebell*`), target: '_blank', rel: 'noopener' }, 'Search PubMed ↗')));
+          h('a', { href: CA.pubmedSearchUrl(`(${q}) AND ${CA.region.query}`), target: '_blank', rel: 'noopener' }, 'Search PubMed ↗')));
         return;
       }
       results.forEach((r, i) => box.appendChild(h('button', {
@@ -74,8 +79,9 @@
       h('div', { class: 'row', style: { justifyContent: 'space-between' } }, h('h2', { style: { margin: 0 } }, D.meta.title),
         h('button', { class: 'icon-btn', onclick: closeModal, title: 'Close (Esc)' }, '✕')),
       h('p', { class: 'muted' }, D.meta.subtitle),
-      h('p', {}, 'The cerebellum holds most of the brain\'s neurons and joins in motor control, cognition, emotion and social behavior. ',
-        'This atlas organizes what the literature shows about it, from molecules and cells to circuits, brain-wide loops, behavior and disease. ',
+      h('p', {}, 'This atlas organizes what the literature shows about brain regions, from molecules and cells to circuits, brain-wide loops, behavior and disease. ',
+        'It began with the cerebellum, which has several times as many neurons as the cerebral cortex and joins in motor control, cognition, emotion and social behavior; ',
+        'the motor cortex is the second region. Pick a region at the top left. ',
         'Every connection is graded by its evidence and linked to the papers behind it, so you can see what is established, what is debated, and where the gaps are.'),
       h('h4', {}, 'Views'),
       h('div', {}, NAV.filter(([id]) => CA.views[id]).map(([id, label, desc]) => h('div', { class: 'small', style: { margin: '3px 0' } },
@@ -89,7 +95,7 @@
         h('li', {}, `${D.papers.length} curated publications. Titles, authors, journals and identifiers come from PubMed through the NCBI E-utilities; the evidence statuses, findings and map scores were written for this atlas.`),
         h('li', {}, D.meta.disclaimer),
         h('li', {}, 'Each one-sentence finding was checked against the paper\'s PubMed abstract. Albus (1971) is not in PubMed, and two papers without a PubMed abstract (Hoffer et al., 1973; Schulman et al., 1981) are summarized from their titles, as their findings state.'),
-        h('li', {}, 'Human lobules and deep nuclei in 3D come from a probabilistic atlas fitted to a different brain, so their boundaries are approximate; the fastigial nucleus is especially uncertain. Structures without a mesh (eyes, inner ear, gut, several brainstem nuclei and, in the human brain, the neuromodulator source nuclei) are placed approximately and shown in italics.'),
+        h('li', {}, 'Human lobules and deep nuclei in 3D come from a probabilistic atlas fitted to a different brain, so their boundaries are approximate; the fastigial nucleus is especially uncertain. Structures without a mesh (eyes, inner ear, gut, several brainstem nuclei and, in the human brain, the neuromodulator source nuclei, premotor areas, S1 and basal forebrain) are placed approximately and shown in italics. Human M1 is drawn as the whole precentral gyrus, which also holds part of premotor cortex.'),
         h('li', {}, 'Coverage is a curated core, not a systematic review. Live PubMed counts in Evidence & gaps show how much literature exists beyond it.')),
       h('h4', {}, 'Credits'),
       h('ul', { class: 'small', style: { paddingLeft: '18px' } },

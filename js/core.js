@@ -1,4 +1,4 @@
-/* Cerebellum Atlas: shared data indexes, DOM helpers, router and the detail panel. */
+/* Cerebellum Atlas: shared data indexes, brain regions, DOM helpers, router and the detail panel. */
 (function () {
   'use strict';
   const D = window.CA_DATA;
@@ -32,7 +32,7 @@
   CA.has3D = (id) => {
     const a3 = D.atlas3d;
     if (Object.values(D.mesh3d || {}).some((m) => m.entities.includes(id))) return true;
-    if (Object.values(a3.sides).some((ids) => ids.includes(id))) return true;
+    if (Object.values(a3.sides).some((ids) => ids.includes(id)) || (a3.composite || {})[id]) return true;
     return Object.values(a3.aliases).some((m) => m[id]);
   };
 
@@ -92,6 +92,24 @@
     },
     set(key, val) { try { localStorage.setItem('ca.' + key, JSON.stringify(val)); } catch (e) { /* private mode */ } },
   };
+
+  /* ---------- brain regions ---------- */
+  // Each region brings its own entities, papers, 3D circuits and PubMed query. Untagged entities (shared
+  // structures, messengers, functions) belong to every region whose links, chains or questions use them.
+  CA.regionById = byId(D.regions);
+  CA.regionMembers = Object.fromEntries(D.regions.map((r) => [r.id, new Set(D.regionEntities[r.id] || [])]));
+  CA.region = CA.regionById[CA.store.get('region')] || D.regions[0];
+  CA.setRegion = (id) => {
+    if (!CA.regionById[id] || id === CA.region.id) return;
+    CA.region = CA.regionById[id];
+    CA.store.set('region', id);
+    CA.emit('region', CA.region);
+  };
+  CA.inRegion = (id, r) => CA.regionMembers[(r || CA.region).id].has(id);
+  CA.regionOf = (id) => (CA.ent[id] && CA.ent[id].region ? CA.regionById[CA.ent[id].region] : null);
+  CA.levelDesc = (lv) => (CA.region.levelDesc || {})[lv] || (CA.levelById[lv] || {}).desc || '';
+  CA.levelQuery = (lv) => (CA.region.levelQueries || {})[lv] || D.levelQueries[lv];
+  CA.methodsFor = (lv) => (CA.region.methods || {})[lv] || D.methods[lv];
 
   const loaded = {};
   CA.loadScript = (src) => loaded[src] || (loaded[src] = new Promise((resolve, reject) => {
@@ -251,6 +269,9 @@
     const content = h('div', {},
       h('div', { class: 'row' }, CA.lvlTag(e.level), e.kind ? h('span', { class: 'muted small' }, e.kind) : null),
       h('h2', {}, e.name),
+      CA.regionOf(id) && CA.regionOf(id) !== CA.region ? h('div', { class: 'small muted', style: { marginTop: '-4px', marginBottom: '6px' } },
+        'Part of the ' + CA.regionOf(id).label.toLowerCase() + ' content. ',
+        h('a', { href: '#', onclick: (ev) => { ev.preventDefault(); CA.setRegion(e.region); } }, 'Switch to ' + CA.regionOf(id).label)) : null,
       e.aka && e.aka.length ? h('div', { class: 'small muted', style: { marginTop: '-4px', marginBottom: '8px' } }, 'Also: ' + e.aka.join(', ')) : null,
       h('p', { class: 'summary' }, e.summary),
       e.domains && e.domains.length ? h('div', { class: 'chips' }, e.domains.map((d) => CA.domainChip(d))) : null,
@@ -266,7 +287,7 @@
       h('h4', {}, `Key evidence (${(e.refs || []).length})`),
       (e.refs || []).map(paperLine),
       h('p', { class: 'small', style: { marginTop: '12px' } },
-        h('a', { href: CA.pubmedSearchUrl(`(${e.name.replace(/[()]/g, '')}) AND cerebell*[tiab]`), target: '_blank', rel: 'noopener' }, 'Search PubMed for more ↗')));
+        h('a', { href: CA.pubmedSearchUrl(`(${e.name.replace(/[()]/g, '')}) AND ${(CA.regionOf(id) || CA.region).query}`), target: '_blank', rel: 'noopener' }, 'Search PubMed for more ↗')));
     openPanel(lv ? lv.label + ' level' : 'Entity', content, 'e:' + id);
   };
 
@@ -355,7 +376,8 @@
       else if (name.includes(q)) score = 60;
       else if (aka.some((a) => a.includes(q))) score = 50;
       else if (norm(e.summary).includes(q)) score = 20;
-      if (score) res.push({ type: 'entity', id: e.id, score, label: e.name, sub: (CA.levelById[e.level] || {}).label });
+      if (score) res.push({ type: 'entity', id: e.id, score, label: e.name,
+        sub: (CA.levelById[e.level] || {}).label + (e.region && D.regions.length > 1 ? ' · ' + CA.regionById[e.region].label : '') });
     });
     D.papers.forEach((p) => {
       const hay = norm([p.title, (p.authors || []).join(' '), p.key, p.journal, p.year].join(' '));
@@ -372,21 +394,49 @@
     return { view: parts[0], kind: parts[1], id: parts.slice(2).join('/') };
   };
 
+  function mountView(viewId, r) {
+    const root = document.getElementById('view');
+    const old = CA.views[CA.current];
+    if (old && old.unmount) { try { old.unmount(); } catch (e) { CA.reportError(e); } }
+    CA.tip.hide();
+    CA.clear(root);
+    root.scrollTop = 0;
+    CA.current = viewId;
+    document.querySelectorAll('#nav a').forEach((a) => a.classList.toggle('active', a.dataset.view === viewId));
+    document.title = CA.views[viewId].title + ' · ' + D.meta.title;
+    regionBar();
+    try { CA.views[viewId].mount(root, r); } catch (e) { CA.reportError(e); }
+    CA.emit('view-mounted', viewId);
+  }
+
+  /** Views that cover other regions only say so above their content and offer a switch. */
+  function regionBar() {
+    const bar = document.getElementById('regionbar');
+    if (!bar) return;
+    const v = CA.current, off = v && !CA.region.views.includes(v);
+    document.querySelectorAll('#nav a').forEach((a) => a.classList.toggle('offregion', !CA.region.views.includes(a.dataset.view)));
+    document.body.classList.toggle('regionbar-on', !!off);
+    CA.clear(bar);
+    if (!off) return;
+    const homes = D.regions.filter((x) => x.views.includes(v));
+    CA.append(bar, h('span', {}, `${CA.views[v].title} covers ${homes.map((x) => 'the ' + x.label.toLowerCase()).join(' and ')} only; `
+      + `there is nothing here on the ${CA.region.label.toLowerCase()} yet.`),
+    homes.map((x) => h('button', { class: 'btn', onclick: () => CA.setRegion(x.id) }, 'Switch to ' + x.label)));
+  }
+
+  // On a region change, a view with onRegion() updates in place; any other view is mounted again.
+  CA.on('region', () => {
+    const v = CA.views[CA.current];
+    if (!v) return;
+    regionBar();
+    if (v.onRegion) { try { v.onRegion(CA.region); } catch (e) { CA.reportError(e); } } else mountView(CA.current, CA.parseHash());
+  });
+
   CA.route = function () {
     const r = CA.parseHash();
     const viewId = CA.views[r.view] ? r.view : CA.order[0];
-    const root = document.getElementById('view');
     if (viewId !== CA.current) {
-      const old = CA.views[CA.current];
-      if (old && old.unmount) { try { old.unmount(); } catch (e) { CA.reportError(e); } }
-      CA.tip.hide();
-      CA.clear(root);
-      root.scrollTop = 0;
-      CA.current = viewId;
-      document.querySelectorAll('#nav a').forEach((a) => a.classList.toggle('active', a.dataset.view === viewId));
-      document.title = CA.views[viewId].title + ' · Cerebellum Atlas';
-      try { CA.views[viewId].mount(root, r); } catch (e) { CA.reportError(e); }
-      CA.emit('view-mounted', viewId);
+      mountView(viewId, r);
     } else if (CA.views[viewId].route) {
       CA.views[viewId].route(r);
     }

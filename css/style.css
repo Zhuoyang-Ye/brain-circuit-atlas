@@ -47,6 +47,13 @@ kbd { background: var(--bg3); border: 1px solid var(--line); border-radius: 4px;
 #nav a { padding: 6px 10px; border-radius: 6px; color: var(--muted); white-space: nowrap; font-size: .92rem; }
 #nav a:hover { color: var(--text); background: var(--bg2); text-decoration: none; }
 #nav a.active { color: var(--text); background: var(--bg3); box-shadow: inset 0 -2px 0 var(--accent); }
+#nav a.offregion { opacity: .5; }
+.region-pick { flex: none; padding: 4px 6px; font-size: .9rem; max-width: 150px; }
+#regionbar { display: none; position: fixed; top: var(--topbar); left: 0; right: 0; height: 38px; align-items: center; gap: 12px; padding: 0 16px;
+  background: #1a2130; border-bottom: 1px solid var(--line); color: var(--muted); font-size: .88rem; z-index: 40; }
+#regionbar .btn { padding: 3px 10px; }
+body.regionbar-on #regionbar { display: flex; }
+body.regionbar-on #view { top: calc(var(--topbar) + 38px); }
 .search { position: relative; width: 260px; flex: none; }
 .search input { width: 100%; background: var(--bg2); border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; outline: none; }
 .search input:focus { border-color: var(--accent); }

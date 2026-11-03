@@ -32,7 +32,7 @@
     els.out = h('div', {});
     els.saved = h('div', {});
     els.question = h('div', {});
-    const input = h('input', { class: 'text', placeholder: 'Add an entity: e.g. Purkinje, VTA, Crus I, autism…', style: { width: '100%' } });
+    const input = h('input', { class: 'text', placeholder: 'Add an entity by name or synonym (e.g. ' + D.entities.filter((e) => e.region === CA.region.id).slice(0, 3).map((e) => (e.aka && e.aka[0]) || e.name).join(', ') + ')…', style: { width: '100%' } });
     const drop = h('div', { class: 'search-results', style: { left: 0, right: 'auto', width: '100%', top: '36px', display: 'none' } });
     input.addEventListener('input', () => {
       const res = CA.search(input.value, 10).filter((r) => r.type === 'entity');
@@ -52,10 +52,10 @@
       h('div', { class: 'cols' },
         h('div', {},
           h('div', { class: 'card' }, h('h3', {}, 'Start from a chain'),
-            D.chains.map((c) => h('div', { class: 'qcard', onclick: () => { setChain(c.nodes.filter((n, i, a) => a.indexOf(n) === i)); } },
+            D.chains.filter((c) => c.regions.includes(CA.region.id)).map((c) => h('div', { class: 'qcard', onclick: () => { setChain(c.nodes.filter((n, i, a) => a.indexOf(n) === i)); } },
               h('b', {}, c.name), h('span', { class: 'small muted' }, c.desc)))),
           h('div', { class: 'card' }, h('h3', {}, 'or an open question'),
-            D.questions.map((q) => h('div', { class: 'qcard', onclick: () => setQuestion(q.id) }, h('b', {}, q.title)))),
+            D.questions.filter((q) => q.regions.includes(CA.region.id)).map((q) => h('div', { class: 'qcard', onclick: () => setQuestion(q.id) }, h('b', {}, q.title)))),
           h('div', { class: 'card' }, h('h3', {}, 'Saved'), els.saved)),
         h('div', {},
           els.question,
@@ -141,7 +141,7 @@
     const doms = new Set(CA.ent[last].domains || []);
     const li = CA.levelById[lvl(last)].index;
     const nb = CA.neighbors(last);
-    const untested = D.entities.filter((e) => !inChain.has(e.id) && !nb.has(e.id) && e.id !== last
+    const untested = D.entities.filter((e) => !inChain.has(e.id) && !nb.has(e.id) && e.id !== last && CA.inRegion(e.id)
       && Math.abs(CA.levelById[e.level].index - li) <= 2 && CA.levelById[e.level].index !== li
       && (e.domains || []).some((d) => doms.has(d)))
       .map((e) => ({ e, score: CA.neighbors(e.id).size + (CA.levelById[e.level].index > li ? 2 : 0) }))
@@ -173,7 +173,7 @@
     const species = {};
     refs.forEach((k) => (CA.paper[k].species || []).forEach((sp) => { species[sp] = (species[sp] || 0) + 1; }));
     const topSpecies = Object.entries(species).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([sp, n]) => `${sp} (${n})`);
-    const ma = D.methods[lvl(weakest.a)], mb = D.methods[lvl(weakest.b)];
+    const ma = CA.methodsFor(lvl(weakest.a)), mb = CA.methodsFor(lvl(weakest.b));
     const A = inl(weakest.a), B = inl(weakest.b);
     const full = mid.length
       ? `Every step has support, so test the whole chain: perturb ${inl(first)} and ask whether its effect on ${inl(last)} requires ${mid[0]} (block ${mid[0]} during the perturbation).`
@@ -227,7 +227,7 @@
       h('table', { class: 'data' }, c.st.map((s) => h('tr', { class: s.link ? 'click' : '', onclick: () => s.link && CA.showLink(s.link.id) },
         h('td', {}, s.link ? CA.statusBadge(s.status) : h('span', { class: 'badge', style: { color: '#8b949e', borderColor: '#6e7681' } }, 'Gap')),
         h('td', {}, name(s.a), ' → ', name(s.b), s.link ? h('div', { class: 'tiny muted' }, s.link.rel + (s.reversed ? ' (curated in the reverse direction)' : '')) : null),
-        h('td', {}, s.link ? CA.citeChips(s.link.refs) : h('a', { class: 'small', target: '_blank', rel: 'noopener', href: CA.pubmedSearchUrl(`(${name(s.a)}) AND (${name(s.b)}) AND cerebell*`) }, 'search PubMed ↗'))))),
+        h('td', {}, s.link ? CA.citeChips(s.link.refs) : h('a', { class: 'small', target: '_blank', rel: 'noopener', href: CA.pubmedSearchUrl(`(${name(s.a)}) AND (${name(s.b)}) AND ${CA.region.query}`) }, 'search PubMed ↗'))))),
       h('h4', {}, 'Critical test (weakest step)'),
       h('p', {}, c.test),
       h('h4', {}, 'Predictions'),
@@ -236,7 +236,7 @@
         h('ul', {}, c.alts.map((p) => h('li', { class: 'small' }, p.map(name).join(' → '))))] : null,
       h('h4', {}, 'Methods by level'),
       h('div', { class: 'small' }, c.levels.map((l) => h('div', { style: { margin: '4px 0' } },
-        CA.lvlTag(l), ' ', h('b', {}, 'Manipulate: '), D.methods[l].manipulate.slice(0, 2).join('; '), ' · ', h('b', {}, 'Read out: '), D.methods[l].readout.slice(0, 2).join('; ')))),
+        CA.lvlTag(l), ' ', h('b', {}, 'Manipulate: '), CA.methodsFor(l).manipulate.slice(0, 2).join('; '), ' · ', h('b', {}, 'Read out: '), CA.methodsFor(l).readout.slice(0, 2).join('; ')))),
       c.topSpecies.length ? h('p', { class: 'small muted', style: { marginTop: '8px' } }, 'Supporting evidence comes mostly from: ' + c.topSpecies.join(', ') + '. Consider whether each step has been shown in the species you care about.') : null,
       c.qs.length ? [h('h4', {}, 'Related open questions'), h('div', {}, c.qs.map((q) => h('div', { class: 'small' }, '• ', h('a', { href: '#', onclick: (ev) => { ev.preventDefault(); setQuestion(q.id); } }, q.title))))] : null,
       h('h4', {}, 'Notes'), notesBox,
@@ -256,7 +256,7 @@
     c.st.forEach((s) => lines.push(`- **${name(s.a)} → ${name(s.b)}**: ${s.link ? CA.statusById[s.status].label + '. ' + s.link.rel + '. ' + (s.link.refs || []).map((k) => CA.shortCite(CA.paper[k])).join('; ') : 'Gap: no curated evidence.'}`));
     lines.push('', '## Critical test', '', c.test, '', '## Predictions', '', ...c.predictions.map((p) => '- ' + p));
     if (c.alts.length) lines.push('', '## Alternative routes to rule out', '', ...c.alts.map((p) => '- ' + p.map(name).join(' → ')));
-    lines.push('', '## Methods', '', ...c.levels.map((l) => `- ${CA.levelById[l].label}: manipulate with ${D.methods[l].manipulate.slice(0, 2).join('; ')}; read out with ${D.methods[l].readout.slice(0, 2).join('; ')}`));
+    lines.push('', '## Methods', '', ...c.levels.map((l) => `- ${CA.levelById[l].label}: manipulate with ${CA.methodsFor(l).manipulate.slice(0, 2).join('; ')}; read out with ${CA.methodsFor(l).readout.slice(0, 2).join('; ')}`));
     if (notes) lines.push('', '## Notes', '', notes);
     lines.push('', '## References', '', ...c.refs.map((k) => '- ' + CA.fullCite(CA.paper[k])));
     lines.push('', '_Evidence statuses were drafted with AI assistance from PubMed abstracts; verify against the sources._');
@@ -276,7 +276,7 @@
   }
   function downloadMd() {
     const blob = new Blob([markdown()], { type: 'text/markdown' });
-    const a = h('a', { href: URL.createObjectURL(blob), download: 'cerebellum-hypothesis.md' });
+    const a = h('a', { href: URL.createObjectURL(blob), download: CA.region.id + '-hypothesis.md' });
     document.body.appendChild(a); a.click(); a.remove();
     setTimeout(() => URL.revokeObjectURL(a.href), 2000);
   }

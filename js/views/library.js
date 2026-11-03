@@ -1,4 +1,4 @@
-/* Library: every paper behind the atlas, filterable by level, domain, evidence type, species and year. */
+/* Library: every paper behind the atlas, filterable by region, level, domain, evidence type, species and year. */
 (function () {
   'use strict';
   const CA = window.CA, D = CA.D, h = CA.h, s = CA.s;
@@ -13,7 +13,8 @@
   CA.register('library', { title: 'Library', mount, unmount() {} });
   CA.evColor = evColor;
 
-  const defaults = () => ({ q: '', levels: [], domains: [], ev: D.evidence.map((e) => e.id), species: [], y0: YMIN, y1: YMAX, sort: 'year-desc' });
+  const defaults = () => ({ q: '', allRegions: false, levels: [], domains: [], ev: D.evidence.map((e) => e.id), species: [], y0: YMIN, y1: YMAX, sort: 'year-desc' });
+  const pool = () => (f.allRegions ? D.papers : D.papers.filter((p) => p.regions.includes(CA.region.id)));
   const usage = (k) => (CA.citedBy[k] || []).length;
 
   function mount(node) {
@@ -30,10 +31,10 @@
     els.legend = h('div', { class: 'row tiny', style: { marginTop: '8px', gap: '4px 14px' } });
     els.hist = h('div', {});
     els.filters = h('div', {});
+    els.intro = h('p', {});
     root.appendChild(h('div', { class: 'page' },
       h('div', { class: 'page-head' },
-        h('div', {}, h('h2', {}, 'Library'),
-          h('p', {}, `The ${D.papers.length} publications behind every entity, connection and map score, with metadata verified against PubMed. Each card states the finding the atlas relies on.`)),
+        h('div', {}, h('h2', {}, 'Library'), els.intro),
         h('div', { class: 'row' }, h('button', { class: 'btn', onclick: exportBib, title: 'BibTeX for the papers currently shown' }, 'Export .bib'))),
       h('div', { class: 'cols' },
         h('div', { class: 'card' }, els.filters),
@@ -59,7 +60,7 @@
     q.value = f.q;
     q.addEventListener('input', CA.debounce(() => { f.q = q.value; save(); render(); }, 150));
     const evCount = {}, spCount = {};
-    D.papers.forEach((p) => { evCount[p.evidence] = (evCount[p.evidence] || 0) + 1; (p.species || []).forEach((x) => { spCount[x] = (spCount[x] || 0) + 1; }); });
+    pool().forEach((p) => { evCount[p.evidence] = (evCount[p.evidence] || 0) + 1; (p.species || []).forEach((x) => { spCount[x] = (spCount[x] || 0) + 1; }); });
     const species = Object.keys(spCount).sort((a, b) => spCount[b] - spCount[a]);
     const y0 = h('input', { type: 'range', min: YMIN, max: YMAX, value: f.y0, style: { width: '100%' } });
     const y1 = h('input', { type: 'range', min: YMIN, max: YMAX, value: f.y1, style: { width: '100%' } });
@@ -69,8 +70,12 @@
       ylab.textContent = `${f.y0}–${f.y1}`; save(); render();
     };
     y0.addEventListener('input', onYear); y1.addEventListener('input', onYear);
+    const others = D.papers.length - D.papers.filter((p) => p.regions.includes(CA.region.id)).length;
     CA.append(box,
       q,
+      D.regions.length > 1 ? h('label', { class: 'check small', style: { marginTop: '10px' }, title: `Only papers on the ${CA.region.label.toLowerCase()} are listed unless this is ticked` },
+        h('input', { type: 'checkbox', checked: f.allRegions, onchange: () => { f.allRegions = !f.allRegions; update(); } }),
+        'Include other regions', h('span', { class: 'muted' }, ` +${others}`)) : null,
       h('h4', {}, 'Level'),
       h('div', { class: 'chips' }, D.levels.map((l) => h('span', { class: 'chip' + (f.levels.includes(l.id) ? ' on' : ''), onclick: () => { toggle(f.levels, l.id); update(); } },
         h('span', { class: 'dot', style: { background: l.color } }), l.label))),
@@ -197,14 +202,16 @@
   }
 
   function render() {
-    const list = sorted(D.papers.filter(matches));
-    els.count.textContent = `${list.length} of ${D.papers.length} papers`;
+    const all = pool(), list = sorted(all.filter(matches));
+    els.intro.textContent = `The ${all.length} publications ${f.allRegions ? '' : 'on the ' + CA.region.label.toLowerCase() + ' '}behind every entity, connection and map score, `
+      + 'with metadata verified against PubMed. Each card states the finding the atlas relies on.';
+    els.count.textContent = `${list.length} of ${all.length} papers`;
     renderStack(list);
     renderHist(list);
     CA.clear(els.list);
     if (!list.length) {
       els.list.append(h('div', { class: 'card' }, h('p', { class: 'muted', style: { margin: 0 } }, 'No papers match these filters. '),
-        h('a', { href: CA.pubmedSearchUrl(((f.q || '') + ' cerebell*').trim()), target: '_blank', rel: 'noopener' }, 'Search PubMed instead ↗')));
+        h('a', { href: CA.pubmedSearchUrl(f.q ? `(${f.q}) AND ${CA.region.query}` : CA.region.query), target: '_blank', rel: 'noopener' }, 'Search PubMed instead ↗')));
       return;
     }
     list.forEach((p) => els.list.appendChild(card(p)));
@@ -214,15 +221,15 @@
   function bibAuthor(a) { const m = /^(.*\S)\s+([A-Z]{1,4})$/.exec(a); return m ? `${m[1]}, ${m[2].split('').join('. ')}.` : a; }
   function exportBib() {
     const esc = (t) => String(t || '').replace(/[{}]/g, '');
-    const bib = sorted(D.papers.filter(matches)).map((p) => {
+    const bib = sorted(pool().filter(matches)).map((p) => {
       const fields = [
         ['author', (p.authors || []).map(bibAuthor).join(' and ')], ['title', `{${esc(p.title).replace(/\.$/, '')}}`], ['journal', esc(p.journal)],
         ['year', p.year], ['volume', p.volume], ['pages', (p.pages || '').replace('-', '--')], ['doi', p.doi], ['pmid', p.pmid],
-        ['note', p.finding ? 'Cerebellum Atlas: ' + esc(p.finding) : ''],
+        ['note', p.finding ? D.meta.title + ': ' + esc(p.finding) : ''],
       ].filter(([, v]) => v);
       return `@article{${p.key},\n` + fields.map(([k, v]) => `  ${k} = {${v}}`).join(',\n') + '\n}';
     }).join('\n\n');
-    const a = h('a', { href: URL.createObjectURL(new Blob([bib + '\n'], { type: 'application/x-bibtex' })), download: 'cerebellum-atlas.bib' });
+    const a = h('a', { href: URL.createObjectURL(new Blob([bib + '\n'], { type: 'application/x-bibtex' })), download: D.meta.title.toLowerCase().replace(/\W+/g, '-') + '.bib' });
     document.body.appendChild(a); a.click(); a.remove();
     setTimeout(() => URL.revokeObjectURL(a.href), 2000);
   }

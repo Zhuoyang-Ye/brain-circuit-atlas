@@ -390,6 +390,16 @@ def extra_anchors(species, meshes, helpers):
         a['ser-neurons'] = sided([0.0, dhi[1] - 0.2 * (dhi[1] - dlo[1]), dlo[2] + 0.55 * (dhi[2] - dlo[2])])  # rostral medullary reticular formation
         a['tmn'] = sided([0.25, slo[1] - 0.15, sc[2] + 0.15])   # posterior hypothalamus, below and in front of the STN
         a['lh'] = sided([0.45, sc[1] - 0.05, sc[2] + 0.45])     # lateral hypothalamus, in front of the STN
+
+        def right(key):   # mean of the right-hemisphere vertices of a bilateral mesh
+            v = np.vstack([m['_v'] for m in meshes if m['key'] == key])
+            return v[v[:, 0] > 0].mean(0)
+        # motor-cortex neighbours the Allen meshes here do not segment (y up, z anterior)
+        pr = right('precentral')
+        a['premotor'] = sided([0.6 * pr[0], pr[1] + 0.4, pr[2] + 0.9])   # in front of and above M1 (dorsal premotor, toward SMA)
+        a['s1'] = sided([pr[0], pr[1], pr[2] - 0.9])                     # postcentral gyrus, behind M1
+        ulo, _, _ = bbox(meshes, 'putamen')
+        a['basal-forebrain'] = sided([0.75, ulo[1], (right('accumbens')[2] + right('amygdala')[2]) / 2])   # below the striatum, between accumbens and amygdala
         start = np.array([0.0, dlo[1] + 0.1, dc[2]])
         spine = [start, start + [0, -1.6, -0.15], start + [0, -3.2, -0.25]]
     else:

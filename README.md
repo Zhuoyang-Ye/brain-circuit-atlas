@@ -1,6 +1,6 @@
 # Cerebellum Atlas
 
-An interactive, evidence-linked map of the cerebellum and its connections to the rest of the brain and body. It runs from molecules and cells through circuits and brain-wide loops to behavior, cognition and disease. Every connection carries an evidence grade and links to the PubMed papers behind it, and a hypothesis lab turns weak or missing links into testable experiments.
+An interactive, evidence-linked map of brain regions and their connections to the rest of the brain and body, starting with the cerebellum and the motor cortex. For each region it runs from molecules and cells through circuits and brain-wide loops to behavior, cognition and disease. Every connection carries an evidence grade and links to the PubMed papers behind it, and a hypothesis lab turns weak or missing links into testable experiments.
 
 **Live site:** <https://zhuoyang-ye.github.io/cerebellum-atlas/>
 
@@ -15,20 +15,40 @@ cd cerebellum-atlas
 python3 -m http.server 8000      # then open http://localhost:8000
 ```
 
-The page loads about 4.5 MB, mostly 3D meshes. These load only when you open the 3D atlas.
+The page loads about 5.3 MB, mostly 3D meshes (about 4 MB). These load only when you open the 3D atlas.
+
+## Regions
+
+Pick a region with the menu at the top left, next to the title. The site remembers the choice.
+
+| Region | Entities | Links | Chains | Open questions | Papers |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Cerebellum | 134 | 292 | 21 | 17 | 257 |
+| Motor cortex | 43 | 54 | 8 | 5 | 55 |
+
+Some structures, such as the thalamus, striatum, VTA, dopamine and the spinal cord, are shared and appear in both regions. So do links between regions, such as cerebellar output reaching motor cortex through the thalamus. The totals are 163 entities, 340 links and 309 papers.
+
+The region sets:
+
+- which circuits the 3D atlas offers and which structures it brings forward;
+- which entities, links and chains Across scales shows (tick *All regions* to see everything);
+- which papers, weak links and open questions Evidence & gaps, the Hypothesis lab and the Library start from (the Library can also *Include other regions*);
+- the PubMed query used for live counts and searches.
+
+The Functional map, Microcircuit and Cells & molecules views exist only for the cerebellum for now. In another region their menu entries are dimmed, and opening one shows a notice with a button to switch region.
 
 ## Views
 
 | View | What it shows |
 | --- | --- |
-| **3D atlas** | Human and mouse brains with the cerebellum, deep nuclei and their partners. Human lobules and nuclei come from the SUIT probabilistic atlas, fitted to the Allen Human Reference Atlas; mouse structures come from the Allen CCFv3. Choose a circuit (cerebro-cerebellar loops, olive, basal ganglia and substantia nigra, VTA/reward, fear and anxiety, navigation, feeding, vestibular, body, neuromodulators) to see evidence-graded pathways. *Animate signal flow* sends dots along each pathway from source to target to show its direction; the timing is schematic. In the neuromodulator circuit, a tag on each pathway names the transmitter it carries. Eyes, inner ear, gut and body are shown as approximate markers. |
+| **3D atlas** | Human and mouse brains with the current region and its partners. Human lobules and nuclei come from the SUIT probabilistic atlas, fitted to the Allen Human Reference Atlas, which supplies the other human structures (including the precentral gyrus); mouse structures come from the Allen CCFv3. Choose a circuit to see evidence-graded pathways. For the cerebellum: cerebro-cerebellar loops, olive, basal ganglia and substantia nigra, VTA/reward, fear and anxiety, navigation, feeding, vestibular, body, neuromodulators. For the motor cortex: descending output, inputs to M1, cerebellar and basal ganglia loops, motor planning (ALM) and learning signals. *Animate signal flow* sends dots along each pathway from source to target to show its direction; the timing is schematic. In the neuromodulator circuit, a tag on each pathway names the transmitter it carries. Eyes, inner ear, gut and body are shown as approximate markers. |
 | **Functional map** | A schematic flatmap of human cerebellar cortex (SUIT-style). Overlays show the motor, oculomotor, executive, language, social and emotional territories, plus a lesion map. |
 | **Microcircuit** | The canonical circuit (mossy/parallel fibers, climbing fibers, Purkinje, Golgi, MLI, UBC, nuclei, olive), with animated signals and a toy eyeblink-conditioning model. You can switch off LTD and watch learning partly survive. |
 | **Cells & molecules** | The parallel-fiber–Purkinje synapse: calcium sets the sign of plasticity (LTP vs. LTD), with zebrin modules, developmental lineage and disease genes. A matrix shows which neuromodulators (noradrenaline, serotonin, dopamine, acetylcholine, histamine), neuropeptides (orexin, CRF, CGRP, opioids, oxytocin, CCK, NPY, PACAP), retrograde and glial messengers, hormones and glycine act on which cells, with receptor, sign of effect and evidence grade. |
-| **Across scales** | All 132 entities in seven level columns, linked by 290 graded connections, with 20 highlighted mechanistic chains. |
-| **Evidence & gaps** | A domain × level matrix of curated papers, plus live PubMed counts fetched from your browser. It lists untested bridges, the weakest links, and open questions. |
+| **Across scales** | The region's entities in seven level columns, linked by graded connections, with highlighted mechanistic chains (all regions together: 163 entities, 340 links, 28 chains). |
+| **Evidence & gaps** | A domain × level matrix of the region's curated papers, plus live PubMed counts fetched from your browser. It lists untested bridges, the weakest links, and open questions. |
 | **Hypothesis lab** | Chain entities across levels. Each step is checked against the knowledge graph; the weakest step becomes the critical experiment, with predictions, alternative routes and methods. Export the result as Markdown. |
-| **Library** | The 257 papers, filterable by level, domain, evidence type, species and year. Exports BibTeX. |
+| **Library** | The region's papers (309 in all), filterable by level, domain, evidence type, species and year. Exports BibTeX. |
 
 Every entity, link and paper opens in the side panel. Links in the panel are shareable (for example `#/scales/e/dentate`). Press `/` to search and `Esc` to close the panel.
 
@@ -57,8 +77,8 @@ js/views/*.js           one file per view
 js/data/bundle.js       GENERATED: knowledge base + PubMed metadata
 js/data/meshes_*.js     GENERATED: 3D meshes (quantized)
 js/vendor/              three.js r147 + OrbitControls (MIT)
-data/knowledge.json     entities, links, chains, open questions, flatmap, 3D circuits
-data/papers.json        curated papers: PMID, evidence type, species, levels, domains, finding
+data/knowledge.json     regions, entities, links, chains, open questions, flatmap, 3D circuits
+data/papers.json        curated papers: PMID, regions, evidence type, species, levels, domains, finding
 data/pubmed_cache.json  cached PubMed metadata
 data/meshes.json        which atlas structures to export for the 3D view
 tools/build.py          validates the knowledge base and writes js/data/bundle.js
@@ -77,12 +97,12 @@ python3 tools/build.py --offline  # no network; use cached metadata only
 
 If you edit the JSON with a script, run `python3 tools/jsonfmt.py data/*.json` afterwards to restore the one-record-per-line layout.
 
-`build.py` uses only the Python standard library. It checks every cross-reference (entity ids, paper keys, domains, levels, statuses) and stops with a clear message if anything is wrong. Setting `NCBI_API_KEY` raises the NCBI rate limit, but it is optional.
+`build.py` uses only the Python standard library. It checks every cross-reference (entity ids, paper keys, region ids, domains, levels, statuses) and stops with a clear message if anything is wrong. Setting `NCBI_API_KEY` raises the NCBI rate limit, but it is optional.
 
 **Add a paper.**
 
 1. Run `python3 tools/build.py --add 12345678`. It prints a template with the title and authors filled in.
-2. Paste the template into `data/papers.json` and fill in `evidence`, `species`, `methods`, `levels`, `domains` and a one-sentence `finding`.
+2. Paste the template into `data/papers.json` and fill in `regions` (one or more region ids, for example `["motor-cortex"]`), `evidence`, `species`, `methods`, `levels`, `domains` and a one-sentence `finding`. Check the finding against the abstract.
 3. Cite the paper's `key` in the `refs` of an entity or link in `data/knowledge.json`, then rebuild.
 
 **Add a connection.** Append to `links` in `data/knowledge.json`:
@@ -96,7 +116,31 @@ If you edit the JSON with a script, run `python3 tools/jsonfmt.py data/*.json` a
 
 Neuromodulatory links can also carry `tx` (a transmitter code from `neuromodulation.tx`, drawn as a tag in the 3D view), `via` (the receptor, free text) and `sign` (`+`, `-`, `±` or `~`). A link from a messenger listed in `neuromodulation.groups` to a cell or pathway listed in `neuromodulation.targets` appears in the matrix in Cells & molecules.
 
-**Add an entity, chain or open question.** Follow the existing records in `entities`, `chains` and `questions`. To place a new entity in the 3D view, add it to `atlas3d.sides` (which hemisphere) or to `atlas3d.aliases`.
+**Add an entity, chain or open question.** Follow the existing records in `entities`, `chains` and `questions`. Give an entity a `region` if it belongs to one region. Leave it out for structures and messengers shared by several regions, such as the thalamus or dopamine. To place a new entity in the 3D view, add it to `atlas3d.sides` (which hemisphere) or to `atlas3d.aliases`.
+
+Links, chains and questions get their regions when the bundle is built, so they don't carry a region field:
+
+- **Links:** a link belongs to the regions of its region-tagged endpoints. It also belongs to the regions that all its cited papers share; if the papers share none, it belongs to every region any of them covers.
+- **Chains:** a chain takes the regions of its tagged entities. If none of them is tagged, it takes the regions of its links.
+- **Questions:** a question takes the regions of its tagged entities, or else those of its cited papers.
+
+Shared entities show up in a region when one of that region's links, chains or questions uses them.
+
+## Adding a brain region
+
+1. **Region record.** Add a record to `regions` in `knowledge.json` with these fields:
+   - `id` and `label`;
+   - `entity`, the entity that stands for the whole region;
+   - `query`, a PubMed term added to the region's searches and live counts;
+   - `views`, the views that cover this region;
+   - `view`, a camera preset in `VIEWS` in `js/views/atlas3d.js` (add one for each species);
+   - `intro`, a `{title, text}` object for the 3D atlas introduction.
+
+   Optional: `speciesNote` (`{human, mouse}`), and `levelDesc`, `levelQueries` and `methods`, keyed by level, which replace the defaults for this region.
+2. **Papers.** Collect papers and add each with `regions` set, checking every finding against its abstract.
+3. **Content.** Write the entities (with `region`), links, chains and open questions, citing those papers. Keep each status within what the cited abstracts show.
+4. **3D.** Add `atlas3d.circuits` with `"region": "<id>"`. Map structures to entities in `data/meshes.json` (Allen structure ids), or add an anchor in `tools/build_meshes.py` for a structure without a mesh, then rebuild the meshes. If one entity covers several entities, list them in `atlas3d.composite` (for example, motor cortex = M1 + premotor).
+5. **Build.** Run `python3 tools/build.py`, which validates the region ids and prints per-region counts. Then open every view with the new region selected.
 
 ## Rebuilding the 3D meshes (rarely needed)
 
@@ -134,8 +178,10 @@ Before you publish, read the terms below.
 
 ## Caveats
 
-- The entity summaries, findings, link statuses and map scores were **drafted with AI assistance from PubMed abstracts**. They need review by cerebellum researchers before the site is used for teaching or published. Every claim is linked to its sources so it can be checked.
+- The entity summaries, findings, link statuses and map scores were **drafted with AI assistance from PubMed abstracts**. They need review by researchers in each field before the site is used for teaching or published. Every claim is linked to its sources so it can be checked.
 - Each paper's one-sentence finding was checked against its PubMed abstract. Albus (1971) is not in PubMed, and Hoffer et al. (1973) and Schulman et al. (1981) have no PubMed abstract, so their findings rest on the titles and say so.
-- The library is a curated core of about 260 papers, not a systematic review. Use the live PubMed counts in Evidence & gaps to see the wider literature. The neuromodulator layer is thin in places: many effects come from a single slice study in one species, and where the oxytocin receptor is expressed in the cerebellum is still debated.
+- The library is a curated core of about 310 papers, not a systematic review. Use the live PubMed counts in Evidence & gaps to see the wider literature. The neuromodulator layer is thin in places: many effects come from a single slice study in one species, and where the oxytocin receptor is expressed in the cerebellum is still debated.
+- The motor cortex is the newer and thinner region: 55 papers, mostly in mice, rats and monkeys, and many of its links rest on a single study.
+- In the human 3D brain, M1 is drawn as the whole precentral gyrus, because the Allen human atlas does not separate M1 from premotor cortex. The human premotor areas, primary somatosensory cortex and basal forebrain have no mesh and are placed approximately. In the mouse, the secondary motor area (MOs) stands in for premotor cortex and includes ALM.
 - Diagrams are schematic. The eyeblink model is a toy model for intuition, not a fitted model.
 - Human lobules and nuclei come from a group probabilistic atlas fitted to a different brain, so their boundaries are approximate. The fastigial nucleus is barely resolved in SUIT and is drawn from a low probability threshold. Brainstem nuclei, the human neuromodulator source nuclei and body structures without meshes are placed approximately (italic labels).

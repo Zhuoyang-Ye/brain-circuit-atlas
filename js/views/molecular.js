@@ -188,6 +188,9 @@
     const NM = CA.D.neuromodulation;
     if (!NM) return h('p', { class: 'muted' }, 'No neuromodulator data.');
     const targets = NM.targets, tset = new Set(targets.map((t) => t.id));
+    // this page covers one region: leave out the messengers' links curated for other regions
+    const home = (CA.D.regions.find((r) => r.views.includes('molecules')) || CA.region).id;
+    const mine = (l) => l.regions.includes(home);
     const dashed = (st) => st === 'debated' || st === 'hypothesis';
     // drop the trailing parenthetical (receptor names are in the cells; full name in the title and panel)
     const short = (id) => CA.ent[id].name.replace(/\s*\([^)]*\)$/, '');
@@ -211,12 +214,12 @@
     NM.groups.forEach((g) => {
       rows.push(h('tr', { class: 'grp' }, h('td', { colspan: targets.length + 3 }, g.label)));
       g.rows.forEach((id) => {
-        const out = CA.out[id] || [];
+        const out = (CA.out[id] || []).filter(mine);
         const byT = {};
         out.forEach((l) => { if (tset.has(l.t)) byT[l.t] = l; });
         rows.push(h('tr', { class: 'nm-row', 'data-entity': id },
           h('th', { class: 'rowh' }, CA.entChip(id, { label: short(id) })),
-          h('td', { class: 'side' }, (CA.inc[id] || []).map((l) => linkChip(l, l.s))),
+          h('td', { class: 'side' }, (CA.inc[id] || []).filter(mine).map((l) => linkChip(l, l.s))),
           targets.map((t) => (byT[t.id] ? cell(byT[t.id]) : h('td', { class: 'nme' }))),
           h('td', { class: 'side' }, out.filter((l) => !tset.has(l.t)).map((l) => linkChip(l, l.t)))));
       });

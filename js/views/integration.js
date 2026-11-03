@@ -1,10 +1,14 @@
-/* Across scales: every entity in seven level columns, linked by evidence-graded connections. */
+/* Across scales: every entity of the current region (or of all regions) in seven level columns, linked by evidence-graded connections. */
 (function () {
   'use strict';
   const CA = window.CA, D = CA.D, h = CA.h, s = CA.s;
   const COLW = 182, ROWH = 27, NODEW = 156, TOP = 56;
   let root, svg, nodes = {}, edges = [], focus = null, chain = null, domain = null, unsub = null, hidden = new Set(), hoverId = null;
-  let layoutCache = null;
+  let scope = null;   // a region id, or 'all'
+  const layoutCache = {};
+  const scopedEntities = () => (scope === 'all' ? D.entities : D.entities.filter((e) => CA.inRegion(e.id)));
+  const scopedLinks = () => (scope === 'all' ? D.links : D.links.filter((l) => l.regions.includes(scope)));
+  const scopedChains = () => (scope === 'all' ? D.chains : D.chains.filter((c) => c.regions.includes(scope)));
 
   CA.register('scales', { title: 'Across scales', mount, unmount, route });
 
@@ -13,8 +17,9 @@
 
   /* ---------- layout: barycentric ordering within level columns ---------- */
   function layout() {
-    if (layoutCache) return layoutCache;
-    const cols = D.levels.map((l) => D.entities.filter((e) => e.level === l.id).map((e) => e.id));
+    if (layoutCache[scope]) return layoutCache[scope];
+    const ents = scopedEntities(), inScope = new Set(ents.map((e) => e.id));
+    const cols = D.levels.map((l) => ents.filter((e) => e.level === l.id).map((e) => e.id));
     const kindOrder = (id) => (CA.ent[id].kind || '') + CA.ent[id].name;
     cols.forEach((c) => c.sort((a, b) => kindOrder(a).localeCompare(kindOrder(b))));
     const pos = {};
@@ -25,30 +30,39 @@
       order.forEach((ci) => {
         const bary = {};
         cols[ci].forEach((id) => {
-          const nb = [...CA.neighbors(id)].filter((n) => CA.ent[n].level !== CA.ent[id].level);
+          const nb = [...CA.neighbors(id)].filter((n) => inScope.has(n) && CA.ent[n].level !== CA.ent[id].level);
           bary[id] = nb.length ? nb.reduce((a, n) => a + pos[n], 0) / nb.length : pos[id];
         });
         cols[ci].sort((a, b) => bary[a] - bary[b]);
         cols[ci].forEach((id, i) => { pos[id] = cols[ci].length > 1 ? i / (cols[ci].length - 1) : 0.5; });
       });
     }
-    const maxN = Math.max(...cols.map((c) => c.length));
+    const maxN = Math.max(1, ...cols.map((c) => c.length));
     const xy = {};
     cols.forEach((c, ci) => {
       const off = (maxN - c.length) * ROWH / 2;
       c.forEach((id, i) => { xy[id] = { x: 20 + ci * COLW, y: TOP + off + i * ROWH, col: ci }; });
     });
-    layoutCache = { xy, width: 40 + D.levels.length * COLW - (COLW - NODEW), height: TOP + maxN * ROWH + 30 };
-    return layoutCache;
+    layoutCache[scope] = { xy, width: 40 + D.levels.length * COLW - (COLW - NODEW), height: TOP + maxN * ROWH + 30 };
+    return layoutCache[scope];
   }
 
   function mount(node, r) {
     root = node;
+    nodes = {}; chain = null;
+    // an entity of another region, opened from its panel, shows the whole knowledge base
+    const want = r && r.kind === 'e' && CA.ent[r.id] ? r.id : null;
+    const allRegions = CA.store.get('scales.allRegions', false) || (want && !CA.inRegion(want));
+    scope = allRegions ? 'all' : CA.region.id;
     const L = layout();
     svg = s('svg', { width: L.width, height: L.height, style: { display: 'block' } });
     draw(L);
     const chainSel = h('select', { onchange: (ev) => { setChain(ev.target.value || null); } },
-      h('option', { value: '' }, 'Highlight a chain…'), D.chains.map((c) => h('option', { value: c.id }, c.name)));
+      h('option', { value: '' }, 'Highlight a chain…'), scopedChains().map((c) => h('option', { value: c.id }, c.name)));
+    const regionBox = D.regions.length > 1 ? h('label', { class: 'check small', title: 'Show the entities and links of every region' },
+      h('input', { type: 'checkbox', checked: allRegions, onchange: (ev) => { CA.store.set('scales.allRegions', ev.target.checked); CA.clear(root); unmount(); mount(root, null); } }),
+      'All regions') : null;
+    const what = scope === 'all' ? 'Every entity in the knowledge base' : `Every ${CA.region.label.toLowerCase()} entity, with the shared structures and functions it links to`;
     const domChips = h('div', { class: 'chips' }, D.domains.map((d) => {
       const chip = CA.domainChip(d.id, { onclick: () => { domain = domain === d.id ? null : d.id; domChips.querySelectorAll('.chip').forEach((c) => c.classList.toggle('on', c.dataset.d === domain)); paint(); } });
       chip.dataset.d = d.id;
@@ -60,8 +74,8 @@
     root.appendChild(h('div', { class: 'page', style: { maxWidth: 'none' } },
       h('div', { class: 'page-head' }, h('div', {},
         h('h2', {}, 'Across scales'),
-        h('p', {}, 'Every entity in the knowledge base, from genes to disorders, with its evidence-graded links. Hover to see a neighborhood, click for details, or highlight a mechanistic chain that crosses levels.')),
-        h('div', { class: 'row' }, chainSel, h('button', { class: 'btn ghost', onclick: () => { focus = null; chainSel.value = ''; setChain(null); } }, 'Clear'))),
+        h('p', {}, what + ', from genes to disorders, with its evidence-graded links. Hover to see a neighborhood, click for details, or highlight a mechanistic chain that crosses levels.')),
+        h('div', { class: 'row' }, regionBox, chainSel, h('button', { class: 'btn ghost', onclick: () => { focus = null; chainSel.value = ''; setChain(null); } }, 'Clear'))),
       h('div', { class: 'card', style: { marginBottom: '12px' } },
         h('div', { class: 'row', style: { justifyContent: 'space-between' } }, statusBoxes,
           h('span', { class: 'small muted' }, '± debated · ? hypothesis')),
@@ -75,7 +89,7 @@
   }
   function unmount() { if (unsub) unsub(); unsub = null; }
   function route(r) {
-    if (r && r.kind === 'c' && D.chains.some((c) => c.id === r.id)) setChain(r.id);
+    if (r && r.kind === 'c' && scopedChains().some((c) => c.id === r.id)) setChain(r.id);
   }
 
   function legendLine(status) {
@@ -97,11 +111,11 @@
   function draw(L) {
     D.levels.forEach((l, ci) => {
       svg.appendChild(s('text', { x: 20 + ci * COLW + NODEW / 2, y: 24, 'text-anchor': 'middle', fill: l.color, 'font-size': 13, 'font-weight': 600 }, l.label));
-      svg.appendChild(s('text', { x: 20 + ci * COLW + NODEW / 2, y: 40, 'text-anchor': 'middle', fill: '#6e7681', 'font-size': 10.5 }, l.desc));
+      svg.appendChild(s('text', { x: 20 + ci * COLW + NODEW / 2, y: 40, 'text-anchor': 'middle', fill: '#6e7681', 'font-size': 10.5 }, scope === 'all' ? l.desc : CA.levelDesc(l.id)));
     });
     const eg = s('g', {}), ng = s('g', {}), gg = s('g', {});
     svg.append(eg, gg, ng);
-    edges = D.links.map((l) => {
+    edges = scopedLinks().filter((l) => L.xy[l.s] && L.xy[l.t]).map((l) => {
       const a = L.xy[l.s], b = L.xy[l.t];
       const path = s('path', { class: 'edge', d: edgePath(a, b), stroke: '#8b949e', 'stroke-width': WIDTH[l.status], 'stroke-dasharray': DASH[l.status], opacity: 0.35 });
       path.addEventListener('mousemove', (ev) => CA.tip.show(`<b>${CA.esc(CA.ent[l.s].name)} → ${CA.esc(CA.ent[l.t].name)}</b><br>${CA.esc(l.rel)}<br><span style="color:${CA.statusColor(l.status)}">${CA.statusById[l.status].label}</span>`, ev));
@@ -138,7 +152,7 @@
   }
 
   function setChain(id) {
-    chain = id ? D.chains.find((c) => c.id === id) : null;
+    chain = id ? scopedChains().find((c) => c.id === id) : null;
     const info = document.getElementById('chain-info');
     if (info) {
       CA.clear(info);

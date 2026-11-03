@@ -84,6 +84,23 @@
   "volume": "84",
   "year": 2000
  },
+ "11039938": {
+  "authors": [
+   "Rioult-Pedotti MS",
+   "Friedman D",
+   "Donoghue JP"
+  ],
+  "doi": "10.1126/science.290.5491.533",
+  "issue": "5491",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "533-6",
+  "pmc": "",
+  "pmid": "11039938",
+  "title": "Learning-induced LTP in neocortex",
+  "volume": "290",
+  "year": 2000
+ },
  "11301030": {
   "authors": [
    "Kreitzer AC",
@@ -207,6 +224,23 @@
   "volume": "99",
   "year": 2002
  },
+ "12062029": {
+  "authors": [
+   "Graziano MS",
+   "Taylor CS",
+   "Moore T"
+  ],
+  "doi": "10.1016/s0896-6273(02)00698-0",
+  "issue": "5",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "841-51",
+  "pmc": "",
+  "pmid": "12062029",
+  "title": "Complex movements evoked by microstimulation of precentral cortex",
+  "volume": "34",
+  "year": 2002
+ },
  "12797962": {
   "authors": [
    "Hashimoto K",
@@ -220,6 +254,25 @@
   "pmc": "",
   "pmid": "12797962",
   "title": "Functional differentiation of multiple climbing fiber inputs during synapse elimination in the developing cerebellum",
+  "volume": "38",
+  "year": 2003
+ },
+ "12797965": {
+  "authors": [
+   "Conner JM",
+   "Culberson A",
+   "Packowski C",
+   "Chiba AA",
+   "Tuszynski MH"
+  ],
+  "doi": "10.1016/s0896-6273(03)00288-5",
+  "issue": "5",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "819-29",
+  "pmc": "",
+  "pmid": "12797965",
+  "title": "Lesions of the Basal forebrain cholinergic system impair task acquisition and abolish cortical plasticity associated with motor skill learning",
   "volume": "38",
   "year": 2003
  },
@@ -326,6 +379,26 @@
   "volume": "44",
   "year": 2004
  },
+ "15664173": {
+  "authors": [
+   "Arlotta P",
+   "Molyneaux BJ",
+   "Chen J",
+   "Inoue J",
+   "Kominami R",
+   "Macklis JD"
+  ],
+  "doi": "10.1016/j.neuron.2004.12.036",
+  "issue": "2",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "207-21",
+  "pmc": "",
+  "pmid": "15664173",
+  "title": "Neuronal subtype-specific genes that control corticospinal motor neuron development in vivo",
+  "volume": "45",
+  "year": 2005
+ },
  "15803161": {
   "authors": [
    "Apps R",
@@ -408,6 +481,25 @@
   "volume": "47",
   "year": 2005
  },
+ "16157277": {
+  "authors": [
+   "Molyneaux BJ",
+   "Arlotta P",
+   "Hirata T",
+   "Hibi M",
+   "Macklis JD"
+  ],
+  "doi": "10.1016/j.neuron.2005.08.030",
+  "issue": "6",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "817-31",
+  "pmc": "",
+  "pmid": "16157277",
+  "title": "Fezl is required for the birth and specification of corticospinal motor neurons",
+  "volume": "47",
+  "year": 2005
+ },
  "16202705": {
   "authors": [
    "Machold R",
@@ -485,6 +577,23 @@
   "volume": "8",
   "year": 2005
  },
+ "16284245": {
+  "authors": [
+   "Chen B",
+   "Schaevitz LR",
+   "McConnell SK"
+  ],
+  "doi": "10.1073/pnas.0508732102",
+  "issue": "47",
+  "journal": "Proc Natl Acad Sci U S A",
+  "journalFull": "Proceedings of the National Academy of Sciences of the United States of America",
+  "pages": "17184-9",
+  "pmc": "PMC1282569",
+  "pmid": "16284245",
+  "title": "Fezl regulates the differentiation and axon targeting of layer 5 subcortical projection neurons in cerebral cortex",
+  "volume": "102",
+  "year": 2005
+ },
  "16301180": {
   "authors": [
    "Safo PK",
@@ -557,6 +666,67 @@
   "volume": "496",
   "year": 2006
  },
+ "16680163": {
+  "authors": [
+   "Kleim JA",
+   "Chan S",
+   "Pringle E",
+   "Schallert K",
+   "Procaccio V",
+   "Jimenez R",
+   "Cramer SC"
+  ],
+  "doi": "10.1038/nn1699",
+  "issue": "6",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "735-7",
+  "pmc": "",
+  "pmid": "16680163",
+  "title": "BDNF val66met polymorphism is associated with modified experience-dependent plasticity in human motor cortex",
+  "volume": "9",
+  "year": 2006
+ },
+ "16835248": {
+  "authors": [
+   "Vucic S",
+   "Kiernan MC"
+  ],
+  "doi": "10.1093/brain/awl172",
+  "issue": "Pt 9",
+  "journal": "Brain",
+  "journalFull": "Brain : a journal of neurology",
+  "pages": "2436-46",
+  "pmc": "",
+  "pmid": "16835248",
+  "title": "Novel threshold tracking techniques suggest that cortical hyperexcitability is an early feature of motor neuron disease",
+  "volume": "129",
+  "year": 2006
+ },
+ "16838014": {
+  "authors": [
+   "Hochberg LR",
+   "Serruya MD",
+   "Friehs GM",
+   "Mukand JA",
+   "Saleh M",
+   "Caplan AH",
+   "Branner A",
+   "Chen D",
+   "Penn RD",
+   "Donoghue JP"
+  ],
+  "doi": "10.1038/nature04970",
+  "issue": "7099",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "164-71",
+  "pmc": "",
+  "pmid": "16838014",
+  "title": "Neuronal ensemble control of prosthetic devices by a human with tetraplegia",
+  "volume": "442",
+  "year": 2006
+ },
  "16928872": {
   "authors": [
    "Kishimoto Y",
@@ -604,6 +774,42 @@
   "title": "Endogenous nitric oxide release required for long-term synaptic depression in the cerebellum",
   "volume": "349",
   "year": 1991
+ },
+ "1705965": {
+  "authors": [
+   "Dum RP",
+   "Strick PL"
+  ],
+  "doi": "10.1523/JNEUROSCI.11-03-00667.1991",
+  "issue": "3",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "667-89",
+  "pmc": "PMC6575356",
+  "pmid": "1705965",
+  "title": "The origin of corticospinal projections from the premotor areas in the frontal lobe",
+  "volume": "11",
+  "year": 1991
+ },
+ "17148468": {
+  "authors": [
+   "Stinear CM",
+   "Barber PA",
+   "Smale PR",
+   "Coxon JP",
+   "Fleming MK",
+   "Byblow WD"
+  ],
+  "doi": "10.1093/brain/awl333",
+  "issue": "Pt 1",
+  "journal": "Brain",
+  "journalFull": "Brain : a journal of neurology",
+  "pages": "170-80",
+  "pmc": "",
+  "pmid": "17148468",
+  "title": "Functional potential in chronic stroke patients depends on corticospinal tract integrity",
+  "volume": "130",
+  "year": 2007
  },
  "17347275": {
   "authors": [
@@ -724,6 +930,25 @@
   "volume": "27",
   "year": 2007
  },
+ "18246064": {
+  "authors": [
+   "Weiler N",
+   "Wood L",
+   "Yu J",
+   "Solla SA",
+   "Shepherd GM"
+  ],
+  "doi": "10.1038/nn2049",
+  "issue": "3",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "360-6",
+  "pmc": "PMC2748826",
+  "pmid": "18246064",
+  "title": "Top-down laminar organization of the excitatory network in motor cortex",
+  "volume": "11",
+  "year": 2008
+ },
  "18319727": {
   "authors": [
    "Ito M"
@@ -737,6 +962,21 @@
   "pmid": "18319727",
   "title": "Control of mental activities by internal models in the cerebellum",
   "volume": "9",
+  "year": 2008
+ },
+ "18558853": {
+  "authors": [
+   "Lemon RN"
+  ],
+  "doi": "10.1146/annurev.neuro.31.060407.125547",
+  "issue": "",
+  "journal": "Annu Rev Neurosci",
+  "journalFull": "Annual review of neuroscience",
+  "pages": "195-218",
+  "pmc": "",
+  "pmid": "18558853",
+  "title": "Descending pathways in motor control",
+  "volume": "31",
   "year": 2008
  },
  "18806784": {
@@ -809,6 +1049,42 @@
   "pmid": "19126760",
   "title": "Endocannabinoid-mediated control of synaptic transmission",
   "volume": "89",
+  "year": 2009
+ },
+ "19139417": {
+  "authors": [
+   "Rathelot JA",
+   "Strick PL"
+  ],
+  "doi": "10.1073/pnas.0808362106",
+  "issue": "3",
+  "journal": "Proc Natl Acad Sci U S A",
+  "journalFull": "Proceedings of the National Academy of Sciences of the United States of America",
+  "pages": "918-23",
+  "pmc": "PMC2621250",
+  "pmid": "19139417",
+  "title": "Subdivisions of primary motor cortex based on cortico-motoneuronal cells",
+  "volume": "106",
+  "year": 2009
+ },
+ "19174446": {
+  "authors": [
+   "Kuramoto E",
+   "Furuta T",
+   "Nakamura KC",
+   "Unzai T",
+   "Hioki H",
+   "Kaneko T"
+  ],
+  "doi": "10.1093/cercor/bhn231",
+  "issue": "9",
+  "journal": "Cereb Cortex",
+  "journalFull": "Cerebral cortex (New York, N.Y. : 1991)",
+  "pages": "2065-77",
+  "pmc": "",
+  "pmid": "19174446",
+  "title": "Two types of thalamocortical projections from the motor thalamic nuclei of the rat: a single neuron-tracing study using viral vectors",
+  "volume": "19",
   "year": 2009
  },
  "19226510": {
@@ -971,6 +1247,27 @@
   "volume": "24",
   "year": 2009
  },
+ "19759902": {
+  "authors": [
+   "Molina-Luna K",
+   "Pekanovic A",
+   "Röhrich S",
+   "Hertler B",
+   "Schubring-Giese M",
+   "Rioult-Pedotti MS",
+   "Luft AR"
+  ],
+  "doi": "10.1371/journal.pone.0007082",
+  "issue": "9",
+  "journal": "PLoS One",
+  "journalFull": "PloS one",
+  "pages": "e7082",
+  "pmc": "PMC2738964",
+  "pmid": "19759902",
+  "title": "Dopamine in motor cortex is necessary for skill learning and synaptic plasticity",
+  "volume": "4",
+  "year": 2009
+ },
  "19857577": {
   "authors": [
    "Balsters JH",
@@ -1010,6 +1307,45 @@
   "title": "Orexins excite neurons of the rat cerebellar nucleus interpositus via orexin 2 receptors in vitro",
   "volume": "9",
   "year": 2010
+ },
+ "19946265": {
+  "authors": [
+   "Yang G",
+   "Pan F",
+   "Gan WB"
+  ],
+  "doi": "10.1038/nature08577",
+  "issue": "7275",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "920-4",
+  "pmc": "PMC4724802",
+  "pmid": "19946265",
+  "title": "Stably maintained dendritic spines are associated with lifelong memories",
+  "volume": "462",
+  "year": 2009
+ },
+ "19946267": {
+  "authors": [
+   "Xu T",
+   "Yu X",
+   "Perlik AJ",
+   "Tobin WF",
+   "Zweig JA",
+   "Tennant K",
+   "Jones T",
+   "Zuo Y"
+  ],
+  "doi": "10.1038/nature08389",
+  "issue": "7275",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "915-9",
+  "pmc": "PMC2844762",
+  "pmid": "19946267",
+  "title": "Rapid formation and selective stabilization of synapses for enduring motor memories",
+  "volume": "462",
+  "year": 2009
  },
  "20300467": {
   "authors": [
@@ -1069,6 +1405,53 @@
   "volume": "107",
   "year": 2010
  },
+ "20436481": {
+  "authors": [
+   "Anderson CT",
+   "Sheets PL",
+   "Kiritani T",
+   "Shepherd GM"
+  ],
+  "doi": "10.1038/nn.2538",
+  "issue": "6",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "739-44",
+  "pmc": "PMC2876193",
+  "pmid": "20436481",
+  "title": "Sublayer-specific microcircuits of corticospinal and corticostriatal neurons in motor cortex",
+  "volume": "13",
+  "year": 2010
+ },
+ "20694004": {
+  "authors": [
+   "Liu K",
+   "Lu Y",
+   "Lee JK",
+   "Samara R",
+   "Willenberg R",
+   "Sears-Kraxberger I",
+   "Tedeschi A",
+   "Park KK",
+   "Jin D",
+   "Cai B",
+   "Xu B",
+   "Connolly L",
+   "Steward O",
+   "Zheng B",
+   "He Z"
+  ],
+  "doi": "10.1038/nn.2603",
+  "issue": "9",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "1075-81",
+  "pmc": "PMC2928871",
+  "pmid": "20694004",
+  "title": "PTEN deletion enhances the regenerative ability of adult corticospinal neurons",
+  "volume": "13",
+  "year": 2010
+ },
  "20960054": {
   "authors": [
    "D'Antoni S",
@@ -1113,6 +1496,25 @@
   "volume": "54",
   "year": 2011
  },
+ "21048709": {
+  "authors": [
+   "Clarkson AN",
+   "Huang BS",
+   "Macisaac SE",
+   "Mody I",
+   "Carmichael ST"
+  ],
+  "doi": "10.1038/nature09511",
+  "issue": "7321",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "305-9",
+  "pmc": "PMC3058798",
+  "pmid": "21048709",
+  "title": "Reducing excessive GABA-mediated tonic inhibition promotes functional recovery after stroke",
+  "volume": "468",
+  "year": 2010
+ },
  "21084685": {
   "authors": [
    "Carey MR",
@@ -1150,6 +1552,24 @@
   "title": "Internal models in the cerebellum",
   "volume": "2",
   "year": 1998
+ },
+ "21325515": {
+  "authors": [
+   "Hosp JA",
+   "Pekanovic A",
+   "Rioult-Pedotti MS",
+   "Luft AR"
+  ],
+  "doi": "10.1523/JNEUROSCI.5411-10.2011",
+  "issue": "7",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "2481-7",
+  "pmc": "PMC6623715",
+  "pmid": "21325515",
+  "title": "Dopaminergic projections from midbrain to primary motor cortex mediate motor skill learning",
+  "volume": "31",
+  "year": 2011
  },
  "21460832": {
   "authors": [
@@ -1316,6 +1736,27 @@
   "volume": "78",
   "year": 2012
  },
+ "22722855": {
+  "authors": [
+   "Churchland MM",
+   "Cunningham JP",
+   "Kaufman MT",
+   "Foster JD",
+   "Nuyujukian P",
+   "Ryu SI",
+   "Shenoy KV"
+  ],
+  "doi": "10.1038/nature11129",
+  "issue": "7405",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "51-6",
+  "pmc": "PMC3393826",
+  "pmid": "22722855",
+  "title": "Neural population dynamics during reaching",
+  "volume": "487",
+  "year": 2012
+ },
  "22763451": {
   "authors": [
    "Tsai PT",
@@ -1392,6 +1833,26 @@
   "volume": "291",
   "year": 1990
  },
+ "23303952": {
+  "authors": [
+   "Hooks BM",
+   "Mao T",
+   "Gutnisky DA",
+   "Yamawaki N",
+   "Svoboda K",
+   "Shepherd GM"
+  ],
+  "doi": "10.1523/JNEUROSCI.4338-12.2013",
+  "issue": "2",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "748-60",
+  "pmc": "PMC3710148",
+  "pmid": "23303952",
+  "title": "Organization of cortical and thalamic input to pyramidal neurons in mouse motor cortex",
+  "volume": "33",
+  "year": 2013
+ },
  "23318873": {
   "authors": [
    "Oostland M",
@@ -1407,6 +1868,23 @@
   "pmid": "23318873",
   "title": "Serotonergic control of Purkinje cell maturation and climbing fibre elimination by 5-HT3 receptors in the juvenile mouse cerebellum",
   "volume": "591",
+  "year": 2013
+ },
+ "23725001": {
+  "authors": [
+   "Shenoy KV",
+   "Sahani M",
+   "Churchland MM"
+  ],
+  "doi": "10.1146/annurev-neuro-062111-150509",
+  "issue": "",
+  "journal": "Annu Rev Neurosci",
+  "journalFull": "Annual review of neuroscience",
+  "pages": "337-59",
+  "pmc": "",
+  "pmid": "23725001",
+  "title": "Cortical control of arm movements: a dynamical systems perspective",
+  "volume": "36",
   "year": 2013
  },
  "23741401": {
@@ -1527,6 +2005,63 @@
   "pmid": "24318484",
   "title": "Consensus paper: Language and the cerebellum: an ongoing enigma",
   "volume": "13",
+  "year": 2014
+ },
+ "24361077": {
+  "authors": [
+   "Guo ZV",
+   "Li N",
+   "Huber D",
+   "Ophir E",
+   "Gutnisky D",
+   "Ting JT",
+   "Feng G",
+   "Svoboda K"
+  ],
+  "doi": "10.1016/j.neuron.2013.10.020",
+  "issue": "1",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "179-94",
+  "pmc": "PMC3984938",
+  "pmid": "24361077",
+  "title": "Flow of cortical activity underlying a tactile decision in mice",
+  "volume": "81",
+  "year": 2014
+ },
+ "24487233": {
+  "authors": [
+   "Kaufman MT",
+   "Churchland MM",
+   "Ryu SI",
+   "Shenoy KV"
+  ],
+  "doi": "10.1038/nn.3643",
+  "issue": "3",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "440-8",
+  "pmc": "PMC3955357",
+  "pmid": "24487233",
+  "title": "Cortical activity in the null space: permitting preparation without movement",
+  "volume": "17",
+  "year": 2014
+ },
+ "24805237": {
+  "authors": [
+   "Peters AJ",
+   "Chen SX",
+   "Komiyama T"
+  ],
+  "doi": "10.1038/nature13235",
+  "issue": "7504",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "263-7",
+  "pmc": "",
+  "pmid": "24805237",
+  "title": "Emergence of reproducible spatiotemporal activity during motor learning",
+  "volume": "510",
   "year": 2014
  },
  "24843004": {
@@ -1769,6 +2304,47 @@
   "volume": "53",
   "year": 2016
  },
+ "25731172": {
+  "authors": [
+   "Li N",
+   "Chen TW",
+   "Guo ZV",
+   "Gerfen CR",
+   "Svoboda K"
+  ],
+  "doi": "10.1038/nature14178",
+  "issue": "7541",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "51-6",
+  "pmc": "",
+  "pmid": "25731172",
+  "title": "A motor cortex circuit for motor planning and movement",
+  "volume": "519",
+  "year": 2015
+ },
+ "25892304": {
+  "authors": [
+   "Kawai R",
+   "Markman T",
+   "Poddar R",
+   "Ko R",
+   "Fantana AL",
+   "Dhawale AK",
+   "Kampff AR",
+   "Ölveczky BP"
+  ],
+  "doi": "10.1016/j.neuron.2015.03.024",
+  "issue": "3",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "800-12",
+  "pmc": "PMC5939934",
+  "pmid": "25892304",
+  "title": "Motor cortex is required for learning but not for executing a motor skill",
+  "volume": "86",
+  "year": 2015
+ },
  "25965178": {
   "authors": [
    "Ankri L",
@@ -1789,6 +2365,24 @@
   "pmid": "25965178",
   "title": "A novel inhibitory nucleo-cortical circuit controls cerebellar Golgi cell activity",
   "volume": "4",
+  "year": 2015
+ },
+ "26098758": {
+  "authors": [
+   "Chen SX",
+   "Kim AN",
+   "Peters AJ",
+   "Komiyama T"
+  ],
+  "doi": "10.1038/nn.4049",
+  "issue": "8",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "1109-15",
+  "pmc": "PMC4519436",
+  "pmid": "26098758",
+  "title": "Subtype-specific plasticity of inhibitory circuits in motor cortex during motor learning",
+  "volume": "18",
   "year": 2015
  },
  "26131933": {
@@ -1991,6 +2585,32 @@
   "volume": "18",
   "year": 2015
  },
+ "26633811": {
+  "authors": [
+   "Guo JZ",
+   "Graves AR",
+   "Guo WW",
+   "Zheng J",
+   "Lee A",
+   "Rodríguez-González J",
+   "Li N",
+   "Macklin JJ",
+   "Phillips JW",
+   "Mensh BD",
+   "Branson K",
+   "Hantman AW"
+  ],
+  "doi": "10.7554/eLife.10774",
+  "issue": "",
+  "journal": "Elife",
+  "journalFull": "eLife",
+  "pages": "e10774",
+  "pmc": "PMC4749564",
+  "pmid": "26633811",
+  "title": "Cortex commands the performance of skilled movement",
+  "volume": "4",
+  "year": 2015
+ },
  "26948890": {
   "authors": [
    "Ingram M",
@@ -2012,6 +2632,25 @@
   "pmc": "PMC4795980",
   "pmid": "26948890",
   "title": "Cerebellar Transcriptome Profiles of ATXN1 Transgenic Mice Reveal SCA1 Disease Progression and Protection Pathways",
+  "volume": "89",
+  "year": 2016
+ },
+ "26948893": {
+  "authors": [
+   "Biane JS",
+   "Takashima Y",
+   "Scanziani M",
+   "Conner JM",
+   "Tuszynski MH"
+  ],
+  "doi": "10.1016/j.neuron.2016.02.001",
+  "issue": "6",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "1173-1179",
+  "pmc": "PMC4795975",
+  "pmid": "26948893",
+  "title": "Thalamocortical Projections onto Behaviorally Relevant Neurons Exhibit Plasticity during Adult Motor Learning",
   "volume": "89",
   "year": 2016
  },
@@ -2400,6 +3039,52 @@
   "volume": "27",
   "year": 2017
  },
+ "28942925": {
+  "authors": [
+   "Wang X",
+   "Liu Y",
+   "Li X",
+   "Zhang Z",
+   "Yang H",
+   "Zhang Y",
+   "Williams PR",
+   "Alwahab NSA",
+   "Kapur K",
+   "Yu B",
+   "Zhang Y",
+   "Chen M",
+   "Ding H",
+   "Gerfen CR",
+   "Wang KH",
+   "He Z"
+  ],
+  "doi": "10.1016/j.cell.2017.08.014",
+  "issue": "2",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "440-455.e14",
+  "pmc": "PMC5679421",
+  "pmid": "28942925",
+  "title": "Deconstruction of Corticospinal Circuits for Goal-Directed Motor Skills",
+  "volume": "171",
+  "year": 2017
+ },
+ "29042690": {
+  "authors": [
+   "Ebbesen CL",
+   "Brecht M"
+  ],
+  "doi": "10.1038/nrn.2017.119",
+  "issue": "11",
+  "journal": "Nat Rev Neurosci",
+  "journalFull": "Nature reviews. Neuroscience",
+  "pages": "694-705",
+  "pmc": "",
+  "pmid": "29042690",
+  "title": "Motor cortex - to act or not to act?",
+  "volume": "18",
+  "year": 2017
+ },
  "29061964": {
   "authors": [
    "Cayco-Gajic NA",
@@ -2416,6 +3101,22 @@
   "title": "Sparse synaptic connectivity is required for decorrelation and pattern separation in feedforward networks",
   "volume": "8",
   "year": 2017
+ },
+ "29172091": {
+  "authors": [
+   "Svoboda K",
+   "Li N"
+  ],
+  "doi": "10.1016/j.conb.2017.10.023",
+  "issue": "",
+  "journal": "Curr Opin Neurobiol",
+  "journalFull": "Current opinion in neurobiology",
+  "pages": "33-41",
+  "pmc": "",
+  "pmid": "29172091",
+  "title": "Neural mechanisms of movement planning: motor cortex and beyond",
+  "volume": "49",
+  "year": 2018
  },
  "29184200": {
   "authors": [
@@ -2583,6 +3284,30 @@
   "pmid": "29662214",
   "title": "Locomotor activity modulates associative learning in mouse cerebellum",
   "volume": "21",
+  "year": 2018
+ },
+ "29719245": {
+  "authors": [
+   "Ueno M",
+   "Nakamura Y",
+   "Li J",
+   "Gu Z",
+   "Niehaus J",
+   "Maezawa M",
+   "Crone SA",
+   "Goulding M",
+   "Baccei ML",
+   "Yoshida Y"
+  ],
+  "doi": "10.1016/j.celrep.2018.03.137",
+  "issue": "5",
+  "journal": "Cell Rep",
+  "journalFull": "Cell reports",
+  "pages": "1286-1300.e7",
+  "pmc": "PMC6608728",
+  "pmid": "29719245",
+  "title": "Corticospinal Circuits from the Sensory and Motor Cortices Differentially Regulate Skilled Movements through Distinct Spinal Interneurons",
+  "volume": "23",
   "year": 2018
  },
  "29802362": {
@@ -2887,6 +3612,36 @@
   "pmc": "PMC6212318",
   "pmid": "30333626",
   "title": "A cortico-cerebellar loop for motor planning",
+  "volume": "563",
+  "year": 2018
+ },
+ "30382200": {
+  "authors": [
+   "Economo MN",
+   "Viswanathan S",
+   "Tasic B",
+   "Bas E",
+   "Winnubst J",
+   "Menon V",
+   "Graybuck LT",
+   "Nguyen TN",
+   "Smith KA",
+   "Yao Z",
+   "Wang L",
+   "Gerfen CR",
+   "Chandrashekar J",
+   "Zeng H",
+   "Looger LL",
+   "Svoboda K"
+  ],
+  "doi": "10.1038/s41586-018-0642-9",
+  "issue": "7729",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "79-84",
+  "pmc": "",
+  "pmid": "30382200",
+  "title": "Distinct descending motor cortex pathways and their roles in movement",
   "volume": "563",
   "year": 2018
  },
@@ -3406,6 +4161,30 @@
   "volume": "8",
   "year": 2019
  },
+ "31875851": {
+  "authors": [
+   "Sauerbrei BA",
+   "Guo JZ",
+   "Cohen JD",
+   "Mischiati M",
+   "Guo W",
+   "Kabra M",
+   "Verma N",
+   "Mensh B",
+   "Branson K",
+   "Hantman AW"
+  ],
+  "doi": "10.1038/s41586-019-1869-9",
+  "issue": "7790",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "386-391",
+  "pmc": "PMC6962553",
+  "pmid": "31875851",
+  "title": "Cortical pattern generation during dexterous movement is input-driven",
+  "volume": "577",
+  "year": 2020
+ },
  "31905212": {
   "authors": [
    "Grasselli G",
@@ -3818,6 +4597,25 @@
   "volume": "11",
   "year": 2021
  },
+ "33981047": {
+  "authors": [
+   "Willett FR",
+   "Avansino DT",
+   "Hochberg LR",
+   "Henderson JM",
+   "Shenoy KV"
+  ],
+  "doi": "10.1038/s41586-021-03506-2",
+  "issue": "7858",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "249-254",
+  "pmc": "PMC8163299",
+  "pmid": "33981047",
+  "title": "High-performance brain-to-text communication via handwriting",
+  "volume": "593",
+  "year": 2021
+ },
  "34140698": {
   "authors": [
    "Aldinger KA",
@@ -3945,6 +4743,126 @@
   "volume": "36",
   "year": 2021
  },
+ "34616062": {
+  "authors": [
+   "Bakken TE",
+   "Jorstad NL",
+   "Hu Q",
+   "Lake BB",
+   "Tian W",
+   "Kalmbach BE",
+   "Crow M",
+   "Hodge RD",
+   "Krienen FM",
+   "Sorensen SA",
+   "Eggermont J",
+   "Yao Z",
+   "Aevermann BD",
+   "Aldridge AI",
+   "Bartlett A",
+   "Bertagnolli D",
+   "Casper T",
+   "Castanon RG",
+   "Crichton K",
+   "Daigle TL",
+   "Dalley R",
+   "Dee N",
+   "Dembrow N",
+   "Diep D",
+   "Ding SL",
+   "Dong W",
+   "Fang R",
+   "Fischer S",
+   "Goldman M",
+   "Goldy J",
+   "Graybuck LT",
+   "Herb BR",
+   "Hou X",
+   "Kancherla J",
+   "Kroll M",
+   "Lathia K",
+   "van Lew B",
+   "Li YE",
+   "Liu CS",
+   "Liu H",
+   "Lucero JD",
+   "Mahurkar A",
+   "McMillen D",
+   "Miller JA",
+   "Moussa M",
+   "Nery JR",
+   "Nicovich PR",
+   "Niu SY",
+   "Orvis J",
+   "Osteen JK",
+   "Owen S",
+   "Palmer CR",
+   "Pham T",
+   "Plongthongkum N",
+   "Poirion O",
+   "Reed NM",
+   "Rimorin C",
+   "Rivkin A",
+   "Romanow WJ",
+   "Sedeño-Cortés AE",
+   "Siletti K",
+   "Somasundaram S",
+   "Sulc J",
+   "Tieu M",
+   "Torkelson A",
+   "Tung H",
+   "Wang X",
+   "Xie F",
+   "Yanny AM",
+   "Zhang R",
+   "Ament SA",
+   "Behrens MM",
+   "Bravo HC",
+   "Chun J",
+   "Dobin A",
+   "Gillis J",
+   "Hertzano R",
+   "Hof PR",
+   "Höllt T",
+   "Horwitz GD",
+   "Keene CD",
+   "Kharchenko PV",
+   "Ko AL",
+   "Lelieveldt BP",
+   "Luo C",
+   "Mukamel EA",
+   "Pinto-Duarte A",
+   "Preissl S",
+   "Regev A",
+   "Ren B",
+   "Scheuermann RH",
+   "Smith K",
+   "Spain WJ",
+   "White OR",
+   "Koch C",
+   "Hawrylycz M",
+   "Tasic B",
+   "Macosko EZ",
+   "McCarroll SA",
+   "Ting JT",
+   "Zeng H",
+   "Zhang K",
+   "Feng G",
+   "Ecker JR",
+   "Linnarsson S",
+   "Lein ES"
+  ],
+  "doi": "10.1038/s41586-021-03465-8",
+  "issue": "7879",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "111-119",
+  "pmc": "PMC8494640",
+  "pmid": "34616062",
+  "title": "Comparative cellular analysis of motor cortex in human, marmoset and mouse",
+  "volume": "598",
+  "year": 2021
+ },
  "34616064": {
   "authors": [
    "Kozareva V",
@@ -3966,6 +4884,19 @@
   "pmc": "PMC8494635",
   "pmid": "34616064",
   "title": "A transcriptomic atlas of mouse cerebellar cortex comprehensively defines cell types",
+  "volume": "598",
+  "year": 2021
+ },
+ "34616075": {
+  "authors": [],
+  "doi": "10.1038/s41586-021-03950-0",
+  "issue": "7879",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "86-102",
+  "pmc": "PMC8494634",
+  "pmid": "34616075",
+  "title": "A multimodal cell census and atlas of the mammalian primary motor cortex",
   "volume": "598",
   "year": 2021
  },
@@ -4107,6 +5038,24 @@
   "pmid": "35442745",
   "title": "Mechanism of stress-induced attacks in an episodic neurologic disorder",
   "volume": "8",
+  "year": 2022
+ },
+ "35545040": {
+  "authors": [
+   "Nashef A",
+   "Cohen O",
+   "Perlmutter SI",
+   "Prut Y"
+  ],
+  "doi": "10.1016/j.celrep.2022.110803",
+  "issue": "6",
+  "journal": "Cell Rep",
+  "journalFull": "Cell reports",
+  "pages": "110803",
+  "pmc": "",
+  "pmid": "35545040",
+  "title": "A cerebellar origin of feedforward inhibition to the motor cortex in non-human primates",
+  "volume": "39",
   "year": 2022
  },
  "35546898": {
@@ -4393,6 +5342,68 @@
   "volume": "14",
   "year": 2023
  },
+ "37076628": {
+  "authors": [
+   "Gordon EM",
+   "Chauvin RJ",
+   "Van AN",
+   "Rajesh A",
+   "Nielsen A",
+   "Newbold DJ",
+   "Lynch CJ",
+   "Seider NA",
+   "Krimmel SR",
+   "Scheidter KM",
+   "Monk J",
+   "Miller RL",
+   "Metoki A",
+   "Montez DF",
+   "Zheng A",
+   "Elbau I",
+   "Madison T",
+   "Nishino T",
+   "Myers MJ",
+   "Kaplan S",
+   "Badke D'Andrea C",
+   "Demeter DV",
+   "Feigelis M",
+   "Ramirez JSB",
+   "Xu T",
+   "Barch DM",
+   "Smyser CD",
+   "Rogers CE",
+   "Zimmermann J",
+   "Botteron KN",
+   "Pruett JR",
+   "Willie JT",
+   "Brunner P",
+   "Shimony JS",
+   "Kay BP",
+   "Marek S",
+   "Norris SA",
+   "Gratton C",
+   "Sylvester CM",
+   "Power JD",
+   "Liston C",
+   "Greene DJ",
+   "Roland JL",
+   "Petersen SE",
+   "Raichle ME",
+   "Laumann TO",
+   "Fair DA",
+   "Dosenbach NUF"
+  ],
+  "doi": "10.1038/s41586-023-05964-2",
+  "issue": "7960",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "351-359",
+  "pmc": "PMC10172144",
+  "pmid": "37076628",
+  "title": "A somato-cognitive action network alternates with effector regions in motor cortex",
+  "volume": "617",
+  "year": 2023
+ },
  "37083692": {
   "authors": [
    "King M",
@@ -4426,6 +5437,23 @@
   "pmid": "3741598",
   "title": "Does the cerebellum contribute to mental skills?",
   "volume": "100",
+  "year": 1986
+ },
+ "3749885": {
+  "authors": [
+   "Georgopoulos AP",
+   "Schwartz AB",
+   "Kettner RE"
+  ],
+  "doi": "10.1126/science.3749885",
+  "issue": "4771",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "1416-9",
+  "pmc": "",
+  "pmid": "3749885",
+  "title": "Neuronal population coding of movement direction",
+  "volume": "233",
   "year": 1986
  },
  "37499000": {
@@ -5387,6 +6415,24 @@
   "volume": "223",
   "year": 1984
  },
+ "7143039": {
+  "authors": [
+   "Georgopoulos AP",
+   "Kalaska JF",
+   "Caminiti R",
+   "Massey JT"
+  ],
+  "doi": "10.1523/JNEUROSCI.02-11-01527.1982",
+  "issue": "11",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "1527-37",
+  "pmc": "PMC6564361",
+  "pmid": "7143039",
+  "title": "On the relations between the direction of two-dimensional arm movements and cell discharge in primate motor cortex",
+  "volume": "2",
+  "year": 1982
+ },
  "7646893": {
   "authors": [
    "Lev-Ram V",
@@ -5404,6 +6450,26 @@
   "pmid": "7646893",
   "title": "Long-term depression in cerebellar Purkinje neurons results from coincidence of nitric oxide and depolarization-induced Ca2+ transients",
   "volume": "15",
+  "year": 1995
+ },
+ "7675082": {
+  "authors": [
+   "Karni A",
+   "Meyer G",
+   "Jezzard P",
+   "Adams MM",
+   "Turner R",
+   "Ungerleider LG"
+  ],
+  "doi": "10.1038/377155a0",
+  "issue": "6545",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "155-8",
+  "pmc": "",
+  "pmid": "7675082",
+  "title": "Functional MRI evidence for adult motor cortex plasticity during motor skill learning",
+  "volume": "377",
   "year": 1995
  },
  "7736576": {
@@ -5468,6 +6534,38 @@
   "volume": "79",
   "year": 1994
  },
+ "8090219": {
+  "authors": [
+   "Tanji J",
+   "Shima K"
+  ],
+  "doi": "10.1038/371413a0",
+  "issue": "6496",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "413-6",
+  "pmc": "",
+  "pmid": "8090219",
+  "title": "Role for supplementary motor area cells in planning several movements ahead",
+  "volume": "371",
+  "year": 1994
+ },
+ "8332915": {
+  "authors": [
+   "Schieber MH",
+   "Hibbard LS"
+  ],
+  "doi": "10.1126/science.8332915",
+  "issue": "5120",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "489-92",
+  "pmc": "",
+  "pmid": "8332915",
+  "title": "How somatotopic is the motor cortex hand area?",
+  "volume": "261",
+  "year": 1993
+ },
  "8358429": {
   "authors": [
    "Orr HT",
@@ -5492,6 +6590,24 @@
   "volume": "4",
   "year": 1993
  },
+ "8551360": {
+  "authors": [
+   "Nudo RJ",
+   "Milliken GW",
+   "Jenkins WM",
+   "Merzenich MM"
+  ],
+  "doi": "10.1523/JNEUROSCI.16-02-00785.1996",
+  "issue": "2",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "785-807",
+  "pmc": "PMC6578638",
+  "pmid": "8551360",
+  "title": "Use-dependent alterations of movement representations in primary motor cortex of adult squirrel monkeys",
+  "volume": "16",
+  "year": 1996
+ },
  "8638157": {
   "authors": [
    "Raymond JL",
@@ -5506,6 +6622,24 @@
   "pmc": "",
   "pmid": "8638157",
   "title": "The cerebellum: a neuronal learning machine?",
+  "volume": "272",
+  "year": 1996
+ },
+ "8650578": {
+  "authors": [
+   "Nudo RJ",
+   "Wise BM",
+   "SiFuentes F",
+   "Milliken GW"
+  ],
+  "doi": "10.1126/science.272.5269.1791",
+  "issue": "5269",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "1791-4",
+  "pmc": "",
+  "pmid": "8650578",
+  "title": "Neural substrates for the effects of rehabilitative training on motor recovery after ischemic infarct",
   "volume": "272",
   "year": 1996
  },
@@ -5596,6 +6730,27 @@
   "pmid": "8988170",
   "title": "Autosomal dominant cerebellar ataxia (SCA6) associated with small polyglutamine expansions in the alpha 1A-voltage-dependent calcium channel",
   "volume": "15",
+  "year": 1997
+ },
+ "9055804": {
+  "authors": [
+   "Yousry TA",
+   "Schmid UD",
+   "Alkadhi H",
+   "Schmidt D",
+   "Peraud A",
+   "Buettner A",
+   "Winkler P"
+  ],
+  "doi": "10.1093/brain/120.1.141",
+  "issue": "",
+  "journal": "Brain",
+  "journalFull": "Brain : a journal of neurology",
+  "pages": "141-57",
+  "pmc": "",
+  "pmid": "9055804",
+  "title": "Localization of the motor hand area to a knob on the precentral gyrus. A new landmark",
+  "volume": "120 ( Pt 1)",
   "year": 1997
  },
  "9193139": {

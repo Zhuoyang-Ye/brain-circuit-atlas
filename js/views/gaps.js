@@ -1,24 +1,25 @@
-/* Evidence & gaps: where the literature is dense or thin, by function domain × level of analysis. */
+/* Evidence & gaps: where the literature on the current region is dense or thin, by function domain × level of analysis. */
 (function () {
   'use strict';
   const CA = window.CA, D = CA.D, h = CA.h;
   const ESEARCH = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi';
   let root, mode = CA.store.get('gaps.mode', 'curated'), sel = null, table, side, progress, fetchBtn, cacheNote, helpEl, aborted = false;
-  let pm = CA.store.get('gaps.pubmed', null);   // {date, counts: {key: n}}
+  let pm = null;    // {date, counts: {key: n}}, stored per region
+  let CUR = {}, PAPERS = [];
+  const pmKey = () => 'gaps.pubmed' + (CA.region === D.regions[0] ? '' : '.' + CA.region.id);
 
   CA.register('gaps', { title: 'Evidence & gaps', mount, unmount });
 
   /* ---------- counts ---------- */
   function curated() {
     const c = {};
-    D.papers.forEach((p) => (p.domains || []).forEach((d) => (p.levels || []).forEach((l) => {
+    PAPERS.forEach((p) => (p.domains || []).forEach((d) => (p.levels || []).forEach((l) => {
       const k = d + '|' + l; (c[k] = c[k] || []).push(p.key);
     })));
     return c;
   }
-  const CUR = curated();
   const curCount = (d, l) => (CUR[d + '|' + l] || []).length;
-  const qTerm = (d, l) => [D.baseQuery, d ? CA.domainById[d].q : null, l ? D.levelQueries[l] : null].filter(Boolean).join(' AND ');
+  const qTerm = (d, l) => [CA.region.query, d ? CA.domainById[d].q : null, l ? CA.levelQuery(l) : null].filter(Boolean).join(' AND ');
   const pmCount = (d, l) => (pm && pm.counts) ? pm.counts[(d || '*') + '|' + (l || '*')] : undefined;
 
   function cellValue(d, l) {
@@ -46,6 +47,7 @@
 
   /* ---------- live PubMed counts ---------- */
   async function fetchCounts() {
+    const key = pmKey();
     const jobs = [[null, null], ...D.domains.map((d) => [d.id, null]), ...D.levels.map((l) => [null, l.id]),
       ...D.domains.flatMap((d) => D.levels.map((l) => [d.id, l.id]))];
     const counts = {};
@@ -69,7 +71,7 @@
       await sleep(360);   // stay under NCBI's limit of 3 requests per second
     }
     pm = { date: new Date().toISOString().slice(0, 10), counts };
-    CA.store.set('gaps.pubmed', pm);
+    CA.store.set(key, pm);
     fetchBtn.disabled = false;
     fetchBtn.textContent = 'Refresh PubMed counts';
     cacheNote.textContent = `counts from ${pm.date}`;
@@ -81,6 +83,11 @@
   /* ---------- view ---------- */
   function mount(node) {
     root = node;
+    sel = null;
+    pm = CA.store.get(pmKey(), null);
+    PAPERS = D.papers.filter((p) => p.regions.includes(CA.region.id));
+    CUR = curated();
+    const R = CA.region;
     const seg = h('div', { class: 'seg' }, [['curated', 'Curated papers'], ['pubmed', 'PubMed counts'], ['ratio', 'Relative coverage']].map(([k, l]) => h('button', {
       class: k === mode ? 'on' : '', 'data-m': k,
       onclick: () => { mode = k; CA.store.set('gaps.mode', k); seg.querySelectorAll('button').forEach((b) => b.classList.toggle('on', b.dataset.m === k)); renderTable(); renderSide(); },
@@ -93,7 +100,7 @@
     root.appendChild(h('div', { class: 'page' },
       h('div', { class: 'page-head' }, h('div', {},
         h('h2', {}, 'Evidence & gaps'),
-        h('p', {}, 'Rows are functional domains, columns are levels of analysis. Thin cells, especially relative to their row and column, mark places where mechanisms are not yet connected across scales: candidate questions for new research.'))),
+        h('p', {}, `Literature on the ${R.label.toLowerCase()}: rows are functional domains, columns are levels of analysis. Thin cells, especially relative to their row and column, mark places where mechanisms are not yet connected across scales: candidate questions for new research.`))),
       h('div', { class: 'card' },
         h('div', { class: 'row' }, seg, h('span', { class: 'grow' }), fetchBtn, progress, cacheNote),
         helpEl = h('p', { class: 'small muted', style: { margin: '8px 0 0' } }, modeHelp())),
@@ -102,7 +109,7 @@
       h('p', { class: 'small muted' }, 'Proposed, debated or single-study connections. Each is a ready-made experiment.'),
       h('div', { class: 'card' }, weakLinks()),
       h('h3', { style: { marginTop: '28px' } }, 'Open questions'),
-      h('div', {}, D.questions.map((q) => h('div', { class: 'qcard', onclick: () => { CA.store.set('lab.question', q.id); CA.go('lab'); } },
+      h('div', {}, D.questions.filter((q) => q.regions.includes(R.id)).map((q) => h('div', { class: 'qcard', onclick: () => { CA.store.set('lab.question', q.id); CA.go('lab'); } },
         h('b', {}, q.title), h('span', { class: 'small muted' }, q.text))))));
     renderTable();
     renderSide();
@@ -110,9 +117,10 @@
   function unmount() { aborted = true; }
 
   function modeHelp() {
-    return mode === 'curated' ? 'Papers in this site\'s curated library tagged with each domain and level. Small by design: it shows what the atlas covers, not the field.'
-      : mode === 'pubmed' ? 'Live PubMed counts for cerebell*[tiab] AND domain terms AND level terms (title/abstract keyword queries; approximate).'
-        : 'Observed ÷ expected PubMed count, where expected = row total × column total ÷ all cerebellum papers. Red = fewer papers than the row and column would predict.';
+    const R = CA.region;
+    return mode === 'curated' ? `Papers on the ${R.label.toLowerCase()} in this site's curated library, tagged with each domain and level. Small by design: it shows what the atlas covers, not the field.`
+      : mode === 'pubmed' ? `Live PubMed counts for ${R.query} AND domain terms AND level terms (title/abstract keyword queries; approximate).`
+        : `Observed ÷ expected PubMed count, where expected = row total × column total ÷ all ${R.label.toLowerCase()} papers. Red = fewer papers than the row and column would predict.`;
   }
 
   function renderTable() {
@@ -140,7 +148,7 @@
           return td;
         }),
         mode !== 'ratio' ? h('td', { class: 'muted', style: { cursor: 'default' } },
-          mode === 'curated' ? String(D.papers.filter((p) => (p.domains || []).includes(d.id)).length) : String(pmCount(d.id, null) || '')) : null));
+          mode === 'curated' ? String(PAPERS.filter((p) => (p.domains || []).includes(d.id)).length) : String(pmCount(d.id, null) || '')) : null));
     });
     table.appendChild(t);
   }
@@ -157,7 +165,7 @@
     const d = CA.domainById[sel.d], l = CA.levelById[sel.l];
     const keys = CUR[sel.d + '|' + sel.l] || [];
     const n = pmCount(sel.d, sel.l);
-    const ents = D.entities.filter((e) => e.level === sel.l && (e.domains || []).includes(sel.d));
+    const ents = D.entities.filter((e) => e.level === sel.l && (e.domains || []).includes(sel.d) && CA.inRegion(e.id));
     side.append(h('div', { class: 'card' },
       h('h3', {}, d.label, h('span', { class: 'muted' }, ' × '), l.label),
       h('p', { class: 'small' }, `${keys.length} curated paper(s)` + (n != null ? ` · ${n.toLocaleString()} PubMed hits` : '')),
@@ -172,7 +180,7 @@
 
   /** Entity pairs in one domain, one or two levels apart, with no direct link and no two-step path. */
   function bridges(domain) {
-    const ents = D.entities.filter((e) => (e.domains || []).includes(domain));
+    const ents = D.entities.filter((e) => (e.domains || []).includes(domain) && CA.inRegion(e.id));
     const cands = [];
     ents.forEach((a) => ents.forEach((b) => {
       const la = CA.levelById[a.level].index, lb = CA.levelById[b.level].index;
@@ -190,7 +198,7 @@
   }
 
   function weakLinks() {
-    const weak = D.links.filter((l) => ['hypothesis', 'debated', 'emerging'].includes(l.status))
+    const weak = D.links.filter((l) => ['hypothesis', 'debated', 'emerging'].includes(l.status) && l.regions.includes(CA.region.id))
       .sort((a, b) => CA.rank(a.status) - CA.rank(b.status) || (a.refs || []).length - (b.refs || []).length);
     return h('table', { class: 'data' },
       h('tr', {}, h('th', {}, 'Status'), h('th', {}, 'From'), h('th', {}, 'To'), h('th', {}, 'Claim'), h('th', {}, 'Evidence'), h('th', {})),

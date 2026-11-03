@@ -33,6 +33,7 @@
       top: { pos: [0, 17, -0.01], target: [0, 0, 0] },
       below: { pos: [0.01, -16, 2], target: [0, -1, 0] },
       modulators: { pos: [7.4, 0.9, -1.6], target: [0.45, -2.0, -1.1] },   // right side, close to brainstem and cerebellum
+      motor: { pos: [-15, 4.2, 5.2], target: [-0.6, -0.8, 0.2] },   // left front: frontal motor areas, thalamus, brainstem and spinal cord
     },
     mouse: {
       overview: { pos: [-10, 7, -9], target: [0, -0.5, -0.5] },
@@ -42,6 +43,7 @@
       top: { pos: [0, 16, -0.01], target: [0, 0, 0] },
       below: { pos: [0.01, -15, 1], target: [0, 0, 0] },
       modulators: { pos: [6.5, -6.0, -1.0], target: [0.5, -1.3, -2.2] },   // right side from below, under hippocampus and striatum
+      motor: { pos: [-14.5, 5.5, 0.2], target: [-0.3, -0.6, -1.5] },   // left side: motor areas to the spinal cord
     },
   };
 
@@ -56,17 +58,20 @@
   };
   let species = CA.store.get('atlas.species', 'human');
   let opts = Object.assign({ shell: true, xray: false, labels: true, bodyParts: true, animate: true, opacity: 0.09 }, CA.store.get('atlas.opts', {}));
-  let circuitId = CA.store.get('atlas.circuit', 'loops');
+  let circuitId = null;   // set per region by pickCircuit()
+  // meshes without an entity of their own take the region of the entity drawn as their whole group (cerebellar cortex, nuclei)
+  const GROUP_REGION = Object.fromEntries(Object.entries(A3.groups).map(([id, g]) => [g, CA.ent[id] && CA.ent[id].region]));
   let pickables = [], meshObjs = [], linkObjs = [], pulses = [], labelEls = [], markerObjs = [];
   let positions = {}, hovered = null, tween = null, unsubs = [], disposed = false, buildToken = 0;
   const geomCache = {};
 
-  CA.register('atlas', { title: '3D atlas', mount, unmount, route });
+  CA.register('atlas', { title: '3D atlas', mount, unmount, route, onRegion });
 
   /* ---------------------------------------------------------------- mount */
   function mount(node) {
     root = node;
     disposed = false;
+    pickCircuit();
     const wrap = h('div', { class: 'atlas' });
     el.canvas = h('div', { class: 'atlas-canvas' });
     el.labels = h('div', { class: 'atlas-labels' });
@@ -76,7 +81,7 @@
     el.hint = h('div', { class: 'atlas-hint' }, 'Drag to rotate · scroll to zoom · right-drag to pan · click a structure');
     el.attrib = h('div', { class: 'atlas-attrib' });
     wrap.append(el.canvas, el.labels, el.controls, el.legend, h('div', { class: 'atlas-foot' }, el.hint, el.attrib), el.msg);
-    if (!CA.store.get('intro.dismissed', false)) wrap.append(buildIntro());
+    if (!CA.store.get('intro.dismissed', false)) wrap.append(el.intro = buildIntro());
     root.appendChild(wrap);
 
     if (!window.THREE || !webglOK()) {
@@ -113,18 +118,63 @@
 
   /* ---------------------------------------------------------------- UI */
   function buildIntro() {
+    const R = CA.region;
+    const deeper = [['map', 'functional map'], ['circuit', 'microcircuit'], ['molecules', 'molecules'], ['scales', 'across scales']]
+      .filter(([v]) => R.views.includes(v)).slice(0, 3);
     const box = h('div', { class: 'intro' },
-      h('h2', {}, 'The cerebellum, wired into brain and body'),
-      h('p', { class: 'small' }, 'A map that joins motor, cognitive and social functions of the cerebellum, from molecules to behavior. Every connection is tied to the papers behind it and graded by how strong the evidence is.'),
+      h('h2', {}, R.intro.title),
+      h('p', { class: 'small' }, R.intro.text),
       h('ol', { class: 'small' },
         h('li', {}, 'Pick a ', h('b', {}, 'circuit'), ' on the left to see its pathways; pulses show signal direction.'),
         h('li', {}, 'Click any structure for its evidence, connections and open questions.'),
-        h('li', {}, 'Go deeper: ', h('a', { href: '#/map' }, 'functional map'), ', ', h('a', { href: '#/circuit' }, 'microcircuit'), ', ', h('a', { href: '#/molecules' }, 'molecules'), '.'),
+        h('li', {}, 'Go deeper: ', deeper.map(([v, label], i) => [i ? ', ' : '', h('a', { href: '#/' + v }, label)]), '.'),
         h('li', {}, 'Find what is unknown in ', h('a', { href: '#/gaps' }, 'Evidence & gaps'), ' and draft tests in the ', h('a', { href: '#/lab' }, 'Hypothesis lab'), '.')),
       h('div', { class: 'row' },
-        h('button', { class: 'btn primary', onclick: () => { flyTo('cerebellum'); } }, 'Zoom to cerebellum'),
-        h('button', { class: 'btn', onclick: () => { CA.store.set('intro.dismissed', true); box.remove(); } }, 'Got it')));
+        h('button', { class: 'btn primary', onclick: () => { flyTo(R.view); } }, 'Zoom to ' + R.label.toLowerCase()),
+        h('button', { class: 'btn', onclick: () => { CA.store.set('intro.dismissed', true); box.remove(); el.intro = null; } }, 'Got it')));
     return box;
+  }
+
+  /* circuits of the current region, plus the two generic choices */
+  function regionCircuits() {
+    return [...A3.circuits.filter((c) => c.region === CA.region.id),
+      { id: 'all', name: 'All mapped connections', desc: `Every anatomical or functional link of the ${CA.region.label.toLowerCase()} content with both ends placed in this atlas.` },
+      { id: 'none', name: 'Anatomy only', desc: 'Hide pathways. Click a structure to show its own connections.' }];
+  }
+  const circuitKey = () => 'atlas.circuit' + (CA.region === D.regions[0] ? '' : '.' + CA.region.id);
+  function pickCircuit() {
+    const list = regionCircuits(), saved = CA.store.get(circuitKey(), null);
+    circuitId = list.some((c) => c.id === saved) ? saved : list[0].id;
+  }
+  function fillCircuits() {
+    const list = regionCircuits();
+    CA.clear(el.circs);
+    list.forEach((c) => el.circs.appendChild(h('button', { class: 'circ' + (c.id === circuitId ? ' on' : ''), 'data-c': c.id, onclick: () => chooseCircuit(c) }, c.name)));
+    el.circDesc.textContent = (list.find((c) => c.id === circuitId) || {}).desc || '';
+  }
+  function chooseCircuit(c) {
+    circuitId = c.id; CA.store.set(circuitKey(), c.id);
+    el.circs.querySelectorAll('.circ').forEach((b) => b.classList.toggle('on', b.dataset.c === c.id));
+    el.circDesc.textContent = c.desc || '';
+    // some circuits run inside the cerebellum or under other structures: see through it and move the camera close
+    if (c.xray && !opts.xray) { opts.xray = true; CA.store.set('atlas.opts', opts); el.xrayBox.checked = true; applyMaterials(); }
+    if (c.view && VIEWS[species][c.view]) flyTo(c.view);
+    rebuildLinks();
+  }
+
+  /** The region changed (top bar or the left panel): swap circuits, notes and emphasis, and fly to the region. */
+  function onRegion(R) {
+    pickCircuit();
+    fillCircuits();
+    el.regionSeg.querySelectorAll('button').forEach((b) => b.classList.toggle('on', b.dataset.r === R.id));
+    el.speciesNote.textContent = (R.speciesNote || {})[species] || '';
+    if (el.intro) { const fresh = buildIntro(); el.intro.replaceWith(fresh); el.intro = fresh; }
+    if (!scene) return;
+    applyMaterials();
+    applyHighlight();
+    rebuildLinks();
+    const c = A3.circuits.find((x) => x.id === circuitId);
+    flyTo(c && c.view && VIEWS[species][c.view] ? c.view : R.view);
   }
 
   function buildControls() {
@@ -135,39 +185,30 @@
         onclick: () => { if (sp !== species) { species = sp; CA.store.set('atlas.species', sp); seg.querySelectorAll('button').forEach((b) => b.classList.toggle('on', b.dataset.sp === sp)); loadSpecies(sp); } },
       }, sp === 'human' ? 'Human' : 'Mouse')));
     el.speciesNote = h('div', { class: 'desc' });
-    const circs = h('div', {});
-    const all = [...A3.circuits, { id: 'all', name: 'All mapped connections', desc: 'Every anatomical or functional link in the knowledge base with both ends placed in this atlas.' },
-      { id: 'none', name: 'Anatomy only', desc: 'Hide pathways. Click a structure to show its own connections.' }];
-    all.forEach((c) => circs.appendChild(h('button', {
-      class: 'circ' + (c.id === circuitId ? ' on' : ''), 'data-c': c.id,
-      onclick: () => {
-        circuitId = c.id; CA.store.set('atlas.circuit', c.id);
-        circs.querySelectorAll('.circ').forEach((b) => b.classList.toggle('on', b.dataset.c === c.id));
-        el.circDesc.textContent = c.desc || '';
-        // some circuits run inside the cerebellum or under other structures: see through it and move the camera close
-        if (c.xray && !opts.xray) { opts.xray = true; CA.store.set('atlas.opts', opts); el.xrayBox.checked = true; applyMaterials(); }
-        if (c.view && VIEWS[species][c.view]) flyTo(c.view);
-        rebuildLinks();
-      },
-    }, c.name)));
-    el.circDesc = h('div', { class: 'desc' }, (all.find((c) => c.id === circuitId) || {}).desc || '');
+    el.regionSeg = h('div', { class: 'seg' }, D.regions.map((r) => h('button', {
+      class: r === CA.region ? 'on' : '', 'data-r': r.id, onclick: () => CA.setRegion(r.id),
+    }, r.label)));
+    el.circs = h('div', {});
+    el.circDesc = h('div', { class: 'desc' });
+    fillCircuits();
     const check = (key, label, fn, title) => h('label', { class: 'check small', title },
       h('input', { type: 'checkbox', checked: opts[key], onchange: (ev) => { opts[key] = ev.target.checked; CA.store.set('atlas.opts', opts); fn(); } }), label);
-    const views = h('div', { class: 'chips' }, [['overview', 'Overview'], ['cerebellum', 'Cerebellum'], ['left', 'Left'], ['back', 'Back'], ['top', 'Top'], ['below', 'Below']]
+    const views = h('div', { class: 'chips' }, [['overview', 'Overview'], ...D.regions.map((r) => [r.view, r.label]), ['left', 'Left'], ['back', 'Back'], ['top', 'Top'], ['below', 'Below']]
       .map(([k, label]) => h('span', { class: 'chip', onclick: () => flyTo(k) }, label)));
     el.credit = h('div', { class: 'atlas-credit' });
     const xrayLabel = check('xray', 'X-ray cerebellum (see nuclei)', applyMaterials);
     el.xrayBox = xrayLabel.querySelector('input');
-    box.append(
+    CA.append(box,
+      D.regions.length > 1 ? [h('h4', { style: { marginTop: 0 } }, 'Region'), el.regionSeg] : null,
       h('h4', {}, 'Species'), seg, el.speciesNote,
-      h('h4', {}, 'Circuits'), circs, el.circDesc,
+      h('h4', {}, 'Circuits'), el.circs, el.circDesc,
       h('h4', {}, 'Display'),
       check('shell', 'Brain surface', applyMaterials),
       h('input', { type: 'range', min: 0.03, max: 0.35, step: 0.01, value: opts.opacity, style: { width: '100%' },
         oninput: (ev) => { opts.opacity = +ev.target.value; CA.store.set('atlas.opts', opts); applyMaterials(); } }),
       xrayLabel,
       check('labels', 'Labels', () => {}),
-      check('bodyParts', 'Body & senses', () => markerObjs.forEach((m) => { m.visible = opts.bodyParts || !m.userData.body; })),
+      check('bodyParts', 'Body & senses', showMarkers),
       check('animate', 'Animate signal flow', () => {}, 'Dots travel along each pathway from source to target to show its direction. Dot color follows the evidence grade, and hypothetical links move at half speed. The motion is schematic, not real conduction timing.'),
       h('h4', {}, 'Camera'), views, el.credit);
     return box;
@@ -238,9 +279,7 @@
     const token = ++buildToken;
     el.msg.style.display = 'flex';
     el.msg.textContent = 'Loading 3D anatomy…';
-    el.speciesNote.textContent = sp === 'human'
-      ? 'Human: lobules and deep nuclei from the SUIT probabilistic atlas (Diedrichsen 2009, 2011), fitted to the Allen human brain. Brainstem nuclei not segmented in these atlases are approximate (≈).'
-      : 'Mouse: Allen CCFv3 lobules and nuclei. Most causal circuit evidence comes from mice.';
+    el.speciesNote.textContent = (CA.region.speciesNote || {})[sp] || '';
     CA.loadScript(`js/data/meshes_${sp}.js`).then(() => {
       if (disposed || token !== buildToken) return;
       const bundle = window.CA_MESHES && window.CA_MESHES[sp];
@@ -332,6 +371,12 @@
     const byEnt = {};
     bundle.meshes.forEach((r) => { if (r.entity) (byEnt[r.entity] = byEnt[r.entity] || []).push(r); });
     Object.entries(byEnt).forEach(([id, recs]) => { positions[id] = agg(recs); });
+    Object.entries(A3.composite || {}).forEach(([id, kids]) => {   // an umbrella entity sits at the middle of its parts
+      if (!positions[id]) {
+        const p = agg(bundle.meshes.filter((r) => kids.includes(r.entity)));
+        if (p) positions[id] = p;
+      }
+    });
     Object.entries(A3.groups).forEach(([id, group]) => {
       if (!positions[id]) {
         const p = agg(bundle.meshes.filter((r) => r.group === group));
@@ -350,7 +395,8 @@
   function resolve(id) {
     if (positions[id]) return id;
     const alias = (A3.aliases[species] || {})[id];
-    return alias && positions[alias] ? alias : null;
+    if (alias && positions[alias]) return alias;
+    return ((A3.composite || {})[id] || []).find((k) => positions[k]) || null;
   }
   function posOf(id, side) {
     const rid = resolve(id);
@@ -366,7 +412,6 @@
     const human = sp === 'human';
     const add = (obj, entity, body) => {
       obj.userData.entity = entity; obj.userData.body = body; obj.userData.marker = true;
-      obj.visible = opts.bodyParts || !body;
       scene.add(obj); markerObjs.push(obj); pickables.push(obj);
     };
     const mat = (c, o) => new T.MeshStandardMaterial({ color: c, roughness: 0.5, transparent: true, opacity: o == null ? 0.9 : o, emissive: c, emissiveIntensity: 0.12 });
@@ -392,10 +437,20 @@
     Object.entries(positions).forEach(([id, p]) => {
       if (!p.approx) return;
       const side = sideOf(id);
-      const m = new T.Mesh(new T.OctahedronGeometry(human ? 0.16 : 0.12), mat(MOD_SRC.has(id) ? GROUP.modulator.color : 0x3fb9a5, 0.95));
+      const color = MOD_SRC.has(id) ? GROUP.modulator.color : CA.ent[id] && CA.ent[id].kind === 'area' ? GROUP.cortex.color : 0x3fb9a5;
+      const m = new T.Mesh(new T.OctahedronGeometry(human ? 0.16 : 0.12), mat(color, 0.95));
       m.position.copy(side === 'R' ? p.r : side === 'L' ? p.l : p.c);
       add(m, id, false);
       m.userData.approx = true;
+    });
+    showMarkers();
+  }
+
+  /** Body parts follow their checkbox; approximate markers show for the current region's structures (or the selection). */
+  function showMarkers() {
+    markerObjs.forEach((m) => {
+      const id = m.userData.entity;
+      m.visible = m.userData.body ? opts.bodyParts : !m.userData.approx || CA.inRegion(id) || CA.selected === id;
     });
   }
 
@@ -403,28 +458,42 @@
   function selectedSet() {
     const id = CA.selected;
     if (!id) return new Set();
-    const s = new Set([id]);
+    const s = new Set([id, ...((A3.composite || {})[id] || [])]);
     const rid = resolve(id);
     if (rid) s.add(rid);
     return s;
+  }
+
+  /** The region a mesh belongs to: its entity's, else that of the entity drawn as its whole group; null if shared. */
+  function meshRegion(r) {
+    const e = CA.ent[r.entity || r.related];
+    return (e && e.region) || GROUP_REGION[r.group] || null;
+  }
+  /** Whether a mesh's structure takes part in the current region's content (shared structures and umbrella entities included). */
+  function meshInRegion(r) {
+    const id = r.entity || r.related;
+    if (!id) return !GROUP_REGION[r.group] || GROUP_REGION[r.group] === CA.region.id;
+    return CA.inRegion(id) || Object.entries(A3.composite || {}).some(([p, kids]) => kids.includes(id) && CA.inRegion(p));
   }
 
   function applyMaterials() {
     meshObjs.forEach((m) => {
       const r = m.userData.rec, mat = m.material;
       if (r.group === 'shell') { m.visible = opts.shell; mat.opacity = opts.opacity; return; }
-      if (r.group === 'cerebellum') {
-        mat.opacity = opts.xray ? 0.22 : 1;
-        mat.depthWrite = !opts.xray;
-      } else {
-        mat.opacity = m.userData.baseOpacity;
-        mat.depthWrite = m.userData.baseOpacity > 0.6;
-      }
+      const reg = meshRegion(r);
+      let o = m.userData.baseOpacity;
+      if (reg === CA.region.id) o = Math.max(o, 0.75);           // the current region stands out
+      else if (!meshInRegion(r)) o = Math.min(o, o > 0.6 ? 0.5 : 0.2);   // structures outside its content recede
+      else if (reg && o > 0.6) o = 0.5;                           // another region's structures, kept as context
+      if (r.group === 'cerebellum' && opts.xray) o = 0.22;
+      mat.opacity = o;
+      mat.depthWrite = o > 0.8;   // see-through surfaces must not hide the pathways behind them
       mat.needsUpdate = true;
     });
   }
 
   function applyHighlight() {
+    showMarkers();
     const sel = selectedSet();
     const T = window.THREE;
     meshObjs.concat(markerObjs).forEach((m) => {
@@ -442,7 +511,7 @@
   /* -------- connections -------- */
   function activeLinks() {
     const ids = new Set();
-    if (circuitId === 'all') D.links.forEach((l) => { if (l.kind === 'anatomical' || l.kind === 'functional') ids.add(l.id); });
+    if (circuitId === 'all') D.links.forEach((l) => { if ((l.kind === 'anatomical' || l.kind === 'functional') && l.regions.includes(CA.region.id)) ids.add(l.id); });
     else if (circuitId !== 'none') (A3.circuits.find((c) => c.id === circuitId) || { links: [] }).links.forEach((x) => ids.add(x));
     const sel = CA.selected;
     if (sel) CA.linksOf(sel).forEach((l) => { if (l.kind === 'anatomical' || l.kind === 'functional') ids.add(l.id); });
@@ -459,7 +528,8 @@
     const human = species === 'human';
     const sel = CA.selected;
     const drawn = new Set(), txSeen = new Set();
-    const keyOf = (s, t) => [resolve(s), sideOf(s), resolve(t), sideOf(t)].join('|');
+    const at = (id) => { const p = posOf(id); return p ? p.toArray().map((x) => x.toFixed(2)).join(',') : id; };
+    const keyOf = (s, t) => at(s) + '|' + at(t);   // links between the same two points are drawn once
     const links = activeLinks();
     const keys = new Set(links.map((l) => keyOf(l.s, l.t)));
     links.forEach((l) => {
@@ -528,7 +598,7 @@
     const rid = resolve(id);
     const approx = rid && positions[rid].approx;
     const viaAlias = rid && rid !== id;
-    const name = CA.ent[id].name + (viaAlias ? ' (in ' + CA.ent[rid].name.toLowerCase() + ')' : '') + (approx ? ' ≈' : '');
+    const name = CA.ent[id].name + (viaAlias ? ' (in ' + CA.ent[rid].name.replace(/\s*\([^)]*\)$/, '').toLowerCase() + ')' : '') + (approx ? ' ≈' : '');
     const e = h('div', { class: 'alabel' + (approx ? ' approx' : '') + (CA.selected === id ? ' sel' : '') }, name);
     el.labels.appendChild(e);
     labelEls.push({ id, el: e, pos: p });
