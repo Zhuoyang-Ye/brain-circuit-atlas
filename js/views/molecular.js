@@ -7,7 +7,7 @@
 
   CA.register('molecules', { title: 'Cells & molecules', mount, unmount });
 
-  const C = { glu: '#ffa657', ampa: '#79c0ff', mglur: '#b392f0', plc: '#d2a8ff', pkc: '#f778ba', ca: '#58a6ff', cf: '#ff9e64', mli: '#ff7b72', glud: '#3fb9a5', trpc: '#e3b341' };
+  const C = CA.palette({ glu: '#ffa657', ampa: '#79c0ff', mglur: '#b392f0', plc: '#d2a8ff', pkc: '#f778ba', ca: '#58a6ff', cf: '#ff9e64', mli: '#ff7b72', glud: '#3fb9a5', trpc: '#e3b341' });
   // Ca2+ levels (arbitrary units) and plasticity thresholds of the inverse BCM rule (Coesmans et al., 2004)
   const TH_LTP = 0.18, TH_LTD = 0.62;
   const PROTOCOLS = {
@@ -25,8 +25,8 @@
     svg = s('svg', { viewBox: '0 0 760 482', width: '100%', style: { display: 'block' } });
     drawSynapse();
     meter = h('div', { class: 'meter' }, h('div', { class: 'fill', style: { height: '8%' } }),
-      h('div', { class: 'thr', style: { bottom: (TH_LTP * 100) + '%', borderColor: '#3fb950' }, title: 'LTP threshold' }),
-      h('div', { class: 'thr', style: { bottom: (TH_LTD * 100) + '%', borderColor: '#ff7b72' }, title: 'LTD threshold' }));
+      h('div', { class: 'thr', style: { bottom: (TH_LTP * 100) + '%', borderColor: CA.tc('#3fb950') }, title: 'LTP threshold' }),
+      h('div', { class: 'thr', style: { bottom: (TH_LTD * 100) + '%', borderColor: CA.tc('#ff7b72') }, title: 'LTD threshold' }));
     outcome = h('div', { class: 'outcome' }, 'Choose a stimulation protocol');
     explain = h('p', { class: 'small' }, '');
     const zb = h('div', { class: 'seg' },
@@ -47,8 +47,8 @@
           h('div', { class: 'row', style: { marginTop: '14px', alignItems: 'flex-start', gap: '14px' } },
             h('div', { style: { textAlign: 'center' } }, meter, h('div', { class: 'tiny muted', style: { marginTop: '4px' } }, 'spine Ca²⁺')),
             h('div', { class: 'grow' },
-              h('div', { class: 'tiny', style: { color: '#ff7b72' } }, '— LTD threshold'),
-              h('div', { class: 'tiny', style: { color: '#3fb950', marginBottom: '10px' } }, '— LTP threshold'),
+              h('div', { class: 'tiny', style: { color: CA.tc('#ff7b72') } }, '— LTD threshold'),
+              h('div', { class: 'tiny', style: { color: CA.tc('#3fb950'), marginBottom: '10px' } }, '— LTP threshold'),
               outcome, explain, h('div', { id: 'mol-refs' }))),
           h('h4', {}, 'Purkinje-cell module'), zb,
           h('p', { class: 'small muted', id: 'zeb-text', style: { marginTop: '8px' } }))),
@@ -72,19 +72,19 @@
     g.addEventListener('click', () => CA.select(entity));
     return g;
   }
-  const txt = (x, y, t, o) => s('text', Object.assign({ x, y, fill: '#c9d1d9', 'font-size': 12, 'text-anchor': 'middle', 'pointer-events': 'none' }, o || {}), t);
-  const pill = (x, y, w, hgt, color, label) => [s('rect', { x, y, width: w, height: hgt, rx: hgt / 2, fill: color, opacity: 0.9 }), txt(x + w / 2, y + hgt / 2 + 4, label, { fill: '#0d1117', 'font-weight': 600 })];
+  const txt = (x, y, t, o) => s('text', Object.assign({ x, y, fill: CA.tc('#c9d1d9'), 'font-size': 12, 'text-anchor': 'middle', 'pointer-events': 'none' }, o || {}), t);
+  const pill = (x, y, w, hgt, color, label) => [s('rect', { x, y, width: w, height: hgt, rx: hgt / 2, fill: color, opacity: 0.9 }), txt(x + w / 2, y + hgt / 2 + 4, label, { fill: CA.tc('#0d1117'), 'font-weight': 600 })];
 
   function drawSynapse() {
     // presynaptic parallel-fiber bouton
     svg.append(
       el('granule', 'Parallel-fiber bouton (granule-cell axon)',
-        s('path', { d: 'M 120 30 C 120 10, 640 10, 640 30 L 640 92 C 640 120, 120 120, 120 92 Z', fill: 'rgba(121,192,255,0.12)', stroke: '#79c0ff', 'stroke-width': 1.5 }),
-        txt(380, 52, 'Parallel-fiber terminal (granule cell)', { fill: '#79c0ff' })),
+        s('path', { d: 'M 120 30 C 120 10, 640 10, 640 30 L 640 92 C 640 120, 120 120, 120 92 Z', fill: CA.tc('rgba(121,192,255,0.12)'), stroke: CA.tc('#79c0ff'), 'stroke-width': 1.5 }),
+        txt(380, 52, 'Parallel-fiber terminal (granule cell)', { fill: CA.tc('#79c0ff') })),
       s('g', { id: 'vesicles' }, ...[180, 260, 340, 420, 500, 580].map((x) => s('circle', { cx: x, cy: 82, r: 9, fill: 'none', stroke: C.glu, 'stroke-width': 1.5 }))),
       // cleft + postsynaptic spine
-      s('path', { d: 'M 90 160 L 670 160 L 670 450 L 90 450 Z', fill: 'rgba(247,120,186,0.07)', stroke: '#f778ba', 'stroke-width': 1.5 }),
-      txt(600, 440, 'Purkinje-cell spine', { fill: '#f778ba', 'text-anchor': 'end' }),
+      s('path', { d: 'M 90 160 L 670 160 L 670 450 L 90 450 Z', fill: CA.tc('rgba(247,120,186,0.07)'), stroke: CA.tc('#f778ba'), 'stroke-width': 1.5 }),
+      txt(600, 440, 'Purkinje-cell spine', { fill: CA.tc('#f778ba'), 'text-anchor': 'end' }),
       s('g', { id: 'glu' }),
       el('glud2', 'GluD2–Cbln1: trans-synaptic organizer',
         s('rect', { x: 640, y: 104, width: 16, height: 56, rx: 5, fill: C.glud }), txt(662, 134, 'GluD2–Cbln1', { fill: C.glud, 'font-size': 11, 'text-anchor': 'start' })),
@@ -95,22 +95,22 @@
       el('trpc3', 'TRPC3 cation channel (high in zebrin− modules)', s('g', { id: 'trpc' }, ...pill(224, 166, 74, 26, C.trpc, 'TRPC3'))),
       el('ampar', 'AMPA receptors (GluA2): fast transmission; endocytosed in LTD',
         txt(450, 210, 'AMPA receptors (GluA2)', { fill: C.ampa, 'font-size': 11 })),
-      s('path', { d: 'M 156 192 L 156 222 M 156 246 L 156 280', stroke: '#8b949e', 'stroke-width': 1.5, 'marker-end': 'url(#ah)' }),
+      s('path', { d: 'M 156 192 L 156 222 M 156 246 L 156 280', stroke: CA.tc('#8b949e'), 'stroke-width': 1.5, 'marker-end': 'url(#ah)' }),
       s('path', { id: 'pkcarrow', d: 'M 196 292 C 300 300, 360 260, 380 196', stroke: C.pkc, 'stroke-width': 1.5, fill: 'none', 'stroke-dasharray': '4 3', 'marker-end': 'url(#ah)' }),
       txt(300, 316, 'phosphorylates GluA2 → internalization', { fill: C.pkc, 'font-size': 11 }),
       el('ltd', 'LTD: clathrin-mediated AMPA-receptor endocytosis',
-        s('circle', { id: 'endo', cx: 470, cy: 330, r: 26, fill: 'none', stroke: '#8b949e', 'stroke-width': 1.5, 'stroke-dasharray': '3 3' }),
-        txt(470, 374, 'endocytosis (LTD)', { fill: '#8b949e', 'font-size': 11 })),
+        s('circle', { id: 'endo', cx: 470, cy: 330, r: 26, fill: 'none', stroke: CA.tc('#8b949e'), 'stroke-width': 1.5, 'stroke-dasharray': '3 3' }),
+        txt(470, 374, 'endocytosis (LTD)', { fill: CA.tc('#8b949e'), 'font-size': 11 })),
       el('ltp', 'LTP: AMPA-receptor insertion',
-        s('rect', { x: 560, y: 300, width: 70, height: 40, rx: 8, fill: 'none', stroke: '#8b949e', 'stroke-width': 1.5, 'stroke-dasharray': '3 3' }),
-        txt(595, 358, 'insertion (LTP)', { fill: '#8b949e', 'font-size': 11 })),
+        s('rect', { x: 560, y: 300, width: 70, height: 40, rx: 8, fill: 'none', stroke: CA.tc('#8b949e'), 'stroke-width': 1.5, 'stroke-dasharray': '3 3' }),
+        txt(595, 358, 'insertion (LTP)', { fill: CA.tc('#8b949e'), 'font-size': 11 })),
       s('rect', { id: 'cafill', x: 92, y: 448, width: 576, height: 0, fill: C.ca, opacity: 0.22 }),
       txt(200, 425, 'Ca²⁺', { fill: C.ca, 'font-size': 13, 'font-weight': 600 }),
       el('cf-pathway', 'Climbing-fiber input → dendritic Ca²⁺ spike',
         s('path', { id: 'cfpath', d: 'M 740 450 C 720 380, 700 300, 672 250', stroke: C.cf, 'stroke-width': 3, fill: 'none' }), txt(712, 470, 'climbing fiber', { fill: C.cf, 'font-size': 11 })),
       el('mli', 'Molecular-layer interneuron (GABAergic)',
         s('path', { id: 'mlipath', d: 'M 20 400 C 50 380, 70 360, 92 350', stroke: C.mli, 'stroke-width': 3, fill: 'none' }), txt(40, 425, 'interneuron', { fill: C.mli, 'font-size': 11 })),
-      s('defs', {}, s('marker', { id: 'ah', viewBox: '0 0 10 10', refX: 8, refY: 5, markerWidth: 6, markerHeight: 6, orient: 'auto-start-reverse' }, s('path', { d: 'M0 0 L10 5 L0 10 z', fill: '#8b949e' }))));
+      s('defs', {}, s('marker', { id: 'ah', viewBox: '0 0 10 10', refX: 8, refY: 5, markerWidth: 6, markerHeight: 6, orient: 'auto-start-reverse' }, s('path', { d: 'M0 0 L10 5 L0 10 z', fill: CA.tc('#8b949e') }))));
     drawAmpa();
   }
 
@@ -134,7 +134,7 @@
   function run(key) {
     timers.forEach(clearTimeout); timers = [];
     const p = PROTOCOLS[key];
-    outcome.textContent = 'Stimulating…'; outcome.style.borderLeftColor = '#6e7681';
+    outcome.textContent = 'Stimulating…'; outcome.style.borderLeftColor = CA.tc('#6e7681');
     explain.textContent = '';
     setCa(0.05);
     // glutamate release
@@ -153,11 +153,11 @@
       svg.querySelector('#cfpath').setAttribute('stroke-width', 3);
       svg.querySelector('#mlipath').setAttribute('stroke-width', 3);
       let res;
-      if (level >= TH_LTD) { res = 'LTD: AMPA receptors removed'; ampaCount = Math.max(2, ampaCount - 2); outcome.style.borderLeftColor = '#ff7b72'; }
-      else if (level >= TH_LTP) { res = 'LTP: AMPA receptors added'; ampaCount = Math.min(10, ampaCount + 2); outcome.style.borderLeftColor = '#3fb950'; }
+      if (level >= TH_LTD) { res = 'LTD: AMPA receptors removed'; ampaCount = Math.max(2, ampaCount - 2); outcome.style.borderLeftColor = CA.tc('#ff7b72'); }
+      else if (level >= TH_LTP) { res = 'LTP: AMPA receptors added'; ampaCount = Math.min(10, ampaCount + 2); outcome.style.borderLeftColor = CA.tc('#3fb950'); }
       else { res = 'No change'; }
       drawAmpa();
-      svg.querySelector('#endo').setAttribute('stroke', level >= TH_LTD ? '#ff7b72' : '#8b949e');
+      svg.querySelector('#endo').setAttribute('stroke', level >= TH_LTD ? CA.tc('#ff7b72') : CA.tc('#8b949e'));
       outcome.textContent = res;
       explain.textContent = p.text;
       const refs = document.getElementById('mol-refs');
@@ -243,27 +243,27 @@
     const box = (x, y, w, label, entity, color, sub) => {
       const node = el(entity, (CA.ent[entity] || {}).name || label,
         s('rect', { x, y, width: w, height: 40, rx: 8, fill: color + '26', stroke: color, 'stroke-width': 1.5 }),
-        txt(x + w / 2, y + (sub ? 17 : 25), label, { fill: '#e6edf3', 'font-weight': 600 }),
-        sub ? txt(x + w / 2, y + 32, sub, { fill: '#8b949e', 'font-size': 10.5 }) : null);
+        txt(x + w / 2, y + (sub ? 17 : 25), label, { fill: CA.tc('#e6edf3'), 'font-weight': 600 }),
+        sub ? txt(x + w / 2, y + 32, sub, { fill: CA.tc('#8b949e'), 'font-size': 10.5 }) : null);
       g.appendChild(node);
     };
-    const arrow = (x1, y1, x2, y2, color, dash) => g.appendChild(s('path', { d: `M ${x1} ${y1} C ${(x1 + x2) / 2} ${y1}, ${(x1 + x2) / 2} ${y2}, ${x2} ${y2}`, stroke: color || '#8b949e', 'stroke-width': 1.5, fill: 'none', 'stroke-dasharray': dash || '', 'marker-end': 'url(#lah)' }));
-    g.appendChild(s('defs', {}, s('marker', { id: 'lah', viewBox: '0 0 10 10', refX: 8, refY: 5, markerWidth: 6, markerHeight: 6, orient: 'auto-start-reverse' }, s('path', { d: 'M0 0 L10 5 L0 10 z', fill: '#8b949e' }))));
-    box(20, 40, 190, 'Rhombic lip', 'rhombic-lip', '#f778ba', 'Atoh1+ (expanded in humans)');
-    box(20, 160, 190, 'Ventricular zone', 'rhombic-lip', '#f778ba', 'Ptf1a+');
-    box(260, 10, 120, 'Atoh1', 'atoh1', '#b392f0');
-    box(260, 190, 120, 'Ptf1a', 'ptf1a', '#b392f0');
-    box(450, 10, 170, 'Granule cells', 'granule', '#79c0ff', 'via external granular layer');
-    box(450, 62, 170, 'Unipolar brush cells', 'ubc', '#56d4dd');
-    box(450, 140, 170, 'Purkinje cells', 'purkinje', '#f778ba');
-    box(450, 192, 170, 'Interneurons', 'mli', '#d2a8ff', 'MLIs, Golgi cells');
-    box(700, 10, 160, 'Sonic hedgehog', 'shh', '#b392f0', 'Purkinje → GCP mitogen');
-    box(700, 90, 160, 'SHH medulloblastoma', 'c-medullo', '#ff7b72');
-    box(700, 170, 160, 'Dandy–Walker', 'c-dandy', '#ff7b72', 'vermis hypoplasia');
+    const arrow = (x1, y1, x2, y2, color, dash) => g.appendChild(s('path', { d: `M ${x1} ${y1} C ${(x1 + x2) / 2} ${y1}, ${(x1 + x2) / 2} ${y2}, ${x2} ${y2}`, stroke: color || CA.tc('#8b949e'), 'stroke-width': 1.5, fill: 'none', 'stroke-dasharray': dash || '', 'marker-end': 'url(#lah)' }));
+    g.appendChild(s('defs', {}, s('marker', { id: 'lah', viewBox: '0 0 10 10', refX: 8, refY: 5, markerWidth: 6, markerHeight: 6, orient: 'auto-start-reverse' }, s('path', { d: 'M0 0 L10 5 L0 10 z', fill: CA.tc('#8b949e') }))));
+    box(20, 40, 190, 'Rhombic lip', 'rhombic-lip', CA.tc('#f778ba'), 'Atoh1+ (expanded in humans)');
+    box(20, 160, 190, 'Ventricular zone', 'rhombic-lip', CA.tc('#f778ba'), 'Ptf1a+');
+    box(260, 10, 120, 'Atoh1', 'atoh1', CA.tc('#b392f0'));
+    box(260, 190, 120, 'Ptf1a', 'ptf1a', CA.tc('#b392f0'));
+    box(450, 10, 170, 'Granule cells', 'granule', CA.tc('#79c0ff'), 'via external granular layer');
+    box(450, 62, 170, 'Unipolar brush cells', 'ubc', CA.tc('#56d4dd'));
+    box(450, 140, 170, 'Purkinje cells', 'purkinje', CA.tc('#f778ba'));
+    box(450, 192, 170, 'Interneurons', 'mli', CA.tc('#d2a8ff'), 'MLIs, Golgi cells');
+    box(700, 10, 160, 'Sonic hedgehog', 'shh', CA.tc('#b392f0'), 'Purkinje → GCP mitogen');
+    box(700, 90, 160, 'SHH medulloblastoma', 'c-medullo', CA.tc('#ff7b72'));
+    box(700, 170, 160, 'Dandy–Walker', 'c-dandy', CA.tc('#ff7b72'), 'vermis hypoplasia');
     arrow(210, 60, 260, 30); arrow(380, 30, 450, 30); arrow(380, 30, 450, 82);
     arrow(210, 180, 260, 210); arrow(380, 210, 450, 160); arrow(380, 210, 450, 212);
-    arrow(620, 160, 700, 30, '#b392f0', '4 3'); arrow(780, 50, 780, 90, '#ff7b72', '4 3'); arrow(210, 70, 700, 190, '#ff7b72', '4 3');
-    g.appendChild(txt(860, 242, 'Click a box for evidence', { fill: '#6e7681', 'font-size': 11, 'text-anchor': 'end' }));
+    arrow(620, 160, 700, 30, CA.tc('#b392f0'), '4 3'); arrow(780, 50, 780, 90, CA.tc('#ff7b72'), '4 3'); arrow(210, 70, 700, 190, CA.tc('#ff7b72'), '4 3');
+    g.appendChild(txt(860, 242, 'Click a box for evidence', { fill: CA.tc('#6e7681'), 'font-size': 11, 'text-anchor': 'end' }));
     return g;
   }
 

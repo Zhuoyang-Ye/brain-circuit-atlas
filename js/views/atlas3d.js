@@ -1,4 +1,4 @@
-/* 3D atlas: real atlas meshes (human or mouse) with evidence-coded connections to the rest of the brain and body. */
+/* 3D atlas: real atlas meshes (human, mouse or macaque) with evidence-coded connections to the rest of the brain and body. */
 (function () {
   'use strict';
   const CA = window.CA, D = CA.D, A3 = D.atlas3d, h = CA.h;
@@ -34,6 +34,7 @@
       below: { pos: [0.01, -16, 2], target: [0, -1, 0] },
       modulators: { pos: [7.4, 0.9, -1.6], target: [0.45, -2.0, -1.1] },   // right side, close to brainstem and cerebellum
       motor: { pos: [-15, 4.2, 5.2], target: [-0.6, -0.8, 0.2] },   // left front: frontal motor areas, thalamus, brainstem and spinal cord
+      prefrontal: { pos: [-12.5, 2.5, 11.5], target: [0, -1.0, 1.4] },   // front left, a little low: frontal lobe, its undersurface and the brainstem
     },
     mouse: {
       overview: { pos: [-10, 7, -9], target: [0, -0.5, -0.5] },
@@ -44,8 +45,22 @@
       below: { pos: [0.01, -15, 1], target: [0, 0, 0] },
       modulators: { pos: [6.5, -6.0, -1.0], target: [0.5, -1.3, -2.2] },   // right side from below, under hippocampus and striatum
       motor: { pos: [-14.5, 5.5, 0.2], target: [-0.3, -0.6, -1.5] },   // left side: motor areas to the spinal cord
+      prefrontal: { pos: [-12, 5, 10], target: [0, -0.5, 0.5] },   // front left: frontal pole, thalamus, hippocampus and midbrain
+    },
+    macaque: {
+      overview: { pos: [-11.5, 5.5, -11], target: [0, -0.8, 0] },
+      cerebellum: { pos: [-5.2, 0.6, -9.5], target: [0, -2.6, -2.4] },
+      left: { pos: [-17, 0.5, 0], target: [0, -0.8, 0] },
+      back: { pos: [0, 1.5, -17], target: [0, -1.2, 0] },
+      top: { pos: [0, 17, -0.01], target: [0, 0, 0] },
+      below: { pos: [0.01, -16, 2], target: [0, -1, 0] },
+      modulators: { pos: [9.5, 0.2, -2.5], target: [0.3, -1.4, -1.0] },   // right side, a little further back than the human view
+      motor: { pos: [-15, 4.2, 5.2], target: [-0.6, -0.8, 0.2] },
+      prefrontal: { pos: [-10.2, 2.4, 9.6], target: [0, -0.5, 0.9] },   // closer than the human view: the macaque brain is smaller relative to the body parts
     },
   };
+  // the 3D brains on offer: those listed in knowledge.json atlas3d.species (a species is switched off there)
+  const SPECIES = [['human', 'Human'], ['macaque', 'Macaque'], ['mouse', 'Mouse']].filter(([sp]) => A3.species.includes(sp));
 
   let root, el = {}, renderer, scene, camera, controls, raf = 0, ro, clock, pointer = null, pointerDirty = false;
   // Source credits shown on the canvas itself, as the Allen Institute citation policy asks (same page, linked to the data).
@@ -55,9 +70,14 @@
       ['https://github.com/DiedrichsenLab/cerebellar_atlases', 'SUIT atlas'], ' (Diedrichsen et al.; CC BY)'],
     mouse: [['https://download.alleninstitute.org/informatics-archive/current-release/mouse_ccf/', 'Allen Mouse Brain CCFv3'],
       ' (Wang et al., 2020) © Allen Institute for Brain Science'],
+    macaque: [['https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/template_nmtv2.html', 'NIMH Macaque Template v2'],
+      ' (', ['https://doi.org/10.1016/j.neuroimage.2017.04.063', 'Seidlitz et al., 2018'], '; ', ['https://doi.org/10.1016/j.neuroimage.2021.117997', 'Jung et al., 2021'],
+      ') with its CHARM (', ['https://doi.org/10.1016/j.neuroimage.2021.117997', 'Jung et al., 2021'], ') and SARM (',
+      ['https://doi.org/10.1016/j.neuroimage.2021.117996', 'Hartig et al., 2021'], ') atlases, via AFNI'],
   };
   let species = CA.store.get('atlas.species', 'human');
-  let opts = Object.assign({ shell: true, xray: false, labels: true, bodyParts: true, animate: true, opacity: 0.09 }, CA.store.get('atlas.opts', {}));
+  if (!SPECIES.some(([sp]) => sp === species)) species = SPECIES[0][0];
+  let opts = Object.assign({ shell: true, xray: false, labels: true, bodyParts: true, animate: true, opacity: 0.09, solid: 0 }, CA.store.get('atlas.opts', {}));
   let circuitId = null;   // set per region by pickCircuit()
   // meshes without an entity of their own take the region of the entity drawn as their whole group (cerebellar cortex, nuclei)
   const GROUP_REGION = Object.fromEntries(Object.entries(A3.groups).map(([id, g]) => [g, CA.ent[id] && CA.ent[id].region]));
@@ -65,7 +85,7 @@
   let positions = {}, hovered = null, tween = null, unsubs = [], disposed = false, buildToken = 0;
   const geomCache = {};
 
-  CA.register('atlas', { title: '3D atlas', mount, unmount, route, onRegion });
+  CA.register('atlas', { title: '3D atlas', mount, unmount, route, onRegion, onTheme });
 
   /* ---------------------------------------------------------------- mount */
   function mount(node) {
@@ -162,11 +182,10 @@
     rebuildLinks();
   }
 
-  /** The region changed (top bar or the left panel): swap circuits, notes and emphasis, and fly to the region. */
+  /** The region changed (the dropdown in the left panel): swap circuits, notes and emphasis, and fly to the region. */
   function onRegion(R) {
     pickCircuit();
     fillCircuits();
-    el.regionSeg.querySelectorAll('button').forEach((b) => b.classList.toggle('on', b.dataset.r === R.id));
     el.speciesNote.textContent = (R.speciesNote || {})[species] || '';
     if (el.intro) { const fresh = buildIntro(); el.intro.replaceWith(fresh); el.intro = fresh; }
     if (!scene) return;
@@ -180,14 +199,11 @@
   function buildControls() {
     const box = h('div', { class: 'atlas-controls' });
     const seg = h('div', { class: 'seg' },
-      ['human', 'mouse'].map((sp) => h('button', {
+      SPECIES.map(([sp, label]) => h('button', {
         class: sp === species ? 'on' : '', 'data-sp': sp,
         onclick: () => { if (sp !== species) { species = sp; CA.store.set('atlas.species', sp); seg.querySelectorAll('button').forEach((b) => b.classList.toggle('on', b.dataset.sp === sp)); loadSpecies(sp); } },
-      }, sp === 'human' ? 'Human' : 'Mouse')));
+      }, label)));
     el.speciesNote = h('div', { class: 'desc' });
-    el.regionSeg = h('div', { class: 'seg' }, D.regions.map((r) => h('button', {
-      class: r === CA.region ? 'on' : '', 'data-r': r.id, onclick: () => CA.setRegion(r.id),
-    }, r.label)));
     el.circs = h('div', {});
     el.circDesc = h('div', { class: 'desc' });
     fillCircuits();
@@ -199,13 +215,18 @@
     const xrayLabel = check('xray', 'X-ray cerebellum (see nuclei)', applyMaterials);
     el.xrayBox = xrayLabel.querySelector('input');
     CA.append(box,
-      D.regions.length > 1 ? [h('h4', { style: { marginTop: 0 } }, 'Region'), el.regionSeg] : null,
+      D.regions.length > 1 ? [h('h4', { style: { marginTop: 0 } }, 'Region'), CA.regionPicker()] : null,
       h('h4', {}, 'Species'), seg, el.speciesNote,
       h('h4', {}, 'Circuits'), el.circs, el.circDesc,
       h('h4', {}, 'Display'),
       check('shell', 'Brain surface', applyMaterials),
       h('input', { type: 'range', min: 0.03, max: 0.35, step: 0.01, value: opts.opacity, style: { width: '100%' },
         oninput: (ev) => { opts.opacity = +ev.target.value; CA.store.set('atlas.opts', opts); applyMaterials(); } }),
+      h('div', { class: 'small', style: { marginTop: '6px' } }, 'Structures: see-through ↔ solid'),
+      h('input', { type: 'range', min: -1, max: 1, step: 0.05, value: opts.solid, style: { width: '100%' },
+        title: 'Opacity of the brain structures. The middle keeps the default look; double-click to reset.',
+        oninput: (ev) => { opts.solid = +ev.target.value; CA.store.set('atlas.opts', opts); applyMaterials(); },
+        ondblclick: (ev) => { ev.target.value = 0; opts.solid = 0; CA.store.set('atlas.opts', opts); applyMaterials(); } }),
       xrayLabel,
       check('labels', 'Labels', () => {}),
       check('bodyParts', 'Body & senses', showMarkers),
@@ -214,12 +235,20 @@
     return box;
   }
 
+  /** The background and labels follow the CSS theme; recolour the legend, the brain surface and the pathways in place. */
+  function onTheme() {
+    if (el.legend) { const lg = buildLegend(); el.legend.replaceWith(lg); el.legend = lg; }
+    if (!scene) return;
+    meshObjs.forEach((m) => { if (m.userData.rec.group === 'shell') m.material.color.setHex(CA.tc(GROUP.shell.color)); });
+    rebuildLinks();
+  }
+
   function buildLegend() {
     const items = D.statuses.filter((s) => s.id !== 'gap').map((s) => h('div', { class: 'lg' },
       h('span', { class: 'sw', style: { borderColor: s.color, borderTopStyle: (s.id === 'debated' || s.id === 'hypothesis') ? 'dashed' : 'solid' } }), s.label));
-    items.push(h('div', { class: 'lg' }, h('span', { class: 'sw', style: { borderColor: '#8b949e', borderTopStyle: 'dashed' } }), 'functional / route unknown'));
+    items.push(h('div', { class: 'lg' }, h('span', { class: 'sw', style: { borderColor: CA.tc('#9aa4b2'), borderTopStyle: 'dashed' } }), 'functional / route unknown'));
     items.push(h('div', { class: 'lg' }, h('span', { style: { fontStyle: 'italic' } }, 'italic ≈'), 'approximate position'));
-    items.push(h('div', { class: 'lg' }, h('span', { class: 'dot', style: { background: '#f778ba' } }), 'neuromodulator source'));
+    items.push(h('div', { class: 'lg' }, h('span', { class: 'dot', style: { background: CA.tc('#f778ba') } }), 'neuromodulator source'));
     el.txLegend = h('div', { class: 'lg txlg', style: { display: 'none' } });
     items.push(el.txLegend);
     return h('div', { class: 'atlas-legend' }, items);
@@ -340,7 +369,7 @@
     el.attrib.append('Anatomy: ', ...ATTRIB[sp].map((x) => (Array.isArray(x) ? h('a', { href: x[0], target: '_blank', rel: 'noopener' }, x[1]) : x)));
     bundle.meshes.forEach((rec) => {
       const style = GROUP[rec.group] || GROUP.context;
-      let color = style.color;
+      let color = rec.group === 'shell' ? CA.tc(style.color) : style.color;   // the surface darkens on a light background
       if (rec.group === 'cerebellum' && CB_TONES[rec.entity || rec.related]) color = CB_TONES[rec.entity || rec.related];
       if (rec.tone) color = new T.Color(rec.tone).getHex(); // per-lobule tone, alternating light/dark so neighbors separate
       const mat = new T.MeshStandardMaterial({ color, roughness: 0.62, metalness: 0.05, transparent: true, opacity: style.opacity });
@@ -409,7 +438,7 @@
   /* -------- body, senses, spinal cord and approximate markers -------- */
   function buildBodyAndMarkers(sp, bundle) {
     const T = window.THREE;
-    const human = sp === 'human';
+    const human = sp !== 'mouse';   // primate marker sizes
     const add = (obj, entity, body) => {
       obj.userData.entity = entity; obj.userData.body = body; obj.userData.marker = true;
       scene.add(obj); markerObjs.push(obj); pickables.push(obj);
@@ -476,6 +505,12 @@
     return CA.inRegion(id) || Object.entries(A3.composite || {}).some(([p, kids]) => kids.includes(id) && CA.inRegion(p));
   }
 
+  /** The "Structures" slider: 0 keeps the default emphasis, 1 makes every structure opaque, -1 nearly invisible. */
+  function solidify(o) {
+    const s = CA.clamp(+opts.solid || 0, -1, 1);
+    return s >= 0 ? o + (1 - o) * s : o * (1 + 0.85 * s);
+  }
+
   function applyMaterials() {
     meshObjs.forEach((m) => {
       const r = m.userData.rec, mat = m.material;
@@ -485,7 +520,8 @@
       if (reg === CA.region.id) o = Math.max(o, 0.75);           // the current region stands out
       else if (!meshInRegion(r)) o = Math.min(o, o > 0.6 ? 0.5 : 0.2);   // structures outside its content recede
       else if (reg && o > 0.6) o = 0.5;                           // another region's structures, kept as context
-      if (r.group === 'cerebellum' && opts.xray) o = 0.22;
+      if (r.group === 'cerebellum' && opts.xray) o = 0.22;   // x-ray keeps the cerebellum see-through
+      else o = solidify(o);
       mat.opacity = o;
       mat.depthWrite = o > 0.8;   // see-through surfaces must not hide the pathways behind them
       mat.needsUpdate = true;
@@ -525,7 +561,7 @@
     pickables = pickables.filter((p) => !p.userData.link);
     linkObjs = []; pulses = [];
     labelEls.forEach((l) => l.el.remove()); labelEls = [];
-    const human = species === 'human';
+    const human = species !== 'mouse';   // primate tube sizes
     const sel = CA.selected;
     const drawn = new Set(), txSeen = new Set();
     const at = (id) => { const p = posOf(id); return p ? p.toArray().map((x) => x.toFixed(2)).join(',') : id; };
@@ -555,7 +591,7 @@
       let obj;
       if (dashed) {
         const g = new T.BufferGeometry().setFromPoints(curve.getPoints(64));
-        obj = new T.Line(g, new T.LineDashedMaterial({ color: l.kind === 'functional' && l.status !== 'hypothesis' ? 0x9aa4b2 : color, dashSize: 0.16, gapSize: 0.1, transparent: true, opacity: 0.95 }));
+        obj = new T.Line(g, new T.LineDashedMaterial({ color: l.kind === 'functional' && l.status !== 'hypothesis' ? CA.tc(0x9aa4b2) : color, dashSize: 0.16, gapSize: 0.1, transparent: true, opacity: 0.95 }));
         obj.computeLineDistances();
         const hit = new T.Mesh(new T.TubeGeometry(curve, 24, 0.09, 5, false), new T.MeshBasicMaterial({ visible: false }));
         obj.add(hit); hit.userData.link = l; pickables.push(hit);
@@ -657,7 +693,7 @@
     const p = posOf(id);
     if (!p || !camera) return;
     const dir = camera.position.clone().sub(controls.target).normalize();
-    const dist = species === 'human' ? 9 : 8;
+    const dist = species === 'mouse' ? 8 : 9;
     const to = { pos: p.clone().add(dir.multiplyScalar(dist)).toArray(), target: p.toArray() };
     if (instant) { camera.position.fromArray(to.pos); controls.target.fromArray(to.target); controls.update(); } else startTween(to);
   }

@@ -2,9 +2,10 @@
 (function () {
   'use strict';
   const CA = window.CA, D = CA.D, h = CA.h, s = CA.s;
-  // Categorical slots validated for CVD separation and contrast on the dark surfaces (fixed order = D.evidence order).
-  const EV_COLORS = ['#3987e5', '#d95926', '#199e70', '#c98500', '#d55181', '#008300'];
-  const evColor = (id) => EV_COLORS[D.evidence.findIndex((e) => e.id === id)] || '#8b949e';
+  // Categorical slots validated for CVD separation and contrast on the dark and light surfaces (fixed order = D.evidence order).
+  const EV_COLORS = CA.palette(['#3987e5', '#d95926', '#199e70', '#c98500', '#d55181', '#008300'],
+    ['#2a78d6', '#eb6834', '#1baf7a', '#eda100', '#e87ba4', '#008300']);
+  const evColor = (id) => EV_COLORS[D.evidence.findIndex((e) => e.id === id)] || CA.tc('#8b949e');
   const YEARS = D.papers.map((p) => +p.year).filter(Boolean);
   const YMIN = Math.min(...YEARS), YMAX = Math.max(...YEARS);
   const SORTS = { 'year-desc': 'Newest first', 'year-asc': 'Oldest first', cited: 'Most used in the atlas', author: 'First author A–Z' };
@@ -155,23 +156,23 @@
     const svg = s('svg', { viewBox: `0 0 ${W} ${H}`, width: '100%', style: { display: 'block', maxHeight: '150px' }, role: 'img', 'aria-label': 'Histogram of publication years' });
     const step = [1, 2, 5, 10, 20, 50, 100].find((k) => max / k <= 4) || 200;  // at most ~4 gridlines
     for (let v = 0; v <= max; v += step) {
-      svg.appendChild(s('line', { x1: PL, x2: W, y1: yv(v), y2: yv(v), stroke: '#30363d', 'stroke-width': 1 }));
-      svg.appendChild(s('text', { x: PL - 6, y: yv(v) + 3.5, 'text-anchor': 'end', 'font-size': 10, fill: '#8b949e' }, String(v)));
+      svg.appendChild(s('line', { x1: PL, x2: W, y1: yv(v), y2: yv(v), stroke: CA.tc('#30363d'), 'stroke-width': 1 }));
+      svg.appendChild(s('text', { x: PL - 6, y: yv(v) + 3.5, 'text-anchor': 'end', 'font-size': 10, fill: CA.tc('#8b949e') }, String(v)));
     }
     bins.forEach((b, i) => {
       const x = PL + i * bw + 1, w = bw - 2;
       if (b.n) {
         const top = yv(b.n), base = yv(0), r = Math.min(4, w / 2, base - top);
-        svg.appendChild(s('path', { d: `M${x},${base} V${top + r} Q${x},${top} ${x + r},${top} H${x + w - r} Q${x + w},${top} ${x + w},${top + r} V${base} Z`, fill: '#3987e5' }));
+        svg.appendChild(s('path', { d: `M${x},${base} V${top + r} Q${x},${top} ${x + r},${top} H${x + w - r} Q${x + w},${top} ${x + w},${top + r} V${base} Z`, fill: CA.tc('#3987e5') }));
       }
-      if (b.y % 10 === 0) svg.appendChild(s('text', { x: x + w / 2, y: H - 5, 'text-anchor': 'middle', 'font-size': 10, fill: '#8b949e' }, String(b.y)));
+      if (b.y % 10 === 0) svg.appendChild(s('text', { x: x + w / 2, y: H - 5, 'text-anchor': 'middle', 'font-size': 10, fill: CA.tc('#8b949e') }, String(b.y)));
       const hit = s('rect', { x: PL + i * bw, y: PT, width: bw, height: H - PB - PT, fill: 'transparent', style: { cursor: b.n ? 'pointer' : 'default' } });
       hit.addEventListener('mousemove', (ev) => CA.tip.show(`<b>${b.y}–${b.y + 4}</b><br>${b.n} paper${b.n === 1 ? '' : 's'}${b.n ? '<br><span class="muted">click to filter to these years</span>' : ''}`, ev));
       hit.addEventListener('mouseleave', () => CA.tip.hide());
       hit.addEventListener('click', () => { if (!b.n) return; f.y0 = Math.max(YMIN, b.y); f.y1 = Math.min(YMAX, b.y + 4); CA.tip.hide(); update(); });
       svg.appendChild(hit);
     });
-    svg.appendChild(s('line', { x1: PL, x2: W, y1: yv(0), y2: yv(0), stroke: '#6e7681', 'stroke-width': 1 }));
+    svg.appendChild(s('line', { x1: PL, x2: W, y1: yv(0), y2: yv(0), stroke: CA.tc('#6e7681'), 'stroke-width': 1 }));
     els.hist.appendChild(svg);
   }
 
@@ -188,7 +189,7 @@
         h('span', { class: 'ev', title: ev ? ev.desc : '' }, h('span', { class: 'dot', style: { background: evColor(p.evidence), borderRadius: '2px', marginRight: '5px', width: '8px', height: '8px' } }), ev ? ev.label : p.evidence),
         (p.species || []).length ? h('span', {}, p.species.join(', ')) : null),
       h('div', { class: 't', onclick: () => CA.showPaper(p.key) }, p.title),
-      h('div', { class: 'small', style: { color: '#c9d1d9' } }, p.finding),
+      h('div', { class: 'small', style: { color: CA.tc('#c9d1d9') } }, p.finding),
       h('div', { class: 'row', style: { marginTop: '8px' } },
         (p.levels || []).map((l) => CA.lvlTag(l)),
         h('span', { class: 'grow' }),

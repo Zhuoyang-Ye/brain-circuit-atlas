@@ -6,7 +6,7 @@
 
   CA.register('circuit', { title: 'Microcircuit', mount, unmount });
 
-  const COL = { pc: '#f778ba', gc: '#79c0ff', golgi: '#a5d6ff', mli: '#d2a8ff', ubc: '#56d4dd', mf: '#3fb9a5', pf: '#ffa657', cf: '#ff9e64', dcn: '#ff5f57', io: '#ffa657', exc: '#3fb950', inh: '#ff7b72' };
+  const COL = CA.palette({ pc: '#f778ba', gc: '#79c0ff', golgi: '#a5d6ff', mli: '#d2a8ff', ubc: '#56d4dd', mf: '#3fb9a5', pf: '#ffa657', cf: '#ff9e64', dcn: '#ff5f57', io: '#ffa657', exc: '#3fb950', inh: '#ff7b72' });
   const PCX = [250, 470, 690];
 
   function mount(node) {
@@ -44,17 +44,17 @@
     g.addEventListener('click', () => CA.select(entity));
     return g;
   }
-  const syn = (x, y, inh) => s('circle', { cx: x, cy: y, r: 3.6, fill: inh ? COL.inh : COL.exc, stroke: '#0d1117', 'stroke-width': 1 });
+  const syn = (x, y, inh) => s('circle', { cx: x, cy: y, r: 3.6, fill: inh ? COL.inh : COL.exc, stroke: CA.tc('#0d1117'), 'stroke-width': 1 });
 
   function drawCircuit() {
     const layer = (y0, y1, fill, label) => [
       s('rect', { x: 0, y: y0, width: 900, height: y1 - y0, fill }),
-      s('text', { x: 10, y: y0 + 16, fill: '#8b949e', 'font-size': 12 }, label)];
-    svg.append(...layer(20, 250, 'rgba(179,146,240,0.07)', 'Molecular layer'),
-      ...layer(250, 284, 'rgba(247,120,186,0.09)', 'Purkinje layer'),
-      ...layer(284, 425, 'rgba(88,166,255,0.06)', 'Granular layer'),
-      ...layer(425, 470, 'rgba(139,148,158,0.07)', 'White matter'),
-      s('text', { x: 10, y: 494, fill: '#8b949e', 'font-size': 12 }, 'Brainstem & cerebellar nuclei'));
+      s('text', { x: 10, y: y0 + 16, fill: CA.tc('#8b949e'), 'font-size': 12 }, label)];
+    svg.append(...layer(20, 250, CA.tc('rgba(179,146,240,0.07)'), 'Molecular layer'),
+      ...layer(250, 284, CA.tc('rgba(247,120,186,0.09)'), 'Purkinje layer'),
+      ...layer(284, 425, CA.tc('rgba(88,166,255,0.06)'), 'Granular layer'),
+      ...layer(425, 470, CA.tc('rgba(139,148,158,0.07)'), 'White matter'),
+      s('text', { x: 10, y: 494, fill: CA.tc('#8b949e'), 'font-size': 12 }, 'Brainstem & cerebellar nuclei'));
 
     // parallel fibers
     const pfY = [62, 88, 114, 140, 166, 192, 218];
@@ -121,21 +121,21 @@
 
     // nuclei, olive, pons
     svg.appendChild(grp('dcn-neurons', 'Cerebellar nuclear neurons: receive Purkinje inhibition and mossy-fiber collaterals',
-      s('ellipse', { cx: 640, cy: 556, rx: 82, ry: 32, fill: 'rgba(255,95,87,0.22)', stroke: COL.dcn, 'stroke-width': 1.6 }),
-      s('text', { x: 640, y: 560, 'text-anchor': 'middle', fill: '#ffd8d3', 'font-size': 12.5 }, 'Cerebellar nuclei')));
+      s('ellipse', { cx: 640, cy: 556, rx: 82, ry: 32, fill: CA.tc('rgba(255,95,87,0.22)'), stroke: COL.dcn, 'stroke-width': 1.6 }),
+      s('text', { x: 640, y: 560, 'text-anchor': 'middle', fill: CA.tc('#ffd8d3'), 'font-size': 12.5 }, 'Cerebellar nuclei')));
     svg.appendChild(grp('dcn', 'Output to thalamus, red nucleus, VTA, PAG, vestibular nuclei…',
       s('path', { id: 'out', d: 'M 722 556 L 860 556', stroke: COL.dcn, 'stroke-width': 2.4, fill: 'none', 'marker-end': 'url(#arrow)' }),
-      s('text', { x: 735, y: 545, fill: '#c9d1d9', 'font-size': 11.5 }, 'to thalamus, red nucleus,'),
-      s('text', { x: 735, y: 578, fill: '#c9d1d9', 'font-size': 11.5 }, 'VTA, PAG, olive …')));
+      s('text', { x: 735, y: 545, fill: CA.tc('#c9d1d9'), 'font-size': 11.5 }, 'to thalamus, red nucleus,'),
+      s('text', { x: 735, y: 578, fill: CA.tc('#c9d1d9'), 'font-size': 11.5 }, 'VTA, PAG, olive …')));
     svg.appendChild(grp('dcn-neurons', 'Nucleo-olivary inhibition: closes the olivo-cortico-nuclear loop',
       s('path', { id: 'no', d: 'M 580 578 C 470 630, 320 630, 236 590', stroke: COL.inh, 'stroke-width': 1.5, fill: 'none', 'stroke-dasharray': '5 3' }), syn(236, 590, true)));
     svg.appendChild(grp('io-neurons', 'Inferior olive: electrically coupled neurons, source of climbing fibers',
-      s('ellipse', { cx: 180, cy: 584, rx: 62, ry: 26, fill: 'rgba(255,166,87,0.18)', stroke: COL.io, 'stroke-width': 1.6 }),
-      s('text', { x: 180, y: 588, 'text-anchor': 'middle', fill: '#ffe2c6', 'font-size': 12.5 }, 'Inferior olive')));
+      s('ellipse', { cx: 180, cy: 584, rx: 62, ry: 26, fill: CA.tc('rgba(255,166,87,0.18)'), stroke: COL.io, 'stroke-width': 1.6 }),
+      s('text', { x: 180, y: 588, 'text-anchor': 'middle', fill: CA.tc('#ffe2c6'), 'font-size': 12.5 }, 'Inferior olive')));
     svg.appendChild(grp('pontine', 'Pontine nuclei: relay cerebral cortex → cerebellum',
-      s('ellipse', { cx: 430, cy: 604, rx: 66, ry: 22, fill: 'rgba(63,185,165,0.18)', stroke: COL.mf, 'stroke-width': 1.6 }),
-      s('text', { x: 430, y: 608, 'text-anchor': 'middle', fill: '#c8f5ec', 'font-size': 12.5 }, 'Pontine nuclei'),
-      s('text', { x: 330, y: 636, fill: '#8b949e', 'font-size': 11 }, '← input from cerebral cortex')));
+      s('ellipse', { cx: 430, cy: 604, rx: 66, ry: 22, fill: CA.tc('rgba(63,185,165,0.18)'), stroke: COL.mf, 'stroke-width': 1.6 }),
+      s('text', { x: 430, y: 608, 'text-anchor': 'middle', fill: CA.tc('#c8f5ec'), 'font-size': 12.5 }, 'Pontine nuclei'),
+      s('text', { x: 330, y: 636, fill: CA.tc('#8b949e'), 'font-size': 11 }, '← input from cerebral cortex')));
     svg.appendChild(s('defs', {}, s('marker', { id: 'arrow', viewBox: '0 0 10 10', refX: 8, refY: 5, markerWidth: 7, markerHeight: 7, orient: 'auto-start-reverse' },
       s('path', { d: 'M 0 0 L 10 5 L 0 10 z', fill: COL.dcn }))));
     svg.appendChild(s('g', { id: 'pulses' }));
@@ -151,7 +151,7 @@
       const path = svg.querySelector('#' + id);
       if (!path || stopped) return resolve();
       const len = path.getTotalLength();
-      const dot = s('circle', { r: 5.5, fill: color, stroke: '#fff', 'stroke-width': 1.2 });
+      const dot = s('circle', { r: 5.5, fill: color, stroke: CA.tc('#fff'), 'stroke-width': 1.2 });
       svg.querySelector('#pulses').appendChild(dot);
       const t0 = performance.now();
       const step = (now) => {
@@ -180,7 +180,7 @@
     await Promise.all([0, 2, 4, 1].map((i) => pulseAlong('gca' + i, COL.gc, 700)));
     await Promise.all([0, 2, 4, 1].map((i) => pulseAlong('pf' + i, COL.pf, 1500)));
     say('Purkinje cells sum ~100,000 parallel-fiber inputs into simple spikes and inhibit the nuclei: cortical output is a pattern of pauses and bursts in inhibition.');
-    await Promise.all([0, 1, 2].map((k) => flash('pcd' + k, '#ffffff', 260)));
+    await Promise.all([0, 1, 2].map((k) => flash('pcd' + k, CA.tc('#ffffff'), 260)));
     await Promise.all([0, 1, 2].map((k) => pulseAlong('pca' + k, COL.inh, 900)));
     say('The nuclei combine Purkinje inhibition with excitatory collaterals and send the cerebellum\'s output to the rest of the brain.');
     await pulseAlong('out', COL.dcn, 700);
@@ -317,53 +317,53 @@
     let peak = 0;
     for (let k = 0; k < NT; k++) if (r.eye[k] > r.eye[peak]) peak = k;
     labEls.status.textContent = `Trial ${n} · learned eyelid closure at puff time: ${crPct}%` + (crPct > 15 ? ` · peaks at ${peak * DT - CS} ms after tone (puff at ${M.isi} ms)` : '');
-    labEls.status.style.borderLeftColor = crPct > 50 ? '#3fb950' : crPct > 15 ? '#e3b341' : '#6e7681';
+    labEls.status.style.borderLeftColor = crPct > 50 ? CA.tc('#3fb950') : crPct > 15 ? CA.tc('#e3b341') : CA.tc('#6e7681');
     labEls.text.textContent = sc.text;
     CA.clear(labEls.refs).append(...CA.citeChips(sc.ref.concat(['marr1969', 'albus1971', 'giovannucci2017'])));
 
     // trial traces
     let { ctx, w, h: H } = setupCanvas(labEls.trace);
     const x = (t) => 30 + (w - 40) * t / T;
-    ctx.fillStyle = 'rgba(227,179,65,.18)'; ctx.fillRect(x(CS), 0, x(T) - x(CS), H);
-    ctx.fillStyle = '#e3b341'; ctx.fillText('tone', x(CS) + 4, 12);
-    ctx.strokeStyle = '#ff7b72'; ctx.setLineDash([4, 3]); ctx.beginPath(); ctx.moveTo(x(CS + M.isi), 0); ctx.lineTo(x(CS + M.isi), H); ctx.stroke(); ctx.setLineDash([]);
-    ctx.fillStyle = '#ff7b72'; ctx.fillText('puff', x(CS + M.isi) + 4, 12);
+    ctx.fillStyle = CA.tc('rgba(227,179,65,.18)'); ctx.fillRect(x(CS), 0, x(T) - x(CS), H);
+    ctx.fillStyle = CA.tc('#e3b341'); ctx.fillText('tone', x(CS) + 4, 12);
+    ctx.strokeStyle = CA.tc('#ff7b72'); ctx.setLineDash([4, 3]); ctx.beginPath(); ctx.moveTo(x(CS + M.isi), 0); ctx.lineTo(x(CS + M.isi), H); ctx.stroke(); ctx.setLineDash([]);
+    ctx.fillStyle = CA.tc('#ff7b72'); ctx.fillText('puff', x(CS + M.isi) + 4, 12);
     const line = (arr, color, scale, off) => {
       ctx.strokeStyle = color; ctx.lineWidth = 1.8; ctx.beginPath();
       for (let k = 0; k < NT; k++) { const yy = H - 8 - (arr[k] - off) * scale; k ? ctx.lineTo(x(k * DT), yy) : ctx.moveTo(x(k * DT), yy); }
       ctx.stroke();
     };
     const yScale = (H - 24) / 160;
-    line(r.ss, '#f778ba', yScale, 0);
-    line(r.dcn, '#ff5f57', yScale, 0);
-    ctx.fillStyle = 'rgba(88,166,255,.35)'; ctx.strokeStyle = '#58a6ff';
+    line(r.ss, CA.tc('#f778ba'), yScale, 0);
+    line(r.dcn, CA.tc('#ff5f57'), yScale, 0);
+    ctx.fillStyle = CA.tc('rgba(88,166,255,.35)'); ctx.strokeStyle = CA.tc('#58a6ff');
     ctx.beginPath(); ctx.moveTo(x(0), H - 8);
     for (let k = 0; k < NT; k++) ctx.lineTo(x(k * DT), H - 8 - Math.min(1.2, r.eye[k] / EYE_FULL) * (H - 30));
     ctx.lineTo(x(T), H - 8); ctx.closePath(); ctx.fill();
-    ctx.fillStyle = '#8b949e'; ctx.fillText('0', 18, H - 6); ctx.fillText(T + ' ms', w - 46, H - 12);
+    ctx.fillStyle = CA.tc('#8b949e'); ctx.fillText('0', 18, H - 6); ctx.fillText(T + ' ms', w - 46, H - 12);
 
     // weights
     ({ ctx, w, h: H } = setupCanvas(labEls.weights));
     const bw = (w - 40) / NB;
     for (let i = 0; i < NB; i++) {
       const xx = 30 + i * bw;
-      ctx.fillStyle = '#ffa657'; ctx.fillRect(xx, H - 10 - M.w[i] * (H - 22), Math.max(1, bw - 1), M.w[i] * (H - 22));
-      if (M.v[i] > 0.01) { ctx.fillStyle = 'rgba(200,200,210,.75)'; ctx.fillRect(xx, H - 10 - M.v[i] * (H - 22), Math.max(1, bw - 1), 2.5); }
+      ctx.fillStyle = CA.tc('#ffa657'); ctx.fillRect(xx, H - 10 - M.w[i] * (H - 22), Math.max(1, bw - 1), M.w[i] * (H - 22));
+      if (M.v[i] > 0.01) { ctx.fillStyle = CA.tc('rgba(200,200,210,.75)'); ctx.fillRect(xx, H - 10 - M.v[i] * (H - 22), Math.max(1, bw - 1), 2.5); }
     }
     const xu = 30 + ((M.isi) / 16) * bw;
-    ctx.strokeStyle = '#ff7b72'; ctx.setLineDash([4, 3]); ctx.beginPath(); ctx.moveTo(xu, 0); ctx.lineTo(xu, H); ctx.stroke(); ctx.setLineDash([]);
-    ctx.fillStyle = '#8b949e'; ctx.fillText('0 ms', 26, H - 1); ctx.fillText(Math.round((NB - 1) * 16) + ' ms', w - 50, H - 1);
+    ctx.strokeStyle = CA.tc('#ff7b72'); ctx.setLineDash([4, 3]); ctx.beginPath(); ctx.moveTo(xu, 0); ctx.lineTo(xu, H); ctx.stroke(); ctx.setLineDash([]);
+    ctx.fillStyle = CA.tc('#8b949e'); ctx.fillText('0 ms', 26, H - 1); ctx.fillText(Math.round((NB - 1) * 16) + ' ms', w - 50, H - 1);
 
     // learning curve
     ({ ctx, w, h: H } = setupCanvas(labEls.curve));
     const N = Math.max(20, n);
-    ctx.strokeStyle = '#30363d'; ctx.beginPath(); ctx.moveTo(30, H - 12); ctx.lineTo(w - 8, H - 12); ctx.stroke();
+    ctx.strokeStyle = CA.tc('#30363d'); ctx.beginPath(); ctx.moveTo(30, H - 12); ctx.lineTo(w - 8, H - 12); ctx.stroke();
     M.trials.forEach((tr, i) => {
-      ctx.fillStyle = tr.us ? '#58a6ff' : '#e3b341';
+      ctx.fillStyle = tr.us ? CA.tc('#58a6ff') : CA.tc('#e3b341');
       ctx.beginPath(); ctx.arc(30 + (w - 44) * (i + 0.5) / N, H - 12 - Math.min(1.1, tr.cr) * (H - 26), 2.6, 0, 7); ctx.fill();
     });
-    ctx.fillStyle = '#8b949e'; ctx.fillText('100%', 0, 18); ctx.fillText('trials →', w - 52, H - 1);
-    ctx.fillStyle = '#e3b341'; if (M.trials.some((t) => !t.us)) ctx.fillText('● tone alone', 40, 12);
+    ctx.fillStyle = CA.tc('#8b949e'); ctx.fillText('100%', 0, 18); ctx.fillText('trials →', w - 52, H - 1);
+    ctx.fillStyle = CA.tc('#e3b341'); if (M.trials.some((t) => !t.us)) ctx.fillText('● tone alone', 40, 12);
   }
 
   // redraw canvases once the view is laid out

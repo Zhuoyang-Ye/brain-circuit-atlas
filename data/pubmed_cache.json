@@ -34,6 +34,22 @@
   "volume": "22",
   "year": 1999
  },
+ "10632234": {
+  "authors": [
+   "Glantz LA",
+   "Lewis DA"
+  ],
+  "doi": "10.1001/archpsyc.57.1.65",
+  "issue": "1",
+  "journal": "Arch Gen Psychiatry",
+  "journalFull": "Archives of general psychiatry",
+  "pages": "65-73",
+  "pmc": "",
+  "pmid": "10632234",
+  "title": "Decreased dendritic spine density on prefrontal cortical pyramidal neurons in schizophrenia",
+  "volume": "57",
+  "year": 2000
+ },
  "10684885": {
   "authors": [
    "Dieudonné S",
@@ -64,6 +80,22 @@
   "pmid": "10774731",
   "title": "Expression of cerebellar long-term depression requires postsynaptic clathrin-mediated endocytosis",
   "volume": "25",
+  "year": 2000
+ },
+ "10818167": {
+  "authors": [
+   "Birrell JM",
+   "Brown VJ"
+  ],
+  "doi": "10.1523/JNEUROSCI.20-11-04320.2000",
+  "issue": "11",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "4320-4",
+  "pmc": "PMC6772641",
+  "pmid": "10818167",
+  "title": "Medial frontal cortex mediates perceptual attentional set shifting in the rat",
+  "volume": "20",
   "year": 2000
  },
  "11024094": {
@@ -100,6 +132,22 @@
   "title": "Learning-induced LTP in neocortex",
   "volume": "290",
   "year": 2000
+ },
+ "11283309": {
+  "authors": [
+   "Miller EK",
+   "Cohen JD"
+  ],
+  "doi": "10.1146/annurev.neuro.24.1.167",
+  "issue": "",
+  "journal": "Annu Rev Neurosci",
+  "journalFull": "Annual review of neuroscience",
+  "pages": "167-202",
+  "pmc": "",
+  "pmid": "11283309",
+  "title": "An integrative theory of prefrontal cortex function",
+  "volume": "24",
+  "year": 2001
  },
  "11301030": {
   "authors": [
@@ -151,6 +199,45 @@
   "pmid": "11346886",
   "title": "Sensorimotor mapping of the human cerebellum: fMRI evidence of somatotopic organization",
   "volume": "13",
+  "year": 2001
+ },
+ "11381111": {
+  "authors": [
+   "Egan MF",
+   "Goldberg TE",
+   "Kolachana BS",
+   "Callicott JH",
+   "Mazzanti CM",
+   "Straub RE",
+   "Goldman D",
+   "Weinberger DR"
+  ],
+  "doi": "10.1073/pnas.111134598",
+  "issue": "12",
+  "journal": "Proc Natl Acad Sci U S A",
+  "journalFull": "Proceedings of the National Academy of Sciences of the United States of America",
+  "pages": "6917-22",
+  "pmc": "PMC34453",
+  "pmid": "11381111",
+  "title": "Effect of COMT Val108/158 Met genotype on frontal lobe function and risk for schizophrenia",
+  "volume": "98",
+  "year": 2001
+ },
+ "11418860": {
+  "authors": [
+   "Wallis JD",
+   "Anderson KC",
+   "Miller EK"
+  ],
+  "doi": "10.1038/35082081",
+  "issue": "6840",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "953-6",
+  "pmc": "",
+  "pmid": "11418860",
+  "title": "Single neurons in prefrontal cortex encode abstract rules",
+  "volume": "411",
   "year": 2001
  },
  "11435916": {
@@ -241,6 +328,38 @@
   "volume": "34",
   "year": 2002
  },
+ "12422216": {
+  "authors": [
+   "Milad MR",
+   "Quirk GJ"
+  ],
+  "doi": "10.1038/nature01138",
+  "issue": "6911",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "70-4",
+  "pmc": "",
+  "pmid": "12422216",
+  "title": "Neurons in medial prefrontal cortex signal memory for fear extinction",
+  "volume": "420",
+  "year": 2002
+ },
+ "12631569": {
+  "authors": [
+   "Killcross S",
+   "Coutureau E"
+  ],
+  "doi": "10.1093/cercor/13.4.400",
+  "issue": "4",
+  "journal": "Cereb Cortex",
+  "journalFull": "Cerebral cortex (New York, N.Y. : 1991)",
+  "pages": "400-8",
+  "pmc": "",
+  "pmid": "12631569",
+  "title": "Coordination of actions and habits in the medial prefrontal cortex of rats",
+  "volume": "13",
+  "year": 2003
+ },
  "12797962": {
   "authors": [
    "Hashimoto K",
@@ -310,6 +429,26 @@
   "volume": "51",
   "year": 1992
  },
+ "14963333": {
+  "authors": [
+   "Kerns JG",
+   "Cohen JD",
+   "MacDonald AW 3rd",
+   "Cho RY",
+   "Stenger VA",
+   "Carter CS"
+  ],
+  "doi": "10.1126/science.1089910",
+  "issue": "5660",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "1023-6",
+  "pmc": "",
+  "pmid": "14963333",
+  "title": "Anterior cingulate conflict monitoring and adjustments in control",
+  "volume": "303",
+  "year": 2004
+ },
  "15003388": {
   "authors": [
    "Schweighofer N",
@@ -325,6 +464,23 @@
   "pmid": "15003388",
   "title": "Cerebellar aminergic neuromodulation: towards a functional understanding",
   "volume": "44",
+  "year": 2004
+ },
+ "15329401": {
+  "authors": [
+   "Izquierdo A",
+   "Suda RK",
+   "Murray EA"
+  ],
+  "doi": "10.1523/JNEUROSCI.1921-04.2004",
+  "issue": "34",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "7540-8",
+  "pmc": "PMC6729636",
+  "pmid": "15329401",
+  "title": "Bilateral orbital prefrontal cortex lesions in rhesus monkeys disrupt choices guided by both reward value and reward contingency",
+  "volume": "24",
   "year": 2004
  },
  "15470143": {
@@ -399,6 +555,28 @@
   "volume": "45",
   "year": 2005
  },
+ "15748841": {
+  "authors": [
+   "Mayberg HS",
+   "Lozano AM",
+   "Voon V",
+   "McNeely HE",
+   "Seminowicz D",
+   "Hamani C",
+   "Schwalb JM",
+   "Kennedy SH"
+  ],
+  "doi": "10.1016/j.neuron.2005.02.014",
+  "issue": "5",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "651-60",
+  "pmc": "",
+  "pmid": "15748841",
+  "title": "Deep brain stimulation for treatment-resistant depression",
+  "volume": "45",
+  "year": 2005
+ },
  "15803161": {
   "authors": [
    "Apps R",
@@ -412,6 +590,23 @@
   "pmc": "",
   "pmid": "15803161",
   "title": "Anatomical and physiological foundations of cerebellar information processing",
+  "volume": "6",
+  "year": 2005
+ },
+ "15803162": {
+  "authors": [
+   "Lewis DA",
+   "Hashimoto T",
+   "Volk DW"
+  ],
+  "doi": "10.1038/nrn1648",
+  "issue": "4",
+  "journal": "Nat Rev Neurosci",
+  "journalFull": "Nature reviews. Neuroscience",
+  "pages": "312-24",
+  "pmc": "",
+  "pmid": "15803162",
+  "title": "Cortical inhibitory neurons and schizophrenia",
   "volume": "6",
   "year": 2005
  },
@@ -577,6 +772,22 @@
   "volume": "8",
   "year": 2005
  },
+ "16279838": {
+  "authors": [
+   "Jones MW",
+   "Wilson MA"
+  ],
+  "doi": "10.1371/journal.pbio.0030402",
+  "issue": "12",
+  "journal": "PLoS Biol",
+  "journalFull": "PLoS biology",
+  "pages": "e402",
+  "pmc": "PMC1283536",
+  "pmid": "16279838",
+  "title": "Theta rhythms coordinate hippocampal-prefrontal interactions in a spatial memory task",
+  "volume": "3",
+  "year": 2005
+ },
  "16284245": {
   "authors": [
    "Chen B",
@@ -664,6 +875,22 @@
   "pmid": "16566000",
   "title": "Complementary stripes of phospholipase Cbeta3 and Cbeta4 expression by Purkinje cell subsets in the mouse cerebellum",
   "volume": "496",
+  "year": 2006
+ },
+ "16633341": {
+  "authors": [
+   "Padoa-Schioppa C",
+   "Assad JA"
+  ],
+  "doi": "10.1038/nature04676",
+  "issue": "7090",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "223-6",
+  "pmc": "PMC2630027",
+  "pmid": "16633341",
+  "title": "Neurons in the orbitofrontal cortex encode economic value",
+  "volume": "441",
   "year": 2006
  },
  "16680163": {
@@ -791,6 +1018,23 @@
   "volume": "11",
   "year": 1991
  },
+ "17126037": {
+  "authors": [
+   "Ghashghaei HT",
+   "Hilgetag CC",
+   "Barbas H"
+  ],
+  "doi": "10.1016/j.neuroimage.2006.09.046",
+  "issue": "3",
+  "journal": "Neuroimage",
+  "journalFull": "NeuroImage",
+  "pages": "905-23",
+  "pmc": "PMC2045074",
+  "pmid": "17126037",
+  "title": "Sequence of information processing for emotions based on the anatomic dialogue between prefrontal cortex and amygdala",
+  "volume": "34",
+  "year": 2007
+ },
  "17148468": {
   "authors": [
    "Stinear CM",
@@ -811,6 +1055,25 @@
   "volume": "130",
   "year": 2007
  },
+ "17277774": {
+  "authors": [
+   "Vijayraghavan S",
+   "Wang M",
+   "Birnbaum SG",
+   "Williams GV",
+   "Arnsten AF"
+  ],
+  "doi": "10.1038/nn1846",
+  "issue": "3",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "376-84",
+  "pmc": "",
+  "pmid": "17277774",
+  "title": "Inverted-U dopamine D1 receptor actions on prefrontal neurons engaged in working memory",
+  "volume": "10",
+  "year": 2007
+ },
  "17347275": {
   "authors": [
    "Wall MJ",
@@ -825,6 +1088,27 @@
   "pmid": "17347275",
   "title": "Auto-inhibition of rat parallel fibre-Purkinje cell synapses by activity-dependent adenosine release",
   "volume": "581",
+  "year": 2007
+ },
+ "17377536": {
+  "authors": [
+   "Koenigs M",
+   "Young L",
+   "Adolphs R",
+   "Tranel D",
+   "Cushman F",
+   "Hauser M",
+   "Damasio A"
+  ],
+  "doi": "10.1038/nature05631",
+  "issue": "7138",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "908-11",
+  "pmc": "PMC2244801",
+  "pmid": "17377536",
+  "title": "Damage to the prefrontal cortex increases utilitarian moral judgements",
+  "volume": "446",
   "year": 2007
  },
  "17383102": {
@@ -847,6 +1131,22 @@
   "volume": "146",
   "year": 2007
  },
+ "17395832": {
+  "authors": [
+   "Buschman TJ",
+   "Miller EK"
+  ],
+  "doi": "10.1126/science.1138071",
+  "issue": "5820",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "1860-2",
+  "pmc": "",
+  "pmid": "17395832",
+  "title": "Top-down versus bottom-up control of attention in the prefrontal and posterior parietal cortices",
+  "volume": "315",
+  "year": 2007
+ },
  "17428980": {
   "authors": [
    "Piet R",
@@ -861,6 +1161,33 @@
   "pmid": "17428980",
   "title": "Glutamatergic and purinergic receptor-mediated calcium transients in Bergmann glial cells",
   "volume": "27",
+  "year": 2007
+ },
+ "17448997": {
+  "authors": [
+   "Wang M",
+   "Ramos BP",
+   "Paspalas CD",
+   "Shu Y",
+   "Simen A",
+   "Duque A",
+   "Vijayraghavan S",
+   "Brennan A",
+   "Dudley A",
+   "Nou E",
+   "Mazer JA",
+   "McCormick DA",
+   "Arnsten AF"
+  ],
+  "doi": "10.1016/j.cell.2007.03.015",
+  "issue": "2",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "397-410",
+  "pmc": "",
+  "pmid": "17448997",
+  "title": "Alpha2A-adrenoceptors strengthen working memory networks by inhibiting cAMP-HCN channel signaling in prefrontal cortex",
+  "volume": "129",
   "year": 2007
  },
  "17507504": {
@@ -930,6 +1257,30 @@
   "volume": "27",
   "year": 2007
  },
+ "18024590": {
+  "authors": [
+   "Shaw P",
+   "Eckstrand K",
+   "Sharp W",
+   "Blumenthal J",
+   "Lerch JP",
+   "Greenstein D",
+   "Clasen L",
+   "Evans A",
+   "Giedd J",
+   "Rapoport JL"
+  ],
+  "doi": "10.1073/pnas.0707741104",
+  "issue": "49",
+  "journal": "Proc Natl Acad Sci U S A",
+  "journalFull": "Proceedings of the National Academy of Sciences of the United States of America",
+  "pages": "19649-54",
+  "pmc": "PMC2148343",
+  "pmid": "18024590",
+  "title": "Attention-deficit/hyperactivity disorder is characterized by a delay in cortical maturation",
+  "volume": "104",
+  "year": 2007
+ },
  "18246064": {
   "authors": [
    "Weiler N",
@@ -949,6 +1300,22 @@
   "volume": "11",
   "year": 2008
  },
+ "1825731": {
+  "authors": [
+   "Sawaguchi T",
+   "Goldman-Rakic PS"
+  ],
+  "doi": "10.1126/science.1825731",
+  "issue": "4996",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "947-50",
+  "pmc": "",
+  "pmid": "1825731",
+  "title": "D1 dopamine receptors in prefrontal cortex: involvement in working memory",
+  "volume": "251",
+  "year": 1991
+ },
  "18319727": {
   "authors": [
    "Ito M"
@@ -962,6 +1329,26 @@
   "pmid": "18319727",
   "title": "Control of mental activities by internal models in the cerebellum",
   "volume": "9",
+  "year": 2008
+ },
+ "18341995": {
+  "authors": [
+   "Lammel S",
+   "Hetzel A",
+   "Häckel O",
+   "Jones I",
+   "Liss B",
+   "Roeper J"
+  ],
+  "doi": "10.1016/j.neuron.2008.01.022",
+  "issue": "5",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "760-73",
+  "pmc": "",
+  "pmid": "18341995",
+  "title": "Unique properties of mesoprefrontal neurons within a dual mesocorticolimbic dopamine system",
+  "volume": "57",
   "year": 2008
  },
  "18558853": {
@@ -1126,6 +1513,39 @@
   "volume": "62",
   "year": 2009
  },
+ "19396159": {
+  "authors": [
+   "Sohal VS",
+   "Zhang F",
+   "Yizhar O",
+   "Deisseroth K"
+  ],
+  "doi": "10.1038/nature07991",
+  "issue": "7247",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "698-702",
+  "pmc": "PMC3969859",
+  "pmid": "19396159",
+  "title": "Parvalbumin neurons and gamma rhythms enhance cortical circuit performance",
+  "volume": "459",
+  "year": 2009
+ },
+ "19455173": {
+  "authors": [
+   "Arnsten AF"
+  ],
+  "doi": "10.1038/nrn2648",
+  "issue": "6",
+  "journal": "Nat Rev Neurosci",
+  "journalFull": "Nature reviews. Neuroscience",
+  "pages": "410-22",
+  "pmc": "PMC2907136",
+  "pmid": "19455173",
+  "title": "Stress signalling pathways that impair prefrontal cortex structure and function",
+  "volume": "10",
+  "year": 2009
+ },
  "19457380": {
   "authors": [
    "Diedrichsen J",
@@ -1160,6 +1580,23 @@
   "pmid": "19555291",
   "title": "Cerebellum and nonmotor function",
   "volume": "32",
+  "year": 2009
+ },
+ "19571138": {
+  "authors": [
+   "Burgos-Robles A",
+   "Vidal-Gonzalez I",
+   "Quirk GJ"
+  ],
+  "doi": "10.1523/JNEUROSCI.0378-09.2009",
+  "issue": "26",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "8474-82",
+  "pmc": "PMC2733220",
+  "pmid": "19571138",
+  "title": "Sustained conditioned responses in prelimbic prefrontal neurons are correlated with fear expression and extinction failure",
+  "volume": "29",
   "year": 2009
  },
  "19571144": {
@@ -1452,6 +1889,29 @@
   "volume": "13",
   "year": 2010
  },
+ "20724638": {
+  "authors": [
+   "Li N",
+   "Lee B",
+   "Liu RJ",
+   "Banasr M",
+   "Dwyer JM",
+   "Iwata M",
+   "Li XY",
+   "Aghajanian G",
+   "Duman RS"
+  ],
+  "doi": "10.1126/science.1190287",
+  "issue": "5994",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "959-64",
+  "pmc": "PMC3116441",
+  "pmid": "20724638",
+  "title": "mTOR-dependent synapse formation underlies the rapid antidepressant effects of NMDA antagonists",
+  "volume": "329",
+  "year": 2010
+ },
  "20960054": {
   "authors": [
    "D'Antoni S",
@@ -1473,6 +1933,23 @@
   "title": "Calcitonin gene-related peptide (CGRP) stimulates purkinje cell dendrite growth in culture",
   "volume": "35",
   "year": 2010
+ },
+ "20962768": {
+  "authors": [
+   "Sierra-Mercado D",
+   "Padilla-Coreano N",
+   "Quirk GJ"
+  ],
+  "doi": "10.1038/npp.2010.184",
+  "issue": "2",
+  "journal": "Neuropsychopharmacology",
+  "journalFull": "Neuropsychopharmacology : official publication of the American College of Neuropsychopharmacology",
+  "pages": "529-38",
+  "pmc": "PMC3005957",
+  "pmid": "20962768",
+  "title": "Dissociable roles of prelimbic and infralimbic cortices, ventral hippocampus, and basolateral amygdala in the expression and extinction of conditioned fear",
+  "volume": "36",
+  "year": 2011
  },
  "20965257": {
   "authors": [
@@ -1694,6 +2171,26 @@
   "volume": "59",
   "year": 2012
  },
+ "21960531": {
+  "authors": [
+   "Wang F",
+   "Zhu J",
+   "Zhu H",
+   "Zhang Q",
+   "Lin Z",
+   "Hu H"
+  ],
+  "doi": "10.1126/science.1209951",
+  "issue": "6056",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "693-7",
+  "pmc": "",
+  "pmid": "21960531",
+  "title": "Bidirectional control of social hierarchy by synaptic efficacy in medial prefrontal cortex",
+  "volume": "334",
+  "year": 2011
+ },
  "22021859": {
   "authors": [
    "Rochefort C",
@@ -1734,6 +2231,24 @@
   "pmid": "22323747",
   "title": "A randomized trial of varenicline (Chantix) for the treatment of spinocerebellar ataxia type 3",
   "volume": "78",
+  "year": 2012
+ },
+ "22491854": {
+  "authors": [
+   "Kolling N",
+   "Behrens TE",
+   "Mars RB",
+   "Rushworth MF"
+  ],
+  "doi": "10.1126/science.1216930",
+  "issue": "6077",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "95-8",
+  "pmc": "PMC3440844",
+  "pmid": "22491854",
+  "title": "Neural mechanisms of foraging",
+  "volume": "336",
   "year": 2012
  },
  "22722855": {
@@ -1816,6 +2331,30 @@
   "volume": "35",
   "year": 2014
  },
+ "23160494": {
+  "authors": [
+   "Warden MR",
+   "Selimbeyoglu A",
+   "Mirzabekov JJ",
+   "Lo M",
+   "Thompson KR",
+   "Kim SY",
+   "Adhikari A",
+   "Tye KM",
+   "Frank LM",
+   "Deisseroth K"
+  ],
+  "doi": "10.1038/nature11617",
+  "issue": "7429",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "428-32",
+  "pmc": "PMC5929119",
+  "pmid": "23160494",
+  "title": "A prefrontal cortex-brainstem neuronal projection that controls response to behavioural challenge",
+  "volume": "492",
+  "year": 2012
+ },
  "2329190": {
   "authors": [
    "Brochu G",
@@ -1870,6 +2409,50 @@
   "volume": "591",
   "year": 2013
  },
+ "23439125": {
+  "authors": [
+   "Wang M",
+   "Yang Y",
+   "Wang CJ",
+   "Gamo NJ",
+   "Jin LE",
+   "Mazer JA",
+   "Morrison JH",
+   "Wang XJ",
+   "Arnsten AF"
+  ],
+  "doi": "10.1016/j.neuron.2012.12.032",
+  "issue": "4",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "736-49",
+  "pmc": "PMC3584418",
+  "pmid": "23439125",
+  "title": "NMDA receptors subserve persistent neuronal firing during working memory in dorsolateral prefrontal cortex",
+  "volume": "77",
+  "year": 2013
+ },
+ "23685452": {
+  "authors": [
+   "Rigotti M",
+   "Barak O",
+   "Warden MR",
+   "Wang XJ",
+   "Daw ND",
+   "Miller EK",
+   "Fusi S"
+  ],
+  "doi": "10.1038/nature12160",
+  "issue": "7451",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "585-90",
+  "pmc": "PMC4412347",
+  "pmid": "23685452",
+  "title": "The importance of mixed selectivity in complex cognitive tasks",
+  "volume": "497",
+  "year": 2013
+ },
  "23725001": {
   "authors": [
    "Shenoy KV",
@@ -1911,6 +2494,42 @@
   "pmid": "23741401",
   "title": "Gating of long-term potentiation by nicotinic acetylcholine receptors at the cerebellum input stage",
   "volume": "8",
+  "year": 2013
+ },
+ "23792944": {
+  "authors": [
+   "Rudebeck PH",
+   "Saunders RC",
+   "Prescott AT",
+   "Chau LS",
+   "Murray EA"
+  ],
+  "doi": "10.1038/nn.3440",
+  "issue": "8",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "1140-5",
+  "pmc": "PMC3733248",
+  "pmid": "23792944",
+  "title": "Prefrontal mechanisms of behavioral flexibility, emotion regulation and value updating",
+  "volume": "16",
+  "year": 2013
+ },
+ "23889930": {
+  "authors": [
+   "Shenhav A",
+   "Botvinick MM",
+   "Cohen JD"
+  ],
+  "doi": "10.1016/j.neuron.2013.07.007",
+  "issue": "2",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "217-40",
+  "pmc": "PMC3767969",
+  "pmid": "23889930",
+  "title": "The expected value of control: an integrative theory of anterior cingulate cortex function",
+  "volume": "79",
   "year": 2013
  },
  "23912185": {
@@ -1972,6 +2591,43 @@
   "volume": "86",
   "year": 2014
  },
+ "24201281": {
+  "authors": [
+   "Mante V",
+   "Sussillo D",
+   "Shenoy KV",
+   "Newsome WT"
+  ],
+  "doi": "10.1038/nature12742",
+  "issue": "7474",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "78-84",
+  "pmc": "PMC4121670",
+  "pmid": "24201281",
+  "title": "Context-dependent computation by recurrent dynamics in prefrontal cortex",
+  "volume": "503",
+  "year": 2013
+ },
+ "24241397": {
+  "authors": [
+   "Likhtik E",
+   "Stujenske JM",
+   "Topiwala MA",
+   "Harris AZ",
+   "Gordon JA"
+  ],
+  "doi": "10.1038/nn.3582",
+  "issue": "1",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "106-13",
+  "pmc": "PMC4035371",
+  "pmid": "24241397",
+  "title": "Prefrontal entrainment of amygdala activity signals safety in learned fear and innate anxiety",
+  "volume": "17",
+  "year": 2014
+ },
  "24318484": {
   "authors": [
    "Mariën P",
@@ -2029,6 +2685,24 @@
   "volume": "81",
   "year": 2014
  },
+ "24462094": {
+  "authors": [
+   "Wilson RC",
+   "Takahashi YK",
+   "Schoenbaum G",
+   "Niv Y"
+  ],
+  "doi": "10.1016/j.neuron.2013.11.005",
+  "issue": "2",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "267-279",
+  "pmc": "PMC4001869",
+  "pmid": "24462094",
+  "title": "Orbitofrontal cortex as a cognitive map of task space",
+  "volume": "81",
+  "year": 2014
+ },
  "24487233": {
   "authors": [
    "Kaufman MT",
@@ -2045,6 +2719,39 @@
   "pmid": "24487233",
   "title": "Cortical activity in the null space: permitting preparation without movement",
   "volume": "17",
+  "year": 2014
+ },
+ "2466057": {
+  "authors": [
+   "Giguere M",
+   "Goldman-Rakic PS"
+  ],
+  "doi": "10.1002/cne.902770204",
+  "issue": "2",
+  "journal": "J Comp Neurol",
+  "journalFull": "The Journal of comparative neurology",
+  "pages": "195-213",
+  "pmc": "",
+  "pmid": "2466057",
+  "title": "Mediodorsal nucleus: areal, laminar, and tangential distribution of afferents and efferents in the frontal lobe of rhesus monkeys",
+  "volume": "277",
+  "year": 1988
+ },
+ "24753596": {
+  "authors": [
+   "Chandler DJ",
+   "Gao WJ",
+   "Waterhouse BD"
+  ],
+  "doi": "10.1073/pnas.1320827111",
+  "issue": "18",
+  "journal": "Proc Natl Acad Sci U S A",
+  "journalFull": "Proceedings of the National Academy of Sciences of the United States of America",
+  "pages": "6816-21",
+  "pmc": "PMC4020069",
+  "pmid": "24753596",
+  "title": "Heterogeneous organization of the locus coeruleus projections to prefrontal and motor cortices",
+  "volume": "111",
   "year": 2014
  },
  "24805237": {
@@ -2367,6 +3074,26 @@
   "volume": "4",
   "year": 2015
  },
+ "26053122": {
+  "authors": [
+   "Spellman T",
+   "Rigotti M",
+   "Ahmari SE",
+   "Fusi S",
+   "Gogos JA",
+   "Gordon JA"
+  ],
+  "doi": "10.1038/nature14445",
+  "issue": "7556",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "309-14",
+  "pmc": "PMC4505751",
+  "pmid": "26053122",
+  "title": "Hippocampal-prefrontal input supports spatial encoding in working memory",
+  "volume": "522",
+  "year": 2015
+ },
  "26098758": {
   "authors": [
    "Chen SX",
@@ -2667,6 +3394,43 @@
   "pmid": "26970080",
   "title": "Does modulation of the endocannabinoid system have potential therapeutic utility in cerebellar ataxia?",
   "volume": "594",
+  "year": 2016
+ },
+ "26996084": {
+  "authors": [
+   "Lundqvist M",
+   "Rose J",
+   "Herman P",
+   "Brincat SL",
+   "Buschman TJ",
+   "Miller EK"
+  ],
+  "doi": "10.1016/j.neuron.2016.02.028",
+  "issue": "1",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "152-164",
+  "pmc": "PMC5220584",
+  "pmid": "26996084",
+  "title": "Gamma and Beta Bursts Underlie Working Memory",
+  "volume": "90",
+  "year": 2016
+ },
+ "27185946": {
+  "authors": [
+   "Popescu AT",
+   "Zhou MR",
+   "Poo MM"
+  ],
+  "doi": "10.1073/pnas.1606098113",
+  "issue": "22",
+  "journal": "Proc Natl Acad Sci U S A",
+  "journalFull": "Proceedings of the National Academy of Sciences of the United States of America",
+  "pages": "E3169-76",
+  "pmc": "PMC4896676",
+  "pmid": "27185946",
+  "title": "Phasic dopamine release in the medial prefrontal cortex enhances stimulus discrimination",
+  "volume": "113",
   "year": 2016
  },
  "27346533": {
@@ -2982,6 +3746,69 @@
   "volume": "23",
   "year": 2018
  },
+ "28467817": {
+  "authors": [
+   "Guo ZV",
+   "Inagaki HK",
+   "Daie K",
+   "Druckmann S",
+   "Gerfen CR",
+   "Svoboda K"
+  ],
+  "doi": "10.1038/nature22324",
+  "issue": "7653",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "181-186",
+  "pmc": "PMC6431254",
+  "pmid": "28467817",
+  "title": "Maintenance of persistent activity in a frontal thalamocortical loop",
+  "volume": "545",
+  "year": 2017
+ },
+ "28467827": {
+  "authors": [
+   "Schmitt LI",
+   "Wimmer RD",
+   "Nakajima M",
+   "Happ M",
+   "Mofakham S",
+   "Halassa MM"
+  ],
+  "doi": "10.1038/nature22073",
+  "issue": "7653",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "219-223",
+  "pmc": "PMC5570520",
+  "pmid": "28467827",
+  "title": "Thalamic amplification of cortical connectivity sustains attentional control",
+  "volume": "545",
+  "year": 2017
+ },
+ "28481349": {
+  "authors": [
+   "Bolkan SS",
+   "Stujenske JM",
+   "Parnaudeau S",
+   "Spellman TJ",
+   "Rauffenbart C",
+   "Abbas AI",
+   "Harris AZ",
+   "Gordon JA",
+   "Kellendonk C"
+  ],
+  "doi": "10.1038/nn.4568",
+  "issue": "7",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "987-996",
+  "pmc": "PMC5501395",
+  "pmid": "28481349",
+  "title": "Thalamic projections sustain prefrontal activity during working memory maintenance",
+  "volume": "20",
+  "year": 2017
+ },
  "28507318": {
   "authors": [
    "Moberget T",
@@ -3118,6 +3945,23 @@
   "volume": "49",
   "year": 2018
  },
+ "2918358": {
+  "authors": [
+   "Funahashi S",
+   "Bruce CJ",
+   "Goldman-Rakic PS"
+  ],
+  "doi": "10.1152/jn.1989.61.2.331",
+  "issue": "2",
+  "journal": "J Neurophysiol",
+  "journalFull": "Journal of neurophysiology",
+  "pages": "331-49",
+  "pmc": "",
+  "pmid": "2918358",
+  "title": "Mnemonic coding of visual space in the monkey's dorsolateral prefrontal cortex",
+  "volume": "61",
+  "year": 1989
+ },
  "29184200": {
   "authors": [
    "Stoodley CJ",
@@ -3232,6 +4076,24 @@
   "pmid": "29478701",
   "title": "Dopamine D(1) Receptor-Positive Neurons in the Lateral Nucleus of the Cerebellum Contribute to Cognitive Behavior",
   "volume": "84",
+  "year": 2018
+ },
+ "29593054": {
+  "authors": [
+   "Inagaki HK",
+   "Inagaki M",
+   "Romani S",
+   "Svoboda K"
+  ],
+  "doi": "10.1523/JNEUROSCI.3152-17.2018",
+  "issue": "17",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "4163-4185",
+  "pmc": "PMC6596025",
+  "pmid": "29593054",
+  "title": "Low-Dimensional and Monotonic Preparatory Activity in Mouse Anterior Lateral Motor Cortex",
+  "volume": "38",
   "year": 2018
  },
  "29643480": {
@@ -3593,6 +4455,29 @@
   "volume": "4",
   "year": 2018
  },
+ "30318409": {
+  "authors": [
+   "Abbas AI",
+   "Sundiang MJM",
+   "Henoch B",
+   "Morton MP",
+   "Bolkan SS",
+   "Park AJ",
+   "Harris AZ",
+   "Kellendonk C",
+   "Gordon JA"
+  ],
+  "doi": "10.1016/j.neuron.2018.09.029",
+  "issue": "4",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "926-939.e3",
+  "pmc": "PMC6262834",
+  "pmid": "30318409",
+  "title": "Somatostatin Interneurons Facilitate Hippocampal-Prefrontal Synchrony and Prefrontal Spatial Encoding",
+  "volume": "100",
+  "year": 2018
+ },
  "30333626": {
   "authors": [
    "Gao Z",
@@ -3662,6 +4547,24 @@
   "title": "Interneuronal NMDA receptors regulate long-term depression and motor learning in the cerebellum",
   "volume": "597",
   "year": 2019
+ },
+ "30406193": {
+  "authors": [
+   "Laubach M",
+   "Amarante LM",
+   "Swanson K",
+   "White SR"
+  ],
+  "doi": "10.1523/ENEURO.0315-18.2018",
+  "issue": "5",
+  "journal": "eNeuro",
+  "journalFull": "eNeuro",
+  "pages": "",
+  "pmc": "PMC6220587",
+  "pmid": "30406193",
+  "title": "What, If Anything, Is Rodent Prefrontal Cortex?",
+  "volume": "5",
+  "year": 2018
  },
  "30425170": {
   "authors": [
@@ -3765,6 +4668,24 @@
   "volume": "176",
   "year": 2019
  },
+ "30728503": {
+  "authors": [
+   "Inagaki HK",
+   "Fontolan L",
+   "Romani S",
+   "Svoboda K"
+  ],
+  "doi": "10.1038/s41586-019-0919-7",
+  "issue": "7743",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "212-217",
+  "pmc": "",
+  "pmid": "30728503",
+  "title": "Discrete attractor dynamics underlies persistent activity in the frontal cortex",
+  "volume": "566",
+  "year": 2019
+ },
  "30923348": {
   "authors": [
    "Sathyanesan A",
@@ -3801,6 +4722,39 @@
   "pmid": "30939101",
   "title": "The Theory and Neuroscience of Cerebellar Cognition",
   "volume": "42",
+  "year": 2019
+ },
+ "30975859": {
+  "authors": [
+   "Moda-Sava RN",
+   "Murdock MH",
+   "Parekh PK",
+   "Fetcho RN",
+   "Huang BS",
+   "Huynh TN",
+   "Witztum J",
+   "Shaver DC",
+   "Rosenthal DL",
+   "Alway EJ",
+   "Lopez K",
+   "Meng Y",
+   "Nellissen L",
+   "Grosenick L",
+   "Milner TA",
+   "Deisseroth K",
+   "Bito H",
+   "Kasai H",
+   "Liston C"
+  ],
+  "doi": "10.1126/science.aat8078",
+  "issue": "6436",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "",
+  "pmc": "PMC6785189",
+  "pmid": "30975859",
+  "title": "Sustained rescue of prefrontal circuit dysfunction by antidepressant-induced spine formation",
+  "volume": "364",
   "year": 2019
  },
  "30975995": {
@@ -4158,6 +5112,31 @@
   "pmc": "PMC6844644",
   "pmid": "31661073",
   "title": "Cerebellar climbing fibers encode expected reward size",
+  "volume": "8",
+  "year": 2019
+ },
+ "31736463": {
+  "authors": [
+   "Li N",
+   "Chen S",
+   "Guo ZV",
+   "Chen H",
+   "Huo Y",
+   "Inagaki HK",
+   "Chen G",
+   "Davis C",
+   "Hansel D",
+   "Guo C",
+   "Svoboda K"
+  ],
+  "doi": "10.7554/eLife.48622",
+  "issue": "",
+  "journal": "Elife",
+  "journalFull": "eLife",
+  "pages": "",
+  "pmc": "PMC6892606",
+  "pmid": "31736463",
+  "title": "Spatiotemporal constraints on optogenetic inactivation in cortical circuits",
   "volume": "8",
   "year": 2019
  },
@@ -4983,6 +5962,51 @@
   "volume": "770",
   "year": 2022
  },
+ "35245431": {
+  "authors": [
+   "Inagaki HK",
+   "Chen S",
+   "Ridder MC",
+   "Sah P",
+   "Li N",
+   "Yang Z",
+   "Hasanbegovic H",
+   "Gao Z",
+   "Gerfen CR",
+   "Svoboda K"
+  ],
+  "doi": "10.1016/j.cell.2022.02.006",
+  "issue": "6",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "1065-1081.e23",
+  "pmc": "PMC8990337",
+  "pmid": "35245431",
+  "title": "A midbrain-thalamus-cortex circuit reorganizes cortical dynamics to initiate movement",
+  "volume": "185",
+  "year": 2022
+ },
+ "35316610": {
+  "authors": [
+   "Inagaki HK",
+   "Chen S",
+   "Daie K",
+   "Finkelstein A",
+   "Fontolan L",
+   "Romani S",
+   "Svoboda K"
+  ],
+  "doi": "10.1146/annurev-neuro-092021-121730",
+  "issue": "",
+  "journal": "Annu Rev Neurosci",
+  "journalFull": "Annual review of neuroscience",
+  "pages": "249-271",
+  "pmc": "",
+  "pmid": "35316610",
+  "title": "Neural Algorithms and Circuits for Motor Planning",
+  "volume": "45",
+  "year": 2022
+ },
  "35318076": {
   "authors": [
    "Cui LN",
@@ -5561,6 +6585,32 @@
   "volume": "112",
   "year": 2024
  },
+ "38306983": {
+  "authors": [
+   "Chen S",
+   "Liu Y",
+   "Wang ZA",
+   "Colonell J",
+   "Liu LD",
+   "Hou H",
+   "Tien NW",
+   "Wang T",
+   "Harris T",
+   "Druckmann S",
+   "Li N",
+   "Svoboda K"
+  ],
+  "doi": "10.1016/j.cell.2023.12.035",
+  "issue": "3",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "676-691.e16",
+  "pmc": "PMC11492138",
+  "pmid": "38306983",
+  "title": "Brain-wide neural activity underlying memory-guided movement",
+  "volume": "187",
+  "year": 2024
+ },
  "38321293": {
   "authors": [
    "Fleming EA",
@@ -5779,6 +6829,25 @@
   "volume": "14",
   "year": 2024
  },
+ "39261492": {
+  "authors": [
+   "Amsalem O",
+   "Inagaki H",
+   "Yu J",
+   "Svoboda K",
+   "Darshan R"
+  ],
+  "doi": "10.1038/s41467-024-51390-x",
+  "issue": "1",
+  "journal": "Nat Commun",
+  "journalFull": "Nature communications",
+  "pages": "7958",
+  "pmc": "PMC11390892",
+  "pmid": "39261492",
+  "title": "Sub-threshold neuronal activity and the dynamical regime of cerebral cortex",
+  "volume": "15",
+  "year": 2024
+ },
  "39325889": {
   "authors": [
    "Hao S",
@@ -5895,6 +6964,23 @@
   "title": "A hierarchical atlas of the human cerebellum for functional precision mapping",
   "volume": "15",
   "year": 2024
+ },
+ "3947207": {
+  "authors": [
+   "Weinberger DR",
+   "Berman KF",
+   "Zec RF"
+  ],
+  "doi": "10.1001/archpsyc.1986.01800020020004",
+  "issue": "2",
+  "journal": "Arch Gen Psychiatry",
+  "journalFull": "Archives of general psychiatry",
+  "pages": "114-24",
+  "pmc": "",
+  "pmid": "3947207",
+  "title": "Physiologic dysfunction of dorsolateral prefrontal cortex in schizophrenia. I. Regional cerebral blood flow evidence",
+  "volume": "43",
+  "year": 1986
  },
  "39514652": {
   "authors": [
@@ -6048,6 +7134,25 @@
   "title": "Processing reliant on granule cells is essential for motor learning but dispensable for social preference and numerous other cerebellar-dependent behaviors",
   "volume": "16",
   "year": 2025
+ },
+ "41261137": {
+  "authors": [
+   "Yang Z",
+   "Inagaki M",
+   "Gerfen CR",
+   "Fontolan L",
+   "Inagaki HK"
+  ],
+  "doi": "10.1038/s41586-025-09778-2",
+  "issue": "8099",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "1244-1253",
+  "pmc": "PMC12851927",
+  "pmid": "41261137",
+  "title": "Integrator dynamics in the cortico-basal ganglia loop for flexible motor timing",
+  "volume": "649",
+  "year": 2026
  },
  "41576956": {
   "authors": [
@@ -6274,6 +7379,30 @@
   "volume": "29",
   "year": 2026
  },
+ "42409803": {
+  "authors": [
+   "Majumder S",
+   "Hirokawa K",
+   "Yang Z",
+   "Jain A",
+   "Paletzki R",
+   "Gerfen CR",
+   "Fontolan L",
+   "Romani S",
+   "Yasuda R",
+   "Inagaki HK"
+  ],
+  "doi": "10.1038/s41467-026-74869-1",
+  "issue": "1",
+  "journal": "Nat Commun",
+  "journalFull": "Nature communications",
+  "pages": "",
+  "pmc": "PMC13473605",
+  "pmid": "42409803",
+  "title": "Complementary roles of cell-type-specific plasticity in shaping neocortical dynamics for learning action timing",
+  "volume": "17",
+  "year": 2026
+ },
  "42749823": {
   "authors": [
    "Filio BA",
@@ -6349,6 +7478,22 @@
   "title": "Activation of the pathway from locus coeruleus to rat cerebellar Purkinje neurons: pharmacological evidence of noradrenergic central inhibition",
   "volume": "184",
   "year": 1973
+ },
+ "4998337": {
+  "authors": [
+   "Fuster JM",
+   "Alexander GE"
+  ],
+  "doi": "10.1126/science.173.3997.652",
+  "issue": "3997",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "652-4",
+  "pmc": "",
+  "pmid": "4998337",
+  "title": "Neuron activity related to short-term memory",
+  "volume": "173",
+  "year": 1971
  },
  "5784296": {
   "authors": [
@@ -6534,6 +7679,24 @@
   "volume": "79",
   "year": 1994
  },
+ "8039375": {
+  "authors": [
+   "Bechara A",
+   "Damasio AR",
+   "Damasio H",
+   "Anderson SW"
+  ],
+  "doi": "10.1016/0010-0277(94)90018-3",
+  "issue": "1-3",
+  "journal": "Cognition",
+  "journalFull": "Cognition",
+  "pages": "7-15",
+  "pmc": "",
+  "pmid": "8039375",
+  "title": "Insensitivity to future consequences following damage to human prefrontal cortex",
+  "volume": "50",
+  "year": 1994
+ },
  "8090219": {
   "authors": [
    "Tanji J",
@@ -6608,6 +7771,23 @@
   "volume": "16",
   "year": 1996
  },
+ "8598908": {
+  "authors": [
+   "Dias R",
+   "Robbins TW",
+   "Roberts AC"
+  ],
+  "doi": "10.1038/380069a0",
+  "issue": "6569",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "69-72",
+  "pmc": "",
+  "pmid": "8598908",
+  "title": "Dissociation in prefrontal cortex of affective and attentional shifts",
+  "volume": "380",
+  "year": 1996
+ },
  "8638157": {
   "authors": [
    "Raymond JL",
@@ -6624,6 +7804,22 @@
   "title": "The cerebellum: a neuronal learning machine?",
   "volume": "272",
   "year": 1996
+ },
+ "8646279": {
+  "authors": [
+   "Barbas H",
+   "Blatt GJ"
+  ],
+  "doi": "10.1002/hipo.450050604",
+  "issue": "6",
+  "journal": "Hippocampus",
+  "journalFull": "Hippocampus",
+  "pages": "511-33",
+  "pmc": "",
+  "pmid": "8646279",
+  "title": "Topographically specific hippocampal projections target functionally distinct prefrontal areas in the rhesus monkey",
+  "volume": "5",
+  "year": 1995
  },
  "8650578": {
   "authors": [

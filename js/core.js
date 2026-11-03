@@ -26,9 +26,9 @@
   CA.linksOf = (id) => (CA.out[id] || []).concat(CA.inc[id] || []);
   CA.neighbors = (id) => new Set(CA.linksOf(id).map((l) => (l.s === id ? l.t : l.s)));
   CA.rank = (status) => (CA.statusById[status] ? CA.statusById[status].rank : 0);
-  CA.levelColor = (lv) => (CA.levelById[lv] ? CA.levelById[lv].color : '#8b949e');
+  CA.levelColor = (lv) => (CA.levelById[lv] ? CA.levelById[lv].color : CA.tc('#8b949e'));
   CA.entColor = (id) => CA.levelColor(CA.ent[id] && CA.ent[id].level);
-  CA.statusColor = (s) => (CA.statusById[s] ? CA.statusById[s].color : '#8b949e');
+  CA.statusColor = (s) => (CA.statusById[s] ? CA.statusById[s].color : CA.tc('#8b949e'));
   CA.has3D = (id) => {
     const a3 = D.atlas3d;
     if (Object.values(D.mesh3d || {}).some((m) => m.entities.includes(id))) return true;
@@ -93,6 +93,109 @@
     set(key, val) { try { localStorage.setItem('ca.' + key, JSON.stringify(val)); } catch (e) { /* private mode */ } },
   };
 
+  /* ---------- colour theme ---------- */
+  // Colours are written for the dark theme. In the light theme CA.tc() maps each one to a light-theme counterpart:
+  // neutrals (backgrounds, lines, text) through a fixed table, and hues by lowering their OKLab lightness, keeping
+  // the hue, until they reach 4.5:1 contrast with white. Views take colours through CA.tc(), CA.palette() or the
+  // data's .color fields, which are recoloured when the theme changes; style.css has its own light variables.
+  const NEUTRAL = {   // dark-theme neutral -> light-theme neutral
+    '#000000': '#ffffff', '#0d1117': '#ffffff', '#161b22': '#ffffff', '#1c2230': '#eef1f5', '#28344a': '#dbe7fb',
+    '#2a3140': '#e2e7ed', '#30363d': '#d0d7de', '#3a3f4b': '#c4ccd5', '#3d444d': '#b9c1ca', '#6e7681': '#6e7781',
+    '#8b949e': '#57606a', '#c9d1d9': '#2f353d', '#e6edf3': '#1f2328', '#ffffff': '#1f2328',
+  };
+  const hex2 = (n) => Math.round(n).toString(16).padStart(2, '0');
+  function parseColor(c) {   // -> [r, g, b (0-255), alpha], or null
+    if (typeof c === 'number') return [(c >> 16) & 255, (c >> 8) & 255, c & 255, 1];
+    let m = /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.exec(c);
+    if (m) { const x = m[1].length === 3 ? m[1].replace(/./g, '$&$&') : m[1]; return [0, 2, 4].map((k) => parseInt(x.slice(k, k + 2), 16)).concat(1); }
+    m = /^rgba?\(([^)]+)\)$/i.exec(c);
+    if (m) { const p = m[1].split(',').map(Number); return p.length >= 3 && p.every((v) => !isNaN(v)) ? [p[0], p[1], p[2], p.length > 3 ? p[3] : 1] : null; }
+    return null;
+  }
+  const lin = (u) => { u /= 255; return u <= 0.04045 ? u / 12.92 : ((u + 0.055) / 1.055) ** 2.4; };
+  const unlin = (u) => 255 * (u <= 0.0031308 ? 12.92 * u : 1.055 * u ** (1 / 2.4) - 0.055);
+  const contrastWithWhite = (r, g, b) => 1.05 / (0.2126 * r + 0.7152 * g + 0.0722 * b + 0.05);   // linear-light rgb
+  function toLab(r, g, b) {
+    const l = Math.cbrt(0.4122214708 * r + 0.5363325363 * g + 0.0514459929 * b);
+    const m = Math.cbrt(0.2119034982 * r + 0.6806995451 * g + 0.1073969566 * b);
+    const s = Math.cbrt(0.0883024619 * r + 0.2817188376 * g + 0.6299787005 * b);
+    return [0.2104542553 * l + 0.7936177850 * m - 0.0040720468 * s, 1.9779984951 * l - 2.4285922050 * m + 0.4505937099 * s,
+      0.0259040371 * l + 0.7827717662 * m - 0.8086757660 * s];
+  }
+  function fromLab(L, A, B) {   // -> linear-light rgb, possibly outside the sRGB gamut
+    const l = (L + 0.3963377774 * A + 0.2158037573 * B) ** 3;
+    const m = (L - 0.1055613458 * A - 0.0638541728 * B) ** 3;
+    const s = (L - 0.0894841775 * A - 1.2914855480 * B) ** 3;
+    return [4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s, -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s,
+      -0.0041960863 * l - 0.7034186147 * m + 1.7076147010 * s];
+  }
+  /** Darken a colour (same OKLab hue, chroma clipped to the gamut) until it has 4.5:1 contrast with white. */
+  function inkOnWhite([r, g, b]) {
+    const c0 = [r, g, b].map(lin);
+    if (contrastWithWhite(...c0) >= 4.5) return [r, g, b];
+    let [L, A, B] = toLab(...c0);
+    const out = (c) => c.some((u) => u < -1e-7 || u > 1 + 1e-7);
+    for (let i = 0; i < 200 && L > 0; i++) {
+      L -= 0.005;
+      let c = fromLab(L, A, B);
+      for (let j = 0; j < 200 && out(c); j++) { A *= 0.97; B *= 0.97; c = fromLab(L, A, B); }
+      c = c.map((u) => CA.clamp(u, 0, 1));
+      if (contrastWithWhite(...c) >= 4.5) return c.map(unlin);
+    }
+    return [0, 0, 0];
+  }
+  const tcCache = {};
+  /** The current theme's version of a dark-theme colour ('#rrggbb', '#rgb', 'rgb(a)(…)' or a three.js number). */
+  CA.tc = (c) => {
+    if (CA.theme !== 'light' || c == null) return c;
+    const key = typeof c === 'number' ? 'n' + c : String(c).toLowerCase().replace(/\s+/g, '');
+    if (key in tcCache) return tcCache[key];
+    const rgb = parseColor(key[0] === 'n' ? c : key);
+    if (!rgb) return c;
+    const hex = '#' + rgb.slice(0, 3).map(hex2).join('');
+    const o = NEUTRAL[hex] ? parseColor(NEUTRAL[hex]) : inkOnWhite(rgb);
+    const res = typeof c === 'number' ? (Math.round(o[0]) << 16) | (Math.round(o[1]) << 8) | Math.round(o[2])
+      : /^rgba?\(/.test(key) ? `rgba(${o.slice(0, 3).map(Math.round).join(',')},${rgb[3]})` : '#' + o.slice(0, 3).map(hex2).join('');
+    return (tcCache[key] = res);
+  };
+  const palettes = [];
+  /** A palette (object or array of dark-theme colours) whose values follow the theme; `light`, if given, holds
+   *  hand-picked light-theme values (e.g. a categorical set validated for the light surface) instead of CA.tc's. */
+  const paletteValue = (base, light, k) => (CA.theme === 'light' && light ? light[k] : CA.tc(base[k]));
+  CA.palette = (base, light) => {
+    const p = Array.isArray(base) ? [] : {};
+    palettes.push([p, base, light]);
+    Object.keys(base).forEach((k) => { p[k] = paletteValue(base, light, k); });
+    return p;
+  };
+  const coloured = [];   // data records with a .color: levels, statuses, domains, flatmap overlays and lesion groups
+  (function collect(o) {
+    if (Array.isArray(o)) { o.forEach(collect); return; }
+    if (!o || typeof o !== 'object') return;
+    if (typeof o.color === 'string') { o.color0 = o.color; coloured.push(o); }
+    Object.values(o).forEach((v) => { if (v && typeof v === 'object') collect(v); });
+  })([D.levels, D.statuses, D.domains, D.flatmap]);
+  function recolour() {
+    coloured.forEach((o) => { o.color = CA.tc(o.color0); });
+    palettes.forEach(([p, base, light]) => Object.keys(base).forEach((k) => { p[k] = paletteValue(base, light, k); }));
+  }
+  CA.theme = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';   // set early in index.html
+  recolour();
+  CA.setTheme = (t, keep) => {
+    t = t === 'light' ? 'light' : 'dark';
+    if (!keep) CA.store.set('theme', t);
+    if (t === CA.theme) return;
+    CA.theme = t;
+    document.documentElement.setAttribute('data-theme', t);
+    recolour();
+    CA.emit('theme', t);
+  };
+  // Without a saved choice, follow the system setting as it changes.
+  const lightQuery = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)');
+  if (lightQuery && lightQuery.addEventListener) {
+    lightQuery.addEventListener('change', (e) => { if (CA.store.get('theme') == null) CA.setTheme(e.matches ? 'light' : 'dark', true); });
+  }
+
   /* ---------- brain regions ---------- */
   // Each region brings its own entities, papers, 3D circuits and PubMed query. Untagged entities (shared
   // structures, messengers, functions) belong to every region whose links, chains or questions use them.
@@ -105,6 +208,14 @@
     CA.store.set('region', id);
     CA.emit('region', CA.region);
   };
+  /** The region dropdown: in the 3D atlas's left panel and at the top left of every other view. */
+  CA.regionPicker = () => {
+    const sel = CA.h('select', { class: 'region-pick', title: 'Brain region: switches the circuits, layouts, queries and papers shown', 'aria-label': 'Brain region',
+      onchange: () => { CA.setRegion(sel.value); sel.blur(); } }, D.regions.map((r) => CA.h('option', { value: r.id }, r.label)));
+    sel.value = CA.region.id;
+    return sel;
+  };
+  CA.on('region', (r) => document.querySelectorAll('select.region-pick').forEach((s) => { s.value = r.id; }));
   CA.inRegion = (id, r) => CA.regionMembers[(r || CA.region).id].has(id);
   CA.regionOf = (id) => (CA.ent[id] && CA.ent[id].region ? CA.regionById[CA.ent[id].region] : null);
   CA.levelDesc = (lv) => (CA.region.levelDesc || {})[lv] || (CA.levelById[lv] || {}).desc || '';
@@ -141,7 +252,7 @@
   const h = CA.h;
   CA.lvlTag = (lv) => h('span', { class: 'lvl', style: { background: CA.levelColor(lv) } }, CA.levelById[lv] ? CA.levelById[lv].label : lv);
   CA.statusBadge = (status) => {
-    const s = CA.statusById[status] || { label: status, color: '#8b949e' };
+    const s = CA.statusById[status] || { label: status, color: CA.tc('#8b949e') };
     return h('span', { class: 'badge', title: s.desc || '', style: { color: s.color, borderColor: s.color + '88' } }, s.label);
   };
   CA.evTag = (ev) => h('span', { class: 'ev', title: CA.evidenceById[ev] ? CA.evidenceById[ev].desc : '' }, CA.evidenceById[ev] ? CA.evidenceById[ev].label : ev);
@@ -163,7 +274,7 @@
   CA.domainChip = (id, opts) => {
     const d = CA.domainById[id];
     return h('span', { class: 'chip' + (opts && opts.on ? ' on' : ''), onclick: opts && opts.onclick },
-      h('span', { class: 'dot', style: { background: d ? d.color : '#888' } }), d ? d.label : id);
+      h('span', { class: 'dot', style: { background: d ? d.color : CA.tc('#888888') } }), d ? d.label : id);
   };
 
   /* ---------- tooltip ---------- */
@@ -211,6 +322,16 @@
     history_ = [];
     if (CA.selected) { CA.selected = null; CA.emit('select', null); }
     setHash(null);
+  };
+  /** Draw the open panel again (its colours follow the theme). */
+  CA.refreshPanel = () => {
+    panelEls();
+    const top = history_[history_.length - 1];
+    if (!panel.classList.contains('open') || !top) return;
+    const [kind, id] = top.split(':');
+    const scroll = panelBody.scrollTop;
+    if (kind === 'e') CA.showEntity(id); else if (kind === 'p') CA.showPaper(id); else if (kind === 'l') CA.showLink(id);
+    panelBody.scrollTop = scroll;
   };
   CA.panelBack = () => {
     history_.pop();
@@ -403,10 +524,20 @@
     root.scrollTop = 0;
     CA.current = viewId;
     document.querySelectorAll('#nav a').forEach((a) => a.classList.toggle('active', a.dataset.view === viewId));
+    const tab = document.querySelector('#nav a.active');
+    if (tab) tab.scrollIntoView({ block: 'nearest', inline: 'nearest' });   // a tab scrolled out of a narrow bar
     document.title = CA.views[viewId].title + ' · ' + D.meta.title;
     regionBar();
     try { CA.views[viewId].mount(root, r); } catch (e) { CA.reportError(e); }
+    regionRow(root);
     CA.emit('view-mounted', viewId);
+  }
+
+  /** Views without a region dropdown of their own (all but the 3D atlas) get one at the top left of their page head. */
+  function regionRow(root) {
+    if (D.regions.length < 2 || root.querySelector('select.region-pick')) return;
+    const head = root.querySelector('.page-head > div');
+    if (head) head.prepend(h('label', { class: 'region-row' }, h('span', {}, 'Region'), CA.regionPicker()));
   }
 
   /** Views that cover other regions only say so above their content and offer a switch. */
@@ -430,6 +561,14 @@
     if (!v) return;
     regionBar();
     if (v.onRegion) { try { v.onRegion(CA.region); } catch (e) { CA.reportError(e); } } else mountView(CA.current, CA.parseHash());
+  });
+
+  // On a theme change, a view with onTheme() recolours in place; any other view is mounted again.
+  CA.on('theme', () => {
+    CA.refreshPanel();
+    const v = CA.views[CA.current];
+    if (!v) return;
+    if (v.onTheme) { try { v.onTheme(CA.theme); } catch (e) { CA.reportError(e); } } else mountView(CA.current, CA.parseHash());
   });
 
   CA.route = function () {

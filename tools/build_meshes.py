@@ -2,18 +2,20 @@
 """
 Build the 3D anatomy bundles used by the "3D atlas" view.
 
-    python tools/build_meshes.py            # human and mouse
+    python tools/build_meshes.py            # every species in data/meshes.json
     python tools/build_meshes.py mouse      # one species
 
 Reads data/meshes.json, downloads the source meshes into .cache/ on first run
 (Allen Mouse CCFv3 structure meshes; Allen Human Reference Atlas via BrainGlobe;
-human cerebellar lobules and nuclei from the SUIT probabilistic atlas, Diedrichsen 2009/2011),
-decimates and smooths them, puts both species into one scene frame
+human cerebellar lobules and nuclei from the SUIT probabilistic atlas, Diedrichsen 2009/2011;
+for the macaque, the NIMH Macaque Template v2.0 with its CHARM cortical and SARM subcortical
+label volumes, from which surfaces are computed here), decimates and smooths them, puts every
+species into one scene frame
 (x = left->right, y = ventral->dorsal, z = posterior->anterior; brain ~10 units long)
 and writes js/data/meshes_<species>.js (quantized, base64) so the site also works
 when index.html is opened straight from disk.
 
-Needs numpy and trimesh; the human lobules also need nibabel, scipy and scikit-image.
+Needs numpy and trimesh; the human lobules and the macaque also need nibabel, scipy and scikit-image.
 If fast_simplification is installed it is used for quadric decimation (better shapes);
 otherwise vertex clustering is used.
 
@@ -55,18 +57,24 @@ def load_obj(path):
     return np.asarray(verts, float), np.asarray(faces, np.int64) - 1
 
 
+def src_ids(it):
+    """An item's atlas structure ids: one id, or a list whose meshes are merged into one structure."""
+    return it['src'] if isinstance(it['src'], list) else [it['src']]
+
+
 def source_paths(spec):
-    """Return a function item -> local .obj path, downloading sources if needed."""
+    """Return a function structure id -> local .obj path, downloading sources if needed."""
     src = spec['source']
     if src['type'] == 'allen_ccf':
         folder = CACHE / 'mouse_ccf'
         folder.mkdir(parents=True, exist_ok=True)
         for it in spec['items']:
-            path = folder / f"{it['src']}.obj"
-            if not path.exists():
-                print('  downloading', path.name)
-                urllib.request.urlretrieve(src['url'].format(src=it['src']), path)
-        return lambda it: folder / f"{it['src']}.obj"
+            for sid in src_ids(it):
+                path = folder / f"{sid}.obj"
+                if not path.exists():
+                    print('  downloading', path.name)
+                    urllib.request.urlretrieve(src['url'].format(src=sid), path)
+        return lambda sid: folder / f"{sid}.obj"
     if src['type'] == 'brainglobe':
         folder = CACHE / 'human_atlas'
         mesh_dir = folder / src['dir']
@@ -82,7 +90,7 @@ def source_paths(spec):
                     tf.extractall(folder, members=members, filter='data')
                 except TypeError:  # Python < 3.12
                     tf.extractall(folder, members=members)
-        return lambda it: mesh_dir / f"{it['src']}.obj"
+        return lambda sid: mesh_dir / f"{sid}.obj"
     raise ValueError(f"unknown source type {src['type']}")
 
 
@@ -159,14 +167,106 @@ def b64(arr):
     return base64.b64encode(arr.tobytes()).decode('ascii')
 
 
-def build(species, spec):
-    print(f'[{species}]')
+def loader(spec):
+    """Return item -> (vertices in scene mm: x right, y up, z anterior; faces)."""
+    if spec['source']['type'] == 'nmt':
+        return NMT(spec['source']).surface
     path_of = source_paths(spec)
     frame = spec['frame']
     shell = next(it for it in spec['items'] if it['group'] == 'shell')
-    raw_shell, _ = load_obj(path_of(shell))
-    ml0 = raw_shell[:, 2].min()
-    sv = to_scene_mm(raw_shell, frame, ml0)
+    ml0 = load_obj(path_of(shell['src']))[0][:, 2].min()
+
+    def load(it):
+        vs, fs, n = [], [], 0
+        for sid in src_ids(it):
+            v, f = load_obj(path_of(sid))
+            vs.append(v)
+            fs.append(f + n)
+            n += len(v)
+        return to_scene_mm(np.concatenate(vs), frame, ml0), np.concatenate(fs)
+    return load
+
+
+class NMT:
+    """NIMH Macaque Template v2 (symmetric) with the CHARM cortical and SARM subcortical hierarchical atlases.
+
+    Items name labels by abbreviation: {"charm": ["M1"], "sarm": ["Cb1V", ...]} (each read at its finest level),
+    or a template mask: {"mask": "brainmask"}. Surfaces come from marching cubes on the label volumes."""
+
+    def __init__(self, src):
+        import nibabel as nib
+        base = CACHE / 'macaque_nmt' / src['dir']
+        if not base.exists():
+            folder = base.parent
+            folder.mkdir(parents=True, exist_ok=True)
+            tgz = folder / src['url'].rsplit('/', 1)[-1]
+            if not tgz.exists():
+                print('  downloading NMT v2 (~270 MB) ...')
+                urllib.request.urlretrieve(src['url'], tgz)
+            keep = (f"{src['dir']}/{src['res']}/", f"{src['dir']}/tables_")
+            with tarfile.open(tgz) as tf:
+                members = [m for m in tf.getmembers() if m.name.startswith(keep) and (m.isfile() or m.isdir())]
+                try:
+                    tf.extractall(folder, members=members, filter='data')
+                except TypeError:  # Python < 3.12
+                    tf.extractall(folder, members=members)
+        self.res = base / src['res']
+        self.base, self.tag, self.nib = base, src['res'], nib
+        self.vols, self.tables = {}, {}
+
+    def table(self, atlas):
+        if atlas not in self.tables:
+            rows = {}
+            with open(self.base / f'tables_{atlas}' / f'{atlas}_key_all.txt') as fh:
+                next(fh)
+                for line in fh:
+                    idx, abbr, _name, _first, last = line.rstrip('\n').split('\t')[:5]
+                    rows[abbr] = (int(idx), int(last))
+            self.tables[atlas] = rows
+        return self.tables[atlas]
+
+    def volume(self, atlas):
+        if atlas not in self.vols:
+            img = self.nib.load(str(self.res / f'{atlas}_in_{self.tag}.nii.gz'))
+            self.vols[atlas] = (np.asarray(img.dataobj), img.affine)
+        return self.vols[atlas]
+
+    def mask(self, it):
+        if 'mask' in it:
+            img = self.nib.load(str(self.res / f"{self.tag}_{it['mask']}.nii.gz"))
+            return np.asarray(img.dataobj) > 0, img.affine
+        m, aff = None, None
+        for atlas in ('CHARM', 'SARM'):
+            labels = it.get(atlas.lower(), [])
+            if not labels:
+                continue
+            vol, aff = self.volume(atlas)
+            tab = self.table(atlas)
+            for lab in labels:
+                idx, level = tab[lab]
+                hit = vol[..., 0, level - 1] == idx
+                if not hit.any():
+                    raise ValueError(f"{it['key']}: {atlas} label {lab} is empty")
+                m = hit if m is None else m | hit
+        return m, aff
+
+    def surface(self, it):
+        m, aff = self.mask(it)
+        idx = np.argwhere(m)
+        lo, hi = np.maximum(idx.min(0) - 2, 0), idx.max(0) + 3   # crop to the structure
+        crop = m[lo[0]:hi[0], lo[1]:hi[1], lo[2]:hi[2]]
+        a2 = aff.copy()
+        a2[:3, 3] = aff[:3, :3] @ lo + aff[:3, 3]
+        v, f = field_surface(crop.astype(np.float32), a2, 0.5, it.get('sigma', 0.8))
+        return v, outward(v, f)
+
+
+def build(species, spec):
+    print(f'[{species}]')
+    load = loader(spec)
+    frame = spec['frame']
+    shell = next(it for it in spec['items'] if it['group'] == 'shell')
+    sv, _ = load(shell)
     if frame.get('mirror'):
         sv = np.vstack([sv, sv * [-1, 1, 1]])
     lo, hi = sv.min(0), sv.max(0)
@@ -178,8 +278,8 @@ def build(species, spec):
     for it in spec['items']:
         if 'suit' in it:
             continue  # built below, once the alignment target is known
-        v, f = load_obj(path_of(it))
-        v = (to_scene_mm(v, frame, ml0) - center) * scale
+        v, f = load(it)
+        v = (v - center) * scale
         if it.get('align_only'):
             if frame.get('mirror'):
                 v, f = np.vstack([v, v * [-1, 1, 1]]), np.vstack([f, f[:, ::-1] + len(v)])
@@ -191,7 +291,7 @@ def build(species, spec):
         if frame.get('mirror'):
             v, f = np.vstack([v, v * [-1, 1, 1]]), np.vstack([f, f[:, ::-1] + len(v)])
         if it['group'] == 'helper':
-            helpers[it['key']] = (v.min(0), v.max(0), v.mean(0))
+            helpers[it['key']] = (v.min(0), v.max(0), v.mean(0), v)
             continue
         parts = split_lr(v, f).items() if it.get('split') else [('', (v, f))]
         for side, (pv, pf) in parts:
@@ -372,8 +472,8 @@ def extra_anchors(species, meshes, helpers):
         mlo, mhi, mc = bbox(meshes, 'midbrain-teg')
         dlo, dhi, dc = bbox(meshes, 'medulla')
         plo, phi, pc = bbox(meshes, 'pons-basilar')
-        aq_lo, aq_hi, aq_c = helpers['aqueduct']
-        v4lo, v4hi, v4c = helpers['v4']
+        aq_lo, aq_hi, aq_c = helpers['aqueduct'][:3]
+        v4lo, v4hi, v4c = helpers['v4'][:3]
         a['pag'] = sided([0.18, aq_c[1], aq_c[2]])
         a['vta'] = sided([0.18, mlo[1] + 0.3 * (mhi[1] - mlo[1]), mlo[2] + 0.75 * (mhi[2] - mlo[2])])
         a['snc'] = sided([0.55, mlo[1] + 0.3 * (mhi[1] - mlo[1]), mlo[2] + 0.65 * (mhi[2] - mlo[2])])
@@ -387,7 +487,9 @@ def extra_anchors(species, meshes, helpers):
         slo, _, sc = bbox(meshes, 'stn')
         a['lc'] = sided([0.3, thi[1] - 0.3 * (thi[1] - tlo[1]), tlo[2] + 0.2 * (thi[2] - tlo[2])])   # rostral dorsal pons, by the 4th ventricle
         a['ppn'] = sided([0.5, mlo[1] + 0.1 * (mhi[1] - mlo[1]), mlo[2] + 0.4 * (mhi[2] - mlo[2])])  # caudal midbrain tegmentum, lateral
+        a['mrn'] = sided([0.5, mlo[1] + 0.55 * (mhi[1] - mlo[1]), mlo[2] + 0.5 * (mhi[2] - mlo[2])])  # midbrain reticular nucleus: lateral tegmentum, above the red nucleus level
         a['ser-neurons'] = sided([0.0, dhi[1] - 0.2 * (dhi[1] - dlo[1]), dlo[2] + 0.55 * (dhi[2] - dlo[2])])  # rostral medullary reticular formation
+        a['drn'] = sided([0.0, aq_lo[1] - 0.12, aq_lo[2] + 0.3 * (aq_hi[2] - aq_lo[2])])   # dorsal raphe: midline, just below the caudal aqueduct
         a['tmn'] = sided([0.25, slo[1] - 0.15, sc[2] + 0.15])   # posterior hypothalamus, below and in front of the STN
         a['lh'] = sided([0.45, sc[1] - 0.05, sc[2] + 0.45])     # lateral hypothalamus, in front of the STN
 
@@ -402,6 +504,23 @@ def extra_anchors(species, meshes, helpers):
         a['basal-forebrain'] = sided([0.75, ulo[1], (right('accumbens')[2] + right('amygdala')[2]) / 2])   # below the striatum, between accumbens and amygdala
         start = np.array([0.0, dlo[1] + 0.1, dc[2]])
         spine = [start, start + [0, -1.6, -0.15], start + [0, -3.2, -0.25]]
+    elif species == 'macaque':
+        vlo, vhi, vc = bbox(meshes, 've')
+        a['labyrinth'] = sided([0.27 * width, vc[1] - 0.1, vc[2]])   # inner ear, lateral to the vestibular nuclei
+        olo, ohi, _ = bbox(meshes, 'ofc')
+        a['eyes'] = sided([0.24 * width, olo[1] - 0.9, ohi[2] - 0.3])   # orbits below the orbitofrontal cortex
+        a['ser-neurons'] = sided([0.0, *helpers['gi'][2][1:]])           # medullary reticular formation, as in the mouse
+        mlo, mhi, mc = helpers['mm'][:3]
+        a['tmn'] = sided([mhi[0] + 0.12, mc[1], mc[2]])                  # posterior hypothalamus, beside the mammillary bodies
+        mv = helpers['med'][3]                                           # the spinal cord continues the long axis of the medulla
+        c = mv.mean(0)
+        d = np.linalg.svd(mv - c, full_matrices=False)[2][0]
+        d = d if d[1] < 0 else -d
+        d[0] = 0.0
+        d /= np.linalg.norm(d)
+        start = c + d * ((mv - c) @ d).max()
+        start[0] = 0.0
+        spine = [start, start + 1.6 * d, start + 3.2 * d]
     else:
         io_lo, io_hi, io_c = bbox(meshes, 'io')
         vlo, vhi, vc = bbox(meshes, 'vnc')
@@ -414,14 +533,16 @@ def extra_anchors(species, meshes, helpers):
     end = spine[-1]
     a['spinal'] = sided([0.0, *spine[1][1:]])
     a['body'] = sided([0.9, end[1] - 0.6, end[2] - 0.3])
-    a['gut'] = sided([0.0, end[1] - 1.2, end[2] + (1.6 if species == 'human' else 1.2)])
+    a['gut'] = sided([0.0, end[1] - 1.2, end[2] + {'human': 1.6, 'macaque': 1.4}.get(species, 1.2)])
     spine = [[round(float(x), 3) for x in p] for p in spine]
     return a, spine
 
 
 def main():
     cfg = json.loads((ROOT / 'data' / 'meshes.json').read_text())
-    species = sys.argv[1:] or list(cfg)
+    # by default, only the species switched on in knowledge.json (atlas3d.species)
+    offered = json.loads((ROOT / 'data' / 'knowledge.json').read_text())['atlas3d']['species']
+    species = sys.argv[1:] or [sp for sp in cfg if sp in offered]
     print('decimation:', 'quadric (fast_simplification)' if fast_simplification else 'vertex clustering')
     for sp in species:
         build(sp, cfg[sp])

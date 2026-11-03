@@ -93,12 +93,12 @@
     const defs = s('defs', {},
       s('clipPath', { id: 'fm-clip' }, s('path', { d: silhouette() })),
       s('pattern', { id: 'fm-hatch', width: 8, height: 8, patternUnits: 'userSpaceOnUse', patternTransform: 'rotate(45)' },
-        s('rect', { width: 8, height: 8, fill: '#3a3f4b' }), s('line', { x1: 0, y1: 0, x2: 0, y2: 8, stroke: '#9ca3af', 'stroke-width': 3 })));
+        s('rect', { width: 8, height: 8, fill: CA.tc('#3a3f4b') }), s('line', { x1: 0, y1: 0, x2: 0, y2: 8, stroke: CA.tc('#9ca3af'), 'stroke-width': 3 })));
     svg.appendChild(defs);
-    svg.appendChild(s('path', { d: silhouette(), fill: '#1c2230', stroke: '#3d444d', 'stroke-width': 1.5 }));
+    svg.appendChild(s('path', { d: silhouette(), fill: CA.tc('#1c2230'), stroke: CA.tc('#3d444d'), 'stroke-width': 1.5 }));
     const g = s('g', { 'clip-path': 'url(#fm-clip)' });
     regions.forEach((r) => {
-      const rect = s('rect', { class: 'fm-region', x: r.x0, y: r.band.y0, width: r.x1 - r.x0, height: r.band.h, 'data-r': r.id, fill: '#2a3140' });
+      const rect = s('rect', { class: 'fm-region', x: r.x0, y: r.band.y0, width: r.x1 - r.x0, height: r.band.h, 'data-r': r.id, fill: CA.tc('#2a3140') });
       rect.addEventListener('mousemove', (ev) => CA.tip.show(tipHtml(r), ev));
       rect.addEventListener('mouseleave', () => CA.tip.hide());
       rect.addEventListener('click', () => { selRegion = r; renderCard(); paintSelection(); CA.select(regionEntity(r)); });
@@ -107,42 +107,42 @@
     });
     svg.appendChild(g);
     // vermis guide lines, fissures, labels
-    svg.appendChild(s('line', { x1: CX - VH, x2: CX - VH, y1: PAD_Y, y2: H - PAD_Y, stroke: '#0d1117', 'stroke-width': 2, 'clip-path': 'url(#fm-clip)' }));
-    svg.appendChild(s('line', { x1: CX + VH, x2: CX + VH, y1: PAD_Y, y2: H - PAD_Y, stroke: '#0d1117', 'stroke-width': 2, 'clip-path': 'url(#fm-clip)' }));
+    svg.appendChild(s('line', { x1: CX - VH, x2: CX - VH, y1: PAD_Y, y2: H - PAD_Y, stroke: CA.tc('#0d1117'), 'stroke-width': 2, 'clip-path': 'url(#fm-clip)' }));
+    svg.appendChild(s('line', { x1: CX + VH, x2: CX + VH, y1: PAD_Y, y2: H - PAD_Y, stroke: CA.tc('#0d1117'), 'stroke-width': 2, 'clip-path': 'url(#fm-clip)' }));
     FM.fissures.forEach((f) => {
       const b = FM.bands.find((x) => x.id === f.after);
-      svg.appendChild(s('line', { x1: PAD_X - 10, x2: W - PAD_X + 10, y1: b.y1, y2: b.y1, stroke: '#e6edf3', 'stroke-width': 1.5, 'stroke-dasharray': '6 4', opacity: 0.7, 'clip-path': 'url(#fm-clip)' }));
+      svg.appendChild(s('line', { x1: PAD_X - 10, x2: W - PAD_X + 10, y1: b.y1, y2: b.y1, stroke: CA.tc('#e6edf3'), 'stroke-width': 1.5, 'stroke-dasharray': '6 4', opacity: 0.7, 'clip-path': 'url(#fm-clip)' }));
       // two short lines so the label fits in the margin beside the widest bands
       const words = f.label.split(' ');
-      svg.appendChild(s('text', { x: W - 6, y: b.y1 - 2, 'text-anchor': 'end', fill: '#8b949e', 'font-size': 11 },
+      svg.appendChild(s('text', { x: W - 6, y: b.y1 - 2, 'text-anchor': 'end', fill: CA.tc('#8b949e'), 'font-size': 11 },
         s('tspan', { x: W - 6 }, words.slice(0, -1).join(' ') || f.label), words.length > 1 ? s('tspan', { x: W - 6, dy: 12 }, words[words.length - 1]) : null));
     });
     FM.bands.forEach((b) => {
-      svg.appendChild(s('text', { x: CX + b.w + 36, y: (b.y0 + b.y1) / 2 + 4, fill: '#c9d1d9', 'font-size': 12, 'pointer-events': 'none' }, b.label));
-      svg.appendChild(s('text', { x: CX - b.w - 36, y: (b.y0 + b.y1) / 2 + 4, fill: '#c9d1d9', 'font-size': 12, 'text-anchor': 'end', 'pointer-events': 'none' }, b.label));
+      svg.appendChild(s('text', { x: CX + b.w + 36, y: (b.y0 + b.y1) / 2 + 4, fill: CA.tc('#c9d1d9'), 'font-size': 12, 'pointer-events': 'none' }, b.label));
+      svg.appendChild(s('text', { x: CX - b.w - 36, y: (b.y0 + b.y1) / 2 + 4, fill: CA.tc('#c9d1d9'), 'font-size': 12, 'text-anchor': 'end', 'pointer-events': 'none' }, b.label));
     });
-    svg.appendChild(s('text', { x: CX - MAXW * 0.55, y: 24, fill: '#8b949e', 'font-size': 13, 'text-anchor': 'middle' }, 'Left hemisphere'));
-    svg.appendChild(s('text', { x: CX, y: 24, fill: '#8b949e', 'font-size': 13, 'text-anchor': 'middle' }, 'Vermis'));
-    svg.appendChild(s('text', { x: CX + MAXW * 0.55, y: 24, fill: '#8b949e', 'font-size': 13, 'text-anchor': 'middle' }, 'Right hemisphere'));
-    svg.appendChild(s('text', { x: 12, y: FM.bands[0].y0 + 14, fill: '#6e7681', 'font-size': 11 }, 'Anterior lobe'));
-    svg.appendChild(s('text', { x: 12, y: FM.bands[2].y0 + 16, fill: '#6e7681', 'font-size': 11 }, 'Posterior lobe'));
-    svg.appendChild(s('text', { x: 12, y: FM.bands[FM.bands.length - 1].y1 - 4, fill: '#6e7681', 'font-size': 11 }, 'Flocculonodular lobe'));
+    svg.appendChild(s('text', { x: CX - MAXW * 0.55, y: 24, fill: CA.tc('#8b949e'), 'font-size': 13, 'text-anchor': 'middle' }, 'Left hemisphere'));
+    svg.appendChild(s('text', { x: CX, y: 24, fill: CA.tc('#8b949e'), 'font-size': 13, 'text-anchor': 'middle' }, 'Vermis'));
+    svg.appendChild(s('text', { x: CX + MAXW * 0.55, y: 24, fill: CA.tc('#8b949e'), 'font-size': 13, 'text-anchor': 'middle' }, 'Right hemisphere'));
+    svg.appendChild(s('text', { x: 12, y: FM.bands[0].y0 + 14, fill: CA.tc('#6e7681'), 'font-size': 11 }, 'Anterior lobe'));
+    svg.appendChild(s('text', { x: 12, y: FM.bands[2].y0 + 16, fill: CA.tc('#6e7681'), 'font-size': 11 }, 'Posterior lobe'));
+    svg.appendChild(s('text', { x: 12, y: FM.bands[FM.bands.length - 1].y1 - 4, fill: CA.tc('#6e7681'), 'font-size': 11 }, 'Flocculonodular lobe'));
   }
 
   function fillFor(r) {
     if (overlayId === 'lesion') {
       const c = lesionCat(r);
-      return c ? { fill: FM.lesion.cats[c].color, op: c === 'vestib' ? 0.45 : 0.85 } : { fill: '#2a3140', op: 1 };
+      return c ? { fill: FM.lesion.cats[c].color, op: c === 'vestib' ? 0.45 : 0.85 } : { fill: CA.tc('#2a3140'), op: 1 };
     }
     if (overlayId === 'dominant') {
       const d = dominant(r);
-      if (!d) return { fill: '#2a3140', op: 1 };
+      if (!d) return { fill: CA.tc('#2a3140'), op: 1 };
       if (d.list.length > 1) return { fill: 'url(#fm-hatch)', op: 0.35 + 0.2 * d.v };
       return { fill: d.list[0].color, op: 0.25 + 0.23 * d.v };
     }
     const ov = OV.find((o) => o.id === overlayId);
     const v = score(ov, r);
-    return v ? { fill: ov.color, op: 0.2 + 0.26 * v } : { fill: '#2a3140', op: 1 };
+    return v ? { fill: ov.color, op: 0.2 + 0.26 * v } : { fill: CA.tc('#2a3140'), op: 1 };
   }
 
   function paint() {
@@ -156,7 +156,7 @@
     } else if (overlayId === 'dominant') {
       lg.appendChild(h('div', { class: 'small muted' }, 'Color = highest-scoring domain; strength = score.'));
       OV.forEach((o) => lg.appendChild(h('div', { class: 'row small' }, h('span', { class: 'dot', style: { background: o.color } }), o.label)));
-      lg.appendChild(h('div', { class: 'row small' }, h('span', { class: 'dot', style: { background: 'repeating-linear-gradient(45deg,#9ca3af 0 3px,#3a3f4b 3px 6px)' } }), 'Overlapping association domains'));
+      lg.appendChild(h('div', { class: 'row small' }, h('span', { class: 'dot', style: { background: `repeating-linear-gradient(45deg,${CA.tc('#9ca3af')} 0 3px,${CA.tc('#3a3f4b')} 3px 6px)` } }), 'Overlapping association domains'));
     } else {
       const ov = OV.find((o) => o.id === overlayId);
       lg.appendChild(h('div', { class: 'row small' }, ['weak', 'moderate', 'strong'].map((t, i) =>

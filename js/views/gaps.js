@@ -34,7 +34,7 @@
   }
 
   function cellStyle(d, l, v) {
-    if (v == null) return { background: '#161b22' };
+    if (v == null) return { background: CA.tc('#161b22') };
     if (mode === 'ratio') {
       const x = CA.clamp(Math.log2(v) / 2, -1, 1);
       return x < 0 ? { background: `rgba(255,123,114,${0.15 + 0.6 * -x})` } : { background: `rgba(88,166,255,${0.15 + 0.6 * x})` };

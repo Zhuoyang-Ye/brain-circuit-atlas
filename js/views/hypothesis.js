@@ -96,7 +96,7 @@
     CA.clear(els.question);
     const q = D.questions.find((x) => x.id === questionId);
     if (!q) return;
-    els.question.append(h('div', { class: 'card', style: { borderColor: '#1f6feb' } },
+    els.question.append(h('div', { class: 'card', style: { borderColor: CA.tc('#1f6feb') } },
       h('div', { class: 'row', style: { justifyContent: 'space-between' } }, h('h3', { style: { margin: 0 } }, 'Open question: ' + q.title),
         h('button', { class: 'btn ghost', onclick: () => { questionId = null; CA.store.set('lab.question', null); renderAll(); } }, '×')),
       h('p', { class: 'small', style: { marginTop: '6px' } }, q.text),
@@ -115,7 +115,7 @@
     const st = steps();
     chain.forEach((id, i) => {
       if (i) {
-        const s = st[i - 1], col = s.link ? CA.statusColor(s.status) : '#6e7681';
+        const s = st[i - 1], col = s.link ? CA.statusColor(s.status) : CA.tc('#6e7681');
         els.chain.append(h('div', { class: 'clink' + (s.link ? '' : ' gap'), onclick: () => s.link && CA.showLink(s.link.id), title: s.link ? s.link.rel : 'No curated link' },
           h('span', { style: { color: col } }, s.link ? CA.statusById[s.status].label : 'GAP'),
           h('div', { class: 'ln', style: { borderColor: col } }),
@@ -225,7 +225,7 @@
       h('p', { style: { fontSize: '1.05rem' } }, c.statement),
       h('h4', {}, 'Evidence for each step'),
       h('table', { class: 'data' }, c.st.map((s) => h('tr', { class: s.link ? 'click' : '', onclick: () => s.link && CA.showLink(s.link.id) },
-        h('td', {}, s.link ? CA.statusBadge(s.status) : h('span', { class: 'badge', style: { color: '#8b949e', borderColor: '#6e7681' } }, 'Gap')),
+        h('td', {}, s.link ? CA.statusBadge(s.status) : h('span', { class: 'badge', style: { color: CA.tc('#8b949e'), borderColor: CA.tc('#6e7681') } }, 'Gap')),
         h('td', {}, name(s.a), ' → ', name(s.b), s.link ? h('div', { class: 'tiny muted' }, s.link.rel + (s.reversed ? ' (curated in the reverse direction)' : '')) : null),
         h('td', {}, s.link ? CA.citeChips(s.link.refs) : h('a', { class: 'small', target: '_blank', rel: 'noopener', href: CA.pubmedSearchUrl(`(${name(s.a)}) AND (${name(s.b)}) AND ${CA.region.query}`) }, 'search PubMed ↗'))))),
       h('h4', {}, 'Critical test (weakest step)'),

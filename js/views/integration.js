@@ -111,13 +111,13 @@
   function draw(L) {
     D.levels.forEach((l, ci) => {
       svg.appendChild(s('text', { x: 20 + ci * COLW + NODEW / 2, y: 24, 'text-anchor': 'middle', fill: l.color, 'font-size': 13, 'font-weight': 600 }, l.label));
-      svg.appendChild(s('text', { x: 20 + ci * COLW + NODEW / 2, y: 40, 'text-anchor': 'middle', fill: '#6e7681', 'font-size': 10.5 }, scope === 'all' ? l.desc : CA.levelDesc(l.id)));
+      svg.appendChild(s('text', { x: 20 + ci * COLW + NODEW / 2, y: 40, 'text-anchor': 'middle', fill: CA.tc('#6e7681'), 'font-size': 10.5 }, scope === 'all' ? l.desc : CA.levelDesc(l.id)));
     });
     const eg = s('g', {}), ng = s('g', {}), gg = s('g', {});
     svg.append(eg, gg, ng);
     edges = scopedLinks().filter((l) => L.xy[l.s] && L.xy[l.t]).map((l) => {
       const a = L.xy[l.s], b = L.xy[l.t];
-      const path = s('path', { class: 'edge', d: edgePath(a, b), stroke: '#8b949e', 'stroke-width': WIDTH[l.status], 'stroke-dasharray': DASH[l.status], opacity: 0.35 });
+      const path = s('path', { class: 'edge', d: edgePath(a, b), stroke: CA.tc('#8b949e'), 'stroke-width': WIDTH[l.status], 'stroke-dasharray': DASH[l.status], opacity: 0.35 });
       path.addEventListener('mousemove', (ev) => CA.tip.show(`<b>${CA.esc(CA.ent[l.s].name)} → ${CA.esc(CA.ent[l.t].name)}</b><br>${CA.esc(l.rel)}<br><span style="color:${CA.statusColor(l.status)}">${CA.statusById[l.status].label}</span>`, ev));
       path.addEventListener('mouseleave', () => CA.tip.hide());
       path.addEventListener('click', () => CA.showLink(l.id));
@@ -134,7 +134,7 @@
       const e = CA.ent[id];
       const label = e.name.length > 24 ? e.name.slice(0, 23) + '…' : e.name;
       const g = s('g', { class: 'node', transform: `translate(${p.x},${p.y})` },
-        s('rect', { width: NODEW, height: 21, rx: 5, fill: '#1c2230', stroke: CA.levelColor(e.level), 'stroke-width': 1.2 }),
+        s('rect', { width: NODEW, height: 21, rx: 5, fill: CA.tc('#1c2230'), stroke: CA.levelColor(e.level), 'stroke-width': 1.2 }),
         s('text', { x: 8, y: 14.5 }, label));
       g.addEventListener('mouseenter', (ev) => { hoverId = id; paint(); CA.tip.show(`<b>${CA.esc(e.name)}</b><br><span class="muted">${CA.neighbors(id).size} connections</span>`, ev); });
       g.addEventListener('mousemove', (ev) => CA.tip.move(ev));
@@ -179,7 +179,7 @@
       if (!domOK(id)) on = false;
       g.style.opacity = on ? 1 : 0.18;
       const rect = g.firstChild;
-      rect.setAttribute('fill', id === center || (chainNodes && chainNodes.has(id)) ? '#28344a' : '#1c2230');
+      rect.setAttribute('fill', id === center || (chainNodes && chainNodes.has(id)) ? CA.tc('#28344a') : CA.tc('#1c2230'));
       rect.setAttribute('stroke-width', id === center ? 2.5 : 1.2);
     });
     edges.forEach(({ l, path, glyph }) => {
@@ -189,7 +189,7 @@
       else if (center) on = l.s === center || l.t === center;
       else on = null;
       if (domain && !(domOK(l.s) && domOK(l.t))) on = false;
-      path.setAttribute('stroke', on ? CA.statusColor(l.status) : '#8b949e');
+      path.setAttribute('stroke', on ? CA.statusColor(l.status) : CA.tc('#8b949e'));
       path.setAttribute('opacity', on === null ? 0.33 : on ? 0.95 : 0.05);
       path.setAttribute('stroke-width', WIDTH[l.status] * (on ? 1.4 : 1));
       if (glyph) glyph.setAttribute('opacity', on === false ? 0.08 : 1);

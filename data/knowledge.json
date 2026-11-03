@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Cerebellum Atlas",
-    "subtitle": "An evidence-linked map of the cerebellum, the motor cortex and their connections, from molecules to mind",
+    "subtitle": "An evidence-linked map of the cerebellum, the motor and prefrontal cortex and their connections, from molecules to mind",
     "version": "0.1",
     "disclaimer": "Summaries, link statuses and map scores were drafted with AI assistance from PubMed abstracts and need review by domain experts. Diagrams are schematic."
   },
@@ -69,7 +69,8 @@
       },
       "speciesNote": {
         "human": "Human: lobules and deep nuclei from the SUIT probabilistic atlas (Diedrichsen 2009, 2011), fitted to the Allen human brain. Brainstem nuclei not segmented in these atlases are approximate (≈).",
-        "mouse": "Mouse: Allen CCFv3 lobules and nuclei. Most causal circuit evidence comes from mice."
+        "mouse": "Mouse: Allen CCFv3 lobules and nuclei. Most causal circuit evidence comes from mice.",
+        "macaque": "Macaque: lobules, deep nuclei and brainstem nuclei from the SARM subcortical atlas (Hartig et al., 2021) and cortical areas from CHARM (Jung et al., 2021), on the NIMH Macaque Template. The substantia nigra is drawn whole; the tuberomammillary nucleus and brainstem serotonin neurons are approximate (≈)."
       }
     },
     {
@@ -157,7 +158,120 @@
       },
       "speciesNote": {
         "human": "Human: M1 is the Allen precentral gyrus, which also holds part of premotor cortex (the atlas does not mark the border). Premotor areas, S1 and the basal forebrain are approximate (≈); mouse ALM is shown at the premotor areas as a possible homologue.",
-        "mouse": "Mouse: Allen CCFv3 primary (MOp) and secondary (MOs, incl. ALM) motor areas, primary somatosensory area (SSp), motor thalamus (VAL) and substantia innominata (basal forebrain)."
+        "mouse": "Mouse: Allen CCFv3 primary (MOp) and secondary (MOs, incl. ALM) motor areas, primary somatosensory area (SSp), motor thalamus (VAL) and substantia innominata (basal forebrain).",
+        "macaque": "Macaque: CHARM primary motor (M1), premotor (PMd, PMv), supplementary motor (SMA, pre-SMA) and primary somatosensory areas; SARM motor thalamus (VA/VL) and basal nucleus (basal forebrain). Mouse ALM is shown at the premotor areas as a possible homologue."
+      }
+    },
+    {
+      "id": "prefrontal",
+      "label": "Prefrontal cortex",
+      "entity": "pfc",
+      "query": "(prefrontal[tiab] OR orbitofrontal[tiab] OR \"anterior cingulate\"[tiab] OR prelimbic[tiab] OR infralimbic[tiab])",
+      "view": "prefrontal",
+      "views": ["atlas", "scales", "gaps", "lab", "library"],
+      "levelDesc": {
+        "regional": "Areas: dorsolateral, orbital, cingulate, medial",
+        "circuit": "Delay activity, population codes, rhythms"
+      },
+      "levelQueries": {
+        "cellular": "(neuron*[tiab] OR interneuron*[tiab] OR pyramidal[tiab] OR parvalbumin[tiab] OR somatostatin[tiab] OR spine*[tiab])",
+        "circuit": "(circuit*[tiab] OR \"persistent activity\"[tiab] OR \"delay activity\"[tiab] OR oscillat*[tiab] OR population[tiab] OR synchron*[tiab])",
+        "regional": "(dorsolateral[tiab] OR orbitofrontal[tiab] OR \"anterior cingulate\"[tiab] OR prelimbic[tiab] OR infralimbic[tiab] OR ventromedial[tiab])"
+      },
+      "methods": {
+        "molecular": {
+          "manipulate": [
+            "Local receptor pharmacology (D1, NMDA, alpha2A agonists or antagonists)",
+            "Iontophoresis onto single neurons during a task",
+            "Viral knockdown of channels (e.g., HCN1)"
+          ],
+          "readout": [
+            "Genotype association (e.g., COMT)",
+            "Receptor and channel localization by electron microscopy",
+            "Delay-period firing under drug application"
+          ]
+        },
+        "cellular": {
+          "manipulate": [
+            "Opto-/chemogenetics of PV, SST or projection-defined pyramidal neurons",
+            "Synaptic-strength manipulations in defined cells",
+            "Ketamine or stress exposure"
+          ],
+          "readout": [
+            "Longitudinal spine imaging",
+            "Slice recordings of synaptic strength",
+            "Post-mortem spine and interneuron markers"
+          ]
+        },
+        "circuit": {
+          "manipulate": [
+            "Brief optogenetic perturbation within the delay",
+            "Pathway-specific inhibition (MD, hippocampal or amygdala inputs)",
+            "Rhythmic stimulation at theta or gamma"
+          ],
+          "readout": [
+            "Delay activity and population decoding",
+            "Multi-site LFP synchrony",
+            "Recurrent network models fitted to data"
+          ]
+        },
+        "regional": {
+          "manipulate": [
+            "Excitotoxic versus aspiration lesions",
+            "Muscimol inactivation of PL, IL or OFC",
+            "Deep brain stimulation"
+          ],
+          "readout": [
+            "Reversal, devaluation and set-shifting tasks",
+            "Fear expression and extinction recall",
+            "Lesion-patient testing (gambling, moral dilemmas)"
+          ]
+        },
+        "systems": {
+          "manipulate": [
+            "Mediodorsal thalamus excitation or inhibition",
+            "Projection-targeted optogenetics (e.g., mPFC to dorsal raphe)",
+            "Dopamine or noradrenaline release in PFC"
+          ],
+          "readout": [
+            "Simultaneous PFC-thalamus-hippocampus-amygdala recordings",
+            "Tract tracing",
+            "Resting-state connectivity"
+          ]
+        },
+        "cognitive": {
+          "manipulate": [
+            "Delayed-response and rule-switching tasks",
+            "Economic choice and foraging tasks",
+            "Fear conditioning and extinction"
+          ],
+          "readout": [
+            "Working-memory accuracy and delay dependence",
+            "Choice and value estimates",
+            "Freezing and extinction recall"
+          ]
+        },
+        "clinical": {
+          "manipulate": [
+            "Ketamine and other rapid antidepressants",
+            "Deep brain stimulation (e.g., subgenual cingulate)",
+            "Cognitive training"
+          ],
+          "readout": [
+            "Prefrontal activation during working memory (fMRI)",
+            "Cortical thickness trajectories",
+            "Clinical response and remission"
+          ]
+        }
+      },
+      "intro": {
+        "title": "Prefrontal cortex, from receptors to decisions",
+        "text": "Dorsolateral, orbital, cingulate and (in rodents) medial prefrontal areas: the delay activity linked to working memory and the neuromodulators that tune it, their loops with the thalamus, hippocampus and amygdala, and what changes in schizophrenia, depression and after prefrontal damage. Every connection is tied to the papers behind it and graded by how strong the evidence is."
+      },
+      "speciesNote": {
+        "human": "Human: Allen middle frontal gyrus (for the dorsolateral PFC), orbital gyri (OFC), gyrus rectus (ventromedial PFC), rostral cingulate gyrus (ACC) and subcallosal gyrus (for the subgenual cingulate, approximate). The dorsal raphe is approximate (≈); rodent medial prefrontal areas have no human counterpart drawn.",
+        "mouse": "Mouse: Allen CCFv3 prelimbic, infralimbic, anterior cingulate and orbital areas, mediodorsal thalamus and dorsal raphe. Rodent prefrontal names and borders differ between atlases; the primate dorsolateral, ventromedial and subgenual areas are not drawn.",
+        "macaque": "Macaque: CHARM dorsolateral PFC, orbitofrontal cortex, anterior cingulate areas 24 and 32 and subgenual area 25; SARM mediodorsal thalamus and dorsal raphe. Rodent prelimbic and infralimbic cortex are not drawn."
       }
     }
   ],
@@ -272,11 +386,33 @@
     {"id": "zp2", "name": "ZP2 (human granule cells)", "level": "molecular", "kind": "gene", "aka": ["zona pellucida glycoprotein 2"], "domains": ["architecture", "development"],
      "summary": "A sperm-receptor gene co-opted in human granule cells. Pontine mossy fibers induce it, and it reduces synaptic proteins at mossy fiber–granule glomeruli and dampens activity: a human-specific synaptic regulator.", "refs": ["kim2026"], "region": "cerebellum"},
     {"id": "noradrenaline", "name": "Noradrenaline (adrenergic receptors)", "level": "molecular", "kind": "neuromodulator", "aka": ["norepinephrine", "NA", "NE"], "domains": ["learning", "motor", "emotion"],
-     "summary": "Released in the cerebellar cortex by locus coeruleus fibers; activating this pathway inhibits Purkinje cells (rat). Through α2-adrenergic receptors it lowers climbing-fiber release probability and damps associative plasticity; through β2 receptors it excites basket cells; through α1 receptors on Bergmann glia it signals noxious stimuli; and through Purkinje-cell α1 receptors it triggers stress-induced attacks in a mouse model of episodic ataxia type 2. Blocking β-adrenergic receptors in lobule HVI and the interpositus impairs acquisition of eyeblink conditioning (rat). Theory proposes that noradrenaline gates unsupervised learning in the cerebellar cortex.", "refs": ["hoffer1973", "kim2025", "carey2009", "saitow2000", "snell2022", "cartford2004", "schweighofer2004"]},
+     "summary": "Released in the cerebellar cortex by locus coeruleus fibers; activating this pathway inhibits Purkinje cells (rat). Through α2-adrenergic receptors it lowers climbing-fiber release probability and damps associative plasticity; through β2 receptors it excites basket cells; through α1 receptors on Bergmann glia it signals noxious stimuli; and through Purkinje-cell α1 receptors it triggers stress-induced attacks in a mouse model of episodic ataxia type 2. Blocking β-adrenergic receptors in lobule HVI and the interpositus impairs acquisition of eyeblink conditioning (rat). Theory proposes that noradrenaline gates unsupervised learning in the cerebellar cortex. In prefrontal cortex, stimulating α2A adrenoceptors strengthens working-memory delay firing by inhibiting cAMP and closing HCN channels (monkeys and rats). Locus coeruleus neurons projecting to prefrontal cortex differ biochemically and electrophysiologically from those projecting to motor cortex and release more noradrenaline (rat).", "refs": ["hoffer1973", "kim2025", "carey2009", "saitow2000", "snell2022", "cartford2004", "schweighofer2004", "wangm2007", "chandler2014"]},
     {"id": "serotonin", "name": "Serotonin (5-HT receptors)", "level": "molecular", "kind": "neuromodulator", "aka": ["5-HT", "5-hydroxytryptamine"], "domains": ["motor", "learning", "development"],
      "summary": "Serotonergic fibers reach all layers of the cerebellar cortex; in rats they arise almost exclusively from the gigantocellular, paragigantocellular and pontine (oralis) reticular nuclei, most of them outside the raphe nuclei. Serotonin selectively excites Lugaro cells, which inhibit Golgi cells, and depolarizes Golgi cells (likely via 5-HT2A receptors), which raises tonic inhibition of granule cells. During the first postnatal weeks, granule-cell 5-HT3 receptors modulate short-term plasticity at parallel-fiber synapses and regulate the timing of Purkinje-cell maturation (mouse). The 5-HT1A agonist buspirone gave a partial benefit in a small trial in cerebellar cortical atrophy. Theory proposes that serotonin sets the 'responsibility' of each microcomplex.", "refs": ["bishop1985", "dieudonne2000", "miyazaki2021", "fleming2019", "oostland2011", "oostland2013", "trouillas1997", "schweighofer2004"]},
-    {"id": "dopamine", "name": "Dopamine (D1–D3 receptors)", "level": "molecular", "kind": "neuromodulator", "aka": ["DA"], "domains": ["social", "reward", "motor", "executive", "learning"],
-     "summary": "The cerebellum contains high dopamine levels, receives midbrain dopaminergic afferents and expresses all five dopamine receptor subtypes; in rats, dopaminergic VTA neurons project to the granular and Purkinje-cell layers, mainly of Crus I and the paraflocculus. Purkinje cells also make and release dopamine, which excites them in an autocrine way (a depolarization-induced slow current) and activates D1 receptors on Bergmann glia (mouse). Purkinje-cell D2 receptors regulate synaptic efficacy and sociability, and deleting glial D1 receptors reduces locomotion and social activity (mouse). A D1-receptor-positive population in the lateral nucleus supports working memory, response inhibition and spatial memory. Theory proposes that dopamine enhances goal-oriented learning. In rat primary motor cortex, dopaminergic terminals and D1/D2 receptors are needed for acquiring a motor skill and for LTP, but not for executing a learned skill.", "refs": ["flace2021", "ikai1992", "kim2009", "li2023", "cutando2022", "locke2018", "schweighofer2004", "hosp2011", "molinaluna2009"]},
+    {
+      "id": "dopamine",
+      "name": "Dopamine (D1–D3 receptors)",
+      "level": "molecular",
+      "kind": "neuromodulator",
+      "aka": ["DA"],
+      "domains": ["social", "reward", "motor", "executive", "learning"],
+      "summary": "The cerebellum contains high dopamine levels, receives midbrain dopaminergic afferents and expresses all five dopamine receptor subtypes; in rats, dopaminergic VTA neurons project to the granular and Purkinje-cell layers, mainly of Crus I and the paraflocculus. Purkinje cells also make and release dopamine, which excites them in an autocrine way (a depolarization-induced slow current) and activates D1 receptors on Bergmann glia (mouse). Purkinje-cell D2 receptors regulate synaptic efficacy and sociability, and deleting glial D1 receptors reduces locomotion and social activity (mouse). A D1-receptor-positive population in the lateral nucleus supports working memory, response inhibition and spatial memory. Theory proposes that dopamine enhances goal-oriented learning. In rat primary motor cortex, dopaminergic terminals and D1/D2 receptors are needed for acquiring a motor skill and for LTP, but not for executing a learned skill. In monkey prefrontal cortex, blocking D1 receptors impairs memory-guided saccades, and D1 stimulation shapes delay activity along an inverted U: low levels sharpen spatial tuning, high levels reduce delay firing in all directions, through cAMP signaling (monkeys and rats). In mice, a fast-firing population of midbrain dopamine neurons that lacks functional somatodendritic D2 autoreceptors projects to prefrontal cortex, and the authors of an optogenetic study conclude that phasic dopamine release in medial PFC tunes its neurons to behaviorally relevant events during learning.",
+      "refs": [
+        "flace2021",
+        "ikai1992",
+        "kim2009",
+        "li2023",
+        "cutando2022",
+        "locke2018",
+        "schweighofer2004",
+        "hosp2011",
+        "molinaluna2009",
+        "sawaguchi1991",
+        "vijayraghavan2007",
+        "lammel2008",
+        "popescu2016"
+      ]
+    },
     {"id": "acetylcholine", "name": "Acetylcholine (nicotinic & muscarinic)", "level": "molecular", "kind": "neuromodulator", "aka": ["ACh"], "domains": ["learning", "motor"],
      "summary": "Cholinergic markers in the cerebellum are sparse and vary between species and lobules. The predominant fiber system that may use acetylcholine is mossy fibers from the vestibular nuclei to the nodulus and ventral uvula; beaded cholinergic fibers from the pedunculopontine and lateral paragigantocellular nuclei (and, to a lesser extent, raphe nuclei) reach the cortex and nuclei (rat). Acetylcholine release hyperpolarizes Golgi cells, and presynaptic muscarinic receptors reduce mossy-fiber glutamate release; α7 nicotinic receptors let weak mossy-fiber bursts induce LTP at granule-cell synapses; muscarinic receptors transiently excite interpositus neurons. Most, if not all, cerebellar nicotinic receptors are on intrinsic cells (rat). The α4β2 partial agonist varenicline improved axial measures in a trial in SCA3. Theory proposes that acetylcholine sets the speed of supervised learning. Lesions of the basal forebrain cholinergic system disrupt the cortical map reorganization that accompanies motor skill learning (rat).", "refs": ["jaarsma1997", "zhangc2016", "fore2020", "prestori2013", "pickford2019", "turner2011", "zesiewicz2012", "schweighofer2004", "conner2003"]},
     {"id": "histamine", "name": "Histamine (H1/H2 receptors)", "level": "molecular", "kind": "neuromodulator", "aka": ["HA"], "domains": ["motor", "homeostasis"],
@@ -466,9 +602,9 @@
       "name": "Thalamus",
       "level": "systems",
       "kind": "structure",
-      "aka": ["VL", "VM", "CL", "PF", "VA", "VAL", "POm"],
+      "aka": ["VL", "VM", "CL", "PF", "VA", "VAL", "POm", "MD", "mediodorsal"],
       "domains": ["architecture", "motor"],
-      "summary": "Relays cerebellar output to cortex: motor thalamus to motor and prefrontal areas, ventromedial thalamus to mPFC, intralaminar nuclei to striatum, and parafascicular nucleus in anxiety. Motor thalamus (VA/VL) innervates layers 2/3–5B of mouse M1, and inactivating the thalamus disrupts dexterous reaching at any stage. In rats, motor-thalamic neurons of a zone dominated by inhibitory afferents send many axon varicosities to cortical layer I and also reach the striatum, whereas those of a zone dominated by excitatory afferents target the middle layers.",
+      "summary": "Relays cerebellar output to cortex: motor thalamus to motor and prefrontal areas, ventromedial thalamus to mPFC, intralaminar nuclei to striatum, and parafascicular nucleus in anxiety. Motor thalamus (VA/VL) innervates layers 2/3–5B of mouse M1, and inactivating the thalamus disrupts dexterous reaching at any stage. In rats, motor-thalamic neurons of a zone dominated by inhibitory afferents send many axon varicosities to cortical layer I and also reach the striatum, whereas those of a zone dominated by excitatory afferents target the middle layers. In mice, thalamic neurons show selective persistent activity that predicts movement direction during planning, and photoinhibiting the thalamus collapses ALM activity; the thalamus also relays a Go-cue signal from the midbrain that switches motor cortex from planning to a motor command. The mediodorsal nucleus connects with prefrontal cortex in a nucleus-to-field pattern (monkey), and its neurons change their firing during the delay of a delayed-response test (monkey). In mice, its input sustains medial prefrontal delay activity during working memory and amplifies prefrontal connectivity to maintain rule representations, while the prefrontal projection back to it supports the subsequent choice.",
       "refs": [
         "kelly2003",
         "kelly2020",
@@ -481,27 +617,33 @@
         "chabrol2019",
         "hooks2013",
         "sauerbrei2020",
-        "kuramoto2009"
+        "kuramoto2009",
+        "guo2017",
+        "inagaki2022a",
+        "giguere1988",
+        "fuster1971",
+        "bolkan2017",
+        "schmitt2017"
       ]
     },
     {"id": "motor-cortex", "name": "Motor & premotor cortex", "level": "systems", "kind": "structure", "aka": ["motor areas", "frontal motor cortex"], "domains": ["motor"],
      "summary": "Frontal motor areas: primary motor cortex (M1) and the premotor areas, all of which send corticospinal axons to the spinal cord (monkey). Forms closed loops with the cerebellum (cortico-pontine input; nuclear output via thalamus). In mice, a frontal–fastigial loop maintains motor-planning activity, and dentate activity is needed for it.", "refs": ["dum1991", "kelly2003", "gao2018", "chabrol2019"], "region": "motor-cortex"},
-    {"id": "pfc", "name": "Prefrontal cortex", "level": "systems", "kind": "structure", "aka": ["DLPFC", "mPFC", "area 46", "prelimbic", "ACC", "OFC"], "domains": ["executive", "social"],
-     "summary": "Dorsolateral PFC (area 46), medial PFC and orbitofrontal cortex receive cerebellar output via thalamus. Cerebellar–prefrontal loops are implicated in working memory, flexibility, social behavior and schizophrenia symptoms.", "refs": ["middleton1994", "kelly2003", "kelly2020", "badura2018", "pisano2021", "brady2019", "krienen2009", "schmahmann1997"]},
+    {"id": "pfc", "name": "Prefrontal cortex", "level": "systems", "kind": "structure", "aka": ["PFC", "DLPFC", "mPFC", "area 46", "prelimbic", "ACC", "OFC"], "domains": ["executive", "social", "emotion", "reward"],
+     "summary": "Frontal association cortex. Here it covers the dorsolateral and orbitofrontal cortex and anterior cingulate of primates and the medial prefrontal areas of rodents, whose names and borders differ between rodent atlases. Theory proposes that cognitive control stems from actively maintained prefrontal activity patterns that represent goals and the means to achieve them, biasing processing in other brain structures. A review argues that even mild acute uncontrollable stress can rapidly impair prefrontal cognitive abilities, and that prolonged stress changes prefrontal dendrites. Cerebellar output reaches it through the thalamus: transneuronal tracing from area 46 labels neurons in restricted parts of the dentate nucleus, separate from those that project to motor areas (monkey), and in mice cerebellar-recipient neurons are denser in associative areas, including orbital, anterior cingulate, prelimbic and infralimbic cortex, than in sensorimotor cortex, which holds the most. In turn, dorsolateral and, less so, medial prefrontal cortex project to the basilar pons, whereas orbitofrontal cortex does not (monkey). Functional connectivity separates dorsolateral, medial and anterior prefrontal circuits with the opposite cerebellar hemisphere, and in schizophrenia weaker cerebellum–right DLPFC connectivity goes with more severe negative symptoms (human).", "refs": ["laubach2018", "miller2001", "arnsten2009", "middleton1994", "pisano2021", "schmahmann1997", "krienen2009", "brady2019"], "region": "prefrontal"},
     {"id": "parietal", "name": "Posterior parietal cortex", "level": "systems", "kind": "structure", "aka": ["IPL"], "domains": ["spatial", "executive"],
-     "summary": "Association cortex in loops with the cerebellum. Connectivity between right Crus I and inferior parietal lobule is altered in autism.", "refs": ["strick2009", "buckner2011", "stoodley2017"]},
+     "summary": "Association cortex in loops with the cerebellum. Connectivity between right Crus I and inferior parietal lobule is altered in autism. During top-down attention, prefrontal neurons signal the target location before parietal neurons, and during bottom-up attention parietal neurons signal it first (monkey).", "refs": ["strick2009", "buckner2011", "stoodley2017", "buschman2007"]},
     {"id": "striatum", "name": "Striatum", "level": "systems", "kind": "structure", "domains": ["motor", "reward", "homeostasis"],
-     "summary": "Receives disynaptic cerebellar input via intralaminar thalamus. This short-latency path can shape corticostriatal plasticity and, when aberrant, causes dystonia. Cerebellar nuclei also raise striatal dopamine during satiation. Receives corticostriatal input from neurons in lower layer 5A of mouse motor cortex.", "refs": ["hoshi2005", "chen2014", "bostan2018", "low2021", "xiao2018", "washburn2024", "anderson2010"]},
+     "summary": "Receives disynaptic cerebellar input via intralaminar thalamus. This short-latency path can shape corticostriatal plasticity and, when aberrant, causes dystonia. Cerebellar nuclei also raise striatal dopamine during satiation. Receives corticostriatal input from neurons in lower layer 5A of mouse motor cortex. In mice performing a flexible lick-timing task, it ramps with frontal cortex before licks, and briefly inhibiting it rewinds this timer.", "refs": ["hoshi2005", "chen2014", "bostan2018", "low2021", "xiao2018", "washburn2024", "anderson2010", "yang2026"]},
     {"id": "stn", "name": "Subthalamic nucleus", "level": "systems", "kind": "structure", "domains": ["motor"],
      "summary": "Basal ganglia nucleus that projects disynaptically, via the pontine nuclei, to the cerebellar cortex.", "refs": ["bostan2010", "bostan2018"]},
     {"id": "vta", "name": "VTA (dopamine)", "level": "systems", "kind": "structure", "aka": ["ventral tegmental area"], "domains": ["reward", "social", "learning"],
-     "summary": "Receives monosynaptic excitatory input from the cerebellar nuclei. Activating this input is rewarding, and it is required for social preference in mice. In rats, its dopaminergic neurons project to the cerebellar cortex and its non-dopaminergic neurons to the lateral and interpositus nuclei; its dopaminergic neurons also project to primary motor cortex, where they are needed for learning, but not performing, a reaching skill.", "refs": ["carta2019", "ikai1992", "hosp2011"]},
+     "summary": "Receives monosynaptic excitatory input from the cerebellar nuclei. Activating this input is rewarding, and it is required for social preference in mice. In rats, its dopaminergic neurons project to the cerebellar cortex and its non-dopaminergic neurons to the lateral and interpositus nuclei; its dopaminergic neurons also project to primary motor cortex, where they are needed for learning, but not performing, a reaching skill. Optogenetically released dopamine from its projections in medial PFC is neither rewarding nor aversive, but pairing that release with a sound speeds later learning to discriminate the sound (mouse).", "refs": ["carta2019", "ikai1992", "hosp2011", "popescu2016"]},
     {"id": "pag", "name": "Periaqueductal gray", "level": "systems", "kind": "structure", "aka": ["vlPAG"], "domains": ["emotion"],
      "summary": "Ventrolateral PAG receives fastigial input that bidirectionally controls fear-memory strength and modulates extinction.", "refs": ["frontera2020"]},
     {"id": "hippocampus", "name": "Hippocampus", "level": "systems", "kind": "structure", "domains": ["spatial"],
-     "summary": "Receives multisynaptic input from restricted cerebellar regions and synchronizes with them at 6–12 Hz. Cerebellar plasticity shapes place cells that rely on self-motion cues.", "refs": ["watson2019", "rochefort2011", "babayan2017", "mcafee2019"]},
+     "summary": "Receives multisynaptic input from restricted cerebellar regions and synchronizes with them at 6–12 Hz. Cerebellar plasticity shapes place cells that rely on self-motion cues. In monkeys, most hippocampal-formation neurons that project to prefrontal cortex target medial areas, then orbital areas, and few reach lateral areas. In rats, correlated firing and theta (4–12 Hz) coupling between CA1 and medial PFC strengthen during spatial working memory; in mice, direct hippocampal-prefrontal input is needed to encode spatial cues; and inactivating the ventral hippocampus impairs both fear expression and extinction memory (rat).", "refs": ["watson2019", "rochefort2011", "babayan2017", "mcafee2019", "barbas1995", "jones2005", "spellman2015", "sierramercado2011"]},
     {"id": "amygdala", "name": "Amygdala", "level": "systems", "kind": "structure", "domains": ["emotion"],
-     "summary": "Core of the fear network. A fastigial → parafascicular thalamus pathway may relay cerebellar influence to the amygdala to modulate anxiety, and glutamatergic dentate neurons drive PKCδ+ amygdala neurons to relieve anxiety during exercise (mouse).", "refs": ["frontera2020", "adamaszek2017", "zhang2024"]},
+     "summary": "Core of the fear network. A fastigial → parafascicular thalamus pathway may relay cerebellar influence to the amygdala to modulate anxiety, and glutamatergic dentate neurons drive PKCδ+ amygdala neurons to relieve anxiety during exercise (mouse). Its connections with prefrontal cortex are densest in posterior orbitofrontal and posterior medial areas (monkey). In rats, inactivating the basolateral amygdala impairs both fear expression and extinction memory; in mice, basolateral amygdala firing becomes entrained to medial prefrontal theta input when animals recognize safety.", "refs": ["frontera2020", "adamaszek2017", "zhang2024", "ghashghaei2007", "sierramercado2011", "likhtik2014"]},
     {"id": "brainstem-motor", "name": "Red nucleus & brainstem motor nuclei", "level": "systems", "kind": "structure", "aka": ["red nucleus", "reticular formation"], "domains": ["motor"],
      "summary": "Targets of interposed and fastigial outputs (rubrospinal, reticulospinal and vestibulospinal systems) for limb and axial control. Also receives pyramidal-tract axons from motor cortex: in mice, one type projects to medullary motor centres and carries late preparatory activity and motor commands.", "refs": ["apps2005", "fujita2020", "economo2018"]},
     {"id": "spinal", "name": "Spinal cord", "level": "systems", "kind": "body", "domains": ["motor"],
@@ -545,7 +687,7 @@
     {"id": "snc", "name": "Substantia nigra pars compacta", "level": "systems", "kind": "structure", "aka": ["SNc", "substantia nigra", "nigrostriatal dopamine"], "domains": ["motor", "reward"],
      "summary": "Dopamine neurons that project to the dorsal striatum. Cerebellar nuclei excite them monosynaptically, raising striatal dopamine; the input is active before movement and for reward.", "refs": ["washburn2024"]},
     {"id": "lc", "name": "Locus coeruleus", "level": "systems", "kind": "structure", "aka": ["LC", "locus ceruleus"], "domains": ["emotion", "learning", "homeostasis"],
-     "summary": "Noradrenaline nucleus that integrates input from, and broadcasts to, many brain regions; its inputs include cerebellar Purkinje cells (mouse). Its fibers reach the cerebellar cortex, where activating the pathway inhibits Purkinje cells (rat) and noxious stimuli release noradrenaline onto Bergmann glia (mouse).", "refs": ["schwarz2015", "hoffer1973", "kim2025"]},
+     "summary": "Noradrenaline nucleus that integrates input from, and broadcasts to, many brain regions; its inputs include cerebellar Purkinje cells (mouse). Its fibers reach the cerebellar cortex, where activating the pathway inhibits Purkinje cells (rat) and noxious stimuli release noradrenaline onto Bergmann glia (mouse). Its neurons projecting to prefrontal cortex differ from those projecting to motor cortex and release more noradrenaline there (rat).", "refs": ["schwarz2015", "hoffer1973", "kim2025", "chandler2014"]},
     {"id": "ser-neurons", "name": "Brainstem serotonin neurons", "level": "systems", "kind": "structure", "aka": ["serotonergic afferents", "reticular serotonin neurons"], "domains": ["architecture"],
      "summary": "Source of the cerebellum's serotonergic fibers, which reach all cortical layers and form a plexus around Purkinje-cell somata. Several raphe and reticular nuclei project to the cerebellum, but in rats double labeling placed the serotonergic neurons almost exclusively in the gigantocellular, paragigantocellular and pontine (oralis) reticular nuclei; most are not in the raphe nuclei.", "refs": ["bishop1985"]},
     {"id": "tmn", "name": "Tuberomammillary nucleus", "level": "systems", "kind": "structure", "aka": ["TMN", "histamine neurons"], "domains": ["homeostasis", "motor"],
@@ -553,7 +695,9 @@
     {"id": "lh", "name": "Lateral hypothalamus (orexin)", "level": "systems", "kind": "structure", "aka": ["LH", "perifornical area", "orexin neurons"], "domains": ["emotion", "homeostasis"],
      "summary": "Orexin (hypocretin) neurons in the perifornical and lateral hypothalamus send fibers to the vestibular and cerebellar nuclei (densest in the fastigial nucleus) and a few to paraflocculus cortex (rat). Orexinergic input excites interpositus neurons (rat) and floccular Purkinje cells (rabbit), and its input to the dentate adds to exercise-induced anxiety relief (mouse).", "refs": ["ciriello2014", "yu2010", "nisimaru2013", "zhang2024"]},
     {"id": "ppn", "name": "Pedunculopontine nucleus (ACh)", "level": "systems", "kind": "structure", "aka": ["PPN", "PPTg", "pedunculopontine tegmental nucleus"], "domains": ["motor"],
-     "summary": "Brainstem cholinergic nucleus. With the lateral paragigantocellular nucleus (and, to a lesser extent, raphe nuclei), it sends beaded cholinergic fibers to the cerebellar cortex and nuclei; in the nuclei they form a moderately dense network (rat).", "refs": ["jaarsma1997"]},
+     "summary": "Brainstem cholinergic nucleus. With the lateral paragigantocellular nucleus (and, to a lesser extent, raphe nuclei), it sends beaded cholinergic fibers to the cerebellar cortex and nuclei; in the nuclei they form a moderately dense network (rat). In mice, its ascending glutamatergic neurons, with those of the midbrain reticular nucleus, respond to an auditory Go cue; the signal reaches motor cortex via the thalamus.", "refs": ["jaarsma1997", "inagaki2022a"]},
+    {"id": "mrn", "name": "Midbrain reticular nucleus (MRN)", "level": "systems", "kind": "structure", "aka": ["MRN", "mesencephalic reticular formation"], "domains": ["motor"],
+     "summary": "In mice, ascending glutamatergic neurons of the midbrain reticular and pedunculopontine nuclei respond to an auditory Go cue with short-latency, phasic, cue-selective changes in firing. The signal reaches motor cortex via the thalamus and switches it from planning-related activity to a motor command that drives the movement.", "refs": ["inagaki2022a"]},
     {"id": "f-motor", "name": "Motor coordination", "level": "cognitive", "kind": "function", "domains": ["motor"],
      "summary": "Coordination, posture, balance and eye movements. Body maps lie in the anterior lobe and lobule VIII.", "refs": ["grodd2001", "herzfeld2015", "stoodley2016", "stoodley2012", "fakharian2025"]},
     {
@@ -579,13 +723,32 @@
       ]
     },
     {"id": "f-timing", "name": "Timing & prediction", "level": "cognitive", "kind": "function", "domains": ["timing"],
-     "summary": "Sub-second timing of movement and perception, and predictive signals about upcoming events.", "refs": ["ivry1989", "giovannucci2017", "sokolov2017", "breska2018", "johansson2014", "garciagarcia2024", "e2014"]},
-    {"id": "f-executive", "name": "Executive function & working memory", "level": "cognitive", "kind": "function", "domains": ["executive"],
-     "summary": "Planning, set-shifting, working memory and response inhibition; impaired after posterior cerebellar lesions.", "refs": ["schmahmann1998", "stoodley2009", "stoodley2016", "locke2018", "gao2018", "marek2018", "schmahmann2019", "saadongrosman2024", "halko2014"]},
+     "summary": "Sub-second timing of movement and perception, and predictive signals about upcoming events. In mice performing a flexible lick-timing task, frontal cortex and striatum ramp before licks: silencing frontal cortex pauses this timer and inhibiting striatum rewinds it, consistent with the striatum integrating frontal-cortex input. Learning a motor timing task needs CaMKII-dependent plasticity in two pyramidal-tract subtypes of mouse premotor cortex.", "refs": ["ivry1989", "giovannucci2017", "sokolov2017", "breska2018", "johansson2014", "garciagarcia2024", "e2014", "yang2026", "majumder2026"]},
+    {
+      "id": "f-executive",
+      "name": "Executive function",
+      "level": "cognitive",
+      "kind": "function",
+      "domains": ["executive"],
+      "summary": "Planning, set-shifting, working memory and response inhibition; impaired after posterior cerebellar lesions. Theory proposes that cognitive control stems from actively maintained prefrontal representations of goals; in the Stroop task, anterior cingulate conflict-related activity predicts greater prefrontal activity and behavioral adjustments (human).",
+      "refs": [
+        "schmahmann1998",
+        "stoodley2009",
+        "stoodley2016",
+        "locke2018",
+        "gao2018",
+        "marek2018",
+        "schmahmann2019",
+        "saadongrosman2024",
+        "halko2014",
+        "miller2001",
+        "kerns2004"
+      ]
+    },
     {"id": "f-language", "name": "Language", "level": "cognitive", "kind": "function", "domains": ["language"],
      "summary": "Verbal fluency, grammar, reading and verbal working memory, lateralized to the right cerebellum (crossed connections with left-hemisphere language cortex).", "refs": ["marien2014", "stoodley2009", "stoodley2016", "king2019", "casto2026", "xue2021", "e2014"]},
     {"id": "f-social", "name": "Social cognition", "level": "cognitive", "kind": "function", "domains": ["social"],
-     "summary": "Mentalizing and social preference. Human imaging points to Crus I/II; mouse circuit studies implicate Crus I, vermis, VTA and mPFC pathways.", "refs": ["vanoverwalle2014", "vanoverwalle2020", "carta2019", "badura2018", "kelly2020", "saadongrosman2024", "lee2025"]},
+     "summary": "Mentalizing and social preference. Human imaging points to Crus I/II; mouse circuit studies implicate Crus I, vermis, VTA and mPFC pathways. In mice, the strength of excitatory input onto layer V pyramidal neurons of medial PFC tracks dominance rank, and raising or lowering synaptic efficacy in dorsal mPFC moves animals up or down the hierarchy. Patients with bilateral ventromedial prefrontal damage make abnormally utilitarian judgments on emotionally aversive moral dilemmas.", "refs": ["vanoverwalle2014", "vanoverwalle2020", "carta2019", "badura2018", "kelly2020", "saadongrosman2024", "lee2025", "wangf2011", "koenigs2007"]},
     {"id": "f-emotion", "name": "Emotion & fear", "level": "cognitive", "kind": "function", "domains": ["emotion"],
      "summary": "Emotion perception and regulation, fear learning and extinction, and anxiety.", "refs": ["adamaszek2017", "frontera2020", "schmahmann1998", "zhang2024", "e2014"]},
     {"id": "f-reward", "name": "Reward & motivation", "level": "cognitive", "kind": "function", "domains": ["reward"],
@@ -603,7 +766,7 @@
     {"id": "c-asd", "name": "Autism spectrum disorder", "level": "clinical", "kind": "disorder", "aka": ["ASD", "autism"], "domains": ["social", "development"],
      "summary": "Perinatal cerebellar injury raises autism risk, and Purkinje-specific loss of ASD genes (Tsc1, Shank2) causes autism-like behavior in mice. Eyeblink conditioning is altered across autism mouse models. Crus I–prefrontal/parietal circuits are implicated.", "refs": ["wang2014", "limperopoulos2007", "tsai2012", "peter2016", "stoodley2017", "kelly2020", "kloth2015", "piochon2014", "wang2024", "sathyanesan2019", "lee2025"], "region": "cerebellum"},
     {"id": "c-scz", "name": "Schizophrenia", "level": "clinical", "kind": "disorder", "domains": ["executive", "reward"],
-     "summary": "Framed as 'cognitive dysmetria'. Cerebellar grey matter is smaller in patients, already in the youngest. Cerebellum–DLPFC connectivity tracks negative symptoms, and TMS that restores it reduces them.", "refs": ["andreasen1998", "brady2019", "moberget2018"], "region": "cerebellum"},
+     "summary": "Framed as 'cognitive dysmetria'. Cerebellar grey matter is smaller in patients, already in the youngest. Cerebellum–DLPFC connectivity tracks negative symptoms, and TMS that restores it reduces them. In the prefrontal cortex, dorsolateral blood flow fails to rise during the Wisconsin Card Sort, deep layer 3 pyramidal neurons of area 46 have a lower dendritic spine density, and a review concludes that parvalbumin interneurons make less GABA, which contributes to a diminished capacity for the gamma synchrony that working memory requires. The Val allele of a common COMT polymorphism is transmitted more often to offspring with schizophrenia and goes with worse prefrontal cognition; the authors suggest it slightly raises risk by increasing prefrontal dopamine catabolism (human).", "refs": ["andreasen1998", "brady2019", "moberget2018", "weinberger1986", "glantz2000", "lewis2005", "egan2001"]},
     {"id": "c-sca", "name": "Spinocerebellar ataxias", "level": "clinical", "kind": "disorder", "aka": ["SCA1", "SCA6"], "domains": ["motor"],
      "summary": "Inherited ataxias, many caused by CAG/polyglutamine expansions (SCA1: ATXN1; SCA6: CACNA1A) that affect Purkinje cells.", "refs": ["orr1993", "zhuchenko1997", "klockgether2019"], "region": "cerebellum"},
     {"id": "c-fxs", "name": "Fragile X syndrome", "level": "clinical", "kind": "disorder", "domains": ["learning"],
@@ -631,13 +794,13 @@
     {"id": "premotor", "name": "Premotor areas", "level": "regional", "kind": "area", "aka": ["premotor cortex", "PMd", "PMv", "SMA", "supplementary motor area", "area 6", "M2", "MOs", "secondary motor cortex"], "region": "motor-cortex", "domains": ["motor", "executive"],
      "summary": "Six premotor areas of the monkey frontal lobe, in area 6 on the lateral and medial surfaces and in the cingulate sulcus (areas 23 and 24), project to the arm area of M1 and directly to the spinal cord; together, their arm representations hold as many corticospinal neurons as M1's arm area, or more. Some supplementary motor area cells fire only for a sequence of movements in a particular order, which M1 cells do not. Output-null patterns of preparatory activity in dorsal premotor cortex largely account for its attenuation in M1 (monkey). Rodent secondary motor cortex (M2) is grouped here, as its input reaches pyramidal-tract neurons of mouse M1 directly; mouse anterior lateral motor cortex (ALM), a possible homologue of primate premotor cortex, has its own entry.", "refs": ["dum1991", "tanji1994", "kaufman2014", "hooks2013", "li2015"]},
     {"id": "alm", "name": "Anterior lateral motor cortex (ALM)", "level": "regional", "kind": "area", "aka": ["ALM"], "region": "motor-cortex", "domains": ["motor", "executive"],
-     "summary": "An anterior lateral region of mouse motor cortex, possibly homologous to primate premotor cortex. Unilateral inactivation during movement planning disrupts contralateral movements, and in a whisker-based decision task, inhibiting it during the memory period biases licking to the same side. Neurons predicting ipsi- and contralateral movements are intermingled in equal proportions; a contralateral population bias appears only in brainstem-projecting layer 5 neurons, late in planning. Its preparatory activity depends on cerebellar output: a loop through the fastigial nucleus and thalamus, and activity of the dentate nucleus.", "refs": ["li2015", "guo2014", "gao2018", "chabrol2019"]},
+     "summary": "An anterior lateral region of mouse motor cortex, possibly homologous to primate premotor cortex. Unilateral inactivation during movement planning disrupts contralateral movements, and in a whisker-based decision task, inhibiting it during the memory period biases licking to the same side. Neurons predicting ipsi- and contralateral movements are intermingled in equal proportions; a contralateral population bias appears only in brainstem-projecting layer 5 neurons, late in planning. Its preparatory activity depends on activity of the dentate nucleus, and preparatory activity in frontal cortex depends on a loop through the fastigial nucleus and thalamus. Its preparatory activity is similar in auditory and tactile tasks: most neurons are direction-selective, and delay activity is monotonic and low-dimensional. During the delay it moves toward discrete end points for each movement direction that resist transient perturbations, evidence of discrete attractor dynamics. It forms a loop with the thalamus: photoinhibiting the thalamus collapses ALM activity, and photoinhibiting ALM diminishes thalamic activity. In brain-wide recordings, choice coding is concentrated in ALM and the subcortical areas receiving its input, in an ALM-dependent manner.", "refs": ["li2015", "guo2014", "gao2018", "chabrol2019", "inagaki2018", "inagaki2019", "guo2017", "chens2024"]},
     {"id": "motor-map", "name": "Motor maps (somatotopy)", "level": "regional", "kind": "map", "aka": ["homunculus", "somatotopy", "movement representations"], "region": "motor-cortex", "domains": ["motor", "learning"],
      "summary": "Ordered representations of stimulation-evoked movements, long central to ideas about motor cortex. They change with use: training expands the representations of the movements practised and shrinks others (monkey), and practice enlarges the M1 area activated by a finger sequence (human). Long stimulation trains evoke whole postures, arranged as a map of hand positions around the body across primary motor and premotor cortex (monkey). Finger territories are not segregated: neurons for different fingers overlap throughout the hand area (monkey).", "refs": ["ebbesen2017", "nudo1996a", "karni1995", "graziano2002", "schieber1993"]},
     {"id": "scan", "name": "Somato-cognitive action network (SCAN)", "level": "regional", "kind": "network", "aka": ["SCAN", "inter-effector regions"], "region": "motor-cortex", "domains": ["motor", "executive", "architecture"],
      "summary": "Inter-effector regions that interrupt the classic homunculus of human M1, alternating with foot, hand and mouth areas. They have thinner cortex and strong functional connectivity with each other and with the cingulo-opercular network, lack movement specificity, and co-activate during action planning and axial body movements; macaque and infant data suggest homologues and developmental precursors. Proposed to integrate goals, physiology and body movement.", "refs": ["gordon2023"]},
     {"id": "pt-neurons", "name": "Pyramidal-tract neurons (L5B)", "level": "cellular", "kind": "cell type", "aka": ["PT neurons", "corticospinal neurons", "corticospinal motor neurons", "CSMN", "CSN", "Betz cells", "subcerebral projection neurons"], "region": "motor-cortex", "domains": ["motor", "development"],
-     "summary": "Output neurons of layer 5B that project to the brainstem and spinal cord. In mouse motor cortex two types reach basal ganglia and brainstem targets: one also projects to thalamus that feeds back to motor cortex and carries early preparatory activity, the other projects to the medulla and carries late preparatory activity and motor commands. Mouse corticospinal neurons form topographically ordered ensembles for reaching or grasping and contact spinal premotor interneurons. Their specification requires Fezl, and Ctip2 is critical for their axons to reach the spinal cord (mouse). In non-human primates and humans they include the Betz cells, identified by patch-seq.", "refs": ["anderson2010", "hooks2013", "economo2018", "wangx2017", "ueno2018", "molyneaux2005", "arlotta2005", "bakken2021"]},
+     "summary": "Output neurons of layer 5B that project to the brainstem and spinal cord. In mouse motor cortex two types reach basal ganglia and brainstem targets: one also projects to thalamus that feeds back to motor cortex and carries early preparatory activity, the other projects to the medulla and carries late preparatory activity and motor commands. Mouse corticospinal neurons form topographically ordered ensembles for reaching or grasping and contact spinal premotor interneurons. Their specification requires Fezl, and Ctip2 is critical for their axons to reach the spinal cord (mouse). In non-human primates and humans they include the Betz cells, identified by patch-seq. In mouse premotor cortex, CaMKII-dependent plasticity in two pyramidal-tract subtypes, but not in intratelencephalic neurons, is required to learn a motor timing task.", "refs": ["anderson2010", "hooks2013", "economo2018", "wangx2017", "ueno2018", "molyneaux2005", "arlotta2005", "bakken2021", "majumder2026"]},
     {"id": "l23-pyr", "name": "Layer 2/3 pyramidal neurons", "level": "cellular", "kind": "cell type", "aka": ["upper-layer neurons", "L2/3 neurons"], "region": "motor-cortex", "domains": ["motor", "learning"],
      "summary": "Upper-layer excitatory neurons. Outflow from layer 2 to deeper layers dominates the laminar circuit of mouse motor cortex, and stimulating the upper layers, but not the lower, evokes network-wide events: upper-layer neurons drive layer 5 output neurons like a preamplifier, with separate pathways to corticospinal neurons in upper L5B and corticostriatal neurons in lower L5A. They receive sensory-related input from POm thalamus and barrel cortex. During motor learning their activity refines into reproducible sequences, and spines on their distal apical dendrites reorganize under the control of somatostatin interneurons (mouse).", "refs": ["weiler2008", "anderson2010", "hooks2013", "peters2014", "chensx2015"]},
     {"id": "m1-pv", "name": "PV interneurons (motor cortex)", "level": "cellular", "kind": "cell type", "aka": ["parvalbumin interneurons", "PV-INs"], "region": "motor-cortex", "domains": ["motor", "learning"],
@@ -665,13 +828,15 @@
     {"id": "cst", "name": "Corticospinal tract", "level": "circuit", "kind": "pathway", "aka": ["CST", "pyramidal tract"], "region": "motor-cortex", "domains": ["motor", "development"],
      "summary": "Axons of corticospinal neurons in M1 and the premotor areas, which project to the spinal cord (monkey). It is absent in Fezl-deficient mice, and Ctip2 is needed for its formation. After stroke, in patients without motor-evoked potentials, the more it is disrupted the less they can still improve. Regeneration of large numbers of injured corticospinal axons past a spinal lesion had never been achieved; deleting Pten lets a cohort regenerate in mice.", "refs": ["dum1991", "chenb2005", "arlotta2005", "stinear2007", "liu2010"]},
     {"id": "prep-activity", "name": "Preparatory activity", "level": "circuit", "kind": "signal", "aka": ["motor preparation", "delay activity"], "region": "motor-cortex", "domains": ["motor", "executive"],
-     "summary": "Activity in motor cortex and connected regions that predicts specific movements long before they occur, supported by a network distributed across several brain regions. During preparation it cancels out at the level of the population readouts that drive muscles, so it does not trigger movement (monkey), and it sets the amplitude and phase of the brief oscillatory activity that follows during reaching. In mouse motor cortex, thalamus-projecting pyramidal-tract neurons carry it early and medulla-projecting ones late, and it depends on a loop with the cerebellar nuclei.", "refs": ["svoboda2018", "kaufman2014", "churchland2012", "economo2018", "gao2018"]},
+     "summary": "Activity in motor cortex and connected regions that predicts specific movements long before they occur, supported by a network distributed across several brain regions. During preparation it cancels out at the level of the population readouts that drive muscles, so it does not trigger movement (monkey), and it sets the amplitude and phase of the brief oscillatory activity that follows during reaching. In mouse motor cortex, thalamus-projecting pyramidal-tract neurons carry it early and medulla-projecting ones late, and it depends on a loop with the cerebellar nuclei. In mouse ALM, photoinhibiting the thalamus collapses it; in brain-wide mouse recordings, choice signals appear first in ALM and the midbrain, then in the thalamus, and collapse across the brain at movement initiation.", "refs": ["svoboda2018", "kaufman2014", "churchland2012", "economo2018", "gao2018", "guo2017", "chens2024"]},
     {"id": "pop-dynamics", "name": "Population dynamics", "level": "circuit", "kind": "computation", "aka": ["neural population dynamics", "dynamical systems view"], "region": "motor-cortex", "domains": ["motor"],
-     "summary": "A view of motor cortex as a dynamical system in which the current population response determines the future one, proposed because accounts based on tuning to movement parameters have not produced an agreed framework. During reaching, population responses contain a brief but strong oscillatory component that follows from the preparatory state (monkey). In mice, the pattern generator for dexterous reaching is input-driven: inactivating the thalamus perturbs cortical activity and kinematics at any stage of the movement.", "refs": ["shenoy2013", "churchland2012", "sauerbrei2020"]},
+     "summary": "A view of motor cortex as a dynamical system in which the current population response determines the future one, proposed because accounts based on tuning to movement parameters have not produced an agreed framework. During reaching, population responses contain a brief but strong oscillatory component that follows from the preparatory state (monkey). In mice, the pattern generator for dexterous reaching is input-driven: inactivating the thalamus perturbs cortical activity and kinematics at any stage of the movement. In mouse ALM, preparatory activity moves toward discrete end points (attractors) for each movement direction, and a review concludes that subcortical control signals reshape and move such attractors, causing commitment to specific actions and rapid transitions to execution. In mouse frontal cortex during decision-making, standard fluctuation-driven network models capture spiking but not the heterogeneity of sub-threshold membrane potentials, which the authors address by adding dendritic morphology to the model neurons.", "refs": ["shenoy2013", "churchland2012", "sauerbrei2020", "inagaki2019", "inagaki2022b", "amsalem2024"]},
     {"id": "pop-coding", "name": "Directional tuning & population vector", "level": "circuit", "kind": "computation", "aka": ["population vector", "cosine tuning", "directional tuning"], "region": "motor-cortex", "domains": ["motor"],
      "summary": "Most task-related arm-area cells in monkey motor cortex change their firing with movement direction along broad, usually sinusoidal tuning curves, beginning before muscle activity. The direction of movement is predicted by the population vector: the sum of each cell's preferred direction weighted by its activity. Such encoding and decoding accounts have advanced the field but not produced an agreed framework.", "refs": ["georgopoulos1982", "georgopoulos1986", "shenoy2013"]},
     {"id": "f-planning", "name": "Motor planning", "level": "cognitive", "kind": "function", "aka": ["movement preparation", "action planning"], "domains": ["motor", "executive"],
-     "summary": "Preparing movements before they are made. In mice, neurons of anterior lateral motor cortex predict the direction of upcoming movements, and inhibiting it on one side during planning or a short-term memory biases responses to that side; in monkeys, some supplementary motor area cells are proposed to signal the order of upcoming movements. Planning relies on a network distributed across several brain regions, including a loop between frontal cortex and the cerebellar nuclei.", "refs": ["guo2014", "li2015", "tanji1994", "svoboda2018", "gao2018"]},
+     "summary": "Preparing movements before they are made. In mice, neurons of anterior lateral motor cortex predict the direction of upcoming movements, and inhibiting it on one side during planning or a short-term memory biases responses to that side; in monkeys, some supplementary motor area cells are proposed to signal the order of upcoming movements. Planning relies on a network distributed across several brain regions, including a loop between frontal cortex and the cerebellar nuclei. In mice, photoinhibiting the thalamus collapses ALM planning activity and photoinhibiting ALM diminishes thalamic activity, suggesting that persistent activity requires reciprocal excitation across areas. A review concludes that cortical dynamics during planning reflect attractors that subcortical signals reshape and move.", "refs": ["guo2014", "li2015", "tanji1994", "svoboda2018", "gao2018", "guo2017", "inagaki2022b"]},
+    {"id": "f-initiation", "name": "Movement initiation", "level": "cognitive", "kind": "function", "aka": ["movement onset", "transition from planning to execution"], "domains": ["motor"],
+     "summary": "Releasing a planned movement, often after a specific sensory event; planning and execution are each associated with distinct patterns of motor cortex activity. In mice, a Go cue relayed from the midbrain through the thalamus triggers a rapid switch of motor cortex from planning-related activity to a motor command, and at movement initiation choice-selective activity collapses across the brain, followed by new activity patterns that drive the specific action. A review concludes that subcortical control signals move cortical attractors, causing commitment to an action and a rapid transition to execution.", "refs": ["inagaki2022a", "chens2024", "inagaki2022b"]},
     {"id": "f-voluntary", "name": "Skilled voluntary movement", "level": "cognitive", "kind": "function", "aka": ["dexterity", "prehension", "reach-to-grasp"], "domains": ["motor"],
      "summary": "Dexterous, goal-directed movements such as reaching and grasping. In mice, cortical activity is needed to start and continue a learned prehension skill but not for untrained forelimb movements, and corticospinal neurons of different forelimb areas control reaching and grasping. Direct cortico-motoneuronal connections, found only in some higher primates and humans, are proposed to be essential for highly skilled movements.", "refs": ["guo2015", "wangx2017", "rathelot2009", "lemon2008"]},
     {"id": "f-skill", "name": "Motor skill learning", "level": "cognitive", "kind": "function", "aka": ["skill acquisition", "motor sequence learning"], "domains": ["learning", "motor"],
@@ -687,7 +852,65 @@
     {"id": "s1", "name": "Primary somatosensory cortex (S1)", "level": "systems", "kind": "area", "aka": ["S1", "SSp", "barrel cortex", "postcentral gyrus"], "domains": ["motor"],
      "summary": "Somatosensory cortex, including the whisker barrel cortex of rodents. Barrel cortex is critical for sensation in a whisker-based decision task and projects to the upper layers of vibrissal M1 (mouse). Corticospinal neurons of sensory cortex, unlike those of motor cortex, do not synapse directly onto spinal premotor interneurons and connect preferentially to Vglut3+ interneurons; sensory-cortex lesions impair release of a food pellet (mouse).", "refs": ["guo2014", "hooks2013", "ueno2018"]},
     {"id": "basal-forebrain", "name": "Basal forebrain (ACh)", "level": "systems", "kind": "structure", "aka": ["cholinergic basal forebrain", "nucleus basalis", "substantia innominata"], "domains": ["learning"],
-     "summary": "Its cholinergic system contributes to plasticity of cortical sensorimotor representations: selective lesions disrupt the cortical map reorganization that accompanies motor skill learning and impair the learning, without affecting associative fear learning or overall sensorimotor function (rat).", "refs": ["conner2003"]}
+     "summary": "Its cholinergic system contributes to plasticity of cortical sensorimotor representations: selective lesions disrupt the cortical map reorganization that accompanies motor skill learning and impair the learning, without affecting associative fear learning or overall sensorimotor function (rat).", "refs": ["conner2003"]},
+    {"id": "comt", "name": "COMT (catechol-O-methyltransferase)", "level": "molecular", "kind": "gene", "aka": ["Val158Met", "Val108/158 Met", "catechol-O-methyltransferase"], "domains": ["executive"],
+     "summary": "The COMT gene carries a common functional polymorphism, Val108/158 Met, that accounts for a four-fold variation in enzyme activity and dopamine catabolism. In patients with schizophrenia, their unaffected siblings and controls, the low-activity Met allele predicted fewer perseverative errors on the Wisconsin Card Sorting Test and a more efficient prefrontal response during working memory, and the Val allele was transmitted more often to offspring with schizophrenia (human).", "refs": ["egan2001"], "region": "prefrontal"},
+    {"id": "nmdar-nr2b", "name": "NMDA receptors (NR2B)", "level": "molecular", "kind": "receptor", "aka": ["NR2B", "GluN2B", "NMDAR"], "domains": ["executive"],
+     "summary": "In monkey dorsolateral PFC, the persistent firing of Delay cells during spatial working memory was abolished by local blockade of NR2B-containing NMDA receptors or by systemic ketamine, while AMPA receptors supplied background depolarization; computational models had predicted the NR2B dependence. The authors suggest that this reliance may explain why insults to NMDA receptors in schizophrenia or Alzheimer's disease profoundly impair cognition.", "refs": ["wangm2013"], "region": "prefrontal"},
+    {"id": "hcn-camp", "name": "cAMP–HCN channel signaling", "level": "molecular", "kind": "signaling pathway", "aka": ["HCN1", "cAMP", "HCN channels"], "domains": ["executive"],
+     "summary": "In prefrontal cortex, HCN channels and α2A adrenoceptors are colocalized in dendritic spines. Stimulating α2A adrenoceptors inhibits cAMP and closes HCN channels, strengthening the functional connectivity of prefrontal networks and their spatially tuned delay firing, whereas excessive cAMP collapses delay firing; blocking or knocking down HCN1 channels in PFC improved working memory (monkeys and rats). The inverted-U actions of dopamine D1 receptors on delay firing are also mediated by cAMP signaling (monkeys and rats).", "refs": ["wangm2007", "vijayraghavan2007"], "region": "prefrontal"},
+    {"id": "pfc-pyr", "name": "Prefrontal pyramidal neurons", "level": "cellular", "kind": "cell type", "aka": ["Delay cells", "layer 3 pyramidal neurons", "layer V pyramidal neurons", "prefrontal projection neurons"], "domains": ["executive", "social", "emotion"],
+     "summary": "Spatial working memory is maintained by spatially tuned, recurrent excitation within networks of prefrontal neurons; in monkey dorsolateral PFC, persistent firing arises from recurrent excitation among pyramidal Delay cells. In schizophrenia, dendritic spine density on deep layer 3 pyramidal neurons of area 46 is 23% lower than in controls (human). In mice, layer V pyramidal neurons of medial PFC receive stronger excitatory input in higher-ranking animals, and depression-related behavior goes with branch-specific spine loss on prefrontal projection neurons, which antidepressant-dose ketamine reverses; in rats, ketamine rapidly adds spine synapses in prefrontal cortex through mTOR.", "refs": ["wangm2007", "wangm2013", "glantz2000", "wangf2011", "modasava2019", "li2010"], "region": "prefrontal"},
+    {"id": "pfc-pv", "name": "Parvalbumin interneurons (PFC)", "level": "cellular", "kind": "cell type", "aka": ["PV interneurons", "fast-spiking interneurons"], "domains": ["executive"],
+     "summary": "Fast-spiking interneurons that express parvalbumin. In mouse neocortex, optogenetically inhibiting them suppressed gamma oscillations in vivo, driving them was sufficient to generate emergent gamma-frequency rhythmicity, and gamma-frequency modulation of excitatory input enhanced signal transmission. In mouse medial PFC, inhibiting them during the encoding phase of a spatial working memory task did not impair accuracy, unlike inhibiting somatostatin interneurons. A review concludes that convergent findings point to deficient TrkB signaling reducing GABA synthesis in the parvalbumin-containing interneurons of dorsolateral PFC in schizophrenia, and that the altered perisomatic inhibition contributes to a diminished capacity for the gamma-frequency synchronized activity that working memory requires.", "refs": ["sohal2009", "abbas2018", "lewis2005"], "region": "prefrontal"},
+    {"id": "pfc-sst", "name": "Somatostatin interneurons (PFC)", "level": "cellular", "kind": "cell type", "aka": ["SST interneurons", "SOM interneurons"], "domains": ["executive", "spatial"],
+     "summary": "In mouse medial PFC, optogenetically inhibiting somatostatin, but not parvalbumin, interneurons during the encoding phase of a spatial working memory task impaired accuracy, together with decreased hippocampal-prefrontal synchrony and impaired spatial encoding by mPFC neurons. The authors suggest that interneuron dysfunction may contribute to cognitive deficits in schizophrenia by disrupting this long-range synchrony.", "refs": ["abbas2018"], "region": "prefrontal"},
+    {"id": "delay-activity", "name": "Persistent (delay) activity", "level": "circuit", "kind": "activity pattern", "aka": ["persistent firing", "delay-period activity", "sustained activity"], "domains": ["executive"],
+     "summary": "Firing that continues through the delay of a memory task. In monkeys, neurons of prefrontal cortex and of the thalamic nucleus medialis dorsalis change their firing during the delay of a delayed-response test, some staying above their intertrial rate throughout, and most delay activity around the principal sulcus is directional, tuned to the remembered cue location. In monkey dorsolateral PFC it depends on NR2B NMDA receptors; dopamine D1 stimulation sculpts it along an inverted U (monkey), and α2A-adrenoceptor stimulation strengthens it (monkeys and rats). In mice, medial prefrontal neurons with elevated delay spiking, absent on error trials, need mediodorsal thalamic input to sustain it. Whether sustained spiking is what holds the memory is debated: in monkey PFC, brief gamma and beta bursts accompany encoding and readout, and their authors argue that working memory is manifested by discrete oscillatory dynamics and spiking, not sustained activity.", "refs": ["fuster1971", "funahashi1989", "wangm2013", "vijayraghavan2007", "wangm2007", "bolkan2017", "lundqvist2016"], "region": "prefrontal"},
+    {"id": "mixed-selectivity", "name": "Mixed selectivity & population dynamics", "level": "circuit", "kind": "coding scheme", "aka": ["high-dimensional representations", "recurrent dynamics"], "domains": ["executive"],
+     "summary": "Single prefrontal neurons respond to mixtures of task variables. In monkeys performing an object sequence memory task, such mixed-selectivity neurons carried distributed information about all task-relevant aspects, giving high-dimensional representations whose dimensionality collapsed on error trials. In monkeys trained to flexibly select and integrate noisy sensory inputs towards a choice, the complex responses of single prefrontal neurons were understood as one population dynamical process, reproduced by a trained recurrent neural network, suggesting that selection and integration happen within the same circuits.", "refs": ["rigotti2013", "mante2013"], "region": "prefrontal"},
+    {"id": "rule-coding", "name": "Rule coding", "level": "circuit", "kind": "representation", "aka": ["abstract rules", "task rules", "task set"], "domains": ["executive"],
+     "summary": "In monkeys trained to apply two abstract rules (same or different) to new pictures, the most prevalent prefrontal activity coded the rule in effect. In mice using two rules to guide attention, prefrontal rule representations were sustained by mediodorsal thalamic input, which amplified local prefrontal connectivity so that rule-specific neural sequences emerged, without relaying categorical information. Theory proposes that actively maintained prefrontal representations of goals and the means to achieve them provide bias signals that guide processing elsewhere in the brain.", "refs": ["wallis2001", "schmitt2017", "miller2001"], "region": "prefrontal"},
+    {"id": "pfc-rhythms", "name": "Prefrontal rhythms & synchrony", "level": "circuit", "kind": "oscillation", "aka": ["gamma", "theta", "beta bursts", "oscillations"], "domains": ["executive", "emotion", "spatial"],
+     "summary": "Inhibiting parvalbumin interneurons suppresses gamma oscillations in mouse neocortex, and driving them generates gamma rhythmicity. Correlated firing and 4–12 Hz theta coupling between hippocampal CA1 and medial PFC strengthen during spatial working memory (rat), and in mice gamma-frequency synchrony between hippocampus and PFC appears to mediate the encoding of spatial cues. Theta synchrony between medial PFC and basolateral amygdala rises in mice that tell safety from danger. In monkeys, frontal–parietal synchrony is stronger at lower frequencies during top-down and at higher frequencies during bottom-up attention, and in PFC brief gamma bursts accompany the encoding and re-activation of working-memory content, while beta bursts mark a default state interrupted by encoding and decoding.", "refs": ["sohal2009", "jones2005", "spellman2015", "likhtik2014", "buschman2007", "lundqvist2016"], "region": "prefrontal"},
+    {"id": "value-coding", "name": "Value coding", "level": "circuit", "kind": "representation", "aka": ["economic value", "offer value", "chosen value"], "domains": ["reward"],
+     "summary": "During economic choice, monkey orbitofrontal neurons encode the value of offered and chosen goods independently of visuospatial factors and motor responses, so OFC neurons seem to be a good candidate network for the value assignment underlying choice. In humans, ventromedial PFC encodes the values of specific options during comparative choice, whereas the anterior cingulate cortex encodes the average value of the foraging environment and the cost of foraging.", "refs": ["padoaschioppa2006", "kolling2012"], "region": "prefrontal"},
+    {"id": "dlpfc", "name": "Dorsolateral prefrontal cortex", "level": "regional", "kind": "area", "aka": ["DLPFC", "dlPFC", "area 46", "principal sulcus", "lateral prefrontal cortex"], "domains": ["executive", "spatial"],
+     "summary": "Lateral prefrontal cortex of primates, around the principal sulcus (area 46). In monkeys, most of its neurons with delay activity are tuned to the direction of a remembered cue, and their persistent firing depends on NR2B NMDA receptors. Damage to lateral prefrontal cortex (Brodmann's area 9) in marmosets causes a loss of inhibitory control in attentional selection. In schizophrenia, its blood flow fails to rise during the Wisconsin Card Sort and its deep layer 3 pyramidal neurons have a lower dendritic spine density, and a review concludes that its parvalbumin interneurons make less GABA (human).", "refs": ["funahashi1989", "wangm2013", "dias1996", "weinberger1986", "glantz2000", "lewis2005"], "region": "prefrontal"},
+    {"id": "ofc", "name": "Orbitofrontal cortex", "level": "regional", "kind": "area", "aka": ["OFC", "orbital prefrontal cortex", "PFo"], "domains": ["reward", "emotion"],
+     "summary": "During economic choice, its neurons encode the value of offered and chosen goods (monkey). Surgical removal of orbital prefrontal cortex attenuated reinforcer-devaluation effects and impaired object reversal learning, but excitotoxic, fiber-sparing lesions confined to OFC altered neither reversal learning nor fear of snakes, and a reported loss of inhibitory control was traced to damage to nearby fiber tracts; those authors argue for a more specialized role in reward-guided behavior that includes value updating (monkey). In marmosets, OFC damage causes a loss of inhibitory control in affective processing. Theory proposes that OFC provides a map of the current task state used for reinforcement learning. In monkeys, the amygdala connects most densely with posterior orbitofrontal and posterior medial prefrontal cortex.", "refs": ["padoaschioppa2006", "izquierdo2004", "rudebeck2013", "dias1996", "wilson2014", "ghashghaei2007"], "region": "prefrontal"},
+    {"id": "acc", "name": "Anterior cingulate cortex", "level": "regional", "kind": "area", "aka": ["ACC", "dACC", "area 24", "area 32", "ACA"], "domains": ["executive", "reward", "emotion"],
+     "summary": "In the Stroop task, its conflict-related activity predicts greater prefrontal activity and adjustments in behavior (human). During foraging, it encodes the average value of the environment and the cost of foraging (human). Theory proposes that the dorsal ACC allocates cognitive control according to its expected value. In monkeys, cingulate area 24 sends comparatively more projections to the amygdala than it receives.", "refs": ["kerns2004", "kolling2012", "shenhav2013", "ghashghaei2007"], "region": "prefrontal"},
+    {"id": "sgacc", "name": "Subgenual cingulate cortex (area 25)", "level": "regional", "kind": "area", "aka": ["sgACC", "Brodmann area 25", "BA25", "subgenual cortex"], "domains": ["emotion"],
+     "summary": "Metabolically overactive in treatment-resistant depression. Chronic deep brain stimulation of the white matter tracts next to it was associated with striking and sustained remission in four of six patients with refractory depression, along with reduced local blood flow and changes in downstream limbic and cortical sites (human). In monkeys, area 25 sends comparatively more projections to the amygdala than it receives.", "refs": ["mayberg2005", "ghashghaei2007"], "region": "prefrontal"},
+    {"id": "mpfc", "name": "Medial prefrontal cortex (rodent)", "level": "regional", "kind": "area", "aka": ["mPFC", "rodent PFC", "medial frontal cortex"], "domains": ["executive", "emotion", "social", "spatial"],
+     "summary": "In rats and mice, the medial prefrontal areas, which include the prelimbic and infralimbic cortices; their names and borders differ between rodent atlases, and researchers disagree on the terms. In mice, spatial working memory relies on its circuits: inhibiting its somatostatin interneurons or its direct hippocampal input during cue encoding, or its mediodorsal thalamic input during maintenance, impairs the task. Medial frontal lesions selectively impair attentional set shifting, as prefrontal lesions do in primates (rat). Activating its neurons that project to the dorsal raphe has a profound, rapid and reversible effect on the selection of active behavior in a challenging situation (rat), raising or lowering synaptic strength in dorsal mPFC moves social rank up or down (mouse), and its theta input entrains the basolateral amygdala when mice recognize safety.", "refs": ["laubach2018", "milad2002", "sierramercado2011", "abbas2018", "bolkan2017", "spellman2015", "birrell2000", "warden2012", "wangf2011", "likhtik2014"], "region": "prefrontal"},
+    {"id": "mpfc-pl", "name": "Prelimbic cortex", "level": "regional", "kind": "area", "aka": ["PL", "PrL"], "domains": ["emotion", "reward"],
+     "summary": "A medial prefrontal area of rodents. Its neurons show sustained responses during a 30 s conditioned tone that track freezing second by second, and their persistence after extinction training goes with failure to express extinction; inactivating it impairs fear expression but not extinction memory (rat). The authors of the recording study propose that it turns transient amygdala input into a sustained output that drives conditioned fear. Prelimbic lesions leave rats insensitive to changes in reward value even after limited training, suggesting it supports goal-directed action (rat).", "refs": ["burgosrobles2009", "sierramercado2011", "killcross2003"], "region": "prefrontal"},
+    {"id": "mpfc-il", "name": "Infralimbic cortex", "level": "regional", "kind": "area", "aka": ["IL"], "domains": ["emotion", "reward"],
+     "summary": "A ventral medial prefrontal area of rodents. Its neurons fire to a conditioned tone when rats recall extinction the next day, with the largest increase in rats that freeze least, and pairing tones with brief infralimbic stimulation lowers freezing in rats that had not been extinguished. Inactivating it spares fear expression but impairs the acquisition and memory of extinction (rat). Infralimbic lesions keep rats sensitive to goal value even after extended training, suggesting that infralimbic cortex lets overtraining override goal-directed behavior (rat).", "refs": ["milad2002", "sierramercado2011", "killcross2003"], "region": "prefrontal"},
+    {"id": "vmpfc", "name": "Ventromedial prefrontal cortex", "level": "regional", "kind": "area", "aka": ["vmPFC", "VMPC"], "domains": ["reward", "social", "emotion"],
+     "summary": "In humans, damage to it causes a defect in real-life decision-making: on a task that simulates such decisions, patients with prefrontal damage were oblivious to the future consequences of their actions. Patients with focal bilateral damage made abnormally utilitarian judgments on moral dilemmas that pit aggregate welfare against emotionally aversive actions, but not on other dilemmas. In healthy people, it encodes the values of specific options during comparative choice.", "refs": ["bechara1994", "koenigs2007", "kolling2012"], "region": "prefrontal"},
+    {"id": "drn", "name": "Dorsal raphe nucleus", "level": "systems", "kind": "structure", "aka": ["DRN", "DR", "dorsal raphe"], "domains": ["emotion"],
+     "summary": "A serotonergic brainstem nucleus implicated in major depressive disorder. Selectively activating medial prefrontal neurons that project to it induced a profound, rapid and reversible effect on rats’ selection of an active response to a behavioral challenge.", "refs": ["warden2012"]},
+    {"id": "f-wm", "name": "Working memory", "level": "cognitive", "kind": "function", "aka": ["short-term memory", "spatial working memory", "delayed response"], "domains": ["executive"],
+     "summary": "Holding information for seconds to guide behavior. In monkeys, prefrontal neurons fire through memory delays with activity tuned to the remembered location, and blocking prefrontal D1 dopamine receptors impairs memory-guided, but not visually guided, saccades in a delay-dependent way. In mice, mediodorsal thalamic input to medial PFC supports maintenance and direct hippocampal input supports the encoding of spatial cues. Whether the memory is held by sustained firing or by brief oscillatory bursts is debated (monkey).", "refs": ["funahashi1989", "sawaguchi1991", "bolkan2017", "spellman2015", "lundqvist2016"]},
+    {"id": "f-flexibility", "name": "Cognitive flexibility", "level": "cognitive", "kind": "function", "aka": ["set shifting", "reversal learning", "task switching", "behavioral flexibility"], "domains": ["executive"],
+     "summary": "Changing behavior when rules or outcomes change. In marmosets, lateral prefrontal damage impaired inhibitory control in attentional selection and orbitofrontal damage impaired it in affective processing; in rats, medial frontal lesions selectively impaired attentional set shifting. In monkeys, whether OFC is needed for reversal learning is debated: surgical removals impaired it, but excitotoxic, fiber-sparing lesions did not. In monkeys that flexibly select which sensory input guides a choice, selection and integration appear to unfold as one dynamical process within the same prefrontal circuits.", "refs": ["dias1996", "birrell2000", "izquierdo2004", "rudebeck2013", "mante2013"]},
+    {"id": "f-attention", "name": "Attention", "level": "cognitive", "kind": "function", "aka": ["top-down attention", "attentional control"], "domains": ["executive"],
+     "summary": "Focusing processing on what matters for the task. In monkeys, prefrontal neurons signal the target location first during top-down attention, and parietal neurons first during bottom-up attention. In mice, mediodorsal thalamic input sustains prefrontal representations of the rules that guide attention. In ADHD, cortical maturation is delayed most prominently in prefrontal regions important for control of cognitive processes including attention (human).", "refs": ["buschman2007", "schmitt2017", "shaw2007"]},
+    {"id": "f-decision", "name": "Value-based decision-making", "level": "cognitive", "kind": "function", "aka": ["economic choice", "foraging", "reward-guided choice"], "domains": ["reward", "executive"],
+     "summary": "Choosing among options by their value. In monkeys, orbitofrontal neurons encode the value of offered and chosen goods, and removing orbital prefrontal cortex blunts the change in choice that should follow a change in reward value. In humans, comparative and foraging modes of choice engage distinct mechanisms in ventromedial PFC and anterior cingulate cortex, and on a task that simulates real-life decisions, patients with ventromedial prefrontal damage seem guided by immediate prospects only, oblivious to future consequences.", "refs": ["padoaschioppa2006", "izquierdo2004", "kolling2012", "bechara1994"]},
+    {"id": "f-fear", "name": "Fear learning & extinction", "level": "cognitive", "kind": "function", "aka": ["fear conditioning", "extinction", "safety learning"], "domains": ["emotion"],
+     "summary": "Learning that a cue predicts danger, and later that it no longer does (extinction), which is thought to form a new memory rather than erase the first. In rats, inactivating prelimbic cortex impairs the expression of conditioned fear, whereas inactivating infralimbic cortex spares it but impairs the acquisition and recall of extinction; inactivating the basolateral amygdala or ventral hippocampus impairs both. In mice, medial prefrontal theta input entrains the basolateral amygdala when animals recognize safety.", "refs": ["milad2002", "sierramercado2011", "burgosrobles2009", "likhtik2014"]},
+    {"id": "f-goal", "name": "Goal-directed action & habits", "level": "cognitive", "kind": "function", "aka": ["habits", "outcome devaluation", "action-outcome learning"], "domains": ["reward"],
+     "summary": "Early in training, actions are goal-directed and sensitive to changes in the value of their outcome; extended training makes them habits that are not. In rats, prelimbic lesions abolish sensitivity to goal value even after limited training, whereas infralimbic lesions preserve it after extended training.", "refs": ["killcross2003"]},
+    {"id": "c-depression", "name": "Depression", "level": "clinical", "kind": "disorder", "aka": ["major depressive disorder", "MDD", "treatment-resistant depression"], "domains": ["emotion"],
+     "summary": "In treatment-resistant depression, the subgenual cingulate (area 25) has been observed to be metabolically overactive, and chronic deep brain stimulation of the white matter next to it was associated with sustained remission in four of six patients (human). Ketamine, an NMDA receptor antagonist with rapid antidepressant effects in treatment-resistant patients, rapidly builds spine synapses in rat prefrontal cortex through mTOR, and in mice it rescues spines lost on prefrontal projection neurons in depression-related states; these new spines are needed to maintain, but not to induce, its effects on motivated escape.", "refs": ["mayberg2005", "li2010", "modasava2019"]},
+    {"id": "c-adhd", "name": "ADHD", "level": "clinical", "kind": "disorder", "aka": ["attention-deficit/hyperactivity disorder"], "domains": ["executive", "development"],
+     "summary": "In 223 children with ADHD and 223 typically developing controls scanned repeatedly, the cortex reached peak thickness later in ADHD throughout most of the cerebrum (median 10.5 versus 7.5 years), most prominently in prefrontal regions important for control of cognitive processes including attention and motor planning; the regional order of maturation was similar in both groups (human).", "refs": ["shaw2007"], "region": "prefrontal"},
+    {"id": "ketamine", "name": "Ketamine", "level": "clinical", "kind": "drug", "aka": ["NMDA receptor antagonist", "rapid-acting antidepressant"], "domains": ["emotion", "executive"],
+     "summary": "An NMDA receptor antagonist with rapid antidepressant effects in treatment-resistant depression. In rats it rapidly activated mTOR signaling and increased the number and function of spine synapses in prefrontal cortex, and blocking mTOR prevented both this synaptogenesis and its behavioral effects in models of depression. In mice, antidepressant-dose ketamine rescued prefrontal spines eliminated in depression-related states, and this spinogenesis was needed to maintain, but not to induce, its effects on motivated escape. In monkey dorsolateral PFC, systemic ketamine abolished the persistent firing of Delay cells, while many Response cells fired more.", "refs": ["li2010", "modasava2019", "wangm2013"], "region": "prefrontal"}
   ],
   "links": [
     {"s": "mglur1", "t": "ltd", "rel": "required for LTD induction", "status": "supported", "kind": "mechanistic", "refs": ["aiba1994", "hansel2001"]},
@@ -833,7 +1056,8 @@
     {"s": "cb-cortex", "t": "pfc", "rel": "functional coupling with right DLPFC", "status": "supported", "kind": "functional", "refs": ["brady2019", "buckner2011", "krienen2009", "mcafee2019"]},
     {"s": "pfc", "t": "c-scz", "rel": "cerebellum–DLPFC breakdown ↔ negative symptoms", "status": "emerging", "kind": "clinical", "refs": ["brady2019", "andreasen1998"]},
     {"s": "cb-cortex", "t": "parietal", "rel": "coupling with association networks", "status": "supported", "kind": "functional", "refs": ["buckner2011", "stoodley2017"]},
-    {"s": "pfc", "t": "f-executive", "rel": "prefrontal executive control", "status": "established", "kind": "causal", "refs": ["middleton1994", "gao2018"]},
+    {"s": "pfc", "t": "f-executive", "rel": "prefrontal executive control", "status": "established", "kind": "causal", "refs": ["miller2001", "dias1996", "wallis2001"],
+     "note": "Theory (miller2001) with lesion (dias1996, marmoset) and recording (wallis2001, monkey) evidence."},
     {"s": "motor-cortex", "t": "f-motor", "rel": "movement planning and execution", "status": "established", "kind": "causal", "refs": ["gao2018"]},
     {"s": "striatum", "t": "c-dystonia", "rel": "aberrant cerebellar input → dystonia", "status": "emerging", "kind": "clinical", "refs": ["chen2014"]},
     {"s": "cb-cortex", "t": "f-timing", "rel": "lesions impair timing", "status": "supported", "kind": "causal", "refs": ["ivry1989", "breska2018"]},
@@ -1002,8 +1226,18 @@
      "note": "In rats, motor-thalamic neurons of a zone dominated by inhibitory afferents place many varicosities in layer I and also reach the striatum; those of a zone dominated by excitatory afferents target the middle layers (proposed to carry basal ganglia and cerebellar signals, respectively). In mice, inactivating the thalamus disrupts cortical activity and limb kinematics at any stage of a prehension movement."},
     {"s": "thalamus", "t": "pt-neurons", "rel": "thalamocortical input onto corticospinal neurons shifts toward distal-forelimb neurons after grasp training (rat)", "status": "emerging", "kind": "mechanistic", "refs": ["biane2016"]},
     {"s": "thalamus", "t": "m1-pv", "rel": "drives inhibitory cells via GluR2-lacking AMPA receptors (feedforward inhibition); PV cells fire before pyramidal cells (monkey)", "status": "emerging", "kind": "mechanistic", "refs": ["nashef2022"], "via": "GluR2-lacking AMPA receptors", "sign": "+"},
-    {"s": "thalamus", "t": "alm", "rel": "fastigial output via thalamus maintains ALM preparatory activity (mouse)", "status": "emerging", "kind": "causal", "refs": ["gao2018"]},
+    {"s": "thalamus", "t": "alm", "rel": "relays fastigial output to the behaviourally relevant part of frontal cortex; fastigial activity is needed to maintain cortical preparatory activity (mouse)", "status": "emerging", "kind": "causal", "refs": ["gao2018", "chabrol2019"],
+     "note": "In motor neocortex, preparatory activity is maintained by a positive feedback loop with the thalamus, and motor thalamus receives excitatory input from the cerebellum; silencing the dentate nucleus suppresses preparatory activity in anterolateral motor cortex (chabrol2019)."},
     {"s": "dentate", "t": "alm", "rel": "dentate activity is needed for ALM preparatory activity (mouse)", "status": "emerging", "kind": "functional", "refs": ["chabrol2019"]},
+    {"s": "alm", "t": "thalamus", "rel": "connected in both directions with parts of the thalamus, including the ventral medial and ventral anterior-lateral nuclei; photoinhibiting ALM diminishes thalamic activity (mouse)", "status": "supported", "kind": "anatomical", "refs": ["guo2017"]},
+    {"s": "thalamus", "t": "prep-activity", "rel": "thalamic input is needed for ALM preparatory activity: photoinhibiting the thalamus collapses it (mouse)", "status": "supported", "kind": "causal", "refs": ["guo2017", "gao2018"],
+     "note": "Fastigial activity, whose output reaches the behaviourally relevant part of frontal cortex through the thalamus, is needed to maintain cortical preparatory activity (gao2018)."},
+    {"s": "mrn", "t": "thalamus", "rel": "ascending glutamatergic neurons (with those of the pedunculopontine nucleus) carry a short-latency Go-cue signal that the thalamus transmits to motor cortex (mouse)", "status": "emerging", "kind": "anatomical", "refs": ["inagaki2022a"]},
+    {"s": "thalamus", "t": "f-initiation", "rel": "relays the midbrain Go-cue signal that switches motor cortex from planning-related activity to a motor command (mouse)", "status": "emerging", "kind": "causal", "refs": ["inagaki2022a"]},
+    {"s": "prep-activity", "t": "f-initiation", "rel": "at movement initiation, choice-selective activity collapses across the brain, followed by new activity patterns that drive specific actions (mouse)", "status": "emerging", "kind": "functional", "refs": ["chens2024", "inagaki2022a"]},
+    {"s": "pop-dynamics", "t": "prep-activity", "rel": "discrete attractor dynamics: ALM activity moves toward end points for each movement direction that resist transient perturbations (mouse)", "status": "emerging", "kind": "mechanistic", "refs": ["inagaki2019", "inagaki2022b"]},
+    {"s": "striatum", "t": "f-timing", "rel": "ramps with frontal cortex before licks; briefly inhibiting striatum rewinds this timer, whereas silencing frontal cortex pauses it (mouse)", "status": "emerging", "kind": "causal", "refs": ["yang2026"]},
+    {"s": "pt-neurons", "t": "f-timing", "rel": "CaMKII-dependent plasticity in two pyramidal-tract subtypes of premotor cortex, but not in intratelencephalic neurons, is required to learn a motor timing task (mouse)", "status": "emerging", "kind": "causal", "refs": ["majumder2026"]},
     {"s": "s1", "t": "m1", "rel": "barrel cortex input targets the upper layers (L2/3, L5A) of vibrissal M1 (mouse)", "status": "emerging", "kind": "anatomical", "refs": ["hooks2013"]},
     {"s": "premotor", "t": "m1", "rel": "premotor areas project to M1; rodent M2 input reaches pyramidal-tract neurons in L5B directly", "status": "established", "kind": "anatomical", "refs": ["dum1991", "hooks2013", "kaufman2014"],
      "note": "In monkeys, the output-null mechanism that lets motor cortex prepare without moving also appears to operate in dorsal premotor cortex, largely accounting for how preparatory activity is attenuated in M1 (kaufman2014)."},
@@ -1028,7 +1262,8 @@
     {"s": "motor-map", "t": "f-skill", "rel": "practice expands the representations of practised movements (monkey, human)", "status": "supported", "kind": "functional", "refs": ["nudo1996a", "karni1995"]},
     {"s": "m1", "t": "f-skill", "rel": "needed to learn skills; whether it is needed to execute them depends on the task", "status": "debated", "kind": "causal", "refs": ["kawai2015", "guo2015", "xu2009"],
      "note": "Motor cortex lesions after training spare a learned, precisely timed movement sequence in rats (kawai2015), but sudden cortical inhibition blocks a learned prehension skill in mice (guo2015)."},
-    {"s": "alm", "t": "prep-activity", "rel": "neurons predict the direction of upcoming movements; unilateral inhibition during planning biases responses to the same side (mouse)", "status": "supported", "kind": "causal", "refs": ["guo2014", "li2015"]},
+    {"s": "alm", "t": "prep-activity", "rel": "neurons predict the direction of upcoming movements; unilateral inhibition during planning biases responses to the same side (mouse)", "status": "supported", "kind": "causal", "refs": ["guo2014", "li2015", "li2019"],
+     "note": "A caveat for optogenetic inactivation results: inactivation spreads substantially beyond the light, owing to strong coupling between cortical neurons, and its offset is followed by rebound excitation, limiting temporal resolution (li2019)."},
     {"s": "prep-activity", "t": "f-planning", "rel": "neural correlate of motor planning, maintained across a distributed network", "status": "supported", "kind": "functional", "refs": ["svoboda2018", "li2015", "guo2014"]},
     {"s": "pt-neurons", "t": "prep-activity", "rel": "thalamus-projecting PT neurons carry early, medulla-projecting ones late preparatory activity (mouse)", "status": "emerging", "kind": "functional", "refs": ["economo2018", "li2015"]},
     {"s": "premotor", "t": "prep-activity", "rel": "dorsal premotor preparatory activity lies in output-null dimensions, largely accounting for weaker preparatory activity in M1 (monkey)", "status": "emerging", "kind": "mechanistic", "refs": ["kaufman2014"]},
@@ -1051,7 +1286,75 @@
     {"s": "m1", "t": "c-als", "rel": "cortical hyperexcitability is an early feature of motor neuron disease (human)", "status": "emerging", "kind": "clinical", "refs": ["vucic2006"]},
     {"s": "m1", "t": "bci", "rel": "intended movements still modulate motor cortex activity years after injury and can be decoded (human)", "status": "supported", "kind": "clinical", "refs": ["hochberg2006", "willett2021"]},
     {"s": "bci", "t": "c-sci", "rel": "restores device control and communication after paralysis (pilot studies, human)", "status": "emerging", "kind": "clinical", "refs": ["hochberg2006", "willett2021"]},
-    {"s": "cst", "t": "c-sci", "rel": "injured corticospinal axons regenerate poorly", "status": "supported", "kind": "clinical", "refs": ["liu2010"]}
+    {"s": "cst", "t": "c-sci", "rel": "injured corticospinal axons regenerate poorly", "status": "supported", "kind": "clinical", "refs": ["liu2010"]},
+    {"s": "comt", "t": "dopamine", "rel": "a common Val108/158 Met variant accounts for a four-fold variation in COMT activity and dopamine catabolism (human)", "status": "supported", "kind": "mechanistic", "refs": ["egan2001"]},
+    {"s": "comt", "t": "f-executive", "rel": "the low-activity Met allele predicts fewer perseverative errors on the Wisconsin Card Sort and a more efficient prefrontal response during working memory (human)", "status": "emerging", "kind": "functional", "refs": ["egan2001"]},
+    {"s": "comt", "t": "c-scz", "rel": "the Val allele is transmitted more often to offspring with schizophrenia; the authors suggest it slightly raises risk by impairing prefrontal function (human)", "status": "emerging", "kind": "clinical", "refs": ["egan2001"]},
+    {"s": "dopamine", "t": "delay-activity", "rel": "D1-receptor stimulation sculpts delay activity along an inverted U: low levels sharpen spatial tuning, high levels reduce delay firing in all directions, eroding tuning (monkey)", "status": "supported", "kind": "mechanistic", "refs": ["vijayraghavan2007", "sawaguchi1991"],
+     "note": "Blocking prefrontal D1 receptors impairs memory-guided but not visually guided saccades (sawaguchi1991, monkey).", "via": "D1 receptors"},
+    {"s": "dopamine", "t": "hcn-camp", "rel": "D1-receptor actions on delay firing are mediated by cAMP signaling (monkeys and rats)", "status": "emerging", "kind": "mechanistic", "refs": ["vijayraghavan2007"], "via": "D1 receptors"},
+    {"s": "noradrenaline", "t": "hcn-camp", "rel": "α2A-adrenoceptor stimulation inhibits cAMP and closes HCN channels, which are colocalized with the receptors in prefrontal spines (monkeys and rats)", "status": "emerging", "kind": "mechanistic", "refs": ["wangm2007"], "via": "α2A adrenoceptors"},
+    {"s": "hcn-camp", "t": "delay-activity", "rel": "closing HCN channels strengthens spatially tuned delay firing, while excessive cAMP collapses it (monkeys and rats)", "status": "emerging", "kind": "mechanistic", "refs": ["wangm2007"]},
+    {"s": "nmdar-nr2b", "t": "delay-activity", "rel": "Delay-cell persistent firing in dorsolateral PFC needs NR2B-containing NMDA receptors (monkey)", "status": "emerging", "kind": "mechanistic", "refs": ["wangm2013"]},
+    {"s": "ketamine", "t": "delay-activity", "rel": "systemic ketamine abolished Delay-cell persistent firing in dorsolateral PFC, while many Response cells fired more (monkey)", "status": "emerging", "kind": "mechanistic", "refs": ["wangm2013"]},
+    {"s": "ketamine", "t": "pfc-pyr", "rel": "builds spine synapses on prefrontal neurons: through mTOR in rats, and by rescuing spines lost in depression-related states in mice", "status": "supported", "kind": "mechanistic", "refs": ["li2010", "modasava2019"]},
+    {"s": "ketamine", "t": "c-depression", "rel": "in rodent models, blocking mTOR prevents ketamine’s synaptogenesis and behavioral effects (rat), and prefrontal spine formation is needed to maintain, though not to induce, its effects on motivated escape (mouse)", "status": "emerging", "kind": "causal", "refs": ["li2010", "modasava2019"]},
+    {"s": "pfc-pyr", "t": "delay-activity", "rel": "recurrent excitation among pyramidal Delay cells generates persistent firing (monkey)", "status": "supported", "kind": "mechanistic", "refs": ["wangm2013", "wangm2007"]},
+    {"s": "pfc-pyr", "t": "c-scz", "rel": "dendritic spine density on deep layer 3 pyramidal neurons of DLPFC area 46 is 23% lower in schizophrenia than in controls (human)", "status": "emerging", "kind": "clinical", "refs": ["glantz2000"]},
+    {"s": "pfc-pyr", "t": "c-depression", "rel": "depression-related behavior goes with branch-specific spine loss on prefrontal projection neurons (mouse)", "status": "emerging", "kind": "clinical", "refs": ["modasava2019"]},
+    {"s": "pfc-pyr", "t": "f-social", "rel": "excitatory synaptic strength onto layer V mPFC pyramidal neurons tracks dominance rank, and raising or lowering synaptic efficacy in dorsal mPFC moves rank up or down (mouse)", "status": "emerging", "kind": "causal", "refs": ["wangf2011"]},
+    {"s": "pfc-pv", "t": "pfc-rhythms", "rel": "inhibiting parvalbumin interneurons suppresses gamma oscillations, and driving them is sufficient to generate gamma rhythmicity (mouse neocortex)", "status": "supported", "kind": "mechanistic", "refs": ["sohal2009", "lewis2005"],
+     "note": "Review (lewis2005): in schizophrenia, reduced GABA synthesis in DLPFC parvalbumin interneurons alters perisomatic inhibition of pyramidal neurons, which contributes to a diminished capacity for gamma-frequency synchrony."},
+    {"s": "pfc-pv", "t": "c-scz", "rel": "convergent findings: in schizophrenia, deficient TrkB signaling reduces GABA synthesis in DLPFC parvalbumin interneurons (review)", "status": "supported", "kind": "clinical", "refs": ["lewis2005"]},
+    {"s": "pfc-sst", "t": "f-wm", "rel": "inhibiting mPFC somatostatin (not parvalbumin) interneurons during encoding impairs spatial working memory (mouse)", "status": "emerging", "kind": "causal", "refs": ["abbas2018"]},
+    {"s": "pfc-sst", "t": "pfc-rhythms", "rel": "inhibiting them during encoding decreases hippocampal-prefrontal synchrony (mouse)", "status": "emerging", "kind": "mechanistic", "refs": ["abbas2018"]},
+    {"s": "delay-activity", "t": "f-wm", "rel": "persistent delay firing as the store of working memory", "status": "debated", "kind": "functional", "refs": ["fuster1971", "funahashi1989", "bolkan2017", "lundqvist2016"],
+     "note": "Prefrontal delay firing (fuster1971, monkey), tuned to the remembered direction (funahashi1989, monkey) and absent on error trials (bolkan2017, mouse), supports the view; lundqvist2016 instead finds brief gamma and beta bursts and argues that working memory is manifested by discrete oscillatory dynamics and spiking, not sustained activity (monkey)."},
+    {"s": "pfc-rhythms", "t": "f-wm", "rel": "gamma bursts accompany encoding and re-activation (monkey); hippocampal-prefrontal gamma synchrony appears to mediate cue encoding (mouse); hippocampal-prefrontal theta coupling strengthens during spatial working memory (rat)", "status": "supported", "kind": "functional", "refs": ["lundqvist2016", "spellman2015", "jones2005"]},
+    {"s": "mixed-selectivity", "t": "f-executive", "rel": "mixed-selectivity neurons carry information about all task-relevant aspects, and the dimensionality of this representation collapses on error trials (monkey)", "status": "emerging", "kind": "functional", "refs": ["rigotti2013"]},
+    {"s": "mixed-selectivity", "t": "f-flexibility", "rel": "single-neuron responses make sense as population dynamics that a trained recurrent network reproduces; the authors propose that context-dependent selection and integration of inputs are one dynamical process (monkey)", "status": "emerging", "kind": "functional", "refs": ["mante2013"]},
+    {"s": "rule-coding", "t": "f-executive", "rel": "prefrontal neurons code abstract rules (monkey); theory casts prefrontal representations of goals and the means to achieve them as bias signals to other brain structures", "status": "emerging", "kind": "functional", "refs": ["wallis2001", "miller2001"]},
+    {"s": "thalamus", "t": "rule-coding", "rel": "mediodorsal input amplifies local prefrontal connectivity to sustain rule representations, without relaying categorical information (mouse)", "status": "emerging", "kind": "mechanistic", "refs": ["schmitt2017"]},
+    {"s": "thalamus", "t": "dlpfc", "rel": "the parvicellular mediodorsal nucleus connects with dorsolateral areas 46 and 9 (monkey)", "status": "established", "kind": "anatomical", "refs": ["giguere1988"]},
+    {"s": "thalamus", "t": "ofc", "rel": "the magnocellular mediodorsal nucleus connects with orbital and medial areas 11–14 (monkey)", "status": "established", "kind": "anatomical", "refs": ["giguere1988"]},
+    {"s": "thalamus", "t": "mpfc", "rel": "mediodorsal input sustains mPFC delay activity during working memory and prefrontal rule representations during attention (mouse)", "status": "supported", "kind": "causal", "refs": ["bolkan2017", "schmitt2017"]},
+    {"s": "mpfc", "t": "thalamus", "rel": "the mPFC-to-mediodorsal projection supports the choice that follows the delay (mouse)", "status": "emerging", "kind": "causal", "refs": ["bolkan2017"]},
+    {"s": "hippocampus", "t": "mpfc", "rel": "direct hippocampal input supports the encoding of spatial cues in working memory (mouse); CA1-mPFC firing correlations and theta coupling strengthen during spatial working memory (rat)", "status": "supported", "kind": "causal", "refs": ["spellman2015", "jones2005"]},
+    {"s": "hippocampus", "t": "pfc", "rel": "hippocampal-formation neurons project mostly to medial, then orbital, prefrontal areas and only sparsely to lateral areas (monkey)", "status": "supported", "kind": "anatomical", "refs": ["barbas1995"]},
+    {"s": "amygdala", "t": "ofc", "rel": "dense connections with posterior orbitofrontal cortex, whose caudal areas receive more amygdala input than they send (monkey)", "status": "supported", "kind": "anatomical", "refs": ["ghashghaei2007"]},
+    {"s": "acc", "t": "amygdala", "rel": "cingulate area 24 sends comparatively more projections to the amygdala than it receives (monkey)", "status": "supported", "kind": "anatomical", "refs": ["ghashghaei2007"]},
+    {"s": "sgacc", "t": "amygdala", "rel": "subgenual area 25 sends comparatively more projections to the amygdala than it receives (monkey)", "status": "supported", "kind": "anatomical", "refs": ["ghashghaei2007"]},
+    {"s": "mpfc", "t": "amygdala", "rel": "basolateral amygdala firing entrains to mPFC theta input when mice recognize safety", "status": "emerging", "kind": "functional", "refs": ["likhtik2014"]},
+    {"s": "amygdala", "t": "mpfc-pl", "rel": "proposed: prelimbic cortex turns transient amygdala input into a sustained output that drives conditioned fear (rat)", "status": "hypothesis", "kind": "functional", "refs": ["burgosrobles2009"]},
+    {"s": "mpfc", "t": "drn", "rel": "selectively activating mPFC neurons that project to the dorsal raphe had a profound, rapid and reversible effect on the selection of active behavior in a challenging situation (rat)", "status": "emerging", "kind": "causal", "refs": ["warden2012"],
+     "note": "Activating mPFC principal neurons without regard to their projection had no detectable effect."},
+    {"s": "vta", "t": "pfc", "rel": "dopaminergic projection from a distinct fast-firing population (mouse); phasic release in mPFC tunes its neurons to relevant cues during learning (mouse)", "status": "supported", "kind": "anatomical", "refs": ["lammel2008", "popescu2016"], "tx": "DA"},
+    {"s": "lc", "t": "pfc", "rel": "noradrenergic projection; LC cells projecting to PFC differ from those projecting to motor cortex and release more noradrenaline (rat)", "status": "supported", "kind": "anatomical", "refs": ["chandler2014"], "tx": "NA"},
+    {"s": "pfc", "t": "parietal", "rel": "frontal-parietal synchrony is stronger at lower frequencies during top-down and at higher frequencies during bottom-up attention (monkey)", "status": "emerging", "kind": "functional", "refs": ["buschman2007"]},
+    {"s": "mpfc-pl", "t": "f-fear", "rel": "prelimbic activity tracks freezing, and inactivating prelimbic cortex impairs the expression of conditioned fear (rat)", "status": "supported", "kind": "causal", "refs": ["burgosrobles2009", "sierramercado2011"]},
+    {"s": "mpfc-il", "t": "f-fear", "rel": "infralimbic activity signals extinction recall, stimulating it mimics extinction, and inactivating it impairs extinction learning and memory (rat)", "status": "supported", "kind": "causal", "refs": ["milad2002", "sierramercado2011"]},
+    {"s": "amygdala", "t": "f-fear", "rel": "inactivating the basolateral amygdala impairs fear expression and extinction memory (rat)", "status": "emerging", "kind": "causal", "refs": ["sierramercado2011"]},
+    {"s": "hippocampus", "t": "f-fear", "rel": "inactivating the ventral hippocampus impairs fear expression and extinction memory (rat)", "status": "emerging", "kind": "causal", "refs": ["sierramercado2011"]},
+    {"s": "mpfc-pl", "t": "f-goal", "rel": "prelimbic lesions abolish sensitivity to goal value (rat)", "status": "emerging", "kind": "causal", "refs": ["killcross2003"]},
+    {"s": "mpfc-il", "t": "f-goal", "rel": "infralimbic lesions keep actions goal-directed after extended training (rat)", "status": "emerging", "kind": "causal", "refs": ["killcross2003"]},
+    {"s": "mpfc", "t": "f-flexibility", "rel": "medial frontal lesions selectively impair attentional set shifting (rat)", "status": "emerging", "kind": "causal", "refs": ["birrell2000"]},
+    {"s": "mpfc", "t": "f-wm", "rel": "inhibiting mPFC somatostatin interneurons or hippocampal input during cue encoding, or mediodorsal input during maintenance, impairs spatial working memory (mouse)", "status": "supported", "kind": "causal", "refs": ["abbas2018", "bolkan2017", "spellman2015"]},
+    {"s": "dlpfc", "t": "f-wm", "rel": "its neurons hold directionally tuned delay activity for remembered locations, which depends on NR2B NMDA receptors (monkey)", "status": "supported", "kind": "functional", "refs": ["funahashi1989", "wangm2013"]},
+    {"s": "dlpfc", "t": "f-flexibility", "rel": "lateral prefrontal (area 9) damage causes a loss of inhibitory control in attentional selection (marmoset)", "status": "emerging", "kind": "causal", "refs": ["dias1996"]},
+    {"s": "dlpfc", "t": "c-scz", "rel": "DLPFC blood flow fails to rise during the Wisconsin Card Sort in patients and tracks their performance (human)", "status": "emerging", "kind": "clinical", "refs": ["weinberger1986"]},
+    {"s": "ofc", "t": "value-coding", "rel": "OFC neurons encode the value of offered and chosen goods, independent of spatial and motor factors (monkey)", "status": "emerging", "kind": "localization", "refs": ["padoaschioppa2006"]},
+    {"s": "value-coding", "t": "f-decision", "rel": "value signals for the options under choice: in OFC neurons (monkey) and vmPFC activity (human)", "status": "supported", "kind": "functional", "refs": ["padoaschioppa2006", "kolling2012"]},
+    {"s": "ofc", "t": "f-decision", "rel": "orbital prefrontal removals attenuate the effect of reinforcer devaluation on choices, and fiber-sparing lesion results favor a role in value updating (monkey)", "status": "supported", "kind": "causal", "refs": ["izquierdo2004", "rudebeck2013", "wilson2014"],
+     "note": "Theory (wilson2014) proposes that OFC labels the current task state for reinforcement learning elsewhere in the brain."},
+    {"s": "ofc", "t": "f-flexibility", "rel": "needed for reversal learning? results depend on the lesion method (monkey; marmoset)", "status": "debated", "kind": "causal", "refs": ["izquierdo2004", "rudebeck2013", "dias1996"],
+     "note": "Surgical removals of orbital prefrontal cortex impaired object reversal learning (izquierdo2004, monkey), and OFC damage impaired inhibitory control in affective processing (dias1996, marmoset), but excitotoxic, fiber-sparing OFC lesions spared reversal learning, and a previously reported loss of inhibitory control was traced to damage to nearby fiber tracts (rudebeck2013, monkey)."},
+    {"s": "vmpfc", "t": "f-decision", "rel": "damage leaves patients oblivious to future consequences, and its activity encodes the values of specific options (human)", "status": "supported", "kind": "causal", "refs": ["bechara1994", "kolling2012"]},
+    {"s": "vmpfc", "t": "f-social", "rel": "bilateral damage makes judgments on emotionally aversive moral dilemmas abnormally utilitarian (human)", "status": "emerging", "kind": "causal", "refs": ["koenigs2007"]},
+    {"s": "acc", "t": "f-executive", "rel": "conflict-related activity predicts prefrontal activity and behavioral adjustments (human); theory proposes that dorsal ACC allocates control according to its expected value", "status": "emerging", "kind": "functional", "refs": ["kerns2004", "shenhav2013"]},
+    {"s": "acc", "t": "f-decision", "rel": "encodes the average value of the foraging environment and the cost of foraging (human)", "status": "emerging", "kind": "functional", "refs": ["kolling2012"]},
+    {"s": "sgacc", "t": "c-depression", "rel": "reported to be metabolically overactive in treatment-resistant depression; chronic stimulation of the adjacent white matter was associated with sustained remission in four of six patients (human)", "status": "emerging", "kind": "clinical", "refs": ["mayberg2005"]},
+    {"s": "pfc", "t": "c-adhd", "rel": "cortical maturation is delayed in ADHD, most prominently in prefrontal regions (human)", "status": "emerging", "kind": "clinical", "refs": ["shaw2007"]},
+    {"s": "pfc", "t": "f-attention", "rel": "prefrontal neurons signal the attended location first during top-down attention (monkey), and mediodorsal-sustained prefrontal rule representations guide attention (mouse)", "status": "supported", "kind": "functional", "refs": ["buschman2007", "schmitt2017"]}
   ],
   "chains": [
     {"id": "loop-pfc", "name": "Cerebro-cerebellar loop", "nodes": ["pfc", "pontine", "cb-cortex", "dcn", "thalamus", "pfc"],
@@ -1098,6 +1401,10 @@
      "desc": "Layer 2/3 neurons drive layer 5 pyramidal-tract neurons, whose corticospinal axons contact spinal premotor interneurons needed for skilled reaching (mouse)."},
     {"id": "mc-plan", "name": "From plan to command", "nodes": ["f-planning", "prep-activity", "pt-neurons", "brainstem-motor"],
      "desc": "Preparatory activity underlies motor planning; in mice, two types of pyramidal-tract neuron carry it at different times: the type projecting to the thalamus early, the type projecting to the medulla late, together with motor commands."},
+    {"id": "mc-loop", "name": "ALM–thalamus loop", "nodes": ["alm", "thalamus", "prep-activity", "f-planning"],
+     "desc": "ALM and the thalamus are connected in both directions, and photoinhibiting either diminishes activity in the other, suggesting that the persistent preparatory activity behind motor planning requires reciprocal excitation across areas (mouse)."},
+    {"id": "mc-go", "name": "Go cue → movement", "nodes": ["mrn", "thalamus", "f-initiation"],
+     "desc": "Ascending glutamatergic neurons of the midbrain reticular and pedunculopontine nuclei show short-latency, phasic changes in firing selective for an auditory Go cue; the signal reaches motor cortex via the thalamus and switches it from planning-related activity to a motor command (mouse)."},
     {"id": "mc-spines", "name": "Spines as skill memories", "nodes": ["m1-sst", "spines", "f-skill"],
      "desc": "Somatostatin interneurons regulate learning-related spine changes on layer 2/3 dendrites, and new spines stabilized during training are associated with durable skill memory (mouse)."},
     {"id": "mc-dopamine", "name": "Dopamine and skill learning", "nodes": ["dopamine", "m1-ltp", "f-skill"],
@@ -1109,7 +1416,23 @@
     {"id": "mc-maps", "name": "Map plasticity and stroke recovery", "nodes": ["bdnf", "motor-map", "c-stroke"],
      "desc": "BDNF val66met carriers show less training-dependent map reorganization (human), and rehabilitative training preserves the hand map beside an infarct (monkey)."},
     {"id": "mc-cerebellum", "name": "Cerebellar input to motor cortex", "nodes": ["dcn", "thalamus", "m1-pv"],
-     "desc": "Cerebellar nuclear output reaches motor cortex through the thalamus, where thalamic input drives inhibitory cells through GluR2-lacking AMPA receptors and PV interneurons fire before pyramidal cells (monkey)."}
+     "desc": "Cerebellar nuclear output reaches motor cortex through the thalamus, where thalamic input drives inhibitory cells through GluR2-lacking AMPA receptors and PV interneurons fire before pyramidal cells (monkey)."},
+    {"id": "pfc-comt", "name": "COMT, dopamine and working memory", "nodes": ["comt", "dopamine", "delay-activity", "f-wm"],
+     "desc": "A common COMT variant accounts for a four-fold variation in the enzyme's activity and in dopamine breakdown (human); D1-receptor stimulation tunes delay activity along an inverted U (monkey); and delay activity is one proposed store of working memory, although whether sustained firing holds the memory is debated."},
+    {"id": "pfc-na", "name": "Noradrenaline, HCN channels and working memory", "nodes": ["noradrenaline", "hcn-camp", "delay-activity", "f-wm"],
+     "desc": "α2A adrenoceptors inhibit cAMP and close HCN channels, which strengthens the delay firing of prefrontal networks; blocking HCN1 channels in PFC improved working memory (monkeys and rats)."},
+    {"id": "pfc-md", "name": "Mediodorsal thalamus and medial PFC", "nodes": ["thalamus", "mpfc", "f-wm"],
+     "desc": "Mediodorsal thalamic input sustains medial prefrontal delay activity, and inhibiting mediodorsal or hippocampal input to medial PFC, or its somatostatin interneurons, impairs spatial working memory (mouse)."},
+    {"id": "pfc-gaba", "name": "Interneurons, gamma and working memory", "nodes": ["pfc-pv", "pfc-rhythms", "f-wm"],
+     "desc": "Inhibiting parvalbumin interneurons suppresses gamma rhythms, and driving them generates gamma (mouse neocortex); gamma bursts and synchrony accompany working memory (monkey, mouse). A review links reduced GABA synthesis in these interneurons, through weaker gamma synchrony, to working-memory deficits in schizophrenia."},
+    {"id": "pfc-fear", "name": "Amygdala → prelimbic cortex → fear", "nodes": ["amygdala", "mpfc-pl", "f-fear"],
+     "desc": "Proposed: prelimbic cortex turns brief amygdala responses to a tone into the sustained output that drives freezing; inactivating prelimbic cortex impairs fear expression (rat)."},
+    {"id": "pfc-ket", "name": "Ketamine and prefrontal spines", "nodes": ["ketamine", "pfc-pyr", "c-depression"],
+     "desc": "Ketamine builds spine synapses on prefrontal neurons (rat, mouse), and loss of these spines accompanies depression-related behavior (mouse)."},
+    {"id": "pfc-value", "name": "Value in the orbitofrontal cortex", "nodes": ["ofc", "value-coding", "f-decision"],
+     "desc": "Orbitofrontal neurons encode the value of offered and chosen goods (monkey), a candidate basis for economic choice."},
+    {"id": "pfc-cb", "name": "Dentate → thalamus → prefrontal cortex", "nodes": ["dentate", "thalamus", "pfc", "f-executive"],
+     "desc": "Dentate output reaches prefrontal area 46 through the thalamus (monkey), one route by which the cerebellum could reach prefrontal control circuits."}
   ],
   "questions": [
     {
@@ -1382,13 +1705,25 @@
     {
       "id": "q-mc-dynamics",
       "title": "Representation or dynamics?",
-      "text": "Do motor cortex neurons represent movement parameters such as direction, or are they parts of a dynamical system whose state generates the movement pattern? If dynamics, are they generated locally or driven by thalamic input?",
-      "entities": ["pop-coding", "pop-dynamics", "prep-activity", "thalamus"],
-      "refs": ["georgopoulos1986", "churchland2012", "shenoy2013", "sauerbrei2020"],
+      "text": "Do motor cortex neurons represent movement parameters such as direction, or are they parts of a dynamical system whose state generates the movement pattern? If dynamics, are they generated locally or driven by thalamic input? In mouse ALM, planning activity shows discrete attractor dynamics, yet it collapses when the thalamus is silenced.",
+      "entities": ["pop-coding", "pop-dynamics", "prep-activity", "thalamus", "alm"],
+      "refs": ["georgopoulos1986", "churchland2012", "shenoy2013", "sauerbrei2020", "inagaki2019", "guo2017"],
       "approaches": [
         "Perturb the cortical state optogenetically and test whether activity returns along the predicted dynamics.",
         "Silence thalamic input at different movement phases while recording cortical populations.",
         "Fit tuning-based and dynamical models to the same population recordings and compare their predictions for new movements."
+      ]
+    },
+    {
+      "id": "q-mc-init",
+      "title": "What releases a planned movement?",
+      "text": "In mice, a Go-cue signal from the midbrain reaches motor cortex through the thalamus and switches it from planning to a motor command, and choice activity collapses across the brain at movement initiation. Before licks in a flexible timing task, frontal cortex and striatum ramp in a way consistent with an adjustable timer. Do cued and timed movements converge on the same thalamocortical switch, and what sets the moment of release?",
+      "entities": ["mrn", "thalamus", "f-initiation", "striatum", "f-timing"],
+      "refs": ["inagaki2022a", "chens2024", "yang2026"],
+      "approaches": [
+        "Record and silence midbrain reticular → thalamus neurons in the flexible lick-timing task and compare with the cued task.",
+        "Stimulate the midbrain–thalamus pathway at different points of the striatal ramp and test whether it releases the movement early.",
+        "Compare population dynamics at the onset of cued and self-timed reaches in monkeys to test whether the collapse of choice activity is shared."
       ]
     },
     {
@@ -1425,6 +1760,54 @@
         "Record dopamine and acetylcholine release in M1 across days of skill learning.",
         "Block D1/D2 or cholinergic receptors in different learning phases and track spine formation.",
         "Identify which M1 cell types express the receptors needed for learning."
+      ]
+    },
+    {
+      "id": "q-pfc-wm",
+      "title": "Is working memory held by persistent firing?",
+      "text": "Monkey prefrontal neurons fire through memory delays with activity tuned to the remembered location (funahashi1989), and this persistent firing depends on NR2B NMDA receptors (wangm2013); in mice, medial prefrontal delay firing needs mediodorsal thalamic input (bolkan2017). In monkey PFC, however, brief gamma bursts accompany the encoding and re-activation of remembered items while beta bursts mark a default state that encoding and decoding interrupt, and the authors argue that working memory is carried by discrete oscillatory dynamics and spiking rather than sustained activity (lundqvist2016). Which mechanism stores the item?",
+      "entities": ["delay-activity", "pfc-rhythms", "f-wm", "dlpfc", "mpfc", "thalamus"],
+      "refs": ["funahashi1989", "wangm2013", "bolkan2017", "lundqvist2016"],
+      "approaches": [
+        "Silence prefrontal delay activity optogenetically for brief windows at different delay times and test whether the memory survives each gap.",
+        "Record large prefrontal and mediodorsal populations and ask whether the remembered item can be decoded continuously on single trials or only around bursts.",
+        "Compare local NR2B blockade with manipulations of short-term synaptic facilitation in the same task to see which one erases the memory."
+      ]
+    },
+    {
+      "id": "q-pfc-ofc",
+      "title": "What does the orbitofrontal cortex compute?",
+      "text": "Monkey OFC neurons encode the value of offered and chosen goods (padoaschioppa2006). Surgical removal of orbital prefrontal cortex impaired reversal learning and blunted the effect of reinforcer devaluation (izquierdo2004), but excitotoxic, fiber-sparing OFC lesions spared reversal learning (rudebeck2013). Theory proposes instead that OFC represents the current task state for reinforcement learning (wilson2014). Is OFC a value signal, a map of task states, or both?",
+      "entities": ["ofc", "value-coding", "f-decision", "f-flexibility"],
+      "refs": ["padoaschioppa2006", "izquierdo2004", "rudebeck2013", "wilson2014"],
+      "approaches": [
+        "Compare excitotoxic, aspiration and chemogenetic OFC inactivation in the same animals on reversal and devaluation tasks.",
+        "Record OFC in a task where hidden task states and option values vary independently, and test which one its neurons track.",
+        "Inactivate OFC while recording midbrain dopamine neurons, and test whether prediction errors lose information about the hidden task state."
+      ]
+    },
+    {
+      "id": "q-pfc-ext",
+      "title": "What decides whether extinction holds?",
+      "text": "Infralimbic neurons respond to the tone when rats recall extinction, stimulating it mimics extinction, and inactivating it impairs extinction memory (milad2002; sierramercado2011). Prelimbic responses that persist after extinction go with failure to express it (burgosrobles2009). In mice, basolateral amygdala firing entrains to medial prefrontal theta input when animals recognize safety (likhtik2014). What sets the balance between prelimbic and infralimbic influence after extinction?",
+      "entities": ["mpfc-il", "mpfc-pl", "amygdala", "f-fear"],
+      "refs": ["milad2002", "sierramercado2011", "burgosrobles2009", "likhtik2014"],
+      "approaches": [
+        "Silence prelimbic or infralimbic projections to the basolateral amygdala separately during extinction recall.",
+        "Image prelimbic and infralimbic ensembles across conditioning, extinction and recall, and test which ones predict the return of fear.",
+        "Drive theta-frequency input from medial PFC to the amygdala during safety cues and test whether extinction recall improves."
+      ]
+    },
+    {
+      "id": "q-pfc-ket",
+      "title": "How does ketamine produce lasting antidepressant effects?",
+      "text": "In rats, ketamine rapidly adds prefrontal spine synapses through mTOR, and blocking mTOR prevents its behavioral effects (li2010). In mice, ketamine rescues spines lost on prefrontal projection neurons, and these new spines maintain, but do not start, its effects on motivated escape (modasava2019). In monkeys, systemic ketamine abolishes the persistent firing of prefrontal Delay cells (wangm2013). What starts the antidepressant response, and how does it relate to ketamine’s effects on prefrontal firing?",
+      "entities": ["ketamine", "pfc-pyr", "c-depression", "delay-activity"],
+      "refs": ["li2010", "modasava2019", "wangm2013"],
+      "approaches": [
+        "Image prefrontal spines and ensemble activity in the first hours after ketamine to find what precedes the first behavioral change.",
+        "Block NMDA receptors only in defined prefrontal cell types to see which population starts the response.",
+        "Compare doses that abolish delay firing with antidepressant doses in the same animals."
       ]
     }
   ],
@@ -1536,7 +1919,7 @@
       "OX": {"label": "Orexin", "entity": "orexin"},
       "CRF": {"label": "CRF", "entity": "crf"}
     },
-    "sources": ["lc", "ser-neurons", "tmn", "lh", "ppn", "basal-forebrain"],
+    "sources": ["lc", "ser-neurons", "tmn", "lh", "ppn", "basal-forebrain", "drn"],
     "targets": [
       {"id": "mf-pathway", "label": "Mossy fibers"},
       {"id": "granule", "label": "Granule cells & PFs"},
@@ -1565,6 +1948,7 @@
     "note": "Fast glutamate and GABA signaling is in the Microcircuit view. An empty cell means no direct evidence among the curated papers, not evidence of absence."
   },
   "atlas3d": {
+    "species": ["human", "macaque", "mouse"],
     "sides": {
       "R": [
         "cb-cortex",
@@ -1622,9 +2006,18 @@
         "m1-sst",
         "cm-cells",
         "spines",
-        "m1-ltp"
+        "m1-ltp",
+        "mrn",
+        "dlpfc",
+        "ofc",
+        "acc",
+        "sgacc",
+        "vmpfc",
+        "mpfc",
+        "mpfc-pl",
+        "mpfc-il"
       ],
-      "C": ["gut", "ser-neurons"]
+      "C": ["gut", "ser-neurons", "drn"]
     },
     "aliases": {
       "human": {
@@ -1644,7 +2037,15 @@
         "motor-map": "m1",
         "alm": "premotor",
         "spinal-in": "spinal",
-        "scan": "m1"
+        "scan": "m1",
+        "pfc-pyr": "dlpfc",
+        "pfc-pv": "dlpfc",
+        "pfc-sst": "pfc",
+        "delay-activity": "dlpfc",
+        "mixed-selectivity": "dlpfc",
+        "rule-coding": "pfc",
+        "pfc-rhythms": "pfc",
+        "value-coding": "ofc"
       },
       "mouse": {
         "zone-vermis": "vermis-post",
@@ -1662,7 +2063,39 @@
         "m1-ltp": "m1",
         "motor-map": "m1",
         "alm": "premotor",
-        "spinal-in": "spinal"
+        "spinal-in": "spinal",
+        "pfc-pyr": "mpfc",
+        "pfc-pv": "mpfc",
+        "pfc-sst": "mpfc",
+        "delay-activity": "mpfc",
+        "rule-coding": "pfc",
+        "pfc-rhythms": "mpfc"
+      },
+      "macaque": {
+        "zone-vermis": "vermis-post",
+        "zone-paravermis": "cb-cortex",
+        "zone-lateral": "lob-crus1",
+        "purkinje": "cb-cortex",
+        "dcn-neurons": "dcn",
+        "io-neurons": "io",
+        "pt-neurons": "m1",
+        "l23-pyr": "m1",
+        "m1-pv": "m1",
+        "m1-sst": "m1",
+        "cm-cells": "m1",
+        "spines": "m1",
+        "m1-ltp": "m1",
+        "motor-map": "m1",
+        "alm": "premotor",
+        "spinal-in": "spinal",
+        "pfc-pyr": "dlpfc",
+        "pfc-pv": "dlpfc",
+        "pfc-sst": "pfc",
+        "delay-activity": "dlpfc",
+        "mixed-selectivity": "dlpfc",
+        "rule-coding": "pfc",
+        "pfc-rhythms": "pfc",
+        "value-coding": "ofc"
       }
     },
     "groups": {"cb-cortex": "cerebellum", "dcn": "nuclei"},
@@ -1732,11 +2165,25 @@
        "desc": "Motor thalamus (VA/VL), which relays cerebellar output, excites layers 2/3–5B; somatosensory cortex targets the upper layers; premotor input (rodent M2) reaches pyramidal-tract neurons directly."},
       {"id": "mc-loops", "region": "motor-cortex", "name": "Cerebellar & basal ganglia loops", "view": "motor", "links": ["motor-cortex>pontine", "pontine>cb-cortex", "cb-cortex>dcn", "dcn>thalamus", "thalamus>m1", "thalamus>m1-pv", "m1>striatum", "thalamus>striatum"],
        "desc": "Motor cortex reaches the cerebellum through the pontine nuclei and the basal ganglia through the striatum. Cerebellar output returns through the motor thalamus, whose input drives feedforward inhibition in M1 (monkey)."},
-      {"id": "mc-plan", "region": "motor-cortex", "name": "Motor planning (ALM)", "view": "motor", "links": ["fastigial>thalamus", "thalamus>alm", "dentate>alm", "pt-neurons>thalamus", "pt-neurons>brainstem-motor"],
-       "desc": "In mice, preparatory activity in anterior lateral motor cortex depends on the cerebellum: fastigial output through the thalamus maintains it, and dentate activity is needed for it. Pyramidal-tract neurons that project to the thalamus carry early preparatory activity; those that project to the medulla carry late preparatory activity and motor commands. Dashed: route not traced."},
+      {"id": "mc-plan", "region": "motor-cortex", "name": "Motor planning (ALM)", "view": "motor", "links": ["fastigial>thalamus", "thalamus>alm", "alm>thalamus", "dentate>alm", "pt-neurons>thalamus", "pt-neurons>brainstem-motor"],
+       "desc": "In mice, preparatory activity in anterior lateral motor cortex depends on a loop with the thalamus: photoinhibiting the thalamus collapses it, and photoinhibiting ALM diminishes thalamic activity. Fastigial output reaches frontal cortex through the thalamus, and fastigial activity is needed to maintain cortical preparatory activity; silencing the dentate nucleus suppresses ALM preparatory activity. Pyramidal-tract neurons that project to the thalamus carry early preparatory activity; those that project to the medulla carry late preparatory activity and motor commands. Dashed: route not traced."},
+      {"id": "mc-go", "region": "motor-cortex", "name": "Go cue → movement", "view": "motor", "links": ["mrn>thalamus", "thalamus>motor-cortex", "pt-neurons>brainstem-motor", "brainstem-motor>spinal"],
+       "desc": "In mice, ascending glutamatergic neurons of the midbrain reticular and pedunculopontine nuclei show short-latency, phasic changes in firing selective for an auditory Go cue. The signal reaches motor cortex via the thalamus and switches it from planning-related activity to a motor command; pyramidal-tract neurons that project to the medulla carry late preparatory activity and motor commands."},
       {"id": "mc-learning", "region": "motor-cortex", "name": "Learning signals", "view": "motor", "links": ["vta>m1", "basal-forebrain>motor-map", "thalamus>pt-neurons"],
-       "desc": "Dopamine from the VTA and acetylcholine from the basal forebrain are needed for skill learning and the plasticity behind it (rat); after grasp training, thalamic input shifts toward corticospinal neurons of the distal forelimb (rat)."}
+       "desc": "Dopamine from the VTA and acetylcholine from the basal forebrain are needed for skill learning and the plasticity behind it (rat); after grasp training, thalamic input shifts toward corticospinal neurons of the distal forelimb (rat)."},
+      {"id": "pfc-wm", "region": "prefrontal", "name": "Working-memory network", "view": "prefrontal", "links": ["thalamus>dlpfc", "thalamus>mpfc", "mpfc>thalamus", "hippocampus>mpfc", "hippocampus>pfc", "pfc>parietal"],
+       "desc": "Mediodorsal thalamus and prefrontal cortex (dorsolateral areas in monkeys, medial PFC in mice), the hippocampal input to medial and orbital PFC, and the frontal-parietal link in attention. The mouse shows the rodent pathways; the macaque and human show the primate ones."},
+      {"id": "pfc-emotion", "region": "prefrontal", "name": "Fear, safety & mood", "view": "prefrontal", "links": ["amygdala>ofc", "acc>amygdala", "sgacc>amygdala", "mpfc>amygdala", "amygdala>mpfc-pl", "mpfc>drn"],
+       "desc": "Amygdala connections with orbital and cingulate cortex (monkey), the medial prefrontal theta input that marks safety and the proposed amygdala → prelimbic route for fear (rodents), and the medial prefrontal projection to the dorsal raphe."},
+      {"id": "pfc-mod", "region": "prefrontal", "name": "Neuromodulator inputs", "view": "prefrontal", "links": ["vta>pfc", "lc>pfc", "mpfc>drn"],
+       "desc": "Dopamine from the VTA (mouse studies) and noradrenaline from the locus coeruleus (rat) reach prefrontal cortex, and medial PFC projects to the serotonergic dorsal raphe (rat). Tags name the transmitter."},
+      {"id": "pfc-cb", "region": "prefrontal", "name": "Cerebellar loop", "view": "prefrontal", "links": ["pfc>pontine", "lob-crus2>pfc", "dentate>thalamus", "thalamus>pfc"],
+       "desc": "Prefrontal cortex → pontine nuclei → cerebellum, and dentate → thalamus → prefrontal cortex: the closed loop through Crus II (monkey)."}
     ],
-    "composite": {"motor-cortex": ["m1", "premotor"]}
+    "composite": {
+      "motor-cortex": ["m1", "premotor"],
+      "pfc": ["dlpfc", "ofc", "acc", "sgacc", "vmpfc", "mpfc-pl", "mpfc-il"],
+      "mpfc": ["mpfc-pl", "mpfc-il"]
+    }
   }
 }
