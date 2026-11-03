@@ -77,11 +77,13 @@
   };
   let species = CA.store.get('atlas.species', 'human');
   if (!SPECIES.some(([sp]) => sp === species)) species = SPECIES[0][0];
-  let opts = Object.assign({ shell: true, xray: false, labels: true, bodyParts: true, animate: true, opacity: 0.09, solid: 0 }, CA.store.get('atlas.opts', {}));
+  // `flow` (moving dots) is off by default: arrowheads show direction, and the trace shows the order of steps
+  let opts = Object.assign({ shell: true, xray: false, labels: true, bodyParts: true, flow: false, opacity: 0.09, solid: 0 }, CA.store.get('atlas.opts', {}));
   let circuitId = null;   // set per region by pickCircuit()
   // meshes without an entity of their own take the region of the entity drawn as their whole group (cerebellar cortex, nuclei)
   const GROUP_REGION = Object.fromEntries(Object.entries(A3.groups).map(([id, g]) => [g, CA.ent[id] && CA.ent[id].region]));
   let pickables = [], meshObjs = [], linkObjs = [], pulses = [], labelEls = [], markerObjs = [];
+  let drawnLinks = [], trace = null;   // the pathways on screen ({l, curve, objs, s, t}); the running step-by-step trace
   let positions = {}, hovered = null, tween = null, unsubs = [], disposed = false, buildToken = 0;
   const geomCache = {};
 
@@ -145,7 +147,7 @@
       h('h2', {}, R.intro.title),
       h('p', { class: 'small' }, R.intro.text),
       h('ol', { class: 'small' },
-        h('li', {}, 'Pick a ', h('b', {}, 'circuit'), ' on the left to see its pathways; pulses show signal direction.'),
+        h('li', {}, 'Pick a ', h('b', {}, 'circuit'), ' on the left to see its pathways; arrowheads show their direction. For a loop or chain, ', h('b', {}, 'Trace step by step'), ' follows the signal in order.'),
         h('li', {}, 'Click any structure for its evidence, connections and open questions.'),
         h('li', {}, 'Go deeper: ', deeper.map(([v, label], i) => [i ? ', ' : '', h('a', { href: '#/' + v }, label)]), '.'),
         h('li', {}, 'Find what is unknown in ', h('a', { href: '#/gaps' }, 'Evidence & gaps'), ' and draft tests in the ', h('a', { href: '#/lab' }, 'Hypothesis lab'), '.')),
@@ -206,6 +208,10 @@
     el.speciesNote = h('div', { class: 'desc' });
     el.circs = h('div', {});
     el.circDesc = h('div', { class: 'desc' });
+    el.traceBtn = h('button', { class: 'btn', title: 'Send one pulse through the circuit in order, lighting each structure as it arrives. The order follows the circuit\'s pathways; the timing is schematic.',
+      onclick: () => (trace ? stopTrace() : startTrace()) }, '▶ Trace step by step');
+    el.traceInfo = h('div', {});
+    el.traceBox = h('div', { class: 'trace', style: { display: 'none' } }, el.traceBtn, el.traceInfo);
     fillCircuits();
     const check = (key, label, fn, title) => h('label', { class: 'check small', title },
       h('input', { type: 'checkbox', checked: opts[key], onchange: (ev) => { opts[key] = ev.target.checked; CA.store.set('atlas.opts', opts); fn(); } }), label);
@@ -217,7 +223,7 @@
     CA.append(box,
       D.regions.length > 1 ? [h('h4', { style: { marginTop: 0 } }, 'Region'), CA.regionPicker()] : null,
       h('h4', {}, 'Species'), seg, el.speciesNote,
-      h('h4', {}, 'Circuits'), el.circs, el.circDesc,
+      h('h4', {}, 'Circuits'), el.circs, el.circDesc, el.traceBox,
       h('h4', {}, 'Display'),
       check('shell', 'Brain surface', applyMaterials),
       h('input', { type: 'range', min: 0.03, max: 0.35, step: 0.01, value: opts.opacity, style: { width: '100%' },
@@ -230,7 +236,7 @@
       xrayLabel,
       check('labels', 'Labels', () => {}),
       check('bodyParts', 'Body & senses', showMarkers),
-      check('animate', 'Animate signal flow', () => {}, 'Dots travel along each pathway from source to target to show its direction. Dot color follows the evidence grade, and hypothetical links move at half speed. The motion is schematic, not real conduction timing.'),
+      check('flow', 'Animate signal flow', () => {}, 'Dots also travel along every pathway, from source to target. Dot color follows the evidence grade, and hypothetical links move at half speed. The motion is schematic, not real conduction timing.'),
       h('h4', {}, 'Camera'), views, el.credit);
     return box;
   }
@@ -332,8 +338,9 @@
         if (c.material) (Array.isArray(c.material) ? c.material : [c.material]).forEach((m) => m.dispose());
       });
     };
+    stopTrace();
     [...meshObjs, ...linkObjs, ...markerObjs].forEach(kill);
-    meshObjs = []; linkObjs = []; markerObjs = []; pickables = []; pulses = [];
+    meshObjs = []; linkObjs = []; markerObjs = []; pickables = []; pulses = []; drawnLinks = [];
     labelEls.forEach((l) => l.el.remove()); labelEls = [];
   }
 
@@ -557,9 +564,10 @@
   function rebuildLinks() {
     if (!scene) return;
     const T = window.THREE;
+    stopTrace();
     linkObjs.forEach((o) => { scene.remove(o); o.traverse((c) => { if (c.geometry) c.geometry.dispose(); if (c.material) c.material.dispose(); }); });
     pickables = pickables.filter((p) => !p.userData.link);
-    linkObjs = []; pulses = [];
+    linkObjs = []; pulses = []; drawnLinks = [];
     labelEls.forEach((l) => l.el.remove()); labelEls = [];
     const human = species !== 'mouse';   // primate tube sizes
     const sel = CA.selected;
@@ -602,6 +610,20 @@
       }
       obj.renderOrder = 5;
       scene.add(obj); linkObjs.push(obj);
+      const objs = [obj];
+      // arrowheads a little past the middle show the direction, in still images too (the ends sit inside the structures)
+      const headColor = l.kind === 'functional' && l.status !== 'hypothesis' ? new T.Color(CA.tc(0x9aa4b2)) : color;
+      const headR = (human ? 0.17 : 0.135) * (focus ? 1.25 : 1);
+      (dist > 9 ? [0.36, 0.7] : [0.58]).forEach((u) => {
+        const cone = new T.Mesh(new T.ConeGeometry(headR, headR * 2.7, 14), new T.MeshBasicMaterial({ color: headColor, transparent: true, opacity: 0.95 }));
+        cone.position.copy(curve.getPointAt(u));
+        cone.quaternion.setFromUnitVectors(new T.Vector3(0, 1, 0), curve.getTangentAt(u).normalize());   // a cone points along +y
+        cone.renderOrder = 6;
+        cone.userData.link = l; pickables.push(cone);
+        scene.add(cone); linkObjs.push(cone); objs.push(cone);
+      });
+      objs.forEach((o) => { o.userData.op = o.material.opacity; o.userData.color = o.material.color.clone(); });   // restored after a trace
+      drawnLinks.push({ l, curve, objs, s: at(l.s), t: at(l.t) });   // the trace joins pathways by position (two entities can share one)
       const n = Math.max(1, Math.round(dist / 3));
       for (let k = 0; k < n; k++) {
         const s = new T.Mesh(new T.SphereGeometry(human ? 0.085 : 0.07, 10, 8), new T.MeshBasicMaterial({ color: color.clone().lerp(new T.Color(0xffffff), 0.45) }));
@@ -625,6 +647,128 @@
     }
     if (sel) addLabel(sel);
     if (opts.labels && circuitId === 'none' && !sel) Object.keys(positions).forEach((id) => { if (CA.ent[id] && !['body', 'gut', 'spinal'].includes(id)) addLabel(id); });
+    showTraceButton();
+  }
+
+  /* -------- step-by-step trace -------- */
+  const HOP_MS = 1300, PAUSE_MS = 500, END_MS = 1500, TRACE_COLOR = '#56d364';   // a colour no evidence grade or structure uses
+
+  /** The current circuit's pathways on screen, in steps: in the circuit's own order, with consecutive pathways out of one
+   *  structure (or into one) travelling together. Only a chain or loop has an order to trace, so every step must leave
+   *  from where the step before arrived; parallel pathways (several outputs of one area, say) get no steps. */
+  function traceSteps() {
+    const c = A3.circuits.find((x) => x.id === circuitId);
+    if (!c) return [];
+    const steps = [];
+    drawnLinks.filter((d) => c.links.includes(d.l.id)).sort((a, b) => c.links.indexOf(a.l.id) - c.links.indexOf(b.l.id)).forEach((d) => {
+      const last = steps[steps.length - 1];
+      if (last && (last.every((x) => x.s === d.s) || last.every((x) => x.t === d.t))) last.push(d);
+      else steps.push([d]);
+    });
+    // where a step arrived: the point, the structure, the one whose mesh it borrows, and its parts or its umbrella
+    // (PT neurons borrow M1, which is part of the motor cortex)
+    const comp = A3.composite || {};
+    const arrived = (st) => new Set(st.flatMap((d) => {
+      const ids = [d.l.t, resolve(d.l.t)].filter(Boolean);
+      return [d.t, ...ids, ...ids.flatMap((id) => comp[id] || []), ...Object.keys(comp).filter((p) => ids.some((id) => comp[p].includes(id)))];
+    }));
+    for (let k = 1; k < steps.length; k++) {
+      const reached = arrived(steps[k - 1]);
+      if (!steps[k].some((d) => reached.has(d.s) || reached.has(d.l.s) || reached.has(resolve(d.l.s)))) return [];
+    }
+    return steps;
+  }
+
+  /** The trace button shows for a chain or loop of two or more steps; a finished trace keeps its list of steps. */
+  function showTraceButton(keep) {
+    if (!el.traceBox) return;
+    el.traceBox.style.display = trace || traceSteps().length >= 2 ? '' : 'none';
+    el.traceBtn.textContent = trace ? '■ Stop' : keep ? '▶ Trace again' : '▶ Trace step by step';
+    if (!trace && !keep) CA.clear(el.traceInfo);
+  }
+
+  function startTrace() {
+    const steps = traceSteps();
+    if (steps.length < 2 || !scene) return;
+    const T = window.THREE, human = species !== 'mouse';
+    trace = { steps, k: -1, t0: 0, arrived: 0, ended: 0, dots: [], lit: new Map(), color: new T.Color(CA.tc(TRACE_COLOR)),
+      dotGeo: new T.SphereGeometry(human ? 0.2 : 0.15, 16, 12), haloGeo: new T.SphereGeometry(human ? 0.45 : 0.34, 16, 12) };
+    drawnLinks.forEach((d) => d.objs.forEach((o) => { o.material.opacity = 0.14; }));   // every pathway dims and lights up as the pulse travels it
+    CA.clear(el.traceInfo).append(el.traceList = h('ol', { class: 'trace-steps' }));
+    nextStep(performance.now());
+    showTraceButton();
+  }
+
+  function nextStep(now) {
+    const T = window.THREE, tr = trace;
+    tr.dots.forEach((m) => { scene.remove(m); m.material.dispose(); });
+    tr.dots = [];
+    tr.k += 1; tr.t0 = now; tr.arrived = 0;
+    const step = tr.steps[tr.k];
+    step.forEach((d) => {
+      lightUp(d.l.s, now, false);   // already lit, unless this pathway joins the trace here
+      d.objs.forEach((o) => { o.material.opacity = 1; o.material.color.copy(tr.color); });   // the pathway being travelled takes the pulse's colour
+      // the pulse draws last and over everything, so it stays visible where the pathway runs through a structure
+      const dot = new T.Mesh(tr.dotGeo, new T.MeshBasicMaterial({ color: tr.color, transparent: true, depthTest: false }));
+      const halo = new T.Mesh(tr.haloGeo, new T.MeshBasicMaterial({ color: tr.color, transparent: true, opacity: 0.3, depthTest: false, depthWrite: false }));
+      [halo, dot].forEach((m, j) => { m.renderOrder = 20 + j; m.position.copy(d.curve.getPointAt(0)); scene.add(m); tr.dots.push(m); });
+    });
+    const name = (id) => CA.ent[id].name;
+    el.traceList.querySelectorAll('li.now').forEach((li) => li.classList.remove('now'));
+    const li = h('li', { class: 'now' }, step.map((d) => h('div', { class: 'hop' },
+      h('b', {}, name(d.l.s) + ' → ' + name(d.l.t)), h('div', { class: 'rel', title: d.l.rel }, d.l.rel))));
+    el.traceList.append(li);
+    li.scrollIntoView({ block: 'nearest' });
+  }
+
+  /** A structure glows once the pulse reaches it, and flashes on arrival: its meshes, an umbrella entity's parts, the mesh
+   *  it borrows, or its whole mesh group (the cerebellar cortex is every lobule, the deep nuclei every nucleus). */
+  function lightUp(id, now, flash) {
+    const ids = new Set([id, ...((A3.composite || {})[id] || [])]);
+    const rid = resolve(id);
+    if (rid) ids.add(rid);
+    const groups = new Set([...ids].map((x) => A3.groups[x]).filter(Boolean));
+    meshObjs.concat(markerObjs).forEach((m) => {
+      const r = m.userData.rec;
+      const hit = ids.has(m.userData.entity) || (r && (ids.has(r.related) || groups.has(r.group)));
+      if (hit && (flash || !trace.lit.has(m))) trace.lit.set(m, now);
+    });
+    labelEls.forEach((l) => { if (ids.has(l.id)) l.el.classList.add('lit'); });
+  }
+
+  function runTrace(now) {
+    const tr = trace, step = tr.steps[tr.k];
+    const u = Math.min(1, (now - tr.t0) / HOP_MS), e = u < 0.5 ? 2 * u * u : 1 - Math.pow(-2 * u + 2, 2) / 2;
+    step.forEach((d, i) => { const p = d.curve.getPointAt(e); tr.dots[2 * i].position.copy(p); tr.dots[2 * i + 1].position.copy(p); });   // halo, dot
+    if (u >= 1 && !tr.arrived) {
+      tr.arrived = now;
+      step.forEach((d) => { lightUp(d.l.t, now, true); d.objs.forEach((o) => { o.material.opacity = 0.75; o.material.color.copy(o.userData.color); }); });
+    }
+    tr.lit.forEach((t0, m) => m.traverse((c) => {
+      if (!c.material || !c.material.emissive) return;
+      c.material.emissive.copy(tr.color);
+      c.material.emissiveIntensity = 0.3 + 0.9 * Math.exp(-(now - t0) / 380);
+      if (c.material.opacity < 0.55) c.material.opacity = 0.55;
+    }));
+    if (tr.arrived && !tr.ended && now - tr.arrived > PAUSE_MS) {
+      if (tr.k + 1 < tr.steps.length) nextStep(now);
+      else { tr.ended = now; tr.dots.forEach((m) => { m.visible = false; }); }
+    }
+    if (tr.ended && now - tr.ended > END_MS) stopTrace(true);
+  }
+
+  /** End the trace and restore the pathways and the materials; a finished trace leaves its list of steps. */
+  function stopTrace(finished) {
+    const tr = trace;
+    if (!tr) return;
+    trace = null;
+    tr.dots.forEach((m) => { if (scene) scene.remove(m); m.material.dispose(); });
+    tr.dotGeo.dispose(); tr.haloGeo.dispose();
+    labelEls.forEach((l) => l.el.classList.remove('lit'));
+    drawnLinks.forEach((d) => d.objs.forEach((o) => { o.material.opacity = o.userData.op; o.material.color.copy(o.userData.color); }));
+    if (scene) { applyMaterials(); applyHighlight(); }
+    if (finished) el.traceList.querySelectorAll('li.now').forEach((li) => li.classList.remove('now'));
+    showTraceButton(finished);
   }
 
   function addLabel(id) {
@@ -722,8 +866,8 @@
     controls.update();
     const t = clock.getElapsedTime();
     pulses.forEach((p) => {
-      p.mesh.visible = opts.animate;
-      if (opts.animate) p.mesh.position.copy(p.curve.getPointAt((t * p.speed + p.offset) % 1));
+      p.mesh.visible = opts.flow && !trace;
+      if (p.mesh.visible) p.mesh.position.copy(p.curve.getPointAt((t * p.speed + p.offset) % 1));
     });
     if (pointerDirty) {
       pointerDirty = false;
@@ -732,6 +876,7 @@
       if (o) { CA.tip.show(describe(o), pointer); renderer.domElement.style.cursor = 'pointer'; }
       else { CA.tip.hide(); renderer.domElement.style.cursor = ''; }
     }
+    if (trace) runTrace(performance.now());
     renderer.render(scene, camera);
     // HTML labels
     const w = el.canvas.clientWidth, ht = el.canvas.clientHeight;
