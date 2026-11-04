@@ -1,4 +1,4 @@
-/* Cerebellum Atlas: navigation, global search, About dialog and start-up. */
+/* Brain Circuit Atlas: navigation, global search, About dialog and start-up. */
 (function () {
   'use strict';
   const CA = window.CA, D = CA.D, h = CA.h;
@@ -133,6 +133,15 @@
     };
     themeBtn.addEventListener('click', () => CA.setTheme(CA.theme === 'light' ? 'dark' : 'light'));
     CA.on('theme', themeLabel); themeLabel();
+    // names on the 3D model or in a legend at the side: shown with the 3D atlas only
+    const labelsSeg = document.getElementById('labels-seg');
+    const syncLabels = () => labelsSeg.querySelectorAll('button').forEach((b) => {
+      const on = b.dataset.mode === CA.labelMode;
+      b.classList.toggle('on', on); b.setAttribute('aria-pressed', String(on));
+    });
+    labelsSeg.querySelectorAll('button').forEach((b) => b.addEventListener('click', () => CA.setLabelMode(b.dataset.mode)));
+    CA.on('labels', syncLabels); syncLabels();
+    CA.on('view-mounted', (v) => { labelsSeg.hidden = v !== 'atlas'; });
     document.getElementById('modal').addEventListener('click', closeModal);
     document.getElementById('panel-back').addEventListener('click', CA.panelBack);
     document.getElementById('panel-close').addEventListener('click', CA.closePanel);

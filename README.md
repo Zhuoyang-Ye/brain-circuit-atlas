@@ -1,8 +1,8 @@
-# Cerebellum Atlas
+# Brain Circuit Atlas
 
 An interactive, evidence-linked map of brain regions and their connections to the rest of the brain and body, starting with the cerebellum, the motor cortex, the prefrontal cortex, the basal ganglia, the hippocampus, the amygdala, the visual cortex, the insula and the olfactory system. For each region it runs from molecules and cells through circuits and brain-wide loops to behavior, cognition and disease. Every connection carries an evidence grade and links to the PubMed papers behind it, and a hypothesis lab turns weak or missing links into testable experiments.
 
-**Live site:** <https://zhuoyang-ye.github.io/cerebellum-atlas/>
+**Live site:** <https://zhuoyang-ye.github.io/brain-circuit-atlas/>
 
 ## Run it
 
@@ -11,7 +11,7 @@ Open `index.html` in a browser. There is no build step and no server code, and i
 To serve it locally instead (for example, to test on another device):
 
 ```bash
-cd cerebellum-atlas
+cd brain-circuit-atlas
 python3 -m http.server 8000      # then open http://localhost:8000
 ```
 
@@ -19,7 +19,7 @@ The page itself loads about 1.4 MB. The 3D atlas loads the meshes for one specie
 
 ## Regions
 
-Pick a region with the **Region** menu: at the top of the left panel in the 3D atlas, and at the top left of every other page. The site remembers the choice.
+Pick a region with the **Region** menu: in the left panel of the 3D atlas, under the species, and at the top left of every other page. The site remembers the choice.
 
 | Region | Entities | Links | Chains | Open questions | Papers |
 | --- | ---: | ---: | ---: | ---: | ---: |
@@ -48,7 +48,7 @@ The Functional map, Microcircuit and Cells & molecules views exist only for the 
 
 | View | What it shows |
 | --- | --- |
-| **3D atlas** | Human, macaque and mouse brains with the current region and its partners. Human lobules and nuclei come from the SUIT probabilistic atlas, fitted to the Allen Human Reference Atlas, which supplies the other human structures (including the precentral gyrus); macaque structures come from the CHARM cortical and SARM subcortical atlases on the NIMH Macaque Template; mouse structures come from the Allen CCFv3. Choose a circuit to see evidence-graded pathways. For the cerebellum: cerebro-cerebellar loops, olive, basal ganglia and substantia nigra, VTA/reward, fear and anxiety, navigation, feeding, vestibular, body, neuromodulators. For the motor cortex: descending output, inputs to M1, cerebellar and basal ganglia loops, motor planning (ALM), the Go cue that releases a planned movement, and learning signals. For the prefrontal cortex: the working-memory network (mediodorsal thalamus, hippocampal input, frontal-parietal link), fear, safety and mood (amygdala, dorsal raphe), neuromodulator inputs, and the cerebellar loop. For the basal ganglia: the direct, indirect and hyperdirect pathways, nigral dopamine and its inputs, the two cell types of the external pallidum, the nigral gate on saccades, and the loop with the cerebellum. For the hippocampus: the trisynaptic pathway with its CA2 route, the outputs of the ventral hippocampus (prefrontal cortex, accumbens, amygdala, lateral hypothalamus), the link with prefrontal cortex, and cerebellar input. For the amygdala: the fear pathway from the auditory thalamus through the lateral and central amygdala to the PAG and lateral hypothalamus, intercalated cells and extinction, basolateral outputs, prefrontal connections, and cerebellar input. For the visual cortex: the pathway from the eye through the lateral geniculate nucleus to V1 and on to V4 and MT, the ventral and dorsal streams, top-down effects of the frontal eye field, amygdala and basal forebrain, and visual input to the cerebellum through the pontine nuclei. For the insula: taste from the thalamus through the gustatory cortex to the amygdala, hunger signals reaching the insula from the basolateral amygdala, posterior insula outputs to the central amygdala and accumbens, and the anterior insula's coupling with the anterior cingulate. For the olfactory system: sensory neurons to the olfactory bulb and on to the piriform cortex and cortical amygdala, and olfactory input to the orbitofrontal and entorhinal cortex. Arrowheads show each pathway's direction. For a loop or chain (the cerebro-cerebellar loops, for example), *Trace step by step* sends one pulse through the circuit in order, lights each structure as it arrives and lists the steps in the left panel; the order follows the circuit's pathways, and the timing is schematic. *Animate signal flow* (off by default) also sends dots along every pathway. In the neuromodulator circuit, a tag on each pathway names the transmitter it carries. Eyes, inner ear, gut and body are shown as approximate markers. |
+| **3D atlas** | Human, macaque and mouse brains with the current region and its partners. Human lobules and nuclei come from the SUIT probabilistic atlas, fitted to the Allen Human Reference Atlas, which supplies the other human structures (including the precentral gyrus); macaque structures come from the CHARM cortical and SARM subcortical atlases on the NIMH Macaque Template; mouse structures come from the Allen CCFv3. Choose a circuit to see evidence-graded pathways. For the cerebellum: cerebro-cerebellar loops, olive, basal ganglia and substantia nigra, VTA/reward, fear and anxiety, navigation, feeding, vestibular, body, neuromodulators. For the motor cortex: descending output, inputs to M1, cerebellar and basal ganglia loops, motor planning (ALM), the Go cue that releases a planned movement, and learning signals. For the prefrontal cortex: the working-memory network (mediodorsal thalamus, hippocampal input, frontal-parietal link), fear, safety and mood (amygdala, dorsal raphe), neuromodulator inputs, and the cerebellar loop. For the basal ganglia: the direct, indirect and hyperdirect pathways, nigral dopamine and its inputs, the two cell types of the external pallidum, the nigral gate on saccades, and the loop with the cerebellum. For the hippocampus: the trisynaptic pathway with its CA2 route, the outputs of the ventral hippocampus (prefrontal cortex, accumbens, amygdala, lateral hypothalamus), the link with prefrontal cortex, and cerebellar input. For the amygdala: the fear pathway from the auditory thalamus through the lateral and central amygdala to the PAG and lateral hypothalamus, intercalated cells and extinction, basolateral outputs, prefrontal connections, and cerebellar input. For the visual cortex: the pathway from the eye through the lateral geniculate nucleus to V1 and on to V4 and MT, the ventral and dorsal streams, top-down effects of the frontal eye field, amygdala and basal forebrain, and visual input to the cerebellum through the pontine nuclei. For the insula: taste from the thalamus through the gustatory cortex to the amygdala, hunger signals reaching the insula from the basolateral amygdala, posterior insula outputs to the central amygdala and accumbens, and the anterior insula's coupling with the anterior cingulate. For the olfactory system: sensory neurons to the olfactory bulb and on to the piriform cortex and cortical amygdala, and olfactory input to the orbitofrontal and entorhinal cortex. Arrowheads show each pathway's direction. For a loop or chain (the cerebro-cerebellar loops, for example), *Trace step by step* sends one pulse through the circuit in order, lights each structure as it arrives and lists the steps in the left panel; the order follows the circuit's pathways, and the timing is schematic. *Animate signal flow* (off by default) also sends dots along every pathway. In the neuromodulator circuit, a tag on each pathway names the transmitter it carries. Eyes, inner ear, gut and body are shown as approximate markers. The switch next to the theme button puts the structure names on the model or in a colour-coded list at the side, which keeps the model clean: there, the structures of the chosen circuit (up to eight) take a colour of their own, the rest keep their atlas colours, and hovering a name lights the structure and names it on the model. On the model, labels hold their place as the view turns; where they would overlap, some fade out until there is room, so zooming in names more structures. |
 | **Functional map** | A schematic flatmap of human cerebellar cortex (SUIT-style). Overlays show the motor, oculomotor, executive, language, social and emotional territories, plus a lesion map. |
 | **Microcircuit** | The canonical circuit (mossy/parallel fibers, climbing fibers, Purkinje, Golgi, MLI, UBC, nuclei, olive), with animated signals and a toy eyeblink-conditioning model. You can switch off LTD and watch learning partly survive. |
 | **Cells & molecules** | The parallel-fiber–Purkinje synapse: calcium sets the sign of plasticity (LTP vs. LTD), with zebrin modules, developmental lineage and disease genes. A matrix shows which neuromodulators (noradrenaline, serotonin, dopamine, acetylcholine, histamine), neuropeptides (orexin, CRF, CGRP, opioids, oxytocin, CCK, NPY, PACAP), retrograde and glial messengers, hormones and glycine act on which cells, with receptor, sign of effect and evidence grade. |
@@ -160,13 +160,13 @@ On the first run the script downloads the Allen CCFv3 structure meshes, the Brai
 
 ## Publishing
 
-The site is static, so any static host works. It is published with GitHub Pages at <https://zhuoyang-ye.github.io/cerebellum-atlas/>, built from the root of the `main` branch. The repository is private, but the site, and every file in the repository, is public. Every push to `main` republishes the site. The `.nojekyll` file tells Pages to serve the files as they are, and all paths are relative, so the site also works under a project subpath.
+The site is static, so any static host works. It is published with GitHub Pages at <https://zhuoyang-ye.github.io/brain-circuit-atlas/>, built from the root of the `main` branch. The repository is private, but the site, and every file in the repository, is public. Every push to `main` republishes the site. The `.nojekyll` file tells Pages to serve the files as they are, and all paths are relative, so the site also works under a project subpath.
 
 To publish a copy from another account with the [GitHub CLI](https://cli.github.com/):
 
 ```bash
-gh repo create cerebellum-atlas --private --source . --push   # or --public
-gh api "repos/$(gh api user --jq .login)/cerebellum-atlas/pages" -X POST \
+gh repo create brain-circuit-atlas --private --source . --push   # or --public
+gh api "repos/$(gh api user --jq .login)/brain-circuit-atlas/pages" -X POST \
   -f "source[branch]=main" -f "source[path]=/"
 ```
 

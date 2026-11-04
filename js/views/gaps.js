@@ -56,7 +56,7 @@
     for (let i = 0; i < jobs.length; i++) {
       if (aborted) return;
       const [d, l] = jobs[i];
-      const url = `${ESEARCH}?db=pubmed&rettype=count&retmode=json&tool=cerebellum-atlas&term=${encodeURIComponent(qTerm(d, l))}`;
+      const url = `${ESEARCH}?db=pubmed&rettype=count&retmode=json&tool=brain-circuit-atlas&term=${encodeURIComponent(qTerm(d, l))}`;
       let n = null;
       for (let attempt = 0; attempt < 3 && n == null; attempt++) {
         try {

@@ -39,7 +39,7 @@ def esummary(pmids):
     """Fetch esummary records for a list of PMIDs; returns {pmid: record}."""
     out = {}
     for i in range(0, len(pmids), 150):
-        params = {'db': 'pubmed', 'retmode': 'json', 'tool': 'cerebellum-atlas', 'id': ','.join(pmids[i:i + 150])}
+        params = {'db': 'pubmed', 'retmode': 'json', 'tool': 'brain-circuit-atlas', 'id': ','.join(pmids[i:i + 150])}
         if os.environ.get('NCBI_API_KEY'):
             params['api_key'] = os.environ['NCBI_API_KEY']
         data = urllib.parse.urlencode(params).encode()

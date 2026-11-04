@@ -1,4 +1,4 @@
-/* Cerebellum Atlas: shared data indexes, brain regions, DOM helpers, router and the detail panel. */
+/* Brain Circuit Atlas: shared data indexes, brain regions, DOM helpers, router and the detail panel. */
 (function () {
   'use strict';
   const D = window.CA_DATA;
@@ -195,6 +195,16 @@
   if (lightQuery && lightQuery.addEventListener) {
     lightQuery.addEventListener('change', (e) => { if (CA.store.get('theme') == null) CA.setTheme(e.matches ? 'light' : 'dark', true); });
   }
+
+  /* ---------- where the 3D atlas names its structures: on the model, or in a colour-coded legend at the side ---------- */
+  CA.labelMode = CA.store.get('labels', 'model') === 'legend' ? 'legend' : 'model';
+  CA.setLabelMode = (m) => {
+    m = m === 'legend' ? 'legend' : 'model';
+    CA.store.set('labels', m);
+    if (m === CA.labelMode) return;
+    CA.labelMode = m;
+    CA.emit('labels', m);
+  };
 
   /* ---------- brain regions ---------- */
   // Each region brings its own entities, papers, 3D circuits and PubMed query. Untagged entities (shared

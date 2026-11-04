@@ -7,7 +7,7 @@
     python3 handoff/tools/pubmed_abs.py find SPEC.json                 # {key: PubMed term}: list hits to verify each key
 
 fetch writes the raw efetch XML to OUTDIR/efetch_<n>.xml. OUTDIR must be a new, empty directory (downloads are untrusted
-data: keep them apart from scripts). It sends tool=cerebellum-atlas, never an email, and waits 0.7 s between requests (backing off on HTTP 429).
+data: keep them apart from scripts). It sends tool=brain-circuit-atlas, never an email, and waits 0.7 s between requests (backing off on HTTP 429).
 show/grep parse those files; run them with python3 -I. Keys map to PMIDs through data/papers.json and handoff/*/keys.json; a bare number is a PMID.
 """
 import json
@@ -43,7 +43,7 @@ def fetch(outdir, keys):
     out.mkdir(parents=True, exist_ok=True)
     pmids = [pmid_of(k) for k in keys]
     for n, i in enumerate(range(0, len(pmids), 100)):
-        data = urllib.parse.urlencode({'db': 'pubmed', 'retmode': 'xml', 'tool': 'cerebellum-atlas', 'id': ','.join(pmids[i:i + 100])}).encode()
+        data = urllib.parse.urlencode({'db': 'pubmed', 'retmode': 'xml', 'tool': 'brain-circuit-atlas', 'id': ','.join(pmids[i:i + 100])}).encode()
         (out / f'efetch_{n}.xml').write_bytes(get(EFETCH, data=data))
     print(f'{len(pmids)} PMIDs → {out}')
 
@@ -84,12 +84,12 @@ def find(spec_path):
     """spec: JSON {key: PubMed term}. Prints every hit (PMID, first author, year, title) so each key can be verified."""
     spec = json.loads(pathlib.Path(spec_path).read_text(encoding='utf-8'))
     for key, term in spec.items():
-        q = urllib.parse.urlencode({'db': 'pubmed', 'retmode': 'json', 'tool': 'cerebellum-atlas', 'retmax': 5, 'term': term})
+        q = urllib.parse.urlencode({'db': 'pubmed', 'retmode': 'json', 'tool': 'brain-circuit-atlas', 'retmax': 5, 'term': term})
         ids = json.loads(get('https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?' + q))['esearchresult'].get('idlist', [])
         if not ids:
             print(f'{key}: NO HIT for {term}')
             continue
-        q = urllib.parse.urlencode({'db': 'pubmed', 'retmode': 'json', 'tool': 'cerebellum-atlas', 'id': ','.join(ids)})
+        q = urllib.parse.urlencode({'db': 'pubmed', 'retmode': 'json', 'tool': 'brain-circuit-atlas', 'id': ','.join(ids)})
         res = json.loads(get('https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?' + q))['result']
         for i in ids:
             s = res[i]

@@ -109,6 +109,8 @@
   let pickables = [], meshObjs = [], linkObjs = [], pulses = [], labelEls = [], markerObjs = [];
   let drawnLinks = [], trace = null;   // the pathways on screen ({l, curve, objs, s, t}); the running step-by-step trace
   let positions = {}, hovered = null, tween = null, unsubs = [], disposed = false, buildToken = 0;
+  // the legend at the side: entity -> categorical slot (kept while the circuit stays), mesh -> legend row, the hovered row
+  let slotOf = new Map(), slotKey = '', ownerOf = new Map(), nameHot = null, layoutKey = '', layoutIdle = 0;
   const geomCache = {};
 
   CA.register('atlas', { title: '3D atlas', mount, unmount, route, onRegion, onTheme });
@@ -124,9 +126,10 @@
     el.msg = h('div', { class: 'atlas-msg' }, 'Loading 3D anatomy…');
     el.controls = buildControls();
     el.legend = buildLegend();
+    el.names = h('div', { class: 'atlas-names', style: { display: 'none' } });
     el.hint = h('div', { class: 'atlas-hint' }, 'Drag to rotate · scroll to zoom · right-drag to pan · click a structure');
     el.attrib = h('div', { class: 'atlas-attrib' });
-    wrap.append(el.canvas, el.labels, el.controls, el.legend, h('div', { class: 'atlas-foot' }, el.hint, el.attrib), el.msg);
+    wrap.append(el.canvas, el.labels, el.controls, el.names, el.legend, h('div', { class: 'atlas-foot' }, el.hint, el.attrib), el.msg);
     if (!CA.store.get('intro.dismissed', false)) wrap.append(el.intro = buildIntro());
     root.appendChild(wrap);
 
@@ -136,6 +139,7 @@
     }
     initThree();
     unsubs.push(CA.on('select', () => { applyHighlight(); rebuildLinks(); }));
+    unsubs.push(CA.on('labels', () => refreshNames()));
     loadSpecies(species);
   }
 
@@ -245,8 +249,8 @@
     const xrayLabel = check('xray', 'X-ray cerebellum (see nuclei)', applyMaterials);
     el.xrayBox = xrayLabel.querySelector('input');
     CA.append(box,
-      D.regions.length > 1 ? [h('h4', { style: { marginTop: 0 } }, 'Region'), CA.regionPicker()] : null,
-      h('h4', {}, 'Species'), seg, el.speciesNote,
+      h('h4', { style: { marginTop: 0 } }, 'Species'), seg, el.speciesNote,
+      D.regions.length > 1 ? [h('h4', {}, 'Region'), CA.regionPicker()] : null,
       h('h4', {}, 'Circuits'), el.circs, el.circDesc, el.traceBox,
       h('h4', {}, 'Display'),
       check('shell', 'Brain surface', applyMaterials),
@@ -258,7 +262,7 @@
         oninput: (ev) => { opts.solid = +ev.target.value; CA.store.set('atlas.opts', opts); applyMaterials(); },
         ondblclick: (ev) => { ev.target.value = 0; opts.solid = 0; CA.store.set('atlas.opts', opts); applyMaterials(); } }),
       xrayLabel,
-      check('labels', 'Labels', () => {}),
+      check('labels', 'Labels', () => rebuildLinks(), 'Name the structures, on the model or in the legend at the side (switch next to the theme button).'),
       check('bodyParts', 'Body & senses', showMarkers),
       check('flow', 'Animate signal flow', () => {}, 'Dots also travel along every pathway, from source to target. Dot color follows the evidence grade, and hypothetical links move at half speed. The motion is schematic, not real conduction timing.'),
       h('h4', {}, 'Camera'), views, el.credit);
@@ -364,7 +368,7 @@
     };
     stopTrace();
     [...meshObjs, ...linkObjs, ...markerObjs].forEach(kill);
-    meshObjs = []; linkObjs = []; markerObjs = []; pickables = []; pulses = []; drawnLinks = [];
+    meshObjs = []; linkObjs = []; markerObjs = []; pickables = []; pulses = []; drawnLinks = []; ownerOf = new Map();
     labelEls.forEach((l) => l.el.remove()); labelEls = [];
   }
 
@@ -474,7 +478,11 @@
       obj.userData.entity = entity; obj.userData.body = body; obj.userData.marker = true;
       scene.add(obj); markerObjs.push(obj); pickables.push(obj);
     };
-    const mat = (c, o) => new T.MeshStandardMaterial({ color: c, roughness: 0.5, transparent: true, opacity: o == null ? 0.9 : o, emissive: c, emissiveIntensity: 0.12 });
+    const mat = (c, o) => {
+      const m = new T.MeshStandardMaterial({ color: c, roughness: 0.5, transparent: true, opacity: o == null ? 0.9 : o, emissive: c, emissiveIntensity: 0.12 });
+      m.userData.base = c;   // restored when the legend gives the structure a colour of its own and then takes it back
+      return m;
+    };
     if (bundle.spine && bundle.spine.length > 1) {
       const pts = bundle.spine.map((p) => new T.Vector3(...p));
       const curve = new T.CatmullRomCurve3(pts);
@@ -551,6 +559,7 @@
       if (reg === CA.region.id) o = Math.max(o, 0.75);           // the current region stands out
       else if (!meshInRegion(r)) o = Math.min(o, o > 0.6 ? 0.5 : 0.2);   // structures outside its content recede
       else if (reg && o > 0.6) o = 0.5;                           // another region's structures, kept as context
+      if (legendOn() && slotOf.has(ownerOf.get(m))) o = Math.max(o, 0.45);   // a structure with a legend colour of its own shows it
       if (r.group === 'cerebellum' && opts.xray) o = 0.22;   // x-ray keeps the cerebellum see-through
       else o = solidify(o);
       mat.opacity = o;
@@ -563,16 +572,20 @@
     showMarkers();
     const sel = selectedSet();
     const T = window.THREE;
+    const hotRid = nameHot && resolve(nameHot);   // the structure hovered in the legend
     meshObjs.concat(markerObjs).forEach((m) => {
       const rel = m.userData.rec && m.userData.rec.related;
       const on = (m.userData.entity && sel.has(m.userData.entity)) || (rel && sel.has(rel));
-      const hov = hovered && hovered === m;
+      const hov = (hovered && hovered === m) || (hotRid && ownerOf.get(m) === hotRid);
       m.traverse((c) => {
         if (!c.material || !c.material.emissive) return;
-        c.material.emissive = new T.Color(on ? 0x4a7dff : hov ? 0x555555 : (c.material.color || new T.Color(0)).getHex());
-        c.material.emissiveIntensity = on ? 0.55 : hov ? 0.5 : (m.userData.marker ? 0.12 : 0);
+        c.material.emissive = new T.Color(on ? 0x4a7dff : hov ? 0x666666 : (c.material.color || new T.Color(0)).getHex());
+        c.material.emissiveIntensity = on ? 0.55 : hov ? 0.55 : (m.userData.marker ? 0.12 : 0);
       });
     });
+    // and the legend row of whatever the pointer is on, in the legend or on the model
+    const hovRid = hovered && ownerOf.get(hovered);
+    if (el.names) el.names.querySelectorAll('.nm').forEach((n) => n.classList.toggle('hot', n.dataset.id === nameHot || (!!hovRid && n.dataset.rid === hovRid)));
   }
 
   /* -------- connections -------- */
@@ -592,7 +605,7 @@
     linkObjs.forEach((o) => { scene.remove(o); o.traverse((c) => { if (c.geometry) c.geometry.dispose(); if (c.material) c.material.dispose(); }); });
     pickables = pickables.filter((p) => !p.userData.link);
     linkObjs = []; pulses = []; drawnLinks = [];
-    labelEls.forEach((l) => l.el.remove()); labelEls = [];
+    labelEls.forEach((l) => l.el.remove()); labelEls = []; layoutKey = '';
     const human = species !== 'mouse';   // primate tube sizes
     const sel = CA.selected;
     const drawn = new Set(), txSeen = new Set();
@@ -657,7 +670,7 @@
         scene.add(s); linkObjs.push(s);
         pulses.push({ mesh: s, curve, offset: k / n, speed: 0.22 / Math.max(1, dist / 4) * (l.status === 'hypothesis' ? 0.5 : 1) });
       }
-      [l.s, l.t].forEach((id) => addLabel(id));
+      [l.s, l.t].forEach((id) => addLabel(id, true));
       if (l.tx && NM.tx[l.tx]) {   // transmitter tag at the middle of the pathway
         const tag = h('div', { class: 'alabel tx' }, l.tx);
         el.labels.appendChild(tag);
@@ -668,7 +681,7 @@
     // name the structure that holds an undrawn pathway, unless a label already marks that spot
     collapsed.forEach((l) => {
       const p = posOf(l.s), rid = resolve(l.s);
-      if (rid && !labelEls.some((x) => !x.tag && x.pos.distanceTo(p) < 0.08)) addLabel(rid);
+      if (rid && !labelEls.some((x) => !x.tag && x.pos.distanceTo(p) < 0.08)) addLabel(rid, true);
     });
     if (el.txLegend) {
       CA.clear(el.txLegend);
@@ -676,9 +689,10 @@
       if (txSeen.size) el.txLegend.append(h('span', { class: 'alabel tx static' }, 'tag'),
         Object.keys(NM.tx).filter((c) => txSeen.has(c)).map((c) => (c === NM.tx[c].label ? c : c + ' ' + NM.tx[c].label.toLowerCase())).join(' · '));
     }
-    if (sel) addLabel(sel);
+    if (sel) addLabel(sel, true);
     if (opts.labels && circuitId === 'none' && !sel) Object.keys(positions).forEach((id) => { if (CA.ent[id] && !['body', 'gut', 'spinal'].includes(id)) addLabel(id); });
     showTraceButton();
+    refreshNames();
   }
 
   /* -------- step-by-step trace -------- */
@@ -765,6 +779,7 @@
       if (hit && (flash || !trace.lit.has(m))) trace.lit.set(m, now);
     });
     labelEls.forEach((l) => { if (ids.has(l.id)) l.el.classList.add('lit'); });
+    el.names.querySelectorAll('.nm').forEach((n) => { if (ids.has(n.dataset.id) || ids.has(n.dataset.rid)) n.classList.add('lit'); });
   }
 
   function runTrace(now) {
@@ -796,23 +811,145 @@
     tr.dots.forEach((m) => { if (scene) scene.remove(m); m.material.dispose(); });
     tr.dotGeo.dispose(); tr.haloGeo.dispose();
     labelEls.forEach((l) => l.el.classList.remove('lit'));
+    el.names.querySelectorAll('.nm.lit').forEach((n) => n.classList.remove('lit'));
     drawnLinks.forEach((d) => d.objs.forEach((o) => { o.material.opacity = o.userData.op; o.material.color.copy(o.userData.color); }));
     if (scene) { applyMaterials(); applyHighlight(); }
     if (finished) el.traceList.querySelectorAll('li.now').forEach((li) => li.classList.remove('now'));
     showTraceButton(finished);
   }
 
-  function addLabel(id) {
-    if (labelEls.some((l) => l.id === id)) return;
+  /** A structure's name as labels and the legend show it: where it borrows another's mesh, and ≈ if placed by hand. */
+  function labelText(id) {
+    const rid = resolve(id);
+    const approx = rid && positions[rid].approx;
+    const viaAlias = rid && rid !== id;
+    return CA.ent[id].name + (viaAlias ? ' (in ' + CA.ent[rid].name.replace(/\s*\([^)]*\)$/, '').toLowerCase() + ')' : '') + (approx ? ' ≈' : '');
+  }
+
+  /** Name a structure (`path`: it is on a pathway on screen, or selected, so the legend may give it a colour). */
+  function addLabel(id, path) {
+    const had = labelEls.find((l) => l.id === id);
+    if (had) { if (path) had.path = true; return; }
     const p = posOf(id);
     if (!p || !CA.ent[id]) return;
     const rid = resolve(id);
     const approx = rid && positions[rid].approx;
-    const viaAlias = rid && rid !== id;
-    const name = CA.ent[id].name + (viaAlias ? ' (in ' + CA.ent[rid].name.replace(/\s*\([^)]*\)$/, '').toLowerCase() + ')' : '') + (approx ? ' ≈' : '');
-    const e = h('div', { class: 'alabel' + (approx ? ' approx' : '') + (CA.selected === id ? ' sel' : '') }, name);
+    const e = h('div', { class: 'alabel' + (approx ? ' approx' : '') + (CA.selected === id ? ' sel' : '') }, labelText(id));
     el.labels.appendChild(e);
-    labelEls.push({ id, el: e, pos: p });
+    labelEls.push({ id, el: e, pos: p, path: !!path });
+  }
+
+  /* -------- the legend at the side: names off the model, colour-coded --------
+   * The header switch next to the theme button puts the names here instead of on the model. The structures on the
+   * pathways on screen (and the selection) take a colour of their own, painted on the model, from one categorical
+   * palette in a fixed order: up to eight, the first structures of the circuit, and a structure keeps its colour while
+   * the circuit stays (selecting something only adds colours). Every other structure keeps its atlas colour, which its
+   * swatch shows. Colour is never the only link: hovering a name lights the structure and names it on the model, and
+   * hovering the model lights its row. Palette: validated for both themes (CVD and normal-vision separation of
+   * neighbouring slots, lightness band); the light steps of aqua, yellow and pink are under 3:1 against the panel,
+   * so every swatch sits beside its name. */
+  const PALETTE = {
+    dark: [0x3987e5, 0xd95926, 0x199e70, 0xc98500, 0xd55181, 0x008300, 0x9085e9, 0xe66767],
+    light: [0x2a78d6, 0xeb6834, 0x1baf7a, 0xeda100, 0xe87ba4, 0x008300, 0x6250d6, 0xe34948],
+  };
+  const legendOn = () => CA.labelMode === 'legend' && !!opts.labels;
+  const hexCss = (x) => '#' + x.toString(16).padStart(6, '0');
+
+  /** How directly a mesh or marker draws a structure: 0 its own (or the one it borrows), 1 a part of an umbrella entity
+   *  or a mesh related to it, 2 its whole mesh group; -1 not at all. */
+  function claimRank(rid, o) {
+    const ent = o.userData.entity, r = o.userData.rec;
+    if (ent && ent === rid) return 0;
+    if (ent && ((A3.composite || {})[rid] || []).includes(ent)) return 1;
+    if (r && r.related === rid) return 1;
+    if (r && A3.groups[rid] && r.group === A3.groups[rid]) return 2;
+    return -1;
+  }
+  const baseOf = (o) => {
+    let hex = null;
+    o.traverse((c) => { if (hex == null && c.material && c.material.color) hex = c.material.userData.base != null ? c.material.userData.base : o.userData.base; });
+    return hex;
+  };
+
+  function refreshNames() {
+    if (!el.names || !scene) return;
+    const on = legendOn(), pal = PALETTE[CA.theme === 'light' ? 'light' : 'dark'];
+    const rows = [], seen = new Set();
+    labelEls.forEach((l) => { if (!l.tag && !seen.has(l.id)) { seen.add(l.id); rows.push({ id: l.id, rid: resolve(l.id), path: l.path || l.id === CA.selected }); } });
+    // which legend row each mesh and marker belongs to: the structure that draws it most directly
+    const want = [...new Set(rows.filter((r) => r.path && r.rid).map((r) => r.rid))];
+    const order = [...want, ...new Set(rows.map((r) => r.rid).filter((x) => x && !want.includes(x)))];
+    const objs = meshObjs.filter((m) => m.userData.rec.group !== 'shell').concat(markerObjs);
+    ownerOf = new Map();
+    objs.forEach((o) => {
+      let best = null, bestRank = 9;
+      order.forEach((rid) => { const k = claimRank(rid, o); if (k >= 0 && k < bestRank) { best = rid; bestRank = k; } });
+      if (best) ownerOf.set(o, best);
+    });
+    // colours: kept per entity while the species, region and circuit stay; new structures take the first free slot
+    const key = [species, CA.region.id, circuitId].join('|');
+    if (key !== slotKey) { slotOf = new Map(); slotKey = key; }
+    const owners = new Set(ownerOf.values());
+    const colourable = on ? want.filter((rid) => owners.has(rid)) : [];
+    [...slotOf.keys()].forEach((rid) => { if (!colourable.includes(rid)) slotOf.delete(rid); });
+    colourable.forEach((rid) => {
+      if (slotOf.has(rid)) return;
+      const used = new Set(slotOf.values());
+      const k = pal.findIndex((_, i) => !used.has(i));
+      if (k >= 0) slotOf.set(rid, k);
+    });
+    objs.forEach((o) => {
+      const slot = slotOf.get(ownerOf.get(o));
+      o.traverse((c) => {
+        if (!c.material || !c.material.color) return;
+        const base = c.material.userData.base != null ? c.material.userData.base : o.userData.base;
+        c.material.color.setHex(slot != null ? pal[slot] : base);
+      });
+    });
+    applyMaterials();
+    applyHighlight();
+    if (el.txLegend) el.txLegend.classList.toggle('off', on);   // transmitter tags are not drawn in legend mode
+    layoutKey = '';
+    if (nameHot && !seen.has(nameHot)) nameHot = null;
+    // the list: coloured structures in palette order, then the rest by name
+    CA.clear(el.names);
+    el.names.style.display = on && rows.length ? '' : 'none';
+    if (!on || !rows.length) return;
+    const swatchOf = (r) => {
+      if (slotOf.has(r.rid)) return pal[slotOf.get(r.rid)];
+      const o = objs.find((x) => ownerOf.get(x) === r.rid);
+      return o ? baseOf(o) : null;
+    };
+    const row = (r) => {
+      const approx = r.rid && positions[r.rid] && positions[r.rid].approx, hex = swatchOf(r);
+      return h('div', {
+        class: 'nm' + (r.id === CA.selected ? ' sel' : '') + (r.id === nameHot ? ' hot' : ''), 'data-id': r.id, 'data-rid': r.rid || '',
+        title: 'Click for its evidence and connections',
+        onmouseenter: () => setNameHot(r.id), onmouseleave: () => setNameHot(null), onclick: () => CA.select(r.id),
+      },
+      h('span', { class: 'nsw' + (approx ? ' dia' : '') + (hex == null ? ' none' : ''), style: hex == null ? null : { background: hexCss(hex) },
+        title: hex == null ? 'Drawn as its parts, which are listed separately' : null }),
+      h('span', { class: approx ? 'approx' : '' }, labelText(r.id)));
+    };
+    const coloured = rows.filter((r) => slotOf.has(r.rid)).sort((a, b) => slotOf.get(a.rid) - slotOf.get(b.rid));
+    const rest = rows.filter((r) => !slotOf.has(r.rid)).sort((a, b) => labelText(a.id).localeCompare(labelText(b.id)));
+    const unpainted = want.filter((rid) => owners.has(rid) && !slotOf.has(rid)).length;
+    const open = CA.store.get('atlas.namesOpen', window.innerWidth > 860);   // starts closed on a narrow screen
+    el.names.classList.toggle('shut', !open);
+    CA.append(el.names,
+      h('button', { class: 'nm-head', type: 'button', 'aria-expanded': String(open), title: open ? 'Hide the list' : 'Show the list',
+        onclick: () => { CA.store.set('atlas.namesOpen', !open); refreshNames(); } },
+      h('i', {}, open ? '▾' : '▸'), ' Structures (' + rows.length + ')', h('span', {}, ' · hover to find, click for details')),
+      coloured.map(row),
+      rest.length ? h('div', { class: 'nm-sub' }, coloured.length ? 'Other structures (atlas colours)' : 'In their atlas colours') : null,
+      rest.map(row),
+      unpainted ? h('div', { class: 'nm-note' }, `Up to ${pal.length} structures of a circuit get a colour of their own; ${unpainted} more keep their atlas colours.`) : null);
+  }
+
+  function setNameHot(id) {
+    if (id === nameHot) return;
+    nameHot = id;
+    applyHighlight();
   }
 
   /* -------- interaction -------- */
@@ -909,32 +1046,87 @@
     }
     if (trace) runTrace(performance.now());
     renderer.render(scene, camera);
-    // HTML labels
+    layoutLabels(T);
+  }
+
+  /* -------- HTML labels --------
+   * Placement is stable from frame to frame, so labels do not flicker while the camera moves:
+   * - every label has a fixed priority (the selection, then the current region's structures, then other structures,
+   *   then transmitter tags, each in the order they were added), never one that follows screen position;
+   * - a label keeps its row while nothing overlaps it there, but takes a new row only with ENTER px to spare, so a
+   *   label sitting at the edge of a neighbour does not flip between two rows as the camera moves by a pixel;
+   * - a label that finds no free row near its anchor fades out instead of piling onto the others, and fades back in
+   *   once a row has room to spare, but not within SETTLE frames of fading out (the selection always shows); zooming
+   *   in names more structures;
+   * - a label that stepped down moves back towards its anchor only after that row has stayed clear for SETTLE frames.
+   * Positions are whole pixels. Boxes are compared by their centres: names sit above their anchor, tags on the pathway. */
+  const LH = 20, ROWS = 4, SETTLE = 12, ENTER = 3;
+  let layoutFrame = 0;
+  function labelRank(l) {
+    if (l.id === CA.selected) return 0;
+    if (l.tag) return 3;
+    return CA.inRegion(l.id) ? 1 : 2;
+  }
+  function setShown(l, on) {
+    if (l.shown === on) return;
+    l.shown = on;
+    l.el.style.display = on ? '' : 'none';
+  }
+  function setFits(l, on) {
+    if (l.fits === on) return;
+    l.fits = on;
+    l.el.classList.toggle('off', !on);
+  }
+  function layoutLabels(T) {
     const w = el.canvas.clientWidth, ht = el.canvas.clientHeight;
-    const v = new T.Vector3();
-    const vis = [];
-    labelEls.forEach((l) => {
+    // nothing to do while the camera, the canvas and the labels stay as they are (once the rows have settled)
+    const key = [w, ht, labelEls.length, CA.selected, nameHot, CA.labelMode, opts.labels].join('|') + camera.matrixWorld.elements.join(',');
+    if (key === layoutKey) { if (++layoutIdle > SETTLE + 1) return; } else { layoutKey = key; layoutIdle = 0; }
+    const onModel = CA.labelMode !== 'legend', frame = ++layoutFrame;
+    const v = new T.Vector3(), vis = [];
+    labelEls.forEach((l, i) => {
       v.copy(l.pos).project(camera);
-      const show = (opts.labels || l.id === CA.selected) && v.z < 1;
-      l.el.style.display = show ? '' : 'none';
-      if (show) { l.x = (v.x + 1) / 2 * w; l.y = (1 - v.y) / 2 * ht; vis.push(l); }
+      // in legend mode the model stays clean: only the structure hovered in the legend is named on it
+      const want = onModel ? opts.labels || l.id === CA.selected : !l.tag && l.id === nameHot;
+      if (!want || v.z >= 1) { setShown(l, false); l.row = null; return; }
+      l.x = Math.round((v.x + 1) / 2 * w); l.y = Math.round((1 - v.y) / 2 * ht); l.order = i;
+      vis.push(l);
     });
-    // greedy de-collision: the selected label keeps its place, structure names come before transmitter tags, and a
-    // label that would cover another steps down; a tag with no free spot nearby is hidden. Boxes are compared by their
-    // centers: names sit above their anchor point, tags are centered on the pathway.
-    const LH = 20, placed = [];
-    vis.sort((a, b) => (b.id === CA.selected) - (a.id === CA.selected) || (a.tag ? 1 : 0) - (b.tag ? 1 : 0) || a.y - b.y).forEach((l) => {
-      if (!l.w) l.w = l.el.offsetWidth;
-      const lw = l.w || 100, dy = l.tag ? 0 : -14;
-      let y = l.y, free = false;
-      for (let k = 0; k < (l.tag ? 2 : 6); k++) {
-        const hit = placed.find((p) => Math.abs(p.x - l.x) < (p.w + lw) / 2 + 4 && Math.abs(p.cy - (y + dy)) < LH);
-        if (!hit) { free = true; break; }
-        y = hit.cy - dy + LH;
+    vis.sort((a, b) => labelRank(a) - labelRank(b) || a.order - b.order);
+    const placed = [];
+    const free = (l, row, pad) => {
+      const cy = l.y + l.dy + row * LH;
+      return !placed.some((p) => Math.abs(p.x - l.x) < (p.w + l.w) / 2 + 4 + pad && Math.abs(p.cy - cy) < LH + pad);
+    };
+    vis.forEach((l) => {
+      setShown(l, true);
+      if (!l.w) l.w = l.el.offsetWidth || 100;
+      l.dy = l.tag ? 0 : -14;
+      const rows = l.tag ? 2 : ROWS;
+      let row = l.row != null && l.row < rows && free(l, l.row, 0) ? l.row : null;
+      if (row === null) {
+        // the nearest row with room to spare to the one it had (or to its anchor), so a blocked label moves least
+        const from = l.row != null ? Math.min(l.row, rows - 1) : 0;
+        l.clear = 0;
+        const held = l.fits === false && frame - l.outAt < SETTLE;   // faded out a moment ago: stay out a little longer
+        for (let d = 0; d < rows && row === null && !held; d++) {
+          for (const k of d ? [from - d, from + d] : [from]) if (k >= 0 && k < rows && free(l, k, ENTER)) { row = k; break; }
+        }
+        if (row === null && l.id === CA.selected) row = 0;
+      } else if (row > 0) {
+        let k = 0;
+        while (k < row && !free(l, k, ENTER)) k++;
+        if (k >= row) l.clear = 0;
+        else if ((l.clear = (l.clear || 0) + 1) >= SETTLE) { row = k; l.clear = 0; }
       }
-      if (l.tag && !free) { l.el.style.display = 'none'; return; }
-      placed.push({ x: l.x, cy: y + dy, w: lw });
-      l.el.style.left = l.x + 'px'; l.el.style.top = y + 'px';
+      l.row = row;
+      if (row === null && l.fits !== false) l.outAt = frame;
+      setFits(l, row !== null);
+      if (row === null) return;
+      placed.push({ x: l.x, cy: l.y + l.dy + row * LH, w: l.w });
+      const left = l.x + 'px', top = (l.y + row * LH) + 'px';
+      if (l.el.style.left !== left) l.el.style.left = left;
+      if (l.el.style.top !== top) l.el.style.top = top;
     });
   }
 

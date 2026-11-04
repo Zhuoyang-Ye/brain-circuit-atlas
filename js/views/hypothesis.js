@@ -250,7 +250,7 @@
     const c = compose();
     if (!c) return '';
     const q = D.questions.find((x) => x.id === questionId);
-    const lines = [`# Hypothesis: ${c.statement}`, '', `Drafted with the Cerebellum Atlas on ${new Date().toISOString().slice(0, 10)}.`, ''];
+    const lines = [`# Hypothesis: ${c.statement}`, '', `Drafted with the Brain Circuit Atlas on ${new Date().toISOString().slice(0, 10)}.`, ''];
     if (q) lines.push(`**Open question:** ${q.title} ${q.text}`, '');
     lines.push('## Chain and evidence', '');
     c.st.forEach((s) => lines.push(`- **${name(s.a)} → ${name(s.b)}**: ${s.link ? CA.statusById[s.status].label + '. ' + s.link.rel + '. ' + (s.link.refs || []).map((k) => CA.shortCite(CA.paper[k])).join('; ') : 'Gap: no curated evidence.'}`));
