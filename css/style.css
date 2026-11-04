@@ -411,7 +411,8 @@ table.data tr.click:hover td { background: var(--bg3); }
   .search { display: none; }
   .atlas-controls { width: 220px; font-size: .9rem; }
   .atlas-fold-toggle { display: block; }
-  .intro { display: none; }
-  .atlas-names { width: 190px; max-height: 45%; }
+  .intro { display: block; top: 8px; right: 8px; width: min(320px, calc(100vw - 16px)); padding: 12px 14px; }
+  .intro.shut { padding-bottom: 8px; }
+  .atlas-names { top: 68px; right: 8px; width: min(250px, calc(100vw - 16px)); max-height: 42%; }
   :root { --panel-w: 100vw; }
 }
