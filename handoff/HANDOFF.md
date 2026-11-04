@@ -39,7 +39,7 @@ The user approved six new regions in this order and asked "Can you simply just d
 1. Basal ganglia: **done**, on branch `wip/regions` (see section 3).
 2. Hippocampus: **done**, on `wip/regions` (section 6).
 3. Amygdala: **done** 2026-11-04, on `wip/regions` (section 6a).
-4. Visual cortex: **built 2026-11-04, final audit pending** (section 6b).
+4. Visual cortex: **done** 2026-11-04 (section 6b).
 5. Insula.
 6. Olfactory.
 
@@ -259,7 +259,7 @@ Then continue with the visual cortex (section 7).
 
 **Tests:** smoke clean in 7 regions × 2 themes; trace runs for vis-geniculate (3 steps in primates, 2 in mouse) and vis-cb (2 steps); none for the parallel vis-streams and vis-topdown.
 
-**Still to do:** final audit read of every new sentence against its abstracts (`compact_audit.py handoff/visual/knowledge_before_visual.json --region visual-cortex`), then the region report. Then the insula (section 7).
+**Audit (done):** all 257 new sentences read against the abstracts. Fixed in `handoff/scripts/fix_vis1.py` (applied; no membership change, 0 warnings): marshel2011's seven areas include V1; britten1992 "most" MT neurons; hadjikhani2001 three people; benson1988 five patients; hendry2000 "likely"; ko2011 "than orthogonal"; no "classic study"; six single-study links set to `emerging` (v1>mt, v1>v4, v1>mouse-hva, it>f-face, ffa>f-face, visual-cortex>pontine). desimone1984's finding now says "a particularly high incidence" deep in the STS. Region report given. Next: the insula (section 7).
 
 ## 7. Remaining regions: what is known so far
 
