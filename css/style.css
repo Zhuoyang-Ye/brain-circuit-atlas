@@ -125,6 +125,8 @@ kbd { background: var(--bg3); border: 1px solid var(--line); border-radius: 4px;
 /* the region dropdown: atlas left panel, and the top left of every other view */
 select.region-pick { font-size: 1rem; font-weight: 600; color: var(--text); padding: 6px 8px; cursor: pointer; }
 .atlas-controls select.region-pick { width: 100%; }
+.atlas-controls .species-seg { display: flex; width: 100%; }
+.atlas-controls .species-seg button { flex: 1 1 0; min-width: 0; padding: 5px 2px; font-size: .86rem; }
 .region-row { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 12px; font-size: .9rem; font-weight: 600; color: var(--muted);
   text-transform: uppercase; letter-spacing: .04em; }
 .region-row select.region-pick { min-width: 190px; text-transform: none; letter-spacing: normal; }

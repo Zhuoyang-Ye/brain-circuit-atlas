@@ -583,6 +583,9 @@ def main():
     species = sys.argv[1:] or [sp for sp in cfg if sp in offered]
     print('decimation:', 'quadric (fast_simplification)' if fast_simplification else 'vertex clustering')
     for sp in species:
+        if cfg[sp].get('schematic'):   # no atlas volume: drawn by tools/build_octopus.py
+            print(f'[{sp}] schematic: run tools/build_octopus.py')
+            continue
         build(sp, cfg[sp])
 
 

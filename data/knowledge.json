@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Brain Circuit Atlas",
-    "subtitle": "An evidence-linked map of the cerebellum, the motor and prefrontal cortex, the basal ganglia, the hippocampus, the amygdala, the visual cortex, the insula, the olfactory system and their connections, from molecules to mind",
+    "subtitle": "An evidence-linked map of the cerebellum, the motor and prefrontal cortex, the basal ganglia, the hippocampus, the amygdala, the visual cortex, the insula, the olfactory system and their connections, from molecules to mind, and of the octopus brain, which evolved separately",
     "version": "0.1",
     "disclaimer": "Summaries, link statuses and map scores were drafted with AI assistance from PubMed abstracts and need review by domain experts. Diagrams are schematic."
   },
@@ -895,6 +895,74 @@
         "mouse": "Mouse: Allen CCFv3 main and accessory olfactory bulbs, piriform area and cortical amygdalar area; olfactory sensory neurons are placed approximately (≈) in front of the bulb, and the vomeronasal organ is not placed.",
         "macaque": "Macaque: SARM piriform cortex and ventral cortical amygdaloid nucleus. The template does not include the olfactory bulb, so the bulb and the olfactory sensory neurons are placed approximately (≈) under the front of the orbital surface; the vomeronasal organ is not placed."
       }
+    },
+    {
+      "id": "octopus",
+      "label": "Octopus brain",
+      "group": "Octopus",
+      "species": ["octopus"],
+      "entity": "oct-brain",
+      "query": "(octopus[tiab] OR octopuses[tiab] OR octopod*[tiab] OR cephalopod*[tiab])",
+      "view": "octopus",
+      "views": ["atlas", "scales", "gaps", "lab", "library"],
+      "levelDesc": {
+        "regional": "Vertical, superior frontal, subvertical, basal and brachial lobes; optic lobes; the peduncle complex and optic gland; the arms’ nerve cords",
+        "circuit": "Retina to optic lobe; optic lobe to the superior frontal and basal lobes; superior frontal input to the vertical lobe; basal lobes and brain to the arms"
+      },
+      "levelQueries": {
+        "cellular": "(neuron*[tiab] OR amacrine[tiab] OR interneuron*[tiab])",
+        "circuit": "(circuit*[tiab] OR connect*[tiab] OR pathway*[tiab] OR tract*[tiab])",
+        "regional": "(\"vertical lobe\"[tiab] OR \"optic lobe\"[tiab] OR \"basal lobe\"[tiab] OR \"frontal lobe\"[tiab])"
+      },
+      "methods": {
+        "molecular": {
+          "manipulate": ["Nitric oxide synthase inhibition", "Muscarinic block (scopolamine)", "MDMA"],
+          "readout": [
+            "Single-cell RNA sequencing",
+            "In situ hybridization",
+            "Mass spectrometry of optic gland secretions"
+          ]
+        },
+        "cellular": {
+          "manipulate": ["Tetanic stimulation of the vertical lobe pathway", "Serotonin applied to brain slices"],
+          "readout": [
+            "Field potentials in vertical lobe slices",
+            "Serial-section electron microscopy",
+            "Histolabeling of transmitters"
+          ]
+        },
+        "circuit": {
+          "manipulate": ["Transecting the vertical lobe pathway", "Stimulating isolated cerebrobrachial tracts"],
+          "readout": ["HRP tract tracing", "Diffusion MRI tractography", "Two-photon calcium imaging of the optic lobe"]
+        },
+        "regional": {
+          "manipulate": ["Vertical lobe lesions", "Microstimulation of the basal lobes", "Optic gland removal"],
+          "readout": ["Histological brain atlas", "Comparative brain imaging across species"]
+        },
+        "systems": {
+          "manipulate": ["Arms severed from the brain", "Arm injury"],
+          "readout": [
+            "Data loggers in freely moving animals",
+            "High-density brain recordings during sleep",
+            "Arm kinematics"
+          ]
+        },
+        "cognitive": {
+          "manipulate": ["Watching trained conspecifics", "Passive avoidance training", "Single-arm maze tasks"],
+          "readout": ["Visual discrimination choices", "Recall the next day", "Sleep stages scored from skin patterns"]
+        },
+        "clinical": {
+          "manipulate": ["Noxious stimulation with local anaesthesia"],
+          "readout": ["Nocifensive behaviour", "Conditioned place preference"]
+        }
+      },
+      "intro": {
+        "title": "Octopus brain, a large brain that evolved separately",
+        "text": "The cephalopod brain evolved independently of the vertebrate brain. Here: the vertical lobe’s learning and memory network and its long-term potentiation, the optic lobes’ visual maps, the basal lobes that command eight arms without a body map, the arms’ own nerve cords and suckers that taste by touch, two stages of sleep, and the optic gland that controls maturation and maternal death. Every connection is tied to the papers behind it and graded by how strong the evidence is."
+      },
+      "speciesNote": {
+        "octopus": "Octopus: a schematic brain drawn for this site, because no octopus atlas volume is available to it. Lobe shapes, sizes and positions are approximate and for orientation only, so every label carries ≈. The vertical lobe’s amacrine and output neurons are shown in the vertical lobe. Findings come from several species (mainly Octopus vulgaris and O. bimaculoides)."
+      }
     }
   ],
   "methods": {
@@ -1406,7 +1474,7 @@
       "level": "cognitive",
       "kind": "function",
       "domains": ["social"],
-      "summary": "Mentalizing and social preference. Human imaging points to Crus I/II; mouse circuit studies implicate Crus I, vermis, VTA and mPFC pathways. In mice, the strength of excitatory input onto layer V pyramidal neurons of medial PFC tracks dominance rank, and raising or lowering synaptic efficacy in dorsal mPFC moves animals up or down the hierarchy. Patients with bilateral ventromedial prefrontal damage make abnormally utilitarian judgments on emotionally aversive moral dilemmas. A patient with selective bilateral amygdala damage was impaired at recognizing fear in facial expressions (human). In patient SM, impaired recognition of fear stems from not making normal use of the eye region of faces, which the authors trace to a lack of spontaneous fixations on the eyes, and her recognition of fearful faces became normal when she was told to look at the eyes (human). In the medial amygdala, a GABAergic subpopulation promotes aggression and two other social behaviors, whereas neighboring glutamatergic neurons promote repetitive self-grooming and inhibit social interactions (mouse). Empathy for pain engages a core network of anterior insula and medial/anterior cingulate cortex that overlaps with responses to one's own pain (human). In male mice, loss of vomeronasal signalling abolishes male-male aggression and leads to courtship of both sexes (mouse).",
+      "summary": "Mentalizing and social preference. Human imaging points to Crus I/II; mouse circuit studies implicate Crus I, vermis, VTA and mPFC pathways. In mice, the strength of excitatory input onto layer V pyramidal neurons of medial PFC tracks dominance rank, and raising or lowering synaptic efficacy in dorsal mPFC moves animals up or down the hierarchy. Patients with bilateral ventromedial prefrontal damage make abnormally utilitarian judgments on emotionally aversive moral dilemmas. A patient with selective bilateral amygdala damage was impaired at recognizing fear in facial expressions (human). In patient SM, impaired recognition of fear stems from not making normal use of the eye region of faces, which the authors trace to a lack of spontaneous fixations on the eyes, and her recognition of fearful faces became normal when she was told to look at the eyes (human). In the medial amygdala, a GABAergic subpopulation promotes aggression and two other social behaviors, whereas neighboring glutamatergic neurons promote repetitive self-grooming and inhibit social interactions (mouse). Empathy for pain engages a core network of anterior insula and medial/anterior cingulate cortex that overlaps with responses to one's own pain (human). In male mice, loss of vomeronasal signalling abolishes male-male aggression and leads to courtship of both sexes (mouse). In the predominantly asocial octopus, MDMA enhances prosocial behaviour and the serotonin transporter keeps its MDMA binding site (octopus), and untrained octopuses learn a visual discrimination by watching trained ones (octopus).",
       "refs": [
         "vanoverwalle2014",
         "vanoverwalle2020",
@@ -1422,7 +1490,9 @@
         "hong2014",
         "lamm2011",
         "singer2004",
-        "stowers2002"
+        "stowers2002",
+        "edsinger2018",
+        "fiorito1992"
       ]
     },
     {
@@ -1493,7 +1563,7 @@
       ]
     },
     {"id": "f-pain", "name": "Pain & nociception", "level": "cognitive", "kind": "function", "aka": ["nociception", "analgesia"], "domains": ["emotion", "homeostasis"],
-     "summary": "Pain is among the emotional functions the cerebellum contributes to. In mice, noxious stimuli release locus coeruleus noradrenaline onto Bergmann glia, and this α1-adrenergic glial signaling promotes nocifensive behavior and neuropathic pain. A rostral anterior cingulate → pontine pathway mediates placebo analgesia, and Purkinje cells show similar activity during expectation of pain relief (mouse). Stimulating the upper posterior insula evokes painful sensations (human), and the anterior insula and rostral anterior cingulate respond to a loved one's pain as well as one's own (human).", "refs": ["adamaszek2017", "kim2025", "chen2024", "ostrowsky2002", "singer2004"]},
+     "summary": "Pain is among the emotional functions the cerebellum contributes to. In mice, noxious stimuli release locus coeruleus noradrenaline onto Bergmann glia, and this α1-adrenergic glial signaling promotes nocifensive behavior and neuropathic pain. A rostral anterior cingulate → pontine pathway mediates placebo analgesia, and Purkinje cells show similar activity during expectation of pain relief (mouse). Stimulating the upper posterior insula evokes painful sensations (human), and the anterior insula and rostral anterior cingulate respond to a loved one's pain as well as one's own (human). Octopuses avoid a place where they experienced pain and prefer one where it was relieved, suggesting that an invertebrate experiences the affective component of pain (octopus).", "refs": ["adamaszek2017", "kim2025", "chen2024", "ostrowsky2002", "singer2004", "crook2021"]},
     {"id": "c-ataxia", "name": "Cerebellar motor syndrome", "level": "clinical", "kind": "disorder", "aka": ["ataxia", "dysmetria"], "domains": ["motor"],
      "summary": "Ataxia of gait and limbs, dysmetria and dysarthria, mainly after anterior-lobe (III–VI) damage.", "refs": ["stoodley2016", "schmahmann1998", "benussi2018", "morton2006", "tseng2007"], "region": "cerebellum"},
     {"id": "c-ccas", "name": "Cerebellar cognitive affective syndrome", "level": "clinical", "kind": "disorder", "aka": ["CCAS", "Schmahmann syndrome"], "domains": ["executive", "language", "spatial", "emotion"],
@@ -1903,7 +1973,41 @@
     {"id": "c-anosmia", "name": "Smell loss (anosmia)", "level": "clinical", "kind": "disorder", "region": "olfactory", "aka": ["anosmia", "hyposmia", "olfactory dysfunction"], "domains": ["sensory"],
      "summary": "More than half of people aged 65 to 80 and more than three-quarters of those over 80 have major impairment of smell identification (human). In COVID-19, infection of non-neuronal cells of the olfactory epithelium is suggested to cause anosmia (mouse, monkey, human).", "refs": ["doty1984", "brann2020"]},
     {"id": "f-smell", "name": "Smell", "level": "cognitive", "kind": "function", "aka": ["olfaction", "odour perception"], "domains": ["sensory"],
-     "summary": "Detecting and discriminating odours. Odours are encoded by combinations of receptors (mouse), rats discriminate them at maximal accuracy within a single sniff (rat), and the cerebellum is activated by odours and by sniffing (human).", "refs": ["malnic1999", "uchida2003", "sobel1998cb"]}
+     "summary": "Detecting and discriminating odours. Odours are encoded by combinations of receptors (mouse), rats discriminate them at maximal accuracy within a single sniff (rat), and the cerebellum is activated by odours and by sniffing (human).", "refs": ["malnic1999", "uchida2003", "sobel1998cb"]},
+    {"id": "oct-brain", "name": "Octopus brain", "level": "systems", "kind": "structure", "aka": ["central brain", "cephalopod brain"], "region": "octopus", "domains": ["architecture"],
+     "summary": "The central brain of the octopus. Only about one third of octopus neurons are central; the rest lie in the peripheral nervous system, including the eight arms (octopus). A histological atlas of the adult Octopus minor brain delineates more than 70 subregions (octopus), and diffusion MRI tractography of 25 lobes found 92 connections between them, largely matching earlier studies (octopus). Its genome shows massive expansions of protocadherins and C2H2 zinc-finger transcription factors and extensive mRNA editing (octopus). In embryos, neural progenitors outside the brain cords, in the lateral lips next to the eyes, generate neurons that migrate long distances into the lobes (octopus). Cephalopod neural systems have been compared with the vertebrate cortex, thalamus, basal ganglia, cerebellum and other structures, but how far a vertebrate equivalence exists is unanswered (review). Inhibiting nitric oxide synthesis blocks touch learning (octopus), and the muscarinic antagonist scopolamine impairs memory recall without affecting predation (octopus).", "refs": ["gutnick2020", "jung2018", "jacobs2022", "albertin2015", "deryckere2021", "shigeno2018", "robertson1994", "fiorito1998"]},
+    {"id": "oct-vl", "name": "Vertical lobe", "level": "regional", "kind": "structure", "aka": ["VL", "vertical lobe system", "vertical lobules"], "region": "octopus", "domains": ["learning", "memory"],
+     "summary": "A learning and memory centre of the octopus brain. Its synapses show glutamatergic long-term potentiation similar to that in vertebrates (octopus); enhancing its pathway speeds and cutting it slows short-term avoidance learning, but both impair recall the next day, so it acquires long-term memory through LTP and also modulates short-term learning (octopus). Removing about half of it impairs short-term recall of a visual discrimination learned by watching another octopus, but not its acquisition or long-term retention (octopus). About 1.8 million input axons sparsely innervate its amacrine interneurons, which make up most of its roughly 25 million cells (octopus); serotonin-immunoreactive terminals innervate its neuropil, and applied 5-HT facilitates transmission and LTP induction (octopus). Its cells are enriched for learning- and memory-related genes and resemble Drosophila Kenyon cells molecularly (octopus), and JZ Young likened its organization to the hippocampus, the cerebellum and the insect mushroom body (review). Differences between social and solitary species include multiple compartments (gyri) in it (octopus). Its activity can be recorded in untethered, behaving animals, with episodes of 2 Hz large-amplitude oscillations (octopus), and during active sleep its activity, with that of the superior frontal lobe, is the strongest of the brain regions recorded (octopus).", "refs": ["hochner2003", "shomrat2008", "fiorito1995", "bidel2023", "shomrat2010", "styfhals2022", "shomrat2015", "chung2022", "gutnick2023", "pophale2023"]},
+    {"id": "oct-sfl", "name": "Superior frontal lobe", "level": "regional", "kind": "structure", "aka": ["SFL", "median superior frontal lobe", "MSFL", "MSF"], "region": "octopus", "domains": ["learning", "memory"],
+     "summary": "A lobe of the supra-oesophageal brain. Its median part, the median superior frontal lobe (MSFL), sends the glutamatergic input axons of the vertical lobe, which innervate millions of amacrine interneurons en passant (octopus). It receives fibres from the optic lobe (octopus), and during active sleep its activity, with that of the vertical lobe, is the strongest of the brain regions recorded, while in quiet sleep both generate oscillations resembling sleep spindles (octopus).", "refs": ["sternmentch2022", "saidel1982", "pophale2023"]},
+    {"id": "oct-vl-am", "name": "Vertical lobe amacrine interneurons", "level": "cellular", "kind": "cell type", "aka": ["amacrine cells", "AMs", "simple amacrine cells", "SAMs", "complex amacrine cells", "CAMs"], "region": "octopus", "domains": ["learning", "memory"],
+     "summary": "The small interneurons of the vertical lobe: input axons from the median superior frontal lobe innervate them en passant, and they converge sharply onto the large output neurons (octopus). Simple amacrine cells (89.3% of the lobe's roughly 25 million cells) each receive one input axon at a synapse endowed with LTP, while the newly described complex amacrine cells integrate many inputs and appear to provide balancing inhibition (octopus). They are cholinergic, with a GABAergic subpopulation, and their neurites show intense nitric oxide synthase activity (octopus).", "refs": ["sternmentch2022", "bidel2023"]},
+    {"id": "oct-vl-ln", "name": "Vertical lobe large output neurons", "level": "cellular", "kind": "cell type", "aka": ["LNs", "large neurons"], "region": "octopus", "domains": ["learning", "memory"],
+     "summary": "The output neurons of the vertical lobe, onto which amacrine interneurons converge through cholinergic synapses (octopus). Their cell bodies label for GABA, suggesting an inhibitory output, and they co-express FMRFamide-like neuropeptides, suggesting a neuromodulatory role as well; a group of them is glutamatergic (octopus). In the cuttlefish, unlike the octopus, synaptic plasticity lies at this cholinergic fan-in layer (cuttlefish).", "refs": ["sternmentch2022", "shomrat2011"]},
+    {"id": "oct-subvertical", "name": "Subvertical lobe", "level": "regional", "kind": "structure", "aka": ["SV"], "region": "octopus", "domains": ["memory", "architecture"],
+     "summary": "A supra-oesophageal lobe whose cells project to the optic lobe; fibres partly from its posterior part reach the neuropil of the vertical lobules (octopus).", "refs": ["saidel1982"]},
+    {"id": "oct-basal", "name": "Basal lobes", "level": "regional", "kind": "structure", "aka": ["higher motor centres", "anterior basal lobe", "median basal lobe", "dorsal basal lobe", "lateral basal lobe"], "region": "octopus", "domains": ["motor"],
+     "summary": "The higher motor centres of the central brain. Microstimulating them in freely behaving octopuses evokes discrete and complex movements, but no site moves a single arm or body part, so they lack a central topographical map (octopus), and they coordinate the arms without body-part maps of sensory and motor information (review). The anterior, median and dorsal basal lobes send input to the optic lobe, and the optic lobe sends fibres to the lateral basal lobe (octopus).", "refs": ["zullo2009", "hochner2023", "saidel1982"]},
+    {"id": "oct-brachial", "name": "Brachial lobe", "level": "regional", "kind": "structure", "region": "octopus", "domains": ["motor"],
+     "summary": "A lobe of the sub-oesophageal brain whose cells send input to the optic lobe (octopus).", "refs": ["saidel1982"]},
+    {"id": "oct-eye", "name": "Eye (octopus)", "level": "systems", "kind": "body", "aka": ["octopus eye", "retina"], "region": "octopus", "domains": ["sensory"],
+     "summary": "Cephalopods have camera-type eyes and rely heavily on vision (octopus). Photoreceptors of its retina project to the optic lobe on the same side (octopus), and octopuses use vision to guide a single arm to a goal (octopus).", "refs": ["pungor2023", "saidel1982", "gutnick2011"]},
+    {"id": "oct-ol", "name": "Optic lobe", "level": "regional", "kind": "structure", "aka": ["OL", "optic lobes"], "region": "octopus", "domains": ["sensory"],
+     "summary": "The paired primary visual processing centres. Two-photon imaging shows retinotopically organized ON and OFF receptive fields, with the OFF pathway and greater size selectivity emerging across its layers (octopus), and single-cell sequencing finds six major neuronal classes with distinct laminar positions and immature neurons in this continuously growing tissue (octopus). It receives input from the retina, the contralateral optic lobe and many higher motor and associative centres, which makes its medulla an exceptionally complex integrative area (octopus). Its enlargement and division differ with habit and habitat across octopus species (octopus).", "refs": ["pungor2023", "songcocasey2022", "saidel1982", "chung2022"]},
+    {"id": "oct-peduncle", "name": "Peduncle lobe", "level": "regional", "kind": "structure", "aka": ["peduncle complex"], "region": "octopus", "domains": ["motor", "sensory"],
+     "summary": "Part of the peduncle complex, which rests on the optic tract between the optic lobe and the central brain; described as a visuo-motor centre that regulates visuomotor behaviour (octopus).", "refs": ["messenger1967", "wangzy2024"]},
+    {"id": "oct-olf-lobe", "name": "Olfactory lobe", "level": "regional", "kind": "structure", "region": "octopus", "domains": ["sensory"],
+     "summary": "Part of the peduncle complex, thought to receive input from the olfactory organ. It is heterogeneous and includes steroidogenic territories that overlap cells expressing molluscan neuropeptides and dopamine beta-hydroxylase (octopus).", "refs": ["wangzy2024"]},
+    {"id": "oct-optic-gland", "name": "Optic gland", "level": "systems", "kind": "structure", "aka": ["optic glands"], "region": "octopus", "domains": ["homeostasis"],
+     "summary": "The principal neuroendocrine centre of the octopus, an analogue of the vertebrate pituitary, in the peduncle complex (octopus). It controls sexual maturation, lifespan and reproduction: removing it abolishes maternal brooding and reverses the post-mating decline toward death (octopus). Across reproductive stages it up- and downregulates catecholamine, steroid, insulin and feeding-peptide pathways (octopus), after reproduction it raises synthesis of pregnane steroids, 7-dehydrocholesterol and bile acid intermediates (octopus), and its neurochemistry extends into neighbouring lobular territories (octopus).", "refs": ["wangzy2018", "wang2022", "wangzy2024"]},
+    {"id": "oct-arm-ns", "name": "Arm nervous system", "level": "systems", "kind": "structure", "aka": ["arms", "axial nerve cord", "ANC", "intramuscular nerve cords", "cerebrobrachial tract"], "region": "octopus", "domains": ["motor", "sensory"],
+     "summary": "Most octopus neurons lie outside the brain, in the peripheral nervous system including the eight arms (octopus). Each arm's axial nerve cord is segmented, with nerves leaving between segments and a topographic map of the suckers ('suckerotopy') (octopus, squid). Severed arms still produce near-normal extensions, so the basic motor program lies in the arm itself (octopus), and fetching food uses three dynamic joints, the middle one set where two waves of muscle activation collide (octopus). Motor command axons run along the cerebrobrachial tracts and recruit many motor neurons en passant (octopus). Nerve cords link each arm with the arms two away on either side, outside the brain (octopus), and when crawling the octopus recruits arms moment to moment without rhythmic patterns (octopus). Arm injury causes neural hyperexcitability in injured and uninjured arms for at least 24 h (octopus). The arms' flexibility is argued to have shaped unique brain-body-behaviour relationships, in which intelligent behaviour emerges from the octopus's embodied organization (review).", "refs": ["gutnick2020", "olson2025", "sumbre2001", "sumbre2006", "zullo2019", "kuuspalu2022", "levy2015", "alupay2014", "hochner2012"]},
+    {"id": "oct-sucker", "name": "Suckers", "level": "systems", "kind": "body", "aka": ["sucker", "sucker ganglion"], "region": "octopus", "domains": ["sensory", "motor"],
+     "summary": "Hundreds of suckers line each arm. A ganglion in each sucker's stalk has cells expressing sensory and motor neuron markers and sends fibres to the sucker muscles and to the oral roots that extend to the axial nerve cord, suggesting local reflexes for each sucker (octopus). Suckers 'taste by touch' with cephalopod-specific chemotactile receptors, which diverged from nicotinic acetylcholine receptors and detect poorly soluble, greasy molecules (octopus). A chemical in octopus skin inhibits their attachment reflex, so that the arms do not interfere with each other (octopus).", "refs": ["olson2025b", "vangiesen2020", "allard2023", "nesher2014"]},
+    {"id": "f-sleep", "name": "Sleep", "level": "cognitive", "kind": "function", "domains": ["homeostasis"],
+     "summary": "Sleep and its stages. Octopuses alternate long 'quiet' sleep with short 'active' sleep bouts with dynamic skin patterns and rapid eye movements, suggesting an ultradian cycle analogous to that of amniotes (octopus); active sleep is homeostatically regulated, and its skin patterns and brain activity resemble waking (octopus).", "refs": ["medeiros2021", "pophale2023"]},
+    {"id": "f-reproduction", "name": "Reproduction and maternal care", "level": "cognitive", "kind": "function", "aka": ["maternal behaviour", "brooding"], "domains": ["homeostasis", "social"],
+     "summary": "Sexual maturation, reproduction and care of offspring. In the octopus the optic glands control maturation, reproduction and lifespan; after mating, brooding females fast and decline toward death, a course that removing the glands reverses (octopus).", "refs": ["wang2022", "wangzy2018"]}
   ],
   "links": [
     {"s": "mglur1", "t": "ltd", "rel": "required for LTD induction", "status": "supported", "kind": "mechanistic", "refs": ["aiba1994", "hansel2001"]},
@@ -2553,7 +2657,33 @@
     {"s": "cb-cortex", "t": "f-smell", "rel": "odours activate the posterior lateral cerebellar hemispheres, more at higher concentrations, and sniffing activates the anterior cerebellum (human); the cerebellum is proposed to regulate sniff volume according to odour concentration (hypothesis)", "status": "emerging", "kind": "localization", "refs": ["sobel1998cb"]},
     {"s": "olfactory", "t": "entorhinal", "rel": "the lateral entorhinal cortex and distal CA1 receive the predominant olfactory input to the hippocampal region, and their 20 to 40 Hz coupling develops as rats learn odour-guided navigation (rat)", "status": "emerging", "kind": "anatomical", "refs": ["igarashi2014"]},
     {"s": "lc", "t": "gc", "rel": "phasic activation strengthens gustatory cortex correlations with palatability and expands taste representations along a palatability axis, shifting all tastants except sucrose toward aversive; tonic activation does not expand the attribute axes (mouse)", "status": "emerging", "kind": "causal", "refs": ["fan2026"]},
-    {"s": "lc", "t": "f-taste", "rel": "locus coeruleus activity is suppressed during licking and rises briefly afterwards, independent of taste novelty, and brief unexpected tastes do not activate it although visual and auditory stimuli do (mouse)", "status": "emerging", "kind": "functional", "refs": ["fan2024"]}
+    {"s": "lc", "t": "f-taste", "rel": "locus coeruleus activity is suppressed during licking and rises briefly afterwards, independent of taste novelty, and brief unexpected tastes do not activate it although visual and auditory stimuli do (mouse)", "status": "emerging", "kind": "functional", "refs": ["fan2024"]},
+    {"s": "oct-eye", "t": "oct-ol", "rel": "photoreceptors of the ipsilateral retina project to the optic lobe (HRP tracing), where ON and OFF receptive fields are retinotopically organized (calcium imaging) (octopus)", "status": "supported", "kind": "anatomical", "refs": ["saidel1982", "pungor2023"]},
+    {"s": "oct-ol", "t": "f-vision", "rel": "the primary visual processing centre: retinotopic ON and OFF receptive fields, with the OFF pathway and size selectivity emerging across its layers (two-photon imaging) (octopus)", "status": "supported", "kind": "functional", "refs": ["pungor2023", "songcocasey2022"]},
+    {"s": "oct-basal", "t": "oct-ol", "rel": "the anterior, median and dorsal basal lobes send input to the optic lobe (HRP tracing) (octopus)", "status": "supported", "kind": "anatomical", "refs": ["saidel1982"]},
+    {"s": "oct-ol", "t": "oct-basal", "rel": "optic lobe fibres reach the lateral basal lobe (HRP tracing) (octopus)", "status": "supported", "kind": "anatomical", "refs": ["saidel1982"]},
+    {"s": "oct-subvertical", "t": "oct-ol", "rel": "subvertical lobe cells send input to the optic lobe (HRP tracing) (octopus)", "status": "supported", "kind": "anatomical", "refs": ["saidel1982"]},
+    {"s": "oct-brachial", "t": "oct-ol", "rel": "brachial lobe cells send input to the optic lobe (HRP tracing) (octopus)", "status": "supported", "kind": "anatomical", "refs": ["saidel1982"]},
+    {"s": "oct-ol", "t": "oct-sfl", "rel": "optic lobe fibres reach the superior frontal lobe (HRP tracing) (octopus)", "status": "supported", "kind": "anatomical", "refs": ["saidel1982"]},
+    {"s": "oct-sfl", "t": "oct-vl", "rel": "the median superior frontal lobe sends the glutamatergic input of the vertical lobe, about 1.8 million axons whose synapses show LTP (histolabeling, electron microscopy, slice recordings) (octopus)", "status": "established", "kind": "anatomical", "refs": ["sternmentch2022", "bidel2023", "hochner2003"]},
+    {"s": "oct-subvertical", "t": "oct-vl", "rel": "fibres partly from the posterior subvertical lobe reach the neuropil of the vertical lobules (HRP tracing) (octopus)", "status": "emerging", "kind": "anatomical", "refs": ["saidel1982"]},
+    {"s": "oct-sfl", "t": "oct-vl-am", "rel": "input axons innervate the amacrine interneurons en passant at a glutamatergic synapse with LTP; each simple amacrine cell receives a single input axon (fan-out) (octopus)", "status": "established", "kind": "anatomical", "refs": ["sternmentch2022", "bidel2023", "shomrat2011"]},
+    {"s": "oct-vl-am", "t": "oct-vl-ln", "rel": "amacrine interneurons converge sharply onto the large output neurons through cholinergic synapses (fan-in) (octopus)", "status": "supported", "kind": "anatomical", "refs": ["sternmentch2022", "shomrat2011"]},
+    {"s": "oct-vl", "t": "f-consolidation", "rel": "acquires long-term memory through LTP: tetanizing or cutting its pathway impairs recall the next day (octopus)", "status": "supported", "kind": "functional", "refs": ["shomrat2008", "hochner2003"]},
+    {"s": "oct-vl", "t": "f-social", "rel": "removing about half of it impairs short-term recall of a discrimination learned by watching another octopus, but not acquisition or long-term retention (octopus)", "status": "emerging", "kind": "functional", "refs": ["fiorito1995"]},
+    {"s": "oct-vl", "t": "f-sleep", "rel": "during active sleep, whose brain activity resembles waking, its activity is the strongest of the regions recorded, with the superior frontal lobe; in quiet sleep both generate spindle-like oscillations (high-density recordings) (octopus)", "status": "emerging", "kind": "functional", "refs": ["pophale2023"]},
+    {"s": "oct-sfl", "t": "f-sleep", "rel": "during active sleep, whose brain activity resembles waking, its activity is the strongest of the regions recorded, with the vertical lobe; in quiet sleep both generate spindle-like oscillations (high-density recordings) (octopus)", "status": "emerging", "kind": "functional", "refs": ["pophale2023"]},
+    {"s": "oct-basal", "t": "oct-arm-ns", "rel": "microstimulation of these higher motor centres evokes discrete and complex movements, but never of a single arm: no central body map (octopus)", "status": "supported", "kind": "causal", "refs": ["zullo2009", "hochner2023"]},
+    {"s": "oct-brain", "t": "oct-arm-ns", "rel": "motor command axons run along the cerebrobrachial tracts and recruit many arm motor neurons en passant (isolated tract recordings) (octopus)", "status": "emerging", "kind": "anatomical", "refs": ["zullo2019"]},
+    {"s": "oct-arm-ns", "t": "oct-brain", "rel": "the central brain uses information about one arm’s motion and touch to learn directed arm movements (single-arm mazes) (octopus)", "status": "emerging", "kind": "functional", "refs": ["gutnick2020"]},
+    {"s": "oct-eye", "t": "oct-arm-ns", "rel": "vision guides a single arm through a complex movement to a visually marked goal (three-choice maze) (octopus)", "status": "emerging", "kind": "functional", "refs": ["gutnick2011"]},
+    {"s": "oct-arm-ns", "t": "f-motor", "rel": "the arm’s own circuitry holds motor programs: severed arms still extend almost normally, and fetching sets its middle joint where two waves of muscle activation collide (octopus)", "status": "supported", "kind": "functional", "refs": ["sumbre2001", "sumbre2006"]},
+    {"s": "oct-sucker", "t": "oct-arm-ns", "rel": "each sucker’s ganglion sends fibres to the oral roots that extend to the axial nerve cord, whose nerves form a topographic map of the suckers (‘suckerotopy’) (octopus)", "status": "emerging", "kind": "anatomical", "refs": ["olson2025b", "olson2025"]},
+    {"s": "oct-sucker", "t": "f-taste", "rel": "‘taste by touch’: cephalopod-specific chemotactile receptors detect poorly soluble molecules on contact (octopus)", "status": "emerging", "kind": "functional", "refs": ["vangiesen2020", "allard2023"]},
+    {"s": "oct-arm-ns", "t": "f-pain", "rel": "arm injury triggers nocifensive behaviour, including arm autotomy, and hyperexcitability in injured and uninjured arms for at least 24 h (octopus)", "status": "emerging", "kind": "functional", "refs": ["alupay2014"]},
+    {"s": "oct-peduncle", "t": "f-motor", "rel": "a visuo-motor centre that regulates visuomotor behaviour (octopus)", "status": "supported", "kind": "functional", "refs": ["messenger1967", "wangzy2024"]},
+    {"s": "oct-olf-lobe", "t": "f-smell", "rel": "thought to receive input from the olfactory organ (octopus)", "status": "hypothesis", "kind": "functional", "refs": ["wangzy2024"]},
+    {"s": "oct-optic-gland", "t": "f-reproduction", "rel": "removing the optic glands abolishes maternal brooding and reverses the post-mating decline toward death; across reproductive stages they up- and downregulate steroid, catecholamine, insulin and feeding-peptide pathways (octopus)", "status": "supported", "kind": "causal", "refs": ["wangzy2018", "wang2022"]}
   ],
   "chains": [
     {"id": "loop-pfc", "name": "Cerebro-cerebellar loop", "nodes": ["pfc", "pontine", "cb-cortex", "dcn", "thalamus", "pfc"],
@@ -2711,7 +2841,13 @@
     {"id": "olf-learned", "name": "Learned odour meaning", "nodes": ["ob", "piriform", "f-valence"],
      "desc": "Glomeruli project diffusely to piriform cortex (mouse), where arbitrary ensembles of neurons can acquire learned appetitive or aversive meaning (mouse)."},
     {"id": "olf-ofc", "name": "Smell in the orbitofrontal cortex", "nodes": ["piriform", "ofc", "f-smell"],
-     "desc": "Olfactory bulb signals reach the lateroposterior orbitofrontal cortex through the anterior piriform cortex and the hypothalamus, and removing that area strikingly impairs odour discrimination (monkey)."}
+     "desc": "Olfactory bulb signals reach the lateroposterior orbitofrontal cortex through the anterior piriform cortex and the hypothalamus, and removing that area strikingly impairs odour discrimination (monkey)."},
+    {"id": "oct-eye-memory", "name": "From the eye to the vertical lobe", "nodes": ["oct-eye", "oct-ol", "oct-sfl", "oct-vl"],
+     "desc": "Retinal photoreceptors project to the optic lobe, whose fibres reach the superior frontal lobe (HRP tracing); the median superior frontal lobe sends the glutamatergic input of the vertical lobe, whose LTP supports long-term memory (octopus)."},
+    {"id": "oct-fan", "name": "The vertical lobe's fan-out fan-in network", "nodes": ["oct-sfl", "oct-vl-am", "oct-vl-ln"],
+     "desc": "About 1.8 million input axons from the median superior frontal lobe innervate the amacrine interneurons, most of the lobe's roughly 25 million cells, which converge sharply onto large output neurons; plasticity sits at the input layer in the octopus and at the output layer in the cuttlefish, yet both networks perform the same computation (octopus, cuttlefish)."},
+    {"id": "oct-eye-arm", "name": "From the eye to an arm", "nodes": ["oct-eye", "oct-ol", "oct-basal", "oct-arm-ns"],
+     "desc": "The optic lobe receives retinal input and exchanges fibres with the basal lobes, the higher motor centres, whose stimulation evokes movements without a body map; octopuses use vision to guide a single arm to a goal (octopus)."}
   ],
   "questions": [
     {
@@ -3412,6 +3548,54 @@
         "Measure noradrenaline release in the gustatory cortex with a genetically encoded sensor during novel and familiar tastes.",
         "Activate the locus coeruleus at the end of a lick bout, when it naturally rises, and test taste preference later."
       ]
+    },
+    {
+      "id": "q-oct-vl-convergence",
+      "title": "How far did the vertical lobe converge on the hippocampus and the cerebellum?",
+      "text": "JZ Young likened the vertical lobe to the hippocampus, the cerebellum and the insect mushroom body (shomrat2015). Its input synapses show hippocampal-like LTP (hochner2003, sternmentch2022), and its cells resemble Drosophila Kenyon cells molecularly (styfhals2022). Yet octopus and cuttlefish place their plasticity at different layers while performing the same computation (shomrat2011), and its complex amacrine cells form part of a circuit the authors call unique (bidel2023). Which features does associative learning itself require, and which are accidents of each lineage?",
+      "entities": ["oct-vl", "oct-vl-am", "f-consolidation"],
+      "refs": ["shomrat2015", "hochner2003", "sternmentch2022", "styfhals2022", "shomrat2011", "bidel2023"],
+      "approaches": [
+        "Compare how sparsely single input axons drive simple amacrine cells with how mossy fibres drive cerebellar granule cells and perforant-path axons drive dentate granule cells.",
+        "Silence complex amacrine cells and test whether vertical lobe output loses stimulus specificity, as balancing inhibition predicts.",
+        "Locate the plastic synapses in the vertical lobes of other cephalopods, such as squid, to see how often the site changes."
+      ]
+    },
+    {
+      "id": "q-oct-arm-map",
+      "title": "How does a brain without a body map steer one arm?",
+      "text": "Stimulating the basal lobes evokes movements without any site moving a single arm (zullo2009), and the higher motor centres work without body-part maps (hochner2023), yet octopuses guide a single arm to a visual goal (gutnick2011) and learn from one arm’s motion and touch (gutnick2020). The arms carry their own motor programs (sumbre2001), and nerve cords link arms outside the brain (kuuspalu2022). Where is the choice of arm made, and how does the command reach the right arm?",
+      "entities": ["oct-basal", "oct-arm-ns", "oct-brain"],
+      "refs": ["zullo2009", "hochner2023", "gutnick2011", "gutnick2020", "sumbre2001", "kuuspalu2022"],
+      "approaches": [
+        "Record basal lobe neurons while an octopus reaches with one arm in a single-arm maze, and test whether activity predicts which arm is used.",
+        "Cut the nerve cords that link arms near the arm bases and test whether single-arm choices or multi-arm coordination change.",
+        "Stimulate the cerebrobrachial tract of one arm while recording from the others to compare central and peripheral routes."
+      ]
+    },
+    {
+      "id": "q-oct-sleep",
+      "title": "What does active sleep do for octopus memory?",
+      "text": "Active sleep bouts recur through quiet sleep in a cycle (medeiros2021). During them the superior frontal and vertical lobes, linked to learning and memory, show wake-like activity, and in quiet sleep they generate oscillations resembling sleep spindles (pophale2023). The vertical lobe acquires long-term memory through LTP (shomrat2008). Does active sleep replay or consolidate what the vertical lobe learned that day?",
+      "entities": ["oct-vl", "oct-sfl", "f-sleep"],
+      "refs": ["medeiros2021", "pophale2023", "shomrat2008"],
+      "approaches": [
+        "Prevent active sleep after a learning session and test recall the next day.",
+        "Record the vertical lobe during learning and look for the same activity patterns in the following active sleep.",
+        "Tetanize the vertical lobe pathway and test whether active sleep bouts change in number or length."
+      ]
+    },
+    {
+      "id": "q-oct-optic-gland",
+      "title": "Which optic gland signal ends an octopus mother’s life?",
+      "text": "Removing the optic glands abolishes maternal brooding and reverses the decline toward death (wangzy2018, wang2022). After reproduction the glands raise synthesis of pregnane steroids, 7-dehydrocholesterol and bile acid intermediates (wang2022), across reproductive stages they up- and downregulate catecholamine, insulin and feeding-peptide pathways (wangzy2018), and optic gland chemistry extends into neighbouring lobes of the peduncle complex (wangzy2024). Which of these signals drives fasting, self-injury and death, and what tells the gland that mating has happened?",
+      "entities": ["oct-optic-gland", "f-reproduction", "oct-olf-lobe"],
+      "refs": ["wangzy2018", "wang2022", "wangzy2024"],
+      "approaches": [
+        "Block each steroid pathway in brooding females and score fasting, self-injury and survival.",
+        "Give 7-dehydrocholesterol or bile acid intermediates to females without optic glands and test whether the decline returns.",
+        "Trace which brain lobes signal to the optic gland around mating."
+      ]
     }
   ],
   "flatmap": {
@@ -3551,7 +3735,7 @@
     "note": "Fast glutamate and GABA signaling is in the Microcircuit view. An empty cell means no direct evidence among the curated papers, not evidence of absence."
   },
   "atlas3d": {
-    "species": ["human", "macaque", "mouse"],
+    "species": ["human", "macaque", "mouse", "octopus"],
     "sides": {
       "R": [
         "cb-cortex",
@@ -3677,7 +3861,12 @@
         "ob-granule",
         "piriform",
         "coa",
-        "vno"
+        "vno",
+        "oct-eye",
+        "oct-ol",
+        "oct-peduncle",
+        "oct-olf-lobe",
+        "oct-optic-gland"
       ],
       "C": ["gut", "ser-neurons", "drn"]
     },
@@ -3836,7 +4025,8 @@
         "mitral": "ob",
         "ob-granule": "ob",
         "or-genes": "osn"
-      }
+      },
+      "octopus": {"oct-vl-am": "oct-vl", "oct-vl-ln": "oct-vl"}
     },
     "groups": {"cb-cortex": "cerebellum", "dcn": "nuclei"},
     "circuits": [
@@ -3970,7 +4160,15 @@
       {"id": "olf-path", "region": "olfactory", "name": "From the nose to olfactory cortex",
        "desc": "Sensory neurons expressing one receptor converge on one or a few glomeruli of the olfactory bulb (rat, mouse); each glomerulus projects diffusely across piriform cortex and in stereotyped patches to the cortical amygdala (mouse). Sensory neurons are placed approximately in front of the bulb.", "links": ["osn>ob", "ob>piriform", "ob>coa"], "view": "olfactory"},
       {"id": "olf-beyond", "region": "olfactory", "name": "Beyond olfactory cortex",
-       "desc": "Olfactory signals reach the lateroposterior orbitofrontal cortex through the anterior piriform cortex and the hypothalamus (monkey), and the lateral entorhinal cortex receives the predominant olfactory input to the hippocampal region (rat).", "links": ["piriform>ofc", "olfactory>entorhinal"], "view": "olfactory"}
+       "desc": "Olfactory signals reach the lateroposterior orbitofrontal cortex through the anterior piriform cortex and the hypothalamus (monkey), and the lateral entorhinal cortex receives the predominant olfactory input to the hippocampal region (rat).", "links": ["piriform>ofc", "olfactory>entorhinal"], "view": "olfactory"},
+      {"id": "oct-memory", "region": "octopus", "name": "Vision to the vertical lobe",
+       "desc": "Retinal photoreceptors project to the optic lobe, whose fibres reach the superior frontal lobe (HRP tracing); the median superior frontal lobe sends the glutamatergic input of the vertical lobe, the learning and memory centre (octopus).", "links": ["oct-eye>oct-ol", "oct-ol>oct-sfl", "oct-sfl>oct-vl"], "view": "octopus"},
+      {"id": "oct-fan", "region": "octopus", "name": "Inside the vertical lobe",
+       "desc": "Input axons from the median superior frontal lobe fan out onto millions of amacrine interneurons, which converge onto the large output neurons (fan-out fan-in); all three are shown in the vertical lobe (octopus).", "links": ["oct-sfl>oct-vl-am", "oct-vl-am>oct-vl-ln", "oct-subvertical>oct-vl"], "view": "oct-vl"},
+      {"id": "oct-visual", "region": "octopus", "name": "Optic lobe connections",
+       "desc": "The optic lobe receives the retina and input from the basal, subvertical and brachial lobes, and sends fibres to the superior frontal and lateral basal lobes (HRP tracing, octopus).", "links": ["oct-eye>oct-ol", "oct-basal>oct-ol", "oct-subvertical>oct-ol", "oct-brachial>oct-ol", "oct-ol>oct-sfl", "oct-ol>oct-basal"], "view": "octopus"},
+      {"id": "oct-arms", "region": "octopus", "name": "Brain and arms",
+       "desc": "The basal lobes command movements without a body map, motor axons run along the cerebrobrachial tracts, the brain learns from one arm’s motion and touch, vision guides an arm, and each sucker’s ganglion sends fibres toward the arm’s nerve cord (octopus).", "links": ["oct-basal>oct-arm-ns", "oct-brain>oct-arm-ns", "oct-arm-ns>oct-brain", "oct-eye>oct-arm-ns", "oct-sucker>oct-arm-ns"], "view": "oct-arms"}
     ],
     "composite": {
       "motor-cortex": ["m1", "premotor"],
@@ -3982,7 +4180,8 @@
       "amygdala": ["la", "bla", "cea", "itc", "mea"],
       "visual-cortex": ["v1", "mouse-hva", "v4", "mt", "it", "ffa"],
       "insula": ["ains", "pins", "gc"],
-      "olfactory": ["piriform", "ob", "coa"]
+      "olfactory": ["piriform", "ob", "coa"],
+      "oct-brain": ["oct-vl", "oct-sfl", "oct-subvertical", "oct-basal", "oct-brachial"]
     }
   }
 }

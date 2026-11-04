@@ -557,6 +557,25 @@
   "volume": "413",
   "year": 2001
  },
+ "11546877": {
+  "authors": [
+   "Sumbre G",
+   "Gutfreund Y",
+   "Fiorito G",
+   "Flash T",
+   "Hochner B"
+  ],
+  "doi": "10.1126/science.1060976",
+  "issue": "5536",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "1845-8",
+  "pmc": "",
+  "pmid": "11546877",
+  "title": "Control of octopus arm extension by a peripheral motor program",
+  "volume": "293",
+  "year": 2001
+ },
  "11823606": {
   "authors": [
    "Stowers L",
@@ -837,6 +856,25 @@
   "pmid": "12907793",
   "title": "Requirement of hippocampal neurogenesis for the behavioral effects of antidepressants",
   "volume": "301",
+  "year": 2003
+ },
+ "12917390": {
+  "authors": [
+   "Hochner B",
+   "Brown ER",
+   "Langella M",
+   "Shomrat T",
+   "Fiorito G"
+  ],
+  "doi": "10.1152/jn.00645.2003",
+  "issue": "5",
+  "journal": "J Neurophysiol",
+  "journalFull": "Journal of neurophysiology",
+  "pages": "3547-54",
+  "pmc": "",
+  "pmid": "12917390",
+  "title": "A learning and memory area in the octopus brain manifests a vertebrate-like long-term potentiation",
+  "volume": "90",
   "year": 2003
  },
  "12968006": {
@@ -1803,6 +1841,24 @@
   "volume": "496",
   "year": 2006
  },
+ "16631583": {
+  "authors": [
+   "Sumbre G",
+   "Fiorito G",
+   "Flash T",
+   "Hochner B"
+  ],
+  "doi": "10.1016/j.cub.2006.02.069",
+  "issue": "8",
+  "journal": "Curr Biol",
+  "journalFull": "Current biology : CB",
+  "pages": "767-72",
+  "pmc": "",
+  "pmid": "16631583",
+  "title": "Octopuses use a human-like strategy to control precise point-to-point arm movements",
+  "volume": "16",
+  "year": 2006
+ },
  "16633341": {
   "authors": [
    "Padoa-Schioppa C",
@@ -2504,6 +2560,22 @@
   "volume": "120",
   "year": 2007
  },
+ "17787951": {
+  "authors": [
+   "Fiorito G",
+   "Scotto P"
+  ],
+  "doi": "10.1126/science.256.5056.545",
+  "issue": "5056",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "545-7",
+  "pmc": "",
+  "pmid": "17787951",
+  "title": "Observational Learning in Octopus vulgaris",
+  "volume": "256",
+  "year": 1992
+ },
  "17898336": {
   "authors": [
    "Etkin A",
@@ -2695,6 +2767,24 @@
   "pmid": "18319727",
   "title": "Control of mental activities by internal models in the cerebellum",
   "volume": "9",
+  "year": 2008
+ },
+ "18328706": {
+  "authors": [
+   "Shomrat T",
+   "Zarrella I",
+   "Fiorito G",
+   "Hochner B"
+  ],
+  "doi": "10.1016/j.cub.2008.01.056",
+  "issue": "5",
+  "journal": "Curr Biol",
+  "journalFull": "Current biology : CB",
+  "pages": "337-42",
+  "pmc": "",
+  "pmid": "18328706",
+  "title": "The octopus vertical lobe modulates short-term learning rate and uses LTP to acquire long-term memory",
+  "volume": "18",
   "year": 2008
  },
  "18341995": {
@@ -3428,6 +3518,25 @@
   "volume": "4",
   "year": 2009
  },
+ "19765993": {
+  "authors": [
+   "Zullo L",
+   "Sumbre G",
+   "Agnisola C",
+   "Flash T",
+   "Hochner B"
+  ],
+  "doi": "10.1016/j.cub.2009.07.067",
+  "issue": "19",
+  "journal": "Curr Biol",
+  "journalFull": "Current biology : CB",
+  "pages": "1632-6",
+  "pmc": "",
+  "pmid": "19765993",
+  "title": "Nonsomatotopic organization of the higher motor centers in octopus",
+  "volume": "19",
+  "year": 2009
+ },
  "19816984": {
   "authors": [
    "Ego-Stengel V",
@@ -3689,6 +3798,24 @@
   "pmid": "20404184",
   "title": "The basal ganglia communicate with the cerebellum",
   "volume": "107",
+  "year": 2010
+ },
+ "20433903": {
+  "authors": [
+   "Shomrat T",
+   "Feinstein N",
+   "Klein M",
+   "Hochner B"
+  ],
+  "doi": "10.1016/j.neuroscience.2010.04.050",
+  "issue": "1",
+  "journal": "Neuroscience",
+  "journalFull": "Neuroscience",
+  "pages": "52-64",
+  "pmc": "",
+  "pmid": "20433903",
+  "title": "Serotonin is a facilitatory neuromodulator of synaptic transmission and \"reinforces\" long-term potentiation induction in the vertical lobe of Octopus vulgaris",
+  "volume": "169",
   "year": 2010
  },
  "20436481": {
@@ -4164,6 +4291,24 @@
   "volume": "471",
   "year": 2011
  },
+ "21396818": {
+  "authors": [
+   "Gutnick T",
+   "Byrne RA",
+   "Hochner B",
+   "Kuba M"
+  ],
+  "doi": "10.1016/j.cub.2011.01.052",
+  "issue": "6",
+  "journal": "Curr Biol",
+  "journalFull": "Current biology : CB",
+  "pages": "460-2",
+  "pmc": "",
+  "pmid": "21396818",
+  "title": "Octopus vulgaris uses visual information to determine the location of its arm",
+  "volume": "21",
+  "year": 2011
+ },
  "21451525": {
   "authors": [
    "Sosulski DL",
@@ -4558,6 +4703,26 @@
   "volume": "334",
   "year": 2011
  },
+ "22018541": {
+  "authors": [
+   "Shomrat T",
+   "Graindorge N",
+   "Bellanger C",
+   "Fiorito G",
+   "Loewenstein Y",
+   "Hochner B"
+  ],
+  "doi": "10.1016/j.cub.2011.09.011",
+  "issue": "21",
+  "journal": "Curr Biol",
+  "journalFull": "Current biology : CB",
+  "pages": "1773-82",
+  "pmc": "",
+  "pmid": "22018541",
+  "title": "Alternative sites of synaptic plasticity in two homologous \"fan-out fan-in\" learning and memory networks",
+  "volume": "21",
+  "year": 2011
+ },
  "22021859": {
   "authors": [
    "Rochefort C",
@@ -4841,6 +5006,21 @@
   "pmid": "23060193",
   "title": "A neural circuit for spatial summation in visual cortex",
   "volume": "490",
+  "year": 2012
+ },
+ "23098601": {
+  "authors": [
+   "Hochner B"
+  ],
+  "doi": "10.1016/j.cub.2012.09.001",
+  "issue": "20",
+  "journal": "Curr Biol",
+  "journalFull": "Current biology : CB",
+  "pages": "R887-92",
+  "pmc": "",
+  "pmid": "23098601",
+  "title": "An embodied view of octopus neurobiology",
+  "volume": "22",
   "year": 2012
  },
  "23125108": {
@@ -5451,6 +5631,23 @@
   "volume": "503",
   "year": 2013
  },
+ "24239646": {
+  "authors": [
+   "Alupay JS",
+   "Hadjisolomou SP",
+   "Crook RJ"
+  ],
+  "doi": "10.1016/j.neulet.2013.11.002",
+  "issue": "",
+  "journal": "Neurosci Lett",
+  "journalFull": "Neuroscience letters",
+  "pages": "137-42",
+  "pmc": "",
+  "pmid": "24239646",
+  "title": "Arm injury produces long-term behavioral and neural hypersensitivity in octopus",
+  "volume": "558",
+  "year": 2014
+ },
  "24241397": {
   "authors": [
    "Likhtik E",
@@ -5705,6 +5902,24 @@
   "pmid": "24805237",
   "title": "Emergence of reproducible spatiotemporal activity during motor learning",
   "volume": "510",
+  "year": 2014
+ },
+ "24835454": {
+  "authors": [
+   "Nesher N",
+   "Levy G",
+   "Grasso FW",
+   "Hochner B"
+  ],
+  "doi": "10.1016/j.cub.2014.04.024",
+  "issue": "11",
+  "journal": "Curr Biol",
+  "journalFull": "Current biology : CB",
+  "pages": "1271-5",
+  "pmc": "",
+  "pmid": "24835454",
+  "title": "Self-recognition mechanism between skin and suckers prevents octopus arms from interfering with each other",
+  "volume": "24",
   "year": 2014
  },
  "24843004": {
@@ -6120,6 +6335,23 @@
   "volume": "519",
   "year": 2015
  },
+ "25891406": {
+  "authors": [
+   "Levy G",
+   "Flash T",
+   "Hochner B"
+  ],
+  "doi": "10.1016/j.cub.2015.02.064",
+  "issue": "9",
+  "journal": "Curr Biol",
+  "journalFull": "Current biology : CB",
+  "pages": "1195-200",
+  "pmc": "",
+  "pmid": "25891406",
+  "title": "Arm coordination in octopus crawling involves unique motor control strategies",
+  "volume": "25",
+  "year": 2015
+ },
  "25892304": {
   "authors": [
    "Kawai R",
@@ -6248,6 +6480,25 @@
   "volume": "18",
   "year": 2015
  },
+ "26113381": {
+  "authors": [
+   "Shomrat T",
+   "Turchetti-Maia AL",
+   "Stern-Mentch N",
+   "Basil JA",
+   "Hochner B"
+  ],
+  "doi": "10.1007/s00359-015-1023-6",
+  "issue": "9",
+  "journal": "J Comp Physiol A Neuroethol Sens Neural Behav Physiol",
+  "journalFull": "Journal of comparative physiology. A, Neuroethology, sensory, neural, and behavioral physiology",
+  "pages": "947-56",
+  "pmc": "",
+  "pmid": "26113381",
+  "title": "The vertical lobe of cephalopods: an attractive brain structure for understanding the evolution of advanced learning and memory systems",
+  "volume": "201",
+  "year": 2015
+ },
  "26131933": {
   "authors": [
    "Schwarz LA",
@@ -6350,6 +6601,29 @@
   "pmid": "26237366",
   "title": "Learning to expect the unexpected: rapid updating in primate cerebellum during voluntary self-motion",
   "volume": "18",
+  "year": 2015
+ },
+ "26268193": {
+  "authors": [
+   "Albertin CB",
+   "Simakov O",
+   "Mitros T",
+   "Wang ZY",
+   "Pungor JR",
+   "Edsinger-Gonzales E",
+   "Brenner S",
+   "Ragsdale CW",
+   "Rokhsar DS"
+  ],
+  "doi": "10.1038/nature14668",
+  "issue": "7564",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "220-4",
+  "pmc": "PMC4795812",
+  "pmid": "26268193",
+  "title": "The octopus genome and the evolution of cephalopod neural and morphological novelties",
+  "volume": "524",
   "year": 2015
  },
  "26331029": {
@@ -7906,6 +8180,24 @@
   "volume": "12",
   "year": 2018
  },
+ "30079030": {
+  "authors": [
+   "Shigeno S",
+   "Andrews PLR",
+   "Ponte G",
+   "Fiorito G"
+  ],
+  "doi": "10.3389/fphys.2018.00952",
+  "issue": "",
+  "journal": "Front Physiol",
+  "journalFull": "Frontiers in physiology",
+  "pages": "952",
+  "pmc": "PMC6062618",
+  "pmid": "30079030",
+  "title": "Cephalopod Brains: An Overview of Current Knowledge to Facilitate Comparison With Vertebrates",
+  "volume": "9",
+  "year": 2018
+ },
  "30087345": {
   "authors": [
    "Xiao L",
@@ -7922,6 +8214,22 @@
   "pmid": "30087345",
   "title": "Regulation of striatal cells and goal-directed behavior by cerebellar outputs",
   "volume": "9",
+  "year": 2018
+ },
+ "30104305": {
+  "authors": [
+   "Wang ZY",
+   "Ragsdale CW"
+  ],
+  "doi": "10.1242/jeb.185751",
+  "issue": "Pt 19",
+  "journal": "J Exp Biol",
+  "journalFull": "The Journal of experimental biology",
+  "pages": "",
+  "pmc": "PMC6198452",
+  "pmid": "30104305",
+  "title": "Multiple optic gland signaling pathways implicated in octopus maternal behaviors and death",
+  "volume": "221",
   "year": 2018
  },
  "30106371": {
@@ -8028,6 +8336,27 @@
   "volume": "91",
   "year": 2018
  },
+ "30181688": {
+  "authors": [
+   "Jung SH",
+   "Song HY",
+   "Hyun YS",
+   "Kim YC",
+   "Whang I",
+   "Choi TY",
+   "Jo S"
+  ],
+  "doi": "10.5607/en.2018.27.4.257",
+  "issue": "4",
+  "journal": "Exp Neurobiol",
+  "journalFull": "Experimental neurobiology",
+  "pages": "257-266",
+  "pmc": "PMC6120969",
+  "pmid": "30181688",
+  "title": "A Brain Atlas of the Long Arm Octopus, Octopus minor",
+  "volume": "27",
+  "year": 2018
+ },
  "30224805": {
   "authors": [
    "Heffley W",
@@ -8070,6 +8399,22 @@
   "pmid": "30226467",
   "title": "Normal cognitive and social development require posterior cerebellar activity",
   "volume": "7",
+  "year": 2018
+ },
+ "30245101": {
+  "authors": [
+   "Edsinger E",
+   "Dölen G"
+  ],
+  "doi": "10.1016/j.cub.2018.07.061",
+  "issue": "19",
+  "journal": "Curr Biol",
+  "journalFull": "Current biology : CB",
+  "pages": "3136-3142.e4",
+  "pmc": "PMC13460050",
+  "pmid": "30245101",
+  "title": "A Conserved Role for Serotonergic Neurotransmission in Mediating Social Behavior in Octopus",
+  "volume": "28",
   "year": 2018
  },
  "30281395": {
@@ -8340,6 +8685,24 @@
   "pmid": "30728503",
   "title": "Discrete attractor dynamics underlies persistent activity in the frontal cortex",
   "volume": "566",
+  "year": 2019
+ },
+ "30919046": {
+  "authors": [
+   "Zullo L",
+   "Eichenstein H",
+   "Maiole F",
+   "Hochner B"
+  ],
+  "doi": "10.1007/s00359-019-01332-6",
+  "issue": "2",
+  "journal": "J Comp Physiol A Neuroethol Sens Neural Behav Physiol",
+  "journalFull": "Journal of comparative physiology. A, Neuroethology, sensory, neural, and behavioral physiology",
+  "pages": "271-279",
+  "pmc": "PMC6478645",
+  "pmid": "30919046",
+  "title": "Motor control pathways in the nervous system of Octopus vulgaris arm",
+  "volume": "205",
   "year": 2019
  },
  "30923348": {
@@ -9140,6 +9503,24 @@
   "volume": "240",
   "year": 1988
  },
+ "32916119": {
+  "authors": [
+   "Gutnick T",
+   "Zullo L",
+   "Hochner B",
+   "Kuba MJ"
+  ],
+  "doi": "10.1016/j.cub.2020.08.037",
+  "issue": "21",
+  "journal": "Curr Biol",
+  "journalFull": "Current biology : CB",
+  "pages": "4322-4327.e3",
+  "pmc": "",
+  "pmid": "32916119",
+  "title": "Use of Peripheral Sensory Information for Central Nervous Control of Arm Movement by Octopus vulgaris",
+  "volume": "30",
+  "year": 2020
+ },
  "32937591": {
   "authors": [
    "Brann DH",
@@ -9216,6 +9597,24 @@
   "pmid": "33077026",
   "title": "Cannabinoids modulate associative cerebellar learning via alterations in behavioral state",
   "volume": "9",
+  "year": 2020
+ },
+ "33125889": {
+  "authors": [
+   "van Giesen L",
+   "Kilian PB",
+   "Allard CAH",
+   "Bellono NW"
+  ],
+  "doi": "10.1016/j.cell.2020.09.008",
+  "issue": "3",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "594-604.e14",
+  "pmc": "PMC7605239",
+  "pmid": "33125889",
+  "title": "Molecular Basis of Chemotactile Sensation in Octopus",
+  "volume": "183",
   "year": 2020
  },
  "33169031": {
@@ -9336,6 +9735,21 @@
   "volume": "11",
   "year": 2021
  },
+ "33733076": {
+  "authors": [
+   "Crook RJ"
+  ],
+  "doi": "10.1016/j.isci.2021.102229",
+  "issue": "3",
+  "journal": "iScience",
+  "journalFull": "iScience",
+  "pages": "102229",
+  "pmc": "PMC7941037",
+  "pmid": "33733076",
+  "title": "Behavioral and neurophysiological evidence suggests affective pain experience in octopus",
+  "volume": "24",
+  "year": 2021
+ },
  "3385495": {
   "authors": [
    "Newsome WT",
@@ -9386,6 +9800,31 @@
   "pmid": "33981047",
   "title": "High-performance brain-to-text communication via handwriting",
   "volume": "593",
+  "year": 2021
+ },
+ "33997665": {
+  "authors": [
+   "Medeiros SLS",
+   "Paiva MMM",
+   "Lopes PH",
+   "Blanco W",
+   "Lima FD",
+   "Oliveira JBC",
+   "Medeiros IG",
+   "Sequerra EB",
+   "de Souza S",
+   "Leite TS",
+   "Ribeiro S"
+  ],
+  "doi": "10.1016/j.isci.2021.102223",
+  "issue": "4",
+  "journal": "iScience",
+  "journalFull": "iScience",
+  "pages": "102223",
+  "pmc": "PMC8101055",
+  "pmid": "33997665",
+  "title": "Cyclic alternation of quiet and active sleep states in the octopus",
+  "volume": "24",
   "year": 2021
  },
  "34140698": {
@@ -9467,6 +9906,25 @@
   "pmid": "34421548",
   "title": "The Cerebellar Dopaminergic System",
   "volume": "15",
+  "year": 2021
+ },
+ "34425939": {
+  "authors": [
+   "Deryckere A",
+   "Styfhals R",
+   "Elagoz AM",
+   "Maes GE",
+   "Seuntjens E"
+  ],
+  "doi": "10.7554/eLife.69161",
+  "issue": "",
+  "journal": "Elife",
+  "journalFull": "eLife",
+  "pages": "",
+  "pmc": "PMC8384421",
+  "pmid": "34425939",
+  "title": "Identification of neural progenitor cells and their progeny reveals long distance migration in the developing octopus brain",
+  "volume": "10",
   "year": 2021
  },
  "34542410": {
@@ -9735,6 +10193,23 @@
   "volume": "600",
   "year": 2021
  },
+ "34798049": {
+  "authors": [
+   "Chung WS",
+   "Kurniawan ND",
+   "Marshall NJ"
+  ],
+  "doi": "10.1016/j.cub.2021.10.070",
+  "issue": "1",
+  "journal": "Curr Biol",
+  "journalFull": "Current biology : CB",
+  "pages": "97-110.e4",
+  "pmc": "",
+  "pmid": "34798049",
+  "title": "Comparative brain structure and visual processing in octopus from different habitats",
+  "volume": "32",
+  "year": 2022
+ },
  "34808268": {
   "authors": [
    "Bai J",
@@ -9753,6 +10228,25 @@
   "pmid": "34808268",
   "title": "Opioid receptors modulate parallel fiber-Purkinje cell synaptic transmission in mouse cerebellum",
   "volume": "770",
+  "year": 2022
+ },
+ "35107842": {
+  "authors": [
+   "Stern-Mentch N",
+   "Bostwick GW",
+   "Belenky M",
+   "Moroz L",
+   "Hochner B"
+  ],
+  "doi": "10.1002/jmor.21459",
+  "issue": "5",
+  "journal": "J Morphol",
+  "journalFull": "Journal of morphology",
+  "pages": "557-584",
+  "pmc": "PMC9303212",
+  "pmid": "35107842",
+  "title": "Neurotransmission and neuromodulation systems in the learning and memory network of Octopus vulgaris",
+  "volume": "283",
   "year": 2022
  },
  "35245431": {
@@ -9777,6 +10271,21 @@
   "pmid": "35245431",
   "title": "A midbrain-thalamus-cortex circuit reorganizes cortical dynamics to initiate movement",
   "volume": "185",
+  "year": 2022
+ },
+ "35256541": {
+  "authors": [
+   "Jacobs RE"
+  ],
+  "doi": "10.5607/en21047",
+  "issue": "1",
+  "journal": "Exp Neurobiol",
+  "journalFull": "Experimental neurobiology",
+  "pages": "17-28",
+  "pmc": "PMC8907252",
+  "pmid": "35256541",
+  "title": "Diffusion MRI Connections in the Octopus Brain",
+  "volume": "31",
   "year": 2022
  },
  "35316610": {
@@ -9895,6 +10404,24 @@
   "pmid": "35546898",
   "title": "Mechanisms Underlying Mu Opioid Receptor Effects on Parallel Fiber-Purkinje Cell Synaptic Transmission in Mouse Cerebellar Cortex",
   "volume": "14",
+  "year": 2022
+ },
+ "35561680": {
+  "authors": [
+   "Wang ZY",
+   "Pergande MR",
+   "Ragsdale CW",
+   "Cologna SM"
+  ],
+  "doi": "10.1016/j.cub.2022.04.043",
+  "issue": "11",
+  "journal": "Curr Biol",
+  "journalFull": "Current biology : CB",
+  "pages": "2572-2579.e4",
+  "pmc": "",
+  "pmid": "35561680",
+  "title": "Steroid hormones of the octopus self-destruct system",
+  "volume": "32",
   "year": 2022
  },
  "35710984": {
@@ -10115,6 +10642,27 @@
   "volume": "609",
   "year": 2022
  },
+ "36318923": {
+  "authors": [
+   "Songco-Casey JO",
+   "Coffing GC",
+   "Piscopo DM",
+   "Pungor JR",
+   "Kern AD",
+   "Miller AC",
+   "Niell CM"
+  ],
+  "doi": "10.1016/j.cub.2022.10.015",
+  "issue": "23",
+  "journal": "Curr Biol",
+  "journalFull": "Current biology : CB",
+  "pages": "5031-5044.e4",
+  "pmc": "PMC9815951",
+  "pmid": "36318923",
+  "title": "Cell types and molecular architecture of the Octopus bimaculoides visual system",
+  "volume": "32",
+  "year": 2022
+ },
  "36322758": {
   "authors": [
    "Ninomiya A",
@@ -10137,6 +10685,71 @@
   "volume": "119",
   "year": 2022
  },
+ "36446353": {
+  "authors": [
+   "Kuuspalu A",
+   "Cody S",
+   "Hale ME"
+  ],
+  "doi": "10.1016/j.cub.2022.11.007",
+  "issue": "24",
+  "journal": "Curr Biol",
+  "journalFull": "Current biology : CB",
+  "pages": "5415-5421.e3",
+  "pmc": "",
+  "pmid": "36446353",
+  "title": "Multiple nerve cords connect the arms of octopuses, providing alternative paths for inter-arm signaling",
+  "volume": "32",
+  "year": 2022
+ },
+ "36450803": {
+  "authors": [
+   "Styfhals R",
+   "Zolotarov G",
+   "Hulselmans G",
+   "Spanier KI",
+   "Poovathingal S",
+   "Elagoz AM",
+   "De Winter S",
+   "Deryckere A",
+   "Rajewsky N",
+   "Ponte G",
+   "Fiorito G",
+   "Aerts S",
+   "Seuntjens E"
+  ],
+  "doi": "10.1038/s41467-022-35198-1",
+  "issue": "1",
+  "journal": "Nat Commun",
+  "journalFull": "Nature communications",
+  "pages": "7392",
+  "pmc": "PMC9712504",
+  "pmid": "36450803",
+  "title": "Cell type diversity in a developing octopus brain",
+  "volume": "13",
+  "year": 2022
+ },
+ "36827988": {
+  "authors": [
+   "Gutnick T",
+   "Neef A",
+   "Cherninskyi A",
+   "Ziadi-Künzli F",
+   "Di Cosmo A",
+   "Lipp HP",
+   "Kuba MJ"
+  ],
+  "doi": "10.1016/j.cub.2023.02.006",
+  "issue": "6",
+  "journal": "Curr Biol",
+  "journalFull": "Current biology : CB",
+  "pages": "1171-1178.e4",
+  "pmc": "",
+  "pmid": "36827988",
+  "title": "Recording electrical activity from the brain of behaving octopus",
+  "volume": "33",
+  "year": 2023
+ },
  "36959176": {
   "authors": [
    "Li C",
@@ -10157,6 +10770,26 @@
   "pmid": "36959176",
   "title": "Purkinje cell dopaminergic inputs to astrocytes regulate cerebellar-dependent behavior",
   "volume": "14",
+  "year": 2023
+ },
+ "37045920": {
+  "authors": [
+   "Allard CAH",
+   "Kang G",
+   "Kim JJ",
+   "Valencia-Montoya WA",
+   "Hibbs RE",
+   "Bellono NW"
+  ],
+  "doi": "10.1038/s41586-023-05822-1",
+  "issue": "7956",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "373-377",
+  "pmc": "PMC10228259",
+  "pmid": "37045920",
+  "title": "Structural basis of sensory receptor evolution in octopus",
+  "volume": "616",
   "year": 2023
  },
  "37076628": {
@@ -10239,6 +10872,76 @@
   "volume": "12",
   "year": 2023
  },
+ "37343556": {
+  "authors": [
+   "Pungor JR",
+   "Allen VA",
+   "Songco-Casey JO",
+   "Niell CM"
+  ],
+  "doi": "10.1016/j.cub.2023.05.069",
+  "issue": "13",
+  "journal": "Curr Biol",
+  "journalFull": "Current biology : CB",
+  "pages": "2784-2793.e3",
+  "pmc": "PMC11056276",
+  "pmid": "37343556",
+  "title": "Functional organization of visual responses in the octopus optic lobe",
+  "volume": "33",
+  "year": 2023
+ },
+ "37380770": {
+  "authors": [
+   "Pophale A",
+   "Shimizu K",
+   "Mano T",
+   "Iglesias TL",
+   "Martin K",
+   "Hiroi M",
+   "Asada K",
+   "Andaluz PG",
+   "Van Dinh TT",
+   "Meshulam L",
+   "Reiter S"
+  ],
+  "doi": "10.1038/s41586-023-06203-4",
+  "issue": "7968",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "129-134",
+  "pmc": "PMC10322707",
+  "pmid": "37380770",
+  "title": "Wake-like skin patterning and neural activity during octopus sleep",
+  "volume": "619",
+  "year": 2023
+ },
+ "37410519": {
+  "authors": [
+   "Bidel F",
+   "Meirovitch Y",
+   "Schalek RL",
+   "Lu X",
+   "Pavarino EC",
+   "Yang F",
+   "Peleg A",
+   "Wu Y",
+   "Shomrat T",
+   "Berger DR",
+   "Shaked A",
+   "Lichtman JW",
+   "Hochner B"
+  ],
+  "doi": "10.7554/eLife.84257",
+  "issue": "",
+  "journal": "Elife",
+  "journalFull": "eLife",
+  "pages": "",
+  "pmc": "PMC10325715",
+  "pmid": "37410519",
+  "title": "Connectomics of the Octopus vulgaris vertical lobe provides insight into conserved and novel principles of a memory acquisition network",
+  "volume": "12",
+  "year": 2023
+ },
  "3741598": {
   "authors": [
    "Leiner HC",
@@ -10305,6 +11008,25 @@
   "title": "Human amnesia and the medial temporal region: enduring memory impairment following a bilateral lesion limited to field CA1 of the hippocampus",
   "volume": "6",
   "year": 1986
+ },
+ "37875094": {
+  "authors": [
+   "Hochner B",
+   "Zullo L",
+   "Shomrat T",
+   "Levy G",
+   "Nesher N"
+  ],
+  "doi": "10.1016/j.cub.2023.09.008",
+  "issue": "20",
+  "journal": "Curr Biol",
+  "journalFull": "Current biology : CB",
+  "pages": "R1119-R1125",
+  "pmc": "",
+  "pmid": "37875094",
+  "title": "Embodied mechanisms of motor control in the octopus",
+  "volume": "33",
+  "year": 2023
  },
  "38029793": {
   "authors": [
@@ -10530,6 +11252,22 @@
   "pmid": "38649278",
   "title": "Locus Ceruleus Dynamics Are Suppressed during Licking and Enhanced Postlicking Independent of Taste Novelty",
   "volume": "11",
+  "year": 2024
+ },
+ "38688255": {
+  "authors": [
+   "Wang ZY",
+   "Ragsdale CW"
+  ],
+  "doi": "10.1159/000539128",
+  "issue": "3",
+  "journal": "Brain Behav Evol",
+  "journalFull": "Brain, behavior and evolution",
+  "pages": "158-170",
+  "pmc": "",
+  "pmid": "38688255",
+  "title": "Signaling Ligand Heterogeneities in the Peduncle Complex of the Cephalopod Mollusc Octopus bimaculoides",
+  "volume": "99",
   "year": 2024
  },
  "38870929": {
@@ -10860,6 +11598,23 @@
   "volume": "28",
   "year": 2025
  },
+ "39814765": {
+  "authors": [
+   "Olson CS",
+   "Schulz NG",
+   "Ragsdale CW"
+  ],
+  "doi": "10.1038/s41467-024-55475-5",
+  "issue": "1",
+  "journal": "Nat Commun",
+  "journalFull": "Nature communications",
+  "pages": "443",
+  "pmc": "PMC11736069",
+  "pmid": "39814765",
+  "title": "Neuronal segmentation in cephalopod arms",
+  "volume": "16",
+  "year": 2025
+ },
  "3986565": {
   "authors": [
    "Bishop GA",
@@ -10934,6 +11689,23 @@
   "title": "Selective attention gates visual processing in the extrastriate cortex",
   "volume": "229",
   "year": 1985
+ },
+ "40293445": {
+  "authors": [
+   "Olson CS",
+   "Moorjani A",
+   "Ragsdale CW"
+  ],
+  "doi": "10.1002/cne.70055",
+  "issue": "5",
+  "journal": "J Comp Neurol",
+  "journalFull": "The Journal of comparative neurology",
+  "pages": "e70055",
+  "pmc": "PMC12036646",
+  "pmid": "40293445",
+  "title": "Molecular and Morphological Circuitry of the Octopus Sucker Ganglion",
+  "volume": "533",
+  "year": 2025
  },
  "40344058": {
   "authors": [
@@ -11356,6 +12128,21 @@
   "volume": "184",
   "year": 1973
  },
+ "4382778": {
+  "authors": [
+   "Messenger JB"
+  ],
+  "doi": "10.1098/rspb.1967.0025",
+  "issue": "1008",
+  "journal": "Proc R Soc Lond B Biol Sci",
+  "journalFull": "Proceedings of the Royal Society of London. Series B, Biological sciences",
+  "pages": "225-51",
+  "pmc": "",
+  "pmid": "4382778",
+  "title": "The peduncle lobe: a visuo-motor centre in octopus",
+  "volume": "167",
+  "year": 1967
+ },
  "4434190": {
   "authors": [
    "Weiskrantz L",
@@ -11612,6 +12399,21 @@
   "volume": "297",
   "year": 1982
  },
+ "7096632": {
+  "authors": [
+   "Saidel WM"
+  ],
+  "doi": "10.1002/cne.902060403",
+  "issue": "4",
+  "journal": "J Comp Neurol",
+  "journalFull": "The Journal of comparative neurology",
+  "pages": "346-58",
+  "pmc": "",
+  "pmid": "7096632",
+  "title": "Connections of the octopus optic lobe: an HRP study",
+  "volume": "206",
+  "year": 1982
+ },
  "7143039": {
   "authors": [
    "Georgopoulos AP",
@@ -11712,6 +12514,23 @@
   "volume": "378",
   "year": 1995
  },
+ "7520179": {
+  "authors": [
+   "Robertson JD",
+   "Bonaventura J",
+   "Kohm AP"
+  ],
+  "doi": "10.1098/rspb.1994.0080",
+  "issue": "1347",
+  "journal": "Proc Biol Sci",
+  "journalFull": "Proceedings. Biological sciences",
+  "pages": "269-73",
+  "pmc": "",
+  "pmid": "7520179",
+  "title": "Nitric oxide is required for tactile learning in Octopus vulgaris",
+  "volume": "256",
+  "year": 1994
+ },
  "7528109": {
   "authors": [
    "Ressler KJ",
@@ -11803,6 +12622,22 @@
   "pmid": "7675082",
   "title": "Functional MRI evidence for adult motor cortex plasticity during motor skill learning",
   "volume": "377",
+  "year": 1995
+ },
+ "7675317": {
+  "authors": [
+   "Fiorito G",
+   "Chichery R"
+  ],
+  "doi": "10.1016/0304-3940(95)11631-6",
+  "issue": "2",
+  "journal": "Neurosci Lett",
+  "journalFull": "Neuroscience letters",
+  "pages": "117-20",
+  "pmc": "",
+  "pmid": "7675317",
+  "title": "Lesions of the vertical lobe impair visual discrimination learning by observation in Octopus vulgaris",
+  "volume": "192",
   "year": 1995
  },
  "7736576": {
@@ -12821,6 +13656,25 @@
   "pmid": "9770557",
   "title": "Electrical stimulation of the subthalamic nucleus in advanced Parkinson's disease",
   "volume": "339",
+  "year": 1998
+ },
+ "9774156": {
+  "authors": [
+   "Fiorito G",
+   "Agnisola C",
+   "d'Addio M",
+   "Valanzano A",
+   "Calamandrei G"
+  ],
+  "doi": "10.1016/s0304-3940(98)00611-9",
+  "issue": "2",
+  "journal": "Neurosci Lett",
+  "journalFull": "Neuroscience letters",
+  "pages": "87-90",
+  "pmc": "",
+  "pmid": "9774156",
+  "title": "Scopolamine impairs memory recall in Octopus vulgaris",
+  "volume": "253",
   "year": 1998
  },
  "9787004": {

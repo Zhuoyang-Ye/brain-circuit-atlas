@@ -82,9 +82,26 @@
       insula: { pos: [-12.5, 1.8, 6], target: [-1.6, -0.3, 1.0] },
       olfactory: { pos: [-10, -3.5, 9.5], target: [-0.9, -0.8, 2.5] },
     },
+    // the schematic octopus: y is dorsal, z points toward the arm crown, the optic lobes and eyes sit at the sides
+    octopus: {
+      overview: { pos: [-11, 6.5, -10], target: [0, -1.2, 0.6] },
+      left: { pos: [-16, 1.0, 0.5], target: [0, -0.8, 0.5] },
+      back: { pos: [0, 3.0, -16], target: [0, -0.8, 0.3] },
+      top: { pos: [0, 16, 0.4], target: [0, 0, 0.3] },
+      below: { pos: [0.01, -15, 3], target: [0, -1.5, 1] },
+      octopus: { pos: [-4.2, 10.5, -7.8], target: [-0.7, 0.6, -0.1] },   // the central brain, left optic lobe and eye, from above and behind
+      'oct-vl': { pos: [-3.2, 5.6, -3.6], target: [0, 1.3, -0.1] },   // closer: the vertical lobe and the superior frontal lobe
+      'oct-arms': { pos: [-14, 5.0, 11], target: [0, -1.6, 1.6] },   // left front: the brain above the arm crown
+    },
   };
   // the 3D brains on offer: those listed in knowledge.json atlas3d.species (a species is switched off there)
-  const SPECIES = [['human', 'Human'], ['macaque', 'Macaque'], ['mouse', 'Mouse']].filter(([sp]) => A3.species.includes(sp));
+  const SPECIES = [['human', 'Human'], ['macaque', 'Macaque'], ['mouse', 'Mouse'], ['octopus', 'Octopus']].filter(([sp]) => A3.species.includes(sp));
+  // A region lists the species it is drawn in (`species`); the mammalian regions leave it out and use these three.
+  // The species and the region always match: choosing the octopus switches to an octopus region, and back.
+  const MAMMALS = ['human', 'macaque', 'mouse'];
+  const speciesOf = (R) => (R.species || MAMMALS).filter((sp) => SPECIES.some(([x]) => x === sp));
+  const speciesOK = (R, sp) => speciesOf(R).includes(sp);
+  const groupOf = (sp) => (MAMMALS.includes(sp) ? 'mammal' : sp);
 
   let root, el = {}, renderer, scene, camera, controls, raf = 0, ro, clock, pointer = null, pointerDirty = false;
   // Source credits shown on the canvas itself, as the Allen Institute citation policy asks (same page, linked to the data).
@@ -98,6 +115,8 @@
       ' (', ['https://doi.org/10.1016/j.neuroimage.2017.04.063', 'Seidlitz et al., 2018'], '; ', ['https://doi.org/10.1016/j.neuroimage.2021.117997', 'Jung et al., 2021'],
       ') with its CHARM (', ['https://doi.org/10.1016/j.neuroimage.2021.117997', 'Jung et al., 2021'], ') and SARM (',
       ['https://doi.org/10.1016/j.neuroimage.2021.117996', 'Hartig et al., 2021'], ') atlases, via AFNI'],
+    octopus: ['a schematic drawn for this site, not a scan: lobe shapes and positions are approximate. Lobes as named in octopus brain atlases such as ',
+      ['https://pubmed.ncbi.nlm.nih.gov/30181688/', 'Jung et al., 2018'], ' and ', ['https://pubmed.ncbi.nlm.nih.gov/35256541/', 'Jacobs et al., 2022']],
   };
   let species = CA.store.get('atlas.species', 'human');
   if (!SPECIES.some(([sp]) => sp === species)) species = SPECIES[0][0];
@@ -111,6 +130,7 @@
   let positions = {}, hovered = null, tween = null, unsubs = [], disposed = false, buildToken = 0;
   // the legend at the side: entity -> categorical slot (kept while the circuit stays), mesh -> legend row, the hovered row
   let slotOf = new Map(), slotKey = '', ownerOf = new Map(), nameHot = null, layoutKey = '', layoutIdle = 0;
+  let switching = false;   // true while a species change switches the region: the scene is rebuilt right after
   const geomCache = {};
 
   CA.register('atlas', { title: '3D atlas', mount, unmount, route, onRegion, onTheme });
@@ -119,6 +139,11 @@
   function mount(node) {
     root = node;
     disposed = false;
+    if (!speciesOK(CA.region, species)) {   // a stored region of another animal (the octopus has its own regions)
+      const mammal = CA.store.get('atlas.mammal', 'human');
+      species = speciesOK(CA.region, mammal) ? mammal : speciesOf(CA.region)[0];
+    }
+    CA.store.set('atlas.region.' + groupOf(species), CA.region.id);
     pickCircuit();
     const wrap = h('div', { class: 'atlas' });
     el.canvas = h('div', { class: 'atlas-canvas' });
@@ -216,9 +241,19 @@
   function onRegion(R) {
     pickCircuit();
     fillCircuits();
-    el.speciesNote.textContent = (R.speciesNote || {})[species] || '';
     if (el.intro) { const fresh = buildIntro(); el.intro.replaceWith(fresh); el.intro = fresh; }
-    if (!scene) return;
+    if (!speciesOK(R, species)) {   // a region of another animal, picked from the menu: switch the species too
+      const mammal = CA.store.get('atlas.mammal', 'human');
+      species = speciesOK(R, mammal) ? mammal : speciesOf(R)[0];
+      CA.store.set('atlas.species', species);
+      markSpecies();
+      CA.store.set('atlas.region.' + groupOf(species), R.id);
+      loadSpecies(species);
+      return;
+    }
+    CA.store.set('atlas.region.' + groupOf(species), R.id);
+    el.speciesNote.textContent = (R.speciesNote || {})[species] || '';
+    if (!scene || switching) return;
     applyMaterials();
     applyHighlight();
     rebuildLinks();
@@ -226,13 +261,36 @@
     flyTo(c && c.view && VIEWS[species][c.view] ? c.view : R.view);
   }
 
+  /** Switch species. The octopus has its own regions and the mammals theirs, so a switch across them also switches the
+   *  region, to the one last used for that animal; the scene is then rebuilt for the new species. */
+  function chooseSpecies(sp) {
+    if (sp === species) return;
+    species = sp;
+    CA.store.set('atlas.species', sp);
+    if (MAMMALS.includes(sp)) CA.store.set('atlas.mammal', sp);
+    markSpecies();
+    if (!speciesOK(CA.region, sp)) {
+      const last = CA.store.get('atlas.region.' + groupOf(sp), null);
+      const R = D.regions.find((r) => r.id === last && speciesOK(r, sp)) || D.regions.find((r) => speciesOK(r, sp));
+      if (R) { switching = true; try { CA.setRegion(R.id); } finally { switching = false; } }
+    }
+    loadSpecies(sp);
+  }
+  function markSpecies() {
+    if (el.seg) el.seg.querySelectorAll('button').forEach((b) => b.classList.toggle('on', b.dataset.sp === species));
+  }
+  /** Camera presets: the regions drawn in this species, plus the fixed directions. */
+  function fillViews() {
+    if (!el.views) return;
+    CA.clear(el.views);
+    [['overview', 'Overview'], ...D.regions.filter((r) => speciesOK(r, species)).map((r) => [r.view, r.label]), ['left', 'Left'], ['back', 'Back'], ['top', 'Top'], ['below', 'Below']]
+      .forEach(([k, label]) => el.views.appendChild(h('span', { class: 'chip', onclick: () => flyTo(k) }, label)));
+  }
+
   function buildControls() {
     const box = h('div', { class: 'atlas-controls' });
-    const seg = h('div', { class: 'seg' },
-      SPECIES.map(([sp, label]) => h('button', {
-        class: sp === species ? 'on' : '', 'data-sp': sp,
-        onclick: () => { if (sp !== species) { species = sp; CA.store.set('atlas.species', sp); seg.querySelectorAll('button').forEach((b) => b.classList.toggle('on', b.dataset.sp === sp)); loadSpecies(sp); } },
-      }, label)));
+    const seg = el.seg = h('div', { class: 'seg species-seg' },
+      SPECIES.map(([sp, label]) => h('button', { class: sp === species ? 'on' : '', 'data-sp': sp, onclick: () => chooseSpecies(sp) }, label)));
     el.speciesNote = h('div', { class: 'desc' });
     el.circs = h('div', {});
     el.circDesc = h('div', { class: 'desc' });
@@ -243,8 +301,8 @@
     fillCircuits();
     const check = (key, label, fn, title) => h('label', { class: 'check small', title },
       h('input', { type: 'checkbox', checked: opts[key], onchange: (ev) => { opts[key] = ev.target.checked; CA.store.set('atlas.opts', opts); fn(); } }), label);
-    const views = h('div', { class: 'chips' }, [['overview', 'Overview'], ...D.regions.map((r) => [r.view, r.label]), ['left', 'Left'], ['back', 'Back'], ['top', 'Top'], ['below', 'Below']]
-      .map(([k, label]) => h('span', { class: 'chip', onclick: () => flyTo(k) }, label)));
+    const views = el.views = h('div', { class: 'chips' });
+    fillViews();
     el.credit = h('div', { class: 'atlas-credit' });
     const xrayLabel = check('xray', 'X-ray cerebellum (see nuclei)', applyMaterials);
     el.xrayBox = xrayLabel.querySelector('input');
@@ -343,6 +401,7 @@
     el.msg.style.display = 'flex';
     el.msg.textContent = 'Loading 3D anatomy…';
     el.speciesNote.textContent = (CA.region.speciesNote || {})[sp] || '';
+    fillViews();
     CA.loadScript(`js/data/meshes_${sp}.js`).then(() => {
       if (disposed || token !== buildToken) return;
       const bundle = window.CA_MESHES && window.CA_MESHES[sp];
@@ -430,7 +489,9 @@
       if (!recs.length) return null;
       const mean = (arrs) => arrs.length ? new T.Vector3(...[0, 1, 2].map((k) => arrs.reduce((s, a) => s + a[k], 0) / arrs.length)) : null;
       const c = mean(recs.map((r) => r.c));
-      return { c, l: mean(recs.filter((r) => r.side !== 'R').map((r) => r.cl)) || c, r: mean(recs.filter((r) => r.side !== 'L').map((r) => r.cr)) || c };
+      // a structure drawn only by schematic (hand-placed) meshes is approximate: labelled in italics with ≈
+      return { c, l: mean(recs.filter((r) => r.side !== 'R').map((r) => r.cl)) || c, r: mean(recs.filter((r) => r.side !== 'L').map((r) => r.cr)) || c,
+        approx: recs.every((r) => r.approx) };
     };
     const byEnt = {};
     bundle.meshes.forEach((r) => { if (r.entity) (byEnt[r.entity] = byEnt[r.entity] || []).push(r); });
@@ -448,7 +509,7 @@
       }
     });
     Object.entries(bundle.anchors || {}).forEach(([id, a]) => {
-      if (!positions[id]) positions[id] = { c: new T.Vector3(...a[0]), l: new T.Vector3(...a[1]), r: new T.Vector3(...a[2]), approx: !BODY_ANCHORS.includes(id) };
+      if (!positions[id]) positions[id] = { c: new T.Vector3(...a[0]), l: new T.Vector3(...a[1]), r: new T.Vector3(...a[2]), approx: !BODY_ANCHORS.includes(id), marker: true };
     });
   }
 
@@ -503,7 +564,7 @@
     if (A.body) { const m = new T.Mesh(new T.CapsuleGeometry(human ? 0.22 : 0.16, human ? 0.7 : 0.5, 6, 12), mat(BODY_COLORS.body, 0.75)); m.position.copy(at('body', 2)); add(m, 'body', true); }
     // structures without a segmented mesh in this atlas
     Object.entries(positions).forEach(([id, p]) => {
-      if (!p.approx) return;
+      if (!p.approx || !p.marker) return;   // a marker only where no mesh stands for the structure
       const side = sideOf(id);
       const color = MOD_SRC.has(id) ? GROUP.modulator.color : CA.ent[id] && CA.ent[id].kind === 'area' ? GROUP.cortex.color : 0x3fb9a5;
       const m = new T.Mesh(new T.OctahedronGeometry(human ? 0.16 : 0.12), mat(color, 0.95));
@@ -921,13 +982,13 @@
       return o ? baseOf(o) : null;
     };
     const row = (r) => {
-      const approx = r.rid && positions[r.rid] && positions[r.rid].approx, hex = swatchOf(r);
+      const pos = r.rid && positions[r.rid], approx = pos && pos.approx, marker = pos && pos.marker, hex = swatchOf(r);
       return h('div', {
         class: 'nm' + (r.id === CA.selected ? ' sel' : '') + (r.id === nameHot ? ' hot' : ''), 'data-id': r.id, 'data-rid': r.rid || '',
         title: 'Click for its evidence and connections',
         onmouseenter: () => setNameHot(r.id), onmouseleave: () => setNameHot(null), onclick: () => CA.select(r.id),
       },
-      h('span', { class: 'nsw' + (approx ? ' dia' : '') + (hex == null ? ' none' : ''), style: hex == null ? null : { background: hexCss(hex) },
+      h('span', { class: 'nsw' + (marker ? ' dia' : '') + (hex == null ? ' none' : ''), style: hex == null ? null : { background: hexCss(hex) },
         title: hex == null ? 'Drawn as its parts, which are listed separately' : null }),
       h('span', { class: approx ? 'approx' : '' }, labelText(r.id)));
     };
@@ -1014,7 +1075,10 @@
     const v = VIEWS[species][name];
     camera.position.fromArray(v.pos); controls.target.fromArray(v.target); controls.update();
   }
-  function flyTo(v) { if (camera) startTween(typeof v === 'string' ? VIEWS[species][v] : v); }   // a preset name or { pos, target }
+  function flyTo(v) {   // a preset name or { pos, target }; a preset this species lacks is ignored
+    const to = typeof v === 'string' ? VIEWS[species][v] : v;
+    if (camera && to) startTween(to);
+  }
   function startTween(to) {
     tween = { t0: performance.now(), dur: 900, fromPos: camera.position.clone(), fromTarget: controls.target.clone(),
       toPos: new window.THREE.Vector3(...to.pos), toTarget: new window.THREE.Vector3(...to.target) };

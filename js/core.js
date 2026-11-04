@@ -220,8 +220,13 @@
   };
   /** The region dropdown: in the 3D atlas's left panel and at the top left of every other view. */
   CA.regionPicker = () => {
+    // regions grouped by animal when there is more than one (`group` on a region; the mammalian regions leave it out)
+    const groups = [...new Set(D.regions.map((r) => r.group || 'Mammals'))];
+    const opt = (r) => CA.h('option', { value: r.id }, r.label);
     const sel = CA.h('select', { class: 'region-pick', title: 'Brain region: switches the circuits, layouts, queries and papers shown', 'aria-label': 'Brain region',
-      onchange: () => { CA.setRegion(sel.value); sel.blur(); } }, D.regions.map((r) => CA.h('option', { value: r.id }, r.label)));
+      onchange: () => { CA.setRegion(sel.value); sel.blur(); } },
+    groups.length < 2 ? D.regions.map(opt)
+      : groups.map((g) => CA.h('optgroup', { label: g }, D.regions.filter((r) => (r.group || 'Mammals') === g).map(opt))));
     sel.value = CA.region.id;
     return sel;
   };

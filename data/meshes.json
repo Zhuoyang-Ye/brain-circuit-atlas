@@ -298,5 +298,33 @@
       {"key": "pir", "sarm": ["Pir"], "name": "Piriform cortex", "entity": "piriform", "group": "cortex", "faces": 1200, "tone": "#f0b37a"},
       {"key": "vco", "sarm": ["VCo"], "name": "Ventral cortical amygdaloid nucleus", "entity": "coa", "group": "cortex", "faces": 500, "tone": "#ff9e64"}
     ]
+  },
+  "octopus": {
+    "label": "Octopus (schematic)",
+    "credit": "Schematic octopus brain drawn for this site: lobe shapes, sizes and positions are approximate and for orientation only, not taken from a scan or an atlas volume.",
+    "schematic": true,
+    "items": [
+      {"key": "outline", "name": "Central brain and optic lobes (outline)", "group": "shell", "center": [0, 0.35, -0.1], "radii": [3.55, 2.15, 2.05]},
+      {"key": "vl", "name": "Vertical lobe", "entity": "oct-vl", "group": "target", "tone": "#c9a2f0", "center": [0, 1.62, -0.45], "radii": [0.5, 0.36, 0.9]},
+      {"key": "sv", "name": "Subvertical lobe", "entity": "oct-subvertical", "group": "target", "tone": "#a98bd8", "center": [0, 1.14, -0.6], "radii": [0.62, 0.24, 0.6]},
+      {"key": "sfl", "name": "Superior frontal lobe", "entity": "oct-sfl", "group": "target", "tone": "#e6a3d6", "center": [0, 1.2, 0.62], "radii": [0.42, 0.3, 0.45]},
+      {"key": "ifl", "name": "Inferior frontal lobe", "group": "context", "center": [0, 0.78, 1.0], "radii": [0.38, 0.24, 0.34]},
+      {"key": "sbl", "name": "Superior buccal lobe", "group": "context", "center": [0, 0.5, 1.4], "radii": [0.3, 0.22, 0.28]},
+      {"key": "abl", "name": "Anterior basal lobe", "entity": "oct-basal", "group": "target", "tone": "#8cc0ec", "center": [0, 0.52, 0.32], "radii": [0.55, 0.27, 0.38]},
+      {"key": "mbl", "name": "Median basal lobe", "entity": "oct-basal", "group": "target", "tone": "#6a9fd8", "center": [0, 0.6, -0.38], "radii": [0.64, 0.3, 0.45]},
+      {"key": "dbl", "name": "Dorsal basal lobe", "entity": "oct-basal", "group": "target", "tone": "#7fb3e6", "center": [0, 0.93, -0.12], "radii": [0.52, 0.18, 0.3]},
+      {"key": "oes", "name": "Oesophagus", "group": "context", "shape": "tube", "points": [[0, 0.1, 1.9], [0, 0.08, 0.2], [0, 0.08, -1.7]], "radius": 0.15},
+      {"key": "brl", "name": "Brachial lobe", "entity": "oct-brachial", "group": "target", "tone": "#9bd27f", "center": [0, -0.45, 0.88], "radii": [0.55, 0.38, 0.45]},
+      {"key": "pdl-lobe", "name": "Pedal lobe", "group": "context", "center": [0, -0.62, 0.05], "radii": [0.6, 0.38, 0.42]},
+      {"key": "pvl", "name": "Palliovisceral lobe", "group": "context", "center": [0, -0.45, -0.8], "radii": [0.55, 0.42, 0.42]},
+      {"key": "ot", "name": "Optic tract", "group": "context", "mirror": true, "shape": "tube", "points": [[0.55, 0.45, -0.15], [1.8, 0.45, -0.15]], "radius": 0.16},
+      {"key": "ol", "name": "Optic lobe", "entity": "oct-ol", "group": "target", "tone": "#6fd0c0", "mirror": true, "center": [2.45, 0.4, -0.15], "radii": [0.72, 1.05, 1.2]},
+      {"key": "pedun", "name": "Peduncle lobe", "entity": "oct-peduncle", "group": "target", "tone": "#f2c46b", "mirror": true, "center": [1.25, 0.82, -0.3], "radii": [0.2, 0.17, 0.24]},
+      {"key": "olf", "name": "Olfactory lobe", "entity": "oct-olf-lobe", "group": "target", "tone": "#e9a07a", "mirror": true, "center": [1.3, 0.26, -0.05], "radii": [0.17, 0.15, 0.2]},
+      {"key": "og", "name": "Optic gland", "entity": "oct-optic-gland", "group": "target", "tone": "#f07f7f", "mirror": true, "center": [1.32, 0.64, 0.16], "radii": [0.12, 0.12, 0.12]},
+      {"key": "eye", "name": "Eye", "entity": "oct-eye", "group": "context", "tone": "#9ad0ff", "mirror": true, "center": [3.85, 0.35, 0.05], "radii": [0.85, 1.0, 1.0]},
+      {"key": "arm", "name": "Arm", "entity": "oct-arm-ns", "group": "target", "tone": "#e7b58f", "shape": "arms", "n": 8, "crown": [0, -1.3, 1.2], "axis": [0, -1, 0.55], "ring": 0.85, "length": 6.0, "radius": [0.24, 0.05]},
+      {"key": "suckers", "name": "Suckers", "entity": "oct-sucker", "group": "target", "tone": "#f6dcc6", "shape": "suckers", "of": "arm", "per_arm": 14}
+    ]
   }
 }
