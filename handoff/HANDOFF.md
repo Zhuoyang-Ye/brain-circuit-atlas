@@ -9,6 +9,7 @@
 - The cloud environment's network policy **denies NCBI E-utilities and all mesh sources** (`eutils.ncbi.nlm.nih.gov`, `download.alleninstitute.org`, `gin.g-node.org`, `afni.nimh.nih.gov`, `raw.githubusercontent.com`); only package managers (pypi) are reachable. The user was asked to allow them in the environment settings. Until then: no abstracts (amygdala audit blocked), no new literature, no new meshes.
 - The handoff folder from the Mac (scripts, `amygdala/records.json`, `knowledge_before_amygdala.json`, the skill) is **not available** in the cloud. Substitutes written in this session live in `handoff/tools/` (see section 0a).
 - Credit: the session has no way to read the cloud credit balance in dollars, so it cannot trigger on "below $5". Instead this file is refreshed and pushed after every finished step.
+- **Published 2026-11-04 (the user chose "Publish the site"):** `handoff/` was removed in the commit right after this one, and `wip/regions` was then fast-forwarded onto `main`, so GitHub Pages serves all nine regions. This file survives only in git history: `git show <this commit>:handoff/HANDOFF.md` (or check out the commit before "Remove handoff notes before publishing"). For later work, restore `handoff/` on a new branch and delete it again before the next merge to `main`.
 - **Final status 2026-11-04:** amygdala finished and audited; visual cortex, insula and olfactory system added, each verified against PubMed, built with 0 warnings, smoke-tested in every region and both themes, and audited sentence by sentence against the abstracts. All six approved regions are done. Not done: merging to `main` (needs the user's OK; delete `handoff/` first) and updating the curation skill on the Mac (section 10).
 - Progress this session: amygdala steps 1–4 done, step 5 half done (see section 6a, items marked **[done 2026-11-04]**). Commits on `wip/regions`: `a9548f2` (handoff), `7d27cbf` (amy-nuclei close-up, label for collapsed pathways), `b92e416` (site text, README counts), `9c731a2` (audit wording fixes), then this handoff refresh.
 - **Next, once `eutils.ncbi.nlm.nih.gov` is allowed** (a new session may be needed for a network change to apply):
@@ -336,7 +337,7 @@ The `sensory` domain (`#dc8b8b`) now exists (added with the amygdala for `mgb`);
 
 ## 9. Decisions waiting for the user
 
-- **Publishing:** commit, branch push and `main` push. Ask each time.
+- **Publishing:** commit, branch push and `main` push. Ask each time. (2026-11-04: the user approved publishing all nine regions to `main`.)
 - **Li et al. 2016:** stays excluded until the user pastes its Nature correction.
 - **Unreadable errata (2026-11-04):** three more papers are excluded for the same reason as Li 2016. Each can come back once someone reads its correction (the user can paste the text, or a session with access to nature.com and cell.com can fetch it) and confirms that it does not change the claim the atlas would make. Checked in the cloud: PubMed lists no text for any of them, PubMed Central has none, and nature.com, cell.com, doi.org, Crossref and Europe PMC are blocked by the environment's network policy.
 
