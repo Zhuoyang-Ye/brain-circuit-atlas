@@ -119,6 +119,24 @@
   "volume": "20",
   "year": 2000
  },
+ "10710313": {
+  "authors": [
+   "Shaw PJ",
+   "Cirelli C",
+   "Greenspan RJ",
+   "Tononi G"
+  ],
+  "doi": "10.1126/science.287.5459.1834",
+  "issue": "5459",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "1834-7",
+  "pmc": "",
+  "pmid": "10710313",
+  "title": "Correlates of sleep and waking in Drosophila melanogaster",
+  "volume": "287",
+  "year": 2000
+ },
  "10716738": {
   "authors": [
    "Maguire EA",
@@ -194,6 +212,24 @@
   "volume": "25",
   "year": 2000
  },
+ "10784450": {
+  "authors": [
+   "Zars T",
+   "Fischer M",
+   "Schulz R",
+   "Heisenberg M"
+  ],
+  "doi": "10.1126/science.288.5466.672",
+  "issue": "5466",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "672-5",
+  "pmc": "",
+  "pmid": "10784450",
+  "title": "Localization of a short-term memory in Drosophila",
+  "volume": "288",
+  "year": 2000
+ },
  "10812035": {
   "authors": [
    "Rauch SL",
@@ -261,6 +297,23 @@
   "pmid": "10845062",
   "title": "Emotion circuits in the brain",
   "volume": "23",
+  "year": 2000
+ },
+ "10943836": {
+  "authors": [
+   "Vosshall LB",
+   "Wong AM",
+   "Axel R"
+  ],
+  "doi": "10.1016/s0092-8674(00)00021-0",
+  "issue": "2",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "147-59",
+  "pmc": "",
+  "pmid": "10943836",
+  "title": "An olfactory sensory map in the fly brain",
+  "volume": "102",
   "year": 2000
  },
  "10963596": {
@@ -470,6 +523,23 @@
   "volume": "98",
   "year": 2001
  },
+ "11397912": {
+  "authors": [
+   "McGuire SE",
+   "Le PT",
+   "Davis RL"
+  ],
+  "doi": "10.1126/science.1062622",
+  "issue": "5533",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "1330-3",
+  "pmc": "",
+  "pmid": "11397912",
+  "title": "The role of Drosophila mushroom body signaling in olfactory memory",
+  "volume": "293",
+  "year": 2001
+ },
  "11418860": {
   "authors": [
    "Wallis JD",
@@ -574,6 +644,41 @@
   "pmid": "11546877",
   "title": "Control of octopus arm extension by a peripheral motor program",
   "volume": "293",
+  "year": 2001
+ },
+ "11691997": {
+  "authors": [
+   "Pascual A",
+   "Préat T"
+  ],
+  "doi": "10.1126/science.1064200",
+  "issue": "5544",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "1115-7",
+  "pmc": "",
+  "pmid": "11691997",
+  "title": "Localization of long-term memory within the Drosophila mushroom body",
+  "volume": "294",
+  "year": 2001
+ },
+ "11742061": {
+  "authors": [
+   "Heimbeck G",
+   "Bugnon V",
+   "Gendre N",
+   "Keller A",
+   "Stocker RF"
+  ],
+  "doi": "10.1073/pnas.011314898",
+  "issue": "26",
+  "journal": "Proc Natl Acad Sci U S A",
+  "journalFull": "Proceedings of the National Academy of Sciences of the United States of America",
+  "pages": "15336-41",
+  "pmc": "PMC65030",
+  "pmid": "11742061",
+  "title": "A central neural circuit for experience-independent olfactory and courtship behavior in Drosophila melanogaster",
+  "volume": "98",
   "year": 2001
  },
  "11823606": {
@@ -1014,6 +1119,26 @@
   "volume": "6",
   "year": 2003
  },
+ "14627633": {
+  "authors": [
+   "Schwaerzel M",
+   "Monastirioti M",
+   "Scholz H",
+   "Friggi-Grelin F",
+   "Birman S",
+   "Heisenberg M"
+  ],
+  "doi": "10.1523/JNEUROSCI.23-33-10495.2003",
+  "issue": "33",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "10495-502",
+  "pmc": "PMC6740930",
+  "pmid": "14627633",
+  "title": "Dopamine and octopamine differentiate between aversive and appetitive olfactory memories in Drosophila",
+  "volume": "23",
+  "year": 2003
+ },
  "14642287": {
   "authors": [
    "Wicker B",
@@ -1051,6 +1176,23 @@
   "title": "The analysis of visual motion: a comparison of neuronal and psychophysical performance",
   "volume": "12",
   "year": 1992
+ },
+ "14684826": {
+  "authors": [
+   "Wilson RI",
+   "Turner GC",
+   "Laurent G"
+  ],
+  "doi": "10.1126/science.1090782",
+  "issue": "5656",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "366-70",
+  "pmc": "",
+  "pmid": "14684826",
+  "title": "Transformation of olfactory representations in the Drosophila antennal lobe",
+  "volume": "303",
+  "year": 2004
  },
  "14730305": {
   "authors": [
@@ -1162,6 +1304,24 @@
   "volume": "24",
   "year": 2004
  },
+ "15210117": {
+  "authors": [
+   "Wang Z",
+   "Singhvi A",
+   "Kong P",
+   "Scott K"
+  ],
+  "doi": "10.1016/j.cell.2004.06.011",
+  "issue": "7",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "981-91",
+  "pmc": "",
+  "pmid": "15210117",
+  "title": "Taste representations in the Drosophila brain",
+  "volume": "117",
+  "year": 2004
+ },
  "15217324": {
   "authors": [
    "McGaugh JL"
@@ -1215,6 +1375,26 @@
   "pmid": "15329401",
   "title": "Bilateral orbital prefrontal cortex lesions in rhesus monkeys disrupt choices guided by both reward value and reward contingency",
   "volume": "24",
+  "year": 2004
+ },
+ "15339651": {
+  "authors": [
+   "Larsson MC",
+   "Domingos AI",
+   "Jones WD",
+   "Chiappe ME",
+   "Amrein H",
+   "Vosshall LB"
+  ],
+  "doi": "10.1016/j.neuron.2004.08.019",
+  "issue": "5",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "703-14",
+  "pmc": "",
+  "pmid": "15339651",
+  "title": "Or83b encodes a broadly expressed odorant receptor essential for Drosophila olfaction",
+  "volume": "43",
   "year": 2004
  },
  "15470143": {
@@ -1472,6 +1652,42 @@
   "volume": "106",
   "year": 1992
  },
+ "15935764": {
+  "authors": [
+   "Demir E",
+   "Dickson BJ"
+  ],
+  "doi": "10.1016/j.cell.2005.04.027",
+  "issue": "5",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "785-94",
+  "pmc": "",
+  "pmid": "15935764",
+  "title": "fruitless splicing specifies male courtship behavior in Drosophila",
+  "volume": "121",
+  "year": 2005
+ },
+ "15959468": {
+  "authors": [
+   "Manoli DS",
+   "Foss M",
+   "Villella A",
+   "Taylor BJ",
+   "Hall JC",
+   "Baker BS"
+  ],
+  "doi": "10.1038/nature03859",
+  "issue": "7049",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "395-400",
+  "pmc": "",
+  "pmid": "15959468",
+  "title": "Male-specific fruitless specifies the neural substrates of Drosophila courtship behaviour",
+  "volume": "436",
+  "year": 2005
+ },
  "15965463": {
   "authors": [
    "Hafting T",
@@ -1726,6 +1942,48 @@
   "volume": "25",
   "year": 2005
  },
+ "16423701": {
+  "authors": [
+   "Marella S",
+   "Fischler W",
+   "Kong P",
+   "Asgarian S",
+   "Rueckert E",
+   "Scott K"
+  ],
+  "doi": "10.1016/j.neuron.2005.11.037",
+  "issue": "2",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "285-95",
+  "pmc": "",
+  "pmid": "16423701",
+  "title": "Imaging taste responses in the fly brain reveals a functional map of taste category and behavior",
+  "volume": "49",
+  "year": 2006
+ },
+ "16452971": {
+  "authors": [
+   "Liu G",
+   "Seiler H",
+   "Wen A",
+   "Zars T",
+   "Ito K",
+   "Wolf R",
+   "Heisenberg M",
+   "Liu L"
+  ],
+  "doi": "10.1038/nature04381",
+  "issue": "7076",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "551-6",
+  "pmc": "",
+  "pmid": "16452971",
+  "title": "Distinct memory traces for two visual features in the Drosophila brain",
+  "volume": "439",
+  "year": 2006
+ },
  "16456083": {
   "authors": [
    "Tsao DY",
@@ -1915,6 +2173,42 @@
   "pmid": "16680163",
   "title": "BDNF val66met polymorphism is associated with modified experience-dependent plasticity in human motor cortex",
   "volume": "9",
+  "year": 2006
+ },
+ "16760979": {
+  "authors": [
+   "Pitman JL",
+   "McGill JJ",
+   "Keegan KP",
+   "Allada R"
+  ],
+  "doi": "10.1038/nature04739",
+  "issue": "7094",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "753-6",
+  "pmc": "",
+  "pmid": "16760979",
+  "title": "A dynamic role for the mushroom bodies in promoting sleep in Drosophila",
+  "volume": "441",
+  "year": 2006
+ },
+ "16760980": {
+  "authors": [
+   "Joiner WJ",
+   "Crocker A",
+   "White BH",
+   "Sehgal A"
+  ],
+  "doi": "10.1038/nature04811",
+  "issue": "7094",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "757-60",
+  "pmc": "",
+  "pmid": "16760980",
+  "title": "Sleep in Drosophila is regulated by adult mushroom bodies",
+  "volume": "441",
   "year": 2006
  },
  "16780813": {
@@ -2350,6 +2644,27 @@
   "volume": "446",
   "year": 2007
  },
+ "17382886": {
+  "authors": [
+   "Jefferis GS",
+   "Potter CJ",
+   "Chan AM",
+   "Marin EC",
+   "Rohlfing T",
+   "Maurer CR Jr",
+   "Luo L"
+  ],
+  "doi": "10.1016/j.cell.2007.01.040",
+  "issue": "6",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "1187-203",
+  "pmc": "PMC1885945",
+  "pmid": "17382886",
+  "title": "Comprehensive maps of Drosophila higher olfactory centers: spatially segregated fruit and pheromone representation",
+  "volume": "128",
+  "year": 2007
+ },
  "17383102": {
   "authors": [
    "Cameron DB",
@@ -2368,6 +2683,23 @@
   "pmid": "17383102",
   "title": "Cerebellar cortical-layer-specific control of neuronal migration by pituitary adenylate cyclase-activating polypeptide",
   "volume": "146",
+  "year": 2007
+ },
+ "17392786": {
+  "authors": [
+   "Kurtovic A",
+   "Widmer A",
+   "Dickson BJ"
+  ],
+  "doi": "10.1038/nature05672",
+  "issue": "7135",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "542-6",
+  "pmc": "",
+  "pmid": "17392786",
+  "title": "A single class of olfactory neurons mediates behavioural responses to a Drosophila sex pheromone",
+  "volume": "446",
   "year": 2007
  },
  "17395832": {
@@ -2861,6 +3193,25 @@
   "volume": "65",
   "year": 1991
  },
+ "18509336": {
+  "authors": [
+   "Neuser K",
+   "Triphan T",
+   "Mronz M",
+   "Poeck B",
+   "Strauss R"
+  ],
+  "doi": "10.1038/nature07003",
+  "issue": "7199",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "1244-7",
+  "pmc": "",
+  "pmid": "18509336",
+  "title": "Analysis of a spatial orientation memory in Drosophila",
+  "volume": "453",
+  "year": 2008
+ },
  "18558853": {
   "authors": [
    "Lemon RN"
@@ -3163,6 +3514,22 @@
   "pmid": "19174446",
   "title": "Two types of thalamocortical projections from the motor thalamic nuclei of the rat: a single neuron-tracing study using viral vectors",
   "volume": "19",
+  "year": 2009
+ },
+ "19217375": {
+  "authors": [
+   "Gordon MD",
+   "Scott K"
+  ],
+  "doi": "10.1016/j.neuron.2008.12.033",
+  "issue": "3",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "373-84",
+  "pmc": "PMC2650400",
+  "pmid": "19217375",
+  "title": "Motor control in a Drosophila taste circuit",
+  "volume": "61",
   "year": 2009
  },
  "19226510": {
@@ -4146,6 +4513,25 @@
   "volume": "468",
   "year": 2010
  },
+ "21068841": {
+  "authors": [
+   "Joesch M",
+   "Schnell B",
+   "Raghu SV",
+   "Reiff DF",
+   "Borst A"
+  ],
+  "doi": "10.1038/nature09545",
+  "issue": "7321",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "300-4",
+  "pmc": "",
+  "pmid": "21068841",
+  "title": "ON and OFF pathways in Drosophila motion vision",
+  "volume": "468",
+  "year": 2010
+ },
  "21084685": {
   "authors": [
    "Carey MR",
@@ -4498,6 +4884,69 @@
   "pmid": "21562921",
   "title": "Cerebellar nicotinic cholinergic receptors are intrinsic to the cerebellum: implications for diverse functional roles",
   "volume": "10",
+  "year": 2011
+ },
+ "21654803": {
+  "authors": [
+   "Ofstad TA",
+   "Zuker CS",
+   "Reiser MB"
+  ],
+  "doi": "10.1038/nature10131",
+  "issue": "7350",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "204-7",
+  "pmc": "PMC3169673",
+  "pmid": "21654803",
+  "title": "Visual place learning in Drosophila melanogaster",
+  "volume": "474",
+  "year": 2011
+ },
+ "21685917": {
+  "authors": [
+   "Séjourné J",
+   "Plaçais PY",
+   "Aso Y",
+   "Siwanowicz I",
+   "Trannoy S",
+   "Thoma V",
+   "Tedjakumala SR",
+   "Rubin GM",
+   "Tchénio P",
+   "Ito K",
+   "Isabel G",
+   "Tanimoto H",
+   "Preat T"
+  ],
+  "doi": "10.1038/nn.2846",
+  "issue": "7",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "903-10",
+  "pmc": "",
+  "pmid": "21685917",
+  "title": "Mushroom body efferent neurons responsible for aversive olfactory memory retrieval in Drosophila",
+  "volume": "14",
+  "year": 2011
+ },
+ "21700877": {
+  "authors": [
+   "Donlea JM",
+   "Thimgan MS",
+   "Suzuki Y",
+   "Gottschalk L",
+   "Shaw PJ"
+  ],
+  "doi": "10.1126/science.1202249",
+  "issue": "6037",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "1571-6",
+  "pmc": "PMC4064462",
+  "pmid": "21700877",
+  "title": "Inducing sleep by remote control facilitates memory consolidation in Drosophila",
+  "volume": "332",
   "year": 2011
  },
  "21716290": {
@@ -4946,6 +5395,30 @@
   "volume": "488",
   "year": 2012
  },
+ "22810589": {
+  "authors": [
+   "Liu C",
+   "Plaçais PY",
+   "Yamagata N",
+   "Pfeiffer BD",
+   "Aso Y",
+   "Friedrich AB",
+   "Siwanowicz I",
+   "Rubin GM",
+   "Preat T",
+   "Tanimoto H"
+  ],
+  "doi": "10.1038/nature11304",
+  "issue": "7412",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "512-6",
+  "pmc": "",
+  "pmid": "22810589",
+  "title": "A subset of dopamine neurons signals reward for odour memory in Drosophila",
+  "volume": "488",
+  "year": 2012
+ },
  "22878719": {
   "authors": [
    "Lee SH",
@@ -5021,6 +5494,30 @@
   "pmid": "23098601",
   "title": "An embodied view of octopus neurobiology",
   "volume": "22",
+  "year": 2012
+ },
+ "23103875": {
+  "authors": [
+   "Burke CJ",
+   "Huetteroth W",
+   "Owald D",
+   "Perisse E",
+   "Krashes MJ",
+   "Das G",
+   "Gohl D",
+   "Silies M",
+   "Certel S",
+   "Waddell S"
+  ],
+  "doi": "10.1038/nature11614",
+  "issue": "7429",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "433-7",
+  "pmc": "PMC3528794",
+  "pmid": "23103875",
+  "title": "Layered reward signalling through octopamine and dopamine in Drosophila",
+  "volume": "492",
   "year": 2012
  },
  "23125108": {
@@ -5304,6 +5801,24 @@
   "volume": "497",
   "year": 2013
  },
+ "23615618": {
+  "authors": [
+   "Caron SJ",
+   "Ruta V",
+   "Abbott LF",
+   "Axel R"
+  ],
+  "doi": "10.1038/nature12063",
+  "issue": "7447",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "113-7",
+  "pmc": "PMC4148081",
+  "pmid": "23615618",
+  "title": "Random convergence of olfactory inputs in the Drosophila mushroom body",
+  "volume": "497",
+  "year": 2013
+ },
  "23685452": {
   "authors": [
    "Rigotti M",
@@ -5386,6 +5901,26 @@
   "pmid": "23741401",
   "title": "Gating of long-term potentiation by nicotinic acetylcholine receptors at the cerebellum input stage",
   "volume": "8",
+  "year": 2013
+ },
+ "23748445": {
+  "authors": [
+   "Flood TF",
+   "Iguchi S",
+   "Gorczyca M",
+   "White B",
+   "Ito K",
+   "Yoshihara M"
+  ],
+  "doi": "10.1038/nature12208",
+  "issue": "7456",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "83-7",
+  "pmc": "PMC3727048",
+  "pmid": "23748445",
+  "title": "A single pair of interneurons commands the Drosophila feeding motor program",
+  "volume": "499",
   "year": 2013
  },
  "23792944": {
@@ -5523,6 +6058,72 @@
   "volume": "16",
   "year": 2013
  },
+ "23925240": {
+  "authors": [
+   "Takemura SY",
+   "Bharioke A",
+   "Lu Z",
+   "Nern A",
+   "Vitaladevuni S",
+   "Rivlin PK",
+   "Katz WT",
+   "Olbris DJ",
+   "Plaza SM",
+   "Winston P",
+   "Zhao T",
+   "Horne JA",
+   "Fetter RD",
+   "Takemura S",
+   "Blazek K",
+   "Chang LA",
+   "Ogundeyi O",
+   "Saunders MA",
+   "Shapiro V",
+   "Sigmund C",
+   "Rubin GM",
+   "Scheffer LK",
+   "Meinertzhagen IA",
+   "Chklovskii DB"
+  ],
+  "doi": "10.1038/nature12450",
+  "issue": "7461",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "175-81",
+  "pmc": "PMC3799980",
+  "pmid": "23925240",
+  "title": "A visual motion detection circuit suggested by Drosophila connectomics",
+  "volume": "500",
+  "year": 2013
+ },
+ "23925246": {
+  "authors": [
+   "Maisak MS",
+   "Haag J",
+   "Ammer G",
+   "Serbe E",
+   "Meier M",
+   "Leonhardt A",
+   "Schilling T",
+   "Bahl A",
+   "Rubin GM",
+   "Nern A",
+   "Dickson BJ",
+   "Reiff DF",
+   "Hopp E",
+   "Borst A"
+  ],
+  "doi": "10.1038/nature12320",
+  "issue": "7461",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "212-6",
+  "pmc": "",
+  "pmid": "23925246",
+  "title": "A directional tuning map of Drosophila elementary motion detectors",
+  "volume": "500",
+  "year": 2013
+ },
  "23968462": {
   "authors": [
    "Ivry RB",
@@ -5593,6 +6194,22 @@
   "title": "Social cognition and the cerebellum: a meta-analysis of over 350 fMRI studies",
   "volume": "86",
   "year": 2014
+ },
+ "24107996": {
+  "authors": [
+   "Seelig JD",
+   "Jayaraman V"
+  ],
+  "doi": "10.1038/nature12601",
+  "issue": "7475",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "262-6",
+  "pmc": "PMC3830704",
+  "pmid": "24107996",
+  "title": "Feature detection and orientation tuning in the Drosophila central complex",
+  "volume": "503",
+  "year": 2013
  },
  "24185423": {
   "authors": [
@@ -5702,6 +6319,24 @@
   "volume": "13",
   "year": 2014
  },
+ "24360281": {
+  "authors": [
+   "Kohl J",
+   "Ostrovsky AD",
+   "Frechter S",
+   "Jefferis GS"
+  ],
+  "doi": "10.1016/j.cell.2013.11.025",
+  "issue": "7",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "1610-23",
+  "pmc": "PMC3898676",
+  "pmid": "24360281",
+  "title": "A bidirectional circuit switch reroutes pheromone signals in male and female brains",
+  "volume": "155",
+  "year": 2013
+ },
  "24361077": {
   "authors": [
    "Guo ZV",
@@ -5757,6 +6392,25 @@
   "pmc": "PMC3955357",
   "pmid": "24487233",
   "title": "Cortical activity in the null space: permitting preparation without movement",
+  "volume": "17",
+  "year": 2014
+ },
+ "24561998": {
+  "authors": [
+   "Lin AC",
+   "Bygrave AM",
+   "de Calignon A",
+   "Lee T",
+   "Miesenböck G"
+  ],
+  "doi": "10.1038/nn.3660",
+  "issue": "4",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "559-68",
+  "pmc": "PMC4000970",
+  "pmid": "24561998",
+  "title": "Sparse, decorrelated odor coding in the mushroom body enhances learned odor discrimination",
   "volume": "17",
   "year": 2014
  },
@@ -5833,6 +6487,24 @@
   "title": "Mediodorsal nucleus: areal, laminar, and tangential distribution of afferents and efferents in the frontal lobe of rhesus monkeys",
   "volume": "277",
   "year": 1988
+ },
+ "24700860": {
+  "authors": [
+   "Bidaye SS",
+   "Machacek C",
+   "Wu Y",
+   "Dickson BJ"
+  ],
+  "doi": "10.1126/science.1249964",
+  "issue": "6179",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "97-101",
+  "pmc": "",
+  "pmid": "24700860",
+  "title": "Neuronal control of Drosophila walking direction",
+  "volume": "344",
+  "year": 2014
  },
  "24739966": {
   "authors": [
@@ -5964,6 +6636,28 @@
   "pmid": "24896183",
   "title": "Engineering a memory with LTD and LTP",
   "volume": "511",
+  "year": 2014
+ },
+ "24908103": {
+  "authors": [
+   "von Reyn CR",
+   "Breads P",
+   "Peek MY",
+   "Zheng GZ",
+   "Williamson WR",
+   "Yee AL",
+   "Leonardo A",
+   "Card GM"
+  ],
+  "doi": "10.1038/nn.3741",
+  "issue": "7",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "962-70",
+  "pmc": "",
+  "pmid": "24908103",
+  "title": "A spike-timing mechanism for action selection",
+  "volume": "17",
   "year": 2014
  },
  "25009273": {
@@ -6233,6 +6927,66 @@
   "volume": "5",
   "year": 2014
  },
+ "25535793": {
+  "authors": [
+   "Aso Y",
+   "Hattori D",
+   "Yu Y",
+   "Johnston RM",
+   "Iyer NA",
+   "Ngo TT",
+   "Dionne H",
+   "Abbott LF",
+   "Axel R",
+   "Tanimoto H",
+   "Rubin GM"
+  ],
+  "doi": "10.7554/eLife.04577",
+  "issue": "",
+  "journal": "Elife",
+  "journalFull": "eLife",
+  "pages": "e04577",
+  "pmc": "PMC4273437",
+  "pmid": "25535793",
+  "title": "The neuronal architecture of the mushroom body provides a logic for associative learning",
+  "volume": "3",
+  "year": 2014
+ },
+ "25535794": {
+  "authors": [
+   "Aso Y",
+   "Sitaraman D",
+   "Ichinose T",
+   "Kaun KR",
+   "Vogt K",
+   "Belliart-Guérin G",
+   "Plaçais PY",
+   "Robie AA",
+   "Yamagata N",
+   "Schnaitmann C",
+   "Rowell WJ",
+   "Johnston RM",
+   "Ngo TT",
+   "Chen N",
+   "Korff W",
+   "Nitabach MN",
+   "Heberlein U",
+   "Preat T",
+   "Branson KM",
+   "Tanimoto H",
+   "Rubin GM"
+  ],
+  "doi": "10.7554/eLife.04580",
+  "issue": "",
+  "journal": "Elife",
+  "journalFull": "eLife",
+  "pages": "e04580",
+  "pmc": "PMC4273436",
+  "pmid": "25535794",
+  "title": "Mushroom body output neurons encode valence and guide memory-based action selection in Drosophila",
+  "volume": "3",
+  "year": 2014
+ },
  "25592533": {
   "authors": [
    "Janak PH",
@@ -6442,6 +7196,22 @@
   "volume": "4",
   "year": 2015
  },
+ "25971509": {
+  "authors": [
+   "Seelig JD",
+   "Jayaraman V"
+  ],
+  "doi": "10.1038/nature14446",
+  "issue": "7551",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "186-91",
+  "pmc": "PMC4704792",
+  "pmid": "25971509",
+  "title": "Neural dynamics for landmark orientation and angular path integration",
+  "volume": "521",
+  "year": 2015
+ },
  "26053122": {
   "authors": [
    "Spellman T",
@@ -6497,6 +7267,22 @@
   "pmid": "26113381",
   "title": "The vertical lobe of cephalopods: an attractive brain structure for understanding the evolution of advanced learning and memory systems",
   "volume": "201",
+  "year": 2015
+ },
+ "26120965": {
+  "authors": [
+   "Borst A",
+   "Helmstaedter M"
+  ],
+  "doi": "10.1038/nn.4050",
+  "issue": "8",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "1067-76",
+  "pmc": "",
+  "pmid": "26120965",
+  "title": "Common circuit design in fly and mammalian motion vision",
+  "volume": "18",
   "year": 2015
  },
  "26131933": {
@@ -6806,6 +7592,25 @@
   "volume": "4",
   "year": 2015
  },
+ "26637800": {
+  "authors": [
+   "Hige T",
+   "Aso Y",
+   "Modi MN",
+   "Rubin GM",
+   "Turner GC"
+  ],
+  "doi": "10.1016/j.neuron.2015.11.003",
+  "issue": "5",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "985-998",
+  "pmc": "PMC4674068",
+  "pmid": "26637800",
+  "title": "Heterosynaptic Plasticity Underlies Aversive Olfactory Learning in Drosophila",
+  "volume": "88",
+  "year": 2015
+ },
  "26777273": {
   "authors": [
    "Mallet N",
@@ -6942,6 +7747,24 @@
   "pmid": "27185946",
   "title": "Phasic dopamine release in the medial prefrontal cortex enhances stimulus discrimination",
   "volume": "113",
+  "year": 2016
+ },
+ "27212237": {
+  "authors": [
+   "Liu S",
+   "Liu Q",
+   "Tabuchi M",
+   "Wu MN"
+  ],
+  "doi": "10.1016/j.cell.2016.04.013",
+  "issue": "6",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "1347-1360",
+  "pmc": "PMC4892967",
+  "pmid": "27212237",
+  "title": "Sleep Drive Is Encoded by Neural Plastic Changes in a Dedicated Circuit",
+  "volume": "165",
   "year": 2016
  },
  "27279213": {
@@ -7213,6 +8036,27 @@
   "volume": "36",
   "year": 2016
  },
+ "28029094": {
+  "authors": [
+   "Wu M",
+   "Nern A",
+   "Williamson WR",
+   "Morimoto MM",
+   "Reiser MB",
+   "Card GM",
+   "Rubin GM"
+  ],
+  "doi": "10.7554/eLife.21022",
+  "issue": "",
+  "journal": "Elife",
+  "journalFull": "eLife",
+  "pages": "",
+  "pmc": "PMC5293491",
+  "pmid": "28029094",
+  "title": "Visual projection neurons in the Drosophila lobula link feature detection to distinct behavioral programs",
+  "volume": "5",
+  "year": 2016
+ },
  "28103481": {
   "authors": [
    "Gutierrez-Castellanos N",
@@ -7346,6 +8190,27 @@
   "volume": "544",
   "year": 2017
  },
+ "28366740": {
+  "authors": [
+   "Omoto JJ",
+   "Keleş MF",
+   "Nguyen BM",
+   "Bolanos C",
+   "Lovick JK",
+   "Frye MA",
+   "Hartenstein V"
+  ],
+  "doi": "10.1016/j.cub.2017.02.063",
+  "issue": "8",
+  "journal": "Curr Biol",
+  "journalFull": "Current biology : CB",
+  "pages": "1098-1110",
+  "pmc": "PMC5446208",
+  "pmid": "28366740",
+  "title": "Visual Input to the Drosophila Central Complex by Developmentally and Functionally Distinct Neuronal Populations",
+  "volume": "27",
+  "year": 2017
+ },
  "28385461": {
   "authors": [
    "Sokolov AA",
@@ -7475,6 +8340,24 @@
   "volume": "545",
   "year": 2017
  },
+ "28473639": {
+  "authors": [
+   "Kim SS",
+   "Rouault H",
+   "Druckmann S",
+   "Jayaraman V"
+  ],
+  "doi": "10.1126/science.aal4835",
+  "issue": "6340",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "849-853",
+  "pmc": "",
+  "pmid": "28473639",
+  "title": "Ring attractor dynamics in the Drosophila central brain",
+  "volume": "356",
+  "year": 2017
+ },
  "28481349": {
   "authors": [
    "Bolkan SS",
@@ -7533,6 +8416,26 @@
   "title": "Cerebellar volume and cerebellocerebral structural covariance in schizophrenia: a multisite mega-analysis of 983 patients and 1349 healthy controls",
   "volume": "23",
   "year": 2018
+ },
+ "28538731": {
+  "authors": [
+   "Green J",
+   "Adachi A",
+   "Shah KK",
+   "Hirokawa JD",
+   "Magani PS",
+   "Maimon G"
+  ],
+  "doi": "10.1038/nature22343",
+  "issue": "7656",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "101-106",
+  "pmc": "PMC6320684",
+  "pmid": "28538731",
+  "title": "A neural circuit architecture for angular integration in Drosophila",
+  "volume": "546",
+  "year": 2017
  },
  "2854842": {
   "authors": [
@@ -7610,6 +8513,23 @@
   "pmid": "28746815",
   "title": "Higher-Order Areas of the Mouse Visual Cortex",
   "volume": "3",
+  "year": 2017
+ },
+ "28756955": {
+  "authors": [
+   "Mann K",
+   "Gallen CL",
+   "Clandinin TR"
+  ],
+  "doi": "10.1016/j.cub.2017.06.076",
+  "issue": "15",
+  "journal": "Curr Biol",
+  "journalFull": "Current biology : CB",
+  "pages": "2389-2396.e4",
+  "pmc": "PMC5967399",
+  "pmid": "28756955",
+  "title": "Whole-Brain Calcium Imaging Reveals an Intrinsic Functional Network in Drosophila",
+  "volume": "27",
   "year": 2017
  },
  "28844644": {
@@ -7694,6 +8614,28 @@
   "pmid": "29061964",
   "title": "Sparse synaptic connectivity is required for decorrelation and pattern separation in feedforward networks",
   "volume": "8",
+  "year": 2017
+ },
+ "29120418": {
+  "authors": [
+   "Klapoetke NC",
+   "Nern A",
+   "Peek MY",
+   "Rogers EM",
+   "Breads P",
+   "Rubin GM",
+   "Reiser MB",
+   "Card GM"
+  ],
+  "doi": "10.1038/nature24626",
+  "issue": "7679",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "237-241",
+  "pmc": "PMC7457385",
+  "pmid": "29120418",
+  "title": "Ultra-selective looming detection from radial motion opponency",
+  "volume": "551",
   "year": 2017
  },
  "29172091": {
@@ -8141,6 +9083,25 @@
   "volume": "558",
   "year": 2018
  },
+ "29943730": {
+  "authors": [
+   "Namiki S",
+   "Dickinson MH",
+   "Wong AM",
+   "Korff W",
+   "Card GM"
+  ],
+  "doi": "10.7554/eLife.34272",
+  "issue": "",
+  "journal": "Elife",
+  "journalFull": "eLife",
+  "pages": "",
+  "pmc": "PMC6019073",
+  "pmid": "29943730",
+  "title": "The functional organization of descending sensory-motor pathways in Drosophila",
+  "volume": "7",
+  "year": 2018
+ },
  "29986160": {
   "authors": [
    "Raymond JL",
@@ -8334,6 +9295,26 @@
   "pmid": "30135258",
   "title": "Cerebello-spinal tDCS in ataxia: A randomized, double-blind, sham-controlled, crossover trial",
   "volume": "91",
+  "year": 2018
+ },
+ "30174187": {
+  "authors": [
+   "Giraldo YM",
+   "Leitch KJ",
+   "Ros IG",
+   "Warren TL",
+   "Weir PT",
+   "Dickinson MH"
+  ],
+  "doi": "10.1016/j.cub.2018.07.002",
+  "issue": "17",
+  "journal": "Curr Biol",
+  "journalFull": "Current biology : CB",
+  "pages": "2845-2852.e4",
+  "pmc": "PMC7301569",
+  "pmid": "30174187",
+  "title": "Sun Navigation Requires Compass Neurons in Drosophila",
+  "volume": "28",
   "year": 2018
  },
  "30181688": {
@@ -8809,6 +9790,42 @@
   "pmid": "31036947",
   "title": "Predictive and reactive reward signals conveyed by climbing fiber inputs to cerebellar Purkinje cells",
   "volume": "22",
+  "year": 2019
+ },
+ "31112130": {
+  "authors": [
+   "Dolan MJ",
+   "Frechter S",
+   "Bates AS",
+   "Dan C",
+   "Huoviala P",
+   "Roberts RJ",
+   "Schlegel P",
+   "Dhawan S",
+   "Tabano R",
+   "Dionne H",
+   "Christoforou C",
+   "Close K",
+   "Sutcliffe B",
+   "Giuliani B",
+   "Li F",
+   "Costa M",
+   "Ihrke G",
+   "Meissner GW",
+   "Bock DD",
+   "Aso Y",
+   "Rubin GM",
+   "Jefferis GS"
+  ],
+  "doi": "10.7554/eLife.43079",
+  "issue": "",
+  "journal": "Elife",
+  "journalFull": "eLife",
+  "pages": "",
+  "pmc": "PMC6529221",
+  "pmid": "31112130",
+  "title": "Neurogenetic dissection of the Drosophila lateral horn reveals major outputs, diverse behavioural functions, and interactions with the mushroom body",
+  "volume": "8",
   "year": 2019
  },
  "31116979": {
@@ -9503,6 +10520,128 @@
   "volume": "240",
   "year": 1988
  },
+ "32880371": {
+  "authors": [
+   "Scheffer LK",
+   "Xu CS",
+   "Januszewski M",
+   "Lu Z",
+   "Takemura SY",
+   "Hayworth KJ",
+   "Huang GB",
+   "Shinomiya K",
+   "Maitlin-Shepard J",
+   "Berg S",
+   "Clements J",
+   "Hubbard PM",
+   "Katz WT",
+   "Umayam L",
+   "Zhao T",
+   "Ackerman D",
+   "Blakely T",
+   "Bogovic J",
+   "Dolafi T",
+   "Kainmueller D",
+   "Kawase T",
+   "Khairy KA",
+   "Leavitt L",
+   "Li PH",
+   "Lindsey L",
+   "Neubarth N",
+   "Olbris DJ",
+   "Otsuna H",
+   "Trautman ET",
+   "Ito M",
+   "Bates AS",
+   "Goldammer J",
+   "Wolff T",
+   "Svirskas R",
+   "Schlegel P",
+   "Neace E",
+   "Knecht CJ",
+   "Alvarado CX",
+   "Bailey DA",
+   "Ballinger S",
+   "Borycz JA",
+   "Canino BS",
+   "Cheatham N",
+   "Cook M",
+   "Dreher M",
+   "Duclos O",
+   "Eubanks B",
+   "Fairbanks K",
+   "Finley S",
+   "Forknall N",
+   "Francis A",
+   "Hopkins GP",
+   "Joyce EM",
+   "Kim S",
+   "Kirk NA",
+   "Kovalyak J",
+   "Lauchie SA",
+   "Lohff A",
+   "Maldonado C",
+   "Manley EA",
+   "McLin S",
+   "Mooney C",
+   "Ndama M",
+   "Ogundeyi O",
+   "Okeoma N",
+   "Ordish C",
+   "Padilla N",
+   "Patrick CM",
+   "Paterson T",
+   "Phillips EE",
+   "Phillips EM",
+   "Rampally N",
+   "Ribeiro C",
+   "Robertson MK",
+   "Rymer JT",
+   "Ryan SM",
+   "Sammons M",
+   "Scott AK",
+   "Scott AL",
+   "Shinomiya A",
+   "Smith C",
+   "Smith K",
+   "Smith NL",
+   "Sobeski MA",
+   "Suleiman A",
+   "Swift J",
+   "Takemura S",
+   "Talebi I",
+   "Tarnogorska D",
+   "Tenshaw E",
+   "Tokhi T",
+   "Walsh JJ",
+   "Yang T",
+   "Horne JA",
+   "Li F",
+   "Parekh R",
+   "Rivlin PK",
+   "Jayaraman V",
+   "Costa M",
+   "Jefferis GS",
+   "Ito K",
+   "Saalfeld S",
+   "George R",
+   "Meinertzhagen IA",
+   "Rubin GM",
+   "Hess HF",
+   "Jain V",
+   "Plaza SM"
+  ],
+  "doi": "10.7554/eLife.57443",
+  "issue": "",
+  "journal": "Elife",
+  "journalFull": "eLife",
+  "pages": "",
+  "pmc": "PMC7546738",
+  "pmid": "32880371",
+  "title": "A connectome and analysis of the adult Drosophila central brain",
+  "volume": "9",
+  "year": 2020
+ },
  "32916119": {
   "authors": [
    "Gutnick T",
@@ -9665,6 +10804,45 @@
   "volume": "9",
   "year": 2020
  },
+ "33315010": {
+  "authors": [
+   "Li F",
+   "Lindsey JW",
+   "Marin EC",
+   "Otto N",
+   "Dreher M",
+   "Dempsey G",
+   "Stark I",
+   "Bates AS",
+   "Pleijzier MW",
+   "Schlegel P",
+   "Nern A",
+   "Takemura SY",
+   "Eckstein N",
+   "Yang T",
+   "Francis A",
+   "Braun A",
+   "Parekh R",
+   "Costa M",
+   "Scheffer LK",
+   "Aso Y",
+   "Jefferis GS",
+   "Abbott LF",
+   "Litwin-Kumar A",
+   "Waddell S",
+   "Rubin GM"
+  ],
+  "doi": "10.7554/eLife.62576",
+  "issue": "",
+  "journal": "Elife",
+  "journalFull": "eLife",
+  "pages": "",
+  "pmc": "PMC7909955",
+  "pmid": "33315010",
+  "title": "The connectome of the adult Drosophila mushroom body provides insights into function",
+  "volume": "9",
+  "year": 2020
+ },
  "33335034": {
   "authors": [
    "Kebschull JM",
@@ -9748,6 +10926,23 @@
   "pmid": "33733076",
   "title": "Behavioral and neurophysiological evidence suggests affective pain experience in octopus",
   "volume": "24",
+  "year": 2021
+ },
+ "33770490": {
+  "authors": [
+   "Turner MH",
+   "Mann K",
+   "Clandinin TR"
+  ],
+  "doi": "10.1016/j.cub.2021.03.004",
+  "issue": "11",
+  "journal": "Curr Biol",
+  "journalFull": "Current biology : CB",
+  "pages": "2386-2394.e3",
+  "pmc": "PMC8519013",
+  "pmid": "33770490",
+  "title": "The connectome predicts resting-state functional connectivity across the Drosophila brain",
+  "volume": "31",
   "year": 2021
  },
  "3385495": {
@@ -10156,6 +11351,33 @@
   "volume": "37",
   "year": 2021
  },
+ "34696823": {
+  "authors": [
+   "Hulse BK",
+   "Haberkern H",
+   "Franconville R",
+   "Turner-Evans D",
+   "Takemura SY",
+   "Wolff T",
+   "Noorman M",
+   "Dreher M",
+   "Dan C",
+   "Parekh R",
+   "Hermundstad AM",
+   "Rubin GM",
+   "Jayaraman V"
+  ],
+  "doi": "10.7554/eLife.66039",
+  "issue": "",
+  "journal": "Elife",
+  "journalFull": "eLife",
+  "pages": "",
+  "pmc": "PMC9477501",
+  "pmid": "34696823",
+  "title": "A connectome of the Drosophila central complex reveals network motifs suitable for flexible navigation and context-dependent action selection",
+  "volume": "10",
+  "year": 2021
+ },
  "34789878": {
   "authors": [
    "Low AYT",
@@ -10228,6 +11450,30 @@
   "pmid": "34808268",
   "title": "Opioid receptors modulate parallel fiber-Purkinje cell synaptic transmission in mouse cerebellum",
   "volume": "770",
+  "year": 2022
+ },
+ "34912123": {
+  "authors": [
+   "Lu J",
+   "Behbahani AH",
+   "Hamburg L",
+   "Westeinde EA",
+   "Dawson PM",
+   "Lyu C",
+   "Maimon G",
+   "Dickinson MH",
+   "Druckmann S",
+   "Wilson RI"
+  ],
+  "doi": "10.1038/s41586-021-04191-x",
+  "issue": "7891",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "98-104",
+  "pmc": "PMC10759448",
+  "pmid": "34912123",
+  "title": "Transforming representations of movement from body- to world-centric space",
+  "volume": "601",
   "year": 2022
  },
  "35107842": {
@@ -11009,6 +12255,32 @@
   "volume": "6",
   "year": 1986
  },
+ "37696814": {
+  "authors": [
+   "Schaffer ES",
+   "Mishra N",
+   "Whiteway MR",
+   "Li W",
+   "Vancura MB",
+   "Freedman J",
+   "Patel KB",
+   "Voleti V",
+   "Paninski L",
+   "Hillman EMC",
+   "Abbott LF",
+   "Axel R"
+  ],
+  "doi": "10.1038/s41467-023-41261-2",
+  "issue": "1",
+  "journal": "Nat Commun",
+  "journalFull": "Nature communications",
+  "pages": "5572",
+  "pmc": "PMC10495430",
+  "pmid": "37696814",
+  "title": "The spatial and temporal structure of neural activity across the fly brain",
+  "volume": "14",
+  "year": 2023
+ },
  "37875094": {
   "authors": [
    "Hochner B",
@@ -11530,6 +12802,136 @@
   "volume": "15",
   "year": 2024
  },
+ "39358518": {
+  "authors": [
+   "Dorkenwald S",
+   "Matsliah A",
+   "Sterling AR",
+   "Schlegel P",
+   "Yu SC",
+   "McKellar CE",
+   "Lin A",
+   "Costa M",
+   "Eichler K",
+   "Yin Y",
+   "Silversmith W",
+   "Schneider-Mizell C",
+   "Jordan CS",
+   "Brittain D",
+   "Halageri A",
+   "Kuehner K",
+   "Ogedengbe O",
+   "Morey R",
+   "Gager J",
+   "Kruk K",
+   "Perlman E",
+   "Yang R",
+   "Deutsch D",
+   "Bland D",
+   "Sorek M",
+   "Lu R",
+   "Macrina T",
+   "Lee K",
+   "Bae JA",
+   "Mu S",
+   "Nehoran B",
+   "Mitchell E",
+   "Popovych S",
+   "Wu J",
+   "Jia Z",
+   "Castro MA",
+   "Kemnitz N",
+   "Ih D",
+   "Bates AS",
+   "Eckstein N",
+   "Funke J",
+   "Collman F",
+   "Bock DD",
+   "Jefferis GSXE",
+   "Seung HS",
+   "Murthy M"
+  ],
+  "doi": "10.1038/s41586-024-07558-y",
+  "issue": "8032",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "124-138",
+  "pmc": "PMC11446842",
+  "pmid": "39358518",
+  "title": "Neuronal wiring diagram of an adult brain",
+  "volume": "634",
+  "year": 2024
+ },
+ "39358519": {
+  "authors": [
+   "Shiu PK",
+   "Sterne GR",
+   "Spiller N",
+   "Franconville R",
+   "Sandoval A",
+   "Zhou J",
+   "Simha N",
+   "Kang CH",
+   "Yu S",
+   "Kim JS",
+   "Dorkenwald S",
+   "Matsliah A",
+   "Schlegel P",
+   "Yu SC",
+   "McKellar CE",
+   "Sterling A",
+   "Costa M",
+   "Eichler K",
+   "Bates AS",
+   "Eckstein N",
+   "Funke J",
+   "Jefferis GSXE",
+   "Murthy M",
+   "Bidaye SS",
+   "Hampel S",
+   "Seeds AM",
+   "Scott K"
+  ],
+  "doi": "10.1038/s41586-024-07763-9",
+  "issue": "8032",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "210-219",
+  "pmc": "PMC11446845",
+  "pmid": "39358519",
+  "title": "A Drosophila computational brain model reveals sensorimotor processing",
+  "volume": "634",
+  "year": 2024
+ },
+ "39358527": {
+  "authors": [
+   "Lin A",
+   "Yang R",
+   "Dorkenwald S",
+   "Matsliah A",
+   "Sterling AR",
+   "Schlegel P",
+   "Yu SC",
+   "McKellar CE",
+   "Costa M",
+   "Eichler K",
+   "Bates AS",
+   "Eckstein N",
+   "Funke J",
+   "Jefferis GSXE",
+   "Murthy M"
+  ],
+  "doi": "10.1038/s41586-024-07968-y",
+  "issue": "8032",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "153-165",
+  "pmc": "PMC11446825",
+  "pmid": "39358527",
+  "title": "Network statistics of the whole-brain connectome of Drosophila",
+  "volume": "634",
+  "year": 2024
+ },
  "3947207": {
   "authors": [
    "Weinberger DR",
@@ -11672,6 +13074,91 @@
   "pmid": "39984491",
   "title": "Cerebellar output neurons can impair non-motor behaviors by altering development of extracerebellar connectivity",
   "volume": "16",
+  "year": 2025
+ },
+ "40140576": {
+  "authors": [
+   "Nern A",
+   "Loesche F",
+   "Takemura SY",
+   "Burnett LE",
+   "Dreher M",
+   "Gruntman E",
+   "Hoeller J",
+   "Huang GB",
+   "Januszewski M",
+   "Klapoetke NC",
+   "Koskela S",
+   "Longden KD",
+   "Lu Z",
+   "Preibisch S",
+   "Qiu W",
+   "Rogers EM",
+   "Seenivasan P",
+   "Zhao A",
+   "Bogovic J",
+   "Canino BS",
+   "Clements J",
+   "Cook M",
+   "Finley-May S",
+   "Flynn MA",
+   "Hameed I",
+   "Fragniere AMC",
+   "Hayworth KJ",
+   "Hopkins GP",
+   "Hubbard PM",
+   "Katz WT",
+   "Kovalyak J",
+   "Lauchie SA",
+   "Leonard M",
+   "Lohff A",
+   "Maldonado CA",
+   "Mooney C",
+   "Okeoma N",
+   "Olbris DJ",
+   "Ordish C",
+   "Paterson T",
+   "Phillips EM",
+   "Pietzsch T",
+   "Salinas JR",
+   "Rivlin PK",
+   "Schlegel P",
+   "Scott AL",
+   "Scuderi LA",
+   "Takemura S",
+   "Talebi I",
+   "Thomson A",
+   "Trautman ET",
+   "Umayam L",
+   "Walsh C",
+   "Walsh JJ",
+   "Xu CS",
+   "Yakal EA",
+   "Yang T",
+   "Zhao T",
+   "Funke J",
+   "George R",
+   "Hess HF",
+   "Jefferis GSXE",
+   "Knecht C",
+   "Korff W",
+   "Plaza SM",
+   "Romani S",
+   "Saalfeld S",
+   "Scheffer LK",
+   "Berg S",
+   "Rubin GM",
+   "Reiser MB"
+  ],
+  "doi": "10.1038/s41586-025-08746-0",
+  "issue": "8065",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "1225-1237",
+  "pmc": "PMC12119369",
+  "pmid": "40140576",
+  "title": "Connectome-driven neural inventory of a complete visual system",
+  "volume": "641",
   "year": 2025
  },
  "4023713": {
@@ -12033,6 +13520,156 @@
   "pmid": "42409803",
   "title": "Complementary roles of cell-type-specific plasticity in shaping neocortical dynamics for learning action timing",
   "volume": "17",
+  "year": 2026
+ },
+ "42691995": {
+  "authors": [
+   "Berg S",
+   "Beckett IR",
+   "Costa M",
+   "Schlegel P",
+   "Januszewski M",
+   "Marin EC",
+   "Nern A",
+   "Preibisch S",
+   "Qiu W",
+   "Takemura SY",
+   "Fragniere AMC",
+   "Champion AS",
+   "Adjavon DY",
+   "Cook M",
+   "Gkantia M",
+   "Hayworth KJ",
+   "Huang GB",
+   "Katz WT",
+   "Kämpf F",
+   "Lu Z",
+   "Ordish C",
+   "Paterson T",
+   "Stürner T",
+   "Trautman ET",
+   "Whittle CR",
+   "Burnett LE",
+   "Hoeller J",
+   "Li F",
+   "Loesche F",
+   "Morris BJ",
+   "Pietzsch T",
+   "Pleijzier MW",
+   "Silva V",
+   "Yin Y",
+   "Ali I",
+   "Badalamente G",
+   "Bates AS",
+   "Beresford RJ",
+   "Bogovic J",
+   "Brooks P",
+   "Cachero S",
+   "Canino BS",
+   "Chaisrisawatsuk B",
+   "Clements J",
+   "Crowe A",
+   "de Haan Vicente I",
+   "Dempsey G",
+   "Donà E",
+   "Dos Santos M",
+   "Dreher M",
+   "Dunne CR",
+   "Eichler K",
+   "Finley-May S",
+   "Flynn MA",
+   "Hameed I",
+   "Hopkins GP",
+   "Hubbard PM",
+   "Kiassat L",
+   "Kovalyak J",
+   "Lauchie SA",
+   "Leonard M",
+   "Lohff A",
+   "Longden KD",
+   "Maldonado CA",
+   "Moitra I",
+   "Moon SS",
+   "Mooney C",
+   "Munnelly EJ",
+   "Okeoma N",
+   "Olbris DJ",
+   "Pai A",
+   "Patel B",
+   "Phillips EM",
+   "Plaza SM",
+   "Richards A",
+   "Rivas Salinas J",
+   "Roberts RJV",
+   "Rogers EM",
+   "Scott AL",
+   "Scuderi LA",
+   "Seenivasan P",
+   "Serratosa Capdevila L",
+   "Smith C",
+   "Svirskas R",
+   "Takemura S",
+   "Tastekin I",
+   "Thomson A",
+   "Umayam L",
+   "Walsh JJ",
+   "Whittome H",
+   "Xu CS",
+   "Yakal EA",
+   "Yang T",
+   "Zhao A",
+   "George R",
+   "Jain V",
+   "Jayaraman V",
+   "Korff W",
+   "Meissner GW",
+   "Romani S",
+   "Funke J",
+   "Knecht C",
+   "Saalfeld S",
+   "Scheffer LK",
+   "Waddell S",
+   "Card GM",
+   "Ribeiro C",
+   "Reiser MB",
+   "Hess HF",
+   "Rubin GM",
+   "Jefferis GSXE"
+  ],
+  "doi": "10.1016/j.cell.2026.08.015",
+  "issue": "18",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "5504-5526.e15",
+  "pmc": "",
+  "pmid": "42691995",
+  "title": "Sexual dimorphism in the complete Drosophila male central nervous system connectome",
+  "volume": "189",
+  "year": 2026
+ },
+ "42691996": {
+  "authors": [
+   "Tastekin I",
+   "de Haan Vicente I",
+   "Beresford RJ",
+   "Morris BJ",
+   "Beckett I",
+   "Schlegel P",
+   "Gkantia M",
+   "Marin EC",
+   "Costa M",
+   "Jefferis GSXE",
+   "Ribeiro C"
+  ],
+  "doi": "10.1016/j.cell.2026.08.016",
+  "issue": "18",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "5527-5551.e5",
+  "pmc": "",
+  "pmid": "42691996",
+  "title": "The complete gustatory connectome of adult Drosophila reveals how taste guides feeding, foraging, and social behavior",
+  "volume": "189",
   "year": 2026
  },
  "42747960": {
@@ -12862,6 +14499,22 @@
   "title": "Prelunate, occipitotemporal, and parahippocampal projections to the basis pontis in rhesus monkey",
   "volume": "337",
   "year": 1993
+ },
+ "8303280": {
+  "authors": [
+   "de Belle JS",
+   "Heisenberg M"
+  ],
+  "doi": "10.1126/science.8303280",
+  "issue": "5147",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "692-5",
+  "pmc": "",
+  "pmid": "8303280",
+  "title": "Associative odor learning in Drosophila abolished by chemical ablation of mushroom bodies",
+  "volume": "263",
+  "year": 1994
  },
  "8332915": {
   "authors": [

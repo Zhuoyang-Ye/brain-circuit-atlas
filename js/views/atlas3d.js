@@ -1,4 +1,4 @@
-/* 3D atlas: real atlas meshes (human, mouse or macaque) with evidence-coded connections to the rest of the brain and body. */
+/* 3D atlas: real atlas meshes (human, mouse, macaque or fruit fly; a schematic octopus) with evidence-coded connections to the rest of the brain and body. */
 (function () {
   'use strict';
   const CA = window.CA, D = CA.D, A3 = D.atlas3d, h = CA.h;
@@ -93,11 +93,25 @@
       'oct-vl': { pos: [-3.2, 5.6, -3.6], target: [0, 1.3, -0.1] },   // closer: the vertical lobe and the superior frontal lobe
       'oct-arms': { pos: [-14, 5.0, 11], target: [0, -1.6, 1.6] },   // left front: the brain above the arm crown
     },
+    // the fruit fly (Janelia male CNS): y is dorsal, z anterior (antennal lobes in front), the optic lobes at the sides and
+    // the ventral nerve cord behind and below the brain
+    fly: {
+      overview: { pos: [-12, 7.5, 12], target: [0, -0.5, -1.2] },
+      left: { pos: [-17, 1.5, -1.5], target: [0, -0.5, -1.5] },
+      back: { pos: [0, 4.5, -17], target: [0, 0, 0] },
+      top: { pos: [0, 17, -1], target: [0, 0, -1] },
+      below: { pos: [0.01, -16, 3], target: [0, -0.5, -0.5] },
+      fly: { pos: [-6.5, 5, 13], target: [-0.3, 0.2, 0.3] },   // front, above and to the left: the antennal lobes, mushroom bodies and central complex
+      'fly-mb': { pos: [-3.5, 4.5, 12], target: [-1.0, 0.6, 0.3] },   // from in front and a little above (the nerve cord stays hidden): the left mushroom body, lateral horn and antennal lobe
+      'fly-cx': { pos: [-3, 4.5, 12], target: [-1.2, 0.5, 0.3] },   // the left medulla, optic tubercle and the central complex on the midline
+      'fly-ol': { pos: [-12, 2.5, 10], target: [-2.4, -0.3, -0.2] },   // the left optic lobe, from the front and side
+      'fly-body': { pos: [-19, 4, -4], target: [0, -1.5, -4] },   // from the left: the brain, neck connective and nerve cord
+    },
   };
   // the 3D brains on offer: those listed in knowledge.json atlas3d.species (a species is switched off there)
-  const SPECIES = [['human', 'Human'], ['macaque', 'Macaque'], ['mouse', 'Mouse'], ['octopus', 'Octopus']].filter(([sp]) => A3.species.includes(sp));
+  const SPECIES = [['human', 'Human'], ['macaque', 'Macaque'], ['mouse', 'Mouse'], ['octopus', 'Octopus'], ['fly', 'Fruit fly']].filter(([sp]) => A3.species.includes(sp));
   // A region lists the species it is drawn in (`species`); the mammalian regions leave it out and use these three.
-  // The species and the region always match: choosing the octopus switches to an octopus region, and back.
+  // The species and the region always match: choosing the octopus (or the fly) switches to one of its regions, and back.
   const MAMMALS = ['human', 'macaque', 'mouse'];
   const speciesOf = (R) => (R.species || MAMMALS).filter((sp) => SPECIES.some(([x]) => x === sp));
   const speciesOK = (R, sp) => speciesOf(R).includes(sp);
@@ -125,7 +139,7 @@
   function mount(node) {
     root = node;
     disposed = false;
-    if (!speciesOK(CA.region, species)) {   // a stored region of another animal (the octopus has its own regions)
+    if (!speciesOK(CA.region, species)) {   // a stored region of another animal (the octopus and the fly have their own regions)
       const mammal = CA.store.get('atlas.mammal', 'human');
       species = speciesOK(CA.region, mammal) ? mammal : speciesOf(CA.region)[0];
     }
@@ -264,7 +278,7 @@
     flyTo(c && c.view && VIEWS[species][c.view] ? c.view : R.view);
   }
 
-  /** Switch species. The octopus has its own regions and the mammals theirs, so a switch across them also switches the
+  /** Switch species. The octopus and the fly have their own regions and the mammals theirs, so a switch across them also switches the
    *  region, to the one last used for that animal; the scene is then rebuilt for the new species. */
   function chooseSpecies(sp) {
     if (sp === species) return;
