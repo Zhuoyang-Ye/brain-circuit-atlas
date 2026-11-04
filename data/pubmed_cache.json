@@ -50,6 +50,24 @@
   "volume": "57",
   "year": 2000
  },
+ "10649575": {
+  "authors": [
+   "Craig AD",
+   "Chen K",
+   "Bandy D",
+   "Reiman EM"
+  ],
+  "doi": "10.1038/72131",
+  "issue": "2",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "184-90",
+  "pmc": "",
+  "pmid": "10649575",
+  "title": "Thermosensory activation of insular cortex",
+  "volume": "3",
+  "year": 2000
+ },
  "10684885": {
   "authors": [
    "Dieudonné S",
@@ -238,6 +256,25 @@
   "pmid": "11024094",
   "title": "beta-adrenergic receptor-mediated presynaptic facilitation of inhibitory GABAergic transmission at cerebellar interneuron-Purkinje cell synapses",
   "volume": "84",
+  "year": 2000
+ },
+ "11036262": {
+  "authors": [
+   "Calder AJ",
+   "Keane J",
+   "Manes F",
+   "Antoun N",
+   "Young AW"
+  ],
+  "doi": "10.1038/80586",
+  "issue": "11",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "1077-8",
+  "pmc": "",
+  "pmid": "11036262",
+  "title": "Impaired recognition and experience of disgust following brain injury",
+  "volume": "3",
   "year": 2000
  },
  "11039938": {
@@ -479,6 +516,26 @@
   "title": "A cellular mechanism of reward-related learning",
   "volume": "413",
   "year": 2001
+ },
+ "11884353": {
+  "authors": [
+   "Ostrowsky K",
+   "Magnin M",
+   "Ryvlin P",
+   "Isnard J",
+   "Guenot M",
+   "Mauguière F"
+  ],
+  "doi": "10.1093/cercor/12.4.376",
+  "issue": "4",
+  "journal": "Cereb Cortex",
+  "journalFull": "Cerebral cortex (New York, N.Y. : 1991)",
+  "pages": "376-85",
+  "pmc": "",
+  "pmid": "11884353",
+  "title": "Representation of pain and somatic sensation in the human insula: a study of responses to direct electrical cortical stimulation",
+  "volume": "12",
+  "year": 2002
  },
  "12040087": {
   "authors": [
@@ -826,6 +883,26 @@
   "volume": "15",
   "year": 1992
  },
+ "14642287": {
+  "authors": [
+   "Wicker B",
+   "Keysers C",
+   "Plailly J",
+   "Royet JP",
+   "Gallese V",
+   "Rizzolatti G"
+  ],
+  "doi": "10.1016/s0896-6273(03)00679-2",
+  "issue": "3",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "655-64",
+  "pmc": "",
+  "pmid": "14642287",
+  "title": "Both of us disgusted in My insula: the common neural basis of seeing and feeling disgust",
+  "volume": "40",
+  "year": 2003
+ },
  "1464765": {
   "authors": [
    "Britten KH",
@@ -843,6 +920,25 @@
   "title": "The analysis of visual motion: a comparison of neuronal and psychophysical performance",
   "volume": "12",
   "year": 1992
+ },
+ "14730305": {
+  "authors": [
+   "Critchley HD",
+   "Wiens S",
+   "Rotshtein P",
+   "Ohman A",
+   "Dolan RJ"
+  ],
+  "doi": "10.1038/nn1176",
+  "issue": "2",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "189-95",
+  "pmc": "",
+  "pmid": "14730305",
+  "title": "Neural systems supporting interoceptive awareness",
+  "volume": "7",
+  "year": 2004
  },
  "14750976": {
   "authors": [
@@ -878,6 +974,26 @@
   "pmc": "",
   "pmid": "14963333",
   "title": "Anterior cingulate conflict monitoring and adjustments in control",
+  "volume": "303",
+  "year": 2004
+ },
+ "14976305": {
+  "authors": [
+   "Singer T",
+   "Seymour B",
+   "O'Doherty J",
+   "Kaube H",
+   "Dolan RJ",
+   "Frith CD"
+  ],
+  "doi": "10.1126/science.1093535",
+  "issue": "5661",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "1157-62",
+  "pmc": "",
+  "pmid": "14976305",
+  "title": "Empathy for pain involves the affective but not sensory components of pain",
   "volume": "303",
   "year": 2004
  },
@@ -1497,6 +1613,29 @@
   "volume": "311",
   "year": 2006
  },
+ "16462735": {
+  "authors": [
+   "Nitschke JB",
+   "Dixon GE",
+   "Sarinopoulos I",
+   "Short SJ",
+   "Cohen JD",
+   "Smith EE",
+   "Kosslyn SM",
+   "Rose RM",
+   "Davidson RJ"
+  ],
+  "doi": "10.1038/nn1645",
+  "issue": "3",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "435-42",
+  "pmc": "",
+  "pmid": "16462735",
+  "title": "Altering expectancy dampens neural response to aversive taste in primary taste cortex",
+  "volume": "9",
+  "year": 2006
+ },
  "16482160": {
   "authors": [
    "Paton JJ",
@@ -1627,6 +1766,22 @@
   "pmid": "16680163",
   "title": "BDNF val66met polymorphism is associated with modified experience-dependent plasticity in human motor cortex",
   "volume": "9",
+  "year": 2006
+ },
+ "16780813": {
+  "authors": [
+   "Paulus MP",
+   "Stein MB"
+  ],
+  "doi": "10.1016/j.biopsych.2006.03.042",
+  "issue": "4",
+  "journal": "Biol Psychiatry",
+  "journalFull": "Biological psychiatry",
+  "pages": "383-7",
+  "pmc": "",
+  "pmid": "16780813",
+  "title": "An insular view of anxiety",
+  "volume": "60",
   "year": 2006
  },
  "16835248": {
@@ -1841,6 +1996,27 @@
   "volume": "130",
   "year": 2007
  },
+ "17187353": {
+  "authors": [
+   "Seeley WW",
+   "Carlin DA",
+   "Allman JM",
+   "Macedo MN",
+   "Bush C",
+   "Miller BL",
+   "Dearmond SJ"
+  ],
+  "doi": "10.1002/ana.21055",
+  "issue": "6",
+  "journal": "Ann Neurol",
+  "journalFull": "Annals of neurology",
+  "pages": "660-7",
+  "pmc": "",
+  "pmid": "17187353",
+  "title": "Early frontotemporal dementia targets neurons unique to apes and humans",
+  "volume": "60",
+  "year": 2006
+ },
  "17229836": {
   "authors": [
    "Hassabis D",
@@ -1857,6 +2033,24 @@
   "pmid": "17229836",
   "title": "Patients with hippocampal amnesia cannot imagine new experiences",
   "volume": "104",
+  "year": 2007
+ },
+ "17255515": {
+  "authors": [
+   "Naqvi NH",
+   "Rudrauf D",
+   "Damasio H",
+   "Bechara A"
+  ],
+  "doi": "10.1126/science.1135926",
+  "issue": "5811",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "531-4",
+  "pmc": "PMC3698854",
+  "pmid": "17255515",
+  "title": "Damage to the insula disrupts addiction to cigarette smoking",
+  "volume": "315",
   "year": 2007
  },
  "17267559": {
@@ -1910,6 +2104,28 @@
   "pmid": "17303747",
   "title": "Pattern separation in the dentate gyrus and CA3 of the hippocampus",
   "volume": "315",
+  "year": 2007
+ },
+ "17329432": {
+  "authors": [
+   "Seeley WW",
+   "Menon V",
+   "Schatzberg AF",
+   "Keller J",
+   "Glover GH",
+   "Kenna H",
+   "Reiss AL",
+   "Greicius MD"
+  ],
+  "doi": "10.1523/JNEUROSCI.5587-06.2007",
+  "issue": "9",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "2349-56",
+  "pmc": "PMC2680293",
+  "pmid": "17329432",
+  "title": "Dissociable intrinsic connectivity networks for salience processing and executive control",
+  "volume": "27",
   "year": 2007
  },
  "17347275": {
@@ -2358,6 +2574,26 @@
   "volume": "319",
   "year": 2008
  },
+ "18390562": {
+  "authors": [
+   "Clark L",
+   "Bechara A",
+   "Damasio H",
+   "Aitken MR",
+   "Sahakian BJ",
+   "Robbins TW"
+  ],
+  "doi": "10.1093/brain/awn066",
+  "issue": "Pt 5",
+  "journal": "Brain",
+  "journalFull": "Brain : a journal of neurology",
+  "pages": "1311-22",
+  "pmc": "PMC2367692",
+  "pmid": "18390562",
+  "title": "Differential effects of insular and ventromedial prefrontal cortex lesions on risky decision-making",
+  "volume": "131",
+  "year": 2008
+ },
  "18558853": {
   "authors": [
    "Lemon RN"
@@ -2446,6 +2682,23 @@
   "volume": "321",
   "year": 2008
  },
+ "18723676": {
+  "authors": [
+   "Sridharan D",
+   "Levitin DJ",
+   "Menon V"
+  ],
+  "doi": "10.1073/pnas.0800005105",
+  "issue": "34",
+  "journal": "Proc Natl Acad Sci U S A",
+  "journalFull": "Proceedings of the National Academy of Sciences of the United States of America",
+  "pages": "12569-74",
+  "pmc": "PMC2527952",
+  "pmid": "18723676",
+  "title": "A critical role for the right fronto-insular cortex in switching between central-executive and default-mode networks",
+  "volume": "105",
+  "year": 2008
+ },
  "18806784": {
   "authors": [
    "Medina JF",
@@ -2514,6 +2767,21 @@
   "title": "Calcitonin gene-related peptide (CGRP) triggers Ca2+ responses in cultured astrocytes and in Bergmann glial cells from cerebellar slices",
   "volume": "28",
   "year": 2008
+ },
+ "19096369": {
+  "authors": [
+   "Craig AD"
+  ],
+  "doi": "10.1038/nrn2555",
+  "issue": "1",
+  "journal": "Nat Rev Neurosci",
+  "journalFull": "Nature reviews. Neuroscience",
+  "pages": "59-70",
+  "pmc": "",
+  "pmid": "19096369",
+  "title": "How do you feel--now? The anterior insula and human awareness",
+  "volume": "10",
+  "year": 2009
  },
  "19126760": {
   "authors": [
@@ -3205,6 +3473,41 @@
   "volume": "13",
   "year": 2010
  },
+ "20512370": {
+  "authors": [
+   "Menon V",
+   "Uddin LQ"
+  ],
+  "doi": "10.1007/s00429-010-0262-0",
+  "issue": "5-6",
+  "journal": "Brain Struct Funct",
+  "journalFull": "Brain structure & function",
+  "pages": "655-67",
+  "pmc": "PMC2899886",
+  "pmid": "20512370",
+  "title": "Saliency, switching, attention and control: a network model of insula function",
+  "volume": "214",
+  "year": 2010
+ },
+ "20512376": {
+  "authors": [
+   "Kurth F",
+   "Zilles K",
+   "Fox PT",
+   "Laird AR",
+   "Eickhoff SB"
+  ],
+  "doi": "10.1007/s00429-010-0255-z",
+  "issue": "5-6",
+  "journal": "Brain Struct Funct",
+  "journalFull": "Brain structure & function",
+  "pages": "519-34",
+  "pmc": "PMC4801482",
+  "pmid": "20512376",
+  "title": "A link between the systems: functional differentiation and integration within the human insula revealed by meta-analysis",
+  "volume": "214",
+  "year": 2010
+ },
  "20613723": {
   "authors": [
    "Kravitz AV",
@@ -3314,6 +3617,23 @@
   "title": "mTOR-dependent synapse formation underlies the rapid antidepressant effects of NMDA antagonists",
   "volume": "329",
   "year": 2010
+ },
+ "20946964": {
+  "authors": [
+   "Lamm C",
+   "Decety J",
+   "Singer T"
+  ],
+  "doi": "10.1016/j.neuroimage.2010.10.014",
+  "issue": "3",
+  "journal": "Neuroimage",
+  "journalFull": "NeuroImage",
+  "pages": "2492-502",
+  "pmc": "",
+  "pmid": "20946964",
+  "title": "Meta-analytic evidence for common and distinct neural networks associated with directly experienced pain and empathy for pain",
+  "volume": "54",
+  "year": 2011
  },
  "20960054": {
   "authors": [
@@ -3467,6 +3787,26 @@
   "pmid": "21084685",
   "title": "Presynaptic CB1 receptors regulate synaptic plasticity at cerebellar parallel fiber synapses",
   "volume": "105",
+  "year": 2011
+ },
+ "21111053": {
+  "authors": [
+   "Cauda F",
+   "D'Agata F",
+   "Sacco K",
+   "Duca S",
+   "Geminiani G",
+   "Vercelli A"
+  ],
+  "doi": "10.1016/j.neuroimage.2010.11.049",
+  "issue": "1",
+  "journal": "Neuroimage",
+  "journalFull": "NeuroImage",
+  "pages": "8-23",
+  "pmc": "",
+  "pmid": "21111053",
+  "title": "Functional connectivity of the insula in the resting brain",
+  "volume": "55",
   "year": 2011
  },
  "21167712": {
@@ -3843,6 +4183,25 @@
   "pmid": "21878518",
   "title": "Transient expression of functional serotonin 5-HT3 receptors by glutamatergic granule cells in the early postnatal mouse cerebellum",
   "volume": "589",
+  "year": 2011
+ },
+ "21885776": {
+  "authors": [
+   "Chen X",
+   "Gabitto M",
+   "Peng Y",
+   "Ryba NJ",
+   "Zuker CS"
+  ],
+  "doi": "10.1126/science.1204076",
+  "issue": "6047",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "1262-6",
+  "pmc": "PMC3523322",
+  "pmid": "21885776",
+  "title": "A gustotopic map of taste qualities in the mammalian brain",
+  "volume": "333",
   "year": 2011
  },
  "21907811": {
@@ -5094,6 +5453,25 @@
   "volume": "17",
   "year": 2014
  },
+ "25088363": {
+  "authors": [
+   "Gogolla N",
+   "Takesian AE",
+   "Feng G",
+   "Fagiolini M",
+   "Hensch TK"
+  ],
+  "doi": "10.1016/j.neuron.2014.06.033",
+  "issue": "4",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "894-905",
+  "pmc": "PMC4177076",
+  "pmid": "25088363",
+  "title": "Sensory integration in mouse insular cortex reflects GABA circuit maturation",
+  "volume": "83",
+  "year": 2014
+ },
  "25102558": {
   "authors": [
    "Wang SS",
@@ -5325,6 +5703,34 @@
   "title": "Selective Modulation of Histaminergic Inputs on Projection Neurons of Cerebellum Rapidly Promotes Motor Coordination via HCN Channels",
   "volume": "53",
   "year": 2016
+ },
+ "25651064": {
+  "authors": [
+   "Goodkind M",
+   "Eickhoff SB",
+   "Oathes DJ",
+   "Jiang Y",
+   "Chang A",
+   "Jones-Hagata LB",
+   "Ortega BN",
+   "Zaiko YV",
+   "Roach EL",
+   "Korgaonkar MS",
+   "Grieve SM",
+   "Galatzer-Levy I",
+   "Fox PT",
+   "Etkin A"
+  ],
+  "doi": "10.1001/jamapsychiatry.2014.2206",
+  "issue": "4",
+  "journal": "JAMA Psychiatry",
+  "journalFull": "JAMA psychiatry",
+  "pages": "305-15",
+  "pmc": "PMC4791058",
+  "pmid": "25651064",
+  "title": "Identification of a common neurobiological substrate for mental illness",
+  "volume": "72",
+  "year": 2015
  },
  "25731172": {
   "authors": [
@@ -5709,6 +6115,26 @@
   "pmid": "26551541",
   "title": "Climbing fibers encode a temporal-difference prediction error during cerebellar learning in mice",
   "volume": "18",
+  "year": 2015
+ },
+ "26580015": {
+  "authors": [
+   "Peng Y",
+   "Gillis-Smith S",
+   "Jin H",
+   "Tränkner D",
+   "Ryba NJ",
+   "Zuker CS"
+  ],
+  "doi": "10.1038/nature15763",
+  "issue": "7579",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "512-5",
+  "pmc": "PMC4712381",
+  "pmid": "26580015",
+  "title": "Sweet and bitter taste in the brain of awake behaving animals",
+  "volume": "527",
   "year": 2015
  },
  "26633811": {
@@ -6462,6 +6888,32 @@
   "volume": "8",
   "year": 1988
  },
+ "28614299": {
+  "authors": [
+   "Livneh Y",
+   "Ramesh RN",
+   "Burgess CR",
+   "Levandowski KM",
+   "Madara JC",
+   "Fenselau H",
+   "Goldey GJ",
+   "Diaz VE",
+   "Jikomes N",
+   "Resch JM",
+   "Lowell BB",
+   "Andermann ML"
+  ],
+  "doi": "10.1038/nature22375",
+  "issue": "7660",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "611-616",
+  "pmc": "PMC5577930",
+  "pmid": "28614299",
+  "title": "Homeostatic circuits selectively gate food cue responses in insular cortex",
+  "volume": "546",
+  "year": 2017
+ },
  "2869411": {
   "authors": [
    "Morris RG",
@@ -6679,6 +7131,27 @@
   "title": "A hippocampo-cerebellar centred network for the learning and execution of sequence-based navigation",
   "volume": "7",
   "year": 2017
+ },
+ "29305535": {
+  "authors": [
+   "Schiff HC",
+   "Bouhuis AL",
+   "Yu K",
+   "Penzo MA",
+   "Li H",
+   "He M",
+   "Li B"
+  ],
+  "doi": "10.1523/JNEUROSCI.1773-17.2017",
+  "issue": "6",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "1418-1429",
+  "pmc": "PMC5815345",
+  "pmid": "29305535",
+  "title": "An Insula-Central Amygdala Circuit for Guiding Tastant-Reinforced Choice Behavior",
+  "volume": "38",
+  "year": 2018
  },
  "29381778": {
   "authors": [
@@ -6981,6 +7454,28 @@
   "title": "Modification of saccadic eye movements by GABA-related substances. II. Effects of muscimol in monkey substantia nigra pars reticulata",
   "volume": "53",
   "year": 1985
+ },
+ "29849148": {
+  "authors": [
+   "Wang L",
+   "Gillis-Smith S",
+   "Peng Y",
+   "Zhang J",
+   "Chen X",
+   "Salzman CD",
+   "Ryba NJP",
+   "Zuker CS"
+  ],
+  "doi": "10.1038/s41586-018-0165-4",
+  "issue": "7708",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "127-131",
+  "pmc": "PMC6201270",
+  "pmid": "29849148",
+  "title": "The coding of valence and identity in the mammalian taste system",
+  "volume": "558",
+  "year": 2018
  },
  "29986160": {
   "authors": [
@@ -7722,6 +8217,32 @@
   "volume": "572",
   "year": 2019
  },
+ "31455886": {
+  "authors": [
+   "Gehrlach DA",
+   "Dolensek N",
+   "Klein AS",
+   "Roy Chowdhury R",
+   "Matthys A",
+   "Junghänel M",
+   "Gaitanos TN",
+   "Podgornik A",
+   "Black TD",
+   "Reddy Vaka N",
+   "Conzelmann KK",
+   "Gogolla N"
+  ],
+  "doi": "10.1038/s41593-019-0469-1",
+  "issue": "9",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "1424-1437",
+  "pmc": "",
+  "pmid": "31455886",
+  "title": "Aversive state processing in the posterior insular cortex",
+  "volume": "22",
+  "year": 2019
+ },
  "31474318": {
   "authors": [
    "Aldinger KA",
@@ -7986,6 +8507,29 @@
   "pmid": "31941824",
   "title": "Cerebellar oscillations driven by synaptic pruning deficits of cerebellar climbing fibers contribute to tremor pathophysiology",
   "volume": "12",
+  "year": 2020
+ },
+ "31955944": {
+  "authors": [
+   "Livneh Y",
+   "Sugden AU",
+   "Madara JC",
+   "Essner RA",
+   "Flores VI",
+   "Sugden LA",
+   "Resch JM",
+   "Lowell BB",
+   "Andermann ML"
+  ],
+  "doi": "10.1016/j.neuron.2019.12.027",
+  "issue": "6",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "1094-1111.e10",
+  "pmc": "PMC7083695",
+  "pmid": "31955944",
+  "title": "Estimation of Current and Future Physiological States in Insular Cortex",
+  "volume": "105",
   "year": 2020
  },
  "31959938": {
@@ -10603,6 +11147,54 @@
   "volume": "2",
   "year": 1982
  },
+ "7174905": {
+  "authors": [
+   "Mesulam MM",
+   "Mufson EJ"
+  ],
+  "doi": "10.1002/cne.902120102",
+  "issue": "1",
+  "journal": "J Comp Neurol",
+  "journalFull": "The Journal of comparative neurology",
+  "pages": "1-22",
+  "pmc": "",
+  "pmid": "7174905",
+  "title": "Insula of the old world monkey. I. Architectonics in the insulo-orbito-temporal component of the paralimbic brain",
+  "volume": "212",
+  "year": 1982
+ },
+ "7174906": {
+  "authors": [
+   "Mufson EJ",
+   "Mesulam MM"
+  ],
+  "doi": "10.1002/cne.902120103",
+  "issue": "1",
+  "journal": "J Comp Neurol",
+  "journalFull": "The Journal of comparative neurology",
+  "pages": "23-37",
+  "pmc": "",
+  "pmid": "7174906",
+  "title": "Insula of the old world monkey. II: Afferent cortical input and comments on the claustrum",
+  "volume": "212",
+  "year": 1982
+ },
+ "7174907": {
+  "authors": [
+   "Mesulam MM",
+   "Mufson EJ"
+  ],
+  "doi": "10.1002/cne.902120104",
+  "issue": "1",
+  "journal": "J Comp Neurol",
+  "journalFull": "The Journal of comparative neurology",
+  "pages": "38-52",
+  "pmc": "",
+  "pmid": "7174907",
+  "title": "Insula of the old world monkey. III: Efferent cortical output and comments on function",
+  "volume": "212",
+  "year": 1982
+ },
  "7472442": {
   "authors": [
    "LaBar KS",
@@ -11197,6 +11789,21 @@
   "pmid": "8898206",
   "title": "Familial hemiplegic migraine and episodic ataxia type-2 are caused by mutations in the Ca2+ channel gene CACNL1A4",
   "volume": "87",
+  "year": 1996
+ },
+ "8957561": {
+  "authors": [
+   "Augustine JR"
+  ],
+  "doi": "10.1016/s0165-0173(96)00011-2",
+  "issue": "3",
+  "journal": "Brain Res Brain Res Rev",
+  "journalFull": "Brain research. Brain research reviews",
+  "pages": "229-44",
+  "pmc": "",
+  "pmid": "8957561",
+  "title": "Circuitry and functional aspects of the insular lobe in primates including humans",
+  "volume": "22",
   "year": 1996
  },
  "8980238": {

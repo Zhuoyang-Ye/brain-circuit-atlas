@@ -40,7 +40,7 @@ The user approved six new regions in this order and asked "Can you simply just d
 2. Hippocampus: **done**, on `wip/regions` (section 6).
 3. Amygdala: **done** 2026-11-04, on `wip/regions` (section 6a).
 4. Visual cortex: **done** 2026-11-04 (section 6b).
-5. Insula.
+5. Insula: **done** 2026-11-04 (section 6c).
 6. Olfactory.
 
 Run the full pipeline for each region (section 5). Give the user a brief report after each region, and don't stop between regions to ask permission. **Do not commit or push unless the user asks**, and ask again before any push to `main`. (2026-11-04: the user OK'd committing and pushing to `wip/regions` after each finished step, with this handoff in `handoff/` on that branch.)
@@ -260,6 +260,18 @@ Then continue with the visual cortex (section 7).
 **Tests:** smoke clean in 7 regions × 2 themes; trace runs for vis-geniculate (3 steps in primates, 2 in mouse) and vis-cb (2 steps); none for the parallel vis-streams and vis-topdown.
 
 **Audit (done):** all 257 new sentences read against the abstracts. Fixed in `handoff/scripts/fix_vis1.py` (applied; no membership change, 0 warnings): marshel2011's seven areas include V1; britten1992 "most" MT neurons; hadjikhani2001 three people; benson1988 five patients; hendry2000 "likely"; ko2011 "than orthogonal"; no "classic study"; six single-study links set to `emerging` (v1>mt, v1>v4, v1>mouse-hva, it>f-face, ffa>f-face, visual-cortex>pontine). desimone1984's finding now says "a particularly high incidence" deep in the STS. Region report given. Next: the insula (section 7).
+
+## 6c. Insula (2026-11-04, cloud session)
+
+**Literature** (`handoff/insula/keys.json`, `draft_papers.json`, `queries.json`, `knowledge_before_insula.json`). 31 papers, PMIDs verified with `pubmed_abs.py find`. Excluded: segerdahl2015 (Nature corrigendum PMID 26605886 has no text in PubMed and nature.com is unreachable), penfield1955 (no abstract, title states no claim), and four papers whose abstract and MeSH never mention the insula (craig2002 "How do you feel?", habas2009, garfinkel2015, khalsa2018). Kept, by judgement: chen2011, peng2015 and wang2018 say "gustatory/taste cortex" rather than "insula"; the gustatory cortex is the insula's taste area (nitschke2006: "the primary taste cortex consists of the insula and operculum"), as CA1 is to the hippocampus. All papers are tagged `insula` only.
+
+**Content** (`handoff/scripts/apply_ins.py`, applied): region `insula` (view `insula`); 9 tagged entities (insula, ains, pins, gc, vens, c-addiction, c-ftd, c-central-pain, c-psych), 3 shared (salience-net, f-interoception, f-taste); sentences added to the untagged f-social, f-emotion, f-feeding, f-pain, f-attention, f-decision, c-anxiety and thalamus (tagged entities were not extended, so no paper needed extra region tags); 27 links, 4 chains, 4 questions, 4 circuits (ins-taste, ins-hunger, ins-body, ins-salience). `ins-body` was split from `ins-hunger` so the trace does not suggest a hunger-to-anxiety chain. Audit (`handoff/scripts/fix_ins1.py`, applied): naqvi2007 "disrupted", singer2004 "correlated with empathy scores", wang2018 inputs assign valence.
+
+**Region check:** 0 warnings; no losses; bridges only: amygdala (insula>amygdala, gc>amygdala, gc>cea, pins>cea, bla>insula, three chains, q-ins-taste-value), basal ganglia (pins>nac), prefrontal (ains>acc, acc>salience-net), cerebellum (insula>c-asd, through the cerebellum-tagged c-asd).
+
+**3D:** human `sig` 12178 (short insular gyri) → ains, `lig` 12177 (long insular gyri) → pins; gc and vens alias to ains. Mouse `ai-ant` [104 AId, 119 AIv] → ains, `ai-post` [111 AIp, 677 VISC] → pins, `gu` 1057 → gc. Macaque CHARM `Ia/Id` → ains, `Ig` → pins, gc aliased to ains (CHARM `G` and `lat_Ia` sit inside the existing OFC mesh). VENs placed only in the human. Presets `VIEWS.*.insula`. Tests: smoke clean in 8 regions × 2 themes; trace only for ins-taste (2 steps); circuits dump shows only "Anatomy only" and the prefrontal/amygdala "All" views changed (bridges).
+
+Next: the olfactory region (section 7).
 
 ## 7. Remaining regions: what is known so far
 

@@ -104,7 +104,10 @@
        "note": "The fusiform face area lies in the fusiform gyrus (Kanwisher et al. 1997); the atlas does not mark it, so the temporal part of the gyrus stands for it."},
       {"key": "itg", "src": 12142, "name": "Inferior temporal gyrus", "entity": "it", "group": "cortex", "faces": 1500, "tone": "#c97f8f"},
       {"key": "iog", "src": 12153, "name": "Inferior occipital gyrus", "group": "helper", "faces": 600},
-      {"key": "mtg", "src": 12141, "name": "Middle temporal gyrus", "group": "helper", "faces": 800}
+      {"key": "mtg", "src": 12141, "name": "Middle temporal gyrus", "group": "helper", "faces": 800},
+      {"key": "sig", "src": 12178, "name": "Short insular gyri (anterior insula)", "entity": "ains", "group": "cortex", "faces": 1500, "tone": "#e879f9",
+       "note": "The short insular gyri stand for the anterior insula; the atlas does not mark the taste cortex, which in humans lies in the insula and operculum, so it is shown here."},
+      {"key": "lig", "src": 12177, "name": "Long insular gyri (posterior insula)", "entity": "pins", "group": "cortex", "faces": 1200, "tone": "#c084fc"}
     ],
     "suit": {
       "url": "https://raw.githubusercontent.com/DiedrichsenLab/cerebellar_atlases/master/Diedrichsen_2009/atl-Anatom_space-MNI_dseg.nii",
@@ -194,7 +197,10 @@
       {"key": "ptlp", "src": 22, "name": "Posterior parietal cortex", "entity": "parietal", "group": "cortex", "faces": 1500},
       {"key": "visp", "src": 385, "name": "Primary visual area (VISp)", "entity": "v1", "group": "cortex", "faces": 1500, "tone": "#dc8b8b"},
       {"key": "hva", "src": [409, 402, 394, 533, 312782574, 425], "name": "Higher visual areas (LM, AL, AM, PM, LI, P)", "entity": "mouse-hva", "group": "cortex", "faces": 2000, "tone": "#e7a3a3"},
-      {"key": "lgd", "src": 170, "name": "Dorsal lateral geniculate nucleus (LGd)", "entity": "lgn", "group": "target", "faces": 800}
+      {"key": "lgd", "src": 170, "name": "Dorsal lateral geniculate nucleus (LGd)", "entity": "lgn", "group": "target", "faces": 800},
+      {"key": "ai-ant", "src": [104, 119], "name": "Agranular insular area, dorsal and ventral parts (anterior insula)", "entity": "ains", "group": "cortex", "faces": 1200, "tone": "#e879f9"},
+      {"key": "ai-post", "src": [111, 677], "name": "Agranular insular area, posterior part, and visceral area (posterior insula)", "entity": "pins", "group": "cortex", "faces": 1200, "tone": "#c084fc"},
+      {"key": "gu", "src": 1057, "name": "Gustatory areas (GU)", "entity": "gc", "group": "cortex", "faces": 800, "tone": "#f0abfc"}
     ]
   },
   "macaque": {
@@ -281,7 +287,9 @@
       {"key": "mt", "charm": ["MT"], "name": "Middle temporal area (MT)", "entity": "mt", "group": "cortex", "faces": 800, "tone": "#f0b37a"},
       {"key": "itc", "charm": ["ITC"], "name": "Inferior temporal cortex (TE and TEO)", "entity": "it", "group": "cortex", "faces": 3000, "tone": "#c97f8f"},
       {"key": "fef", "charm": ["area_8A"], "name": "Frontal eye field (area 8A)", "entity": "fef", "group": "cortex", "faces": 1200, "tone": "#f6c177"},
-      {"key": "dlg", "sarm": ["DLG"], "name": "Dorsal lateral geniculate nucleus", "entity": "lgn", "group": "target", "faces": 600}
+      {"key": "dlg", "sarm": ["DLG"], "name": "Dorsal lateral geniculate nucleus", "entity": "lgn", "group": "target", "faces": 600},
+      {"key": "ins-ant", "charm": ["Ia/Id"], "name": "Agranular and dysgranular insula (anterior insula)", "entity": "ains", "group": "cortex", "faces": 1500, "tone": "#e879f9"},
+      {"key": "ins-post", "charm": ["Ig"], "name": "Granular insula (posterior insula)", "entity": "pins", "group": "cortex", "faces": 1000, "tone": "#c084fc"}
     ]
   }
 }

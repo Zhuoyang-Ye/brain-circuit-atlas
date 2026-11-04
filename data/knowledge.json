@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Cerebellum Atlas",
-    "subtitle": "An evidence-linked map of the cerebellum, the motor and prefrontal cortex, the basal ganglia, the hippocampus, the amygdala, the visual cortex and their connections, from molecules to mind",
+    "subtitle": "An evidence-linked map of the cerebellum, the motor and prefrontal cortex, the basal ganglia, the hippocampus, the amygdala, the visual cortex, the insula and their connections, from molecules to mind",
     "version": "0.1",
     "disclaimer": "Summaries, link statuses and map scores were drafted with AI assistance from PubMed abstracts and need review by domain experts. Diagrams are schematic."
   },
@@ -699,6 +699,106 @@
         "mouse": "Mouse: Allen CCFv3 primary visual area (VISp), the higher visual areas LM, AL, AM, PM, LI and P (the anterior and rostrolateral areas are drawn with posterior parietal cortex) and the dorsal lateral geniculate nucleus. V4, MT, inferotemporal cortex, the fusiform face area and the frontal eye field are not placed in the mouse brain.",
         "macaque": "Macaque: CHARM V1, V4, MT, inferior temporal cortex (TE and TEO) and area 8A (frontal eye field), and the SARM dorsal lateral geniculate nucleus. The fusiform face area and the mouse higher visual areas are not placed."
       }
+    },
+    {
+      "id": "insula",
+      "label": "Insula",
+      "entity": "insula",
+      "query": "(insula[tiab] OR insular[tiab] OR \"gustatory cortex\"[tiab] OR \"taste cortex\"[tiab] OR interocepti*[tiab])",
+      "view": "insula",
+      "views": ["atlas", "scales", "gaps", "lab", "library"],
+      "levelDesc": {
+        "regional": "Anterior (agranular and dysgranular) and posterior (granular) insula; gustatory cortex",
+        "circuit": "Thalamic taste input to gustatory cortex and on to the amygdala; posterior insula outputs to the central amygdala and accumbens; amygdala input that carries hunger; the salience network with the anterior cingulate"
+      },
+      "levelQueries": {
+        "cellular": "(neuron*[tiab] OR \"von Economo\"[tiab] OR interneuron*[tiab] OR GABA*[tiab])",
+        "circuit": "(circuit*[tiab] OR projection*[tiab] OR pathway*[tiab] OR connectivity[tiab])",
+        "regional": "(\"anterior insula\"[tiab] OR \"posterior insula\"[tiab] OR \"gustatory cortex\"[tiab] OR frontoinsular[tiab])"
+      },
+      "methods": {
+        "molecular": {
+          "manipulate": [
+            "Benzodiazepines (diazepam) during a sensitive period",
+            "Knockout mouse models (GAD65, Shank3, Mecp2)",
+            "Chemogenetic activation of hypothalamic AgRP neurons"
+          ],
+          "readout": [
+            "GABA circuit maturation",
+            "Acetylcholinesterase histochemistry",
+            "Tau pathology in surviving neurons"
+          ]
+        },
+        "cellular": {
+          "manipulate": [
+            "Silencing defined neuron populations",
+            "Optogenetic activation of taste-cortex fields",
+            "Chemogenetics in hunger and thirst"
+          ],
+          "readout": [
+            "Cellular imaging through a microprism",
+            "Two-photon imaging of taste responses",
+            "Stereological counts of von Economo neurons"
+          ]
+        },
+        "circuit": {
+          "manipulate": [
+            "Projection-specific optogenetics (to the amygdala and accumbens)",
+            "Inhibiting transmitter release from projection neurons",
+            "Viral and classic tract tracing"
+          ],
+          "readout": [
+            "Optogenetics-assisted circuit mapping",
+            "Topography of cortical projections to the amygdala",
+            "Afferent and efferent cortical connections"
+          ]
+        },
+        "regional": {
+          "manipulate": [
+            "Electrical stimulation through depth electrodes (patients)",
+            "Expectancy manipulation",
+            "Thermal and painful stimulation"
+          ],
+          "readout": ["Gustotopic maps", "PET and fMRI activation by cooling, pain and taste", "Gray matter volume"]
+        },
+        "systems": {
+          "manipulate": [
+            "Task-free (resting-state) recording",
+            "Salient events (oddballs, event boundaries)",
+            "Hunger and thirst"
+          ],
+          "readout": [
+            "Intrinsic connectivity networks",
+            "Granger causality between networks",
+            "Population activity tracking physiological state"
+          ]
+        },
+        "cognitive": {
+          "manipulate": ["Heartbeat detection", "Watching a loved one receive pain", "Go/no-go tasks reinforced by tastes"],
+          "readout": ["Interoceptive accuracy and awareness", "Empathy scores", "Risky betting"]
+        },
+        "clinical": {
+          "manipulate": [
+            "Lesion patients (smoking, gambling, disgust)",
+            "Epilepsy surgery workup",
+            "Transdiagnostic meta-analysis"
+          ],
+          "readout": [
+            "Quitting smoking without urges",
+            "Von Economo neuron loss in frontotemporal dementia",
+            "Gray matter loss across psychiatric diagnoses"
+          ]
+        }
+      },
+      "intro": {
+        "title": "Insula, the brain's map of the body",
+        "text": "The anterior and posterior insula and the taste cortex: how heartbeat, temperature, pain and taste are represented, how tastes gain pleasant or aversive value through the amygdala, how hunger and thirst change what insular neurons signal, the insula's part in empathy, disgust and the salience network, and what changes in smoking addiction, frontotemporal dementia, central pain and across psychiatric disorders. Every connection is tied to the papers behind it and graded by how strong the evidence is."
+      },
+      "speciesNote": {
+        "human": "Human: the Allen short insular gyri stand for the anterior insula and the long insular gyri for the posterior insula. The atlas does not mark the taste cortex, which in humans lies in the insula and operculum, so it is shown in the anterior insula, as are the von Economo neurons.",
+        "mouse": "Mouse: Allen CCFv3 agranular insular area (dorsal and ventral parts for the anterior insula; the posterior part with the visceral area for the posterior insula) and the gustatory areas. Von Economo neurons are not placed in the mouse brain.",
+        "macaque": "Macaque: CHARM agranular and dysgranular insula (anterior) and granular insula (posterior). The taste cortex is shown in the anterior insula, and the lateral agranular insula is drawn with orbitofrontal cortex. Von Economo neurons are not placed in the macaque brain."
+      }
     }
   ],
   "methods": {
@@ -1034,7 +1134,7 @@
       "kind": "structure",
       "aka": ["VL", "VM", "CL", "PF", "VA", "VAL", "POm", "MD", "mediodorsal"],
       "domains": ["architecture", "motor"],
-      "summary": "Relays cerebellar output to cortex: motor thalamus to motor and prefrontal areas, ventromedial thalamus to mPFC, intralaminar nuclei to striatum, and parafascicular nucleus in anxiety. Motor thalamus (VA/VL) innervates layers 2/3–5B of mouse M1, and inactivating the thalamus disrupts dexterous reaching at any stage. In rats, motor-thalamic neurons of a zone dominated by inhibitory afferents send many axon varicosities to cortical layer I and also reach the striatum, whereas those of a zone dominated by excitatory afferents target the middle layers. In mice, thalamic neurons show selective persistent activity that predicts movement direction during planning, and photoinhibiting the thalamus collapses ALM activity; the thalamus also relays a Go-cue signal from the midbrain that switches motor cortex from planning to a motor command. The mediodorsal nucleus connects with prefrontal cortex in a nucleus-to-field pattern (monkey), and its neurons change their firing during the delay of a delayed-response test (monkey). In mice, its input sustains medial prefrontal delay activity during working memory and amplifies prefrontal connectivity to maintain rule representations, while the prefrontal projection back to it supports the subsequent choice. It is part of the basal ganglia–thalamocortical 'motor' circuit (primate models); in a proposed center–surround model, a 'hyperdirect' signal first inhibits large areas of the thalamus and cortex before the direct pathway disinhibits the targets of the selected motor program.",
+      "summary": "Relays cerebellar output to cortex: motor thalamus to motor and prefrontal areas, ventromedial thalamus to mPFC, intralaminar nuclei to striatum, and parafascicular nucleus in anxiety. Motor thalamus (VA/VL) innervates layers 2/3–5B of mouse M1, and inactivating the thalamus disrupts dexterous reaching at any stage. In rats, motor-thalamic neurons of a zone dominated by inhibitory afferents send many axon varicosities to cortical layer I and also reach the striatum, whereas those of a zone dominated by excitatory afferents target the middle layers. In mice, thalamic neurons show selective persistent activity that predicts movement direction during planning, and photoinhibiting the thalamus collapses ALM activity; the thalamus also relays a Go-cue signal from the midbrain that switches motor cortex from planning to a motor command. The mediodorsal nucleus connects with prefrontal cortex in a nucleus-to-field pattern (monkey), and its neurons change their firing during the delay of a delayed-response test (monkey). In mice, its input sustains medial prefrontal delay activity during working memory and amplifies prefrontal connectivity to maintain rule representations, while the prefrontal projection back to it supports the subsequent choice. It is part of the basal ganglia–thalamocortical 'motor' circuit (primate models); in a proposed center–surround model, a 'hyperdirect' signal first inhibits large areas of the thalamus and cortex before the direct pathway disinhibits the targets of the selected motor program. Its taste area, the parvicellular ventral posteromedial nucleus, projects to insular-opercular cortex (review).",
       "refs": [
         "kelly2003",
         "kelly2020",
@@ -1055,7 +1155,8 @@
         "bolkan2017",
         "schmitt2017",
         "delong1990",
-        "nambu2002"
+        "nambu2002",
+        "augustine1996"
       ]
     },
     {"id": "motor-cortex", "name": "Motor & premotor cortex", "level": "systems", "kind": "structure", "aka": ["motor areas", "frontal motor cortex"], "domains": ["motor"],
@@ -1209,7 +1310,7 @@
       "level": "cognitive",
       "kind": "function",
       "domains": ["social"],
-      "summary": "Mentalizing and social preference. Human imaging points to Crus I/II; mouse circuit studies implicate Crus I, vermis, VTA and mPFC pathways. In mice, the strength of excitatory input onto layer V pyramidal neurons of medial PFC tracks dominance rank, and raising or lowering synaptic efficacy in dorsal mPFC moves animals up or down the hierarchy. Patients with bilateral ventromedial prefrontal damage make abnormally utilitarian judgments on emotionally aversive moral dilemmas. A patient with selective bilateral amygdala damage was impaired at recognizing fear in facial expressions (human). In patient SM, impaired recognition of fear stems from not making normal use of the eye region of faces, which the authors trace to a lack of spontaneous fixations on the eyes, and her recognition of fearful faces became normal when she was told to look at the eyes (human). In the medial amygdala, a GABAergic subpopulation promotes aggression and two other social behaviors, whereas neighboring glutamatergic neurons promote repetitive self-grooming and inhibit social interactions (mouse).",
+      "summary": "Mentalizing and social preference. Human imaging points to Crus I/II; mouse circuit studies implicate Crus I, vermis, VTA and mPFC pathways. In mice, the strength of excitatory input onto layer V pyramidal neurons of medial PFC tracks dominance rank, and raising or lowering synaptic efficacy in dorsal mPFC moves animals up or down the hierarchy. Patients with bilateral ventromedial prefrontal damage make abnormally utilitarian judgments on emotionally aversive moral dilemmas. A patient with selective bilateral amygdala damage was impaired at recognizing fear in facial expressions (human). In patient SM, impaired recognition of fear stems from not making normal use of the eye region of faces, which the authors trace to a lack of spontaneous fixations on the eyes, and her recognition of fearful faces became normal when she was told to look at the eyes (human). In the medial amygdala, a GABAergic subpopulation promotes aggression and two other social behaviors, whereas neighboring glutamatergic neurons promote repetitive self-grooming and inhibit social interactions (mouse). Empathy for pain engages a core network of anterior insula and medial/anterior cingulate cortex that overlaps with responses to one's own pain (human).",
       "refs": [
         "vanoverwalle2014",
         "vanoverwalle2020",
@@ -1222,11 +1323,32 @@
         "koenigs2007",
         "adolphs1994",
         "adolphs2005",
-        "hong2014"
+        "hong2014",
+        "lamm2011",
+        "singer2004"
       ]
     },
-    {"id": "f-emotion", "name": "Emotion & fear", "level": "cognitive", "kind": "function", "domains": ["emotion"],
-     "summary": "Emotion perception and regulation, fear learning and extinction, and anxiety. A patient with selective bilateral amygdala damage was impaired at recognizing fear in facial expressions (human), and the amygdala responds more to fearful than to happy faces, even when the faces are masked so that most viewers report seeing only neutral ones (human). A patient with focal bilateral amygdala lesions showed no fear in frightening situations and an impoverished experience of fear in daily life, although she exhibited other basic emotions (human).", "refs": ["adamaszek2017", "frontera2020", "schmahmann1998", "zhang2024", "e2014", "adolphs1994", "morris1996", "whalen1998", "feinstein2011"]},
+    {
+      "id": "f-emotion",
+      "name": "Emotion & fear",
+      "level": "cognitive",
+      "kind": "function",
+      "domains": ["emotion"],
+      "summary": "Emotion perception and regulation, fear learning and extinction, and anxiety. A patient with selective bilateral amygdala damage was impaired at recognizing fear in facial expressions (human), and the amygdala responds more to fearful than to happy faces, even when the faces are masked so that most viewers report seeing only neutral ones (human). A patient with focal bilateral amygdala lesions showed no fear in frightening situations and an impoverished experience of fear in daily life, although she exhibited other basic emotions (human). Feeling disgust and seeing it on others' faces activate the same anterior insula sites (human), and a patient with insula and putamen damage showed impaired recognition of disgust (human).",
+      "refs": [
+        "adamaszek2017",
+        "frontera2020",
+        "schmahmann1998",
+        "zhang2024",
+        "e2014",
+        "adolphs1994",
+        "morris1996",
+        "whalen1998",
+        "feinstein2011",
+        "wicker2003",
+        "calder2000"
+      ]
+    },
     {
       "id": "f-reward",
       "name": "Reward & motivation",
@@ -1250,7 +1372,7 @@
       ]
     },
     {"id": "f-feeding", "name": "Feeding & drinking", "level": "cognitive", "kind": "function", "domains": ["homeostasis"],
-     "summary": "Meal termination and thirst. Anterior deep-nuclei neurons reduce meal size through striatal dopamine, and Purkinje cells activated by the hormone asprosin increase water intake. PKC-δ+ neurons of the lateral central amygdala are activated by diverse anorexigenic signals, are required for those signals to inhibit feeding, and suppress food intake when activated (mouse).", "refs": ["low2021", "mishra2024", "cai2014"]},
+     "summary": "Meal termination and thirst. Anterior deep-nuclei neurons reduce meal size through striatal dopamine, and Purkinje cells activated by the hormone asprosin increase water intake. PKC-δ+ neurons of the lateral central amygdala are activated by diverse anorexigenic signals, are required for those signals to inhibit feeding, and suppress food intake when activated (mouse). Mouse insular neurons respond preferentially to food cues only when the animal is hungry, a bias that hypothalamic AgRP neurons restore through the paraventricular thalamus and basolateral amygdala (mouse).", "refs": ["low2021", "mishra2024", "cai2014", "livneh2017"]},
     {
       "id": "f-spatial",
       "name": "Spatial navigation",
@@ -1274,7 +1396,7 @@
       ]
     },
     {"id": "f-pain", "name": "Pain & nociception", "level": "cognitive", "kind": "function", "aka": ["nociception", "analgesia"], "domains": ["emotion", "homeostasis"],
-     "summary": "Pain is among the emotional functions the cerebellum contributes to. In mice, noxious stimuli release locus coeruleus noradrenaline onto Bergmann glia, and this α1-adrenergic glial signaling promotes nocifensive behavior and neuropathic pain. A rostral anterior cingulate → pontine pathway mediates placebo analgesia, and Purkinje cells show similar activity during expectation of pain relief (mouse).", "refs": ["adamaszek2017", "kim2025", "chen2024"]},
+     "summary": "Pain is among the emotional functions the cerebellum contributes to. In mice, noxious stimuli release locus coeruleus noradrenaline onto Bergmann glia, and this α1-adrenergic glial signaling promotes nocifensive behavior and neuropathic pain. A rostral anterior cingulate → pontine pathway mediates placebo analgesia, and Purkinje cells show similar activity during expectation of pain relief (mouse). Stimulating the upper posterior insula evokes painful sensations (human), and the anterior insula and rostral anterior cingulate respond to a loved one's pain as well as one's own (human).", "refs": ["adamaszek2017", "kim2025", "chen2024", "ostrowsky2002", "singer2004"]},
     {"id": "c-ataxia", "name": "Cerebellar motor syndrome", "level": "clinical", "kind": "disorder", "aka": ["ataxia", "dysmetria"], "domains": ["motor"],
      "summary": "Ataxia of gait and limbs, dysmetria and dysarthria, mainly after anterior-lobe (III–VI) damage.", "refs": ["stoodley2016", "schmahmann1998", "benussi2018", "morton2006", "tseng2007"], "region": "cerebellum"},
     {"id": "c-ccas", "name": "Cerebellar cognitive affective syndrome", "level": "clinical", "kind": "disorder", "aka": ["CCAS", "Schmahmann syndrome"], "domains": ["executive", "language", "spatial", "emotion"],
@@ -1435,9 +1557,9 @@
     {"id": "f-flexibility", "name": "Cognitive flexibility", "level": "cognitive", "kind": "function", "aka": ["set shifting", "reversal learning", "task switching", "behavioral flexibility"], "domains": ["executive"],
      "summary": "Changing behavior when rules or outcomes change. In marmosets, lateral prefrontal damage impaired inhibitory control in attentional selection and orbitofrontal damage impaired it in affective processing; in rats, medial frontal lesions selectively impaired attentional set shifting. In monkeys, whether OFC is needed for reversal learning is debated: surgical removals impaired it, but excitotoxic, fiber-sparing lesions did not. In monkeys that flexibly select which sensory input guides a choice, selection and integration appear to unfold as one dynamical process within the same prefrontal circuits.", "refs": ["dias1996", "birrell2000", "izquierdo2004", "rudebeck2013", "mante2013"]},
     {"id": "f-attention", "name": "Attention", "level": "cognitive", "kind": "function", "aka": ["top-down attention", "attentional control"], "domains": ["executive"],
-     "summary": "Focusing processing on what matters for the task. In monkeys, prefrontal neurons signal the target location first during top-down attention, and parietal neurons first during bottom-up attention. In mice, mediodorsal thalamic input sustains prefrontal representations of the rules that guide attention. In ADHD, cortical maturation is delayed most prominently in prefrontal regions important for control of cognitive processes including attention (human). Attending to one of two stimuli in the receptive field of a V4 or inferior temporal neuron dramatically reduces the response to the unattended one, whereas striate cells are unaffected (monkey), and microstimulating the frontal eye field enhances V4 responses at the corresponding location (monkey).", "refs": ["buschman2007", "schmitt2017", "shaw2007", "moran1985", "moore2003"]},
+     "summary": "Focusing processing on what matters for the task. In monkeys, prefrontal neurons signal the target location first during top-down attention, and parietal neurons first during bottom-up attention. In mice, mediodorsal thalamic input sustains prefrontal representations of the rules that guide attention. In ADHD, cortical maturation is delayed most prominently in prefrontal regions important for control of cognitive processes including attention (human). Attending to one of two stimuli in the receptive field of a V4 or inferior temporal neuron dramatically reduces the response to the unattended one, whereas striate cells are unaffected (monkey), and microstimulating the frontal eye field enhances V4 responses at the corresponding location (monkey). The right fronto-insular cortex appears to drive switching between the central-executive and default-mode networks at salient events (human).", "refs": ["buschman2007", "schmitt2017", "shaw2007", "moran1985", "moore2003", "sridharan2008"]},
     {"id": "f-decision", "name": "Value-based decision-making", "level": "cognitive", "kind": "function", "aka": ["economic choice", "foraging", "reward-guided choice"], "domains": ["reward", "executive"],
-     "summary": "Choosing among options by their value. In monkeys, orbitofrontal neurons encode the value of offered and chosen goods, and removing orbital prefrontal cortex blunts the change in choice that should follow a change in reward value. In humans, comparative and foraging modes of choice engage distinct mechanisms in ventromedial PFC and anterior cingulate cortex, and on a task that simulates real-life decisions, patients with ventromedial prefrontal damage seem guided by immediate prospects only, oblivious to future consequences.", "refs": ["padoaschioppa2006", "izquierdo2004", "kolling2012", "bechara1994"]},
+     "summary": "Choosing among options by their value. In monkeys, orbitofrontal neurons encode the value of offered and chosen goods, and removing orbital prefrontal cortex blunts the change in choice that should follow a change in reward value. In humans, comparative and foraging modes of choice engage distinct mechanisms in ventromedial PFC and anterior cingulate cortex, and on a task that simulates real-life decisions, patients with ventromedial prefrontal damage seem guided by immediate prospects only, oblivious to future consequences. Patients with insular lesions fail to adjust their bets to the odds of winning (human).", "refs": ["padoaschioppa2006", "izquierdo2004", "kolling2012", "bechara1994", "clark2008"]},
     {
       "id": "f-fear",
       "name": "Fear learning & extinction",
@@ -1588,7 +1710,7 @@
     {"id": "f-valence", "name": "Emotional valence", "level": "cognitive", "kind": "function", "aka": ["valence", "positive and negative value"], "domains": ["emotion", "reward"],
      "summary": "Whether a stimulus or outcome is good or bad. Amygdala neurons encode the positive and negative values of images, and distinct populations encode each (monkey). In mice, basolateral amygdala neurons projecting to the nucleus accumbens support positive reinforcement and those projecting to the centromedial amygdala negative reinforcement, and two genetically distinct basolateral populations take part in positive- and negative-valence behaviors. Two people with focal bilateral amygdala lesions showed a dramatic reduction in loss aversion in monetary gambles (human).", "refs": ["paton2006", "namburi2015", "kim2016", "demartino2010"]},
     {"id": "c-anxiety", "name": "Anxiety disorders", "level": "clinical", "kind": "disorder", "aka": ["social anxiety disorder", "specific phobia"], "domains": ["emotion"],
-     "summary": "A meta-analysis of imaging studies found that patients with social anxiety disorder, specific phobia or PTSD consistently show greater activity than comparison subjects in the amygdala and insula, structures linked to negative emotional responses, as do healthy subjects during fear conditioning (human).", "refs": ["etkin2007"]},
+     "summary": "A meta-analysis of imaging studies found that patients with social anxiety disorder, specific phobia or PTSD consistently show greater activity than comparison subjects in the amygdala and insula, structures linked to negative emotional responses, as do healthy subjects during fear conditioning (human). Anxiety proneness is proposed to involve an augmented interoceptive prediction signal in which the anterior insula plays a key role (hypothesis).", "refs": ["etkin2007", "paulus2006"]},
     {"id": "visual-cortex", "name": "Visual cortex", "level": "regional", "kind": "area", "region": "visual-cortex", "aka": ["occipital cortex", "visual areas"], "domains": ["sensory"],
      "summary": "The occipital and occipitotemporal areas devoted to vision. In the macaque, a database of reported connections lists 25 predominantly visual areas and 7 visual-association areas, linked by 305 mostly reciprocal pathways and arranged in a hierarchy of 10 cortical levels with intertwined processing streams (monkey). Cells in V1, V2 and higher areas fall into interdigitating subdivisions selective for colour, stereopsis, movement and orientation, which appear to derive mainly from the parvocellular (form and colour) and magnocellular (depth and movement) geniculate subdivisions (review). Much of human visual cortex is organized into visual field maps, in medial, lateral, ventral and dorsal occipital and in posterior parietal cortex (review), whose borders retinotopic fMRI can delineate (human). Face matching and location matching engage separate ventral (occipitotemporal) and dorsal (superior parietal) regions (human).", "refs": ["felleman1991", "livingstone1988", "wandell2007", "sereno1995", "haxby1991"]},
     {"id": "v1", "name": "Primary visual cortex (V1)", "level": "regional", "kind": "area", "region": "visual-cortex", "aka": ["V1", "striate cortex", "area 17", "VISp", "primary visual area"], "domains": ["sensory"],
@@ -1638,7 +1760,31 @@
     {"id": "f-face", "name": "Face perception", "level": "cognitive", "kind": "function", "aka": ["face recognition"], "domains": ["sensory", "social"],
      "summary": "In humans and macaques, fMRI shows cortical regions that respond more to faces than to objects; in macaques almost all visually responsive neurons in the largest such region are strongly face selective (monkey), and inferotemporal cortex holds a population of face-selective neurons whose responses depend on the configuration of facial features (monkey). In humans a region of the fusiform gyrus is selectively involved in face perception (human).", "refs": ["tsao2006", "desimone1984", "kanwisher1997"]},
     {"id": "fef", "name": "Frontal eye field", "level": "regional", "kind": "area", "aka": ["FEF", "area 8A"], "domains": ["executive", "motor"],
-     "summary": "A frontal area where stimulation can evoke saccades. Brief stimulation of an FEF site, below the current that evokes saccades, enhances the visual responses of V4 neurons at the corresponding location and can suppress those at non-corresponding locations (monkey).", "refs": ["moore2003"]}
+     "summary": "A frontal area where stimulation can evoke saccades. Brief stimulation of an FEF site, below the current that evokes saccades, enhances the visual responses of V4 neurons at the corresponding location and can suppress those at non-corresponding locations (monkey).", "refs": ["moore2003"]},
+    {"id": "insula", "name": "Insular cortex", "level": "regional", "kind": "area", "region": "insula", "aka": ["insula", "insular cortex", "insular lobe", "InsCtx", "Reil"], "domains": ["homeostasis", "emotion"],
+     "summary": "Cortex hidden in the depth of the hemisphere by the frontal and temporal opercula (human). In the rhesus monkey it has agranular, dysgranular and granular sectors and forms with lateral orbital and temporopolar cortex a paralimbic belt, and the human insula has a virtually identical plan (monkey). It receives input from prefrontal, orbital, opercular, cingulate, olfactory, temporopolar, superior temporal, rhinal and posterior parietal cortex and projects back to the areas that project to it; through its connections with the amygdala it gives somatosensory, auditory, gustatory, olfactory and visceral sensations a route to the limbic system (monkey). Imaging meta-analysis divides the human insula into sensorimotor (mid-posterior), social-emotional (anterior-ventral), olfacto-gustatory (central) and cognitive (anterior-dorsal) regions (human). Smokers whose brain damage involved the insula were more likely to have their addiction disrupted (human). In mice its neurons respond preferentially to food cues when the animal is hungry (mouse), and its ongoing activity tracks the return to homeostasis during hunger and thirst (mouse).", "refs": ["cauda2011", "mesulam1982a", "mufson1982", "mesulam1982b", "kurth2010", "naqvi2007", "livneh2017", "livneh2020"]},
+    {"id": "ains", "name": "Anterior insula", "level": "regional", "kind": "area", "region": "insula", "aka": ["AIC", "anterior insular cortex", "frontoinsular cortex", "FI", "agranular insula"], "domains": ["homeostasis", "emotion", "social"],
+     "summary": "The anterior insula, with agranular and dysgranular cortex in front of the granular posterior part (human). Activity in the right anterior insula predicts the accuracy of heartbeat detection, and its gray matter volume correlates with interoceptive accuracy and visceral awareness (human); its re-representation of interoception is proposed as a basis for subjective feelings and awareness (review). It responds both to one's own pain and to a signal that a loved one is in pain, with responses that correlate with empathy scores (human), and to feeling disgust as well as seeing it on others' faces (human). With the dorsal anterior cingulate it anchors a salience network (human), and gray matter loss across psychiatric diagnoses converges in both insulae and the dorsal anterior cingulate (human). Perceived thermal intensity correlates with right anterior insula activity (human).", "refs": ["cauda2011", "critchley2004", "craig2009", "singer2004", "wicker2003", "seeley2007", "goodkind2015", "craig2000"]},
+    {"id": "pins", "name": "Posterior insula", "level": "regional", "kind": "area", "region": "insula", "aka": ["PIC", "pIC", "posterior insular cortex", "granular insula", "dorsal posterior insula"], "domains": ["sensory", "homeostasis"],
+     "summary": "The posterior insula, mostly granular cortex (monkey). Graded cooling activates the dorsal margin of the middle/posterior insula, which corresponds to the lamina I spinothalamocortical pathway of monkeys (human), and stimulating the upper posterior insula evokes painful sensations, while posterior sites also evoke non-painful somatic sensations (human). Posterior insula/secondary somatosensory responses are specific to one's own pain, not a loved one's (human). In mice the posterior insula processes aversive stimuli and bodily states; its projection to the central amygdala mediates anxiety-related behaviours, and a separate accumbens-projecting pathway regulates feeding (mouse).", "refs": ["mesulam1982a", "craig2000", "ostrowsky2002", "singer2004", "gehrlach2019"]},
+    {"id": "gc", "name": "Gustatory cortex", "level": "regional", "kind": "area", "region": "insula", "aka": ["GC", "taste cortex", "primary taste cortex", "GU", "gustatory areas"], "domains": ["sensory"],
+     "summary": "The primary taste cortex, which in humans consists of the insula and operculum (human). In mice each taste quality (sweet, bitter, umami, salty) has its own cortical field (mouse), and manipulating the sweet and bitter fields controls taste perception and behaviour even without taste input (mouse). Its sweet- and bitter-responsive fields project to distinct parts of the amygdala, and these inputs assign taste valence (mouse), and its projection to the lateral central amygdala is needed to learn taste-guided avoidance (mouse). Expecting a milder taste reduces its response to an aversive bitter taste (human). In primates the thalamic taste area projects to insular-opercular cortex (review).", "refs": ["nitschke2006", "chen2011", "peng2015", "wang2018", "schiff2018", "augustine1996"]},
+    {"id": "vens", "name": "Von Economo neurons", "level": "cellular", "kind": "cell type", "region": "insula", "aka": ["VENs", "spindle neurons"], "domains": ["social", "emotion"],
+     "summary": "Large bipolar projection neurons found only in great apes and humans, and only in anterior cingulate and frontoinsular cortex (human). Frontotemporal dementia causes an early, severe and selective loss of them, which Alzheimer's disease does not (human), and they are proposed to contribute to awareness (review).", "refs": ["seeley2006", "craig2009"]},
+    {"id": "c-addiction", "name": "Addiction to smoking", "level": "clinical", "kind": "disorder", "region": "insula", "aka": ["nicotine addiction", "smoking"], "domains": ["reward"],
+     "summary": "Smokers with brain damage involving the insula were more likely than smokers with damage elsewhere to quit easily and immediately, without relapse or a persisting urge to smoke (human).", "refs": ["naqvi2007"]},
+    {"id": "c-ftd", "name": "Frontotemporal dementia", "level": "clinical", "kind": "disorder", "region": "insula", "aka": ["FTD", "behavioural-variant frontotemporal dementia"], "domains": ["social", "emotion"],
+     "summary": "A neurodegenerative disease that erodes social behaviour and emotion and injures anterior cingulate and frontoinsular cortex early; it causes a selective loss of von Economo neurons, unlike Alzheimer's disease (human).", "refs": ["seeley2006"]},
+    {"id": "c-central-pain", "name": "Central post-stroke pain", "level": "clinical", "kind": "disorder", "region": "insula", "aka": ["central pain syndrome", "thalamic pain"], "domains": ["sensory"],
+     "summary": "Lesions of the dorsal posterior insula, where cooling is represented, can produce central post-stroke pain, which the authors take to support the proposal that central pain results from loss of the normal inhibition of pain by cold (human).", "refs": ["craig2000"]},
+    {"id": "c-psych", "name": "Mental illness across diagnoses", "level": "clinical", "kind": "disorder", "region": "insula", "aka": ["transdiagnostic", "common substrate of mental illness"], "domains": ["emotion", "executive"],
+     "summary": "In 193 morphometry studies of schizophrenia, bipolar disorder, depression, addiction, obsessive-compulsive disorder and anxiety, gray matter loss converged in the dorsal anterior cingulate and both insulae, with few diagnosis-specific effects (human).", "refs": ["goodkind2015"]},
+    {"id": "salience-net", "name": "Salience network", "level": "systems", "kind": "network", "aka": ["SN", "cingulo-opercular network"], "domains": ["executive", "emotion"],
+     "summary": "An intrinsic connectivity network anchored by the dorsal anterior cingulate and orbital frontoinsular cortices, with robust subcortical and limbic connectivity; connectivity of its cingulate node correlates with anxiety (human). The right fronto-insular cortex appears to drive switches between the central-executive and default-mode networks (human), and the network is proposed to mark salient events for further processing (review).", "refs": ["seeley2007", "sridharan2008", "menon2010"]},
+    {"id": "f-interoception", "name": "Interoception", "level": "cognitive", "kind": "function", "aka": ["interoceptive awareness", "body sense"], "domains": ["homeostasis", "sensory"],
+     "summary": "Sensing the physiological condition of the body. Right anterior insula activity and gray matter volume relate to the accuracy of heartbeat detection and to visceral awareness (human), graded cooling activates the dorsal posterior insula (human), and mouse insular cortex tracks the return to homeostasis during hunger and thirst (mouse).", "refs": ["critchley2004", "craig2000", "livneh2020"]},
+    {"id": "f-taste", "name": "Taste", "level": "cognitive", "kind": "function", "aka": ["gustation"], "domains": ["sensory", "reward"],
+     "summary": "Detecting sweet, bitter, umami, salty and sour tastes. In mice each quality is represented in its own field of gustatory cortex (mouse), and amygdala inputs from those fields assign taste valence separately from taste identity (mouse).", "refs": ["chen2011", "wang2018"]}
   ],
   "links": [
     {"s": "mglur1", "t": "ltd", "rel": "required for LTD induction", "status": "supported", "kind": "mechanistic", "refs": ["aiba1994", "hansel2001"]},
@@ -2240,7 +2386,34 @@
     {"s": "visual-cortex", "t": "c-pca", "rel": "five patients had a progressive dementia heralded by disorders of higher visual function, with predominant parieto-occipital atrophy on imaging in two of them (human)", "status": "emerging", "kind": "clinical", "refs": ["benson1988"]},
     {"s": "visual-cortex", "t": "c-akinetopsia", "rel": "bilateral damage attributed to the lateral temporo-occipital cortex disturbed movement vision in a rather pure form (human)", "status": "emerging", "kind": "clinical", "refs": ["zihl1983"]},
     {"s": "visual-cortex", "t": "pontine", "rel": "extrastriate areas concerned mainly with spatial vision, visual motion and the peripheral field project to the pontine nuclei, but areas for object identification and central vision do not (monkey)", "status": "emerging", "kind": "anatomical", "refs": ["schmahmann1993"]},
-    {"s": "v1", "t": "pontine", "rel": "only a few corticopontine cells, in the part of area 17 that represents the lower peripheral visual field (monkey)", "status": "emerging", "kind": "anatomical", "refs": ["glickstein1985"]}
+    {"s": "v1", "t": "pontine", "rel": "only a few corticopontine cells, in the part of area 17 that represents the lower peripheral visual field (monkey)", "status": "emerging", "kind": "anatomical", "refs": ["glickstein1985"]},
+    {"s": "thalamus", "t": "gc", "rel": "the thalamic taste area, the parvicellular ventral posteromedial nucleus, projects to insular-opercular cortex (review)", "status": "supported", "kind": "anatomical", "refs": ["augustine1996"]},
+    {"s": "insula", "t": "amygdala", "rel": "the insula connects with the lateral, basolateral, central, cortical and medial amygdaloid nuclei (review), giving somatosensory, auditory, gustatory, olfactory and visceral sensations a route to the limbic system (monkey)", "status": "supported", "kind": "anatomical", "refs": ["mesulam1982b", "augustine1996"]},
+    {"s": "gc", "t": "amygdala", "rel": "sweet- and bitter-responsive taste cortex project to distinct parts of the amygdala; manipulating these inputs imposes or reverses taste valence, and silencing amygdala neurons abolishes valence-related behaviour but not taste discrimination (mouse)", "status": "emerging", "kind": "causal", "refs": ["wang2018"]},
+    {"s": "gc", "t": "cea", "rel": "direct excitatory projection to the lateral central amygdala; inhibiting it prevents learning to withhold licking for an aversive taste, and activating it suppresses licking and can instruct avoidance (mouse)", "status": "emerging", "kind": "anatomical", "refs": ["schiff2018"]},
+    {"s": "pins", "t": "cea", "rel": "the posterior insula projection to the central amygdala mediates anxiety-related behaviours (mouse)", "status": "emerging", "kind": "causal", "refs": ["gehrlach2019"]},
+    {"s": "pins", "t": "nac", "rel": "an accumbens-projecting posterior insula pathway regulates feeding upon changes in bodily state (mouse)", "status": "emerging", "kind": "causal", "refs": ["gehrlach2019"]},
+    {"s": "bla", "t": "insula", "rel": "hunger signals from hypothalamic AgRP neurons reach insular cortex via the paraventricular thalamus and basolateral amygdala (mouse), and insular cortex appears to combine visceral signals with this hypothalamus-gated amygdala input (mouse)", "status": "supported", "kind": "anatomical", "refs": ["livneh2017", "livneh2020"]},
+    {"s": "ains", "t": "acc", "rel": "at rest the anterior insula is coupled with the anterior cingulate cortex (human), and a right fronto-insular and anterior cingulate network is activated by salient events (human)", "status": "supported", "kind": "functional", "refs": ["cauda2011", "sridharan2008"]},
+    {"s": "ains", "t": "salience-net", "rel": "the orbital frontoinsular cortex anchors the salience network with the dorsal anterior cingulate (human), and the anterior insula is proposed as its hub (review)", "status": "supported", "kind": "functional", "refs": ["seeley2007", "menon2010"]},
+    {"s": "acc", "t": "salience-net", "rel": "the dorsal anterior cingulate is the other anchor of the salience network, and its connectivity correlates with prescan anxiety (human)", "status": "emerging", "kind": "functional", "refs": ["seeley2007"]},
+    {"s": "salience-net", "t": "f-attention", "rel": "Granger causality analysis indicates that the right fronto-insular cortex drives switching between the central-executive and default-mode networks (human); the network is proposed to give salient events access to attention and working memory (review)", "status": "supported", "kind": "functional", "refs": ["sridharan2008", "menon2010"]},
+    {"s": "ains", "t": "f-interoception", "rel": "right anterior insula activity predicts the accuracy of heartbeat detection, and its gray matter volume correlates with interoceptive accuracy and visceral awareness (human); proposed to re-represent interoception as a basis for feelings (review)", "status": "supported", "kind": "localization", "refs": ["critchley2004", "craig2009"]},
+    {"s": "pins", "t": "f-interoception", "rel": "graded cooling activates the dorsal margin of the middle/posterior insula, which the authors consider an interoceptive area of limbic sensory cortex (human)", "status": "emerging", "kind": "localization", "refs": ["craig2000"]},
+    {"s": "insula", "t": "f-interoception", "rel": "ongoing insular activity tracks the return to homeostasis during hunger and thirst, and cues shift it toward the future satiety-related pattern (mouse)", "status": "emerging", "kind": "functional", "refs": ["livneh2020"]},
+    {"s": "pins", "t": "f-pain", "rel": "stimulating the upper posterior insula evokes painful sensations, mostly on the right (human), and graded cooling activates the dorsal posterior insula (human)", "status": "supported", "kind": "localization", "refs": ["ostrowsky2002", "craig2000"]},
+    {"s": "ains", "t": "f-social", "rel": "empathy: the anterior insula responds both to one's own pain and to a loved one's, correlated with empathy scores (human), meta-analysis places it in a core network for empathy for pain (human), and seeing disgust activates the same sites as feeling it (human)", "status": "supported", "kind": "localization", "refs": ["singer2004", "lamm2011", "wicker2003"]},
+    {"s": "ains", "t": "f-emotion", "rel": "disgust: feeling disgust and seeing it on others' faces activate the same anterior insula sites (human), and a patient with insula and putamen damage showed impaired recognition of disgust (human)", "status": "supported", "kind": "localization", "refs": ["wicker2003", "calder2000"]},
+    {"s": "gc", "t": "f-taste", "rel": "each basic taste quality has its own field in mouse gustatory cortex, and manipulating the sweet or bitter field controls taste perception and behaviour (mouse); expectancy modulates the human taste cortex response to an aversive taste (human)", "status": "supported", "kind": "localization", "refs": ["chen2011", "peng2015", "nitschke2006"]},
+    {"s": "insula", "t": "f-feeding", "rel": "insular neurons respond preferentially to food cues only when hungry, a bias restored by activating AgRP hunger neurons (mouse), and a posterior insula to accumbens pathway regulates feeding with changes in bodily state (mouse)", "status": "supported", "kind": "functional", "refs": ["livneh2017", "gehrlach2019"]},
+    {"s": "insula", "t": "c-addiction", "rel": "smokers whose brain damage involved the insula were more likely to quit easily, immediately and without relapse or urges (human)", "status": "emerging", "kind": "clinical", "refs": ["naqvi2007"]},
+    {"s": "insula", "t": "f-decision", "rel": "patients with insular lesions fail to adjust their bets to the odds of winning (human)", "status": "emerging", "kind": "clinical", "refs": ["clark2008"]},
+    {"s": "vens", "t": "c-ftd", "rel": "frontotemporal dementia causes an early, severe and selective loss of anterior cingulate von Economo neurons (74% fewer per section), which Alzheimer's disease does not (human)", "status": "emerging", "kind": "clinical", "refs": ["seeley2006"]},
+    {"s": "ains", "t": "c-ftd", "rel": "frontotemporal dementia injures anterior cingulate and frontoinsular cortex early (human)", "status": "emerging", "kind": "clinical", "refs": ["seeley2006"]},
+    {"s": "ains", "t": "c-anxiety", "rel": "proposed: anxiety-prone people show an augmented interoceptive prediction signal, in which the anterior insula plays a key role (hypothesis)", "status": "hypothesis", "kind": "theoretical", "refs": ["paulus2006"]},
+    {"s": "ains", "t": "c-psych", "rel": "gray matter loss across six psychiatric diagnoses converges in both insulae and the dorsal anterior cingulate (meta-analysis, human)", "status": "emerging", "kind": "clinical", "refs": ["goodkind2015"]},
+    {"s": "insula", "t": "c-asd", "rel": "multisensory integration in insular cortex is impaired in the BTBR autism model, reflecting weakened GABA circuits, and early diazepam rescues it; GAD65, Shank3 and Mecp2 knockouts are also impaired (mouse)", "status": "emerging", "kind": "clinical", "refs": ["gogolla2014"]},
+    {"s": "pins", "t": "c-central-pain", "rel": "lesions of the dorsal posterior insula can produce central post-stroke pain, consistent with the proposal that central pain results from losing the normal inhibition of pain by cold (human)", "status": "hypothesis", "kind": "clinical", "refs": ["craig2000"]}
   ],
   "chains": [
     {"id": "loop-pfc", "name": "Cerebro-cerebellar loop", "nodes": ["pfc", "pontine", "cb-cortex", "dcn", "thalamus", "pfc"],
@@ -2382,7 +2555,15 @@
     {"id": "vis-pontine", "name": "Visual cortex to the cerebellum", "nodes": ["visual-cortex", "pontine", "cb-cortex"],
      "desc": "Extrastriate areas concerned mainly with spatial vision, motion and the peripheral field project to the pontine nuclei (monkey), whose crossed mossy fibers reach the cerebellar cortex."},
     {"id": "vis-fear-faces", "name": "The amygdala and faces", "nodes": ["amygdala", "ffa", "f-face"],
-     "desc": "The larger fusiform response to fearful than to neutral faces is absent after amygdala damage (human), and the fusiform face area is selectively involved in face perception (human)."}
+     "desc": "The larger fusiform response to fearful than to neutral faces is absent after amygdala damage (human), and the fusiform face area is selectively involved in face perception (human)."},
+    {"id": "ins-taste-valence", "name": "From taste to its value", "nodes": ["thalamus", "gc", "amygdala", "f-valence"],
+     "desc": "The thalamic taste area projects to insular-opercular cortex (review). Sweet- and bitter-responsive taste cortex projects to distinct parts of the amygdala, and these inputs assign taste valence (mouse); amygdala neurons encode positive and negative values (monkey)."},
+    {"id": "ins-anxiety", "name": "The posterior insula and anxiety", "nodes": ["pins", "cea", "f-anxiety"],
+     "desc": "The posterior insula projection to the central amygdala mediates anxiety-related behaviours (mouse), and bilateral central amygdala lesions suggest a role for it in fear- and anxiety-related responses (monkey)."},
+    {"id": "ins-hunger", "name": "Hunger reaches the insula", "nodes": ["bla", "insula", "f-feeding"],
+     "desc": "Signals from hypothalamic AgRP hunger neurons reach insular cortex via the paraventricular thalamus and basolateral amygdala and bias insular neurons toward food cues (mouse)."},
+    {"id": "ins-salience", "name": "Salience and switching", "nodes": ["ains", "salience-net", "f-attention"],
+     "desc": "The frontoinsular cortex anchors the salience network with the dorsal anterior cingulate (human), and the right fronto-insular cortex appears to drive switches between the central-executive and default-mode networks (human)."}
   ],
   "questions": [
     {
@@ -2975,6 +3156,54 @@
         "Compare face-area responses to fearful faces before and after amygdala inactivation in monkeys.",
         "Map face-selective neurons and face areas in the same animals."
       ]
+    },
+    {
+      "id": "q-ins-feeling",
+      "title": "Does the anterior insula turn body signals into feelings?",
+      "text": "Right anterior insula activity and gray matter volume relate to how accurately people detect their own heartbeat and to visceral awareness (critchley2004), and the anterior insula is proposed to re-represent interoception as a basis for subjective feelings and awareness (craig2009). Smokers whose brain damage involved the insula were more likely to quit without a persisting urge to smoke (naqvi2007), and anxiety proneness is proposed to reflect an augmented interoceptive prediction signal (paulus2006). Is the anterior insula needed for feelings, or for awareness of them?",
+      "entities": ["ains", "f-interoception", "c-addiction"],
+      "refs": ["critchley2004", "craig2009", "naqvi2007", "paulus2006"],
+      "approaches": [
+        "Test interoceptive accuracy and reported feelings in patients with focal anterior insula lesions.",
+        "Relate anterior insula responses to heartbeats to moment-by-moment ratings of urges and emotions.",
+        "Train interoceptive accuracy in anxious people and measure insula activity and anxiety."
+      ]
+    },
+    {
+      "id": "q-ins-taste-value",
+      "title": "Where does a taste get its value?",
+      "text": "In mice each taste quality has its own field of gustatory cortex (chen2011), and manipulating the sweet or bitter field controls taste perception and behaviour (peng2015). Projections from those fields to the amygdala assign valence separately from identity (wang2018), and a projection to the lateral central amygdala is needed to learn taste-guided avoidance (schiff2018). Does the same split between identity in the insula and value in the amygdala hold in primates, and how does learning change it?",
+      "entities": ["gc", "f-taste", "amygdala"],
+      "refs": ["chen2011", "peng2015", "wang2018", "schiff2018"],
+      "approaches": [
+        "Record taste cortex and amygdala together while a taste is devalued by pairing it with illness.",
+        "Image the human taste cortex with high resolution for a gustotopic map.",
+        "Silence insula-to-amygdala projections in primates and measure taste preference and discrimination."
+      ]
+    },
+    {
+      "id": "q-ins-prediction",
+      "title": "How does the insula predict the body's needs?",
+      "text": "Insular neurons respond to food cues only when mice are hungry, a bias carried by AgRP neurons through the paraventricular thalamus and basolateral amygdala (livneh2017); insular activity tracks the return to homeostasis and cues shift it toward the predicted future state (livneh2020); and the posterior insula drives anxiety through the central amygdala and feeding through the accumbens (gehrlach2019). How do predicted and actual body states combine, and is the same circuit used for thirst, pain or fear?",
+      "entities": ["insula", "pins", "f-feeding"],
+      "refs": ["livneh2017", "livneh2020", "gehrlach2019"],
+      "approaches": [
+        "Record insular neurons while feeding is delayed or the meal is infused directly into the stomach.",
+        "Manipulate amygdala input to the insula and measure prediction-related activity.",
+        "Compare insular coding of hunger, thirst and aversive bodily states in the same neurons."
+      ]
+    },
+    {
+      "id": "q-ins-switch",
+      "title": "Is the anterior insula a switch between brain networks?",
+      "text": "The salience network is anchored by frontoinsular and dorsal anterior cingulate cortex (seeley2007), the right fronto-insular cortex appears to drive switching between the central-executive and default-mode networks (sridharan2008), and the anterior insula is proposed as the network's hub (menon2010). Gray matter loss across psychiatric diagnoses converges on the same insula and cingulate regions (goodkind2015). Does the switch depend on the insula itself, and could its damage explain shared symptoms across disorders?",
+      "entities": ["salience-net", "ains", "c-psych"],
+      "refs": ["seeley2007", "sridharan2008", "menon2010", "goodkind2015"],
+      "approaches": [
+        "Test network switching in patients with focal anterior insula lesions.",
+        "Stimulate the anterior insula during intracranial recordings and measure network transitions.",
+        "Relate insula integrity to executive function across psychiatric diagnoses."
+      ]
     }
   ],
   "flatmap": {
@@ -3226,7 +3455,12 @@
         "v1-vip",
         "od-plasticity",
         "gad65",
-        "pnn"
+        "pnn",
+        "insula",
+        "ains",
+        "pins",
+        "gc",
+        "vens"
       ],
       "C": ["gut", "ser-neurons", "drn"]
     },
@@ -3284,7 +3518,9 @@
         "od-plasticity": "v1",
         "gad65": "v1",
         "pnn": "v1",
-        "lgn": "thalamus"
+        "lgn": "thalamus",
+        "gc": "ains",
+        "vens": "ains"
       },
       "mouse": {
         "zone-vermis": "vermis-post",
@@ -3371,7 +3607,8 @@
         "v1-vip": "v1",
         "od-plasticity": "v1",
         "gad65": "v1",
-        "pnn": "v1"
+        "pnn": "v1",
+        "gc": "ains"
       }
     },
     "groups": {"cb-cortex": "cerebellum", "dcn": "nuclei"},
@@ -3494,7 +3731,15 @@
       {"id": "vis-topdown", "region": "visual-cortex", "name": "Attention, emotion and running",
        "desc": "Stimulating the frontal eye field enhances V4 responses at the corresponding location (monkey); amygdala damage abolishes the larger fusiform response to fearful faces (human); and basal forebrain input recruits VIP interneurons that raise V1 responses during running (mouse).", "links": ["fef>v4", "amygdala>ffa", "basal-forebrain>v1-vip"], "view": "visual-cortex"},
       {"id": "vis-cb", "region": "visual-cortex", "name": "Visual cortex and cerebellum",
-       "desc": "Extrastriate areas concerned mainly with spatial vision, motion and the peripheral field project to the pontine nuclei, whereas primary visual cortex sends only a few corticopontine cells (monkey); the pontine nuclei send crossed mossy fibers to the cerebellar cortex.", "links": ["v1>pontine", "visual-cortex>pontine", "pontine>cb-cortex"], "view": "visual-cortex"}
+       "desc": "Extrastriate areas concerned mainly with spatial vision, motion and the peripheral field project to the pontine nuclei, whereas primary visual cortex sends only a few corticopontine cells (monkey); the pontine nuclei send crossed mossy fibers to the cerebellar cortex.", "links": ["v1>pontine", "visual-cortex>pontine", "pontine>cb-cortex"], "view": "visual-cortex"},
+      {"id": "ins-taste", "region": "insula", "name": "Taste: thalamus, insula and amygdala",
+       "desc": "The thalamic taste area projects to insular-opercular cortex (review); sweet- and bitter-responsive taste cortex projects to distinct parts of the amygdala, whose inputs assign taste valence, and to the lateral central amygdala, needed to learn taste-guided avoidance (mouse). In primates the taste cortex is shown in the anterior insula.", "links": ["thalamus>gc", "gc>amygdala", "gc>cea"], "view": "insula"},
+      {"id": "ins-hunger", "region": "insula", "name": "Hunger reaches the insula",
+       "desc": "Signals from hypothalamic AgRP hunger neurons reach insular cortex via the paraventricular thalamus and basolateral amygdala and bias insular neurons toward food cues (mouse).", "links": ["bla>insula"], "view": "insula"},
+      {"id": "ins-body", "region": "insula", "name": "Posterior insula outputs",
+       "desc": "The posterior insula drives anxiety-related behaviour through the central amygdala and regulates feeding through the nucleus accumbens (mouse).", "links": ["pins>cea", "pins>nac"], "view": "insula"},
+      {"id": "ins-salience", "region": "insula", "name": "Anterior insula, cingulate and amygdala",
+       "desc": "At rest the anterior insula is coupled with the anterior cingulate, and the two form a network activated by salient events (human); the insula connects with several amygdaloid nuclei (review).", "links": ["ains>acc", "insula>amygdala"], "view": "insula"}
     ],
     "composite": {
       "motor-cortex": ["m1", "premotor"],
@@ -3504,7 +3749,8 @@
       "striatum": ["nac"],
       "hippocampus": ["dg", "ca3", "ca2", "ca1", "subiculum", "dhpc", "vhpc"],
       "amygdala": ["la", "bla", "cea", "itc", "mea"],
-      "visual-cortex": ["v1", "mouse-hva", "v4", "mt", "it", "ffa"]
+      "visual-cortex": ["v1", "mouse-hva", "v4", "mt", "it", "ffa"],
+      "insula": ["ains", "pins", "gc"]
     }
   }
 }
