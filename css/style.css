@@ -276,6 +276,7 @@ body:has(#panel.open) .atlas-names { right: calc(var(--panel-w) + 12px); }
 .atlas-names.shut { padding-bottom: 2px; }
 .atlas-names.shut > :not(.nm-head) { display: none; }
 .atlas-names .nm-head span { font-weight: 400; color: var(--muted); }
+.atlas-names-list { max-height: calc(100vh - 230px); overflow: auto; }
 .atlas-names .nm-sub { color: var(--muted); padding: 8px 4px 3px; border-top: 1px solid var(--line); margin-top: 5px; }
 .atlas-names .nm-note { color: var(--muted); padding: 6px 4px 0; font-size: .74rem; }
 .atlas-names .nm { display: flex; align-items: center; gap: 8px; padding: 3px 4px; border-radius: 5px; cursor: pointer; color: var(--text2); line-height: 1.25; }
@@ -290,6 +291,11 @@ body:has(#panel.open) .atlas-names { right: calc(var(--panel-w) + 12px); }
 .atlas-credit { font-size: .72rem; color: var(--faint); margin-top: 10px; }
 .intro { position: absolute; top: 12px; right: 12px; width: 380px; background: var(--float-bg); border: 1px solid var(--line); border-radius: var(--radius);
   padding: 16px 18px; z-index: 5; }
+.intro-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.intro-head h2 { margin-bottom: 0; }
+.intro-toggle { flex: none; margin: -5px -8px 0 0; }
+.intro.shut { padding-bottom: 10px; }
+.intro.shut .intro-content { display: none; }
 .intro h2 { font-size: 1.15rem; }
 .intro ol { padding-left: 18px; margin: 6px 0 10px; }
 .intro li { margin: 3px 0; }

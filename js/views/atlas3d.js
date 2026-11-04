@@ -156,17 +156,37 @@
     const R = CA.region;
     const deeper = [['map', 'functional map'], ['circuit', 'microcircuit'], ['molecules', 'molecules'], ['scales', 'across scales']]
       .filter(([v]) => R.views.includes(v)).slice(0, 3);
-    const box = h('div', { class: 'intro' },
-      h('h2', {}, R.intro.title),
-      h('p', { class: 'small' }, R.intro.text),
-      h('ol', { class: 'small' },
+    const open = CA.store.get('atlas.introOpen', window.innerWidth > 860);
+    const contentId = 'atlas-intro-content';
+    let introToggle;
+    const box = h('div', { class: 'intro' + (open ? '' : ' shut') },
+      h('div', { class: 'intro-head' },
+        h('h2', {}, R.intro.title),
+        introToggle = h('button', {
+          class: 'icon-btn intro-toggle',
+          type: 'button',
+          'aria-expanded': String(open),
+          'aria-controls': contentId,
+          title: open ? 'Collapse introduction' : 'Expand introduction',
+          'aria-label': open ? 'Collapse introduction' : 'Expand introduction',
+          onclick: () => {
+            const next = box.classList.toggle('shut');
+            CA.store.set('atlas.introOpen', !next);
+            introToggle.setAttribute('aria-expanded', String(!next));
+            introToggle.title = next ? 'Expand introduction' : 'Collapse introduction';
+            introToggle.setAttribute('aria-label', introToggle.title);
+          },
+        }, open ? '−' : '+')),
+      h('div', { id: contentId, class: 'intro-content' },
+        h('p', { class: 'small' }, R.intro.text),
+        h('ol', { class: 'small' },
         h('li', {}, 'Pick a ', h('b', {}, 'circuit'), ' on the left to see its pathways; arrowheads show their direction. For a loop or chain, ', h('b', {}, 'Trace step by step'), ' follows the signal in order.'),
         h('li', {}, 'Click any structure for its evidence, connections and open questions.'),
         h('li', {}, 'Go deeper: ', deeper.map(([v, label], i) => [i ? ', ' : '', h('a', { href: '#/' + v }, label)]), '.'),
         h('li', {}, 'Find what is unknown in ', h('a', { href: '#/gaps' }, 'Evidence & gaps'), ' and draft tests in the ', h('a', { href: '#/lab' }, 'Hypothesis lab'), '.')),
-      h('div', { class: 'row' },
-        h('button', { class: 'btn primary', onclick: () => { flyTo(R.view); } }, 'Zoom to ' + R.label.toLowerCase()),
-        h('button', { class: 'btn', onclick: () => { CA.store.set('intro.dismissed', true); box.remove(); el.intro = null; } }, 'Got it')));
+        h('div', { class: 'row' },
+          h('button', { class: 'btn primary', onclick: () => { flyTo(R.view); } }, 'Zoom to ' + R.label.toLowerCase()),
+          h('button', { class: 'btn', onclick: () => { CA.store.set('intro.dismissed', true); box.remove(); el.intro = null; } }, 'Got it'))));
     return box;
   }
 
@@ -927,14 +947,16 @@
     const unpainted = want.filter((rid) => owners.has(rid) && !slotOf.has(rid)).length;
     const open = CA.store.get('atlas.namesOpen', window.innerWidth > 860);   // starts closed on a narrow screen
     el.names.classList.toggle('shut', !open);
+    const listId = 'atlas-names-list';
     CA.append(el.names,
-      h('button', { class: 'nm-head', type: 'button', 'aria-expanded': String(open), title: open ? 'Hide the list' : 'Show the list',
+      h('button', { class: 'nm-head', type: 'button', 'aria-expanded': String(open), 'aria-controls': listId, title: open ? 'Hide the list' : 'Show the list',
         onclick: () => { CA.store.set('atlas.namesOpen', !open); refreshNames(); } },
       h('i', {}, open ? '▾' : '▸'), ' Structures (' + rows.length + ')', h('span', {}, ' · hover to find, click for details')),
-      coloured.map(row),
-      rest.length ? h('div', { class: 'nm-sub' }, coloured.length ? 'Other structures (atlas colours)' : 'In their atlas colours') : null,
-      rest.map(row),
-      unpainted ? h('div', { class: 'nm-note' }, `Up to ${pal.length} structures of a circuit get a colour of their own; ${unpainted} more keep their atlas colours.`) : null);
+      h('div', { id: listId, class: 'atlas-names-list' },
+        coloured.map(row),
+        rest.length ? h('div', { class: 'nm-sub' }, coloured.length ? 'Other structures (atlas colours)' : 'In their atlas colours') : null,
+        rest.map(row),
+        unpainted ? h('div', { class: 'nm-note' }, `Up to ${pal.length} structures of a circuit get a colour of their own; ${unpainted} more keep their atlas colours.`) : null));
   }
 
   function setNameHot(id) {
