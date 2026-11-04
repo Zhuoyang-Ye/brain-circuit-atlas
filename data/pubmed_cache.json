@@ -10515,6 +10515,23 @@
   "volume": "27",
   "year": 2024
  },
+ "38649278": {
+  "authors": [
+   "Fan W",
+   "Engborg CB",
+   "Sciolino NR"
+  ],
+  "doi": "10.1523/ENEURO.0535-23.2024",
+  "issue": "4",
+  "journal": "eNeuro",
+  "journalFull": "eNeuro",
+  "pages": "",
+  "pmc": "PMC11036117",
+  "pmid": "38649278",
+  "title": "Locus Ceruleus Dynamics Are Suppressed during Licking and Enhanced Postlicking Independent of Taste Novelty",
+  "volume": "11",
+  "year": 2024
+ },
  "38870929": {
   "authors": [
    "Garcia-Garcia MG",
@@ -11244,6 +11261,23 @@
   "pmid": "42409803",
   "title": "Complementary roles of cell-type-specific plasticity in shaping neocortical dynamics for learning action timing",
   "volume": "17",
+  "year": 2026
+ },
+ "42747960": {
+  "authors": [
+   "Fan W",
+   "To P",
+   "Sciolino NR"
+  ],
+  "doi": "10.1016/j.celrep.2026.117990",
+  "issue": "9",
+  "journal": "Cell Rep",
+  "journalFull": "Cell reports",
+  "pages": "117990",
+  "pmc": "PMC13663908",
+  "pmid": "42747960",
+  "title": "Locus coeruleus activation transforms cortical taste representations",
+  "volume": "45",
   "year": 2026
  },
  "42749823": {
