@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Cerebellum Atlas",
-    "subtitle": "An evidence-linked map of the cerebellum, the motor and prefrontal cortex, the basal ganglia, the hippocampus, the amygdala, the visual cortex, the insula and their connections, from molecules to mind",
+    "subtitle": "An evidence-linked map of the cerebellum, the motor and prefrontal cortex, the basal ganglia, the hippocampus, the amygdala, the visual cortex, the insula, the olfactory system and their connections, from molecules to mind",
     "version": "0.1",
     "disclaimer": "Summaries, link statuses and map scores were drafted with AI assistance from PubMed abstracts and need review by domain experts. Diagrams are schematic."
   },
@@ -799,6 +799,102 @@
         "mouse": "Mouse: Allen CCFv3 agranular insular area (dorsal and ventral parts for the anterior insula; the posterior part with the visceral area for the posterior insula) and the gustatory areas. Von Economo neurons are not placed in the mouse brain.",
         "macaque": "Macaque: CHARM agranular and dysgranular insula (anterior) and granular insula (posterior). The taste cortex is shown in the anterior insula, and the lateral agranular insula is drawn with orbitofrontal cortex. Von Economo neurons are not placed in the macaque brain."
       }
+    },
+    {
+      "id": "olfactory",
+      "label": "Olfactory system",
+      "entity": "olfactory",
+      "query": "(olfactory[tiab] OR olfaction[tiab] OR odor*[tiab] OR odour*[tiab] OR piriform[tiab])",
+      "view": "olfactory",
+      "views": ["atlas", "scales", "gaps", "lab", "library"],
+      "levelDesc": {
+        "regional": "Olfactory bulb, piriform cortex, cortical amygdala, and the orbitofrontal and entorhinal targets",
+        "circuit": "Sensory neurons converge on glomeruli; mitral cells project diffusely to piriform cortex and in patches to the cortical amygdala; granule cells inhibit mitral cells"
+      },
+      "levelQueries": {
+        "cellular": "(\"sensory neuron*\"[tiab] OR \"mitral cell*\"[tiab] OR \"granule cell*\"[tiab] OR interneuron*[tiab] OR neurogenesis[tiab])",
+        "circuit": "(glomerul*[tiab] OR circuit*[tiab] OR projection*[tiab] OR pathway*[tiab] OR oscillation*[tiab])",
+        "regional": "(\"olfactory bulb\"[tiab] OR piriform[tiab] OR \"cortical amygdala\"[tiab] OR \"olfactory cortex\"[tiab])"
+      },
+      "methods": {
+        "molecular": {
+          "manipulate": [
+            "Receptor swaps and receptor knockouts",
+            "TRP2 knockout (vomeronasal signalling)",
+            "Single-cell expression of virus entry genes"
+          ],
+          "readout": [
+            "Odorant receptor gene cloning",
+            "In situ hybridization of receptor mRNA",
+            "Calcium imaging with single-cell RT-PCR"
+          ]
+        },
+        "cellular": {
+          "manipulate": [
+            "Genetic ablation of sensory neurons by zone",
+            "Genetic ablation of adult-born neurons",
+            "Grafts of subventricular zone cells"
+          ],
+          "readout": [
+            "Genetic labelling of receptor-specific axons",
+            "Slice recordings of dendrodendritic synapses",
+            "Whole-cell recording in piriform cortex"
+          ]
+        },
+        "circuit": {
+          "manipulate": [
+            "Optogenetic activation of piriform or cortical amygdala ensembles",
+            "Silencing the bulb-to-cortical-amygdala circuit",
+            "Pairing neuron activation with reward or shock"
+          ],
+          "readout": [
+            "Tracing from single glomeruli",
+            "Rabies trans-synaptic tracing",
+            "Oscillations and sparse spiking"
+          ]
+        },
+        "regional": {
+          "manipulate": ["Orbitofrontal lesions (monkey)", "Odorants at different concentrations", "Sniffing odourless air"],
+          "readout": [
+            "PET and fMRI activation by odours and sniffing",
+            "Multivariate fMRI patterns of odour quality",
+            "Evoked potentials along olfactory pathways"
+          ]
+        },
+        "systems": {
+          "manipulate": ["Nasal versus oral breathing", "Odour-guided navigation", "Eating a food to satiety"],
+          "readout": [
+            "Respiration-locked oscillations",
+            "Entorhinal-hippocampal coherence",
+            "Orbitofrontal responses to food odours"
+          ]
+        },
+        "cognitive": {
+          "manipulate": [
+            "Odour discrimination at psychophysical limits",
+            "Innate versus conditioned aversion",
+            "Breathing phase during memory tasks"
+          ],
+          "readout": ["Speed and accuracy of discrimination", "Perceived odour similarity", "Smell identification tests"]
+        },
+        "clinical": {
+          "manipulate": [
+            "Population cohorts followed for Parkinson's disease",
+            "Follow-up of idiopathic smell loss",
+            "Meta-analysis across neurodegenerative diseases"
+          ],
+          "readout": ["Odour identification, recognition and threshold", "Age-related smell loss", "COVID-19 anosmia"]
+        }
+      },
+      "intro": {
+        "title": "Olfaction, from receptor genes to memory",
+        "text": "The olfactory system: how a large family of receptor genes and a map of glomeruli in the olfactory bulb encode odours, how the bulb's map is scattered across piriform cortex but kept in the cortical amygdala, how odours gain learned or innate meaning, the vomeronasal system and social behaviour, how breathing paces olfactory and limbic activity, and why smell fails with age, in Parkinson's and Alzheimer's diseases and in COVID-19. Every connection is tied to the papers behind it and graded by how strong the evidence is."
+      },
+      "speciesNote": {
+        "human": "Human: the Allen olfactory bulb and piriform cortex. The atlas does not separate the cortical amygdala, so it is shown in the amygdala; olfactory sensory neurons are placed approximately (≈) in front of the bulb, and the vomeronasal organ is not placed.",
+        "mouse": "Mouse: Allen CCFv3 main and accessory olfactory bulbs, piriform area and cortical amygdalar area; olfactory sensory neurons are placed approximately (≈) in front of the bulb, and the vomeronasal organ is not placed.",
+        "macaque": "Macaque: SARM piriform cortex and ventral cortical amygdaloid nucleus. The template does not include the olfactory bulb, so the bulb and the olfactory sensory neurons are placed approximately (≈) under the front of the orbital surface; the vomeronasal organ is not placed."
+      }
     }
   ],
   "methods": {
@@ -1310,7 +1406,7 @@
       "level": "cognitive",
       "kind": "function",
       "domains": ["social"],
-      "summary": "Mentalizing and social preference. Human imaging points to Crus I/II; mouse circuit studies implicate Crus I, vermis, VTA and mPFC pathways. In mice, the strength of excitatory input onto layer V pyramidal neurons of medial PFC tracks dominance rank, and raising or lowering synaptic efficacy in dorsal mPFC moves animals up or down the hierarchy. Patients with bilateral ventromedial prefrontal damage make abnormally utilitarian judgments on emotionally aversive moral dilemmas. A patient with selective bilateral amygdala damage was impaired at recognizing fear in facial expressions (human). In patient SM, impaired recognition of fear stems from not making normal use of the eye region of faces, which the authors trace to a lack of spontaneous fixations on the eyes, and her recognition of fearful faces became normal when she was told to look at the eyes (human). In the medial amygdala, a GABAergic subpopulation promotes aggression and two other social behaviors, whereas neighboring glutamatergic neurons promote repetitive self-grooming and inhibit social interactions (mouse). Empathy for pain engages a core network of anterior insula and medial/anterior cingulate cortex that overlaps with responses to one's own pain (human).",
+      "summary": "Mentalizing and social preference. Human imaging points to Crus I/II; mouse circuit studies implicate Crus I, vermis, VTA and mPFC pathways. In mice, the strength of excitatory input onto layer V pyramidal neurons of medial PFC tracks dominance rank, and raising or lowering synaptic efficacy in dorsal mPFC moves animals up or down the hierarchy. Patients with bilateral ventromedial prefrontal damage make abnormally utilitarian judgments on emotionally aversive moral dilemmas. A patient with selective bilateral amygdala damage was impaired at recognizing fear in facial expressions (human). In patient SM, impaired recognition of fear stems from not making normal use of the eye region of faces, which the authors trace to a lack of spontaneous fixations on the eyes, and her recognition of fearful faces became normal when she was told to look at the eyes (human). In the medial amygdala, a GABAergic subpopulation promotes aggression and two other social behaviors, whereas neighboring glutamatergic neurons promote repetitive self-grooming and inhibit social interactions (mouse). Empathy for pain engages a core network of anterior insula and medial/anterior cingulate cortex that overlaps with responses to one's own pain (human). In male mice, loss of vomeronasal signalling abolishes male-male aggression and leads to courtship of both sexes (mouse).",
       "refs": [
         "vanoverwalle2014",
         "vanoverwalle2020",
@@ -1325,7 +1421,8 @@
         "adolphs2005",
         "hong2014",
         "lamm2011",
-        "singer2004"
+        "singer2004",
+        "stowers2002"
       ]
     },
     {
@@ -1372,7 +1469,7 @@
       ]
     },
     {"id": "f-feeding", "name": "Feeding & drinking", "level": "cognitive", "kind": "function", "domains": ["homeostasis"],
-     "summary": "Meal termination and thirst. Anterior deep-nuclei neurons reduce meal size through striatal dopamine, and Purkinje cells activated by the hormone asprosin increase water intake. PKC-δ+ neurons of the lateral central amygdala are activated by diverse anorexigenic signals, are required for those signals to inhibit feeding, and suppress food intake when activated (mouse). Mouse insular neurons respond preferentially to food cues only when the animal is hungry, a bias that hypothalamic AgRP neurons restore through the paraventricular thalamus and basolateral amygdala (mouse).", "refs": ["low2021", "mishra2024", "cai2014", "livneh2017"]},
+     "summary": "Meal termination and thirst. Anterior deep-nuclei neurons reduce meal size through striatal dopamine, and Purkinje cells activated by the hormone asprosin increase water intake. PKC-δ+ neurons of the lateral central amygdala are activated by diverse anorexigenic signals, are required for those signals to inhibit feeding, and suppress food intake when activated (mouse). Mouse insular neurons respond preferentially to food cues only when the animal is hungry, a bias that hypothalamic AgRP neurons restore through the paraventricular thalamus and basolateral amygdala (mouse). Orbitofrontal responses to the odour of a food decline after that food is eaten to satiety (human).", "refs": ["low2021", "mishra2024", "cai2014", "livneh2017", "odoherty2000"]},
     {
       "id": "f-spatial",
       "name": "Spatial navigation",
@@ -1680,7 +1777,7 @@
     {"id": "c-amnesia", "name": "Amnesia", "level": "clinical", "kind": "disorder", "region": "hippocampus", "aka": ["anterograde amnesia"], "domains": ["memory"],
      "summary": "Studies of human amnesia, and of a monkey model of it, identified the medial temporal lobe memory system (review). Loss of recent memory follows bilateral hippocampal lesions; a lesion limited to CA1 caused marked anterograde amnesia with little if any retrograde amnesia; and amnesic patients with primary bilateral hippocampal damage are markedly impaired at imagining new experiences (human).", "refs": ["squire1991", "scoville1957", "zolamorgan1986", "hassabis2007"]},
     {"id": "c-alzheimers", "name": "Alzheimer's disease", "level": "clinical", "kind": "disorder", "aka": ["AD"], "domains": ["memory"],
-     "summary": "Neurofibrillary tangles and neuropil threads follow a characteristic distribution that defines six stages: transentorhinal (I–II), limbic (III–IV, with the entorhinal cortex proper and mild involvement of the first Ammon's horn sector) and isocortical (V–VI); amyloid deposits are of limited use for staging (human). Pathology of the subiculum and of entorhinal layers II and IV isolates the hippocampal formation from much of its input and output and probably contributes to the memory disorder, and layer II entorhinal neurons are already 60% fewer in very mild disease (human).", "refs": ["braak1991", "hyman1984", "gomezisla1996"]},
+     "summary": "Neurofibrillary tangles and neuropil threads follow a characteristic distribution that defines six stages: transentorhinal (I–II), limbic (III–IV, with the entorhinal cortex proper and mild involvement of the first Ammon's horn sector) and isocortical (V–VI); amyloid deposits are of limited use for staging (human). Pathology of the subiculum and of entorhinal layers II and IV isolates the hippocampal formation from much of its input and output and probably contributes to the memory disorder, and layer II entorhinal neurons are already 60% fewer in very mild disease (human). Odour identification, recognition and detection are severely impaired in Alzheimer's disease, as in Parkinson's disease (meta-analysis, human).", "refs": ["braak1991", "hyman1984", "gomezisla1996", "mesholam1998"]},
     {"id": "c-ptsd", "name": "Post-traumatic stress disorder", "level": "clinical", "kind": "disorder", "aka": ["PTSD"], "domains": ["emotion"],
      "summary": "In monozygotic twins discordant for trauma exposure, PTSD severity correlated negatively with the hippocampal volume of both the exposed patients and their unexposed co-twins, evidence that smaller hippocampi are a risk factor for stress-related psychopathology (human). Veterans with PTSD show exaggerated amygdala responses to masked fearful versus happy faces compared with combat-exposed veterans without PTSD (human). A meta-analysis found greater amygdala and insula activity in PTSD, social anxiety disorder and specific phobia, and hypoactivation of the dorsal and rostral anterior cingulate and ventromedial prefrontal cortex only in PTSD (human).", "refs": ["gilbertson2002", "rauch2000", "etkin2007"]},
     {"id": "antidepressants", "name": "Antidepressants", "level": "clinical", "kind": "drug", "aka": ["fluoxetine", "SSRI"], "domains": ["emotion"],
@@ -1708,7 +1805,7 @@
     {"id": "mgb", "name": "Medial geniculate nucleus (auditory thalamus)", "level": "regional", "kind": "nucleus", "aka": ["MGB", "MGN", "medial geniculate body", "auditory thalamus", "acoustic thalamus"], "domains": ["sensory", "emotion"],
      "summary": "Part of the auditory (acoustic) thalamus. Its medial division, with the posterior intralaminar and suprageniculate nuclei, projects to the amygdala. Destroying either the thalamo-amygdala or the thalamo-cortico-amygdala auditory pathway alone leaves auditory fear conditioning intact, whereas destroying both disrupts it (rat). Fear conditioning produces a long-lasting increase in synaptic efficacy in its pathway to the lateral amygdala (rat).", "refs": ["romanski1992", "mckernan1997"]},
     {"id": "f-valence", "name": "Emotional valence", "level": "cognitive", "kind": "function", "aka": ["valence", "positive and negative value"], "domains": ["emotion", "reward"],
-     "summary": "Whether a stimulus or outcome is good or bad. Amygdala neurons encode the positive and negative values of images, and distinct populations encode each (monkey). In mice, basolateral amygdala neurons projecting to the nucleus accumbens support positive reinforcement and those projecting to the centromedial amygdala negative reinforcement, and two genetically distinct basolateral populations take part in positive- and negative-valence behaviors. Two people with focal bilateral amygdala lesions showed a dramatic reduction in loss aversion in monetary gambles (human).", "refs": ["paton2006", "namburi2015", "kim2016", "demartino2010"]},
+     "summary": "Whether a stimulus or outcome is good or bad. Amygdala neurons encode the positive and negative values of images, and distinct populations encode each (monkey). In mice, basolateral amygdala neurons projecting to the nucleus accumbens support positive reinforcement and those projecting to the centromedial amygdala negative reinforcement, and two genetically distinct basolateral populations take part in positive- and negative-valence behaviors. Two people with focal bilateral amygdala lesions showed a dramatic reduction in loss aversion in monetary gambles (human). Innate odour aversion depends on dorsal olfactory bulb glomeruli (mouse) and on the circuit from the bulb to the cortical amygdala (mouse).", "refs": ["paton2006", "namburi2015", "kim2016", "demartino2010", "kobayakawa2007", "root2014"]},
     {"id": "c-anxiety", "name": "Anxiety disorders", "level": "clinical", "kind": "disorder", "aka": ["social anxiety disorder", "specific phobia"], "domains": ["emotion"],
      "summary": "A meta-analysis of imaging studies found that patients with social anxiety disorder, specific phobia or PTSD consistently show greater activity than comparison subjects in the amygdala and insula, structures linked to negative emotional responses, as do healthy subjects during fear conditioning (human). Anxiety proneness is proposed to involve an augmented interoceptive prediction signal in which the anterior insula plays a key role (hypothesis).", "refs": ["etkin2007", "paulus2006"]},
     {"id": "visual-cortex", "name": "Visual cortex", "level": "regional", "kind": "area", "region": "visual-cortex", "aka": ["occipital cortex", "visual areas"], "domains": ["sensory"],
@@ -1784,7 +1881,29 @@
     {"id": "f-interoception", "name": "Interoception", "level": "cognitive", "kind": "function", "aka": ["interoceptive awareness", "body sense"], "domains": ["homeostasis", "sensory"],
      "summary": "Sensing the physiological condition of the body. Right anterior insula activity and gray matter volume relate to the accuracy of heartbeat detection and to visceral awareness (human), graded cooling activates the dorsal posterior insula (human), and mouse insular cortex tracks the return to homeostasis during hunger and thirst (mouse).", "refs": ["critchley2004", "craig2000", "livneh2020"]},
     {"id": "f-taste", "name": "Taste", "level": "cognitive", "kind": "function", "aka": ["gustation"], "domains": ["sensory", "reward"],
-     "summary": "Detecting sweet, bitter, umami, salty and sour tastes. In mice each quality is represented in its own field of gustatory cortex (mouse), and amygdala inputs from those fields assign taste valence separately from taste identity (mouse).", "refs": ["chen2011", "wang2018"]}
+     "summary": "Detecting sweet, bitter, umami, salty and sour tastes. In mice each quality is represented in its own field of gustatory cortex (mouse), and amygdala inputs from those fields assign taste valence separately from taste identity (mouse).", "refs": ["chen2011", "wang2018"]},
+    {"id": "olfactory", "name": "Olfactory system", "level": "systems", "kind": "system", "region": "olfactory", "aka": ["olfaction", "smell", "olfactory pathway"], "domains": ["sensory"],
+     "summary": "Distributed activity of sensory neurons in the nose is converted into a segregated map in the olfactory bulb and passed on to higher olfactory centres, including the piriform cortex and the cortical amygdala (mouse); a separate vomeronasal organ is thought to mediate pheromone-driven social behaviour (mouse). In humans, odours activate piriform and right orbitofrontal cortex (human), and smell identification declines markedly after the seventh decade (human). Smell is severely impaired in Alzheimer's and Parkinson's diseases (human), and impaired smell can precede clinical Parkinson's disease by at least 4 years (human).", "refs": ["sosulski2011", "stowers2002", "zatorre1992", "doty1984", "mesholam1998", "ross2008"]},
+    {"id": "or-genes", "name": "Odorant receptor genes", "level": "molecular", "kind": "gene", "region": "olfactory", "aka": ["ORs", "olfactory receptors", "odorant receptors"], "domains": ["sensory"],
+     "summary": "An extremely large multigene family of seven-transmembrane-domain proteins expressed only in the olfactory epithelium, likely to encode odorant receptors (rat). About 1000 receptor types are expressed in the mouse nose (mouse); one receptor recognizes several odorants and one odorant several receptors, but different odorants activate different combinations, so odours are encoded combinatorially (mouse).", "refs": ["buck1991", "ressler1994", "malnic1999"]},
+    {"id": "osn", "name": "Olfactory sensory neurons", "level": "cellular", "kind": "cell type", "region": "olfactory", "aka": ["OSNs", "olfactory receptor neurons", "ORNs"], "domains": ["sensory"],
+     "summary": "Sensory neurons of the nasal epithelium. Neurons expressing different receptors are scattered within four zones (mouse), and those expressing a given receptor converge on one or a few glomeruli (rat), two fixed loci among about 1800 in the mouse bulb (mouse). Ablating the dorsal-zone neurons abolishes innate responses to aversive odorants, although the mice still detect them (mouse). The SARS-CoV-2 entry protein ACE2 is expressed in nasal support, stem and perivascular cells rather than in these neurons (mouse, monkey, human).", "refs": ["ressler1994", "vassar1994", "mombaerts1996", "kobayakawa2007", "brann2020"]},
+    {"id": "ob", "name": "Olfactory bulb", "level": "regional", "kind": "structure", "region": "olfactory", "aka": ["OB", "MOB", "main olfactory bulb", "glomeruli"], "domains": ["sensory"],
+     "summary": "Where the distributed input from the nose converges on glomeruli to form a highly organized, perhaps stereotyped, spatial map (mouse); glomerular positions are bilaterally symmetric and constant across individuals (rat). Its dorsal domain carries innate aversive information (mouse). Mitral and granule cells interact through reciprocal dendrodendritic synapses (rat), and adult neurogenesis replaces most of its granule neurons (mouse). Rats discriminate odours at maximal accuracy within a single sniff (rat).", "refs": ["ressler1994", "vassar1994", "kobayakawa2007", "isaacson1998", "imayoshi2008", "uchida2003"]},
+    {"id": "mitral", "name": "Mitral cells", "level": "cellular", "kind": "cell type", "region": "olfactory", "aka": ["mitral and tufted cells"], "domains": ["sensory"],
+     "summary": "Projection neurons of the olfactory bulb. Their dendrites release glutamate onto granule cell dendrites and receive GABAergic dendrodendritic inhibition back, which can mediate lateral inhibition between mitral cells without axonal action potentials (rat). Individual olfactory cortex neurons receive input from multiple mitral cells representing broadly distributed glomeruli (mouse).", "refs": ["isaacson1998", "miyamichi2011"]},
+    {"id": "ob-granule", "name": "Bulb granule cells", "level": "cellular", "kind": "cell type", "region": "olfactory", "aka": ["granule cells", "adult-born neurons", "rostral migratory stream"], "domains": ["sensory", "development"],
+     "summary": "Inhibitory interneurons of the olfactory bulb that provide NMDA receptor-dependent dendrodendritic inhibition to mitral cells (rat). They are replaced throughout adult life: subventricular zone cells migrate long distances and become olfactory bulb neurons (mouse), continuous neurogenesis replaces the majority of bulb granule neurons, and ablating new neurons gradually depletes them (mouse).", "refs": ["isaacson1998", "lois1994", "imayoshi2008"]},
+    {"id": "piriform", "name": "Piriform cortex", "level": "regional", "kind": "area", "region": "olfactory", "aka": ["PIR", "Pir", "primary olfactory cortex", "pyriform cortex"], "domains": ["sensory", "memory"],
+     "summary": "The primary olfactory cortex. Axons from individual glomeruli project diffusely across it, and its neurons sample the whole bulb without obvious spatial bias (mouse); odours evoke sparse spiking there, shaped by broadly tuned inhibition and fast oscillations (rat). Activating arbitrary ensembles of its neurons paired with reward or shock elicits learned behaviour (mouse). In humans, posterior piriform ensemble patterns track perceived odour quality (human), sniffing alone activates it (human), and odours activate it bilaterally (human); the identification and categorization of odours are thought to rely on odour objects formed there (review). Nasal breathing synchronizes its oscillations with those of the amygdala and hippocampus (human).", "refs": ["sosulski2011", "miyamichi2011", "poo2009", "choi2011", "howard2009", "sobel1998", "zatorre1992", "gottfried2010", "zelano2016"]},
+    {"id": "coa", "name": "Cortical amygdala", "level": "regional", "kind": "area", "region": "olfactory", "aka": ["CoA", "COA", "cortical amygdalar area", "VCo"], "domains": ["sensory", "emotion"],
+     "summary": "The cortical amygdaloid nuclei. Projections from individual glomeruli form spatially stereotyped patches there, and it preferentially receives dorsal bulb input (mouse); its circuit from the bulb is necessary for innate aversive and appetitive odour responses, and activating its odour-responsive neurons recapitulates them (mouse).", "refs": ["sosulski2011", "miyamichi2011", "root2014"]},
+    {"id": "vno", "name": "Vomeronasal organ", "level": "systems", "kind": "body", "region": "olfactory", "aka": ["VNO", "accessory olfactory system"], "domains": ["social"],
+     "summary": "A sensory organ thought to mediate social behaviours and neuroendocrine changes elicited by pheromones; activation of its sensory neurons requires the ion channel TRP2 (mouse).", "refs": ["stowers2002"]},
+    {"id": "c-anosmia", "name": "Smell loss (anosmia)", "level": "clinical", "kind": "disorder", "region": "olfactory", "aka": ["anosmia", "hyposmia", "olfactory dysfunction"], "domains": ["sensory"],
+     "summary": "More than half of people aged 65 to 80 and more than three-quarters of those over 80 have major impairment of smell identification (human). In COVID-19, infection of non-neuronal cells of the olfactory epithelium is suggested to cause anosmia (mouse, monkey, human).", "refs": ["doty1984", "brann2020"]},
+    {"id": "f-smell", "name": "Smell", "level": "cognitive", "kind": "function", "aka": ["olfaction", "odour perception"], "domains": ["sensory"],
+     "summary": "Detecting and discriminating odours. Odours are encoded by combinations of receptors (mouse), rats discriminate them at maximal accuracy within a single sniff (rat), and the cerebellum is activated by odours and by sniffing (human).", "refs": ["malnic1999", "uchida2003", "sobel1998cb"]}
   ],
   "links": [
     {"s": "mglur1", "t": "ltd", "rel": "required for LTD induction", "status": "supported", "kind": "mechanistic", "refs": ["aiba1994", "hansel2001"]},
@@ -2413,7 +2532,26 @@
     {"s": "ains", "t": "c-anxiety", "rel": "proposed: anxiety-prone people show an augmented interoceptive prediction signal, in which the anterior insula plays a key role (hypothesis)", "status": "hypothesis", "kind": "theoretical", "refs": ["paulus2006"]},
     {"s": "ains", "t": "c-psych", "rel": "gray matter loss across six psychiatric diagnoses converges in both insulae and the dorsal anterior cingulate (meta-analysis, human)", "status": "emerging", "kind": "clinical", "refs": ["goodkind2015"]},
     {"s": "insula", "t": "c-asd", "rel": "multisensory integration in insular cortex is impaired in the BTBR autism model, reflecting weakened GABA circuits, and early diazepam rescues it; GAD65, Shank3 and Mecp2 knockouts are also impaired (mouse)", "status": "emerging", "kind": "clinical", "refs": ["gogolla2014"]},
-    {"s": "pins", "t": "c-central-pain", "rel": "lesions of the dorsal posterior insula can produce central post-stroke pain, consistent with the proposal that central pain results from losing the normal inhibition of pain by cold (human)", "status": "hypothesis", "kind": "clinical", "refs": ["craig2000"]}
+    {"s": "pins", "t": "c-central-pain", "rel": "lesions of the dorsal posterior insula can produce central post-stroke pain, consistent with the proposal that central pain results from losing the normal inhibition of pain by cold (human)", "status": "hypothesis", "kind": "clinical", "refs": ["craig2000"]},
+    {"s": "or-genes", "t": "osn", "rel": "odorant receptors, a large multigene family expressed only in the olfactory epithelium (rat), encode odours combinatorially: one receptor recognizes several odorants and one odorant several receptors (mouse)", "status": "established", "kind": "mechanistic", "refs": ["buck1991", "malnic1999"]},
+    {"s": "osn", "t": "ob", "rel": "neurons expressing a given receptor converge on one or a few glomeruli at positions constant across individuals (rat), two fixed loci among about 1800 in the mouse bulb (mouse), forming a fine spatial map (mouse)", "status": "established", "kind": "anatomical", "refs": ["vassar1994", "mombaerts1996", "ressler1994"]},
+    {"s": "ob", "t": "piriform", "rel": "axons from individual glomeruli project diffusely across piriform cortex, and piriform neurons sample the whole bulb without obvious spatial bias (mouse)", "status": "supported", "kind": "anatomical", "refs": ["sosulski2011", "miyamichi2011"]},
+    {"s": "ob", "t": "coa", "rel": "projections from individual glomeruli form spatially stereotyped patches in the cortical amygdala, which prefers dorsal bulb input (mouse)", "status": "supported", "kind": "anatomical", "refs": ["sosulski2011", "miyamichi2011"]},
+    {"s": "ob-granule", "t": "mitral", "rel": "reciprocal dendrodendritic synapses: mitral glutamate excites granule dendrites, which return NMDA receptor-dependent GABAergic inhibition that can mediate lateral inhibition between mitral cells (rat)", "status": "emerging", "kind": "mechanistic", "refs": ["isaacson1998"]},
+    {"s": "mitral", "t": "piriform", "rel": "individual olfactory cortex neurons receive input from multiple mitral cells representing broadly distributed glomeruli (mouse)", "status": "emerging", "kind": "anatomical", "refs": ["miyamichi2011"]},
+    {"s": "piriform", "t": "ofc", "rel": "olfactory bulb signals reach the lateroposterior orbitofrontal cortex through the anterior piriform cortex (probably with the medial amygdala) and the hypothalamus, not the thalamus (monkey)", "status": "emerging", "kind": "anatomical", "refs": ["tanabe1975"]},
+    {"s": "ofc", "t": "f-smell", "rel": "odours activate the right orbitofrontal cortex (human) and its lateral and anterior gyri regardless of sniffing (human); removing the lateroposterior orbitofrontal area strikingly impairs odour discrimination (monkey); its response to a food's odour falls after that food is eaten to satiety (human)", "status": "supported", "kind": "localization", "refs": ["zatorre1992", "sobel1998", "tanabe1975", "odoherty2000"]},
+    {"s": "piriform", "t": "f-smell", "rel": "posterior piriform ensemble patterns track perceived odour quality (human), odours and sniffing activate piriform cortex (human), odours evoke sparse spiking there (rat), and odour objects are thought to form there (review)", "status": "supported", "kind": "localization", "refs": ["howard2009", "zatorre1992", "sobel1998", "poo2009", "gottfried2010"]},
+    {"s": "piriform", "t": "f-valence", "rel": "activating arbitrary piriform ensembles paired with reward or shock elicits learned appetitive or aversive behaviour (mouse)", "status": "emerging", "kind": "causal", "refs": ["choi2011"]},
+    {"s": "coa", "t": "f-valence", "rel": "the bulb to cortical amygdala circuit is necessary for innate aversive and appetitive odour responses, and activating odour-responsive cortical amygdala neurons recapitulates them (mouse)", "status": "emerging", "kind": "causal", "refs": ["root2014"]},
+    {"s": "ob", "t": "f-valence", "rel": "mice lacking dorsal bulb glomeruli detect aversive odours and can learn to avoid them but lack innate aversive responses (mouse)", "status": "emerging", "kind": "causal", "refs": ["kobayakawa2007"]},
+    {"s": "ob", "t": "f-smell", "rel": "the bulb's spatial map of glomeruli is proposed to let combinations of about 1000 receptor inputs discriminate odours (mouse), each odorant activating a specific topographic pattern (rat), and rats discriminate odours within a single sniff (rat)", "status": "supported", "kind": "functional", "refs": ["ressler1994", "vassar1994", "uchida2003"]},
+    {"s": "vno", "t": "f-social", "rel": "without the vomeronasal channel TRP2, male mice show no male-male aggression and court both sexes, suggesting that vomeronasal activation is essential for sex discrimination (mouse)", "status": "emerging", "kind": "causal", "refs": ["stowers2002"]},
+    {"s": "olfactory", "t": "c-parkinson", "rel": "impaired smell can precede Parkinson's disease by at least 4 years (human), 7% of people with idiopathic smell loss developed it within 4 years (human), smell loss affects about 90% of early-stage cases (review), and deficits are severe across smell domains (meta-analysis, human)", "status": "supported", "kind": "clinical", "refs": ["ross2008", "haehner2007", "doty2012", "mesholam1998"]},
+    {"s": "olfactory", "t": "c-alzheimers", "rel": "odour identification, recognition and detection are severely impaired, as in Parkinson's disease (meta-analysis, human), and the deficits equal those of Parkinson's disease (review)", "status": "supported", "kind": "clinical", "refs": ["mesholam1998", "doty2012"]},
+    {"s": "olfactory", "t": "c-anosmia", "rel": "smell identification declines markedly after the seventh decade (human), and COVID-19 anosmia is suggested to stem from infection of non-neuronal support cells in the olfactory epithelium (mouse, monkey, human)", "status": "supported", "kind": "clinical", "refs": ["doty1984", "brann2020"]},
+    {"s": "cb-cortex", "t": "f-smell", "rel": "odours activate the posterior lateral cerebellar hemispheres, more at higher concentrations, and sniffing activates the anterior cerebellum (human); the cerebellum is proposed to regulate sniff volume according to odour concentration (hypothesis)", "status": "emerging", "kind": "localization", "refs": ["sobel1998cb"]},
+    {"s": "olfactory", "t": "entorhinal", "rel": "the lateral entorhinal cortex and distal CA1 receive the predominant olfactory input to the hippocampal region, and their 20 to 40 Hz coupling develops as rats learn odour-guided navigation (rat)", "status": "emerging", "kind": "anatomical", "refs": ["igarashi2014"]}
   ],
   "chains": [
     {"id": "loop-pfc", "name": "Cerebro-cerebellar loop", "nodes": ["pfc", "pontine", "cb-cortex", "dcn", "thalamus", "pfc"],
@@ -2563,7 +2701,15 @@
     {"id": "ins-hunger", "name": "Hunger reaches the insula", "nodes": ["bla", "insula", "f-feeding"],
      "desc": "Signals from hypothalamic AgRP hunger neurons reach insular cortex via the paraventricular thalamus and basolateral amygdala and bias insular neurons toward food cues (mouse)."},
     {"id": "ins-salience", "name": "Salience and switching", "nodes": ["ains", "salience-net", "f-attention"],
-     "desc": "The frontoinsular cortex anchors the salience network with the dorsal anterior cingulate (human), and the right fronto-insular cortex appears to drive switches between the central-executive and default-mode networks (human)."}
+     "desc": "The frontoinsular cortex anchors the salience network with the dorsal anterior cingulate (human), and the right fronto-insular cortex appears to drive switches between the central-executive and default-mode networks (human)."},
+    {"id": "olf-code", "name": "From receptor genes to cortex", "nodes": ["or-genes", "osn", "ob", "piriform"],
+     "desc": "Odorant receptors, a large gene family expressed in the olfactory epithelium (rat), encode odours combinatorially (mouse); neurons expressing one receptor converge on one or a few glomeruli (rat, mouse), and each glomerulus projects diffusely across piriform cortex (mouse)."},
+    {"id": "olf-innate", "name": "Innate odour responses", "nodes": ["ob", "coa", "f-valence"],
+     "desc": "Glomeruli project in stereotyped patches to the cortical amygdala (mouse), and this circuit is necessary for innate aversive and appetitive odour responses (mouse)."},
+    {"id": "olf-learned", "name": "Learned odour meaning", "nodes": ["ob", "piriform", "f-valence"],
+     "desc": "Glomeruli project diffusely to piriform cortex (mouse), where arbitrary ensembles of neurons can acquire learned appetitive or aversive meaning (mouse)."},
+    {"id": "olf-ofc", "name": "Smell in the orbitofrontal cortex", "nodes": ["piriform", "ofc", "f-smell"],
+     "desc": "Olfactory bulb signals reach the lateroposterior orbitofrontal cortex through the anterior piriform cortex and the hypothalamus, and removing that area strikingly impairs odour discrimination (monkey)."}
   ],
   "questions": [
     {
@@ -3204,6 +3350,54 @@
         "Stimulate the anterior insula during intracranial recordings and measure network transitions.",
         "Relate insula integrity to executive function across psychiatric diagnoses."
       ]
+    },
+    {
+      "id": "q-olf-map",
+      "title": "Why is the bulb's map scattered in piriform cortex?",
+      "text": "Sensory neurons expressing one receptor converge on two fixed glomeruli (mombaerts1996), but each glomerulus projects diffusely across piriform cortex (sosulski2011) and piriform neurons sample the whole bulb (miyamichi2011); arbitrary piriform ensembles can acquire learned meaning (choi2011), and in humans posterior piriform patterns track perceived odour quality (howard2009). How does a scattered code support stable odour perception, and what does the stereotyped map in the cortical amygdala add?",
+      "entities": ["ob", "piriform", "coa"],
+      "refs": ["mombaerts1996", "sosulski2011", "miyamichi2011", "choi2011", "howard2009"],
+      "approaches": [
+        "Record the same piriform neurons across days while animals learn new odour meanings.",
+        "Compare odour responses of piriform and cortical amygdala neurons to innately and learned meaningful odours.",
+        "Test whether disrupting the stereotyped amygdala projection alters odour perception or only innate behaviour."
+      ]
+    },
+    {
+      "id": "q-olf-pd",
+      "title": "Why does smell fail early in Parkinson's disease?",
+      "text": "Impaired smell can precede Parkinson's disease by at least 4 years (ross2008), 7% of people with idiopathic smell loss developed the disease within 4 years (haehner2007), and smell loss affects about 90% of early cases and correlates with neuron loss in the locus coeruleus, raphe and nucleus basalis (doty2012); Alzheimer's disease causes equally severe deficits (mesholam1998). Where in the olfactory pathway does the damage begin, and can smell tests pick out people at risk?",
+      "entities": ["olfactory", "c-parkinson"],
+      "refs": ["ross2008", "haehner2007", "doty2012", "mesholam1998"],
+      "approaches": [
+        "Follow people with idiopathic smell loss with dopamine-transporter imaging and repeated smell tests.",
+        "Map pathology along the olfactory pathway in people who died at prodromal stages.",
+        "Compare smell deficits across neurodegenerative diseases to separate shared from disease-specific damage."
+      ]
+    },
+    {
+      "id": "q-olf-cerebellum",
+      "title": "What does the cerebellum do for smell?",
+      "text": "Odours activate the posterior lateral cerebellar hemispheres, more strongly at higher concentrations, and sniffing activates the anterior cerebellum, and the authors propose that the cerebellum adjusts sniff volume to odour concentration (sobel1998cb). Sniffing alone drives piriform cortex (sobel1998), and rats discriminate odours within a single sniff (uchida2003). Does the cerebellum control sniffing, or does it take part in odour perception?",
+      "entities": ["cb-cortex", "f-smell", "olfactory"],
+      "refs": ["sobel1998cb", "sobel1998", "uchida2003"],
+      "approaches": [
+        "Measure sniff volume and odour discrimination in people with cerebellar lesions.",
+        "Record cerebellar activity in rodents while sniffing adapts to odour concentration.",
+        "Perturb the cerebellum during odour discrimination and measure sniffing and accuracy separately."
+      ]
+    },
+    {
+      "id": "q-olf-breath",
+      "title": "Does breathing pace memory?",
+      "text": "Nasal breathing synchronizes oscillations in human piriform cortex, amygdala and hippocampus, and breathing phase enhanced fear discrimination and memory retrieval (zelano2016); respiration imposes a slow rhythm on piriform responses (poo2009), and lateral entorhinal-CA1 coupling develops as rats learn odour-guided navigation (igarashi2014). Is it the nasal airflow itself that times memory, and does the effect extend beyond smell?",
+      "entities": ["piriform", "entorhinal"],
+      "refs": ["zelano2016", "poo2009", "igarashi2014"],
+      "approaches": [
+        "Compare memory encoding during nasal and oral breathing with intracranial recordings.",
+        "Block nasal airflow signals in rodents and measure hippocampal oscillations and memory.",
+        "Time stimuli to inspiration or expiration in memory tasks without odours."
+      ]
     }
   ],
   "flatmap": {
@@ -3460,7 +3654,16 @@
         "ains",
         "pins",
         "gc",
-        "vens"
+        "vens",
+        "olfactory",
+        "or-genes",
+        "osn",
+        "ob",
+        "mitral",
+        "ob-granule",
+        "piriform",
+        "coa",
+        "vno"
       ],
       "C": ["gut", "ser-neurons", "drn"]
     },
@@ -3520,7 +3723,11 @@
         "pnn": "v1",
         "lgn": "thalamus",
         "gc": "ains",
-        "vens": "ains"
+        "vens": "ains",
+        "mitral": "ob",
+        "ob-granule": "ob",
+        "or-genes": "osn",
+        "coa": "amygdala"
       },
       "mouse": {
         "zone-vermis": "vermis-post",
@@ -3560,7 +3767,10 @@
         "v1-vip": "v1",
         "od-plasticity": "v1",
         "gad65": "v1",
-        "pnn": "v1"
+        "pnn": "v1",
+        "mitral": "ob",
+        "ob-granule": "ob",
+        "or-genes": "osn"
       },
       "macaque": {
         "zone-vermis": "vermis-post",
@@ -3608,7 +3818,10 @@
         "od-plasticity": "v1",
         "gad65": "v1",
         "pnn": "v1",
-        "gc": "ains"
+        "gc": "ains",
+        "mitral": "ob",
+        "ob-granule": "ob",
+        "or-genes": "osn"
       }
     },
     "groups": {"cb-cortex": "cerebellum", "dcn": "nuclei"},
@@ -3739,7 +3952,11 @@
       {"id": "ins-body", "region": "insula", "name": "Posterior insula outputs",
        "desc": "The posterior insula drives anxiety-related behaviour through the central amygdala and regulates feeding through the nucleus accumbens (mouse).", "links": ["pins>cea", "pins>nac"], "view": "insula"},
       {"id": "ins-salience", "region": "insula", "name": "Anterior insula, cingulate and amygdala",
-       "desc": "At rest the anterior insula is coupled with the anterior cingulate, and the two form a network activated by salient events (human); the insula connects with several amygdaloid nuclei (review).", "links": ["ains>acc", "insula>amygdala"], "view": "insula"}
+       "desc": "At rest the anterior insula is coupled with the anterior cingulate, and the two form a network activated by salient events (human); the insula connects with several amygdaloid nuclei (review).", "links": ["ains>acc", "insula>amygdala"], "view": "insula"},
+      {"id": "olf-path", "region": "olfactory", "name": "From the nose to olfactory cortex",
+       "desc": "Sensory neurons expressing one receptor converge on one or a few glomeruli of the olfactory bulb (rat, mouse); each glomerulus projects diffusely across piriform cortex and in stereotyped patches to the cortical amygdala (mouse). Sensory neurons are placed approximately in front of the bulb.", "links": ["osn>ob", "ob>piriform", "ob>coa"], "view": "olfactory"},
+      {"id": "olf-beyond", "region": "olfactory", "name": "Beyond olfactory cortex",
+       "desc": "Olfactory signals reach the lateroposterior orbitofrontal cortex through the anterior piriform cortex and the hypothalamus (monkey), and the lateral entorhinal cortex receives the predominant olfactory input to the hippocampal region (rat).", "links": ["piriform>ofc", "olfactory>entorhinal"], "view": "olfactory"}
     ],
     "composite": {
       "motor-cortex": ["m1", "premotor"],
@@ -3750,7 +3967,8 @@
       "hippocampus": ["dg", "ca3", "ca2", "ca1", "subiculum", "dhpc", "vhpc"],
       "amygdala": ["la", "bla", "cea", "itc", "mea"],
       "visual-cortex": ["v1", "mouse-hva", "v4", "mt", "it", "ffa"],
-      "insula": ["ains", "pins", "gc"]
+      "insula": ["ains", "pins", "gc"],
+      "olfactory": ["piriform", "ob", "coa"]
     }
   }
 }

@@ -15,6 +15,24 @@
   "volume": "22",
   "year": 1999
  },
+ "10089886": {
+  "authors": [
+   "Malnic B",
+   "Hirono J",
+   "Sato T",
+   "Buck LB"
+  ],
+  "doi": "10.1016/s0092-8674(00)80581-4",
+  "issue": "5",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "713-23",
+  "pmc": "",
+  "pmid": "10089886",
+  "title": "Combinatorial receptor codes for odors",
+  "volume": "96",
+  "year": 1999
+ },
  "10230796": {
   "authors": [
    "Miyata M",
@@ -136,6 +154,28 @@
   "pmid": "10724170",
   "title": "Inhibitory threshold for critical-period activation in primary visual cortex",
   "volume": "404",
+  "year": 2000
+ },
+ "10757540": {
+  "authors": [
+   "O'Doherty J",
+   "Rolls ET",
+   "Francis S",
+   "Bowtell R",
+   "McGlone F",
+   "Kobal G",
+   "Renner B",
+   "Ahne G"
+  ],
+  "doi": "10.1097/00001756-200003200-00046",
+  "issue": "4",
+  "journal": "Neuroreport",
+  "journalFull": "Neuroreport",
+  "pages": "893-7",
+  "pmc": "",
+  "pmid": "10757540",
+  "title": "Sensory-specific satiety-related olfactory activation of the human orbitofrontal cortex",
+  "volume": "11",
   "year": 2000
  },
  "10774731": {
@@ -517,6 +557,25 @@
   "volume": "413",
   "year": 2001
  },
+ "11823606": {
+  "authors": [
+   "Stowers L",
+   "Holy TE",
+   "Meister M",
+   "Dulac C",
+   "Koentges G"
+  ],
+  "doi": "10.1126/science.1069259",
+  "issue": "5559",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "1493-500",
+  "pmc": "",
+  "pmid": "11823606",
+  "title": "Loss of sex discrimination and male-male aggression in mice deficient for TRP2",
+  "volume": "295",
+  "year": 2002
+ },
  "11884353": {
   "authors": [
    "Ostrowsky K",
@@ -882,6 +941,40 @@
   "title": "Separate visual pathways for perception and action",
   "volume": "15",
   "year": 1992
+ },
+ "1448149": {
+  "authors": [
+   "Zatorre RJ",
+   "Jones-Gotman M",
+   "Evans AC",
+   "Meyer E"
+  ],
+  "doi": "10.1038/360339a0",
+  "issue": "6402",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "339-40",
+  "pmc": "",
+  "pmid": "1448149",
+  "title": "Functional localization and lateralization of human olfactory cortex",
+  "volume": "360",
+  "year": 1992
+ },
+ "14566341": {
+  "authors": [
+   "Uchida N",
+   "Mainen ZF"
+  ],
+  "doi": "10.1038/nn1142",
+  "issue": "11",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "1224-9",
+  "pmc": "",
+  "pmid": "14566341",
+  "title": "Speed and accuracy of olfactory discrimination in the rat",
+  "volume": "6",
+  "year": 2003
  },
  "14642287": {
   "authors": [
@@ -2144,6 +2237,26 @@
   "volume": "581",
   "year": 2007
  },
+ "17357143": {
+  "authors": [
+   "Haehner A",
+   "Hummel T",
+   "Hummel C",
+   "Sommer U",
+   "Junghanns S",
+   "Reichmann H"
+  ],
+  "doi": "10.1002/mds.21413",
+  "issue": "6",
+  "journal": "Mov Disord",
+  "journalFull": "Movement disorders : official journal of the Movement Disorder Society",
+  "pages": "839-42",
+  "pmc": "",
+  "pmid": "17357143",
+  "title": "Olfactory loss may be a first sign of idiopathic Parkinson's disease",
+  "volume": "22",
+  "year": 2007
+ },
  "17366604": {
   "authors": [
    "Wang Q",
@@ -2446,6 +2559,32 @@
   "volume": "56",
   "year": 2007
  },
+ "17989651": {
+  "authors": [
+   "Kobayakawa K",
+   "Kobayakawa R",
+   "Matsumoto H",
+   "Oka Y",
+   "Imai T",
+   "Ikawa M",
+   "Okabe M",
+   "Ikeda T",
+   "Itohara S",
+   "Kikusui T",
+   "Mori K",
+   "Sakano H"
+  ],
+  "doi": "10.1038/nature06281",
+  "issue": "7169",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "503-8",
+  "pmc": "",
+  "pmid": "17989651",
+  "title": "Innate versus learned odour processing in the mouse olfactory bulb",
+  "volume": "450",
+  "year": 2007
+ },
  "18024590": {
   "authors": [
    "Shaw P",
@@ -2469,6 +2608,28 @@
   "title": "Attention-deficit/hyperactivity disorder is characterized by a delay in cortical maturation",
   "volume": "104",
   "year": 2007
+ },
+ "18067173": {
+  "authors": [
+   "Ross GW",
+   "Petrovitch H",
+   "Abbott RD",
+   "Tanner CM",
+   "Popper J",
+   "Masaki K",
+   "Launer L",
+   "White LR"
+  ],
+  "doi": "10.1002/ana.21291",
+  "issue": "2",
+  "journal": "Ann Neurol",
+  "journalFull": "Annals of neurology",
+  "pages": "167-73",
+  "pmc": "",
+  "pmid": "18067173",
+  "title": "Association of olfactory dysfunction with risk for future Parkinson's disease",
+  "volume": "63",
+  "year": 2008
  },
  "1822724": {
   "authors": [
@@ -2594,6 +2755,22 @@
   "volume": "131",
   "year": 2008
  },
+ "1840504": {
+  "authors": [
+   "Buck L",
+   "Axel R"
+  ],
+  "doi": "10.1016/0092-8674(91)90418-x",
+  "issue": "1",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "175-87",
+  "pmc": "",
+  "pmid": "1840504",
+  "title": "A novel multigene family may encode odorant receptors: a molecular basis for odor recognition",
+  "volume": "65",
+  "year": 1991
+ },
  "18558853": {
   "authors": [
    "Lemon RN"
@@ -2697,6 +2874,30 @@
   "pmid": "18723676",
   "title": "A critical role for the right fronto-insular cortex in switching between central-executive and default-mode networks",
   "volume": "105",
+  "year": 2008
+ },
+ "18758458": {
+  "authors": [
+   "Imayoshi I",
+   "Sakamoto M",
+   "Ohtsuka T",
+   "Takao K",
+   "Miyakawa T",
+   "Yamaguchi M",
+   "Mori K",
+   "Ikeda T",
+   "Itohara S",
+   "Kageyama R"
+  ],
+  "doi": "10.1038/nn.2185",
+  "issue": "10",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "1153-61",
+  "pmc": "",
+  "pmid": "18758458",
+  "title": "Roles of continuous neurogenesis in the structural and functional integrity of the adult forebrain",
+  "volume": "11",
   "year": 2008
  },
  "18806784": {
@@ -3008,6 +3209,25 @@
   "volume": "46",
   "year": 2009
  },
+ "19483688": {
+  "authors": [
+   "Howard JD",
+   "Plailly J",
+   "Grueschow M",
+   "Haynes JD",
+   "Gottfried JA"
+  ],
+  "doi": "10.1038/nn.2324",
+  "issue": "7",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "932-8",
+  "pmc": "PMC2834563",
+  "pmid": "19483688",
+  "title": "Odor quality coding and categorization in human posterior piriform cortex",
+  "volume": "12",
+  "year": 2009
+ },
  "19555291": {
   "authors": [
    "Strick PL",
@@ -3023,6 +3243,22 @@
   "pmid": "19555291",
   "title": "Cerebellum and nonmotor function",
   "volume": "32",
+  "year": 2009
+ },
+ "19555653": {
+  "authors": [
+   "Poo C",
+   "Isaacson JS"
+  ],
+  "doi": "10.1016/j.neuron.2009.05.022",
+  "issue": "6",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "850-61",
+  "pmc": "PMC2702531",
+  "pmid": "19555653",
+  "title": "Odor representations in olfactory cortex: \"sparse\" coding, global inhibition, and oscillations",
+  "volume": "62",
   "year": 2009
  },
  "19571138": {
@@ -3595,6 +3831,21 @@
   "volume": "13",
   "year": 2010
  },
+ "20700142": {
+  "authors": [
+   "Gottfried JA"
+  ],
+  "doi": "10.1038/nrn2883",
+  "issue": "9",
+  "journal": "Nat Rev Neurosci",
+  "journalFull": "Nature reviews. Neuroscience",
+  "pages": "628-41",
+  "pmc": "PMC3722866",
+  "pmid": "20700142",
+  "title": "Central mechanisms of odour object perception",
+  "volume": "11",
+  "year": 2010
+ },
  "20724638": {
   "authors": [
    "Li N",
@@ -3827,6 +4078,33 @@
   "volume": "21",
   "year": 2011
  },
+ "21179085": {
+  "authors": [
+   "Miyamichi K",
+   "Amat F",
+   "Moussavi F",
+   "Wang C",
+   "Wickersham I",
+   "Wall NR",
+   "Taniguchi H",
+   "Tasic B",
+   "Huang ZJ",
+   "He Z",
+   "Callaway EM",
+   "Horowitz MA",
+   "Luo L"
+  ],
+  "doi": "10.1038/nature09714",
+  "issue": "7342",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "191-6",
+  "pmc": "PMC3073090",
+  "pmid": "21179085",
+  "title": "Cortical representations of olfactory input by trans-synaptic tracing",
+  "volume": "472",
+  "year": 2011
+ },
  "21227230": {
   "authors": [
    "Wolpert DM",
@@ -3884,6 +4162,25 @@
   "pmid": "21389985",
   "title": "Amygdala circuitry mediating reversible and bidirectional control of anxiety",
   "volume": "471",
+  "year": 2011
+ },
+ "21451525": {
+  "authors": [
+   "Sosulski DL",
+   "Bloom ML",
+   "Cutforth T",
+   "Axel R",
+   "Datta SR"
+  ],
+  "doi": "10.1038/nature09868",
+  "issue": "7342",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "213-6",
+  "pmc": "PMC3354569",
+  "pmid": "21451525",
+  "title": "Distinct representations of olfactory information in different cortical centres",
+  "volume": "472",
   "year": 2011
  },
  "21460832": {
@@ -4221,6 +4518,26 @@
   "volume": "59",
   "year": 2012
  },
+ "21925321": {
+  "authors": [
+   "Choi GB",
+   "Stettler DD",
+   "Kallman BR",
+   "Bhaskar ST",
+   "Fleischmann A",
+   "Axel R"
+  ],
+  "doi": "10.1016/j.cell.2011.07.041",
+  "issue": "6",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "1004-15",
+  "pmc": "PMC3230930",
+  "pmid": "21925321",
+  "title": "Driving opposing behaviors with ensembles of piriform neurons",
+  "volume": "146",
+  "year": 2011
+ },
  "21960531": {
   "authors": [
    "Wang F",
@@ -4363,6 +4680,21 @@
   "pmid": "22491854",
   "title": "Neural mechanisms of foraging",
   "volume": "336",
+  "year": 2012
+ },
+ "22584158": {
+  "authors": [
+   "Doty RL"
+  ],
+  "doi": "10.1038/nrneurol.2012.80",
+  "issue": "6",
+  "journal": "Nat Rev Neurol",
+  "journalFull": "Nature reviews. Neurology",
+  "pages": "329-39",
+  "pmc": "",
+  "pmid": "22584158",
+  "title": "Olfactory dysfunction in Parkinson disease",
+  "volume": "8",
   "year": 2012
  },
  "22681686": {
@@ -5305,6 +5637,25 @@
   "volume": "277",
   "year": 1988
  },
+ "24739966": {
+  "authors": [
+   "Igarashi KM",
+   "Lu L",
+   "Colgin LL",
+   "Moser MB",
+   "Moser EI"
+  ],
+  "doi": "10.1038/nature13162",
+  "issue": "7503",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "143-7",
+  "pmc": "",
+  "pmid": "24739966",
+  "title": "Coordination of entorhinal-hippocampal ensemble activity during associative learning",
+  "volume": "510",
+  "year": 2014
+ },
  "24753596": {
   "authors": [
    "Chandler DJ",
@@ -5598,6 +5949,24 @@
   "pmid": "25283776",
   "title": "Rapid evolution of the cerebellum in humans and other great apes",
   "volume": "24",
+  "year": 2014
+ },
+ "25383519": {
+  "authors": [
+   "Root CM",
+   "Denny CA",
+   "Hen R",
+   "Axel R"
+  ],
+  "doi": "10.1038/nature13897",
+  "issue": "7526",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "269-73",
+  "pmc": "PMC4231015",
+  "pmid": "25383519",
+  "title": "The participation of cortical amygdala in innate, odour-driven behaviour",
+  "volume": "515",
   "year": 2014
  },
  "25402853": {
@@ -6547,6 +6916,27 @@
   "pmid": "27812503",
   "title": "Location of lesion determines motor vs. cognitive consequences in patients with cerebellar stroke",
   "volume": "12",
+  "year": 2016
+ },
+ "27927961": {
+  "authors": [
+   "Zelano C",
+   "Jiang H",
+   "Zhou G",
+   "Arora N",
+   "Schuele S",
+   "Rosenow J",
+   "Gottfried JA"
+  ],
+  "doi": "10.1523/JNEUROSCI.2586-16.2016",
+  "issue": "49",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "12448-12467",
+  "pmc": "PMC5148230",
+  "pmid": "27927961",
+  "title": "Nasal Respiration Entrains Human Limbic Oscillations and Modulates Cognitive Function",
+  "volume": "36",
   "year": 2016
  },
  "28103481": {
@@ -8749,6 +9139,45 @@
   "title": "Segregation of form, color, movement, and depth: anatomy, physiology, and perception",
   "volume": "240",
   "year": 1988
+ },
+ "32937591": {
+  "authors": [
+   "Brann DH",
+   "Tsukahara T",
+   "Weinreb C",
+   "Lipovsek M",
+   "Van den Berge K",
+   "Gong B",
+   "Chance R",
+   "Macaulay IC",
+   "Chou HJ",
+   "Fletcher RB",
+   "Das D",
+   "Street K",
+   "de Bezieux HR",
+   "Choi YG",
+   "Risso D",
+   "Dudoit S",
+   "Purdom E",
+   "Mill J",
+   "Hachem RA",
+   "Matsunami H",
+   "Logan DW",
+   "Goldstein BJ",
+   "Grubb MS",
+   "Ngai J",
+   "Datta SR"
+  ],
+  "doi": "10.1126/sciadv.abc5801",
+  "issue": "31",
+  "journal": "Sci Adv",
+  "journalFull": "Science advances",
+  "pages": "",
+  "pmc": "PMC10715684",
+  "pmid": "32937591",
+  "title": "Non-neuronal expression of SARS-CoV-2 entry genes in the olfactory system suggests mechanisms underlying COVID-19-associated anosmia",
+  "volume": "6",
+  "year": 2020
  },
  "33060630": {
   "authors": [
@@ -11060,6 +11489,26 @@
   "volume": "225",
   "year": 1984
  },
+ "6505700": {
+  "authors": [
+   "Doty RL",
+   "Shaman P",
+   "Applebaum SL",
+   "Giberson R",
+   "Siksorski L",
+   "Rosenberg L"
+  ],
+  "doi": "10.1126/science.6505700",
+  "issue": "4681",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "1441-3",
+  "pmc": "",
+  "pmid": "6505700",
+  "title": "Smell identification ability: changes with age",
+  "volume": "226",
+  "year": 1984
+ },
  "6701513": {
   "authors": [
    "McCormick DA",
@@ -11228,6 +11677,23 @@
   "title": "Specificity of monosynaptic connections from thalamus to visual cortex",
   "volume": "378",
   "year": 1995
+ },
+ "7528109": {
+  "authors": [
+   "Ressler KJ",
+   "Sullivan SL",
+   "Buck LB"
+  ],
+  "doi": "10.1016/0092-8674(94)90015-9",
+  "issue": "7",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "1245-55",
+  "pmc": "",
+  "pmid": "7528109",
+  "title": "Information coding in the olfactory system: evidence for a stereotyped and highly organized epitope map in the olfactory bulb",
+  "volume": "79",
+  "year": 1994
  },
  "7576647": {
   "authors": [
@@ -11407,6 +11873,26 @@
   "volume": "372",
   "year": 1994
  },
+ "8001145": {
+  "authors": [
+   "Vassar R",
+   "Chao SK",
+   "Sitcheran R",
+   "Nuñez JM",
+   "Vosshall LB",
+   "Axel R"
+  ],
+  "doi": "10.1016/0092-8674(94)90029-9",
+  "issue": "6",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "981-91",
+  "pmc": "",
+  "pmid": "8001145",
+  "title": "Topographic organization of sensory projections to the olfactory bulb",
+  "volume": "79",
+  "year": 1994
+ },
  "8036517": {
   "authors": [
    "Wilson MA",
@@ -11455,6 +11941,41 @@
   "pmid": "8090219",
   "title": "Role for supplementary motor area cells in planning several movements ahead",
   "volume": "371",
+  "year": 1994
+ },
+ "809549": {
+  "authors": [
+   "Tanabe T",
+   "Yarita H",
+   "Iino M",
+   "Ooshima Y",
+   "Takagi SF"
+  ],
+  "doi": "10.1152/jn.1975.38.5.1269",
+  "issue": "5",
+  "journal": "J Neurophysiol",
+  "journalFull": "Journal of neurophysiology",
+  "pages": "1269-83",
+  "pmc": "",
+  "pmid": "809549",
+  "title": "An olfactory projection area in orbitofrontal cortex of the monkey",
+  "volume": "38",
+  "year": 1975
+ },
+ "8178174": {
+  "authors": [
+   "Lois C",
+   "Alvarez-Buylla A"
+  ],
+  "doi": "10.1126/science.8178174",
+  "issue": "5162",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "1145-8",
+  "pmc": "",
+  "pmid": "8178174",
+  "title": "Long-distance neuronal migration in the adult mammalian brain",
+  "volume": "264",
   "year": 1994
  },
  "8276995": {
@@ -11791,6 +12312,28 @@
   "volume": "87",
   "year": 1996
  },
+ "8929536": {
+  "authors": [
+   "Mombaerts P",
+   "Wang F",
+   "Dulac C",
+   "Chao SK",
+   "Nemes A",
+   "Mendelsohn M",
+   "Edmondson J",
+   "Axel R"
+  ],
+  "doi": "10.1016/s0092-8674(00)81387-2",
+  "issue": "4",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "675-86",
+  "pmc": "",
+  "pmid": "8929536",
+  "title": "Visualizing an olfactory sensory map",
+  "volume": "87",
+  "year": 1996
+ },
  "8957561": {
   "authors": [
    "Augustine JR"
@@ -12079,6 +12622,45 @@
   "volume": "18",
   "year": 1998
  },
+ "9443714": {
+  "authors": [
+   "Mesholam RI",
+   "Moberg PJ",
+   "Mahr RN",
+   "Doty RL"
+  ],
+  "doi": "10.1001/archneur.55.1.84",
+  "issue": "1",
+  "journal": "Arch Neurol",
+  "journalFull": "Archives of neurology",
+  "pages": "84-90",
+  "pmc": "",
+  "pmid": "9443714",
+  "title": "Olfaction in neurodegenerative disease: a meta-analysis of olfactory functioning in Alzheimer's and Parkinson's diseases",
+  "volume": "55",
+  "year": 1998
+ },
+ "9521322": {
+  "authors": [
+   "Sobel N",
+   "Prabhakaran V",
+   "Desmond JE",
+   "Glover GH",
+   "Goode RL",
+   "Sullivan EV",
+   "Gabrieli JD"
+  ],
+  "doi": "10.1038/32654",
+  "issue": "6673",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "282-6",
+  "pmc": "",
+  "pmid": "9521322",
+  "title": "Sniffing and smelling: separate subsystems in the human olfactory cortex",
+  "volume": "392",
+  "year": 1998
+ },
  "9577385": {
   "authors": [
    "Schmahmann JD",
@@ -12093,6 +12675,22 @@
   "pmid": "9577385",
   "title": "The cerebellar cognitive affective syndrome",
   "volume": "121 ( Pt 4)",
+  "year": 1998
+ },
+ "9581766": {
+  "authors": [
+   "Isaacson JS",
+   "Strowbridge BW"
+  ],
+  "doi": "10.1016/s0896-6273(00)81013-2",
+  "issue": "4",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "749-61",
+  "pmc": "",
+  "pmid": "9581766",
+  "title": "Olfactory reciprocal synapses: dendritic signaling in the CNS",
+  "volume": "20",
   "year": 1998
  },
  "9600990": {
@@ -12189,6 +12787,28 @@
   "pmid": "9770557",
   "title": "Electrical stimulation of the subthalamic nucleus in advanced Parkinson's disease",
   "volume": "339",
+  "year": 1998
+ },
+ "9787004": {
+  "authors": [
+   "Sobel N",
+   "Prabhakaran V",
+   "Hartley CA",
+   "Desmond JE",
+   "Zhao Z",
+   "Glover GH",
+   "Gabrieli JD",
+   "Sullivan EV"
+  ],
+  "doi": "10.1523/JNEUROSCI.18-21-08990.1998",
+  "issue": "21",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "8990-9001",
+  "pmc": "PMC6793565",
+  "pmid": "9787004",
+  "title": "Odorant-induced and sniff-induced activation in the cerebellum of the human",
+  "volume": "18",
   "year": 1998
  },
  "9809557": {

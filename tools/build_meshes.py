@@ -525,6 +525,11 @@ def extra_anchors(species, meshes, helpers):
         a['dhpc'] = sided(hv[hv[:, 2] <= np.percentile(hv[:, 2], 20)].mean(0))   # and the posterior (dorsal) one the back fifth
         mlo, mhi, mc = helpers['mm'][:3]
         a['tmn'] = sided([mhi[0] + 0.12, mc[1], mc[2]])                  # posterior hypothalamus, beside the mammillary bodies
+        ov = np.vstack([m['_v'] for m in meshes if m['key'] == 'ofc'])    # NMT does not include the olfactory bulb: place it
+        ov = ov[ov[:, 0] > 0]                                            # under the front of the orbital surface, near the midline
+        front = ov[ov[:, 2] >= np.percentile(ov[:, 2], 70)]               # the front of the label also holds the frontal pole,
+        tip = front[front[:, 1] <= np.percentile(front[:, 1], 15)].mean(0)  # so take its lowest part (the orbital surface)
+        a['ob'] = sided([0.35 * tip[0], tip[1] - 0.15, tip[2]])
         mv = helpers['med'][3]                                           # the spinal cord continues the long axis of the medulla
         c = mv.mean(0)
         d = np.linalg.svd(mv - c, full_matrices=False)[2][0]
@@ -551,6 +556,18 @@ def extra_anchors(species, meshes, helpers):
                 m['c'], m['cl'], m['cr'] = centroids(m['_v'][np.abs(m['_v'][:, 2] - z0) < 0.2])
         start = np.array([0.0, io_c[1] + 0.15, blo[2] + 0.15])
         spine = [start, start + [0, -0.25, -1.6], start + [0, -0.35, -3.2]]
+    # olfactory sensory neurons line the nasal epithelium, in front of and below the olfactory bulb
+    bv = [m['_v'] for m in meshes if m.get('entity') == 'ob']
+    if bv:
+        bv = np.vstack(bv)
+        bv = bv[bv[:, 0] > 0]
+        ob_front = bv[bv[:, 2] >= np.percentile(bv[:, 2], 90)].mean(0)
+    elif 'ob' in a:
+        ob_front = np.asarray(a['ob'][2])
+    else:
+        ob_front = None
+    if ob_front is not None:
+        a['osn'] = sided(ob_front + [0.0, -0.25, 0.45])
     end = spine[-1]
     a['spinal'] = sided([0.0, *spine[1][1:]])
     a['body'] = sided([0.9, end[1] - 0.6, end[2] - 0.3])

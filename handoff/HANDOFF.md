@@ -9,6 +9,7 @@
 - The cloud environment's network policy **denies NCBI E-utilities and all mesh sources** (`eutils.ncbi.nlm.nih.gov`, `download.alleninstitute.org`, `gin.g-node.org`, `afni.nimh.nih.gov`, `raw.githubusercontent.com`); only package managers (pypi) are reachable. The user was asked to allow them in the environment settings. Until then: no abstracts (amygdala audit blocked), no new literature, no new meshes.
 - The handoff folder from the Mac (scripts, `amygdala/records.json`, `knowledge_before_amygdala.json`, the skill) is **not available** in the cloud. Substitutes written in this session live in `handoff/tools/` (see section 0a).
 - Credit: the session has no way to read the cloud credit balance in dollars, so it cannot trigger on "below $5". Instead this file is refreshed and pushed after every finished step.
+- **Final status 2026-11-04:** amygdala finished and audited; visual cortex, insula and olfactory system added, each verified against PubMed, built with 0 warnings, smoke-tested in every region and both themes, and audited sentence by sentence against the abstracts. All six approved regions are done. Not done: merging to `main` (needs the user's OK; delete `handoff/` first) and updating the curation skill on the Mac (section 10).
 - Progress this session: amygdala steps 1–4 done, step 5 half done (see section 6a, items marked **[done 2026-11-04]**). Commits on `wip/regions`: `a9548f2` (handoff), `7d27cbf` (amy-nuclei close-up, label for collapsed pathways), `b92e416` (site text, README counts), `9c731a2` (audit wording fixes), then this handoff refresh.
 - **Next, once `eutils.ncbi.nlm.nih.gov` is allowed** (a new session may be needed for a network change to apply):
 
@@ -41,7 +42,7 @@ The user approved six new regions in this order and asked "Can you simply just d
 3. Amygdala: **done** 2026-11-04, on `wip/regions` (section 6a).
 4. Visual cortex: **done** 2026-11-04 (section 6b).
 5. Insula: **done** 2026-11-04 (section 6c).
-6. Olfactory.
+6. Olfactory: **done** 2026-11-04 (section 6d). **All six regions are done**; see section 10 for what is left.
 
 Run the full pipeline for each region (section 5). Give the user a brief report after each region, and don't stop between regions to ask permission. **Do not commit or push unless the user asks**, and ask again before any push to `main`. (2026-11-04: the user OK'd committing and pushing to `wip/regions` after each finished step, with this handoff in `handoff/` on that branch.)
 
@@ -86,7 +87,22 @@ The basal ganglia region contains:
 
 The handoff folder itself is not in the repo; the user brings it to the new session. (2026-11-04: this file is now also kept in `handoff/` on `wip/regions`; the Mac folder's scripts and data are not.)
 
-**Counts now (amygdala applied)**, from `derive_regions` on the current data. Region rows overlap, because shared items count in every region they belong to:
+**Counts on 2026-11-04, all nine regions applied** (from the bundle; rows overlap because shared items count in every region they belong to):
+
+| Region | Entities | Links | Chains | Questions | Papers |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Cerebellum | 141 | 296 | 24 | 19 | 259 |
+| Motor cortex | 49 | 63 | 12 | 6 | 65 |
+| Prefrontal cortex | 61 | 78 | 13 | 6 | 60 |
+| Basal ganglia | 35 | 44 | 10 | 5 | 35 |
+| Hippocampus | 44 | 48 | 9 | 6 | 62 |
+| Amygdala | 44 | 50 | 13 | 7 | 53 |
+| Visual cortex | 35 | 37 | 9 | 5 | 45 |
+| Insula | 28 | 27 | 4 | 4 | 31 |
+| Olfactory system | 18 | 19 | 4 | 4 | 31 |
+| **Total (distinct)** | 302 | 603 | 78 | 53 | 613 |
+
+**Counts as they were after the amygdala**, from `derive_regions` on the current data. Region rows overlap, because shared items count in every region they belong to:
 
 | Region               | Entities | Links | Chains | Questions | Papers |
 | -------------------- | -------: | ----: | -----: | --------: | -----: |
@@ -202,7 +218,7 @@ Follow `skill/.../references/adding-a-region.md`. In short:
 - All hippocampal meshes are group `cortex` (see section 8: group `target` hides pathways inside).
 - Composite `hippocampus`: dg, ca3, ca2, ca1, subiculum, dhpc, vhpc.
 
-## 6a. Amygdala: in progress
+## 6a. Amygdala: done (2026-11-04)
 
 **Literature.** 49 papers from 53 verified PMIDs (`amygdala/`). `check_papers.py` gives 0 errors. Excluded: rogan1997, bickart2011 and pitkanen1997 (errata without readable text) and cahill1995 (no abstract; the title states no claim). Reviews (`synthesis`): baxter2002, mcgaugh2004, janak2015, ledoux2000; etkin2007 is a meta-analysis ("Meta-analysis of…").
 
@@ -273,6 +289,16 @@ Then continue with the visual cortex (section 7).
 
 Next: the olfactory region (section 7).
 
+## 6d. Olfactory system (2026-11-04, cloud session)
+
+**Literature** (`handoff/olfactory/keys.json`, `draft_papers.json`, `queries.json`, `knowledge_before_olfactory.json`). 31 papers, PMIDs verified with `pubmed_abs.py find`; species from MeSH where the abstract does not say (buck1991 and vassar1994 rat; ressler1994 mouse). Excluded: stettler2009 (Neuron erratum 64:292 has no PubMed record or text). odoherty2000 uses PMID 10757540, the "Corrected and Republished" version of 10674494. stowers2002 (vomeronasal organ) never says "olfactory" in its abstract, but its MeSH includes Olfactory Bulb and Vomeronasal Organ. All papers are tagged `olfactory` only.
+
+**Content** (`handoff/scripts/apply_olf.py`, applied): region `olfactory` (label "Olfactory system", view `olfactory`); 10 tagged entities (olfactory, or-genes, osn, ob, mitral, ob-granule, piriform, coa, vno, c-anosmia), 1 shared (f-smell); sentences added to the untagged f-social, c-alzheimers, f-valence and f-feeding; 19 links, 4 chains, 4 questions, 2 circuits (olf-path, olf-beyond). Audit (`handoff/scripts/fix_olf1.py`, applied): ob wording, kobayakawa2007 "innate responses to aversive odorants", sobel1998cb "more strongly at higher concentrations"; q-olf-pd no longer lists c-alzheimers as an entity (it leaked that entity into the basal ganglia).
+
+**Region check:** 0 warnings; no losses; bridges only: cerebellum (cb-cortex>f-smell, q-olf-cerebellum), prefrontal (piriform>ofc, ofc>f-smell, chain olf-ofc), basal ganglia (olfactory>c-parkinson, q-olf-pd), hippocampus (olfactory>entorhinal, q-olf-breath).
+
+**3D:** human `ob` 10307, `pir` 10311, coa aliased to amygdala; mouse `mob` [507 MOB, 151 AOB], `pir` 961, `coa` 631; macaque SARM `Pir`, `VCo` → coa. NMT has no olfactory bulb, so `build_meshes.py` now places a macaque `ob` anchor under the lowest part of the front of the OFC label, and an `osn` anchor in front of and below the bulb in every species. mitral and ob-granule alias to ob, or-genes to osn; vno is not placed. Presets `VIEWS.*.olfactory`. Trace: olf-path, 2 steps in all species; none for olf-beyond.
+
 ## 7. Remaining regions: what is known so far
 
 **Human atlas ids** (all have meshes):
@@ -312,11 +338,16 @@ The `sensory` domain (`#dc8b8b`) now exists (added with the amygdala for `mgb`);
 
 - **Publishing:** commit, branch push and `main` push. Ask each time.
 - **Li et al. 2016:** stays excluded until the user pastes its Nature correction.
+- **Unreadable errata (2026-11-04):** salzman1990 (Nature 346:589), segerdahl2015 (Nat Neurosci corrigendum, PMID 26605886) and stettler2009 (Neuron 64:292) are excluded for the same reason; they can come back if the user pastes the corrections.
 - **Dark theme by default:** offered as an option.
 - **Prefrontal–cerebellar loop:** could become traceable by adding its middle hops (offered).
 - **Macaque licence:** NMT/CHARM/SARM have no explicit licence and ask for citations. The user decided to publish with the three papers cited (Seidlitz 2018, PMID 28461058; Jung 2021, 33789138; Hartig 2021, 33794360) and an off switch (`atlas3d.species`). Already live.
 
 ## 10. When all six regions are done
+
+**Status 2026-11-04 (cloud):** steps 1 and 4 done (README counts, caveats and region text are current; the final report was given in the session). Step 2 (update the curation skill) and step 3 (user memory) need the user's Mac, where the skill lives (`~/.claude/skills/brain-atlas-curation`); lessons to add there: the cloud tools in `handoff/tools/`; drop papers whose abstract and MeSH never mention the region, but keep sub-area names (gustatory cortex, vomeronasal organ); a title-only paper is kept only if its title states a claim; "Corrected and Republished" records replace the original PMID; mesh notes for the visual cortex, insula and olfactory regions (sections 6b to 6d); split a circuit when a composite umbrella makes the trace imply a chain no paper shows (ins-hunger/ins-body). Step 5: the work is committed and pushed to `wip/regions` (the user approved this); **merging to `main` publishes the site and needs the user's explicit OK, and `handoff/` must be deleted first.**
+
+Original checklist:
 
 1. Update the README (counts via `readme_counts.py`, caveats, credits).
 2. Update the curation skill: new lessons, the region list in its description, and the hippocampus and other mesh notes.

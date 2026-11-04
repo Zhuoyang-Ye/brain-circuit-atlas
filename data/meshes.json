@@ -107,7 +107,9 @@
       {"key": "mtg", "src": 12141, "name": "Middle temporal gyrus", "group": "helper", "faces": 800},
       {"key": "sig", "src": 12178, "name": "Short insular gyri (anterior insula)", "entity": "ains", "group": "cortex", "faces": 1500, "tone": "#e879f9",
        "note": "The short insular gyri stand for the anterior insula; the atlas does not mark the taste cortex, which in humans lies in the insula and operculum, so it is shown here."},
-      {"key": "lig", "src": 12177, "name": "Long insular gyri (posterior insula)", "entity": "pins", "group": "cortex", "faces": 1200, "tone": "#c084fc"}
+      {"key": "lig", "src": 12177, "name": "Long insular gyri (posterior insula)", "entity": "pins", "group": "cortex", "faces": 1200, "tone": "#c084fc"},
+      {"key": "ob", "src": 10307, "name": "Olfactory bulb", "entity": "ob", "group": "target", "faces": 600},
+      {"key": "pir", "src": 10311, "name": "Piriform cortex", "entity": "piriform", "group": "cortex", "faces": 1000, "tone": "#f0b37a"}
     ],
     "suit": {
       "url": "https://raw.githubusercontent.com/DiedrichsenLab/cerebellar_atlases/master/Diedrichsen_2009/atl-Anatom_space-MNI_dseg.nii",
@@ -200,7 +202,10 @@
       {"key": "lgd", "src": 170, "name": "Dorsal lateral geniculate nucleus (LGd)", "entity": "lgn", "group": "target", "faces": 800},
       {"key": "ai-ant", "src": [104, 119], "name": "Agranular insular area, dorsal and ventral parts (anterior insula)", "entity": "ains", "group": "cortex", "faces": 1200, "tone": "#e879f9"},
       {"key": "ai-post", "src": [111, 677], "name": "Agranular insular area, posterior part, and visceral area (posterior insula)", "entity": "pins", "group": "cortex", "faces": 1200, "tone": "#c084fc"},
-      {"key": "gu", "src": 1057, "name": "Gustatory areas (GU)", "entity": "gc", "group": "cortex", "faces": 800, "tone": "#f0abfc"}
+      {"key": "gu", "src": 1057, "name": "Gustatory areas (GU)", "entity": "gc", "group": "cortex", "faces": 800, "tone": "#f0abfc"},
+      {"key": "mob", "src": [507, 151], "name": "Main and accessory olfactory bulbs", "entity": "ob", "group": "cortex", "faces": 2000, "tone": "#f6c177"},
+      {"key": "pir", "src": 961, "name": "Piriform area", "entity": "piriform", "group": "cortex", "faces": 1500, "tone": "#f0b37a"},
+      {"key": "coa", "src": 631, "name": "Cortical amygdalar area", "entity": "coa", "group": "cortex", "faces": 800, "tone": "#ff9e64"}
     ]
   },
   "macaque": {
@@ -289,7 +294,9 @@
       {"key": "fef", "charm": ["area_8A"], "name": "Frontal eye field (area 8A)", "entity": "fef", "group": "cortex", "faces": 1200, "tone": "#f6c177"},
       {"key": "dlg", "sarm": ["DLG"], "name": "Dorsal lateral geniculate nucleus", "entity": "lgn", "group": "target", "faces": 600},
       {"key": "ins-ant", "charm": ["Ia/Id"], "name": "Agranular and dysgranular insula (anterior insula)", "entity": "ains", "group": "cortex", "faces": 1500, "tone": "#e879f9"},
-      {"key": "ins-post", "charm": ["Ig"], "name": "Granular insula (posterior insula)", "entity": "pins", "group": "cortex", "faces": 1000, "tone": "#c084fc"}
+      {"key": "ins-post", "charm": ["Ig"], "name": "Granular insula (posterior insula)", "entity": "pins", "group": "cortex", "faces": 1000, "tone": "#c084fc"},
+      {"key": "pir", "sarm": ["Pir"], "name": "Piriform cortex", "entity": "piriform", "group": "cortex", "faces": 1200, "tone": "#f0b37a"},
+      {"key": "vco", "sarm": ["VCo"], "name": "Ventral cortical amygdaloid nucleus", "entity": "coa", "group": "cortex", "faces": 500, "tone": "#ff9e64"}
     ]
   }
 }
