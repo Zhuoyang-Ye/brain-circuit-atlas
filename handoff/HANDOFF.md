@@ -338,7 +338,15 @@ The `sensory` domain (`#dc8b8b`) now exists (added with the amygdala for `mgb`);
 
 - **Publishing:** commit, branch push and `main` push. Ask each time.
 - **Li et al. 2016:** stays excluded until the user pastes its Nature correction.
-- **Unreadable errata (2026-11-04):** salzman1990 (Nature 346:589), segerdahl2015 (Nat Neurosci corrigendum, PMID 26605886) and stettler2009 (Neuron 64:292) are excluded for the same reason; they can come back if the user pastes the corrections.
+- **Unreadable errata (2026-11-04):** three more papers are excluded for the same reason as Li 2016. Each can come back once someone reads its correction (the user can paste the text, or a session with access to nature.com and cell.com can fetch it) and confirms that it does not change the claim the atlas would make. Checked in the cloud: PubMed lists no text for any of them, PubMed Central has none, and nature.com, cell.com, doi.org, Crossref and Europe PMC are blocked by the environment's network policy.
+
+  | Paper | Erratum | What it would support |
+  | --- | --- | --- |
+  | Salzman CD, Britten KH, Newsome WT. Cortical microstimulation influences perceptual judgements of motion direction. *Nature* 1990;346(6280):174–7. PMID 2366872, doi 10.1038/346174a0 | Erratum in *Nature* 1990 Aug 9;346(6284):589. No PMID, no DOI in PubMed. | Visual cortex: MT microstimulation biases motion judgements (`mt>f-vision`, `mt` summary). newsome1988 and britten1992 cover MT meanwhile. |
+  | Segerdahl AR, Mezue M, Okell TW, Farrar JT, Tracey I. The dorsal posterior insula subserves a fundamental role in human pain. *Nat Neurosci* 2015;18(4):499–500. PMID 25751532, doi 10.1038/nn.3969 | Corrigendum in *Nat Neurosci* 2015 Dec;18(12):1861. PMID 26605886, doi 10.1038/nn1215-1861d. PubMed has the record but no text; the author manuscript in PMC (PMC6783299) only links to it. | Insula: the dorsal posterior insula's role in pain (`pins>f-pain`, `pins` summary). ostrowsky2002 and craig2000 cover it meanwhile. |
+  | Stettler DD, Axel R. Representations of odor in the piriform cortex. *Neuron* 2009;63(6):854–64. PMID 19778513, doi 10.1016/j.neuron.2009.09.005 | Erratum in *Neuron* 2009 Oct 29;64(2):292. No PMID; no PMC record. | Olfactory: distributed odour representations in piriform cortex (`piriform` summary, `ob>piriform`). sosulski2011, miyamichi2011 and poo2009 cover it meanwhile. |
+
+  What each correction says is not known: none was readable, so the corrections may be minor (an author name, a figure label) or may touch the findings.
 - **Dark theme by default:** offered as an option.
 - **Prefrontal–cerebellar loop:** could become traceable by adding its middle hops (offered).
 - **Macaque licence:** NMT/CHARM/SARM have no explicit licence and ask for citations. The user decided to publish with the three papers cited (Seidlitz 2018, PMID 28461058; Jung 2021, 33789138; Hartig 2021, 33794360) and an off switch (`atlas3d.species`). Already live.
