@@ -66,6 +66,44 @@
   "volume": "20",
   "year": 2000
  },
+ "10704511": {
+  "authors": [
+   "Haber SN",
+   "Fudge JL",
+   "McFarland NR"
+  ],
+  "doi": "10.1523/JNEUROSCI.20-06-02369.2000",
+  "issue": "6",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "2369-82",
+  "pmc": "PMC6772499",
+  "pmid": "10704511",
+  "title": "Striatonigrostriatal pathways in primates form an ascending spiral from the shell to the dorsolateral striatum",
+  "volume": "20",
+  "year": 2000
+ },
+ "10716738": {
+  "authors": [
+   "Maguire EA",
+   "Gadian DG",
+   "Johnsrude IS",
+   "Good CD",
+   "Ashburner J",
+   "Frackowiak RS",
+   "Frith CD"
+  ],
+  "doi": "10.1073/pnas.070039597",
+  "issue": "8",
+  "journal": "Proc Natl Acad Sci U S A",
+  "journalFull": "Proceedings of the National Academy of Sciences of the United States of America",
+  "pages": "4398-403",
+  "pmc": "PMC18253",
+  "pmid": "10716738",
+  "title": "Navigation-related structural change in the hippocampi of taxi drivers",
+  "volume": "97",
+  "year": 2000
+ },
  "10774731": {
   "authors": [
    "Wang YT",
@@ -82,6 +120,28 @@
   "volume": "25",
   "year": 2000
  },
+ "10812035": {
+  "authors": [
+   "Rauch SL",
+   "Whalen PJ",
+   "Shin LM",
+   "McInerney SC",
+   "Macklin ML",
+   "Lasko NB",
+   "Orr SP",
+   "Pitman RK"
+  ],
+  "doi": "10.1016/s0006-3223(00)00828-3",
+  "issue": "9",
+  "journal": "Biol Psychiatry",
+  "journalFull": "Biological psychiatry",
+  "pages": "769-76",
+  "pmc": "",
+  "pmid": "10812035",
+  "title": "Exaggerated amygdala response to masked facial stimuli in posttraumatic stress disorder: a functional MRI study",
+  "volume": "47",
+  "year": 2000
+ },
  "10818167": {
   "authors": [
    "Birrell JM",
@@ -96,6 +156,38 @@
   "pmid": "10818167",
   "title": "Medial frontal cortex mediates perceptual attentional set shifting in the rat",
   "volume": "20",
+  "year": 2000
+ },
+ "10845062": {
+  "authors": [
+   "LeDoux JE"
+  ],
+  "doi": "10.1146/annurev.neuro.23.1.155",
+  "issue": "",
+  "journal": "Annu Rev Neurosci",
+  "journalFull": "Annual review of neuroscience",
+  "pages": "155-84",
+  "pmc": "",
+  "pmid": "10845062",
+  "title": "Emotion circuits in the brain",
+  "volume": "23",
+  "year": 2000
+ },
+ "10963596": {
+  "authors": [
+   "Nader K",
+   "Schafe GE",
+   "Le Doux JE"
+  ],
+  "doi": "10.1038/35021052",
+  "issue": "6797",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "722-6",
+  "pmc": "",
+  "pmid": "10963596",
+  "title": "Fear memories require protein synthesis in the amygdala for reconsolidation after retrieval",
+  "volume": "406",
   "year": 2000
  },
  "11024094": {
@@ -132,6 +224,26 @@
   "title": "Learning-induced LTP in neocortex",
   "volume": "290",
   "year": 2000
+ },
+ "11157088": {
+  "authors": [
+   "Brown P",
+   "Oliviero A",
+   "Mazzone P",
+   "Insola A",
+   "Tonali P",
+   "Di Lazzaro V"
+  ],
+  "doi": "10.1523/JNEUROSCI.21-03-01033.2001",
+  "issue": "3",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "1033-8",
+  "pmc": "PMC6762327",
+  "pmid": "11157088",
+  "title": "Dopamine dependency of oscillations between subthalamic nucleus and pallidum in Parkinson's disease",
+  "volume": "21",
+  "year": 2001
  },
  "11283309": {
   "authors": [
@@ -293,6 +405,48 @@
   "volume": "31",
   "year": 2001
  },
+ "11544526": {
+  "authors": [
+   "Reynolds JN",
+   "Hyland BI",
+   "Wickens JR"
+  ],
+  "doi": "10.1038/35092560",
+  "issue": "6851",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "67-70",
+  "pmc": "",
+  "pmid": "11544526",
+  "title": "A cellular mechanism of reward-related learning",
+  "volume": "413",
+  "year": 2001
+ },
+ "12040087": {
+  "authors": [
+   "Nakazawa K",
+   "Quirk MC",
+   "Chitwood RA",
+   "Watanabe M",
+   "Yeckel MF",
+   "Sun LD",
+   "Kato A",
+   "Carr CA",
+   "Johnston D",
+   "Wilson MA",
+   "Tonegawa S"
+  ],
+  "doi": "10.1126/science.1071795",
+  "issue": "5579",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "211-8",
+  "pmc": "PMC2877140",
+  "pmid": "12040087",
+  "title": "Requirement for hippocampal CA3 NMDA receptors in associative memory recall",
+  "volume": "297",
+  "year": 2002
+ },
  "12048250": {
   "authors": [
    "Lev-Ram V",
@@ -326,6 +480,60 @@
   "pmid": "12062029",
   "title": "Complex movements evoked by microstimulation of precentral cortex",
   "volume": "34",
+  "year": 2002
+ },
+ "12067746": {
+  "authors": [
+   "Nambu A",
+   "Tokuno H",
+   "Takada M"
+  ],
+  "doi": "10.1016/s0168-0102(02)00027-5",
+  "issue": "2",
+  "journal": "Neurosci Res",
+  "journalFull": "Neuroscience research",
+  "pages": "111-7",
+  "pmc": "",
+  "pmid": "12067746",
+  "title": "Functional significance of the cortico-subthalamo-pallidal 'hyperdirect' pathway",
+  "volume": "43",
+  "year": 2002
+ },
+ "12094212": {
+  "authors": [
+   "Baxter MG",
+   "Murray EA"
+  ],
+  "doi": "10.1038/nrn875",
+  "issue": "7",
+  "journal": "Nat Rev Neurosci",
+  "journalFull": "Nature reviews. Neuroscience",
+  "pages": "563-73",
+  "pmc": "",
+  "pmid": "12094212",
+  "title": "The amygdala and reward",
+  "volume": "3",
+  "year": 2002
+ },
+ "12379862": {
+  "authors": [
+   "Gilbertson MW",
+   "Shenton ME",
+   "Ciszewski A",
+   "Kasai K",
+   "Lasko NB",
+   "Orr SP",
+   "Pitman RK"
+  ],
+  "doi": "10.1038/nn958",
+  "issue": "11",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "1242-7",
+  "pmc": "PMC2819093",
+  "pmid": "12379862",
+  "title": "Smaller hippocampal volume predicts pathologic vulnerability to psychological trauma",
+  "volume": "5",
   "year": 2002
  },
  "12422216": {
@@ -395,6 +603,32 @@
   "volume": "38",
   "year": 2003
  },
+ "12907793": {
+  "authors": [
+   "Santarelli L",
+   "Saxe M",
+   "Gross C",
+   "Surget A",
+   "Battaglia F",
+   "Dulawa S",
+   "Weisstaub N",
+   "Lee J",
+   "Duman R",
+   "Arancio O",
+   "Belzung C",
+   "Hen R"
+  ],
+  "doi": "10.1126/science.1083328",
+  "issue": "5634",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "805-9",
+  "pmc": "",
+  "pmid": "12907793",
+  "title": "Requirement of hippocampal neurogenesis for the behavioral effects of antidepressants",
+  "volume": "301",
+  "year": 2003
+ },
  "12968006": {
   "authors": [
    "Kelly RM",
@@ -410,6 +644,59 @@
   "title": "Cerebellar loops with motor cortex and prefrontal cortex of a nonhuman primate",
   "volume": "23",
   "year": 2003
+ },
+ "12968182": {
+  "authors": [
+   "Ekstrom AD",
+   "Kahana MJ",
+   "Caplan JB",
+   "Fields TA",
+   "Isham EA",
+   "Newman EL",
+   "Fried I"
+  ],
+  "doi": "10.1038/nature01964",
+  "issue": "6954",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "184-8",
+  "pmc": "",
+  "pmid": "12968182",
+  "title": "Cellular networks underlying human spatial navigation",
+  "volume": "425",
+  "year": 2003
+ },
+ "1331362": {
+  "authors": [
+   "Romanski LM",
+   "LeDoux JE"
+  ],
+  "doi": "10.1523/JNEUROSCI.12-11-04501.1992",
+  "issue": "11",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "4501-9",
+  "pmc": "PMC6575992",
+  "pmid": "1331362",
+  "title": "Equipotentiality of thalamo-amygdala and thalamo-cortico-amygdala circuits in auditory fear conditioning",
+  "volume": "12",
+  "year": 1992
+ },
+ "13406589": {
+  "authors": [
+   "SCOVILLE WB",
+   "MILNER B"
+  ],
+  "doi": "10.1136/jnnp.20.1.11",
+  "issue": "1",
+  "journal": "J Neurol Neurosurg Psychiatry",
+  "journalFull": "Journal of neurology, neurosurgery, and psychiatry",
+  "pages": "11-21",
+  "pmc": "PMC497229",
+  "pmid": "13406589",
+  "title": "Loss of recent memory after bilateral hippocampal lesions",
+  "volume": "20",
+  "year": 1957
  },
  "1362601": {
   "authors": [
@@ -428,6 +715,23 @@
   "title": "Dopaminergic and non-dopaminergic neurons in the ventral tegmental area of the rat project, respectively, to the cerebellar cortex and deep cerebellar nuclei",
   "volume": "51",
   "year": 1992
+ },
+ "14750976": {
+  "authors": [
+   "Yin HH",
+   "Knowlton BJ",
+   "Balleine BW"
+  ],
+  "doi": "10.1111/j.1460-9568.2004.03095.x",
+  "issue": "1",
+  "journal": "Eur J Neurosci",
+  "journalFull": "The European journal of neuroscience",
+  "pages": "181-9",
+  "pmc": "",
+  "pmid": "14750976",
+  "title": "Lesions of dorsolateral striatum preserve outcome expectancy but disrupt habit formation in instrumental learning",
+  "volume": "19",
+  "year": 2004
  },
  "14963333": {
   "authors": [
@@ -464,6 +768,61 @@
   "pmid": "15003388",
   "title": "Cerebellar aminergic neuromodulation: towards a functional understanding",
   "volume": "44",
+  "year": 2004
+ },
+ "15201323": {
+  "authors": [
+   "Kalin NH",
+   "Shelton SE",
+   "Davidson RJ"
+  ],
+  "doi": "10.1523/JNEUROSCI.0292-04.2004",
+  "issue": "24",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "5506-15",
+  "pmc": "PMC6729317",
+  "pmid": "15201323",
+  "title": "The role of the central nucleus of the amygdala in mediating fear and anxiety in the primate",
+  "volume": "24",
+  "year": 2004
+ },
+ "15217324": {
+  "authors": [
+   "McGaugh JL"
+  ],
+  "doi": "10.1146/annurev.neuro.27.070203.144157",
+  "issue": "",
+  "journal": "Annu Rev Neurosci",
+  "journalFull": "Annual review of neuroscience",
+  "pages": "1-28",
+  "pmc": "",
+  "pmid": "15217324",
+  "title": "The amygdala modulates the consolidation of memories of emotionally arousing experiences",
+  "volume": "27",
+  "year": 2004
+ },
+ "15254095": {
+  "authors": [
+   "Schumann CM",
+   "Hamstra J",
+   "Goodlin-Jones BL",
+   "Lotspeich LJ",
+   "Kwon H",
+   "Buonocore MH",
+   "Lammers CR",
+   "Reiss AL",
+   "Amaral DG"
+  ],
+  "doi": "10.1523/JNEUROSCI.1297-04.2004",
+  "issue": "28",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "6392-401",
+  "pmc": "PMC6729537",
+  "pmid": "15254095",
+  "title": "The amygdala is enlarged in children but not adolescents with autism; the hippocampus is enlarged at all ages",
+  "volume": "24",
   "year": 2004
  },
  "15329401": {
@@ -535,6 +894,49 @@
   "volume": "44",
   "year": 2004
  },
+ "15590952": {
+  "authors": [
+   "Fahn S",
+   "Oakes D",
+   "Shoulson I",
+   "Kieburtz K",
+   "Rudolph A",
+   "Lang A",
+   "Olanow CW",
+   "Tanner C",
+   "Marek K"
+  ],
+  "doi": "10.1056/NEJMoa033447",
+  "issue": "24",
+  "journal": "N Engl J Med",
+  "journalFull": "The New England journal of medicine",
+  "pages": "2498-508",
+  "pmc": "",
+  "pmid": "15590952",
+  "title": "Levodopa and the progression of Parkinson's disease",
+  "volume": "351",
+  "year": 2004
+ },
+ "15635411": {
+  "authors": [
+   "Adolphs R",
+   "Gosselin F",
+   "Buchanan TW",
+   "Tranel D",
+   "Schyns P",
+   "Damasio AR"
+  ],
+  "doi": "10.1038/nature03086",
+  "issue": "7021",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "68-72",
+  "pmc": "",
+  "pmid": "15635411",
+  "title": "A mechanism for impaired fear recognition after amygdala damage",
+  "volume": "433",
+  "year": 2005
+ },
  "15664173": {
   "authors": [
    "Arlotta P",
@@ -553,6 +955,40 @@
   "pmid": "15664173",
   "title": "Neuronal subtype-specific genes that control corticospinal motor neuron development in vivo",
   "volume": "45",
+  "year": 2005
+ },
+ "15685217": {
+  "authors": [
+   "Frankland PW",
+   "Bontempi B"
+  ],
+  "doi": "10.1038/nrn1607",
+  "issue": "2",
+  "journal": "Nat Rev Neurosci",
+  "journalFull": "Nature reviews. Neuroscience",
+  "pages": "119-30",
+  "pmc": "",
+  "pmid": "15685217",
+  "title": "The organization of recent and remote memories",
+  "volume": "6",
+  "year": 2005
+ },
+ "15746389": {
+  "authors": [
+   "Rumpel S",
+   "LeDoux J",
+   "Zador A",
+   "Malinow R"
+  ],
+  "doi": "10.1126/science.1103944",
+  "issue": "5718",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "83-8",
+  "pmc": "",
+  "pmid": "15746389",
+  "title": "Postsynaptic receptor trafficking underlying a form of associative learning",
+  "volume": "308",
   "year": 2005
  },
  "15748841": {
@@ -608,6 +1044,57 @@
   "pmid": "15803162",
   "title": "Cortical inhibitory neurons and schizophrenia",
   "volume": "6",
+  "year": 2005
+ },
+ "1585183": {
+  "authors": [
+   "Kim JJ",
+   "Fanselow MS"
+  ],
+  "doi": "10.1126/science.1585183",
+  "issue": "5057",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "675-7",
+  "pmc": "",
+  "pmid": "1585183",
+  "title": "Modality-specific retrograde amnesia of fear",
+  "volume": "256",
+  "year": 1992
+ },
+ "1590953": {
+  "authors": [
+   "Phillips RG",
+   "LeDoux JE"
+  ],
+  "doi": "10.1037//0735-7044.106.2.274",
+  "issue": "2",
+  "journal": "Behav Neurosci",
+  "journalFull": "Behavioral neuroscience",
+  "pages": "274-85",
+  "pmc": "",
+  "pmid": "1590953",
+  "title": "Differential contribution of amygdala and hippocampus to cued and contextual fear conditioning",
+  "volume": "106",
+  "year": 1992
+ },
+ "15965463": {
+  "authors": [
+   "Hafting T",
+   "Fyhn M",
+   "Molden S",
+   "Moser MB",
+   "Moser EI"
+  ],
+  "doi": "10.1038/nature03721",
+  "issue": "7052",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "801-6",
+  "pmc": "",
+  "pmid": "15965463",
+  "title": "Microstructure of a spatial map in the entorhinal cortex",
+  "volume": "436",
   "year": 2005
  },
  "16039563": {
@@ -821,6 +1308,48 @@
   "volume": "48",
   "year": 2005
  },
+ "16339042": {
+  "authors": [
+   "Kirsch P",
+   "Esslinger C",
+   "Chen Q",
+   "Mier D",
+   "Lis S",
+   "Siddhanti S",
+   "Gruppe H",
+   "Mattay VS",
+   "Gallhofer B",
+   "Meyer-Lindenberg A"
+  ],
+  "doi": "10.1523/JNEUROSCI.3984-05.2005",
+  "issue": "49",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "11489-93",
+  "pmc": "PMC6725903",
+  "pmid": "16339042",
+  "title": "Oxytocin modulates neural circuitry for social cognition and fear in humans",
+  "volume": "25",
+  "year": 2005
+ },
+ "16482160": {
+  "authors": [
+   "Paton JJ",
+   "Belova MA",
+   "Morrison SE",
+   "Salzman CD"
+  ],
+  "doi": "10.1038/nature04490",
+  "issue": "7078",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "865-70",
+  "pmc": "PMC2396495",
+  "pmid": "16482160",
+  "title": "The primate amygdala represents the positive and negative value of visual stimuli during learning",
+  "volume": "439",
+  "year": 2006
+ },
  "16497381": {
   "authors": [
    "Zhu JN",
@@ -891,6 +1420,27 @@
   "pmid": "16633341",
   "title": "Neurons in the orbitofrontal cortex encode economic value",
   "volume": "441",
+  "year": 2006
+ },
+ "16675704": {
+  "authors": [
+   "Sargolini F",
+   "Fyhn M",
+   "Hafting T",
+   "McNaughton BL",
+   "Witter MP",
+   "Moser MB",
+   "Moser EI"
+  ],
+  "doi": "10.1126/science.1125572",
+  "issue": "5774",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "758-62",
+  "pmc": "",
+  "pmid": "16675704",
+  "title": "Conjunctive representation of position, direction, and velocity in entorhinal cortex",
+  "volume": "312",
   "year": 2006
  },
  "16680163": {
@@ -970,6 +1520,39 @@
   "volume": "26",
   "year": 2006
  },
+ "16931756": {
+  "authors": [
+   "Whitlock JR",
+   "Heynen AJ",
+   "Shuler MG",
+   "Bear MF"
+  ],
+  "doi": "10.1126/science.1128134",
+  "issue": "5790",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "1093-7",
+  "pmc": "",
+  "pmid": "16931756",
+  "title": "Learning induces long-term potentiation in the hippocampus",
+  "volume": "313",
+  "year": 2006
+ },
+ "1695404": {
+  "authors": [
+   "DeLong MR"
+  ],
+  "doi": "10.1016/0166-2236(90)90110-v",
+  "issue": "7",
+  "journal": "Trends Neurosci",
+  "journalFull": "Trends in neurosciences",
+  "pages": "281-5",
+  "pmc": "",
+  "pmid": "1695404",
+  "title": "Primate models of movement disorders of basal ganglia origin",
+  "volume": "13",
+  "year": 1990
+ },
  "16957067": {
   "authors": [
    "Morton SM",
@@ -1035,6 +1618,24 @@
   "volume": "34",
   "year": 2007
  },
+ "17135400": {
+  "authors": [
+   "Wilensky AE",
+   "Schafe GE",
+   "Kristensen MP",
+   "LeDoux JE"
+  ],
+  "doi": "10.1523/JNEUROSCI.4316-06.2006",
+  "issue": "48",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "12387-96",
+  "pmc": "PMC6674909",
+  "pmid": "17135400",
+  "title": "Rethinking the fear circuit: the central nucleus of the amygdala is required for the acquisition, consolidation, and expression of Pavlovian fear conditioning",
+  "volume": "26",
+  "year": 2006
+ },
  "17148468": {
   "authors": [
    "Stinear CM",
@@ -1055,6 +1656,40 @@
   "volume": "130",
   "year": 2007
  },
+ "17229836": {
+  "authors": [
+   "Hassabis D",
+   "Kumaran D",
+   "Vann SD",
+   "Maguire EA"
+  ],
+  "doi": "10.1073/pnas.0610561104",
+  "issue": "5",
+  "journal": "Proc Natl Acad Sci U S A",
+  "journalFull": "Proceedings of the National Academy of Sciences of the United States of America",
+  "pages": "1726-31",
+  "pmc": "PMC1773058",
+  "pmid": "17229836",
+  "title": "Patients with hippocampal amnesia cannot imagine new experiences",
+  "volume": "104",
+  "year": 2007
+ },
+ "17267559": {
+  "authors": [
+   "Izquierdo A",
+   "Murray EA"
+  ],
+  "doi": "10.1523/JNEUROSCI.3616-06.2007",
+  "issue": "5",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "1054-62",
+  "pmc": "PMC6673199",
+  "pmid": "17267559",
+  "title": "Selective bilateral amygdala lesions in rhesus monkeys fail to disrupt object reversal learning",
+  "volume": "27",
+  "year": 2007
+ },
  "17277774": {
   "authors": [
    "Vijayraghavan S",
@@ -1072,6 +1707,24 @@
   "pmid": "17277774",
   "title": "Inverted-U dopamine D1 receptor actions on prefrontal neurons engaged in working memory",
   "volume": "10",
+  "year": 2007
+ },
+ "17303747": {
+  "authors": [
+   "Leutgeb JK",
+   "Leutgeb S",
+   "Moser MB",
+   "Moser EI"
+  ],
+  "doi": "10.1126/science.1135801",
+  "issue": "5814",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "961-6",
+  "pmc": "",
+  "pmid": "17303747",
+  "title": "Pattern separation in the dentate gyrus and CA3 of the hippocampus",
+  "volume": "315",
   "year": 2007
  },
  "17347275": {
@@ -1147,6 +1800,28 @@
   "volume": "315",
   "year": 2007
  },
+ "17412951": {
+  "authors": [
+   "Tse D",
+   "Langston RF",
+   "Kakeyama M",
+   "Bethus I",
+   "Spooner PA",
+   "Wood ER",
+   "Witter MP",
+   "Morris RG"
+  ],
+  "doi": "10.1126/science.1135935",
+  "issue": "5821",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "76-82",
+  "pmc": "",
+  "pmid": "17412951",
+  "title": "Schemas and memory consolidation",
+  "volume": "316",
+  "year": 2007
+ },
  "17428980": {
   "authors": [
    "Piet R",
@@ -1161,6 +1836,30 @@
   "pmid": "17428980",
   "title": "Glutamatergic and purinergic receptor-mediated calcium transients in Bergmann glial cells",
   "volume": "27",
+  "year": 2007
+ },
+ "17446403": {
+  "authors": [
+   "Han JH",
+   "Kushner SA",
+   "Yiu AP",
+   "Cole CJ",
+   "Matynia A",
+   "Brown RA",
+   "Neve RL",
+   "Guzowski JF",
+   "Silva AJ",
+   "Josselyn SA"
+  ],
+  "doi": "10.1126/science.1139438",
+  "issue": "5823",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "457-60",
+  "pmc": "",
+  "pmid": "17446403",
+  "title": "Neuronal competition and selection during memory formation",
+  "volume": "316",
   "year": 2007
  },
  "17448997": {
@@ -1209,6 +1908,46 @@
   "volume": "98",
   "year": 2007
  },
+ "17556551": {
+  "authors": [
+   "McHugh TJ",
+   "Jones MW",
+   "Quinn JJ",
+   "Balthasar N",
+   "Coppari R",
+   "Elmquist JK",
+   "Lowell BB",
+   "Fanselow MS",
+   "Wilson MA",
+   "Tonegawa S"
+  ],
+  "doi": "10.1126/science.1140263",
+  "issue": "5834",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "94-9",
+  "pmc": "",
+  "pmid": "17556551",
+  "title": "Dentate gyrus NMDA receptors mediate rapid pattern separation in the hippocampal network",
+  "volume": "317",
+  "year": 2007
+ },
+ "1759558": {
+  "authors": [
+   "Braak H",
+   "Braak E"
+  ],
+  "doi": "10.1007/BF00308809",
+  "issue": "4",
+  "journal": "Acta Neuropathol",
+  "journalFull": "Acta neuropathologica",
+  "pages": "239-59",
+  "pmc": "",
+  "pmid": "1759558",
+  "title": "Neuropathological stageing of Alzheimer-related changes",
+  "volume": "82",
+  "year": 1991
+ },
  "17766532": {
   "authors": [
    "Limperopoulos C",
@@ -1233,6 +1972,22 @@
   "pmid": "17766532",
   "title": "Does cerebellar injury in premature infants contribute to the high prevalence of long-term cognitive, learning, and behavioral disability in survivors?",
   "volume": "120",
+  "year": 2007
+ },
+ "17898336": {
+  "authors": [
+   "Etkin A",
+   "Wager TD"
+  ],
+  "doi": "10.1176/appi.ajp.2007.07030504",
+  "issue": "10",
+  "journal": "Am J Psychiatry",
+  "journalFull": "The American journal of psychiatry",
+  "pages": "1476-88",
+  "pmc": "PMC3318959",
+  "pmid": "17898336",
+  "title": "Functional neuroimaging of anxiety: a meta-analysis of emotional processing in PTSD, social anxiety disorder, and specific phobia",
+  "volume": "164",
   "year": 2007
  },
  "17913916": {
@@ -1351,6 +2106,24 @@
   "volume": "57",
   "year": 2008
  },
+ "18356518": {
+  "authors": [
+   "Bakker A",
+   "Kirwan CB",
+   "Miller M",
+   "Stark CE"
+  ],
+  "doi": "10.1126/science.1152882",
+  "issue": "5870",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "1640-2",
+  "pmc": "PMC2829853",
+  "pmid": "18356518",
+  "title": "Pattern separation in the human hippocampal CA3 and dentate gyrus",
+  "volume": "319",
+  "year": 2008
+ },
  "18558853": {
   "authors": [
    "Lemon RN"
@@ -1364,6 +2137,63 @@
   "pmid": "18558853",
   "title": "Descending pathways in motor control",
   "volume": "31",
+  "year": 2008
+ },
+ "18615014": {
+  "authors": [
+   "Likhtik E",
+   "Popa D",
+   "Apergis-Schoute J",
+   "Fidacaro GA",
+   "Paré D"
+  ],
+  "doi": "10.1038/nature07167",
+  "issue": "7204",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "642-5",
+  "pmc": "PMC2528060",
+  "pmid": "18615014",
+  "title": "Amygdala intercalated neurons are required for expression of fear extinction",
+  "volume": "454",
+  "year": 2008
+ },
+ "18615015": {
+  "authors": [
+   "Herry C",
+   "Ciocchi S",
+   "Senn V",
+   "Demmou L",
+   "Müller C",
+   "Lüthi A"
+  ],
+  "doi": "10.1038/nature07166",
+  "issue": "7204",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "600-6",
+  "pmc": "",
+  "pmid": "18615015",
+  "title": "Switching on and off fear by distinct neuronal circuits",
+  "volume": "454",
+  "year": 2008
+ },
+ "18687967": {
+  "authors": [
+   "Shen W",
+   "Flajolet M",
+   "Greengard P",
+   "Surmeier DJ"
+  ],
+  "doi": "10.1126/science.1160575",
+  "issue": "5890",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "848-51",
+  "pmc": "PMC2833421",
+  "pmid": "18687967",
+  "title": "Dichotomous dopaminergic control of striatal synaptic plasticity",
+  "volume": "321",
   "year": 2008
  },
  "18806784": {
@@ -1397,6 +2227,22 @@
   "title": "Functional topography in the human cerebellum: a meta-analysis of neuroimaging studies",
   "volume": "44",
   "year": 2009
+ },
+ "1896849": {
+  "authors": [
+   "Squire LR",
+   "Zola-Morgan S"
+  ],
+  "doi": "10.1126/science.1896849",
+  "issue": "5026",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "1380-6",
+  "pmc": "",
+  "pmid": "1896849",
+  "title": "The medial temporal lobe memory system",
+  "volume": "253",
+  "year": 1991
  },
  "19046367": {
   "authors": [
@@ -1436,6 +2282,42 @@
   "pmid": "19126760",
   "title": "Endocannabinoid-mediated control of synaptic transmission",
   "volume": "89",
+  "year": 2009
+ },
+ "19126811": {
+  "authors": [
+   "Weaver FM",
+   "Follett K",
+   "Stern M",
+   "Hur K",
+   "Harris C",
+   "Marks WJ Jr",
+   "Rothlind J",
+   "Sagher O",
+   "Reda D",
+   "Moy CS",
+   "Pahwa R",
+   "Burchiel K",
+   "Hogarth P",
+   "Lai EC",
+   "Duda JE",
+   "Holloway K",
+   "Samii A",
+   "Horn S",
+   "Bronstein J",
+   "Stoner G",
+   "Heemskerk J",
+   "Huang GD"
+  ],
+  "doi": "10.1001/jama.2008.929",
+  "issue": "1",
+  "journal": "JAMA",
+  "journalFull": "JAMA",
+  "pages": "63-73",
+  "pmc": "PMC2814800",
+  "pmid": "19126811",
+  "title": "Bilateral deep brain stimulation vs best medical therapy for patients with advanced Parkinson disease: a randomized controlled trial",
+  "volume": "301",
   "year": 2009
  },
  "19139417": {
@@ -1495,6 +2377,49 @@
   "pmid": "19226510",
   "title": "Equal numbers of neuronal and nonneuronal cells make the human brain an isometrically scaled-up primate brain",
   "volume": "513",
+  "year": 2009
+ },
+ "19286560": {
+  "authors": [
+   "Han JH",
+   "Kushner SA",
+   "Yiu AP",
+   "Hsiang HL",
+   "Buch T",
+   "Waisman A",
+   "Bontempi B",
+   "Neve RL",
+   "Frankland PW",
+   "Josselyn SA"
+  ],
+  "doi": "10.1126/science.1164139",
+  "issue": "5920",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "1492-6",
+  "pmc": "",
+  "pmid": "19286560",
+  "title": "Selective erasure of a fear memory",
+  "volume": "323",
+  "year": 2009
+ },
+ "19299587": {
+  "authors": [
+   "Gradinaru V",
+   "Mogri M",
+   "Thompson KR",
+   "Henderson JM",
+   "Deisseroth K"
+  ],
+  "doi": "10.1126/science.1167093",
+  "issue": "5925",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "354-9",
+  "pmc": "PMC6744370",
+  "pmid": "19299587",
+  "title": "Optical deconstruction of parkinsonian neural circuitry",
+  "volume": "324",
   "year": 2009
  },
  "19376071": {
@@ -1617,6 +2542,31 @@
   "volume": "29",
   "year": 2009
  },
+ "19590004": {
+  "authors": [
+   "Clelland CD",
+   "Choi M",
+   "Romberg C",
+   "Clemenson GD Jr",
+   "Fragniere A",
+   "Tyers P",
+   "Jessberger S",
+   "Saksida LM",
+   "Barker RA",
+   "Gage FH",
+   "Bussey TJ"
+  ],
+  "doi": "10.1126/science.1173215",
+  "issue": "5937",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "210-3",
+  "pmc": "PMC2997634",
+  "pmid": "19590004",
+  "title": "A functional role for adult hippocampal neurogenesis in spatial pattern separation",
+  "volume": "325",
+  "year": 2009
+ },
  "19592571": {
   "authors": [
    "Krienen FM",
@@ -1684,6 +2634,25 @@
   "volume": "24",
   "year": 2009
  },
+ "19749750": {
+  "authors": [
+   "Girardeau G",
+   "Benchenane K",
+   "Wiener SI",
+   "Buzsáki G",
+   "Zugaro MB"
+  ],
+  "doi": "10.1038/nn.2384",
+  "issue": "10",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "1222-3",
+  "pmc": "",
+  "pmid": "19749750",
+  "title": "Selective suppression of hippocampal ripples impairs spatial memory",
+  "volume": "12",
+  "year": 2009
+ },
  "19759902": {
   "authors": [
    "Molina-Luna K",
@@ -1704,6 +2673,22 @@
   "title": "Dopamine in motor cortex is necessary for skill learning and synaptic plasticity",
   "volume": "4",
   "year": 2009
+ },
+ "19816984": {
+  "authors": [
+   "Ego-Stengel V",
+   "Wilson MA"
+  ],
+  "doi": "10.1002/hipo.20707",
+  "issue": "1",
+  "journal": "Hippocampus",
+  "journalFull": "Hippocampus",
+  "pages": "1-10",
+  "pmc": "PMC2801761",
+  "pmid": "19816984",
+  "title": "Disruption of ripple-associated hippocampal activity during rest impairs spatial learning in the rat",
+  "volume": "20",
+  "year": 2010
  },
  "19857577": {
   "authors": [
@@ -1784,6 +2769,39 @@
   "volume": "462",
   "year": 2009
  },
+ "20142490": {
+  "authors": [
+   "De Martino B",
+   "Camerer CF",
+   "Adolphs R"
+  ],
+  "doi": "10.1073/pnas.0910230107",
+  "issue": "8",
+  "journal": "Proc Natl Acad Sci U S A",
+  "journalFull": "Proceedings of the National Academy of Sciences of the United States of America",
+  "pages": "3788-92",
+  "pmc": "PMC2840433",
+  "pmid": "20142490",
+  "title": "Amygdala damage eliminates monetary loss aversion",
+  "volume": "107",
+  "year": 2010
+ },
+ "20152109": {
+  "authors": [
+   "Fanselow MS",
+   "Dong HW"
+  ],
+  "doi": "10.1016/j.neuron.2009.11.031",
+  "issue": "1",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "7-19",
+  "pmc": "PMC2822727",
+  "pmid": "20152109",
+  "title": "Are the dorsal and ventral hippocampus functionally distinct structures?",
+  "volume": "65",
+  "year": 2010
+ },
  "20300467": {
   "authors": [
    "Herculano-Houzel S"
@@ -1858,6 +2876,64 @@
   "pmid": "20436481",
   "title": "Sublayer-specific microcircuits of corticospinal and corticostriatal neurons in motor cortex",
   "volume": "13",
+  "year": 2010
+ },
+ "20613723": {
+  "authors": [
+   "Kravitz AV",
+   "Freeze BS",
+   "Parker PR",
+   "Kay K",
+   "Thwin MT",
+   "Deisseroth K",
+   "Kreitzer AC"
+  ],
+  "doi": "10.1038/nature09159",
+  "issue": "7306",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "622-6",
+  "pmc": "PMC3552484",
+  "pmid": "20613723",
+  "title": "Regulation of parkinsonian motor behaviours by optogenetic control of basal ganglia circuitry",
+  "volume": "466",
+  "year": 2010
+ },
+ "20615999": {
+  "authors": [
+   "Johansen JP",
+   "Hamanaka H",
+   "Monfils MH",
+   "Behnia R",
+   "Deisseroth K",
+   "Blair HT",
+   "LeDoux JE"
+  ],
+  "doi": "10.1073/pnas.1002418107",
+  "issue": "28",
+  "journal": "Proc Natl Acad Sci U S A",
+  "journalFull": "Proceedings of the National Academy of Sciences of the United States of America",
+  "pages": "12692-7",
+  "pmc": "PMC2906568",
+  "pmid": "20615999",
+  "title": "Optical activation of lateral amygdala pyramidal cells instructs associative fear learning",
+  "volume": "107",
+  "year": 2010
+ },
+ "20651684": {
+  "authors": [
+   "Jin X",
+   "Costa RM"
+  ],
+  "doi": "10.1038/nature09263",
+  "issue": "7305",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "457-62",
+  "pmc": "PMC3477867",
+  "pmid": "20651684",
+  "title": "Start/stop signals emerge in nigrostriatal circuits during sequence learning",
+  "volume": "466",
   "year": 2010
  },
  "20694004": {
@@ -1992,6 +3068,59 @@
   "volume": "468",
   "year": 2010
  },
+ "21068836": {
+  "authors": [
+   "Haubensak W",
+   "Kunwar PS",
+   "Cai H",
+   "Ciocchi S",
+   "Wall NR",
+   "Ponnusamy R",
+   "Biag J",
+   "Dong HW",
+   "Deisseroth K",
+   "Callaway EM",
+   "Fanselow MS",
+   "Lüthi A",
+   "Anderson DJ"
+  ],
+  "doi": "10.1038/nature09553",
+  "issue": "7321",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "270-6",
+  "pmc": "PMC3597095",
+  "pmid": "21068836",
+  "title": "Genetic dissection of an amygdala microcircuit that gates conditioned fear",
+  "volume": "468",
+  "year": 2010
+ },
+ "21068837": {
+  "authors": [
+   "Ciocchi S",
+   "Herry C",
+   "Grenier F",
+   "Wolff SB",
+   "Letzkus JJ",
+   "Vlachos I",
+   "Ehrlich I",
+   "Sprengel R",
+   "Deisseroth K",
+   "Stadler MB",
+   "Müller C",
+   "Lüthi A"
+  ],
+  "doi": "10.1038/nature09559",
+  "issue": "7321",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "277-82",
+  "pmc": "",
+  "pmid": "21068837",
+  "title": "Encoding of conditioned fear in central amygdala inhibitory circuits",
+  "volume": "468",
+  "year": 2010
+ },
  "21084685": {
   "authors": [
    "Carey MR",
@@ -2011,6 +3140,24 @@
   "pmid": "21084685",
   "title": "Presynaptic CB1 receptors regulate synaptic plasticity at cerebellar parallel fiber synapses",
   "volume": "105",
+  "year": 2011
+ },
+ "21167712": {
+  "authors": [
+   "Feinstein JS",
+   "Adolphs R",
+   "Damasio A",
+   "Tranel D"
+  ],
+  "doi": "10.1016/j.cub.2010.11.042",
+  "issue": "1",
+  "journal": "Curr Biol",
+  "journalFull": "Current biology : CB",
+  "pages": "34-8",
+  "pmc": "PMC3030206",
+  "pmid": "21167712",
+  "title": "The human amygdala and the induction and experience of fear",
+  "volume": "21",
   "year": 2011
  },
  "21227230": {
@@ -2048,6 +3195,30 @@
   "volume": "31",
   "year": 2011
  },
+ "21389985": {
+  "authors": [
+   "Tye KM",
+   "Prakash R",
+   "Kim SY",
+   "Fenno LE",
+   "Grosenick L",
+   "Zarabi H",
+   "Thompson KR",
+   "Gradinaru V",
+   "Ramakrishnan C",
+   "Deisseroth K"
+  ],
+  "doi": "10.1038/nature09820",
+  "issue": "7338",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "358-62",
+  "pmc": "PMC3154022",
+  "pmid": "21389985",
+  "title": "Amygdala circuitry mediating reversible and bidirectional control of anxiety",
+  "volume": "471",
+  "year": 2011
+ },
  "21460832": {
   "authors": [
    "Kakegawa W",
@@ -2072,6 +3243,50 @@
   "title": "D-serine regulates cerebellar LTD and motor coordination through the δ2 glutamate receptor",
   "volume": "14",
   "year": 2011
+ },
+ "21460835": {
+  "authors": [
+   "Sahay A",
+   "Scobie KN",
+   "Hill AS",
+   "O'Carroll CM",
+   "Kheirbek MA",
+   "Burghardt NS",
+   "Fenton AA",
+   "Dranovsky A",
+   "Hen R"
+  ],
+  "doi": "10.1038/nature09817",
+  "issue": "7344",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "466-70",
+  "pmc": "PMC3084370",
+  "pmid": "21460835",
+  "title": "Increasing adult hippocampal neurogenesis is sufficient to improve pattern separation",
+  "volume": "472",
+  "year": 2011
+ },
+ "2147780": {
+  "authors": [
+   "Gerfen CR",
+   "Engber TM",
+   "Mahan LC",
+   "Susel Z",
+   "Chase TN",
+   "Monsma FJ Jr",
+   "Sibley DR"
+  ],
+  "doi": "10.1126/science.2147780",
+  "issue": "4986",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "1429-32",
+  "pmc": "",
+  "pmid": "2147780",
+  "title": "D1 and D2 dopamine receptor-regulated gene expression of striatonigral and striatopallidal neurons",
+  "volume": "250",
+  "year": 1990
  },
  "21482355": {
   "authors": [
@@ -2100,6 +3315,44 @@
   "volume": "70",
   "year": 2011
  },
+ "21527713": {
+  "authors": [
+   "Koenig J",
+   "Linder AN",
+   "Leutgeb JK",
+   "Leutgeb S"
+  ],
+  "doi": "10.1126/science.1201685",
+  "issue": "6029",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "592-5",
+  "pmc": "",
+  "pmid": "21527713",
+  "title": "The spatial periodicity of grid cells is not sustained during reduced theta oscillations",
+  "volume": "332",
+  "year": 2011
+ },
+ "21527714": {
+  "authors": [
+   "Brandon MP",
+   "Bogaard AR",
+   "Libby CP",
+   "Connerney MA",
+   "Gupta K",
+   "Hasselmo ME"
+  ],
+  "doi": "10.1126/science.1201652",
+  "issue": "6029",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "595-9",
+  "pmc": "PMC3252766",
+  "pmid": "21527714",
+  "title": "Reduction of theta rhythm dissociates grid cell spatial periodicity from directional tuning",
+  "volume": "332",
+  "year": 2011
+ },
  "21562921": {
   "authors": [
    "Turner JR",
@@ -2116,6 +3369,53 @@
   "pmid": "21562921",
   "title": "Cerebellar nicotinic cholinergic receptors are intrinsic to the cerebellum: implications for diverse functional roles",
   "volume": "10",
+  "year": 2011
+ },
+ "21716290": {
+  "authors": [
+   "Stuber GD",
+   "Sparta DR",
+   "Stamatakis AM",
+   "van Leeuwen WA",
+   "Hardjoprajitno JE",
+   "Cho S",
+   "Tye KM",
+   "Kempadoo KA",
+   "Zhang F",
+   "Deisseroth K",
+   "Bonci A"
+  ],
+  "doi": "10.1038/nature10194",
+  "issue": "7356",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "377-80",
+  "pmc": "PMC3775282",
+  "pmid": "21716290",
+  "title": "Excitatory transmission from the amygdala to nucleus accumbens facilitates reward seeking",
+  "volume": "475",
+  "year": 2011
+ },
+ "21719680": {
+  "authors": [
+   "Viviani D",
+   "Charlet A",
+   "van den Burg E",
+   "Robinet C",
+   "Hurni N",
+   "Abatis M",
+   "Magara F",
+   "Stoop R"
+  ],
+  "doi": "10.1126/science.1201043",
+  "issue": "6038",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "104-7",
+  "pmc": "",
+  "pmid": "21719680",
+  "title": "Oxytocin selectively gates fear responses through distinct outputs from the central amygdala",
+  "volume": "333",
   "year": 2011
  },
  "21795627": {
@@ -2135,6 +3435,50 @@
   "pmid": "21795627",
   "title": "The organization of the human cerebellum estimated by intrinsic functional connectivity",
   "volume": "106",
+  "year": 2011
+ },
+ "21867888": {
+  "authors": [
+   "MacDonald CJ",
+   "Lepage KQ",
+   "Eden UT",
+   "Eichenbaum H"
+  ],
+  "doi": "10.1016/j.neuron.2011.07.012",
+  "issue": "4",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "737-49",
+  "pmc": "PMC3163062",
+  "pmid": "21867888",
+  "title": "Hippocampal \"time cells\" bridge the gap in memory for discontiguous events",
+  "volume": "71",
+  "year": 2011
+ },
+ "21874014": {
+  "authors": [
+   "Mormann F",
+   "Dubois J",
+   "Kornblith S",
+   "Milosavljevic M",
+   "Cerf M",
+   "Ison M",
+   "Tsuchiya N",
+   "Kraskov A",
+   "Quiroga RQ",
+   "Adolphs R",
+   "Fried I",
+   "Koch C"
+  ],
+  "doi": "10.1038/nn.2899",
+  "issue": "10",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "1247-9",
+  "pmc": "PMC3505687",
+  "pmid": "21874014",
+  "title": "A category-specific response to animals in the right human amygdala",
+  "volume": "14",
   "year": 2011
  },
  "21878518": {
@@ -2233,6 +3577,52 @@
   "volume": "78",
   "year": 2012
  },
+ "22325206": {
+  "authors": [
+   "Knobloch HS",
+   "Charlet A",
+   "Hoffmann LC",
+   "Eliava M",
+   "Khrulev S",
+   "Cetin AH",
+   "Osten P",
+   "Schwarz MK",
+   "Seeburg PH",
+   "Stoop R",
+   "Grinevich V"
+  ],
+  "doi": "10.1016/j.neuron.2011.11.030",
+  "issue": "3",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "553-66",
+  "pmc": "",
+  "pmid": "22325206",
+  "title": "Evoked axonal oxytocin release in the central amygdala attenuates fear response",
+  "volume": "73",
+  "year": 2012
+ },
+ "22441246": {
+  "authors": [
+   "Liu X",
+   "Ramirez S",
+   "Pang PT",
+   "Puryear CB",
+   "Govindarajan A",
+   "Deisseroth K",
+   "Tonegawa S"
+  ],
+  "doi": "10.1038/nature11028",
+  "issue": "7394",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "381-5",
+  "pmc": "PMC3331914",
+  "pmid": "22441246",
+  "title": "Optogenetic stimulation of a hippocampal engram activates fear memory recall",
+  "volume": "484",
+  "year": 2012
+ },
  "22491854": {
   "authors": [
    "Kolling N",
@@ -2270,6 +3660,28 @@
   "pmid": "22722855",
   "title": "Neural population dynamics during reaching",
   "volume": "487",
+  "year": 2012
+ },
+ "22726837": {
+  "authors": [
+   "Mallet N",
+   "Micklem BR",
+   "Henny P",
+   "Brown MT",
+   "Williams C",
+   "Bolam JP",
+   "Nakamura KC",
+   "Magill PJ"
+  ],
+  "doi": "10.1016/j.neuron.2012.04.027",
+  "issue": "6",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "1075-86",
+  "pmc": "PMC3407962",
+  "pmid": "22726837",
+  "title": "Dichotomous organization of the external globus pallidus",
+  "volume": "74",
   "year": 2012
  },
  "22763451": {
@@ -2372,6 +3784,24 @@
   "volume": "291",
   "year": 1990
  },
+ "2329367": {
+  "authors": [
+   "LeDoux JE",
+   "Cicchetti P",
+   "Xagoraris A",
+   "Romanski LM"
+  ],
+  "doi": "10.1523/JNEUROSCI.10-04-01062.1990",
+  "issue": "4",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "1062-9",
+  "pmc": "PMC6570227",
+  "pmid": "2329367",
+  "title": "The lateral amygdaloid nucleus: sensory interface of the amygdala in fear conditioning",
+  "volume": "10",
+  "year": 1990
+ },
  "23303952": {
   "authors": [
    "Hooks BM",
@@ -2409,6 +3839,111 @@
   "volume": "591",
   "year": 2013
  },
+ "23354054": {
+  "authors": [
+   "Cui G",
+   "Jun SB",
+   "Jin X",
+   "Pham MD",
+   "Vogel SS",
+   "Lovinger DM",
+   "Costa RM"
+  ],
+  "doi": "10.1038/nature11846",
+  "issue": "7436",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "238-42",
+  "pmc": "PMC4039389",
+  "pmid": "23354054",
+  "title": "Concurrent activation of striatal direct and indirect pathways during action initiation",
+  "volume": "494",
+  "year": 2013
+ },
+ "23354330": {
+  "authors": [
+   "Li H",
+   "Penzo MA",
+   "Taniguchi H",
+   "Kopec CD",
+   "Huang ZJ",
+   "Li B"
+  ],
+  "doi": "10.1038/nn.3322",
+  "issue": "3",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "332-9",
+  "pmc": "PMC3581751",
+  "pmid": "23354330",
+  "title": "Experience-dependent modification of a central amygdala fear circuit",
+  "volume": "16",
+  "year": 2013
+ },
+ "23406026": {
+  "authors": [
+   "Schuepbach WM",
+   "Rau J",
+   "Knudsen K",
+   "Volkmann J",
+   "Krack P",
+   "Timmermann L",
+   "Hälbig TD",
+   "Hesekamp H",
+   "Navarro SM",
+   "Meier N",
+   "Falk D",
+   "Mehdorn M",
+   "Paschen S",
+   "Maarouf M",
+   "Barbe MT",
+   "Fink GR",
+   "Kupsch A",
+   "Gruber D",
+   "Schneider GH",
+   "Seigneuret E",
+   "Kistner A",
+   "Chaynes P",
+   "Ory-Magne F",
+   "Brefel Courbon C",
+   "Vesper J",
+   "Schnitzler A",
+   "Wojtecki L",
+   "Houeto JL",
+   "Bataille B",
+   "Maltête D",
+   "Damier P",
+   "Raoul S",
+   "Sixel-Doering F",
+   "Hellwig D",
+   "Gharabaghi A",
+   "Krüger R",
+   "Pinsker MO",
+   "Amtage F",
+   "Régis JM",
+   "Witjas T",
+   "Thobois S",
+   "Mertens P",
+   "Kloss M",
+   "Hartmann A",
+   "Oertel WH",
+   "Post B",
+   "Speelman H",
+   "Agid Y",
+   "Schade-Brittinger C",
+   "Deuschl G"
+  ],
+  "doi": "10.1056/NEJMoa1205158",
+  "issue": "7",
+  "journal": "N Engl J Med",
+  "journalFull": "The New England journal of medicine",
+  "pages": "610-22",
+  "pmc": "",
+  "pmid": "23406026",
+  "title": "Neurostimulation for Parkinson's disease with early motor complications",
+  "volume": "368",
+  "year": 2013
+ },
  "23439125": {
   "authors": [
    "Wang M",
@@ -2432,6 +3967,45 @@
   "volume": "77",
   "year": 2013
  },
+ "23473324": {
+  "authors": [
+   "Kheirbek MA",
+   "Drew LJ",
+   "Burghardt NS",
+   "Costantini DO",
+   "Tannenholz L",
+   "Ahmari SE",
+   "Zeng H",
+   "Fenton AA",
+   "Hen R"
+  ],
+  "doi": "10.1016/j.neuron.2012.12.038",
+  "issue": "5",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "955-68",
+  "pmc": "PMC3595120",
+  "pmid": "23473324",
+  "title": "Differential control of learning and anxiety along the dorsoventral axis of the dentate gyrus",
+  "volume": "77",
+  "year": 2013
+ },
+ "23594744": {
+  "authors": [
+   "Pfeiffer BE",
+   "Foster DJ"
+  ],
+  "doi": "10.1038/nature12112",
+  "issue": "7447",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "74-9",
+  "pmc": "PMC3990408",
+  "pmid": "23594744",
+  "title": "Hippocampal place-cell sequences depict future paths to remembered goals",
+  "volume": "497",
+  "year": 2013
+ },
  "23685452": {
   "authors": [
    "Rigotti M",
@@ -2451,6 +4025,26 @@
   "pmid": "23685452",
   "title": "The importance of mixed selectivity in complex cognitive tasks",
   "volume": "497",
+  "year": 2013
+ },
+ "23708143": {
+  "authors": [
+   "Steinberg EE",
+   "Keiflin R",
+   "Boivin JR",
+   "Witten IB",
+   "Deisseroth K",
+   "Janak PH"
+  ],
+  "doi": "10.1038/nn.3413",
+  "issue": "7",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "966-73",
+  "pmc": "PMC3705924",
+  "pmid": "23708143",
+  "title": "A causal link between prediction errors, dopamine neurons and learning",
+  "volume": "16",
   "year": 2013
  },
  "23725001": {
@@ -2515,6 +4109,55 @@
   "volume": "16",
   "year": 2013
  },
+ "23852650": {
+  "authors": [
+   "Little S",
+   "Pogosyan A",
+   "Neal S",
+   "Zavala B",
+   "Zrinzo L",
+   "Hariz M",
+   "Foltynie T",
+   "Limousin P",
+   "Ashkan K",
+   "FitzGerald J",
+   "Green AL",
+   "Aziz TZ",
+   "Brown P"
+  ],
+  "doi": "10.1002/ana.23951",
+  "issue": "3",
+  "journal": "Ann Neurol",
+  "journalFull": "Annals of neurology",
+  "pages": "449-57",
+  "pmc": "PMC3886292",
+  "pmid": "23852650",
+  "title": "Adaptive deep brain stimulation in advanced Parkinson disease",
+  "volume": "74",
+  "year": 2013
+ },
+ "23888038": {
+  "authors": [
+   "Ramirez S",
+   "Liu X",
+   "Lin PA",
+   "Suh J",
+   "Pignatelli M",
+   "Redondo RL",
+   "Ryan TJ",
+   "Tonegawa S"
+  ],
+  "doi": "10.1126/science.1239073",
+  "issue": "6144",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "387-91",
+  "pmc": "",
+  "pmid": "23888038",
+  "title": "Creating a false memory in the hippocampus",
+  "volume": "341",
+  "year": 2013
+ },
  "23889930": {
   "authors": [
    "Shenhav A",
@@ -2557,6 +4200,31 @@
   "volume": "110",
   "year": 2013
  },
+ "23912946": {
+  "authors": [
+   "Jacobs J",
+   "Weidemann CT",
+   "Miller JF",
+   "Solway A",
+   "Burke JF",
+   "Wei XX",
+   "Suthana N",
+   "Sperling MR",
+   "Sharan AD",
+   "Fried I",
+   "Kahana MJ"
+  ],
+  "doi": "10.1038/nn.3466",
+  "issue": "9",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "1188-90",
+  "pmc": "PMC3767317",
+  "pmid": "23912946",
+  "title": "Direct recordings of grid-like neuronal activity in human spatial navigation",
+  "volume": "16",
+  "year": 2013
+ },
  "23968462": {
   "authors": [
    "Ivry RB",
@@ -2572,6 +4240,43 @@
   "title": "Timing functions of the cerebellum",
   "volume": "1",
   "year": 1989
+ },
+ "23972595": {
+  "authors": [
+   "Felix-Ortiz AC",
+   "Beyeler A",
+   "Seo C",
+   "Leppla CA",
+   "Wildes CP",
+   "Tye KM"
+  ],
+  "doi": "10.1016/j.neuron.2013.06.016",
+  "issue": "4",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "658-64",
+  "pmc": "PMC4205569",
+  "pmid": "23972595",
+  "title": "BLA to vHPC inputs modulate anxiety-related behaviors",
+  "volume": "79",
+  "year": 2013
+ },
+ "2402638": {
+  "authors": [
+   "Bergman H",
+   "Wichmann T",
+   "DeLong MR"
+  ],
+  "doi": "10.1126/science.2402638",
+  "issue": "4975",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "1436-8",
+  "pmc": "",
+  "pmid": "2402638",
+  "title": "Reversal of experimental parkinsonism by lesions of the subthalamic nucleus",
+  "volume": "249",
+  "year": 1990
  },
  "24076206": {
   "authors": [
@@ -2721,6 +4426,42 @@
   "volume": "17",
   "year": 2014
  },
+ "2456581": {
+  "authors": [
+   "Reiner A",
+   "Albin RL",
+   "Anderson KD",
+   "D'Amato CJ",
+   "Penney JB",
+   "Young AB"
+  ],
+  "doi": "10.1073/pnas.85.15.5733",
+  "issue": "15",
+  "journal": "Proc Natl Acad Sci U S A",
+  "journalFull": "Proceedings of the National Academy of Sciences of the United States of America",
+  "pages": "5733-7",
+  "pmc": "PMC281835",
+  "pmid": "2456581",
+  "title": "Differential loss of striatal projection neurons in Huntington disease",
+  "volume": "85",
+  "year": 1988
+ },
+ "24572357": {
+  "authors": [
+   "Hitti FL",
+   "Siegelbaum SA"
+  ],
+  "doi": "10.1038/nature13028",
+  "issue": "7494",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "88-92",
+  "pmc": "PMC4000264",
+  "pmid": "24572357",
+  "title": "The hippocampal CA2 region is essential for social memory",
+  "volume": "508",
+  "year": 2014
+ },
  "2466057": {
   "authors": [
    "Giguere M",
@@ -2753,6 +4494,23 @@
   "title": "Heterogeneous organization of the locus coeruleus projections to prefrontal and motor cortices",
   "volume": "111",
   "year": 2014
+ },
+ "2479133": {
+  "authors": [
+   "Albin RL",
+   "Young AB",
+   "Penney JB"
+  ],
+  "doi": "10.1016/0166-2236(89)90074-x",
+  "issue": "10",
+  "journal": "Trends Neurosci",
+  "journalFull": "Trends in neurosciences",
+  "pages": "366-75",
+  "pmc": "",
+  "pmid": "2479133",
+  "title": "The functional anatomy of basal ganglia disorders",
+  "volume": "12",
+  "year": 1989
  },
  "24805237": {
   "authors": [
@@ -2795,6 +4553,26 @@
   "volume": "3",
   "year": 2014
  },
+ "24896183": {
+  "authors": [
+   "Nabavi S",
+   "Fox R",
+   "Proulx CD",
+   "Lin JY",
+   "Tsien RY",
+   "Malinow R"
+  ],
+  "doi": "10.1038/nature13294",
+  "issue": "7509",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "348-52",
+  "pmc": "PMC4210354",
+  "pmid": "24896183",
+  "title": "Engineering a memory with LTD and LTP",
+  "volume": "511",
+  "year": 2014
+ },
  "25009273": {
   "authors": [
    "Husson Z",
@@ -2828,6 +4606,24 @@
   "pmid": "25017945",
   "title": "Hypothalamic orexin-A (hypocretin-1) neuronal projections to the vestibular complex and cerebellum in the rat",
   "volume": "1579",
+  "year": 2014
+ },
+ "25064852": {
+  "authors": [
+   "Cai H",
+   "Haubensak W",
+   "Anthony TE",
+   "Anderson DJ"
+  ],
+  "doi": "10.1038/nn.3767",
+  "issue": "9",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "1240-8",
+  "pmc": "PMC4146747",
+  "pmid": "25064852",
+  "title": "Central amygdala PKC-δ(+) neurons mediate the influence of multiple anorexigenic signals",
+  "volume": "17",
   "year": 2014
  },
  "25102558": {
@@ -2886,6 +4682,41 @@
   "pmid": "25186750",
   "title": "Intermittent theta-burst stimulation of the lateral cerebellum increases functional connectivity of the default network",
   "volume": "34",
+  "year": 2014
+ },
+ "25215491": {
+  "authors": [
+   "Hong W",
+   "Kim DW",
+   "Anderson DJ"
+  ],
+  "doi": "10.1016/j.cell.2014.07.049",
+  "issue": "6",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "1348-1361",
+  "pmc": "PMC4167378",
+  "pmid": "25215491",
+  "title": "Antagonistic control of social versus repetitive self-grooming behaviors by separable amygdala neuronal subsets",
+  "volume": "158",
+  "year": 2014
+ },
+ "25234264": {
+  "authors": [
+   "Strange BA",
+   "Witter MP",
+   "Lein ES",
+   "Moser EI"
+  ],
+  "doi": "10.1038/nrn3785",
+  "issue": "10",
+  "journal": "Nat Rev Neurosci",
+  "journalFull": "Nature reviews. Neuroscience",
+  "pages": "655-69",
+  "pmc": "",
+  "pmid": "25234264",
+  "title": "Functional organization of the hippocampal longitudinal axis",
+  "volume": "15",
   "year": 2014
  },
  "25267641": {
@@ -2972,6 +4803,22 @@
   "volume": "5",
   "year": 2014
  },
+ "25592533": {
+  "authors": [
+   "Janak PH",
+   "Tye KM"
+  ],
+  "doi": "10.1038/nature14188",
+  "issue": "7534",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "284-92",
+  "pmc": "PMC4565157",
+  "pmid": "25592533",
+  "title": "From circuits to behaviour in the amygdala",
+  "volume": "517",
+  "year": 2015
+ },
  "25601779": {
   "authors": [
    "Cerminara NL",
@@ -3050,6 +4897,52 @@
   "pmid": "25892304",
   "title": "Motor cortex is required for learning but not for executing a motor skill",
   "volume": "86",
+  "year": 2015
+ },
+ "25925480": {
+  "authors": [
+   "Namburi P",
+   "Beyeler A",
+   "Yorozu S",
+   "Calhoon GG",
+   "Halbert SA",
+   "Wichmann R",
+   "Holden SS",
+   "Mertens KL",
+   "Anahtar M",
+   "Felix-Ortiz AC",
+   "Wickersham IR",
+   "Gray JM",
+   "Tye KM"
+  ],
+  "doi": "10.1038/nature14366",
+  "issue": "7549",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "675-8",
+  "pmc": "PMC4418228",
+  "pmid": "25925480",
+  "title": "A circuit mechanism for differentiating positive and negative associations",
+  "volume": "520",
+  "year": 2015
+ },
+ "25931556": {
+  "authors": [
+   "Ciocchi S",
+   "Passecker J",
+   "Malagon-Vina H",
+   "Mikus N",
+   "Klausberger T"
+  ],
+  "doi": "10.1126/science.aaa3245",
+  "issue": "6234",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "560-3",
+  "pmc": "",
+  "pmid": "25931556",
+  "title": "Brain computation. Selective information routing by ventral hippocampal CA1 projection neurons",
+  "volume": "348",
   "year": 2015
  },
  "25965178": {
@@ -3137,6 +5030,21 @@
   "volume": "524",
   "year": 2015
  },
+ "26135716": {
+  "authors": [
+   "Buzsáki G"
+  ],
+  "doi": "10.1002/hipo.22488",
+  "issue": "10",
+  "journal": "Hippocampus",
+  "journalFull": "Hippocampus",
+  "pages": "1073-188",
+  "pmc": "PMC4648295",
+  "pmid": "26135716",
+  "title": "Hippocampal sharp wave-ripple: A cognitive biomarker for episodic memory and planning",
+  "volume": "25",
+  "year": 2015
+ },
  "26158416": {
   "authors": [
    "Kloth AD",
@@ -3217,6 +5125,29 @@
   "title": "Histaminergic afferent system in the cerebellum: structure and function",
   "volume": "1",
   "year": 2014
+ },
+ "26359992": {
+  "authors": [
+   "Panigrahi B",
+   "Martin KA",
+   "Li Y",
+   "Graves AR",
+   "Vollmer A",
+   "Olson L",
+   "Mensh BD",
+   "Karpova AY",
+   "Dudman JT"
+  ],
+  "doi": "10.1016/j.cell.2015.08.014",
+  "issue": "6",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "1418-30",
+  "pmc": "",
+  "pmid": "26359992",
+  "title": "Dopamine Is Required for the Neural Representation and Control of Movement Vigor",
+  "volume": "162",
+  "year": 2015
  },
  "26439486": {
   "authors": [
@@ -3338,6 +5269,49 @@
   "volume": "4",
   "year": 2015
  },
+ "26777273": {
+  "authors": [
+   "Mallet N",
+   "Schmidt R",
+   "Leventhal D",
+   "Chen F",
+   "Amer N",
+   "Boraud T",
+   "Berke JD"
+  ],
+  "doi": "10.1016/j.neuron.2015.12.017",
+  "issue": "2",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "308-16",
+  "pmc": "PMC4871723",
+  "pmid": "26777273",
+  "title": "Arkypallidal Cells Send a Stop Signal to Striatum",
+  "volume": "89",
+  "year": 2016
+ },
+ "26853301": {
+  "authors": [
+   "Padilla-Coreano N",
+   "Bolkan SS",
+   "Pierce GM",
+   "Blackman DR",
+   "Hardin WD",
+   "Garcia-Garcia AL",
+   "Spellman TJ",
+   "Gordon JA"
+  ],
+  "doi": "10.1016/j.neuron.2016.01.011",
+  "issue": "4",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "857-66",
+  "pmc": "PMC4760847",
+  "pmid": "26853301",
+  "title": "Direct Ventral Hippocampal-Prefrontal Input Is Required for Anxiety-Related Neural Activity and Behavior",
+  "volume": "89",
+  "year": 2016
+ },
  "26948890": {
   "authors": [
    "Ingram M",
@@ -3433,6 +5407,33 @@
   "volume": "113",
   "year": 2016
  },
+ "27279213": {
+  "authors": [
+   "Tovote P",
+   "Esposito MS",
+   "Botta P",
+   "Chaudun F",
+   "Fadok JP",
+   "Markovic M",
+   "Wolff SB",
+   "Ramakrishnan C",
+   "Fenno L",
+   "Deisseroth K",
+   "Herry C",
+   "Arber S",
+   "Lüthi A"
+  ],
+  "doi": "10.1038/nature17996",
+  "issue": "7606",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "206-12",
+  "pmc": "",
+  "pmid": "27279213",
+  "title": "Midbrain circuits for defensive behaviour",
+  "volume": "534",
+  "year": 2016
+ },
  "27346533": {
   "authors": [
    "Witter L",
@@ -3450,6 +5451,40 @@
   "pmid": "27346533",
   "title": "Purkinje Cell Collaterals Enable Output Signals from the Cerebellar Cortex to Feed Back to Purkinje Cells and Interneurons",
   "volume": "91",
+  "year": 2016
+ },
+ "27398617": {
+  "authors": [
+   "Howe MW",
+   "Dombeck DA"
+  ],
+  "doi": "10.1038/nature18942",
+  "issue": "7613",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "505-10",
+  "pmc": "PMC4970879",
+  "pmid": "27398617",
+  "title": "Rapid signalling in distinct dopaminergic axons during locomotion and reward",
+  "volume": "535",
+  "year": 2016
+ },
+ "27453468": {
+  "authors": [
+   "Tecuapetla F",
+   "Jin X",
+   "Lima SQ",
+   "Costa RM"
+  ],
+  "doi": "10.1016/j.cell.2016.06.032",
+  "issue": "3",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "703-715",
+  "pmc": "",
+  "pmid": "27453468",
+  "title": "Complementary Contributions of Striatal Projection Pathways to Action Initiation and Execution",
+  "volume": "166",
   "year": 2016
  },
  "27485952": {
@@ -3582,6 +5617,25 @@
   "volume": "16",
   "year": 2017
  },
+ "27749826": {
+  "authors": [
+   "Kim J",
+   "Pignatelli M",
+   "Xu S",
+   "Itohara S",
+   "Tonegawa S"
+  ],
+  "doi": "10.1038/nn.4414",
+  "issue": "12",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "1636-1646",
+  "pmc": "PMC5493320",
+  "pmid": "27749826",
+  "title": "Antagonistic negative and positive neurons of the basolateral amygdala",
+  "volume": "19",
+  "year": 2016
+ },
  "27812503": {
   "authors": [
    "Stoodley CJ",
@@ -3623,6 +5677,32 @@
   "pmid": "28103481",
   "title": "Motor Learning Requires Purkinje Cell Synaptic Potentiation through Activation of AMPA-Receptor Subunit GluA3",
   "volume": "93",
+  "year": 2017
+ },
+ "28117439": {
+  "authors": [
+   "Fadok JP",
+   "Krabbe S",
+   "Markovic M",
+   "Courtin J",
+   "Xu C",
+   "Massi L",
+   "Botta P",
+   "Bylund K",
+   "Müller C",
+   "Kovacevic A",
+   "Tovote P",
+   "Lüthi A"
+  ],
+  "doi": "10.1038/nature21047",
+  "issue": "7639",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "96-100",
+  "pmc": "",
+  "pmid": "28117439",
+  "title": "A competitive inhibitory circuit for selection of active and passive fear responses",
+  "volume": "542",
   "year": 2017
  },
  "28198698": {
@@ -3725,6 +5805,28 @@
   "volume": "21",
   "year": 2017
  },
+ "28386011": {
+  "authors": [
+   "Kitamura T",
+   "Ogawa SK",
+   "Roy DS",
+   "Okuyama T",
+   "Morrissey MD",
+   "Smith LM",
+   "Redondo RL",
+   "Tonegawa S"
+  ],
+  "doi": "10.1126/science.aam6808",
+  "issue": "6333",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "73-78",
+  "pmc": "PMC5493329",
+  "pmid": "28386011",
+  "title": "Engrams and circuits crucial for systems consolidation of a memory",
+  "volume": "356",
+  "year": 2017
+ },
  "28397842": {
   "authors": [
    "Romer AL",
@@ -3745,6 +5847,35 @@
   "title": "Structural alterations within cerebellar circuitry are associated with general liability for common mental disorders",
   "volume": "23",
   "year": 2018
+ },
+ "28436980": {
+  "authors": [
+   "Burgos-Robles A",
+   "Kimchi EY",
+   "Izadmehr EM",
+   "Porzenheim MJ",
+   "Ramos-Guasp WA",
+   "Nieh EH",
+   "Felix-Ortiz AC",
+   "Namburi P",
+   "Leppla CA",
+   "Presbrey KN",
+   "Anandalingam KK",
+   "Pagan-Rivera PA",
+   "Anahtar M",
+   "Beyeler A",
+   "Tye KM"
+  ],
+  "doi": "10.1038/nn.4553",
+  "issue": "6",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "824-835",
+  "pmc": "PMC5448704",
+  "pmid": "28436980",
+  "title": "Amygdala inputs to prefrontal cortex guide behavior amid conflicting cues of reward and punishment",
+  "volume": "20",
+  "year": 2017
  },
  "28467817": {
   "authors": [
@@ -3844,6 +5975,42 @@
   "title": "Cerebellar volume and cerebellocerebral structural covariance in schizophrenia: a multisite mega-analysis of 983 patients and 1349 healthy controls",
   "volume": "23",
   "year": 2018
+ },
+ "2854842": {
+  "authors": [
+   "LeDoux JE",
+   "Iwata J",
+   "Cicchetti P",
+   "Reis DJ"
+  ],
+  "doi": "10.1523/JNEUROSCI.08-07-02517.1988",
+  "issue": "7",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "2517-29",
+  "pmc": "PMC6569498",
+  "pmid": "2854842",
+  "title": "Different projections of the central amygdaloid nucleus mediate autonomic and behavioral correlates of conditioned fear",
+  "volume": "8",
+  "year": 1988
+ },
+ "2869411": {
+  "authors": [
+   "Morris RG",
+   "Anderson E",
+   "Lynch GS",
+   "Baudry M"
+  ],
+  "doi": "10.1038/319774a0",
+  "issue": "6056",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "774-6",
+  "pmc": "",
+  "pmid": "2869411",
+  "title": "Selective impairment of learning and blockade of long-term potentiation by an N-methyl-D-aspartate receptor antagonist, AP5",
+  "volume": "319",
+  "year": 1986
  },
  "28844644": {
   "authors": [
@@ -4054,6 +6221,51 @@
   "volume": "159",
   "year": 2018
  },
+ "29397273": {
+  "authors": [
+   "Jimenez JC",
+   "Su K",
+   "Goldberg AR",
+   "Luna VM",
+   "Biane JS",
+   "Ordek G",
+   "Zhou P",
+   "Ong SK",
+   "Wright MA",
+   "Zweifel L",
+   "Paninski L",
+   "Hen R",
+   "Kheirbek MA"
+  ],
+  "doi": "10.1016/j.neuron.2018.01.016",
+  "issue": "3",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "670-683.e6",
+  "pmc": "PMC5877404",
+  "pmid": "29397273",
+  "title": "Anxiety Cells in a Hippocampal-Hypothalamic Circuit",
+  "volume": "97",
+  "year": 2018
+ },
+ "29420469": {
+  "authors": [
+   "da Silva JA",
+   "Tecuapetla F",
+   "Paixão V",
+   "Costa RM"
+  ],
+  "doi": "10.1038/nature25457",
+  "issue": "7691",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "244-248",
+  "pmc": "",
+  "pmid": "29420469",
+  "title": "Dopamine neuron activity before action initiation gates and invigorates future movements",
+  "volume": "554",
+  "year": 2018
+ },
  "29478701": {
   "authors": [
    "Locke TM",
@@ -4078,6 +6290,39 @@
   "volume": "84",
   "year": 2018
  },
+ "29513649": {
+  "authors": [
+   "Sorrells SF",
+   "Paredes MF",
+   "Cebrian-Silla A",
+   "Sandoval K",
+   "Qi D",
+   "Kelley KW",
+   "James D",
+   "Mayer S",
+   "Chang J",
+   "Auguste KI",
+   "Chang EF",
+   "Gutierrez AJ",
+   "Kriegstein AR",
+   "Mathern GW",
+   "Oldham MC",
+   "Huang EJ",
+   "Garcia-Verdugo JM",
+   "Yang Z",
+   "Alvarez-Buylla A"
+  ],
+  "doi": "10.1038/nature25975",
+  "issue": "7696",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "377-381",
+  "pmc": "PMC6179355",
+  "pmid": "29513649",
+  "title": "Human hippocampal neurogenesis drops sharply in children to undetectable levels in adults",
+  "volume": "555",
+  "year": 2018
+ },
  "29593054": {
   "authors": [
    "Inagaki HK",
@@ -4094,6 +6339,32 @@
   "pmid": "29593054",
   "title": "Low-Dimensional and Monotonic Preparatory Activity in Mouse Anterior Lateral Motor Cortex",
   "volume": "38",
+  "year": 2018
+ },
+ "29625071": {
+  "authors": [
+   "Boldrini M",
+   "Fulmore CA",
+   "Tartt AN",
+   "Simeon LR",
+   "Pavlova I",
+   "Poposka V",
+   "Rosoklija GB",
+   "Stankov A",
+   "Arango V",
+   "Dwork AJ",
+   "Hen R",
+   "Mann JJ"
+  ],
+  "doi": "10.1016/j.stem.2018.03.015",
+  "issue": "4",
+  "journal": "Cell Stem Cell",
+  "journalFull": "Cell stem cell",
+  "pages": "589-599.e5",
+  "pmc": "PMC5957089",
+  "pmid": "29625071",
+  "title": "Human Hippocampal Neurogenesis Persists throughout Aging",
+  "volume": "22",
   "year": 2018
  },
  "29643480": {
@@ -4210,6 +6481,22 @@
   "title": "A cerebellar substrate for cognition evolved multiple times independently in mammals",
   "volume": "7",
   "year": 2018
+ },
+ "2983038": {
+  "authors": [
+   "Hikosaka O",
+   "Wurtz RH"
+  ],
+  "doi": "10.1152/jn.1985.53.1.292",
+  "issue": "1",
+  "journal": "J Neurophysiol",
+  "journalFull": "Journal of neurophysiology",
+  "pages": "292-308",
+  "pmc": "",
+  "pmid": "2983038",
+  "title": "Modification of saccadic eye movements by GABA-related substances. II. Effects of muscimol in monkey substantia nigra pars reticulata",
+  "volume": "53",
+  "year": 1985
  },
  "29986160": {
   "authors": [
@@ -6496,6 +8783,23 @@
   "volume": "381",
   "year": 2023
  },
+ "3760943": {
+  "authors": [
+   "Zola-Morgan S",
+   "Squire LR",
+   "Amaral DG"
+  ],
+  "doi": "10.1523/JNEUROSCI.06-10-02950.1986",
+  "issue": "10",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "2950-67",
+  "pmc": "PMC6568782",
+  "pmid": "3760943",
+  "title": "Human amnesia and the medial temporal region: enduring memory impairment following a bilateral lesion limited to field CA1 of the hippocampus",
+  "volume": "6",
+  "year": 1986
+ },
  "38029793": {
   "authors": [
    "Sepp M",
@@ -7479,6 +9783,22 @@
   "volume": "184",
   "year": 1973
  },
+ "4727084": {
+  "authors": [
+   "Bliss TV",
+   "Lomo T"
+  ],
+  "doi": "10.1113/jphysiol.1973.sp010273",
+  "issue": "2",
+  "journal": "J Physiol",
+  "journalFull": "The Journal of physiology",
+  "pages": "331-56",
+  "pmc": "PMC1350458",
+  "pmid": "4727084",
+  "title": "Long-lasting potentiation of synaptic transmission in the dentate area of the anaesthetized rabbit following stimulation of the perforant path",
+  "volume": "232",
+  "year": 1973
+ },
  "4998337": {
   "authors": [
    "Fuster JM",
@@ -7493,6 +9813,22 @@
   "pmid": "4998337",
   "title": "Neuron activity related to short-term memory",
   "volume": "173",
+  "year": 1971
+ },
+ "5124915": {
+  "authors": [
+   "O'Keefe J",
+   "Dostrovsky J"
+  ],
+  "doi": "10.1016/0006-8993(71)90358-1",
+  "issue": "1",
+  "journal": "Brain Res",
+  "journalFull": "Brain research",
+  "pages": "171-5",
+  "pmc": "",
+  "pmid": "5124915",
+  "title": "The hippocampus as a spatial map. Preliminary evidence from unit activity in the freely-moving rat",
+  "volume": "34",
   "year": 1971
  },
  "5784296": {
@@ -7544,6 +9880,24 @@
   "volume": "33",
   "year": 1982
  },
+ "6474172": {
+  "authors": [
+   "Hyman BT",
+   "Van Hoesen GW",
+   "Damasio AR",
+   "Barnes CL"
+  ],
+  "doi": "10.1126/science.6474172",
+  "issue": "4667",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "1168-70",
+  "pmc": "",
+  "pmid": "6474172",
+  "title": "Alzheimer's disease: cell-specific pathology isolates the hippocampal formation",
+  "volume": "225",
+  "year": 1984
+ },
  "6701513": {
   "authors": [
    "McCormick DA",
@@ -7559,6 +9913,42 @@
   "title": "Cerebellum: essential involvement in the classically conditioned eyelid response",
   "volume": "223",
   "year": 1984
+ },
+ "6823561": {
+  "authors": [
+   "Langston JW",
+   "Ballard P",
+   "Tetrud JW",
+   "Irwin I"
+  ],
+  "doi": "10.1126/science.6823561",
+  "issue": "4587",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "979-80",
+  "pmc": "",
+  "pmid": "6823561",
+  "title": "Chronic Parkinsonism in humans due to a product of meperidine-analog synthesis",
+  "volume": "219",
+  "year": 1983
+ },
+ "7088155": {
+  "authors": [
+   "Morris RG",
+   "Garrud P",
+   "Rawlins JN",
+   "O'Keefe J"
+  ],
+  "doi": "10.1038/297681a0",
+  "issue": "5868",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "681-3",
+  "pmc": "",
+  "pmid": "7088155",
+  "title": "Place navigation impaired in rats with hippocampal lesions",
+  "volume": "297",
+  "year": 1982
  },
  "7143039": {
   "authors": [
@@ -7578,6 +9968,41 @@
   "volume": "2",
   "year": 1982
  },
+ "7472442": {
+  "authors": [
+   "LaBar KS",
+   "LeDoux JE",
+   "Spencer DD",
+   "Phelps EA"
+  ],
+  "doi": "10.1523/JNEUROSCI.15-10-06846.1995",
+  "issue": "10",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "6846-55",
+  "pmc": "PMC6578018",
+  "pmid": "7472442",
+  "title": "Impaired fear conditioning following unilateral temporal lobectomy in humans",
+  "volume": "15",
+  "year": 1995
+ },
+ "7576647": {
+  "authors": [
+   "Quirk GJ",
+   "Repa C",
+   "LeDoux JE"
+  ],
+  "doi": "10.1016/0896-6273(95)90092-6",
+  "issue": "5",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "1029-39",
+  "pmc": "",
+  "pmid": "7576647",
+  "title": "Fear conditioning enhances short-latency auditory responses of lateral amygdala neurons: parallel recordings in the freely behaving rat",
+  "volume": "15",
+  "year": 1995
+ },
  "7646893": {
   "authors": [
    "Lev-Ram V",
@@ -7595,6 +10020,26 @@
   "pmid": "7646893",
   "title": "Long-term depression in cerebellar Purkinje neurons results from coincidence of nitric oxide and depolarization-induced Ca2+ transients",
   "volume": "15",
+  "year": 1995
+ },
+ "7652558": {
+  "authors": [
+   "Bechara A",
+   "Tranel D",
+   "Damasio H",
+   "Adolphs R",
+   "Rockland C",
+   "Damasio AR"
+  ],
+  "doi": "10.1126/science.7652558",
+  "issue": "5227",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "1115-8",
+  "pmc": "",
+  "pmid": "7652558",
+  "title": "Double dissociation of conditioning and declarative knowledge relative to the amygdala and hippocampus in humans",
+  "volume": "269",
   "year": 1995
  },
  "7675082": {
@@ -7679,6 +10124,40 @@
   "volume": "79",
   "year": 1994
  },
+ "7990957": {
+  "authors": [
+   "Adolphs R",
+   "Tranel D",
+   "Damasio H",
+   "Damasio A"
+  ],
+  "doi": "10.1038/372669a0",
+  "issue": "6507",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "669-72",
+  "pmc": "",
+  "pmid": "7990957",
+  "title": "Impaired recognition of emotion in facial expressions following bilateral damage to the human amygdala",
+  "volume": "372",
+  "year": 1994
+ },
+ "8036517": {
+  "authors": [
+   "Wilson MA",
+   "McNaughton BL"
+  ],
+  "doi": "10.1126/science.8036517",
+  "issue": "5172",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "676-9",
+  "pmc": "",
+  "pmid": "8036517",
+  "title": "Reactivation of hippocampal ensemble memories during sleep",
+  "volume": "265",
+  "year": 1994
+ },
  "8039375": {
   "authors": [
    "Bechara A",
@@ -7729,6 +10208,22 @@
   "volume": "261",
   "year": 1993
  },
+ "8353611": {
+  "authors": [
+   "O'Keefe J",
+   "Recce ML"
+  ],
+  "doi": "10.1002/hipo.450030307",
+  "issue": "3",
+  "journal": "Hippocampus",
+  "journalFull": "Hippocampus",
+  "pages": "317-30",
+  "pmc": "",
+  "pmid": "8353611",
+  "title": "Phase relationship between hippocampal place units and the EEG theta rhythm",
+  "volume": "3",
+  "year": 1993
+ },
  "8358429": {
   "authors": [
    "Orr HT",
@@ -7751,6 +10246,19 @@
   "pmid": "8358429",
   "title": "Expansion of an unstable trinucleotide CAG repeat in spinocerebellar ataxia type 1",
   "volume": "4",
+  "year": 1993
+ },
+ "8458085": {
+  "authors": [],
+  "doi": "10.1016/0092-8674(93)90585-e",
+  "issue": "6",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "971-83",
+  "pmc": "",
+  "pmid": "8458085",
+  "title": "A novel gene containing a trinucleotide repeat that is expanded and unstable on Huntington's disease chromosomes. The Huntington's Disease Collaborative Research Group",
+  "volume": "72",
   "year": 1993
  },
  "8551360": {
@@ -7786,6 +10294,25 @@
   "pmid": "8598908",
   "title": "Dissociation in prefrontal cortex of affective and attentional shifts",
   "volume": "380",
+  "year": 1996
+ },
+ "8632988": {
+  "authors": [
+   "Sheline YI",
+   "Wang PW",
+   "Gado MH",
+   "Csernansky JG",
+   "Vannier MW"
+  ],
+  "doi": "10.1073/pnas.93.9.3908",
+  "issue": "9",
+  "journal": "Proc Natl Acad Sci U S A",
+  "journalFull": "Proceedings of the National Academy of Sciences of the United States of America",
+  "pages": "3908-13",
+  "pmc": "PMC39458",
+  "pmid": "8632988",
+  "title": "Hippocampal atrophy in recurrent major depression",
+  "volume": "93",
   "year": 1996
  },
  "8638157": {
@@ -7839,6 +10366,26 @@
   "volume": "272",
   "year": 1996
  },
+ "8699259": {
+  "authors": [
+   "Gómez-Isla T",
+   "Price JL",
+   "McKeel DW Jr",
+   "Morris JC",
+   "Growdon JH",
+   "Hyman BT"
+  ],
+  "doi": "10.1523/JNEUROSCI.16-14-04491.1996",
+  "issue": "14",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "4491-500",
+  "pmc": "PMC6578866",
+  "pmid": "8699259",
+  "title": "Profound loss of layer II entorhinal cortex neurons occurs in very mild Alzheimer's disease",
+  "volume": "16",
+  "year": 1996
+ },
  "8813282": {
   "authors": [
    "Martin TA",
@@ -7856,6 +10403,27 @@
   "pmid": "8813282",
   "title": "Throwing while looking through prisms. I. Focal olivocerebellar lesions impair adaptation",
   "volume": "119 ( Pt 4)",
+  "year": 1996
+ },
+ "8893004": {
+  "authors": [
+   "Morris JS",
+   "Frith CD",
+   "Perrett DI",
+   "Rowland D",
+   "Young AW",
+   "Calder AJ",
+   "Dolan RJ"
+  ],
+  "doi": "10.1038/383812a0",
+  "issue": "6603",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "812-5",
+  "pmc": "",
+  "pmid": "8893004",
+  "title": "A differential neural response in the human amygdala to fearful and happy facial expressions",
+  "volume": "383",
   "year": 1996
  },
  "8898206": {
@@ -7885,6 +10453,23 @@
   "pmc": "",
   "pmid": "8898206",
   "title": "Familial hemiplegic migraine and episodic ataxia type-2 are caused by mutations in the Ca2+ channel gene CACNL1A4",
+  "volume": "87",
+  "year": 1996
+ },
+ "8980238": {
+  "authors": [
+   "Tsien JZ",
+   "Huerta PT",
+   "Tonegawa S"
+  ],
+  "doi": "10.1016/s0092-8674(00)81827-9",
+  "issue": "7",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "1327-38",
+  "pmc": "",
+  "pmid": "8980238",
+  "title": "The essential role of hippocampal CA1 NMDA receptor-dependent synaptic plasticity in spatial memory",
   "volume": "87",
   "year": 1996
  },
@@ -7926,6 +10511,23 @@
   "pmid": "8988170",
   "title": "Autosomal dominant cerebellar ataxia (SCA6) associated with small polyglutamine expansions in the alpha 1A-voltage-dependent calcium channel",
   "volume": "15",
+  "year": 1997
+ },
+ "9054347": {
+  "authors": [
+   "Schultz W",
+   "Dayan P",
+   "Montague PR"
+  ],
+  "doi": "10.1126/science.275.5306.1593",
+  "issue": "5306",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "1593-9",
+  "pmc": "",
+  "pmid": "9054347",
+  "title": "A neural substrate of prediction and reward",
+  "volume": "275",
   "year": 1997
  },
  "9055804": {
@@ -7993,6 +10595,40 @@
   "volume": "54",
   "year": 1997
  },
+ "9197268": {
+  "authors": [
+   "Polymeropoulos MH",
+   "Lavedan C",
+   "Leroy E",
+   "Ide SE",
+   "Dehejia A",
+   "Dutra A",
+   "Pike B",
+   "Root H",
+   "Rubenstein J",
+   "Boyer R",
+   "Stenroos ES",
+   "Chandrasekharappa S",
+   "Athanassiadou A",
+   "Papapetropoulos T",
+   "Johnson WG",
+   "Lazzarini AM",
+   "Duvoisin RC",
+   "Di Iorio G",
+   "Golbe LI",
+   "Nussbaum RL"
+  ],
+  "doi": "10.1126/science.276.5321.2045",
+  "issue": "5321",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "2045-7",
+  "pmc": "",
+  "pmid": "9197268",
+  "title": "Mutation in the alpha-synuclein gene identified in families with Parkinson's disease",
+  "volume": "276",
+  "year": 1997
+ },
  "9367153": {
   "authors": [
    "Ben-Arie N",
@@ -8015,6 +10651,42 @@
   "volume": "390",
   "year": 1997
  },
+ "9403689": {
+  "authors": [
+   "McKernan MG",
+   "Shinnick-Gallagher P"
+  ],
+  "doi": "10.1038/37605",
+  "issue": "6660",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "607-11",
+  "pmc": "",
+  "pmid": "9403689",
+  "title": "Fear conditioning induces a lasting potentiation of synaptic currents in vitro",
+  "volume": "390",
+  "year": 1997
+ },
+ "9412517": {
+  "authors": [
+   "Whalen PJ",
+   "Rauch SL",
+   "Etcoff NL",
+   "McInerney SC",
+   "Lee MB",
+   "Jenike MA"
+  ],
+  "doi": "10.1523/JNEUROSCI.18-01-00411.1998",
+  "issue": "1",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "411-8",
+  "pmc": "PMC6793390",
+  "pmid": "9412517",
+  "title": "Masked presentations of emotional facial expressions modulate amygdala activity without explicit knowledge",
+  "volume": "18",
+  "year": 1998
+ },
  "9577385": {
   "authors": [
    "Schmahmann JD",
@@ -8029,6 +10701,25 @@
   "pmid": "9577385",
   "title": "The cerebellar cognitive affective syndrome",
   "volume": "121 ( Pt 4)",
+  "year": 1998
+ },
+ "9600990": {
+  "authors": [
+   "Spillantini MG",
+   "Crowther RA",
+   "Jakes R",
+   "Hasegawa M",
+   "Goedert M"
+  ],
+  "doi": "10.1073/pnas.95.11.6469",
+  "issue": "11",
+  "journal": "Proc Natl Acad Sci U S A",
+  "journalFull": "Proceedings of the National Academy of Sciences of the United States of America",
+  "pages": "6469-73",
+  "pmc": "PMC27806",
+  "pmid": "9600990",
+  "title": "alpha-Synuclein in filamentous inclusions of Lewy bodies from Parkinson's disease and dementia with lewy bodies",
+  "volume": "95",
   "year": 1998
  },
  "9613621": {
@@ -8066,6 +10757,48 @@
   "pmid": "9735947",
   "title": "Microcircuitry and function of the inferior olive",
   "volume": "21",
+  "year": 1998
+ },
+ "9770557": {
+  "authors": [
+   "Limousin P",
+   "Krack P",
+   "Pollak P",
+   "Benazzouz A",
+   "Ardouin C",
+   "Hoffmann D",
+   "Benabid AL"
+  ],
+  "doi": "10.1056/NEJM199810153391603",
+  "issue": "16",
+  "journal": "N Engl J Med",
+  "journalFull": "The New England journal of medicine",
+  "pages": "1105-11",
+  "pmc": "",
+  "pmid": "9770557",
+  "title": "Electrical stimulation of the subthalamic nucleus in advanced Parkinson's disease",
+  "volume": "339",
+  "year": 1998
+ },
+ "9809557": {
+  "authors": [
+   "Eriksson PS",
+   "Perfilieva E",
+   "Björk-Eriksson T",
+   "Alborn AM",
+   "Nordborg C",
+   "Peterson DA",
+   "Gage FH"
+  ],
+  "doi": "10.1038/3305",
+  "issue": "11",
+  "journal": "Nat Med",
+  "journalFull": "Nature medicine",
+  "pages": "1313-7",
+  "pmc": "",
+  "pmid": "9809557",
+  "title": "Neurogenesis in the adult human hippocampus",
+  "volume": "4",
   "year": 1998
  }
 }

@@ -477,6 +477,7 @@ def extra_anchors(species, meshes, helpers):
         a['pag'] = sided([0.18, aq_c[1], aq_c[2]])
         a['vta'] = sided([0.18, mlo[1] + 0.3 * (mhi[1] - mlo[1]), mlo[2] + 0.75 * (mhi[2] - mlo[2])])
         a['snc'] = sided([0.55, mlo[1] + 0.3 * (mhi[1] - mlo[1]), mlo[2] + 0.65 * (mhi[2] - mlo[2])])
+        a['snr'] = sided([0.75, mlo[1] + 0.2 * (mhi[1] - mlo[1]), mlo[2] + 0.6 * (mhi[2] - mlo[2])])   # pars reticulata: ventrolateral to the compact part
         a['brainstem-motor'] = sided([0.3, mlo[1] + 0.45 * (mhi[1] - mlo[1]), mc[2]])
         a['io'] = sided([0.25, dlo[1] + 0.35 * (dhi[1] - dlo[1]), dlo[2] + 0.85 * (dhi[2] - dlo[2])])
         a['vestibular-nuclei'] = sided([0.55 * v4hi[0], v4c[1], v4c[2] + 0.1])
@@ -510,6 +511,13 @@ def extra_anchors(species, meshes, helpers):
         olo, ohi, _ = bbox(meshes, 'ofc')
         a['eyes'] = sided([0.24 * width, olo[1] - 0.9, ohi[2] - 0.3])   # orbits below the orbitofrontal cortex
         a['ser-neurons'] = sided([0.0, *helpers['gi'][2][1:]])           # medullary reticular formation, as in the mouse
+        sv = np.vstack([m['_v'] for m in meshes if m['key'] == 'sn'])
+        sv = sv[sv[:, 0] > 0]                                            # SARM labels the substantia nigra as a whole:
+        a['snr'] = sided([np.percentile(sv[:, 0], 75), np.percentile(sv[:, 1], 25), sv[:, 2].mean()])   # pars reticulata, its ventrolateral part
+        hv = np.vstack([m['_v'] for m in meshes if m['key'] == 'hip'])
+        hv = hv[hv[:, 0] > 0]                                            # the primate anterior hippocampus corresponds to the rodent
+        a['vhpc'] = sided(hv[hv[:, 2] >= np.percentile(hv[:, 2], 80)].mean(0))   # ventral one: the front fifth of the hippocampus,
+        a['dhpc'] = sided(hv[hv[:, 2] <= np.percentile(hv[:, 2], 20)].mean(0))   # and the posterior (dorsal) one the back fifth
         mlo, mhi, mc = helpers['mm'][:3]
         a['tmn'] = sided([mhi[0] + 0.12, mc[1], mc[2]])                  # posterior hypothalamus, beside the mammillary bodies
         mv = helpers['med'][3]                                           # the spinal cord continues the long axis of the medulla
@@ -528,6 +536,14 @@ def extra_anchors(species, meshes, helpers):
         a['eyes'] = sided([0.42 * width, blo[1] + 0.55 * (bhi[1] - blo[1]), bhi[2] - 0.3 * (bhi[2] - blo[2])])
         if 'grn' in helpers:  # serotonergic afferents arise mainly in the medullary reticular formation (rat)
             a['ser-neurons'] = sided([0.0, *helpers['grn'][2][1:]])
+        hv = np.vstack([m['_v'] for m in meshes if m['key'] in ('dg', 'ca1', 'ca2', 'ca3')])
+        hv = hv[hv[:, 0] > 0]
+        a['dhpc'] = sided(hv[hv[:, 1] >= np.percentile(hv[:, 1], 80)].mean(0))   # dorsal hippocampus: the upper fifth of the fields
+        a['vhpc'] = sided(hv[hv[:, 1] <= np.percentile(hv[:, 1], 20)].mean(0))   # ventral hippocampus: the lower fifth
+        z0 = a['dhpc'][2][2]   # the fields are placed where they cross the dorsal hippocampus, as in a coronal section:
+        for m in meshes:       # the centroids of their curved sheets lie close together, deep in the formation
+            if m['key'] in ('dg', 'ca1', 'ca2', 'ca3'):
+                m['c'], m['cl'], m['cr'] = centroids(m['_v'][np.abs(m['_v'][:, 2] - z0) < 0.2])
         start = np.array([0.0, io_c[1] + 0.15, blo[2] + 0.15])
         spine = [start, start + [0, -0.25, -1.6], start + [0, -0.35, -3.2]]
     end = spine[-1]

@@ -35,6 +35,10 @@
       modulators: { pos: [7.4, 0.9, -1.6], target: [0.45, -2.0, -1.1] },   // right side, close to brainstem and cerebellum
       motor: { pos: [-15, 4.2, 5.2], target: [-0.6, -0.8, 0.2] },   // left front: frontal motor areas, thalamus, brainstem and spinal cord
       prefrontal: { pos: [-12.5, 2.5, 11.5], target: [0, -1.0, 1.4] },   // front left, a little low: frontal lobe, its undersurface and the brainstem
+      'basal-ganglia': { pos: [-10.5, 4.0, 8.5], target: [-0.8, -0.35, 0.3] },   // left front, above: the deep nuclei through the translucent cortex
+      hippocampus: { pos: [-12, 0.5, 4], target: [-1.2, -1.3, -0.3] },   // left side, low: the medial temporal lobe through the cortex
+      'hip-fields': { pos: [-8.65, -0.1, 2.8], target: [-1.3, -1.35, -0.1] },   // closer: the human atlas does not separate the fields, so the circuit is the entorhinal cortex and hippocampus
+      amygdala: { pos: [-11.5, 1.0, 6.5], target: [-0.9, -0.9, 0.3] },   // left front, low: the amygdala, thalamus and brainstem through the cortex
     },
     mouse: {
       overview: { pos: [-10, 7, -9], target: [0, -0.5, -0.5] },
@@ -46,6 +50,10 @@
       modulators: { pos: [6.5, -6.0, -1.0], target: [0.5, -1.3, -2.2] },   // right side from below, under hippocampus and striatum
       motor: { pos: [-14.5, 5.5, 0.2], target: [-0.3, -0.6, -1.5] },   // left side: motor areas to the spinal cord
       prefrontal: { pos: [-12, 5, 10], target: [0, -0.5, 0.5] },   // front left: frontal pole, thalamus, hippocampus and midbrain
+      'basal-ganglia': { pos: [-11, 5, 6], target: [-1.1, -0.45, 0.0] },   // left side, a little in front: striatum to midbrain
+      hippocampus: { pos: [-10, 5, -2], target: [-1.2, 0.3, -0.8] },   // left side, above and behind: the hippocampal fields and entorhinal area
+      'hip-fields': { pos: [-3.6, 3.65, -8.0], target: [-1.8, 0.45, -0.9] },   // behind, above: the fields as in a coronal section of the dorsal hippocampus
+      amygdala: { pos: [-11, -2.5, 4], target: [-1.4, -0.6, 0.0] },   // left side, from below: the amygdalar nuclei and their targets
     },
     macaque: {
       overview: { pos: [-11.5, 5.5, -11], target: [0, -0.8, 0] },
@@ -57,6 +65,10 @@
       modulators: { pos: [9.5, 0.2, -2.5], target: [0.3, -1.4, -1.0] },   // right side, a little further back than the human view
       motor: { pos: [-15, 4.2, 5.2], target: [-0.6, -0.8, 0.2] },
       prefrontal: { pos: [-10.2, 2.4, 9.6], target: [0, -0.5, 0.9] },   // closer than the human view: the macaque brain is smaller relative to the body parts
+      'basal-ganglia': { pos: [-10, 3.8, 8.2], target: [-0.9, -0.25, 0.4] },
+      hippocampus: { pos: [-11, 2, 5], target: [-1.1, -0.9, 0.0] },
+      'hip-fields': { pos: [-8.4, 0.7, 3.6], target: [-1.5, -1.3, 0.1] },   // nor does the macaque one
+      amygdala: { pos: [-10.5, 1.0, 6.5], target: [-0.9, -0.8, 0.5] },
     },
   };
   // the 3D brains on offer: those listed in knowledge.json atlas3d.species (a species is switched off there)
