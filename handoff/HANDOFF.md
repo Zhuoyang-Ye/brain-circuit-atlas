@@ -13,7 +13,10 @@
 
 ## 0a. Cloud substitutes for the Mac-only tools
 
-(Filled in as they are written.)
+Run with `NODE_PATH=$(npm root -g)` (Playwright and Chromium are preinstalled in the cloud image; don't install another Playwright).
+
+- `handoff/tools/ui_check.js`: stands in for `ui_check.py`. Same flags: `--route`, `--store key=JSON` (repeatable; sets `localStorage['ca.'+key]`), `--before JS`, `--wait ms`, `--screenshot out.png`, `--eval JS`, `--smoke`, `--size WxH`. Add `--store intro.dismissed=true` to hide the intro card. Select a circuit with `--store atlas.circuit.<region>='"<circuit id>"'` instead of clicking.
+- `handoff/tools/circuits_dump.js out.json [region ...]`: for every species × region × circuit, the labels drawn, whether the trace button shows, and errbar/console errors. Dump before and after any 3D change and diff the two JSON files.
 
 ## 1. What you are continuing
 
@@ -214,8 +217,8 @@ Follow `skill/.../references/adding-a-region.md`. In short:
 
 **Still to do, in order:**
 
-1. **Screenshots.** Take and look at `amy-itc`, `amy-bla`, `amy-pfc` and `amy-cb` in all three species. They were taken without errors but not yet reviewed, and they don't transfer. Select a circuit with `--before "[...document.querySelectorAll('.circ')].find(e=>e.textContent.includes('Basolateral outputs')).click()" --wait 6000`. Tune the `amygdala` presets if needed. In the human, `amy-itc` collapses inside the single amygdala mesh, and its description says so.
-2. **Trace check.** The "▶ Trace step by step" button should appear for `amy-fear`, `amy-itc` and `amy-cb`, not for the parallel `amy-bla` and `amy-pfc`. Run the trace in the mouse.
+1. **[done 2026-11-04]** All 5 circuits × 3 species reviewed, no errors. Added preset `amy-nuclei` (close-up of the nuclei) in all three species and set `amy-itc`'s view to it. The human `amy-itc` drew nothing at all (every pathway has both ends in the one amygdala mesh), so `rebuildLinks` in `atlas3d.js` now labels the structure that holds an undrawn pathway when no other label marks that spot; `circuits_dump.js` showed this changes no other circuit (144 checked). Original instructions: Take and look at `amy-itc`, `amy-bla`, `amy-pfc` and `amy-cb` in all three species. They were taken without errors but not yet reviewed, and they don't transfer. Select a circuit with `--before "[...document.querySelectorAll('.circ')].find(e=>e.textContent.includes('Basolateral outputs')).click()" --wait 6000`. Tune the `amygdala` presets if needed. In the human, `amy-itc` collapses inside the single amygdala mesh, and its description says so.
+2. **[done 2026-11-04]** Trace runs in mouse and macaque for `amy-fear` (3 steps), `amy-itc` (2) and `amy-cb` (2); no button for `amy-bla`/`amy-pfc`. Human: `amy-fear` and `amy-cb` trace (2 steps each); `amy-itc` has nothing to trace (collapsed). Original instructions: The "▶ Trace step by step" button should appear for `amy-fear`, `amy-itc` and `amy-cb`, not for the parallel `amy-bla` and `amy-pfc`. Run the trace in the mouse.
 3. **Site text.**
    - `index.html` meta description: add the amygdala.
    - `js/main.js` 3D caveats (around line 102), human part: the atlas does not separate the amygdala's nuclei, so they are shown in the amygdala, and the medial geniculate is shown in the thalamus.

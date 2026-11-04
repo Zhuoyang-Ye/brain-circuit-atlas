@@ -39,6 +39,7 @@
       hippocampus: { pos: [-12, 0.5, 4], target: [-1.2, -1.3, -0.3] },   // left side, low: the medial temporal lobe through the cortex
       'hip-fields': { pos: [-8.65, -0.1, 2.8], target: [-1.3, -1.35, -0.1] },   // closer: the human atlas does not separate the fields, so the circuit is the entorhinal cortex and hippocampus
       amygdala: { pos: [-11.5, 1.0, 6.5], target: [-0.9, -0.9, 0.3] },   // left front, low: the amygdala, thalamus and brainstem through the cortex
+      'amy-nuclei': { pos: [-6.2, -0.45, 3.45], target: [-1.39, -1.31, 0.66] },   // closer: the atlas does not separate the nuclei, so the circuit lies inside the amygdala
     },
     mouse: {
       overview: { pos: [-10, 7, -9], target: [0, -0.5, -0.5] },
@@ -54,6 +55,7 @@
       hippocampus: { pos: [-10, 5, -2], target: [-1.2, 0.3, -0.8] },   // left side, above and behind: the hippocampal fields and entorhinal area
       'hip-fields': { pos: [-3.6, 3.65, -8.0], target: [-1.8, 0.45, -0.9] },   // behind, above: the fields as in a coronal section of the dorsal hippocampus
       amygdala: { pos: [-11, -2.5, 4], target: [-1.4, -0.6, 0.0] },   // left side, from below: the amygdalar nuclei and their targets
+      'amy-nuclei': { pos: [-7.0, -2.45, 1.8], target: [-2.2, -1.5, -0.2] },   // closer: the lateral, basolateral, central and intercalated nuclei
     },
     macaque: {
       overview: { pos: [-11.5, 5.5, -11], target: [0, -0.8, 0] },
@@ -69,6 +71,7 @@
       hippocampus: { pos: [-11, 2, 5], target: [-1.1, -0.9, 0.0] },
       'hip-fields': { pos: [-8.4, 0.7, 3.6], target: [-1.5, -1.3, 0.1] },   // nor does the macaque one
       amygdala: { pos: [-10.5, 1.0, 6.5], target: [-0.9, -0.8, 0.5] },
+      'amy-nuclei': { pos: [-5.8, -0.4, 3.8], target: [-1.5, -1.2, 1.1] },
     },
   };
   // the 3D brains on offer: those listed in knowledge.json atlas3d.species (a species is switched off there)
@@ -588,9 +591,11 @@
     const keyOf = (s, t) => at(s) + '|' + at(t);   // links between the same two points are drawn once
     const links = activeLinks();
     const keys = new Set(links.map((l) => keyOf(l.s, l.t)));
+    const collapsed = [];   // pathways with both ends in one mesh (the human amygdala's nuclei): not drawn
     links.forEach((l) => {
       const a = posOf(l.s), b = posOf(l.t);
-      if (!a || !b || a.distanceTo(b) < 0.08) return;
+      if (!a || !b) return;
+      if (a.distanceTo(b) < 0.08) { collapsed.push(l); return; }
       const key = keyOf(l.s, l.t);
       if (drawn.has(key)) return;   // e.g. dentate and DCN share one position in the human atlas
       drawn.add(key);
@@ -650,6 +655,11 @@
         labelEls.push({ id: 'tx:' + l.id, el: tag, pos: curve.getPoint(0.5), tag: true });
         txSeen.add(l.tx);
       }
+    });
+    // name the structure that holds an undrawn pathway, unless a label already marks that spot
+    collapsed.forEach((l) => {
+      const p = posOf(l.s), rid = resolve(l.s);
+      if (rid && !labelEls.some((x) => !x.tag && x.pos.distanceTo(p) < 0.08)) addLabel(rid);
     });
     if (el.txLegend) {
       CA.clear(el.txLegend);
