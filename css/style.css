@@ -263,13 +263,10 @@ select:focus, input.text:focus { border-color: var(--accent); }
 .trace-steps .hop b { font-weight: 600; }
 .trace-steps .rel { display: none; }
 .trace-steps li.now .rel { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: .76rem; color: var(--muted); }
-.atlas-legend { position: absolute; right: 12px; bottom: 12px; background: var(--float-bg); border: 1px solid var(--line); border-radius: var(--radius);
-  padding: 8px 12px; font-size: .78rem; display: grid; grid-template-columns: auto auto; gap: 3px 14px; }
-.atlas-legend .lg { display: flex; align-items: center; gap: 6px; }
-.atlas-legend .sw { width: 22px; height: 0; border-top: 3px solid; }
-.atlas-legend .dot { width: 9px; height: 9px; margin: 0 6px 0 7px; transform: rotate(45deg); border-radius: 1px; }
-.atlas-legend .txlg { grid-column: 1 / -1; max-width: 440px; }
-.atlas-legend .txlg.off { display: none !important; }
+.atlas-fold-toggle { display: none; }
+.atlas-controls.folded { width: 42px; padding: 5px; overflow: hidden; }
+.atlas-controls.folded > :not(.atlas-fold-toggle) { display: none; }
+.atlas-controls.folded .atlas-fold-toggle { display: block; margin: 0 auto; }
 /* names in a colour-coded legend at the side (the header switch): the model stays clean */
 .atlas-names { position: absolute; top: 12px; right: 12px; width: 250px; max-height: calc(100% - 190px); overflow: auto; background: var(--float-bg);
   border: 1px solid var(--line); border-radius: var(--radius); padding: 8px 6px 8px 8px; font-size: .8rem; backdrop-filter: blur(6px); }
@@ -289,13 +286,8 @@ body:has(#panel.open) .atlas-names { right: calc(var(--panel-w) + 12px); }
 .atlas-names .nsw { flex: none; width: 12px; height: 12px; border-radius: 3px; box-shadow: 0 0 0 2px var(--float-bg); }
 .atlas-names .nsw.dia { width: 10px; height: 10px; margin: 0 1px; transform: rotate(45deg); border-radius: 1px; }
 .atlas-names .nsw.none { border: 1px dashed var(--line2); }
-/* Footer between the controls column (292px) and the side panel, so it stays visible when the panel is open. */
-.atlas-foot { position: absolute; left: 292px; right: calc(var(--panel-w) + 12px); bottom: 8px; display: flex; flex-direction: column;
-  align-items: center; gap: 5px; pointer-events: none; }
-.atlas-hint { font-size: .8rem; color: var(--muted); background: var(--pill-bg); padding: 3px 10px; border-radius: 999px; white-space: nowrap; }
 .atlas-msg { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--muted); text-align: center; padding: 30px; }
 .atlas-credit { font-size: .72rem; color: var(--faint); margin-top: 10px; }
-.atlas-attrib { font-size: .7rem; color: var(--muted); text-align: center; pointer-events: auto; background: var(--pill-bg); padding: 2px 8px; border-radius: 6px; }
 .intro { position: absolute; top: 12px; right: 12px; width: 380px; background: var(--float-bg); border: 1px solid var(--line); border-radius: var(--radius);
   padding: 16px 18px; z-index: 5; }
 .intro h2 { font-size: 1.15rem; }
@@ -412,7 +404,7 @@ table.data tr.click:hover td { background: var(--bg3); }
   .brand small { display: none; }
   .search { display: none; }
   .atlas-controls { width: 220px; font-size: .9rem; }
-  .atlas-foot { left: 244px; right: 12px; }
+  .atlas-fold-toggle { display: block; }
   .intro { display: none; }
   .atlas-names { width: 190px; max-height: 45%; }
   :root { --panel-w: 100vw; }

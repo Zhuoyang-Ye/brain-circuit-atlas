@@ -87,18 +87,6 @@
   const SPECIES = [['human', 'Human'], ['macaque', 'Macaque'], ['mouse', 'Mouse']].filter(([sp]) => A3.species.includes(sp));
 
   let root, el = {}, renderer, scene, camera, controls, raf = 0, ro, clock, pointer = null, pointerDirty = false;
-  // Source credits shown on the canvas itself, as the Allen Institute citation policy asks (same page, linked to the data).
-  const ATTRIB = {
-    human: [['https://atlas.brain-map.org/', 'Allen Human Reference Atlas'], ' © Allen Institute for Brain Science, via ',
-      ['https://gin.g-node.org/brainglobe/atlases', 'BrainGlobe'], ' · lobules and nuclei: ',
-      ['https://github.com/DiedrichsenLab/cerebellar_atlases', 'SUIT atlas'], ' (Diedrichsen et al.; CC BY)'],
-    mouse: [['https://download.alleninstitute.org/informatics-archive/current-release/mouse_ccf/', 'Allen Mouse Brain CCFv3'],
-      ' (Wang et al., 2020) © Allen Institute for Brain Science'],
-    macaque: [['https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/template_nmtv2.html', 'NIMH Macaque Template v2'],
-      ' (', ['https://doi.org/10.1016/j.neuroimage.2017.04.063', 'Seidlitz et al., 2018'], '; ', ['https://doi.org/10.1016/j.neuroimage.2021.117997', 'Jung et al., 2021'],
-      ') with its CHARM (', ['https://doi.org/10.1016/j.neuroimage.2021.117997', 'Jung et al., 2021'], ') and SARM (',
-      ['https://doi.org/10.1016/j.neuroimage.2021.117996', 'Hartig et al., 2021'], ') atlases, via AFNI'],
-  };
   let species = CA.store.get('atlas.species', 'human');
   if (!SPECIES.some(([sp]) => sp === species)) species = SPECIES[0][0];
   // `flow` (moving dots) is off by default: arrowheads show direction, and the trace shows the order of steps
@@ -109,7 +97,7 @@
   let pickables = [], meshObjs = [], linkObjs = [], pulses = [], labelEls = [], markerObjs = [];
   let drawnLinks = [], trace = null;   // the pathways on screen ({l, curve, objs, s, t}); the running step-by-step trace
   let positions = {}, hovered = null, tween = null, unsubs = [], disposed = false, buildToken = 0;
-  // the legend at the side: entity -> categorical slot (kept while the circuit stays), mesh -> legend row, the hovered row
+  // entity -> categorical slot (kept while the circuit stays), mesh -> legend row, the hovered row
   let slotOf = new Map(), slotKey = '', ownerOf = new Map(), nameHot = null, layoutKey = '', layoutIdle = 0;
   const geomCache = {};
 
@@ -125,11 +113,8 @@
     el.labels = h('div', { class: 'atlas-labels' });
     el.msg = h('div', { class: 'atlas-msg' }, 'Loading 3D anatomy…');
     el.controls = buildControls();
-    el.legend = buildLegend();
     el.names = h('div', { class: 'atlas-names', style: { display: 'none' } });
-    el.hint = h('div', { class: 'atlas-hint' }, 'Drag to rotate · scroll to zoom · right-drag to pan · click a structure');
-    el.attrib = h('div', { class: 'atlas-attrib' });
-    wrap.append(el.canvas, el.labels, el.controls, el.names, el.legend, h('div', { class: 'atlas-foot' }, el.hint, el.attrib), el.msg);
+    wrap.append(el.canvas, el.labels, el.controls, el.names, el.msg);
     if (!CA.store.get('intro.dismissed', false)) wrap.append(el.intro = buildIntro());
     root.appendChild(wrap);
 
@@ -228,6 +213,26 @@
 
   function buildControls() {
     const box = h('div', { class: 'atlas-controls' });
+    const fold = h('button', {
+      class: 'atlas-fold-toggle icon-btn',
+      type: 'button',
+      'aria-expanded': 'true',
+      title: 'Collapse atlas controls',
+      'aria-label': 'Collapse atlas controls',
+      onclick: () => {
+        const folded = box.classList.toggle('folded');
+        fold.setAttribute('aria-expanded', String(!folded));
+        fold.title = folded ? 'Expand atlas controls' : 'Collapse atlas controls';
+        fold.setAttribute('aria-label', fold.title);
+      },
+    }, '‹');
+    box.append(fold);
+    if (window.matchMedia && window.matchMedia('(max-width: 860px)').matches) {
+      box.classList.add('folded');
+      fold.setAttribute('aria-expanded', 'false');
+      fold.title = 'Expand atlas controls';
+      fold.setAttribute('aria-label', fold.title);
+    }
     const seg = h('div', { class: 'seg' },
       SPECIES.map(([sp, label]) => h('button', {
         class: sp === species ? 'on' : '', 'data-sp': sp,
@@ -269,23 +274,11 @@
     return box;
   }
 
-  /** The background and labels follow the CSS theme; recolour the legend, the brain surface and the pathways in place. */
+  /** The background and labels follow the CSS theme; recolour the brain surface and pathways in place. */
   function onTheme() {
-    if (el.legend) { const lg = buildLegend(); el.legend.replaceWith(lg); el.legend = lg; }
     if (!scene) return;
     meshObjs.forEach((m) => { if (m.userData.rec.group === 'shell') m.material.color.setHex(CA.tc(GROUP.shell.color)); });
     rebuildLinks();
-  }
-
-  function buildLegend() {
-    const items = D.statuses.filter((s) => s.id !== 'gap').map((s) => h('div', { class: 'lg' },
-      h('span', { class: 'sw', style: { borderColor: s.color, borderTopStyle: (s.id === 'debated' || s.id === 'hypothesis') ? 'dashed' : 'solid' } }), s.label));
-    items.push(h('div', { class: 'lg' }, h('span', { class: 'sw', style: { borderColor: CA.tc('#9aa4b2'), borderTopStyle: 'dashed' } }), 'functional / route unknown'));
-    items.push(h('div', { class: 'lg' }, h('span', { style: { fontStyle: 'italic' } }, 'italic ≈'), 'approximate position'));
-    items.push(h('div', { class: 'lg' }, h('span', { class: 'dot', style: { background: CA.tc('#f778ba') } }), 'neuromodulator source'));
-    el.txLegend = h('div', { class: 'lg txlg', style: { display: 'none' } });
-    items.push(el.txLegend);
-    return h('div', { class: 'atlas-legend' }, items);
   }
 
   /* ---------------------------------------------------------------- three.js */
@@ -400,8 +393,6 @@
     const T = window.THREE;
     clearScene();
     el.credit.textContent = 'Anatomy: ' + bundle.credit;
-    CA.clear(el.attrib);
-    el.attrib.append('Anatomy: ', ...ATTRIB[sp].map((x) => (Array.isArray(x) ? h('a', { href: x[0], target: '_blank', rel: 'noopener' }, x[1]) : x)));
     bundle.meshes.forEach((rec) => {
       const style = GROUP[rec.group] || GROUP.context;
       let color = rec.group === 'shell' ? CA.tc(style.color) : style.color;   // the surface darkens on a light background
