@@ -104,20 +104,6 @@
   const groupOf = (sp) => (MAMMALS.includes(sp) ? 'mammal' : sp);
 
   let root, el = {}, renderer, scene, camera, controls, raf = 0, ro, clock, pointer = null, pointerDirty = false;
-  // Source credits shown on the canvas itself, as the Allen Institute citation policy asks (same page, linked to the data).
-  const ATTRIB = {
-    human: [['https://atlas.brain-map.org/', 'Allen Human Reference Atlas'], ' © Allen Institute for Brain Science, via ',
-      ['https://gin.g-node.org/brainglobe/atlases', 'BrainGlobe'], ' · lobules and nuclei: ',
-      ['https://github.com/DiedrichsenLab/cerebellar_atlases', 'SUIT atlas'], ' (Diedrichsen et al.; CC BY)'],
-    mouse: [['https://download.alleninstitute.org/informatics-archive/current-release/mouse_ccf/', 'Allen Mouse Brain CCFv3'],
-      ' (Wang et al., 2020) © Allen Institute for Brain Science'],
-    macaque: [['https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/template_nmtv2.html', 'NIMH Macaque Template v2'],
-      ' (', ['https://doi.org/10.1016/j.neuroimage.2017.04.063', 'Seidlitz et al., 2018'], '; ', ['https://doi.org/10.1016/j.neuroimage.2021.117997', 'Jung et al., 2021'],
-      ') with its CHARM (', ['https://doi.org/10.1016/j.neuroimage.2021.117997', 'Jung et al., 2021'], ') and SARM (',
-      ['https://doi.org/10.1016/j.neuroimage.2021.117996', 'Hartig et al., 2021'], ') atlases, via AFNI'],
-    octopus: ['a schematic drawn for this site, not a scan: lobe shapes and positions are approximate. Lobes as named in octopus brain atlases such as ',
-      ['https://pubmed.ncbi.nlm.nih.gov/30181688/', 'Jung et al., 2018'], ' and ', ['https://pubmed.ncbi.nlm.nih.gov/35256541/', 'Jacobs et al., 2022']],
-  };
   let species = CA.store.get('atlas.species', 'human');
   if (!SPECIES.some(([sp]) => sp === species)) species = SPECIES[0][0];
   // `flow` (moving dots) is off by default: arrowheads show direction, and the trace shows the order of steps
@@ -128,7 +114,7 @@
   let pickables = [], meshObjs = [], linkObjs = [], pulses = [], labelEls = [], markerObjs = [];
   let drawnLinks = [], trace = null;   // the pathways on screen ({l, curve, objs, s, t}); the running step-by-step trace
   let positions = {}, hovered = null, tween = null, unsubs = [], disposed = false, buildToken = 0;
-  // the legend at the side: entity -> categorical slot (kept while the circuit stays), mesh -> legend row, the hovered row
+  // entity -> categorical slot (kept while the circuit stays), mesh -> legend row, the hovered row
   let slotOf = new Map(), slotKey = '', ownerOf = new Map(), nameHot = null, layoutKey = '', layoutIdle = 0;
   let switching = false;   // true while a species change switches the region: the scene is rebuilt right after
   const geomCache = {};
@@ -150,11 +136,8 @@
     el.labels = h('div', { class: 'atlas-labels' });
     el.msg = h('div', { class: 'atlas-msg' }, 'Loading 3D anatomy…');
     el.controls = buildControls();
-    el.legend = buildLegend();
     el.names = h('div', { class: 'atlas-names', style: { display: 'none' } });
-    el.hint = h('div', { class: 'atlas-hint' }, 'Drag to rotate · scroll to zoom · right-drag to pan · click a structure');
-    el.attrib = h('div', { class: 'atlas-attrib' });
-    wrap.append(el.canvas, el.labels, el.controls, el.names, el.legend, h('div', { class: 'atlas-foot' }, el.hint, el.attrib), el.msg);
+    wrap.append(el.canvas, el.labels, el.controls, el.names, el.msg);
     if (!CA.store.get('intro.dismissed', false)) wrap.append(el.intro = buildIntro());
     root.appendChild(wrap);
 
@@ -196,17 +179,37 @@
     const R = CA.region;
     const deeper = [['map', 'functional map'], ['circuit', 'microcircuit'], ['molecules', 'molecules'], ['scales', 'across scales']]
       .filter(([v]) => R.views.includes(v)).slice(0, 3);
-    const box = h('div', { class: 'intro' },
-      h('h2', {}, R.intro.title),
-      h('p', { class: 'small' }, R.intro.text),
-      h('ol', { class: 'small' },
+    const open = CA.store.get('atlas.introOpen', window.innerWidth > 860);
+    const contentId = 'atlas-intro-content';
+    let introToggle;
+    const box = h('div', { class: 'intro' + (open ? '' : ' shut') },
+      h('div', { class: 'intro-head' },
+        h('h2', {}, R.intro.title),
+        introToggle = h('button', {
+          class: 'icon-btn intro-toggle',
+          type: 'button',
+          'aria-expanded': String(open),
+          'aria-controls': contentId,
+          title: open ? 'Collapse introduction' : 'Expand introduction',
+          'aria-label': open ? 'Collapse introduction' : 'Expand introduction',
+          onclick: () => {
+            const next = box.classList.toggle('shut');
+            CA.store.set('atlas.introOpen', !next);
+            introToggle.setAttribute('aria-expanded', String(!next));
+            introToggle.title = next ? 'Expand introduction' : 'Collapse introduction';
+            introToggle.setAttribute('aria-label', introToggle.title);
+          },
+        }, open ? '−' : '+')),
+      h('div', { id: contentId, class: 'intro-content' },
+        h('p', { class: 'small' }, R.intro.text),
+        h('ol', { class: 'small' },
         h('li', {}, 'Pick a ', h('b', {}, 'circuit'), ' on the left to see its pathways; arrowheads show their direction. For a loop or chain, ', h('b', {}, 'Trace step by step'), ' follows the signal in order.'),
         h('li', {}, 'Click any structure for its evidence, connections and open questions.'),
         h('li', {}, 'Go deeper: ', deeper.map(([v, label], i) => [i ? ', ' : '', h('a', { href: '#/' + v }, label)]), '.'),
         h('li', {}, 'Find what is unknown in ', h('a', { href: '#/gaps' }, 'Evidence & gaps'), ' and draft tests in the ', h('a', { href: '#/lab' }, 'Hypothesis lab'), '.')),
-      h('div', { class: 'row' },
-        h('button', { class: 'btn primary', onclick: () => { flyTo(R.view); } }, 'Zoom to ' + R.label.toLowerCase()),
-        h('button', { class: 'btn', onclick: () => { CA.store.set('intro.dismissed', true); box.remove(); el.intro = null; } }, 'Got it')));
+        h('div', { class: 'row' },
+          h('button', { class: 'btn primary', onclick: () => { flyTo(R.view); } }, 'Zoom to ' + R.label.toLowerCase()),
+          h('button', { class: 'btn', onclick: () => { CA.store.set('intro.dismissed', true); box.remove(); el.intro = null; } }, 'Got it'))));
     return box;
   }
 
@@ -289,6 +292,26 @@
 
   function buildControls() {
     const box = h('div', { class: 'atlas-controls' });
+    const fold = h('button', {
+      class: 'atlas-fold-toggle icon-btn',
+      type: 'button',
+      'aria-expanded': 'true',
+      title: 'Collapse atlas controls',
+      'aria-label': 'Collapse atlas controls',
+      onclick: () => {
+        const folded = box.classList.toggle('folded');
+        fold.setAttribute('aria-expanded', String(!folded));
+        fold.title = folded ? 'Expand atlas controls' : 'Collapse atlas controls';
+        fold.setAttribute('aria-label', fold.title);
+      },
+    }, '‹');
+    box.append(fold);
+    if (window.matchMedia && window.matchMedia('(max-width: 860px)').matches) {
+      box.classList.add('folded');
+      fold.setAttribute('aria-expanded', 'false');
+      fold.title = 'Expand atlas controls';
+      fold.setAttribute('aria-label', fold.title);
+    }
     const seg = el.seg = h('div', { class: 'seg species-seg' },
       SPECIES.map(([sp, label]) => h('button', { class: sp === species ? 'on' : '', 'data-sp': sp, onclick: () => chooseSpecies(sp) }, label)));
     el.speciesNote = h('div', { class: 'desc' });
@@ -327,23 +350,11 @@
     return box;
   }
 
-  /** The background and labels follow the CSS theme; recolour the legend, the brain surface and the pathways in place. */
+  /** The background and labels follow the CSS theme; recolour the brain surface and pathways in place. */
   function onTheme() {
-    if (el.legend) { const lg = buildLegend(); el.legend.replaceWith(lg); el.legend = lg; }
     if (!scene) return;
     meshObjs.forEach((m) => { if (m.userData.rec.group === 'shell') m.material.color.setHex(CA.tc(GROUP.shell.color)); });
     rebuildLinks();
-  }
-
-  function buildLegend() {
-    const items = D.statuses.filter((s) => s.id !== 'gap').map((s) => h('div', { class: 'lg' },
-      h('span', { class: 'sw', style: { borderColor: s.color, borderTopStyle: (s.id === 'debated' || s.id === 'hypothesis') ? 'dashed' : 'solid' } }), s.label));
-    items.push(h('div', { class: 'lg' }, h('span', { class: 'sw', style: { borderColor: CA.tc('#9aa4b2'), borderTopStyle: 'dashed' } }), 'functional / route unknown'));
-    items.push(h('div', { class: 'lg' }, h('span', { style: { fontStyle: 'italic' } }, 'italic ≈'), 'approximate position'));
-    items.push(h('div', { class: 'lg' }, h('span', { class: 'dot', style: { background: CA.tc('#f778ba') } }), 'neuromodulator source'));
-    el.txLegend = h('div', { class: 'lg txlg', style: { display: 'none' } });
-    items.push(el.txLegend);
-    return h('div', { class: 'atlas-legend' }, items);
   }
 
   /* ---------------------------------------------------------------- three.js */
@@ -459,8 +470,6 @@
     const T = window.THREE;
     clearScene();
     el.credit.textContent = 'Anatomy: ' + bundle.credit;
-    CA.clear(el.attrib);
-    el.attrib.append('Anatomy: ', ...ATTRIB[sp].map((x) => (Array.isArray(x) ? h('a', { href: x[0], target: '_blank', rel: 'noopener' }, x[1]) : x)));
     bundle.meshes.forEach((rec) => {
       const style = GROUP[rec.group] || GROUP.context;
       let color = rec.group === 'shell' ? CA.tc(style.color) : style.color;   // the surface darkens on a light background
@@ -997,14 +1006,16 @@
     const unpainted = want.filter((rid) => owners.has(rid) && !slotOf.has(rid)).length;
     const open = CA.store.get('atlas.namesOpen', window.innerWidth > 860);   // starts closed on a narrow screen
     el.names.classList.toggle('shut', !open);
+    const listId = 'atlas-names-list';
     CA.append(el.names,
-      h('button', { class: 'nm-head', type: 'button', 'aria-expanded': String(open), title: open ? 'Hide the list' : 'Show the list',
+      h('button', { class: 'nm-head', type: 'button', 'aria-expanded': String(open), 'aria-controls': listId, title: open ? 'Hide the list' : 'Show the list',
         onclick: () => { CA.store.set('atlas.namesOpen', !open); refreshNames(); } },
       h('i', {}, open ? '▾' : '▸'), ' Structures (' + rows.length + ')', h('span', {}, ' · hover to find, click for details')),
-      coloured.map(row),
-      rest.length ? h('div', { class: 'nm-sub' }, coloured.length ? 'Other structures (atlas colours)' : 'In their atlas colours') : null,
-      rest.map(row),
-      unpainted ? h('div', { class: 'nm-note' }, `Up to ${pal.length} structures of a circuit get a colour of their own; ${unpainted} more keep their atlas colours.`) : null);
+      h('div', { id: listId, class: 'atlas-names-list' },
+        coloured.map(row),
+        rest.length ? h('div', { class: 'nm-sub' }, coloured.length ? 'Other structures (atlas colours)' : 'In their atlas colours') : null,
+        rest.map(row),
+        unpainted ? h('div', { class: 'nm-note' }, `Up to ${pal.length} structures of a circuit get a colour of their own; ${unpainted} more keep their atlas colours.`) : null));
   }
 
   function setNameHot(id) {
