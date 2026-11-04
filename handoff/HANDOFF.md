@@ -9,7 +9,16 @@
 - The cloud environment's network policy **denies NCBI E-utilities and all mesh sources** (`eutils.ncbi.nlm.nih.gov`, `download.alleninstitute.org`, `gin.g-node.org`, `afni.nimh.nih.gov`, `raw.githubusercontent.com`); only package managers (pypi) are reachable. The user was asked to allow them in the environment settings. Until then: no abstracts (amygdala audit blocked), no new literature, no new meshes.
 - The handoff folder from the Mac (scripts, `amygdala/records.json`, `knowledge_before_amygdala.json`, the skill) is **not available** in the cloud. Substitutes written in this session live in `handoff/tools/` (see section 0a).
 - Credit: the session has no way to read the cloud credit balance in dollars, so it cannot trigger on "below $5". Instead this file is refreshed and pushed after every finished step.
-- Progress this session: see the checklist in section 6a ("Still to do"); items marked **[done 2026-11-04]**.
+- Progress this session: amygdala steps 1–4 done, step 5 half done (see section 6a, items marked **[done 2026-11-04]**). Commits on `wip/regions`: `a9548f2` (handoff), `7d27cbf` (amy-nuclei close-up, label for collapsed pathways), `b92e416` (site text, README counts), `9c731a2` (audit wording fixes), then this handoff refresh.
+- **Next, once `eutils.ncbi.nlm.nih.gov` is allowed** (a new session may be needed for a network change to apply):
+
+  ```bash
+  D=<scratchpad>/amy_records_1   # a new, empty directory
+  python3 handoff/tools/pubmed_abs.py fetch $D --region amygdala
+  python3 -I handoff/tools/pubmed_abs.py grep $D 'likhtik2008:fewer|surviv' 'tye2011:cell bod' 'nabavi2014:depress|potentiat|LTD|LTP' 'namburi2015:centromedial' 'burgosrobles2017:prelimbic|freez|direct' 'romanski1992:medial division|intralaminar|suprageniculate' 'kalin2004:pituitary|endocrine|anxiety'
+  ```
+
+  Confirm or fix those seven wordings (section 6a item 5), rebuild, smoke-test the amygdala, then close out (item 6) and start the visual cortex (section 7), which also needs the four mesh hosts allowed (`download.alleninstitute.org`, `gin.g-node.org`, `afni.nimh.nih.gov`, `raw.githubusercontent.com`) and a venv with numpy, scipy, scikit-image, nibabel and trimesh (pypi is reachable).
 
 ## 0a. Cloud substitutes for the Mac-only tools
 
@@ -17,6 +26,7 @@ Run with `NODE_PATH=$(npm root -g)` (Playwright and Chromium are preinstalled in
 
 - `handoff/tools/ui_check.js`: stands in for `ui_check.py`. Same flags: `--route`, `--store key=JSON` (repeatable; sets `localStorage['ca.'+key]`), `--before JS`, `--wait ms`, `--screenshot out.png`, `--eval JS`, `--smoke`, `--size WxH`. Add `--store intro.dismissed=true` to hide the intro card. Select a circuit with `--store atlas.circuit.<region>='"<circuit id>"'` instead of clicking.
 - `handoff/tools/readme_counts.py [--check]`: stands in for `readme_counts.py`; rewrites the README region table, totals sentence and the Across scales / Library counts from the bundle.
+- `handoff/tools/pubmed_abs.py fetch|show|grep OUTDIR ...`: stands in for `pubmed.py fetch`, `show_abs.py` and `grep_abs.py`; keys map to PMIDs through `data/papers.json`; `fetch OUTDIR --region R` takes every paper tagged R. Untested against the live API (it was blocked); the parser was tested on a synthetic record.
 - `handoff/tools/compact_audit.py OLD [--region R] [--out FILE]`: stands in for `compact_audit.py`; OLD is a knowledge.json path or a git revision. Prints new or changed sentences with each cited finding.
 - `handoff/tools/circuits_dump.js out.json [region ...]`: for every species × region × circuit, the labels drawn, whether the trace button shows, and errbar/console errors. Dump before and after any 3D change and diff the two JSON files.
 
