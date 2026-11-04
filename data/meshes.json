@@ -95,7 +95,16 @@
       {"key": "suit-ip", "suit": {"L": 31, "R": 32}, "name": "Interposed nucleus", "entity": "interposed", "group": "nuclei", "faces": 500,
        "note": "Nucleus from the SUIT probabilistic atlas (Diedrichsen et al., 2011), fitted to this brain."},
       {"key": "suit-fn", "suit": {"L": 33, "R": 34}, "name": "Fastigial nucleus", "entity": "fastigial", "group": "nuclei", "faces": 500,
-       "note": "Nucleus from the SUIT probabilistic atlas (Diedrichsen et al., 2011), fitted to this brain. The fastigial nucleus is hard to see on MRI: its location agreed across at most ~23% of subjects, so it is drawn where at least 10% agreed and its shape is uncertain.", "suit_prob": 0.1}
+       "note": "Nucleus from the SUIT probabilistic atlas (Diedrichsen et al., 2011), fitted to this brain. The fastigial nucleus is hard to see on MRI: its location agreed across at most ~23% of subjects, so it is drawn where at least 10% agreed and its shape is uncertain.", "suit_prob": 0.1},
+      {"key": "v1-occ", "src": [12149, 12150, 12151], "name": "Occipital pole, cuneus and lingual gyrus", "entity": "v1", "group": "cortex", "faces": 3000, "tone": "#dc8b8b",
+       "note": "V1 lies along the calcarine sulcus, between the cuneus and the lingual gyrus, and reaches the occipital pole; the atlas does not mark its borders, so these gyri, which also hold V2 and V3, stand for it."},
+      {"key": "fug-o", "src": 12152, "name": "Fusiform gyrus, occipital part", "entity": "v4", "group": "cortex", "faces": 1500, "tone": "#e7a3a3",
+       "note": "Colour activates area V4 in the lingual and fusiform gyri (Zeki et al. 1991); the occipital part of the fusiform gyrus stands for it here."},
+      {"key": "fug-t", "src": 12143, "name": "Fusiform gyrus, temporal part", "entity": "ffa", "group": "cortex", "faces": 1500, "tone": "#eb6f92",
+       "note": "The fusiform face area lies in the fusiform gyrus (Kanwisher et al. 1997); the atlas does not mark it, so the temporal part of the gyrus stands for it."},
+      {"key": "itg", "src": 12142, "name": "Inferior temporal gyrus", "entity": "it", "group": "cortex", "faces": 1500, "tone": "#c97f8f"},
+      {"key": "iog", "src": 12153, "name": "Inferior occipital gyrus", "group": "helper", "faces": 600},
+      {"key": "mtg", "src": 12141, "name": "Middle temporal gyrus", "group": "helper", "faces": 800}
     ],
     "suit": {
       "url": "https://raw.githubusercontent.com/DiedrichsenLab/cerebellar_atlases/master/Diedrichsen_2009/atl-Anatom_space-MNI_dseg.nii",
@@ -182,7 +191,10 @@
       {"key": "ila", "src": 44, "name": "Infralimbic cortex", "entity": "mpfc-il", "group": "cortex", "faces": 800, "tone": "#4fb58a"},
       {"key": "aca", "src": 31, "name": "Anterior cingulate cortex", "entity": "acc", "group": "cortex", "faces": 2500, "tone": "#62c99a"},
       {"key": "orb", "src": 714, "name": "Orbital cortex", "entity": "ofc", "group": "cortex", "faces": 2500, "tone": "#a8e07e"},
-      {"key": "ptlp", "src": 22, "name": "Posterior parietal cortex", "entity": "parietal", "group": "cortex", "faces": 1500}
+      {"key": "ptlp", "src": 22, "name": "Posterior parietal cortex", "entity": "parietal", "group": "cortex", "faces": 1500},
+      {"key": "visp", "src": 385, "name": "Primary visual area (VISp)", "entity": "v1", "group": "cortex", "faces": 1500, "tone": "#dc8b8b"},
+      {"key": "hva", "src": [409, 402, 394, 533, 312782574, 425], "name": "Higher visual areas (LM, AL, AM, PM, LI, P)", "entity": "mouse-hva", "group": "cortex", "faces": 2000, "tone": "#e7a3a3"},
+      {"key": "lgd", "src": 170, "name": "Dorsal lateral geniculate nucleus (LGd)", "entity": "lgn", "group": "target", "faces": 800}
     ]
   },
   "macaque": {
@@ -263,7 +275,13 @@
       {"key": "ofc", "charm": ["OFC"], "name": "Orbitofrontal cortex (incl. frontal pole)", "entity": "ofc", "group": "cortex", "faces": 3000, "tone": "#a8e07e"},
       {"key": "acc", "charm": ["area_24", "area_32"], "name": "Anterior cingulate cortex (areas 24, 32)", "entity": "acc", "group": "cortex", "faces": 2000, "tone": "#62c99a"},
       {"key": "sgacc", "charm": ["area_25"], "name": "Subgenual cingulate (area 25)", "entity": "sgacc", "group": "cortex", "faces": 600, "tone": "#4fb58a"},
-      {"key": "ppc", "charm": ["SPL", "IPL"], "name": "Posterior parietal cortex (superior and inferior parietal lobules)", "entity": "parietal", "group": "cortex", "faces": 4000}
+      {"key": "ppc", "charm": ["SPL", "IPL"], "name": "Posterior parietal cortex (superior and inferior parietal lobules)", "entity": "parietal", "group": "cortex", "faces": 4000},
+      {"key": "v1", "charm": ["V1"], "name": "Primary visual cortex (V1)", "entity": "v1", "group": "cortex", "faces": 4000, "tone": "#dc8b8b"},
+      {"key": "v4", "charm": ["V4"], "name": "Area V4", "entity": "v4", "group": "cortex", "faces": 2000, "tone": "#e7a3a3"},
+      {"key": "mt", "charm": ["MT"], "name": "Middle temporal area (MT)", "entity": "mt", "group": "cortex", "faces": 800, "tone": "#f0b37a"},
+      {"key": "itc", "charm": ["ITC"], "name": "Inferior temporal cortex (TE and TEO)", "entity": "it", "group": "cortex", "faces": 3000, "tone": "#c97f8f"},
+      {"key": "fef", "charm": ["area_8A"], "name": "Frontal eye field (area 8A)", "entity": "fef", "group": "cortex", "faces": 1200, "tone": "#f6c177"},
+      {"key": "dlg", "sarm": ["DLG"], "name": "Dorsal lateral geniculate nucleus", "entity": "lgn", "group": "target", "faces": 600}
     ]
   }
 }

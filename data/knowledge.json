@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Cerebellum Atlas",
-    "subtitle": "An evidence-linked map of the cerebellum, the motor and prefrontal cortex, the basal ganglia, the hippocampus, the amygdala and their connections, from molecules to mind",
+    "subtitle": "An evidence-linked map of the cerebellum, the motor and prefrontal cortex, the basal ganglia, the hippocampus, the amygdala, the visual cortex and their connections, from molecules to mind",
     "version": "0.1",
     "disclaimer": "Summaries, link statuses and map scores were drafted with AI assistance from PubMed abstracts and need review by domain experts. Diagrams are schematic."
   },
@@ -587,6 +587,118 @@
         "mouse": "Mouse: Allen CCFv3 lateral, basolateral, basomedial, central, medial and intercalated amygdalar nuclei and the medial geniculate complex. The basal amygdala is drawn as the basolateral and basomedial nuclei together.",
         "macaque": "Macaque: SARM lateral, basolateral, basomedial, paralaminar, central and medial amygdaloid nuclei and the medial geniculate nucleus. SARM has no intercalated-cell label, so the intercalated cells are placed approximately (≈)."
       }
+    },
+    {
+      "id": "visual-cortex",
+      "label": "Visual cortex",
+      "entity": "visual-cortex",
+      "query": "(\"visual cortex\"[tiab] OR \"visual cortical\"[tiab] OR \"striate cortex\"[tiab] OR extrastriate[tiab] OR \"primary visual\"[tiab])",
+      "view": "visual-cortex",
+      "views": ["atlas", "scales", "gaps", "lab", "library"],
+      "levelDesc": {
+        "regional": "Areas: V1 (striate cortex), V4, MT (V5), inferotemporal cortex and the fusiform face area; the mouse higher visual areas",
+        "circuit": "Retina to lateral geniculate to V1, the ventral and dorsal streams, and top-down input from the frontal eye field, amygdala and basal forebrain"
+      },
+      "levelQueries": {
+        "cellular": "(neuron*[tiab] OR interneuron*[tiab] OR \"receptive field*\"[tiab] OR \"orientation selectiv*\"[tiab] OR parvalbumin[tiab] OR somatostatin[tiab])",
+        "circuit": "(circuit*[tiab] OR projection*[tiab] OR pathway*[tiab] OR geniculate[tiab] OR \"ocular dominance\"[tiab] OR plasticity[tiab])",
+        "regional": "(V1[tiab] OR V4[tiab] OR \"area MT\"[tiab] OR V5[tiab] OR inferotemporal[tiab] OR fusiform[tiab] OR \"higher visual area*\"[tiab])"
+      },
+      "methods": {
+        "molecular": {
+          "manipulate": [
+            "Knockout of a GABA-synthesizing enzyme (GAD65)",
+            "Benzodiazepines to enhance inhibition",
+            "Chondroitinase-ABC to degrade perineuronal-net proteoglycans"
+          ],
+          "readout": [
+            "Perineuronal-net staining",
+            "Responses to a deprived eye after monocular deprivation",
+            "Inhibitory synaptic transmission"
+          ]
+        },
+        "cellular": {
+          "manipulate": [
+            "Optogenetic activation of PV+, SOM+ or VIP+ interneurons",
+            "Photolytic damage of identified interneurons",
+            "Microstimulation"
+          ],
+          "readout": [
+            "Single-unit receptive fields (orientation, direction, spatial frequency)",
+            "Calcium imaging of neuron populations",
+            "In vitro connectivity of neurons characterized in vivo"
+          ]
+        },
+        "circuit": {
+          "manipulate": [
+            "Monocular deprivation and dark rearing",
+            "Cortical cooling to isolate thalamic input",
+            "Perturbing visual flow during locomotion"
+          ],
+          "readout": [
+            "Thalamocortical cross-correlation",
+            "Ocular dominance shifts",
+            "Surround suppression and locomotion gain"
+          ]
+        },
+        "regional": {
+          "manipulate": [
+            "Ibotenic acid lesions of single areas (MT)",
+            "Transcranial magnetic stimulation of occipital cortex",
+            "Tracer injections"
+          ],
+          "readout": [
+            "Retinotopic fMRI maps and area borders",
+            "PET and fMRI activation by colour, motion and faces",
+            "Corticopontine and corticocortical projections"
+          ]
+        },
+        "systems": {
+          "manipulate": [
+            "Frontal eye field microstimulation",
+            "Locomotion and behavioural state",
+            "Amygdala lesions in patients"
+          ],
+          "readout": [
+            "Attention effects on V4 and IT responses",
+            "Hierarchy and streams from laminar connections",
+            "Visual responses modulated by running"
+          ]
+        },
+        "cognitive": {
+          "manipulate": [
+            "Attention tasks with competing stimuli",
+            "Motion-direction discrimination at threshold",
+            "Grasping objects that cannot be perceived"
+          ],
+          "readout": [
+            "Neuronal versus psychophysical sensitivity",
+            "Orientation discrimination",
+            "Face, object and location matching"
+          ]
+        },
+        "clinical": {
+          "manipulate": [
+            "Experimental strabismus and anisometropia (monkey)",
+            "Braille reading in early-blind people",
+            "Recording during migraine aura"
+          ],
+          "readout": [
+            "Residual vision in the blind field",
+            "Cortical binocularity and resolution in amblyopia",
+            "Occipital atrophy on imaging"
+          ]
+        }
+      },
+      "intro": {
+        "title": "Visual cortex, from receptive fields to recognition",
+        "text": "Primary visual cortex and the areas beyond it: how geniculate input builds orientation-tuned receptive fields, how inhibition and the extracellular matrix open and close the critical period for binocular vision, the areas and streams for motion, colour, objects, faces and action, how attention and running change visual responses, and what changes in amblyopia, cortical blindness, early blindness and migraine aura. Every connection is tied to the papers behind it and graded by how strong the evidence is."
+      },
+      "speciesNote": {
+        "human": "Human: the Allen atlas does not mark visual areas, so V1 is drawn as the occipital pole, cuneus and lingual gyrus (which also hold V2 and V3), V4 as the occipital part of the fusiform gyrus, the fusiform face area as its temporal part and inferotemporal cortex as the inferior temporal gyrus; MT (V5) is placed approximately (≈). The lateral geniculate nucleus is shown in the thalamus, and the frontal eye field is not placed.",
+        "mouse": "Mouse: Allen CCFv3 primary visual area (VISp), the higher visual areas LM, AL, AM, PM, LI and P (the anterior and rostrolateral areas are drawn with posterior parietal cortex) and the dorsal lateral geniculate nucleus. V4, MT, inferotemporal cortex, the fusiform face area and the frontal eye field are not placed in the mouse brain.",
+        "macaque": "Macaque: CHARM V1, V4, MT, inferior temporal cortex (TE and TEO) and area 8A (frontal eye field), and the SARM dorsal lateral geniculate nucleus. The fusiform face area and the mouse higher visual areas are not placed."
+      }
     }
   ],
   "methods": {
@@ -912,7 +1024,7 @@
     {"id": "vestibular-nuclei", "name": "Vestibular nuclei", "level": "systems", "kind": "structure", "domains": ["motor", "learning"],
      "summary": "Brainstem nuclei that receive direct Purkinje input from the vestibulo-cerebellum. They drive the VOR and are a site of motor memory. Their mossy fibers to the nodulus and ventral uvula are the predominant putative cholinergic input to the cerebellum.", "refs": ["raymond1996", "jaarsma1997"]},
     {"id": "pontine", "name": "Pontine nuclei", "level": "systems", "kind": "structure", "domains": ["architecture"],
-     "summary": "Relay from much of the neocortex to the cerebellar cortex as mossy fibers, mostly to the opposite side. Also relays subthalamic input to the cerebellum. Pontine neurons that receive a rostral anterior cingulate input mediating placebo analgesia are rich in opioid receptors (mouse).", "refs": ["strick2009", "bostan2010", "apps2005", "schmahmann1997", "chen2024"]},
+     "summary": "Relay from much of the neocortex to the cerebellar cortex as mossy fibers, mostly to the opposite side. Also relays subthalamic input to the cerebellum. Pontine neurons that receive a rostral anterior cingulate input mediating placebo analgesia are rich in opioid receptors (mouse). Extrastriate areas concerned mainly with spatial vision, visual motion and the peripheral visual field project to the pontine nuclei, but ventral V4, area TEO and the inferior temporal gyrus do not, and primary visual cortex sends only a few corticopontine cells, from its representation of the lower peripheral field (monkey).", "refs": ["strick2009", "bostan2010", "apps2005", "schmahmann1997", "chen2024", "schmahmann1993", "glickstein1985"]},
     {"id": "io", "name": "Inferior olive", "level": "systems", "kind": "structure", "domains": ["learning", "timing"],
      "summary": "Sole source of climbing fibers, which cross to the opposite cerebellum. Inhibitory feedback from the cerebellar nuclei closes the olivo-cortico-nuclear loop.", "refs": ["dezeeuw1998", "martin1996", "kim2020"], "region": "cerebellum"},
     {
@@ -951,7 +1063,7 @@
     {"id": "pfc", "name": "Prefrontal cortex", "level": "systems", "kind": "structure", "aka": ["PFC", "DLPFC", "mPFC", "area 46", "prelimbic", "ACC", "OFC"], "domains": ["executive", "social", "emotion", "reward"],
      "summary": "Frontal association cortex. Here it covers the dorsolateral and orbitofrontal cortex and anterior cingulate of primates and the medial prefrontal areas of rodents, whose names and borders differ between rodent atlases. Theory proposes that cognitive control stems from actively maintained prefrontal activity patterns that represent goals and the means to achieve them, biasing processing in other brain structures. A review argues that even mild acute uncontrollable stress can rapidly impair prefrontal cognitive abilities, and that prolonged stress changes prefrontal dendrites. Cerebellar output reaches it through the thalamus: transneuronal tracing from area 46 labels neurons in restricted parts of the dentate nucleus, separate from those that project to motor areas (monkey), and in mice cerebellar-recipient neurons are denser in associative areas, including orbital, anterior cingulate, prelimbic and infralimbic cortex, than in sensorimotor cortex, which holds the most. In turn, dorsolateral and, less so, medial prefrontal cortex project to the basilar pons, whereas orbitofrontal cortex does not (monkey). Functional connectivity separates dorsolateral, medial and anterior prefrontal circuits with the opposite cerebellar hemisphere, and in schizophrenia weaker cerebellum–right DLPFC connectivity goes with more severe negative symptoms (human).", "refs": ["laubach2018", "miller2001", "arnsten2009", "middleton1994", "pisano2021", "schmahmann1997", "krienen2009", "brady2019"], "region": "prefrontal"},
     {"id": "parietal", "name": "Posterior parietal cortex", "level": "systems", "kind": "structure", "aka": ["IPL"], "domains": ["spatial", "executive"],
-     "summary": "Association cortex in loops with the cerebellum. Connectivity between right Crus I and inferior parietal lobule is altered in autism. During top-down attention, prefrontal neurons signal the target location before parietal neurons, and during bottom-up attention parietal neurons signal it first (monkey).", "refs": ["strick2009", "buckner2011", "stoodley2017", "buschman2007"]},
+     "summary": "Association cortex in loops with the cerebellum. Connectivity between right Crus I and inferior parietal lobule is altered in autism. During top-down attention, prefrontal neurons signal the target location before parietal neurons, and during bottom-up attention parietal neurons signal it first (monkey). The dorsal visual stream from striate to posterior parietal cortex is proposed to mediate the sensorimotor transformations for visually guided action (review), and a spatial location task activates lateral superior parietal cortex (human).", "refs": ["strick2009", "buckner2011", "stoodley2017", "buschman2007", "goodale1992", "haxby1991"]},
     {"id": "striatum", "name": "Striatum", "level": "systems", "kind": "structure", "domains": ["motor", "reward", "homeostasis"],
      "summary": "The major component of the basal ganglia. Its two output systems, striatonigral and striatopallidal neurons, express D1 and D2 dopamine receptors respectively (rat). Dopaminergic input to the dorsal striatum is indispensable for the emergence of striatal activity that mediates adaptive changes in movement vigor (mouse), and lesions of the dorsolateral striatum disrupt habit formation (rat). Receives disynaptic cerebellar input via intralaminar thalamus. This short-latency path can shape corticostriatal plasticity and, when aberrant, causes dystonia. Cerebellar nuclei also raise striatal dopamine during satiation. Receives corticostriatal input from neurons in lower layer 5A of mouse motor cortex. In mice performing a flexible lick-timing task, it ramps with frontal cortex before licks, and briefly inhibiting it rewinds this timer.", "refs": ["hoshi2005", "chen2014", "bostan2018", "low2021", "xiao2018", "washburn2024", "anderson2010", "yang2026", "gerfen1990", "panigrahi2015", "yin2004"]},
     {"id": "stn", "name": "Subthalamic nucleus", "level": "systems", "kind": "structure", "domains": ["motor"],
@@ -986,7 +1098,7 @@
       "region": "hippocampus"
     },
     {"id": "amygdala", "name": "Amygdala", "level": "systems", "kind": "structure", "domains": ["emotion", "reward", "social", "memory"],
-     "summary": "Long associated with emotion and motivation, it processes both fearful and rewarding stimuli (review). Work on fear conditioning pinpoints it as an important component of the system for acquiring, storing and expressing fear memory, and the findings from experimental animals apply to the human brain (review). A patient with focal bilateral amygdala lesions showed no fear when exposed to snakes, spiders or a haunted house, although she exhibited other basic emotions (human). Its neurons encode the positive and negative value of images rapidly enough to account for learning (monkey), and excitotoxic lesions impair choices after a food is devalued but not reversal learning (monkey). Single neurons in the right amygdala of neurosurgical patients show a categorical selectivity for pictures of animals that appears independent of emotional valence or arousal (human). Its connections with prefrontal cortex are densest in posterior orbitofrontal and posterior medial areas (monkey). In mice, basolateral amygdala firing becomes entrained to medial prefrontal theta input when animals recognize safety.", "refs": ["janak2015", "ledoux2000", "feinstein2011", "paton2006", "izquierdo2007", "mormann2011", "ghashghaei2007", "likhtik2014"], "region": "amygdala"},
+     "summary": "Long associated with emotion and motivation, it processes both fearful and rewarding stimuli (review). Work on fear conditioning pinpoints it as an important component of the system for acquiring, storing and expressing fear memory, and the findings from experimental animals apply to the human brain (review). A patient with focal bilateral amygdala lesions showed no fear when exposed to snakes, spiders or a haunted house, although she exhibited other basic emotions (human). Its neurons encode the positive and negative value of images rapidly enough to account for learning (monkey), and excitotoxic lesions impair choices after a food is devalued but not reversal learning (monkey). Single neurons in the right amygdala of neurosurgical patients show a categorical selectivity for pictures of animals that appears independent of emotional valence or arousal (human). Its connections with prefrontal cortex are densest in posterior orbitofrontal and posterior medial areas (monkey). In mice, basolateral amygdala firing becomes entrained to medial prefrontal theta input when animals recognize safety. Amygdala damage abolishes the larger response of fusiform and occipital cortex to fearful than to neutral faces, although the visual areas are intact (human).", "refs": ["janak2015", "ledoux2000", "feinstein2011", "paton2006", "izquierdo2007", "mormann2011", "ghashghaei2007", "likhtik2014", "vuilleumier2004"], "region": "amygdala"},
     {"id": "brainstem-motor", "name": "Red nucleus & brainstem motor nuclei", "level": "systems", "kind": "structure", "aka": ["red nucleus", "reticular formation"], "domains": ["motor"],
      "summary": "Targets of interposed and fastigial outputs (rubrospinal, reticulospinal and vestibulospinal systems) for limb and axial control. Also receives pyramidal-tract axons from motor cortex: in mice, one type projects to medullary motor centres and carries late preparatory activity and motor commands.", "refs": ["apps2005", "fujita2020", "economo2018"]},
     {"id": "spinal", "name": "Spinal cord", "level": "systems", "kind": "body", "domains": ["motor"],
@@ -1256,7 +1368,7 @@
     {"id": "s1", "name": "Primary somatosensory cortex (S1)", "level": "systems", "kind": "area", "aka": ["S1", "SSp", "barrel cortex", "postcentral gyrus"], "domains": ["motor"],
      "summary": "Somatosensory cortex, including the whisker barrel cortex of rodents. Barrel cortex is critical for sensation in a whisker-based decision task and projects to the upper layers of vibrissal M1 (mouse). Corticospinal neurons of sensory cortex, unlike those of motor cortex, do not synapse directly onto spinal premotor interneurons and connect preferentially to Vglut3+ interneurons; sensory-cortex lesions impair release of a food pellet (mouse).", "refs": ["guo2014", "hooks2013", "ueno2018"]},
     {"id": "basal-forebrain", "name": "Basal forebrain (ACh)", "level": "systems", "kind": "structure", "aka": ["cholinergic basal forebrain", "nucleus basalis", "substantia innominata"], "domains": ["learning"],
-     "summary": "Its cholinergic system contributes to plasticity of cortical sensorimotor representations: selective lesions disrupt the cortical map reorganization that accompanies motor skill learning and impair the learning, without affecting associative fear learning or overall sensorimotor function (rat).", "refs": ["conner2003"]},
+     "summary": "Its cholinergic system contributes to plasticity of cortical sensorimotor representations: selective lesions disrupt the cortical map reorganization that accompanies motor skill learning and impair the learning, without affecting associative fear learning or overall sensorimotor function (rat). Its nicotinic input largely mediates the activation of VIP interneurons in mouse V1 by locomotion (mouse).", "refs": ["conner2003", "fu2014"]},
     {"id": "comt", "name": "COMT (catechol-O-methyltransferase)", "level": "molecular", "kind": "gene", "aka": ["Val158Met", "Val108/158 Met", "catechol-O-methyltransferase"], "domains": ["executive"],
      "summary": "The COMT gene carries a common functional polymorphism, Val108/158 Met, that accounts for a four-fold variation in enzyme activity and dopamine catabolism. In patients with schizophrenia, their unaffected siblings and controls, the low-activity Met allele predicted fewer perseverative errors on the Wisconsin Card Sorting Test and a more efficient prefrontal response during working memory, and the Val allele was transmitted more often to offspring with schizophrenia (human).", "refs": ["egan2001"], "region": "prefrontal"},
     {"id": "nmdar-nr2b", "name": "NMDA receptors (NR2B)", "level": "molecular", "kind": "receptor", "aka": ["NR2B", "GluN2B", "NMDAR"], "domains": ["executive"],
@@ -1323,7 +1435,7 @@
     {"id": "f-flexibility", "name": "Cognitive flexibility", "level": "cognitive", "kind": "function", "aka": ["set shifting", "reversal learning", "task switching", "behavioral flexibility"], "domains": ["executive"],
      "summary": "Changing behavior when rules or outcomes change. In marmosets, lateral prefrontal damage impaired inhibitory control in attentional selection and orbitofrontal damage impaired it in affective processing; in rats, medial frontal lesions selectively impaired attentional set shifting. In monkeys, whether OFC is needed for reversal learning is debated: surgical removals impaired it, but excitotoxic, fiber-sparing lesions did not. In monkeys that flexibly select which sensory input guides a choice, selection and integration appear to unfold as one dynamical process within the same prefrontal circuits.", "refs": ["dias1996", "birrell2000", "izquierdo2004", "rudebeck2013", "mante2013"]},
     {"id": "f-attention", "name": "Attention", "level": "cognitive", "kind": "function", "aka": ["top-down attention", "attentional control"], "domains": ["executive"],
-     "summary": "Focusing processing on what matters for the task. In monkeys, prefrontal neurons signal the target location first during top-down attention, and parietal neurons first during bottom-up attention. In mice, mediodorsal thalamic input sustains prefrontal representations of the rules that guide attention. In ADHD, cortical maturation is delayed most prominently in prefrontal regions important for control of cognitive processes including attention (human).", "refs": ["buschman2007", "schmitt2017", "shaw2007"]},
+     "summary": "Focusing processing on what matters for the task. In monkeys, prefrontal neurons signal the target location first during top-down attention, and parietal neurons first during bottom-up attention. In mice, mediodorsal thalamic input sustains prefrontal representations of the rules that guide attention. In ADHD, cortical maturation is delayed most prominently in prefrontal regions important for control of cognitive processes including attention (human). Attending to one of two stimuli in the receptive field of a V4 or inferior temporal neuron dramatically reduces the response to the unattended one, whereas striate cells are unaffected (monkey), and microstimulating the frontal eye field enhances V4 responses at the corresponding location (monkey).", "refs": ["buschman2007", "schmitt2017", "shaw2007", "moran1985", "moore2003"]},
     {"id": "f-decision", "name": "Value-based decision-making", "level": "cognitive", "kind": "function", "aka": ["economic choice", "foraging", "reward-guided choice"], "domains": ["reward", "executive"],
      "summary": "Choosing among options by their value. In monkeys, orbitofrontal neurons encode the value of offered and chosen goods, and removing orbital prefrontal cortex blunts the change in choice that should follow a change in reward value. In humans, comparative and foraging modes of choice engage distinct mechanisms in ventromedial PFC and anterior cingulate cortex, and on a task that simulates real-life decisions, patients with ventromedial prefrontal damage seem guided by immediate prospects only, oblivious to future consequences.", "refs": ["padoaschioppa2006", "izquierdo2004", "kolling2012", "bechara1994"]},
     {
@@ -1476,7 +1588,57 @@
     {"id": "f-valence", "name": "Emotional valence", "level": "cognitive", "kind": "function", "aka": ["valence", "positive and negative value"], "domains": ["emotion", "reward"],
      "summary": "Whether a stimulus or outcome is good or bad. Amygdala neurons encode the positive and negative values of images, and distinct populations encode each (monkey). In mice, basolateral amygdala neurons projecting to the nucleus accumbens support positive reinforcement and those projecting to the centromedial amygdala negative reinforcement, and two genetically distinct basolateral populations take part in positive- and negative-valence behaviors. Two people with focal bilateral amygdala lesions showed a dramatic reduction in loss aversion in monetary gambles (human).", "refs": ["paton2006", "namburi2015", "kim2016", "demartino2010"]},
     {"id": "c-anxiety", "name": "Anxiety disorders", "level": "clinical", "kind": "disorder", "aka": ["social anxiety disorder", "specific phobia"], "domains": ["emotion"],
-     "summary": "A meta-analysis of imaging studies found that patients with social anxiety disorder, specific phobia or PTSD consistently show greater activity than comparison subjects in the amygdala and insula, structures linked to negative emotional responses, as do healthy subjects during fear conditioning (human).", "refs": ["etkin2007"]}
+     "summary": "A meta-analysis of imaging studies found that patients with social anxiety disorder, specific phobia or PTSD consistently show greater activity than comparison subjects in the amygdala and insula, structures linked to negative emotional responses, as do healthy subjects during fear conditioning (human).", "refs": ["etkin2007"]},
+    {"id": "visual-cortex", "name": "Visual cortex", "level": "regional", "kind": "area", "region": "visual-cortex", "aka": ["occipital cortex", "visual areas"], "domains": ["sensory"],
+     "summary": "The occipital and occipitotemporal areas devoted to vision. In the macaque, a database of reported connections lists 25 predominantly visual areas and 7 visual-association areas, linked by 305 mostly reciprocal pathways and arranged in a hierarchy of 10 cortical levels with intertwined processing streams (monkey). Cells in V1, V2 and higher areas fall into interdigitating subdivisions selective for colour, stereopsis, movement and orientation, which appear to derive mainly from the parvocellular (form and colour) and magnocellular (depth and movement) geniculate subdivisions (review). Much of human visual cortex is organized into visual field maps, in medial, lateral, ventral and dorsal occipital and in posterior parietal cortex (review), whose borders retinotopic fMRI can delineate (human). Face matching and location matching engage separate ventral (occipitotemporal) and dorsal (superior parietal) regions (human).", "refs": ["felleman1991", "livingstone1988", "wandell2007", "sereno1995", "haxby1991"]},
+    {"id": "v1", "name": "Primary visual cortex (V1)", "level": "regional", "kind": "area", "region": "visual-cortex", "aka": ["V1", "striate cortex", "area 17", "VISp", "primary visual area"], "domains": ["sensory"],
+     "summary": "Striate cortex (area 17; VISp in the mouse), which receives visual input from the eyes through the lateral geniculate nucleus. In monkeys most of its cells are simple, complex or hypercomplex, grouped in two independent column systems, for orientation and for eye preference (ocular dominance), with simple, monocularly driven cells in and near layer IV (monkey). Mouse V1 neurons, although their receptive fields are much larger, are nearly as selective for orientation and spatial frequency as in other species (mouse). Most mouse V1 neurons more than double their visual responses when the animal runs, whereas the lateral geniculate does not (mouse), and nearly half combine visual speed with run speed (mouse). Attention did not affect striate cells in a classic study (monkey). In people blind from early life, tactile discrimination activates primary visual cortex (human).", "refs": ["sadato1996", "hubel1968", "niell2008", "niell2010", "saleem2013", "moran1985"]},
+    {"id": "lgn", "name": "Lateral geniculate nucleus (visual thalamus)", "level": "regional", "kind": "nucleus", "region": "visual-cortex", "aka": ["LGN", "dLGN", "LGd", "DLG", "lateral geniculate body"], "domains": ["sensory"],
+     "summary": "The dorsal lateral geniculate nucleus, the thalamic relay from the retina to V1. In primates its parvocellular and magnocellular subdivisions differ in colour selectivity, contrast sensitivity, temporal properties and spatial resolution and appear to give rise to the form and colour and the depth and movement pathways (review), and koniocellular layers form a third channel that relays short-wavelength cone input to the blobs of V1 and low-acuity input to its layer I (review). Geniculate neurons connect to simple cells according to their on or off signature (cat), and their orientation-tuned input to simple cells survives cooling of the cortex (cat). Its visual responses did not increase with locomotion (mouse).", "refs": ["livingstone1988", "hendry2000", "reid1995", "ferster1996", "niell2010"]},
+    {"id": "mt", "name": "Area MT (V5)", "level": "regional", "kind": "area", "region": "visual-cortex", "aka": ["MT", "V5", "hMT+", "middle temporal area"], "domains": ["sensory"],
+     "summary": "The middle temporal area. Ibotenic acid lesions raise thresholds for discriminating motion direction but not contrast thresholds (monkey), and single MT neurons are about as sensitive to weak motion as the animal itself (monkey). In humans, visual motion activates area V5 at the temporo-parieto-occipital junction (human).", "refs": ["newsome1988", "britten1992", "zeki1991"]},
+    {"id": "v4", "name": "Area V4", "level": "regional", "kind": "area", "region": "visual-cortex", "aka": ["V4", "hV4"], "domains": ["sensory", "executive"],
+     "summary": "A prestriate visual area. When two stimuli fall in the receptive field of a V4 neuron, attending to one dramatically reduces the response to the other (monkey), and microstimulating the corresponding site in the frontal eye field enhances V4 visual responses (monkey). In humans, colour activates area V4 in the lingual and fusiform gyri (human).", "refs": ["moran1985", "moore2003", "zeki1991"]},
+    {"id": "it", "name": "Inferotemporal cortex", "level": "regional", "kind": "area", "region": "visual-cortex", "aka": ["IT", "TE", "TEO", "inferior temporal cortex"], "domains": ["sensory", "social"],
+     "summary": "The end of the ventral visual stream, which is proposed to play the major role in identifying objects (review). Many of its neurons respond to almost any stimulus, others are selective for shape, colour or texture over large receptive fields, and a separate population responds selectively to faces, with a particularly high incidence deep in the superior temporal sulcus (monkey). Attending to one of two stimuli in a neuron's receptive field dramatically reduces the response to the other (monkey). The inferior temporal gyrus sends no projections to the pons (monkey).", "refs": ["goodale1992", "desimone1984", "moran1985", "schmahmann1993"]},
+    {"id": "ffa", "name": "Fusiform face area", "level": "regional", "kind": "area", "region": "visual-cortex", "aka": ["FFA", "fusiform gyrus"], "domains": ["sensory", "social"],
+     "summary": "A region of the human fusiform gyrus selectively involved in face perception: it is more active for faces than for objects, houses or hands and for intact than scrambled faces (human). Fusiform cortex responds more to fearful than to neutral faces, but not in patients with amygdala damage (human).", "refs": ["kanwisher1997", "vuilleumier2004"]},
+    {"id": "mouse-hva", "name": "Higher visual areas (mouse)", "level": "regional", "kind": "area", "region": "visual-cortex", "aka": ["LM", "AL", "AM", "PM", "LI", "HVAs", "extrastriate areas (mouse)"], "domains": ["sensory", "architecture"],
+     "summary": "Mouse V1 projects to 15 cortical fields, at least nine of which hold complete maps of the visual hemifield; of the areas on its lateral border only LM shares the vertical meridian with V1 and may be homologous to V2 (mouse). Seven of these areas each encode a distinct combination of spatial and temporal frequency, orientation and direction preferences, perhaps forming motion- and pattern-related groups analogous to dorsal and ventral streams (mouse). Together they form a complex network of specialized higher-order areas (review).", "refs": ["wang2007", "marshel2011", "glickfeld2017"]},
+    {"id": "v1-orientation", "name": "Orientation selectivity", "level": "cellular", "kind": "computation", "region": "visual-cortex", "aka": ["simple cells", "complex cells", "orientation tuning", "orientation columns", "pinwheels"], "domains": ["sensory"],
+     "summary": "Simple cells respond best to bright or dark oriented contours (cat). In the cat, geniculate neurons connect to simple cells according to their on or off signature, which implies that simple receptive fields and their orientation selectivity are laid down at the first thalamocortical synapse, and the orientation tuning of geniculate input survives inactivation of the cortex. Cells sharing an orientation preference are grouped in columns (monkey), and the centres of orientation pinwheels are highly ordered at single-cell resolution (cat). Mouse V1 neurons are nearly as orientation selective as those of other species (mouse); activating PV+ interneurons sharpens their tuning and improves orientation discrimination (mouse), and layer 2/3 pyramidal neurons sharing an orientation preference connect at twice the rate of those with orthogonal preferences (mouse).", "refs": ["reid1995", "ferster1996", "hubel1968", "ohki2006", "niell2008", "lee2012", "ko2011"]},
+    {"id": "v1-pyr", "name": "V1 layer 2/3 pyramidal neurons", "level": "cellular", "kind": "cell type", "region": "visual-cortex", "aka": ["L2/3 pyramidal neurons"], "domains": ["sensory"],
+     "summary": "They connect at twice the rate when they share an orientation preference, and at much higher rates when their responses to natural stimuli are similar, pointing to fine-scale subnetworks (mouse). During locomotion in a virtual environment they are strongly driven by running and by mismatch between actual and expected visual flow, suggesting predictive coding (mouse). Somatostatin interneurons contribute to their surround suppression (mouse).", "refs": ["ko2011", "keller2012", "adesnik2012"]},
+    {"id": "v1-pv", "name": "V1 PV+ interneurons", "level": "cellular", "kind": "cell type", "region": "visual-cortex", "aka": ["parvalbumin interneurons", "PV+"], "domains": ["sensory"],
+     "summary": "Parvalbumin-positive interneurons. Optogenetically activating them sharpens the orientation tuning and direction selectivity of nearby neurons and improves orientation discrimination, whereas activating somatostatin or VIP interneurons does not (mouse).", "refs": ["lee2012"]},
+    {"id": "v1-sst", "name": "V1 SOM+ interneurons", "level": "cellular", "kind": "cell type", "region": "visual-cortex", "aka": ["somatostatin interneurons", "SOM+", "SST+"], "domains": ["sensory"],
+     "summary": "Somatostatin-expressing interneurons of the superficial layers. Unlike pyramidal cells, they respond more as a stimulus extends into the receptive-field surround, because horizontal cortical axons preferentially excite them, and they contribute to the surround suppression of pyramidal cells (mouse).", "refs": ["adesnik2012"]},
+    {"id": "v1-vip", "name": "V1 VIP+ interneurons", "level": "cellular", "kind": "cell type", "region": "visual-cortex", "aka": ["vasoactive intestinal peptide interneurons", "VIP+"], "domains": ["sensory", "motor"],
+     "summary": "Locomotion activates them independently of visual stimulation, largely through nicotinic input from the basal forebrain; activating them increases V1 visual responses in stationary mice, and damaging them abolishes the enhancement of V1 responses by locomotion (mouse).", "refs": ["fu2014"]},
+    {"id": "od-plasticity", "name": "Ocular dominance plasticity", "level": "circuit", "kind": "plasticity", "region": "visual-cortex", "aka": ["critical period", "monocular deprivation"], "domains": ["development", "sensory"],
+     "summary": "Experience-dependent plasticity of binocular responses in V1. In mice, 4 days of monocular deprivation at postnatal day 28 maximally reduce responses to the deprived eye, during a critical period between P19 and P32, through a competitive, correlation-based plasticity of geniculocortical and intracortical connections (mouse). Disrupting one isoform of glutamic acid decarboxylase prevents it and benzodiazepines restore it (mouse), and studies of mice lacking GAD65 suggest that a threshold level of inhibition may trigger the critical period, once in life (mouse). Degrading the chondroitin sulphate proteoglycans of perineuronal nets lets monocular deprivation shift ocular dominance in adult rats (rat). Early experimental strabismus or anisometropia often causes amblyopia, with reduced cortical binocularity (monkey).", "refs": ["gordon1996", "hensch1998", "fagiolini2000", "pizzorusso2002", "kiorpes1998"]},
+    {"id": "gad65", "name": "GAD65", "level": "molecular", "kind": "enzyme", "region": "visual-cortex", "aka": ["glutamic acid decarboxylase 65", "Gad2"], "domains": ["development"],
+     "summary": "An isoform of glutamic acid decarboxylase, the GABA-synthesizing enzyme. In mice lacking it, benzodiazepines unmask plasticity to monocular deprivation at any age, and enhancing GABA transmission early in life makes them insensitive to deprivation as adults (mouse).", "refs": ["fagiolini2000"]},
+    {"id": "pnn", "name": "Perineuronal nets", "level": "molecular", "kind": "structure", "region": "visual-cortex", "aka": ["PNNs", "chondroitin sulphate proteoglycans", "CSPGs"], "domains": ["development"],
+     "summary": "Extracellular-matrix structures formed by chondroitin sulphate proteoglycans. In rat visual cortex they form as the critical period ends, later after dark rearing, and degrading the proteoglycans with chondroitinase-ABC reactivates ocular dominance plasticity in adults (rat).", "refs": ["pizzorusso2002"]},
+    {"id": "c-amblyopia", "name": "Amblyopia", "level": "clinical", "kind": "disorder", "region": "visual-cortex", "aka": ["lazy eye"], "domains": ["sensory", "development"],
+     "summary": "A developmental disorder of pattern vision. Macaques often develop it after early experimental strabismus or anisometropia; cortical binocularity is reduced, and in severe cases neurons driven by the amblyopic eye have lower spatial resolution, although these changes do not explain all of the visual deficit (monkey).", "refs": ["kiorpes1998"]},
+    {"id": "c-cortical-blindness", "name": "Cortical blindness and blindsight", "level": "clinical", "kind": "disorder", "region": "visual-cortex", "aka": ["blindsight", "hemianopia"], "domains": ["sensory"],
+     "summary": "Blindness in part of the visual field after damage to visual cortex. Some visual capacity remains in the hemianopic field after a restricted occipital ablation (human), and some patients with extensive damage to primary visual cortex can point or make saccades toward stimuli in the blind field (human). Koniocellular geniculate neurons that innervate extrastriate cortex are likely to sustain some visual behaviours without V1 (review).", "refs": ["weiskrantz1974", "goodale1991", "hendry2000"]},
+    {"id": "c-blind", "name": "Early blindness", "level": "clinical", "kind": "condition", "region": "visual-cortex", "aka": ["blindness", "cross-modal plasticity"], "domains": ["sensory", "development"],
+     "summary": "In people blind from early life, tactile discrimination such as Braille reading activates primary and secondary visual cortex, which it deactivates in sighted people (human), and disrupting occipital cortex with magnetic stimulation causes errors in reading Braille and distorts tactile perception (human).", "refs": ["sadato1996", "cohen1997"]},
+    {"id": "c-migraine", "name": "Migraine with aura", "level": "clinical", "kind": "disorder", "region": "visual-cortex", "aka": ["visual aura", "cortical spreading depression"], "domains": ["sensory"],
+     "summary": "During visual aura, fMRI shows changes with the characteristics of cortical spreading depression, starting in extrastriate area V3A and spreading slowly over occipital cortex in register with the retinotopy of the percept (human).", "refs": ["hadjikhani2001"]},
+    {"id": "c-pca", "name": "Posterior cortical atrophy", "level": "clinical", "kind": "disorder", "region": "visual-cortex", "aka": ["PCA", "Benson syndrome"], "domains": ["sensory", "memory"],
+     "summary": "A progressive dementia heralded by disorders of higher visual function, followed by alexia, agraphia, visual agnosia and components of Balint's and Gerstmann's syndromes, with memory relatively spared until late; imaging showed predominant parieto-occipital atrophy in two of five patients (human).", "refs": ["benson1988"]},
+    {"id": "c-akinetopsia", "name": "Akinetopsia (motion blindness)", "level": "clinical", "kind": "disorder", "region": "visual-cortex", "aka": ["motion blindness"], "domains": ["sensory"],
+     "summary": "A patient with bilateral posterior brain damage, attributed to the lateral temporo-occipital cortex, showed a disturbance of movement vision with no impression of movement in depth and impaired visually guided eye and finger movements, while movement perception through hearing and touch was intact (human).", "refs": ["zihl1983"]},
+    {"id": "f-vision", "name": "Visual perception", "level": "cognitive", "kind": "function", "aka": ["vision", "seeing"], "domains": ["sensory"],
+     "summary": "Seeing form, colour, motion and depth. These attributes are thought to be analysed in parallel subdivisions of the visual system (review), and colour and motion activate different prestriate areas, V4 and V5 (human).", "refs": ["livingstone1988", "zeki1991"]},
+    {"id": "f-face", "name": "Face perception", "level": "cognitive", "kind": "function", "aka": ["face recognition"], "domains": ["sensory", "social"],
+     "summary": "In humans and macaques, fMRI shows cortical regions that respond more to faces than to objects; in macaques almost all visually responsive neurons in the largest such region are strongly face selective (monkey), and inferotemporal cortex holds a population of face-selective neurons whose responses depend on the configuration of facial features (monkey). In humans a region of the fusiform gyrus is selectively involved in face perception (human).", "refs": ["tsao2006", "desimone1984", "kanwisher1997"]},
+    {"id": "fef", "name": "Frontal eye field", "level": "regional", "kind": "area", "aka": ["FEF", "area 8A"], "domains": ["executive", "motor"],
+     "summary": "A frontal area where stimulation can evoke saccades. Brief stimulation of an FEF site, below the current that evokes saccades, enhances the visual responses of V4 neurons at the corresponding location and can suppress those at non-corresponding locations (monkey).", "refs": ["moore2003"]}
   ],
   "links": [
     {"s": "mglur1", "t": "ltd", "rel": "required for LTD induction", "status": "supported", "kind": "mechanistic", "refs": ["aiba1994", "hansel2001"]},
@@ -2041,7 +2203,44 @@
     {"s": "amygdala", "t": "c-ptsd", "rel": "exaggerated amygdala responses to masked fearful faces in veterans with PTSD, and greater amygdala activity in PTSD across imaging studies (meta-analysis) (human)", "status": "supported", "kind": "clinical", "refs": ["rauch2000", "etkin2007"]},
     {"s": "amygdala", "t": "c-anxiety", "rel": "greater amygdala activity in social anxiety disorder and specific phobia than in comparison subjects (meta-analysis, human)", "status": "supported", "kind": "clinical", "refs": ["etkin2007"]},
     {"s": "amygdala", "t": "c-asd", "rel": "larger amygdalae in boys with autism aged 7.5 to 12.5 years but not in adolescents, because the typical age-related increase in volume is missing (human)", "status": "emerging", "kind": "clinical", "refs": ["schumann2004"]},
-    {"s": "vmpfc", "t": "c-ptsd", "status": "supported", "kind": "clinical", "refs": ["etkin2007"], "rel": "hypoactivation of the ventromedial prefrontal cortex, and of the dorsal and rostral anterior cingulate, in PTSD but not in social anxiety disorder or specific phobia (meta-analysis, human)"}
+    {"s": "vmpfc", "t": "c-ptsd", "status": "supported", "kind": "clinical", "refs": ["etkin2007"], "rel": "hypoactivation of the ventromedial prefrontal cortex, and of the dorsal and rostral anterior cingulate, in PTSD but not in social anxiety disorder or specific phobia (meta-analysis, human)"},
+    {"s": "eyes", "t": "lgn", "rel": "retinal input reaches V1 through the lateral geniculate; in primates its parvocellular and magnocellular subdivisions, which differ already in the retina in colour selectivity, contrast sensitivity, temporal properties and spatial resolution, and a third, koniocellular channel carry different aspects of the image (review)", "status": "established", "kind": "anatomical", "refs": ["sadato1996", "livingstone1988", "hendry2000"]},
+    {"s": "lgn", "t": "v1", "rel": "geniculate neurons connect monosynaptically to simple cells of matching on or off signature (cat); koniocellular layers relay short-wavelength cone input to the blobs and low-acuity input to layer I (review); monocular deprivation alters geniculocortical as well as intracortical connections (mouse)", "status": "established", "kind": "anatomical", "refs": ["reid1995", "hendry2000", "gordon1996"]},
+    {"s": "lgn", "t": "v1-orientation", "rel": "the specificity of geniculate connections implies that simple receptive fields and their orientation selectivity are laid down at the first thalamocortical synapse, and the orientation tuning of geniculate input to simple cells survives inactivation of the cortex (cat)", "status": "supported", "kind": "mechanistic", "refs": ["reid1995", "ferster1996"]},
+    {"s": "v1-orientation", "t": "f-vision", "rel": "sharpening orientation tuning by activating PV+ interneurons improved orientation discrimination (mouse)", "status": "emerging", "kind": "causal", "refs": ["lee2012"]},
+    {"s": "v1-pv", "t": "v1-orientation", "rel": "activating PV+ interneurons sharpens orientation tuning and direction selectivity, whereas activating SOM+ or VIP+ interneurons does not (mouse)", "status": "emerging", "kind": "causal", "refs": ["lee2012"]},
+    {"s": "v1-sst", "t": "v1-pyr", "rel": "excited preferentially by horizontal cortical axons, SOM+ interneurons contribute to the surround suppression of pyramidal cells (mouse)", "status": "emerging", "kind": "causal", "refs": ["adesnik2012"]},
+    {"s": "basal-forebrain", "t": "v1-vip", "rel": "nicotinic input from the basal forebrain largely mediates the activation of VIP interneurons by locomotion (mouse)", "status": "emerging", "kind": "anatomical", "refs": ["fu2014"]},
+    {"s": "v1-vip", "t": "v1", "rel": "activating VIP interneurons increases V1 visual responses, and damaging them abolishes the enhancement of those responses by locomotion (mouse)", "status": "emerging", "kind": "causal", "refs": ["fu2014"]},
+    {"s": "v1-pyr", "t": "f-timing", "rel": "layer 2/3 neurons respond to mismatch between actual and expected visual flow during locomotion, suggesting predictive coding (mouse)", "status": "emerging", "kind": "functional", "refs": ["keller2012"]},
+    {"s": "v1", "t": "f-spatial", "rel": "nearly half of V1 neurons combine visual speed and run speed during virtual navigation (mouse)", "status": "emerging", "kind": "functional", "refs": ["saleem2013"]},
+    {"s": "v1", "t": "mt", "rel": "in the monkey, V1 and V2 feed area V5 (MT)", "status": "supported", "kind": "anatomical", "refs": ["zeki1991"]},
+    {"s": "v1", "t": "v4", "rel": "in the monkey, V1 and V2 feed area V4", "status": "supported", "kind": "anatomical", "refs": ["zeki1991"]},
+    {"s": "v1", "t": "it", "rel": "the ventral stream runs from striate to inferotemporal cortex and is proposed to play the major role in identifying objects (review)", "status": "supported", "kind": "anatomical", "refs": ["goodale1992"]},
+    {"s": "v1", "t": "parietal", "rel": "the dorsal stream runs from striate to posterior parietal cortex and is proposed to mediate the sensorimotor transformations for visually guided action (review)", "status": "supported", "kind": "anatomical", "refs": ["goodale1992"]},
+    {"s": "v1", "t": "mouse-hva", "rel": "V1 projects to 15 cortical fields, at least nine of them distinct areas with complete maps of the visual field (mouse)", "status": "supported", "kind": "anatomical", "refs": ["wang2007"]},
+    {"s": "fef", "t": "v4", "rel": "stimulating a frontal eye field site below saccade threshold enhances the visual responses of V4 neurons at the corresponding location and can suppress them at non-corresponding locations (monkey)", "status": "emerging", "kind": "causal", "refs": ["moore2003"]},
+    {"s": "amygdala", "t": "ffa", "rel": "amygdala damage abolishes the larger response of fusiform and occipital cortex to fearful than to neutral faces, and the fusiform emotional response is parametrically related to the extent of the damage (human)", "status": "emerging", "kind": "causal", "refs": ["vuilleumier2004"]},
+    {"s": "mt", "t": "f-vision", "rel": "motion perception: MT lesions raise motion but not contrast thresholds and single MT neurons match the animal's sensitivity to motion (monkey), and visual motion activates V5 (human)", "status": "established", "kind": "causal", "refs": ["newsome1988", "britten1992", "zeki1991"]},
+    {"s": "v4", "t": "f-vision", "rel": "colour activates area V4 in the lingual and fusiform gyri (human)", "status": "emerging", "kind": "localization", "refs": ["zeki1991"]},
+    {"s": "v4", "t": "f-attention", "rel": "attention filters unattended stimuli from the receptive fields of V4 neurons (monkey), and frontal eye field stimulation enhances V4 responses at the corresponding location (monkey)", "status": "supported", "kind": "functional", "refs": ["moran1985", "moore2003"]},
+    {"s": "it", "t": "f-vision", "rel": "object recognition: the ventral stream to inferotemporal cortex is proposed to play the major role in identifying objects (review), and many inferotemporal neurons are selective for shape, colour or texture (monkey)", "status": "supported", "kind": "functional", "refs": ["goodale1992", "desimone1984"]},
+    {"s": "it", "t": "f-face", "rel": "a population of inferotemporal neurons responds selectively to faces, depending on the configuration of facial features (monkey)", "status": "supported", "kind": "functional", "refs": ["desimone1984"]},
+    {"s": "ffa", "t": "f-face", "rel": "more active for faces than for objects, houses or hands and for intact than scrambled faces (human)", "status": "supported", "kind": "localization", "refs": ["kanwisher1997"]},
+    {"s": "parietal", "t": "f-voluntary", "rel": "visually guided action: the dorsal stream is proposed to mediate the sensorimotor transformations for visually guided actions such as grasping (review), and a patient who could not perceive object shape, size and orientation grasped the objects accurately (human)", "status": "supported", "kind": "functional", "refs": ["goodale1992", "goodale1991"]},
+    {"s": "parietal", "t": "f-vision", "rel": "spatial localization: a dot-location matching task activated lateral superior parietal cortex (human)", "status": "emerging", "kind": "localization", "refs": ["haxby1991"]},
+    {"s": "mouse-hva", "t": "f-vision", "rel": "each area encodes a distinct combination of spatiotemporal features, perhaps forming motion- and pattern-related groups (mouse)", "status": "emerging", "kind": "functional", "refs": ["marshel2011"]},
+    {"s": "v1", "t": "c-cortical-blindness", "rel": "after a restricted occipital ablation some visual capacity remains in the hemianopic field, and some patients with extensive V1 damage can point or make saccades toward stimuli in the blind field (human)", "status": "supported", "kind": "clinical", "refs": ["weiskrantz1974", "goodale1991"]},
+    {"s": "lgn", "t": "c-cortical-blindness", "rel": "koniocellular geniculate neurons that innervate extrastriate cortex are likely to sustain some visual behaviours in the absence of V1 (review)", "status": "hypothesis", "kind": "clinical", "refs": ["hendry2000"]},
+    {"s": "v1", "t": "c-blind", "rel": "in the early blind, Braille reading activates primary visual cortex, and occipital magnetic stimulation disrupts it (human)", "status": "supported", "kind": "clinical", "refs": ["sadato1996", "cohen1997"]},
+    {"s": "gad65", "t": "od-plasticity", "rel": "disrupting one isoform of glutamic acid decarboxylase prevents the loss of responses to a deprived eye and benzodiazepines restore it; a threshold level of inhibition may trigger the critical period (mouse)", "status": "supported", "kind": "mechanistic", "refs": ["hensch1998", "fagiolini2000"]},
+    {"s": "pnn", "t": "od-plasticity", "rel": "perineuronal nets form as the critical period ends, and degrading their proteoglycans lets monocular deprivation shift ocular dominance in adults (rat)", "status": "emerging", "kind": "mechanistic", "refs": ["pizzorusso2002"]},
+    {"s": "od-plasticity", "t": "c-amblyopia", "rel": "early experimental strabismus or anisometropia often causes amblyopia, with reduced cortical binocularity and, in severe cases, lower spatial resolution of neurons driven by the amblyopic eye (monkey)", "status": "emerging", "kind": "developmental", "refs": ["kiorpes1998"]},
+    {"s": "visual-cortex", "t": "c-migraine", "rel": "during visual aura, changes with the characteristics of cortical spreading depression start in area V3A and spread over occipital cortex in register with the percept (human)", "status": "emerging", "kind": "clinical", "refs": ["hadjikhani2001"]},
+    {"s": "visual-cortex", "t": "c-pca", "rel": "a progressive dementia heralded by disorders of higher visual function, with predominant parieto-occipital atrophy on imaging in two of five patients (human)", "status": "emerging", "kind": "clinical", "refs": ["benson1988"]},
+    {"s": "visual-cortex", "t": "c-akinetopsia", "rel": "bilateral damage attributed to the lateral temporo-occipital cortex disturbed movement vision in a rather pure form (human)", "status": "emerging", "kind": "clinical", "refs": ["zihl1983"]},
+    {"s": "visual-cortex", "t": "pontine", "rel": "extrastriate areas concerned mainly with spatial vision, visual motion and the peripheral field project to the pontine nuclei, but areas for object identification and central vision do not (monkey)", "status": "supported", "kind": "anatomical", "refs": ["schmahmann1993"]},
+    {"s": "v1", "t": "pontine", "rel": "only a few corticopontine cells, in the part of area 17 that represents the lower peripheral visual field (monkey)", "status": "emerging", "kind": "anatomical", "refs": ["glickstein1985"]}
   ],
   "chains": [
     {"id": "loop-pfc", "name": "Cerebro-cerebellar loop", "nodes": ["pfc", "pontine", "cb-cortex", "dcn", "thalamus", "pfc"],
@@ -2165,7 +2364,25 @@
     {"id": "amy-pl-fear", "name": "Basolateral amygdala to prelimbic cortex", "nodes": ["bla", "mpfc-pl", "f-fear"],
      "desc": "Stimulating the basolateral projection to prelimbic cortex increases freezing (rat), and prelimbic activity tracks freezing second by second; inactivating prelimbic cortex impairs the expression of conditioned fear (rat)."},
     {"id": "amy-vhpc-anxiety", "name": "Basolateral amygdala to ventral hippocampus", "nodes": ["bla", "vhpc", "f-anxiety"],
-     "desc": "Activating basolateral amygdala synapses in the ventral hippocampus increases anxiety-related behavior (mouse), and ventral CA1 anxiety cells, activated by anxiogenic environments, are required for avoidance (mouse)."}
+     "desc": "Activating basolateral amygdala synapses in the ventral hippocampus increases anxiety-related behavior (mouse), and ventral CA1 anxiety cells, activated by anxiogenic environments, are required for avoidance (mouse)."},
+    {"id": "vis-orientation", "name": "From the retina to oriented edges", "nodes": ["eyes", "lgn", "v1-orientation", "f-vision"],
+     "desc": "Retinal input reaches V1 through the lateral geniculate nucleus (review). Geniculate neurons connect to simple cells by on or off signature, which implies that orientation selectivity is laid down at the first thalamocortical synapse (cat), and sharpening that tuning by activating PV+ interneurons improves orientation discrimination (mouse)."},
+    {"id": "vis-motion", "name": "Seeing motion", "nodes": ["v1", "mt", "f-vision"],
+     "desc": "In the monkey, V1 and V2 feed area MT (V5); MT lesions raise motion thresholds and single MT neurons match the animal's sensitivity to motion (monkey), and motion activates V5 in humans."},
+    {"id": "vis-ventral", "name": "The ventral stream to faces", "nodes": ["v1", "it", "f-face"],
+     "desc": "The ventral stream runs from striate to inferotemporal cortex and is proposed to play the major role in identifying objects (review), and a population of inferotemporal neurons responds selectively to faces (monkey)."},
+    {"id": "vis-dorsal", "name": "Vision for action", "nodes": ["v1", "parietal", "f-voluntary"],
+     "desc": "The dorsal stream from striate to posterior parietal cortex is proposed to mediate visually guided action (review); a patient who could not perceive the shape, size and orientation of objects grasped them accurately (human)."},
+    {"id": "vis-attention", "name": "Attention from the frontal eye field", "nodes": ["fef", "v4", "f-attention"],
+     "desc": "Stimulating a frontal eye field site below saccade threshold enhances V4 responses at the corresponding location (monkey), and attention filters unattended stimuli from the receptive fields of V4 neurons (monkey)."},
+    {"id": "vis-locomotion", "name": "Running turns up V1", "nodes": ["basal-forebrain", "v1-vip", "v1"],
+     "desc": "Locomotion activates VIP interneurons in V1, largely through nicotinic input from the basal forebrain, and these neurons are needed for the enhancement of V1 visual responses by running (mouse)."},
+    {"id": "vis-critical-period", "name": "Inhibition and the critical period", "nodes": ["gad65", "od-plasticity", "c-amblyopia"],
+     "desc": "Without one isoform of glutamic acid decarboxylase, a deprived eye does not lose its cortical responses, and benzodiazepines restore this plasticity (mouse); abnormal visual experience early in life (experimental strabismus or anisometropia) often causes amblyopia, with reduced cortical binocularity (monkey)."},
+    {"id": "vis-pontine", "name": "Visual cortex to the cerebellum", "nodes": ["visual-cortex", "pontine", "cb-cortex"],
+     "desc": "Extrastriate areas concerned mainly with spatial vision, motion and the peripheral field project to the pontine nuclei (monkey), whose crossed mossy fibers reach the cerebellar cortex."},
+    {"id": "vis-fear-faces", "name": "The amygdala and faces", "nodes": ["amygdala", "ffa", "f-face"],
+     "desc": "The larger fusiform response to fearful than to neutral faces is absent after amygdala damage (human), and the fusiform face area is selectively involved in face perception (human)."}
   ],
   "questions": [
     {
@@ -2698,6 +2915,66 @@
         "Compare memory loss after blockade with the fate of the tagged neurons that hold the memory.",
         "Run controlled trials of reactivation followed by a reconsolidation-blocking treatment in people with persistent fear memories."
       ]
+    },
+    {
+      "id": "q-vis-cerebellum",
+      "title": "Does the cerebellum take part in seeing?",
+      "text": "Corticopontine input to the cerebellum appears to come from extrastriate areas concerned with spatial vision, visual motion and the peripheral field rather than object identification (schmahmann1993), and primary visual cortex sends only a few corticopontine cells (glickstein1985). Most of the human cerebellum is functionally coupled to cerebral association networks, in proportion to their cerebral extent, but primary visual cortex is the exception (buckner2011). Does the cerebellum use these visual signals only to guide movement, or does it also contribute to perception?",
+      "entities": ["visual-cortex", "pontine", "cb-cortex"],
+      "refs": ["schmahmann1993", "glickstein1985", "buckner2011"],
+      "approaches": [
+        "Record mossy fibre and Purkinje cell responses to visual motion in the lobules that receive these pontine inputs.",
+        "Test motion perception and visually guided reaching separately in people with cerebellar lesions.",
+        "Silence the visual corticopontine pathway and measure both perception and visually guided movement."
+      ]
+    },
+    {
+      "id": "q-vis-critical-period",
+      "title": "Can the critical period be reopened to treat amblyopia?",
+      "text": "Ocular dominance plasticity in mouse V1 is confined to a critical period (gordon1996) whose onset may require a threshold level of inhibition (fagiolini2000), and degrading perineuronal-net proteoglycans reactivates it in adult rats (pizzorusso2002). In amblyopic monkeys, cortical binocularity is reduced, but the changes in V1 neurons do not explain the full deficit (kiorpes1998). Would reopening plasticity in adults restore vision through an amblyopic eye, and where beyond V1 does the deficit lie?",
+      "entities": ["od-plasticity", "c-amblyopia", "pnn", "gad65"],
+      "refs": ["gordon1996", "fagiolini2000", "pizzorusso2002", "kiorpes1998"],
+      "approaches": [
+        "Combine treatments that reopen plasticity with patching of the good eye in animal models of amblyopia.",
+        "Record extrastriate areas in amblyopic monkeys.",
+        "Follow binocular responses and visual acuity together during treatment."
+      ]
+    },
+    {
+      "id": "q-vis-perception-action",
+      "title": "Are seeing objects and acting on them separate?",
+      "text": "A patient who could not perceive the shape, orientation and size of objects grasped them accurately (goodale1991), which led to the proposal that a ventral stream identifies objects and a dorsal stream guides action (goodale1992). In healthy people, face and location matching engage separate occipitotemporal and parietal regions (haxby1991), and mouse higher visual areas may form motion- and pattern-related groups (marshel2011). How strictly are the streams separated, and do mice have the same division?",
+      "entities": ["parietal", "it", "f-voluntary", "mouse-hva"],
+      "refs": ["goodale1991", "goodale1992", "haxby1991", "marshel2011"],
+      "approaches": [
+        "Test perception and grasping of the same objects after selective lesions of each stream.",
+        "Record parietal and inferotemporal neurons while animals both judge and grasp objects.",
+        "Silence groups of mouse higher visual areas during visually guided behaviour and during discrimination."
+      ]
+    },
+    {
+      "id": "q-vis-prediction",
+      "title": "What does V1 predict?",
+      "text": "In mice, running more than doubles V1 visual responses (niell2010) through VIP interneurons recruited by basal forebrain input (fu2014), layer 2/3 neurons signal mismatch between actual and expected visual flow (keller2012), and V1 neurons combine visual speed and run speed (saleem2013). Where do the motor-related predictions come from, and do primate V1 responses change in the same way?",
+      "entities": ["v1-pyr", "v1-vip", "v1"],
+      "refs": ["niell2010", "fu2014", "keller2012", "saleem2013"],
+      "approaches": [
+        "Silence candidate sources of motor-related input to V1 and measure mismatch responses.",
+        "Record V1 in monkeys or humans during self-generated versus passively viewed visual flow.",
+        "Relate mismatch signals to learning of new visuomotor couplings."
+      ]
+    },
+    {
+      "id": "q-vis-faces",
+      "title": "How do face cells relate to face areas?",
+      "text": "Inferotemporal cortex holds a population of face-selective neurons (desimone1984), almost all neurons in the largest face-selective fMRI region of macaques are face selective (tsao2006), and the human fusiform face area responds selectively to faces (kanwisher1997). The larger fusiform response to fearful faces depends on the amygdala (vuilleumier2004). How do face-selective neurons map onto the face areas seen with fMRI in each species, and how does the amygdala tune them?",
+      "entities": ["ffa", "it", "f-face"],
+      "refs": ["desimone1984", "tsao2006", "kanwisher1997", "vuilleumier2004"],
+      "approaches": [
+        "Record single neurons in fMRI-defined face areas of neurosurgical patients.",
+        "Compare face-area responses to fearful faces before and after amygdala inactivation in monkeys.",
+        "Map face-selective neurons and face areas in the same animals."
+      ]
     }
   ],
   "flatmap": {
@@ -2932,7 +3209,24 @@
         "cea-som",
         "cea-crf",
         "amy-ltp",
-        "la-creb"
+        "la-creb",
+        "visual-cortex",
+        "v1",
+        "lgn",
+        "mt",
+        "v4",
+        "it",
+        "ffa",
+        "mouse-hva",
+        "fef",
+        "v1-orientation",
+        "v1-pyr",
+        "v1-pv",
+        "v1-sst",
+        "v1-vip",
+        "od-plasticity",
+        "gad65",
+        "pnn"
       ],
       "C": ["gut", "ser-neurons", "drn"]
     },
@@ -2981,7 +3275,16 @@
         "cea-crf": "amygdala",
         "amy-ltp": "amygdala",
         "la-creb": "amygdala",
-        "mgb": "thalamus"
+        "mgb": "thalamus",
+        "v1-orientation": "v1",
+        "v1-pyr": "v1",
+        "v1-pv": "v1",
+        "v1-sst": "v1",
+        "v1-vip": "v1",
+        "od-plasticity": "v1",
+        "gad65": "v1",
+        "pnn": "v1",
+        "lgn": "thalamus"
       },
       "mouse": {
         "zone-vermis": "vermis-post",
@@ -3013,7 +3316,15 @@
         "cea-som": "cea",
         "cea-crf": "cea",
         "amy-ltp": "la",
-        "la-creb": "la"
+        "la-creb": "la",
+        "v1-orientation": "v1",
+        "v1-pyr": "v1",
+        "v1-pv": "v1",
+        "v1-sst": "v1",
+        "v1-vip": "v1",
+        "od-plasticity": "v1",
+        "gad65": "v1",
+        "pnn": "v1"
       },
       "macaque": {
         "zone-vermis": "vermis-post",
@@ -3052,7 +3363,15 @@
         "cea-crf": "cea",
         "amy-ltp": "la",
         "la-creb": "la",
-        "itc": "amygdala"
+        "itc": "amygdala",
+        "v1-orientation": "v1",
+        "v1-pyr": "v1",
+        "v1-pv": "v1",
+        "v1-sst": "v1",
+        "v1-vip": "v1",
+        "od-plasticity": "v1",
+        "gad65": "v1",
+        "pnn": "v1"
       }
     },
     "groups": {"cb-cortex": "cerebellum", "dcn": "nuclei"},
@@ -3167,7 +3486,15 @@
       {"id": "amy-pfc", "region": "amygdala", "name": "Amygdala and prefrontal cortex",
        "desc": "Amygdala connections with orbital and cingulate cortex (monkey), the medial prefrontal theta input that marks safety (mouse), the proposed amygdala → prelimbic route for fear, and the basolateral projection to prelimbic cortex that increases freezing (rat).", "links": ["amygdala>ofc", "acc>amygdala", "sgacc>amygdala", "mpfc>amygdala", "amygdala>mpfc-pl", "bla>mpfc-pl"], "view": "amygdala"},
       {"id": "amy-cb", "region": "amygdala", "name": "Cerebellum and amygdala",
-       "desc": "A fastigial → parafascicular thalamus pathway, which may relay to the amygdala, modulates anxiety, and glutamatergic dentate neurons drive PKCδ+ amygdala neurons to reduce anxiety during exercise (mouse).", "links": ["fastigial>thalamus", "thalamus>amygdala", "dentate>amygdala"], "view": "amygdala"}
+       "desc": "A fastigial → parafascicular thalamus pathway, which may relay to the amygdala, modulates anxiety, and glutamatergic dentate neurons drive PKCδ+ amygdala neurons to reduce anxiety during exercise (mouse).", "links": ["fastigial>thalamus", "thalamus>amygdala", "dentate>amygdala"], "view": "amygdala"},
+      {"id": "vis-geniculate", "region": "visual-cortex", "name": "From the eye to visual cortex",
+       "desc": "Retinal input reaches V1 through the lateral geniculate nucleus, and in the monkey V1 and V2 feed areas V4 and MT (V5). In the human brain the geniculate is shown in the thalamus; V4 and MT are not placed in the mouse brain.", "links": ["eyes>lgn", "lgn>v1", "v1>mt", "v1>v4"], "view": "visual-cortex"},
+      {"id": "vis-streams", "region": "visual-cortex", "name": "Ventral and dorsal streams",
+       "desc": "The ventral stream runs from striate to inferotemporal cortex and is proposed to play the major role in identifying objects, and the dorsal stream runs to posterior parietal cortex and is proposed to mediate visually guided action (review). In the mouse, V1 projects to at least nine higher visual areas (mouse).", "links": ["v1>it", "v1>parietal", "v1>mouse-hva"], "view": "visual-cortex"},
+      {"id": "vis-topdown", "region": "visual-cortex", "name": "Attention, emotion and running",
+       "desc": "Stimulating the frontal eye field enhances V4 responses at the corresponding location (monkey); amygdala damage abolishes the larger fusiform response to fearful faces (human); and basal forebrain input recruits VIP interneurons that raise V1 responses during running (mouse).", "links": ["fef>v4", "amygdala>ffa", "basal-forebrain>v1-vip"], "view": "visual-cortex"},
+      {"id": "vis-cb", "region": "visual-cortex", "name": "Visual cortex and cerebellum",
+       "desc": "Extrastriate areas concerned mainly with spatial vision, motion and the peripheral field project to the pontine nuclei, whereas primary visual cortex sends only a few corticopontine cells (monkey); the pontine nuclei send crossed mossy fibers to the cerebellar cortex.", "links": ["v1>pontine", "visual-cortex>pontine", "pontine>cb-cortex"], "view": "visual-cortex"}
     ],
     "composite": {
       "motor-cortex": ["m1", "premotor"],
@@ -3176,7 +3503,8 @@
       "basal-ganglia": ["striatum", "nac", "gpe", "gpi", "stn", "snc", "snr"],
       "striatum": ["nac"],
       "hippocampus": ["dg", "ca3", "ca2", "ca1", "subiculum", "dhpc", "vhpc"],
-      "amygdala": ["la", "bla", "cea", "itc", "mea"]
+      "amygdala": ["la", "bla", "cea", "itc", "mea"],
+      "visual-cortex": ["v1", "mouse-hva", "v4", "mt", "it", "ffa"]
     }
   }
 }

@@ -503,6 +503,11 @@ def extra_anchors(species, meshes, helpers):
         a['s1'] = sided([pr[0], pr[1], pr[2] - 0.9])                     # postcentral gyrus, behind M1
         ulo, _, _ = bbox(meshes, 'putamen')
         a['basal-forebrain'] = sided([0.75, ulo[1], (right('accumbens')[2] + right('amygdala')[2]) / 2])   # below the striatum, between accumbens and amygdala
+        # MT (V5) lies in lateral occipitotemporal cortex, which the Allen meshes here do not segment: halfway between the
+        # inferior occipital gyrus and the posterior fifth of the middle temporal gyrus (right hemisphere)
+        iv, tv = helpers['iog'][3], helpers['mtg'][3]
+        iv, tv = iv[iv[:, 0] > 0], tv[tv[:, 0] > 0]
+        a['mt'] = sided((iv.mean(0) + tv[tv[:, 2] <= np.percentile(tv[:, 2], 20)].mean(0)) / 2)
         start = np.array([0.0, dlo[1] + 0.1, dc[2]])
         spine = [start, start + [0, -1.6, -0.15], start + [0, -3.2, -0.25]]
     elif species == 'macaque':

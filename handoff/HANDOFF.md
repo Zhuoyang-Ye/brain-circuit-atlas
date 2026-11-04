@@ -39,7 +39,7 @@ The user approved six new regions in this order and asked "Can you simply just d
 1. Basal ganglia: **done**, on branch `wip/regions` (see section 3).
 2. Hippocampus: **done**, on `wip/regions` (section 6).
 3. Amygdala: **done** 2026-11-04, on `wip/regions` (section 6a).
-4. Visual cortex.
+4. Visual cortex: **built 2026-11-04, final audit pending** (section 6b).
 5. Insula.
 6. Olfactory.
 
@@ -246,6 +246,20 @@ Follow `skill/.../references/adding-a-region.md`. In short:
 6. **[done 2026-11-04]** Close-out: smoke tests clean in both themes after the fixes; backups in the session scratchpad; report given. Original: **Close out.** Back up the result. Update `$SCRATCH/expansion/PLAN.md` if you have it, refresh this file and the user's memory (if local), and give the brief report: the counts above, the exclusions, the paper-tag decisions, and the AI-drafted caveat.
 
 Then continue with the visual cortex (section 7).
+
+## 6b. Visual cortex (2026-11-04, cloud session)
+
+**Literature** (`handoff/visual/keys.json`, `draft_papers.json`, `queries.json`, `knowledge_before_visual.json`). PMIDs found with `pubmed_abs.py find` (author + year + title words) and verified by title, first author and year; abstracts read in full. 45 papers. Excluded: hubel1959, hubel1962, wiesel1963 and hubel1977 (no PubMed abstract and their titles state no claim, as cahill1995), salzman1990 (Nature erratum 346:589 has no PubMed record and nature.com was unreachable, as Li 2016), huberman2011 (generic review). weiskrantz1974 has no abstract; its title states a claim, so its finding starts "Per its title (PubMed lists no abstract):" (MeSH: Humans). No other paper lists an erratum. Paper tags: moore2003 also `prefrontal`, vuilleumier2004 also `amygdala`, schmahmann1993 and glickstein1985 also `cerebellum`.
+
+**Content** (`handoff/scripts/apply_vis.py`, applied): region `visual-cortex` (view `visual-cortex`), 22 tagged entities (visual-cortex, v1, lgn, mt, v4, it, ffa, mouse-hva, v1-orientation, v1-pyr, v1-pv, v1-sst, v1-vip, od-plasticity, gad65, pnn, c-amblyopia, c-cortical-blindness, c-blind, c-migraine, c-pca, c-akinetopsia), 3 shared (f-vision, f-face, fef), sentences added to pontine, parietal, f-attention, basal-forebrain and amygdala; 37 links, 9 chains, 5 questions, 4 circuits (vis-geniculate, vis-streams, vis-topdown, vis-cb). Wording rules followed: hensch1998's abstract does not name GAD65 (only fagiolini2000 does); zihl1983 localizes to "lateral temporo-occipital cortex", not MT; goodale1992's streams are "proposed"; reid1995 "implies"; tsao2006 does not say where its face region is, so it is not cited for IT.
+
+**Region check:** 0 build warnings; no region lost anything; gains are the intended bridges only (cerebellum: v1, visual-cortex, v1>pontine, visual-cortex>pontine, vis-pontine, q-vis-cerebellum, schmahmann1993, glickstein1985; prefrontal: fef, v4, fef>v4, moore2003; amygdala: ffa, f-face, amygdala>ffa, vis-fear-faces, vuilleumier2004).
+
+**3D:** human `v1-occ` [12149 occipital pole, 12150 cuneus, 12151 lingual] → v1; `fug-o` 12152 → v4; `fug-t` 12143 → ffa; `itg` 12142 → it; helpers `iog` 12153 and `mtg` 12141 place the approximate `mt` anchor (new code in `build_meshes.py`); lgn aliased to thalamus (no LGN in the Allen human atlas). Mouse `visp` 385; `hva` [409 VISl, 402 VISal, 394 VISam, 533 VISpm, 312782574 VISli, 425 VISpl] (VISa and VISrl are inside the existing PTLp 22 parietal mesh); `lgd` 170. Macaque CHARM V1, V4, MT, ITC (TE+TEO), area_8A (FEF; a sibling of dlPFC, no overlap); SARM DLG. Cellular entities alias to v1. Mouse CCF ids were verified from the BrainGlobe allen_mouse_100um structures.json. Rebuilding with the cloud venv reproduced the old meshes (mouse byte-identical; human/macaque centroid shifts ≤ 0.012 units). Presets `VIEWS.*['visual-cortex']` tuned from screenshots. `circuits_dump.js` shows no other circuit changed except "Anatomy only" (new structures) and cerebellum "All" (the two visual→pontine bridges).
+
+**Tests:** smoke clean in 7 regions × 2 themes; trace runs for vis-geniculate (3 steps in primates, 2 in mouse) and vis-cb (2 steps); none for the parallel vis-streams and vis-topdown.
+
+**Still to do:** final audit read of every new sentence against its abstracts (`compact_audit.py handoff/visual/knowledge_before_visual.json --region visual-cortex`), then the region report. Then the insula (section 7).
 
 ## 7. Remaining regions: what is known so far
 

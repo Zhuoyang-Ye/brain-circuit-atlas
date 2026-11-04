@@ -104,6 +104,22 @@
   "volume": "97",
   "year": 2000
  },
+ "10724170": {
+  "authors": [
+   "Fagiolini M",
+   "Hensch TK"
+  ],
+  "doi": "10.1038/35004582",
+  "issue": "6774",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "183-6",
+  "pmc": "",
+  "pmid": "10724170",
+  "title": "Inhibitory threshold for critical-period activation in primary visual cortex",
+  "volume": "404",
+  "year": 2000
+ },
  "10774731": {
   "authors": [
    "Wang YT",
@@ -156,6 +172,22 @@
   "pmid": "10818167",
   "title": "Medial frontal cortex mediates perceptual attentional set shifting in the rat",
   "volume": "20",
+  "year": 2000
+ },
+ "10845061": {
+  "authors": [
+   "Hendry SH",
+   "Reid RC"
+  ],
+  "doi": "10.1146/annurev.neuro.23.1.127",
+  "issue": "",
+  "journal": "Annu Rev Neurosci",
+  "journalFull": "Annual review of neuroscience",
+  "pages": "127-53",
+  "pmc": "",
+  "pmid": "10845061",
+  "title": "The koniocellular pathway in primate vision",
+  "volume": "23",
   "year": 2000
  },
  "10845062": {
@@ -259,6 +291,32 @@
   "pmid": "11283309",
   "title": "An integrative theory of prefrontal cortex function",
   "volume": "24",
+  "year": 2001
+ },
+ "11287655": {
+  "authors": [
+   "Hadjikhani N",
+   "Sanchez Del Rio M",
+   "Wu O",
+   "Schwartz D",
+   "Bakker D",
+   "Fischl B",
+   "Kwong KK",
+   "Cutrer FM",
+   "Rosen BR",
+   "Tootell RB",
+   "Sorensen AG",
+   "Moskowitz MA"
+  ],
+  "doi": "10.1073/pnas.071582498",
+  "issue": "8",
+  "journal": "Proc Natl Acad Sci U S A",
+  "journalFull": "Proceedings of the National Academy of Sciences of the United States of America",
+  "pages": "4687-92",
+  "pmc": "PMC31895",
+  "pmid": "11287655",
+  "title": "Mechanisms of migraine aura revealed by functional MRI in human visual cortex",
+  "volume": "98",
   "year": 2001
  },
  "11301030": {
@@ -552,6 +610,42 @@
   "volume": "420",
   "year": 2002
  },
+ "12424383": {
+  "authors": [
+   "Pizzorusso T",
+   "Medini P",
+   "Berardi N",
+   "Chierzi S",
+   "Fawcett JW",
+   "Maffei L"
+  ],
+  "doi": "10.1126/science.1072699",
+  "issue": "5596",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "1248-51",
+  "pmc": "",
+  "pmid": "12424383",
+  "title": "Reactivation of ocular dominance plasticity in the adult visual cortex",
+  "volume": "298",
+  "year": 2002
+ },
+ "12540901": {
+  "authors": [
+   "Moore T",
+   "Armstrong KM"
+  ],
+  "doi": "10.1038/nature01341",
+  "issue": "6921",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "370-3",
+  "pmc": "",
+  "pmid": "12540901",
+  "title": "Selective gating of visual signals by microstimulation of frontal cortex",
+  "volume": "421",
+  "year": 2003
+ },
  "12631569": {
   "authors": [
    "Killcross S",
@@ -716,6 +810,40 @@
   "volume": "51",
   "year": 1992
  },
+ "1374953": {
+  "authors": [
+   "Goodale MA",
+   "Milner AD"
+  ],
+  "doi": "10.1016/0166-2236(92)90344-8",
+  "issue": "1",
+  "journal": "Trends Neurosci",
+  "journalFull": "Trends in neurosciences",
+  "pages": "20-5",
+  "pmc": "",
+  "pmid": "1374953",
+  "title": "Separate visual pathways for perception and action",
+  "volume": "15",
+  "year": 1992
+ },
+ "1464765": {
+  "authors": [
+   "Britten KH",
+   "Shadlen MN",
+   "Newsome WT",
+   "Movshon JA"
+  ],
+  "doi": "10.1523/JNEUROSCI.12-12-04745.1992",
+  "issue": "12",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "4745-65",
+  "pmc": "PMC6575768",
+  "pmid": "1464765",
+  "title": "The analysis of visual motion: a comparison of neuronal and psychophysical performance",
+  "volume": "12",
+  "year": 1992
+ },
  "14750976": {
   "authors": [
    "Yin HH",
@@ -856,6 +984,25 @@
   "pmid": "15470143",
   "title": "Molecular, topographic, and functional organization of the cerebellar cortex: a study with combined aldolase C and olivocerebellar labeling",
   "volume": "24",
+  "year": 2004
+ },
+ "15494727": {
+  "authors": [
+   "Vuilleumier P",
+   "Richardson MP",
+   "Armony JL",
+   "Driver J",
+   "Dolan RJ"
+  ],
+  "doi": "10.1038/nn1341",
+  "issue": "11",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "1271-8",
+  "pmc": "",
+  "pmid": "15494727",
+  "title": "Distant influences of amygdala lesion on visual cortical activation during emotional face processing",
+  "volume": "7",
   "year": 2004
  },
  "15537737": {
@@ -1332,6 +1479,24 @@
   "volume": "25",
   "year": 2005
  },
+ "16456083": {
+  "authors": [
+   "Tsao DY",
+   "Freiwald WA",
+   "Tootell RB",
+   "Livingstone MS"
+  ],
+  "doi": "10.1126/science.1119983",
+  "issue": "5761",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "670-4",
+  "pmc": "PMC2678572",
+  "pmid": "16456083",
+  "title": "A cortical region consisting entirely of face-selective cells",
+  "volume": "311",
+  "year": 2006
+ },
  "16482160": {
   "authors": [
    "Paton JJ",
@@ -1501,6 +1666,26 @@
   "pmc": "",
   "pmid": "16838014",
   "title": "Neuronal ensemble control of prosthetic devices by a human with tetraplegia",
+  "volume": "442",
+  "year": 2006
+ },
+ "16906137": {
+  "authors": [
+   "Ohki K",
+   "Chung S",
+   "Kara P",
+   "Hübener M",
+   "Bonhoeffer T",
+   "Reid RC"
+  ],
+  "doi": "10.1038/nature05019",
+  "issue": "7105",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "925-8",
+  "pmc": "",
+  "pmid": "16906137",
+  "title": "Highly ordered arrangement of single neurons in orientation pinwheels",
   "volume": "442",
   "year": 2006
  },
@@ -1741,6 +1926,22 @@
   "pmid": "17347275",
   "title": "Auto-inhibition of rat parallel fibre-Purkinje cell synapses by activity-dependent adenosine release",
   "volume": "581",
+  "year": 2007
+ },
+ "17366604": {
+  "authors": [
+   "Wang Q",
+   "Burkhalter A"
+  ],
+  "doi": "10.1002/cne.21286",
+  "issue": "3",
+  "journal": "J Comp Neurol",
+  "journalFull": "The Journal of comparative neurology",
+  "pages": "339-57",
+  "pmc": "",
+  "pmid": "17366604",
+  "title": "Area map of mouse visual cortex",
+  "volume": "502",
   "year": 2007
  },
  "17377536": {
@@ -2012,6 +2213,23 @@
   "volume": "27",
   "year": 2007
  },
+ "17964252": {
+  "authors": [
+   "Wandell BA",
+   "Dumoulin SO",
+   "Brewer AA"
+  ],
+  "doi": "10.1016/j.neuron.2007.10.012",
+  "issue": "2",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "366-83",
+  "pmc": "",
+  "pmid": "17964252",
+  "title": "Visual field maps in human cortex",
+  "volume": "56",
+  "year": 2007
+ },
  "18024590": {
   "authors": [
    "Shaw P",
@@ -2035,6 +2253,22 @@
   "title": "Attention-deficit/hyperactivity disorder is characterized by a delay in cortical maturation",
   "volume": "104",
   "year": 2007
+ },
+ "1822724": {
+  "authors": [
+   "Felleman DJ",
+   "Van Essen DC"
+  ],
+  "doi": "10.1093/cercor/1.1.1-a",
+  "issue": "1",
+  "journal": "Cereb Cortex",
+  "journalFull": "Cerebral cortex (New York, N.Y. : 1991)",
+  "pages": "1-47",
+  "pmc": "",
+  "pmid": "1822724",
+  "title": "Distributed hierarchical processing in the primate cerebral cortex",
+  "volume": "1",
+  "year": 1991
  },
  "18246064": {
   "authors": [
@@ -2176,6 +2410,22 @@
   "pmid": "18615015",
   "title": "Switching on and off fear by distinct neuronal circuits",
   "volume": "454",
+  "year": 2008
+ },
+ "18650330": {
+  "authors": [
+   "Niell CM",
+   "Stryker MP"
+  ],
+  "doi": "10.1523/JNEUROSCI.0623-08.2008",
+  "issue": "30",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "7520-36",
+  "pmc": "PMC3040721",
+  "pmid": "18650330",
+  "title": "Highly selective receptive fields in mouse visual cortex",
+  "volume": "28",
   "year": 2008
  },
  "18687967": {
@@ -2711,6 +2961,24 @@
   "volume": "49",
   "year": 2010
  },
+ "1986306": {
+  "authors": [
+   "Goodale MA",
+   "Milner AD",
+   "Jakobson LS",
+   "Carey DP"
+  ],
+  "doi": "10.1038/349154a0",
+  "issue": "6305",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "154-6",
+  "pmc": "",
+  "pmid": "1986306",
+  "title": "A neurological dissociation between perceiving objects and grasping them",
+  "volume": "349",
+  "year": 1991
+ },
  "19921532": {
   "authors": [
    "Yu L",
@@ -2769,6 +3037,49 @@
   "volume": "462",
   "year": 2009
  },
+ "2000370": {
+  "authors": [
+   "Haxby JV",
+   "Grady CL",
+   "Horwitz B",
+   "Ungerleider LG",
+   "Mishkin M",
+   "Carson RE",
+   "Herscovitch P",
+   "Schapiro MB",
+   "Rapoport SI"
+  ],
+  "doi": "10.1073/pnas.88.5.1621",
+  "issue": "5",
+  "journal": "Proc Natl Acad Sci U S A",
+  "journalFull": "Proceedings of the National Academy of Sciences of the United States of America",
+  "pages": "1621-5",
+  "pmc": "PMC51076",
+  "pmid": "2000370",
+  "title": "Dissociation of object and spatial visual processing pathways in human extrastriate cortex",
+  "volume": "88",
+  "year": 1991
+ },
+ "2002358": {
+  "authors": [
+   "Zeki S",
+   "Watson JD",
+   "Lueck CJ",
+   "Friston KJ",
+   "Kennard C",
+   "Frackowiak RS"
+  ],
+  "doi": "10.1523/JNEUROSCI.11-03-00641.1991",
+  "issue": "3",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "641-9",
+  "pmc": "PMC6575357",
+  "pmid": "2002358",
+  "title": "A direct demonstration of functional specialization in human visual cortex",
+  "volume": "11",
+  "year": 1991
+ },
  "20142490": {
   "authors": [
    "De Martino B",
@@ -2799,6 +3110,22 @@
   "pmc": "PMC2822727",
   "pmid": "20152109",
   "title": "Are the dorsal and ventral hippocampus functionally distinct structures?",
+  "volume": "65",
+  "year": 2010
+ },
+ "20188652": {
+  "authors": [
+   "Niell CM",
+   "Stryker MP"
+  ],
+  "doi": "10.1016/j.neuron.2010.01.033",
+  "issue": "4",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "472-9",
+  "pmc": "PMC3184003",
+  "pmid": "20188652",
+  "title": "Modulation of visual responses by behavioral state in mouse visual cortex",
   "volume": "65",
   "year": 2010
  },
@@ -3288,6 +3615,26 @@
   "volume": "250",
   "year": 1990
  },
+ "21478872": {
+  "authors": [
+   "Ko H",
+   "Hofer SB",
+   "Pichler B",
+   "Buchanan KA",
+   "Sjöström PJ",
+   "Mrsic-Flogel TD"
+  ],
+  "doi": "10.1038/nature09880",
+  "issue": "7345",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "87-91",
+  "pmc": "PMC3089591",
+  "pmid": "21478872",
+  "title": "Functional specificity of local synaptic connections in neocortical networks",
+  "volume": "473",
+  "year": 2011
+ },
  "21482355": {
   "authors": [
    "Schonewille M",
@@ -3555,6 +3902,24 @@
   "volume": "334",
   "year": 2011
  },
+ "22196338": {
+  "authors": [
+   "Marshel JH",
+   "Garrett ME",
+   "Nauhaus I",
+   "Callaway EM"
+  ],
+  "doi": "10.1016/j.neuron.2011.12.004",
+  "issue": "6",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "1040-54",
+  "pmc": "PMC3248795",
+  "pmid": "22196338",
+  "title": "Functional specialization of seven mouse visual cortical areas",
+  "volume": "72",
+  "year": 2011
+ },
  "22323747": {
   "authors": [
    "Zesiewicz TA",
@@ -3641,6 +4006,23 @@
   "volume": "336",
   "year": 2012
  },
+ "22681686": {
+  "authors": [
+   "Keller GB",
+   "Bonhoeffer T",
+   "Hübener M"
+  ],
+  "doi": "10.1016/j.neuron.2012.03.040",
+  "issue": "5",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "809-15",
+  "pmc": "",
+  "pmid": "22681686",
+  "title": "Sensorimotor mismatch signals in primary visual cortex of the behaving mouse",
+  "volume": "74",
+  "year": 2012
+ },
  "22722855": {
   "authors": [
    "Churchland MM",
@@ -3708,6 +4090,32 @@
   "volume": "488",
   "year": 2012
  },
+ "22878719": {
+  "authors": [
+   "Lee SH",
+   "Kwan AC",
+   "Zhang S",
+   "Phoumthipphavong V",
+   "Flannery JG",
+   "Masmanidis SC",
+   "Taniguchi H",
+   "Huang ZJ",
+   "Zhang F",
+   "Boyden ES",
+   "Deisseroth K",
+   "Dan Y"
+  ],
+  "doi": "10.1038/nature11312",
+  "issue": "7411",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "379-83",
+  "pmc": "PMC3422431",
+  "pmid": "22878719",
+  "title": "Activation of specific interneurons improves V1 feature selectivity and visual perception",
+  "volume": "488",
+  "year": 2012
+ },
  "22895474": {
   "authors": [
    "Gao Z",
@@ -3723,6 +4131,25 @@
   "pmid": "22895474",
   "title": "Distributed synergistic plasticity and cerebellar learning",
   "volume": "13",
+  "year": 2012
+ },
+ "23060193": {
+  "authors": [
+   "Adesnik H",
+   "Bruns W",
+   "Taniguchi H",
+   "Huang ZJ",
+   "Scanziani M"
+  ],
+  "doi": "10.1038/nature11526",
+  "issue": "7419",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "226-31",
+  "pmc": "PMC3621107",
+  "pmid": "23060193",
+  "title": "A neural circuit for spatial summation in visual cortex",
+  "volume": "490",
   "year": 2012
  },
  "23125108": {
@@ -4296,6 +4723,25 @@
   "volume": "86",
   "year": 2014
  },
+ "24185423": {
+  "authors": [
+   "Saleem AB",
+   "Ayaz A",
+   "Jeffery KJ",
+   "Harris KD",
+   "Carandini M"
+  ],
+  "doi": "10.1038/nn.3567",
+  "issue": "12",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "1864-9",
+  "pmc": "PMC3926520",
+  "pmid": "24185423",
+  "title": "Integration of visual motion and locomotion in mouse visual cortex",
+  "volume": "16",
+  "year": 2013
+ },
  "24201281": {
   "authors": [
    "Mante V",
@@ -4460,6 +4906,28 @@
   "pmid": "24572357",
   "title": "The hippocampal CA2 region is essential for social memory",
   "volume": "508",
+  "year": 2014
+ },
+ "24630718": {
+  "authors": [
+   "Fu Y",
+   "Tucciarone JM",
+   "Espinosa JS",
+   "Sheng N",
+   "Darcy DP",
+   "Nicoll RA",
+   "Huang ZJ",
+   "Stryker MP"
+  ],
+  "doi": "10.1016/j.cell.2014.01.050",
+  "issue": "6",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "1139-1152",
+  "pmc": "PMC4041382",
+  "pmid": "24630718",
+  "title": "A cortical circuit for gain control by behavioral state",
+  "volume": "156",
   "year": 2014
  },
  "2466057": {
@@ -6011,6 +6479,22 @@
   "title": "Selective impairment of learning and blockade of long-term potentiation by an N-methyl-D-aspartate receptor antagonist, AP5",
   "volume": "319",
   "year": 1986
+ },
+ "28746815": {
+  "authors": [
+   "Glickfeld LL",
+   "Olsen SR"
+  ],
+  "doi": "10.1146/annurev-vision-102016-061331",
+  "issue": "",
+  "journal": "Annu Rev Vis Sci",
+  "journalFull": "Annual review of vision science",
+  "pages": "251-273",
+  "pmc": "",
+  "pmid": "28746815",
+  "title": "Higher-Order Areas of the Mouse Visual Cortex",
+  "volume": "3",
+  "year": 2017
  },
  "28844644": {
   "authors": [
@@ -7706,6 +8190,22 @@
   "volume": "117",
   "year": 2020
  },
+ "3283936": {
+  "authors": [
+   "Livingstone M",
+   "Hubel D"
+  ],
+  "doi": "10.1126/science.3283936",
+  "issue": "4853",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "740-9",
+  "pmc": "",
+  "pmid": "3283936",
+  "title": "Segregation of form, color, movement, and depth: anatomy, physiology, and perception",
+  "volume": "240",
+  "year": 1988
+ },
  "33060630": {
   "authors": [
    "Frontera JL",
@@ -7862,6 +8362,39 @@
   "title": "Neuropeptide Y (NPY) intranasal delivery alleviates Machado-Joseph disease",
   "volume": "11",
   "year": 2021
+ },
+ "3385495": {
+  "authors": [
+   "Newsome WT",
+   "Paré EB"
+  ],
+  "doi": "10.1523/JNEUROSCI.08-06-02201.1988",
+  "issue": "6",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "2201-11",
+  "pmc": "PMC6569328",
+  "pmid": "3385495",
+  "title": "A selective impairment of motion perception following lesions of the middle temporal visual area (MT)",
+  "volume": "8",
+  "year": 1988
+ },
+ "3390033": {
+  "authors": [
+   "Benson DF",
+   "Davis RJ",
+   "Snyder BD"
+  ],
+  "doi": "10.1001/archneur.1988.00520310107024",
+  "issue": "7",
+  "journal": "Arch Neurol",
+  "journalFull": "Archives of neurology",
+  "pages": "789-93",
+  "pmc": "",
+  "pmid": "3390033",
+  "title": "Posterior cortical atrophy",
+  "volume": "45",
+  "year": 1988
  },
  "33981047": {
   "authors": [
@@ -9353,6 +9886,23 @@
   "volume": "331",
   "year": 1985
  },
+ "3998215": {
+  "authors": [
+   "Glickstein M",
+   "May JG 3rd",
+   "Mercier BE"
+  ],
+  "doi": "10.1002/cne.902350306",
+  "issue": "3",
+  "journal": "J Comp Neurol",
+  "journalFull": "The Journal of comparative neurology",
+  "pages": "343-59",
+  "pmc": "",
+  "pmid": "3998215",
+  "title": "Corticopontine projection in the macaque: the distribution of labelled cortical cells after large injections of horseradish peroxidase in the pontine nuclei",
+  "volume": "235",
+  "year": 1985
+ },
  "39984491": {
   "authors": [
    "Lee AS",
@@ -9378,6 +9928,22 @@
   "title": "Cerebellar output neurons can impair non-motor behaviors by altering development of extracerebellar connectivity",
   "volume": "16",
   "year": 2025
+ },
+ "4023713": {
+  "authors": [
+   "Moran J",
+   "Desimone R"
+  ],
+  "doi": "10.1126/science.4023713",
+  "issue": "4715",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "782-4",
+  "pmc": "",
+  "pmid": "4023713",
+  "title": "Selective attention gates visual processing in the extrastriate cortex",
+  "volume": "229",
+  "year": 1985
  },
  "40344058": {
   "authors": [
@@ -9783,6 +10349,24 @@
   "volume": "184",
   "year": 1973
  },
+ "4434190": {
+  "authors": [
+   "Weiskrantz L",
+   "Warrington EK",
+   "Sanders MD",
+   "Marshall J"
+  ],
+  "doi": "10.1093/brain/97.1.709",
+  "issue": "4",
+  "journal": "Brain",
+  "journalFull": "Brain : a journal of neurology",
+  "pages": "709-28",
+  "pmc": "",
+  "pmid": "4434190",
+  "title": "Visual capacity in the hemianopic field following a restricted occipital ablation",
+  "volume": "97",
+  "year": 1974
+ },
  "4727084": {
   "authors": [
    "Bliss TV",
@@ -9798,6 +10382,22 @@
   "title": "Long-lasting potentiation of synaptic transmission in the dentate area of the anaesthetized rabbit following stimulation of the perforant path",
   "volume": "232",
   "year": 1973
+ },
+ "4966457": {
+  "authors": [
+   "Hubel DH",
+   "Wiesel TN"
+  ],
+  "doi": "10.1113/jphysiol.1968.sp008455",
+  "issue": "1",
+  "journal": "J Physiol",
+  "journalFull": "The Journal of physiology",
+  "pages": "215-43",
+  "pmc": "PMC1557912",
+  "pmid": "4966457",
+  "title": "Receptive fields and functional architecture of monkey striate cortex",
+  "volume": "195",
+  "year": 1968
  },
  "4998337": {
   "authors": [
@@ -9880,6 +10480,24 @@
   "volume": "33",
   "year": 1982
  },
+ "6470767": {
+  "authors": [
+   "Desimone R",
+   "Albright TD",
+   "Gross CG",
+   "Bruce C"
+  ],
+  "doi": "10.1523/JNEUROSCI.04-08-02051.1984",
+  "issue": "8",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "2051-62",
+  "pmc": "PMC6564959",
+  "pmid": "6470767",
+  "title": "Stimulus-selective properties of inferior temporal neurons in the macaque",
+  "volume": "4",
+  "year": 1984
+ },
  "6474172": {
   "authors": [
    "Hyman BT",
@@ -9930,6 +10548,23 @@
   "pmid": "6823561",
   "title": "Chronic Parkinsonism in humans due to a product of meperidine-analog synthesis",
   "volume": "219",
+  "year": 1983
+ },
+ "6850272": {
+  "authors": [
+   "Zihl J",
+   "von Cramon D",
+   "Mai N"
+  ],
+  "doi": "10.1093/brain/106.2.313",
+  "issue": "",
+  "journal": "Brain",
+  "journalFull": "Brain : a journal of neurology",
+  "pages": "313-40",
+  "pmc": "",
+  "pmid": "6850272",
+  "title": "Selective disturbance of movement vision after bilateral brain damage",
+  "volume": "106 (Pt 2)",
   "year": 1983
  },
  "7088155": {
@@ -9984,6 +10619,22 @@
   "pmid": "7472442",
   "title": "Impaired fear conditioning following unilateral temporal lobectomy in humans",
   "volume": "15",
+  "year": 1995
+ },
+ "7477347": {
+  "authors": [
+   "Reid RC",
+   "Alonso JM"
+  ],
+  "doi": "10.1038/378281a0",
+  "issue": "6554",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "281-4",
+  "pmc": "",
+  "pmid": "7477347",
+  "title": "Specificity of monosynaptic connections from thalamus to visual cortex",
+  "volume": "378",
   "year": 1995
  },
  "7576647": {
@@ -10084,6 +10735,28 @@
   "pmid": "7736576",
   "title": "Impairment of motor coordination, Purkinje cell synapse formation, and cerebellar long-term depression in GluR delta 2 mutant mice",
   "volume": "81",
+  "year": 1995
+ },
+ "7754376": {
+  "authors": [
+   "Sereno MI",
+   "Dale AM",
+   "Reppas JB",
+   "Kwong KK",
+   "Belliveau JW",
+   "Brady TJ",
+   "Rosen BR",
+   "Tootell RB"
+  ],
+  "doi": "10.1126/science.7754376",
+  "issue": "5212",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "889-93",
+  "pmc": "",
+  "pmid": "7754376",
+  "title": "Borders of multiple visual areas in humans revealed by functional magnetic resonance imaging",
+  "volume": "268",
   "year": 1995
  },
  "7939688": {
@@ -10192,6 +10865,22 @@
   "volume": "371",
   "year": 1994
  },
+ "8276995": {
+  "authors": [
+   "Schmahmann JD",
+   "Pandya DN"
+  ],
+  "doi": "10.1002/cne.903370107",
+  "issue": "1",
+  "journal": "J Comp Neurol",
+  "journalFull": "The Journal of comparative neurology",
+  "pages": "94-112",
+  "pmc": "",
+  "pmid": "8276995",
+  "title": "Prelunate, occipitotemporal, and parahippocampal projections to the basis pontis in rhesus monkey",
+  "volume": "337",
+  "year": 1993
+ },
  "8332915": {
   "authors": [
    "Schieber MH",
@@ -10296,6 +10985,43 @@
   "volume": "380",
   "year": 1996
  },
+ "8606771": {
+  "authors": [
+   "Sadato N",
+   "Pascual-Leone A",
+   "Grafman J",
+   "Ibañez V",
+   "Deiber MP",
+   "Dold G",
+   "Hallett M"
+  ],
+  "doi": "10.1038/380526a0",
+  "issue": "6574",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "526-8",
+  "pmc": "",
+  "pmid": "8606771",
+  "title": "Activation of the primary visual cortex by Braille reading in blind subjects",
+  "volume": "380",
+  "year": 1996
+ },
+ "8627365": {
+  "authors": [
+   "Gordon JA",
+   "Stryker MP"
+  ],
+  "doi": "10.1523/JNEUROSCI.16-10-03274.1996",
+  "issue": "10",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "3274-86",
+  "pmc": "PMC6579137",
+  "pmid": "8627365",
+  "title": "Experience-dependent plasticity of binocular responses in the primary visual cortex of the mouse",
+  "volume": "16",
+  "year": 1996
+ },
  "8632988": {
   "authors": [
    "Sheline YI",
@@ -10313,6 +11039,23 @@
   "pmid": "8632988",
   "title": "Hippocampal atrophy in recurrent major depression",
   "volume": "93",
+  "year": 1996
+ },
+ "8637573": {
+  "authors": [
+   "Ferster D",
+   "Chung S",
+   "Wheat H"
+  ],
+  "doi": "10.1038/380249a0",
+  "issue": "6571",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "249-52",
+  "pmc": "",
+  "pmid": "8637573",
+  "title": "Orientation selectivity of thalamic input to simple cells of cat visual cortex",
+  "volume": "380",
   "year": 1996
  },
  "8638157": {
@@ -10551,6 +11294,23 @@
   "volume": "120 ( Pt 1)",
   "year": 1997
  },
+ "9151747": {
+  "authors": [
+   "Kanwisher N",
+   "McDermott J",
+   "Chun MM"
+  ],
+  "doi": "10.1523/JNEUROSCI.17-11-04302.1997",
+  "issue": "11",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "4302-11",
+  "pmc": "PMC6573547",
+  "pmid": "9151747",
+  "title": "The fusiform face area: a module in human extrastriate cortex specialized for face perception",
+  "volume": "17",
+  "year": 1997
+ },
  "9193139": {
   "authors": [
    "Jaarsma D",
@@ -10627,6 +11387,31 @@
   "pmid": "9197268",
   "title": "Mutation in the alpha-synuclein gene identified in families with Parkinson's disease",
   "volume": "276",
+  "year": 1997
+ },
+ "9296495": {
+  "authors": [
+   "Cohen LG",
+   "Celnik P",
+   "Pascual-Leone A",
+   "Corwell B",
+   "Falz L",
+   "Dambrosia J",
+   "Honda M",
+   "Sadato N",
+   "Gerloff C",
+   "Catalá MD",
+   "Hallett M"
+  ],
+  "doi": "10.1038/38278",
+  "issue": "6647",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "180-3",
+  "pmc": "",
+  "pmid": "9296495",
+  "title": "Functional relevance of cross-modal plasticity in blind humans",
+  "volume": "389",
   "year": 1997
  },
  "9367153": {
@@ -10739,6 +11524,25 @@
   "volume": "24",
   "year": 1998
  },
+ "9698332": {
+  "authors": [
+   "Kiorpes L",
+   "Kiper DC",
+   "O'Keefe LP",
+   "Cavanaugh JR",
+   "Movshon JA"
+  ],
+  "doi": "10.1523/JNEUROSCI.18-16-06411.1998",
+  "issue": "16",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "6411-24",
+  "pmc": "PMC6793177",
+  "pmid": "9698332",
+  "title": "Neuronal correlates of amblyopia in the visual cortex of macaque monkeys with experimental strabismus and anisometropia",
+  "volume": "18",
+  "year": 1998
+ },
  "9735947": {
   "authors": [
    "De Zeeuw CI",
@@ -10799,6 +11603,26 @@
   "pmid": "9809557",
   "title": "Neurogenesis in the adult human hippocampus",
   "volume": "4",
+  "year": 1998
+ },
+ "9822384": {
+  "authors": [
+   "Hensch TK",
+   "Fagiolini M",
+   "Mataga N",
+   "Stryker MP",
+   "Baekkeskov S",
+   "Kash SF"
+  ],
+  "doi": "10.1126/science.282.5393.1504",
+  "issue": "5393",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "1504-8",
+  "pmc": "PMC2851625",
+  "pmid": "9822384",
+  "title": "Local GABA circuit control of experience-dependent plasticity in developing visual cortex",
+  "volume": "282",
   "year": 1998
  }
 }
