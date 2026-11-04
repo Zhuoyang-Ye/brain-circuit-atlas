@@ -326,5 +326,42 @@
       {"key": "arm", "name": "Arm", "entity": "oct-arm-ns", "group": "target", "tone": "#e7b58f", "shape": "arms", "n": 8, "crown": [0, -1.3, 1.2], "axis": [0, -1, 0.55], "ring": 0.85, "length": 6.0, "radius": [0.24, 0.05]},
       {"key": "suckers", "name": "Suckers", "entity": "oct-sucker", "group": "target", "tone": "#f6dcc6", "shape": "suckers", "of": "arm", "per_arm": 14}
     ]
+  },
+  "fly": {
+    "label": "Fruit fly (Drosophila, male CNS)",
+    "credit": "Neuropil meshes from the Janelia FlyEM male CNS connectome (Berg et al., 2026, Cell; male-cns.janelia.org), licensed CC-BY; simplified for this site.",
+    "builder": "tools/build_fly.py",
+    "source": {
+      "type": "malecns",
+      "url": "https://storage.googleapis.com/flyem-male-cns/rois/{set}/mesh/{name}",
+      "sets": {"roi": "fullbrain-roi-v5", "major": "malecns-major-compartments-v2"}
+    },
+    "frame": {
+      "unit": "nm",
+      "axes": "x toward the fly's left, y ventral, z posterior",
+      "midline_from": ["major:CentralBrain"]
+    },
+    "items": [
+      {"key": "brain", "name": "Brain (central brain and optic lobes)", "group": "shell", "src": ["major:CentralBrain", "major:Optic(L)", "major:Optic(R)"], "faces": 16000, "pitch": 4},
+      {"key": "al", "name": "Antennal lobe", "entity": "fly-al", "group": "cortex", "pair": true, "src": ["roi:AL({s})"], "faces": 1600, "tone": "#7ee787"},
+      {"key": "mb", "name": "Mushroom body", "entity": "fly-mb", "group": "cortex", "pair": true, "src": ["roi:CA({s})", "roi:PED({s})", "roi:aL({s})", "roi:a'L({s})", "roi:bL({s})", "roi:b'L({s})", "roi:gL({s})"], "faces": 3200, "tone": "#f2cc60",
+       "note": "Calyx, pedunculus and the α, α′, β, β′ and γ lobes, merged."},
+      {"key": "lh", "name": "Lateral horn", "entity": "fly-lh", "group": "cortex", "pair": true, "src": ["roi:LH({s})"], "faces": 1400, "tone": "#ffa657"},
+      {"key": "eb", "name": "Ellipsoid body", "entity": "fly-eb", "group": "cortex", "src": ["roi:EB"], "faces": 1600, "tone": "#ff7b72"},
+      {"key": "fb", "name": "Fan-shaped body", "entity": "fly-fb", "group": "cortex", "src": ["roi:FB"], "faces": 2000, "tone": "#d2a8ff"},
+      {"key": "pb", "name": "Protocerebral bridge", "related": "fly-cx", "group": "context", "src": ["roi:PB"], "faces": 1000},
+      {"key": "no", "name": "Noduli", "related": "fly-cx", "group": "context", "src": ["roi:NO"], "faces": 500},
+      {"key": "aotu", "name": "Anterior optic tubercle", "entity": "fly-aotu", "group": "cortex", "pair": true, "src": ["roi:AOTU({s})"], "faces": 800, "tone": "#79c0ff"},
+      {"key": "bu", "name": "Bulb", "group": "context", "pair": true, "src": ["roi:BU({s})"], "faces": 500},
+      {"key": "la", "name": "Lamina", "entity": "fly-la", "group": "cortex", "pair": true, "src": ["roi:LA({s})"], "faces": 1800, "tone": "#a5d6ff"},
+      {"key": "me", "name": "Medulla", "entity": "fly-me", "group": "cortex", "pair": true, "src": ["roi:ME({s})"], "faces": 3000, "tone": "#56d4dd"},
+      {"key": "lo", "name": "Lobula", "entity": "fly-lo", "group": "cortex", "pair": true, "src": ["roi:LO({s})"], "faces": 2400, "tone": "#3fb9a5"},
+      {"key": "lop", "name": "Lobula plate", "entity": "fly-lop", "group": "cortex", "pair": true, "src": ["roi:LOP({s})"], "faces": 2000, "tone": "#2f9e8f"},
+      {"key": "gng", "name": "Gnathal ganglia", "entity": "fly-gng", "group": "cortex", "src": ["roi:GNG"], "faces": 3000, "tone": "#c69c6d"},
+      {"key": "cv", "name": "Cervical (neck) connective", "entity": "fly-dn", "group": "cortex", "src": ["major:CV"], "faces": 800, "tone": "#f778ba",
+       "note": "Descending neurons are shown at the neck connective, which their axons traverse on the way to the ventral nerve cord."},
+      {"key": "vnc", "name": "Ventral nerve cord", "entity": "fly-vnc", "group": "shell", "src": ["major:VNC"], "faces": 3000, "smooth": 5, "pitch": 4, "opening": 2,
+       "note": "Drawn as a faint outline, like the brain surface, so that it does not hide the brain behind it."}
+    ]
   }
 }

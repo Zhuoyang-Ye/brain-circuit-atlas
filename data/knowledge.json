@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Brain Circuit Atlas",
-    "subtitle": "An evidence-linked map of the cerebellum, the motor and prefrontal cortex, the basal ganglia, the hippocampus, the amygdala, the visual cortex, the insula, the olfactory system and their connections, from molecules to mind, and of the octopus brain, which evolved separately",
+    "subtitle": "An evidence-linked map of the cerebellum, the motor and prefrontal cortex, the basal ganglia, the hippocampus, the amygdala, the visual cortex, the insula, the olfactory system and their connections, from molecules to mind, and of two invertebrate brains, the octopus and the fruit fly",
     "version": "0.1",
     "disclaimer": "Summaries, link statuses and map scores were drafted with AI assistance from PubMed abstracts and need review by domain experts. Diagrams are schematic."
   },
@@ -963,6 +963,86 @@
       "speciesNote": {
         "octopus": "Octopus: a schematic brain drawn for this site, because no octopus atlas volume is available to it. Lobe shapes, sizes and positions are approximate and for orientation only, so every label carries ≈. The vertical lobe’s amacrine and output neurons are shown in the vertical lobe. Findings come from several species (mainly Octopus vulgaris and O. bimaculoides)."
       }
+    },
+    {
+      "id": "fly",
+      "label": "Fruit fly brain",
+      "group": "Fruit fly",
+      "species": ["fly"],
+      "entity": "fly-brain",
+      "query": "(Drosophila[tiab] OR \"fruit fly\"[tiab] OR \"fruit flies\"[tiab])",
+      "view": "fly",
+      "views": ["atlas", "scales", "gaps", "lab", "library"],
+      "levelDesc": {
+        "regional": "Antennal lobe, mushroom body and lateral horn; the central complex (ellipsoid and fan-shaped bodies) and anterior optic tubercle; the optic lobes (lamina, medulla, lobula, lobula plate); the subesophageal zone and the ventral nerve cord",
+        "circuit": "Olfactory receptor neurons to the antennal lobe and projection neurons to the mushroom body and lateral horn; Kenyon cells, output and dopamine neurons; medulla to tubercle to ring neurons; lamina to T4/T5 to looming detectors and the giant fibre; descending neurons to the nerve cord",
+        "systems": "Structural connectivity from electron microscopy connectomes, and functional connectivity from whole-brain calcium imaging"
+      },
+      "levelQueries": {
+        "cellular": "(neuron*[tiab] OR \"Kenyon cell*\"[tiab] OR interneuron*[tiab])",
+        "circuit": "(circuit*[tiab] OR connectome[tiab] OR connect*[tiab] OR pathway*[tiab])",
+        "regional": "(\"mushroom body\"[tiab] OR \"central complex\"[tiab] OR \"antennal lobe\"[tiab] OR \"optic lobe\"[tiab] OR \"lateral horn\"[tiab])"
+      },
+      "methods": {
+        "molecular": {
+          "manipulate": [
+            "Receptor mutants and receptor replacement (Or83b, Or67d)",
+            "rutabaga and PKA manipulation",
+            "Sex-specific fruitless splicing alleles"
+          ],
+          "readout": ["Odorant receptor gene mapping", "Translational profiling"]
+        },
+        "cellular": {
+          "manipulate": [
+            "Optogenetic and thermogenetic activation",
+            "Temperature-sensitive shibire block",
+            "Split-GAL4 lines for single cell types"
+          ],
+          "readout": [
+            "In vivo whole-cell and patch-clamp recording",
+            "Two-photon calcium imaging",
+            "Single-cell anatomy"
+          ]
+        },
+        "circuit": {
+          "manipulate": [
+            "Silencing or activating defined neuron types during behaviour",
+            "Pairing an odour with dopamine neuron activation"
+          ],
+          "readout": ["Electron microscopy connectomes", "Tracing the inputs of single neurons"]
+        },
+        "regional": {
+          "manipulate": ["Chemical ablation of the mushroom bodies", "Mutants lacking mushroom body lobes"],
+          "readout": ["Neuropil atlases and image registration"]
+        },
+        "systems": {
+          "manipulate": ["Connectome-based whole-brain models"],
+          "readout": [
+            "Whole-brain calcium imaging (resting-state functional connectivity)",
+            "SCAPE imaging during behaviour",
+            "Whole-brain and whole-CNS connectomes"
+          ]
+        },
+        "cognitive": {
+          "manipulate": [
+            "Olfactory classical conditioning",
+            "Visual place learning and flight simulators",
+            "Courtship conditioning"
+          ],
+          "readout": [
+            "Learned odour approach or avoidance",
+            "Heading relative to a simulated sun",
+            "Sleep amount and arousal threshold"
+          ]
+        }
+      },
+      "intro": {
+        "title": "Fruit fly brain, wired synapse by synapse",
+        "text": "A brain of about 140,000 neurons whose wiring is known synapse by synapse, from electron microscopy connectomes of the whole brain and of the whole male central nervous system. Here: odours mapped from receptors to the antennal lobe, the mushroom body that learns which odours predict reward or punishment, the lateral horn’s innate responses, the central complex’s compass and sleep drive, motion vision from the lamina to looming detectors and escape, taste, descending control of walking, and the fruitless gene that wires courtship. Structural connectivity (electron microscopy wiring) and functional connectivity (correlated activity) are kept apart, and every connection is tied to the papers behind it and graded by how strong the evidence is."
+      },
+      "speciesNote": {
+        "fly": "Fruit fly: neuropil meshes from the Janelia FlyEM male CNS connectome (CC-BY), simplified; paired neuropils are labelled on the fly’s left. Kenyon cells and the output, dopamine and APL neurons are shown in the mushroom body, projection neurons in the antennal lobe, T4/T5 cells in the lobula plate, LC neurons in the lobula, ring and E-PG neurons in the ellipsoid body, and descending neurons, with the giant fibre, at the neck connective. Photoreceptors and olfactory and gustatory receptor neurons lie outside the brain and are shown as approximate markers. Findings are from Drosophila melanogaster; the connectomes come from different flies, female and male."
+      }
     }
   ],
   "methods": {
@@ -1419,7 +1499,7 @@
     {"id": "mrn", "name": "Midbrain reticular nucleus (MRN)", "level": "systems", "kind": "structure", "aka": ["MRN", "mesencephalic reticular formation"], "domains": ["motor"],
      "summary": "In mice, ascending glutamatergic neurons of the midbrain reticular and pedunculopontine nuclei respond to an auditory Go cue with short-latency, phasic, cue-selective changes in firing. The signal reaches motor cortex via the thalamus and switches it from planning-related activity to a motor command that drives the movement.", "refs": ["inagaki2022a"]},
     {"id": "f-motor", "name": "Motor coordination", "level": "cognitive", "kind": "function", "domains": ["motor"],
-     "summary": "Coordination, posture, balance and eye movements. Body maps lie in the anterior lobe and lobule VIII.", "refs": ["grodd2001", "herzfeld2015", "stoodley2016", "stoodley2012", "fakharian2025"]},
+     "summary": "Coordination, posture, balance and eye movements. Body maps lie in the anterior lobe and lobule VIII. In flies, descending neurons link sensory neuropils of the brain with motor neuropils of the nerve cord (fly), and MDN descending neurons trigger backward walking (fly).", "refs": ["grodd2001", "herzfeld2015", "stoodley2016", "stoodley2012", "fakharian2025", "namiki2018", "bidaye2014"]},
     {
       "id": "f-motor-learning",
       "name": "Motor learning & adaptation",
@@ -1474,7 +1554,7 @@
       "level": "cognitive",
       "kind": "function",
       "domains": ["social"],
-      "summary": "Mentalizing and social preference. Human imaging points to Crus I/II; mouse circuit studies implicate Crus I, vermis, VTA and mPFC pathways. In mice, the strength of excitatory input onto layer V pyramidal neurons of medial PFC tracks dominance rank, and raising or lowering synaptic efficacy in dorsal mPFC moves animals up or down the hierarchy. Patients with bilateral ventromedial prefrontal damage make abnormally utilitarian judgments on emotionally aversive moral dilemmas. A patient with selective bilateral amygdala damage was impaired at recognizing fear in facial expressions (human). In patient SM, impaired recognition of fear stems from not making normal use of the eye region of faces, which the authors trace to a lack of spontaneous fixations on the eyes, and her recognition of fearful faces became normal when she was told to look at the eyes (human). In the medial amygdala, a GABAergic subpopulation promotes aggression and two other social behaviors, whereas neighboring glutamatergic neurons promote repetitive self-grooming and inhibit social interactions (mouse). Empathy for pain engages a core network of anterior insula and medial/anterior cingulate cortex that overlaps with responses to one's own pain (human). In male mice, loss of vomeronasal signalling abolishes male-male aggression and leads to courtship of both sexes (mouse). In the predominantly asocial octopus, MDMA enhances prosocial behaviour and the serotonin transporter keeps its MDMA binding site (octopus), and untrained octopuses learn a visual discrimination by watching trained ones (octopus).",
+      "summary": "Mentalizing and social preference. Human imaging points to Crus I/II; mouse circuit studies implicate Crus I, vermis, VTA and mPFC pathways. In mice, the strength of excitatory input onto layer V pyramidal neurons of medial PFC tracks dominance rank, and raising or lowering synaptic efficacy in dorsal mPFC moves animals up or down the hierarchy. Patients with bilateral ventromedial prefrontal damage make abnormally utilitarian judgments on emotionally aversive moral dilemmas. A patient with selective bilateral amygdala damage was impaired at recognizing fear in facial expressions (human). In patient SM, impaired recognition of fear stems from not making normal use of the eye region of faces, which the authors trace to a lack of spontaneous fixations on the eyes, and her recognition of fearful faces became normal when she was told to look at the eyes (human). In the medial amygdala, a GABAergic subpopulation promotes aggression and two other social behaviors, whereas neighboring glutamatergic neurons promote repetitive self-grooming and inhibit social interactions (mouse). Empathy for pain engages a core network of anterior insula and medial/anterior cingulate cortex that overlaps with responses to one's own pain (human). In male mice, loss of vomeronasal signalling abolishes male-male aggression and leads to courtship of both sexes (mouse). In the predominantly asocial octopus, MDMA enhances prosocial behaviour and the serotonin transporter keeps its MDMA binding site (octopus), and untrained octopuses learn a visual discrimination by watching trained ones (octopus). In flies, male courtship is specified by male-specific splicing of the fruitless gene (fly), and a single class of olfactory neurons mediates behavioural responses to the sex pheromone cVA (fly).",
       "refs": [
         "vanoverwalle2014",
         "vanoverwalle2020",
@@ -1492,7 +1572,9 @@
         "singer2004",
         "stowers2002",
         "edsinger2018",
-        "fiorito1992"
+        "fiorito1992",
+        "demir2005",
+        "kurtovic2007"
       ]
     },
     {
@@ -1522,7 +1604,7 @@
       "level": "cognitive",
       "kind": "function",
       "domains": ["reward"],
-      "summary": "Reward expectation and reinforcement. The cerebellum both carries reward signals and drives dopamine circuits. The output of dopamine neurons apparently signals reward prediction errors (primate), and activating them at reward delivery is sufficient for long-lasting increases in cue-elicited reward seeking (rat). The amygdala processes positive as well as negative emotions, and its role in stimulus–reward learning might be as important as its role in fear conditioning (review); excitotoxic amygdala lesions impair choices after a food is devalued (monkey), and mice work to earn optical stimulation of basolateral amygdala inputs to the nucleus accumbens.",
+      "summary": "Reward expectation and reinforcement. The cerebellum both carries reward signals and drives dopamine circuits. The output of dopamine neurons apparently signals reward prediction errors (primate), and activating them at reward delivery is sufficient for long-lasting increases in cue-elicited reward seeking (rat). The amygdala processes positive as well as negative emotions, and its role in stimulus–reward learning might be as important as its role in fear conditioning (review); excitotoxic amygdala lesions impair choices after a food is devalued (monkey), and mice work to earn optical stimulation of basolateral amygdala inputs to the nucleus accumbens. In flies, dopamine neurons of the PAM cluster signal sugar reward to the mushroom body (fly), and octopamine reinforces short-term appetitive memory through dopamine neurons (fly).",
       "refs": [
         "carta2019",
         "wagner2017",
@@ -1535,18 +1617,20 @@
         "steinberg2013",
         "baxter2002",
         "izquierdo2007",
-        "stuber2011"
+        "stuber2011",
+        "liuc2012",
+        "burke2012"
       ]
     },
     {"id": "f-feeding", "name": "Feeding & drinking", "level": "cognitive", "kind": "function", "domains": ["homeostasis"],
-     "summary": "Meal termination and thirst. Anterior deep-nuclei neurons reduce meal size through striatal dopamine, and Purkinje cells activated by the hormone asprosin increase water intake. PKC-δ+ neurons of the lateral central amygdala are activated by diverse anorexigenic signals, are required for those signals to inhibit feeding, and suppress food intake when activated (mouse). Mouse insular neurons respond preferentially to food cues only when the animal is hungry, a bias that hypothalamic AgRP neurons restore through the paraventricular thalamus and basolateral amygdala (mouse). Orbitofrontal responses to the odour of a food decline after that food is eaten to satiety (human).", "refs": ["low2021", "mishra2024", "cai2014", "livneh2017", "odoherty2000"]},
+     "summary": "Meal termination and thirst. Anterior deep-nuclei neurons reduce meal size through striatal dopamine, and Purkinje cells activated by the hormone asprosin increase water intake. PKC-δ+ neurons of the lateral central amygdala are activated by diverse anorexigenic signals, are required for those signals to inhibit feeding, and suppress food intake when activated (mouse). Mouse insular neurons respond preferentially to food cues only when the animal is hungry, a bias that hypothalamic AgRP neurons restore through the paraventricular thalamus and basolateral amygdala (mouse). Orbitofrontal responses to the odour of a food decline after that food is eaten to satiety (human). In flies, a single pair of brain neurons commands the entire feeding motor program and responds to food only when the fly is starved (fly).", "refs": ["low2021", "mishra2024", "cai2014", "livneh2017", "odoherty2000", "flood2013"]},
     {
       "id": "f-spatial",
       "name": "Spatial navigation",
       "level": "cognitive",
       "kind": "function",
       "domains": ["spatial"],
-      "summary": "Path integration and spatial memory, through interactions with the hippocampus. Hippocampal place cells fire at particular locations, preliminary evidence that the hippocampus acts as a spatial map, and medial entorhinal grid cells form a neural map of the spatial environment (rat; cells with similar firing are found in humans); hippocampal lesions impair place navigation (rat), and deleting NMDA receptors from CA1 pyramidal cells impairs spatial memory (mouse).",
+      "summary": "Path integration and spatial memory, through interactions with the hippocampus. Hippocampal place cells fire at particular locations, preliminary evidence that the hippocampus acts as a spatial map, and medial entorhinal grid cells form a neural map of the spatial environment (rat; cells with similar firing are found in humans); hippocampal lesions impair place navigation (rat), and deleting NMDA receptors from CA1 pyramidal cells impairs spatial memory (mouse). In flies, neurons tiling the ellipsoid body represent heading by combining visual landmarks with self-motion (fly), a heading representation in the central brain behaves as a ring attractor (fly), and ellipsoid body neurons are needed for visual place learning (fly).",
       "refs": [
         "rochefort2011",
         "watson2019",
@@ -1559,7 +1643,10 @@
         "ekstrom2003",
         "jacobs2013",
         "morris1982",
-        "tsien1996"
+        "tsien1996",
+        "seelig2015",
+        "kim2017",
+        "ofstad2011"
       ]
     },
     {"id": "f-pain", "name": "Pain & nociception", "level": "cognitive", "kind": "function", "aka": ["nociception", "analgesia"], "domains": ["emotion", "homeostasis"],
@@ -1839,7 +1926,7 @@
     {"id": "f-episodic", "name": "Episodic & declarative memory", "level": "cognitive", "kind": "function", "aka": ["episodic memory", "declarative memory"], "domains": ["memory"],
      "summary": "Long-term memory for facts and events. Its establishment depends on a medial temporal lobe system of the hippocampus and adjacent cortex (review). Loss of recent memory follows bilateral hippocampal lesions, a lesion limited to CA1 caused enduring anterograde amnesia, and patients with hippocampal amnesia are markedly impaired at imagining new experiences, which lack spatial coherence (human). Hippocampal time cells bridge temporal gaps between discontiguous events (rat).", "refs": ["squire1991", "scoville1957", "zolamorgan1986", "hassabis2007", "macdonald2011"]},
     {"id": "f-consolidation", "name": "Memory consolidation", "level": "cognitive", "kind": "function", "aka": ["systems consolidation"], "domains": ["memory"],
-     "summary": "How new memories become enduring. Memories of everyday life depend initially on the medial temporal lobe and are thought to come to rely on cortex as they mature (review), and hippocampal lesions abolish contextual fear when made 1 day, but not 7 to 28 days, after conditioning (rat). Systems consolidation can occur very quickly when a neocortical schema exists (rat). Sharp wave-ripples are believed to transfer labile memories to the neocortex, and suppressing them after training impairs spatial memory (rat). Prefrontal engram cells for remote fear memory form during learning and mature over time, while hippocampal engram cells gradually become silent (mouse). The basolateral amygdala mediates the memory-modulating effects of adrenal stress hormones and modulates the consolidation of many kinds of memory (review). A consolidated fear memory that is reactivated returns to a labile state: blocking protein synthesis in the lateral and basal amygdala shortly after reactivation produces amnesia (rat).", "refs": ["frankland2005", "squire1991", "kim1992", "tse2007", "girardeau2009", "kitamura2017", "mcgaugh2004", "nader2000"]},
+     "summary": "How new memories become enduring. Memories of everyday life depend initially on the medial temporal lobe and are thought to come to rely on cortex as they mature (review), and hippocampal lesions abolish contextual fear when made 1 day, but not 7 to 28 days, after conditioning (rat). Systems consolidation can occur very quickly when a neocortical schema exists (rat). Sharp wave-ripples are believed to transfer labile memories to the neocortex, and suppressing them after training impairs spatial memory (rat). Prefrontal engram cells for remote fear memory form during learning and mature over time, while hippocampal engram cells gradually become silent (mouse). The basolateral amygdala mediates the memory-modulating effects of adrenal stress hormones and modulates the consolidation of many kinds of memory (review). A consolidated fear memory that is reactivated returns to a labile state: blocking protein synthesis in the lateral and basal amygdala shortly after reactivation produces amnesia (rat). In flies, sleep induced after training that cannot by itself produce long-term memory lets a long-term courtship memory form (fly), and mushroom body α/β output is needed to retrieve olfactory memory but not to consolidate it (fly).", "refs": ["frankland2005", "squire1991", "kim1992", "tse2007", "girardeau2009", "kitamura2017", "mcgaugh2004", "nader2000", "donlea2011", "mcguire2001"]},
     {"id": "f-anxiety", "name": "Anxiety", "level": "cognitive", "kind": "function", "aka": ["anxiety-like behavior"], "domains": ["emotion"],
      "summary": "Innate anxiety and the avoidance of anxiogenic places. Raising ventral dentate granule-cell activity powerfully suppresses innate anxiety (mouse); ventral CA1 anxiety cells, activated by anxiogenic environments, are required for avoidance, and activating their terminals in the lateral hypothalamus increases anxiety and avoidance (mouse); and inhibiting ventral hippocampal input to the medial prefrontal cortex disrupts anxiety-related behavior (mouse). Stimulating basolateral amygdala terminals in the central amygdala reduces anxiety-related behavior, and inhibiting them increases it, whereas activating basolateral amygdala synapses in the ventral hippocampus increases anxiety-related behavior (mouse). Bilateral central amygdala lesions reduce fear-related behavior toward a snake and freezing toward a human intruder and lower cerebrospinal fluid CRF and plasma ACTH, which suggests that the central amygdala plays a role in fear- and anxiety-related behavioral and endocrine responses (monkey).", "refs": ["kheirbek2013", "jimenez2018", "padillacoreano2016", "tye2011", "felixortiz2013", "kalin2004"]},
     {"id": "f-social-memory", "name": "Social memory", "level": "cognitive", "kind": "function", "region": "hippocampus", "domains": ["social", "memory"],
@@ -1875,7 +1962,7 @@
     {"id": "mgb", "name": "Medial geniculate nucleus (auditory thalamus)", "level": "regional", "kind": "nucleus", "aka": ["MGB", "MGN", "medial geniculate body", "auditory thalamus", "acoustic thalamus"], "domains": ["sensory", "emotion"],
      "summary": "Part of the auditory (acoustic) thalamus. Its medial division, with the posterior intralaminar and suprageniculate nuclei, projects to the amygdala. Destroying either the thalamo-amygdala or the thalamo-cortico-amygdala auditory pathway alone leaves auditory fear conditioning intact, whereas destroying both disrupts it (rat). Fear conditioning produces a long-lasting increase in synaptic efficacy in its pathway to the lateral amygdala (rat).", "refs": ["romanski1992", "mckernan1997"]},
     {"id": "f-valence", "name": "Emotional valence", "level": "cognitive", "kind": "function", "aka": ["valence", "positive and negative value"], "domains": ["emotion", "reward"],
-     "summary": "Whether a stimulus or outcome is good or bad. Amygdala neurons encode the positive and negative values of images, and distinct populations encode each (monkey). In mice, basolateral amygdala neurons projecting to the nucleus accumbens support positive reinforcement and those projecting to the centromedial amygdala negative reinforcement, and two genetically distinct basolateral populations take part in positive- and negative-valence behaviors. Two people with focal bilateral amygdala lesions showed a dramatic reduction in loss aversion in monetary gambles (human). Innate odour aversion depends on dorsal olfactory bulb glomeruli (mouse) and on the circuit from the bulb to the cortical amygdala (mouse).", "refs": ["paton2006", "namburi2015", "kim2016", "demartino2010", "kobayakawa2007", "root2014"]},
+     "summary": "Whether a stimulus or outcome is good or bad. Amygdala neurons encode the positive and negative values of images, and distinct populations encode each (monkey). In mice, basolateral amygdala neurons projecting to the nucleus accumbens support positive reinforcement and those projecting to the centromedial amygdala negative reinforcement, and two genetically distinct basolateral populations take part in positive- and negative-valence behaviors. Two people with focal bilateral amygdala lesions showed a dramatic reduction in loss aversion in monetary gambles (human). Innate odour aversion depends on dorsal olfactory bulb glomeruli (mouse) and on the circuit from the bulb to the cortical amygdala (mouse). In the fly mushroom body, output neurons drive attraction or repulsion depending on type and are suggested to represent valence as an ensemble (fly).", "refs": ["paton2006", "namburi2015", "kim2016", "demartino2010", "kobayakawa2007", "root2014", "aso2014b"]},
     {"id": "c-anxiety", "name": "Anxiety disorders", "level": "clinical", "kind": "disorder", "aka": ["social anxiety disorder", "specific phobia"], "domains": ["emotion"],
      "summary": "A meta-analysis of imaging studies found that patients with social anxiety disorder, specific phobia or PTSD consistently show greater activity than comparison subjects in the amygdala and insula, structures linked to negative emotional responses, as do healthy subjects during fear conditioning (human). Anxiety proneness is proposed to involve an augmented interoceptive prediction signal in which the anterior insula plays a key role (hypothesis).", "refs": ["etkin2007", "paulus2006"]},
     {"id": "visual-cortex", "name": "Visual cortex", "level": "regional", "kind": "area", "region": "visual-cortex", "aka": ["occipital cortex", "visual areas"], "domains": ["sensory"],
@@ -1923,7 +2010,7 @@
     {"id": "c-akinetopsia", "name": "Akinetopsia (motion blindness)", "level": "clinical", "kind": "disorder", "region": "visual-cortex", "aka": ["motion blindness"], "domains": ["sensory"],
      "summary": "A patient with bilateral posterior brain damage, attributed to the lateral temporo-occipital cortex, showed a disturbance of movement vision with no impression of movement in depth and impaired visually guided eye and finger movements, while movement perception through hearing and touch was intact (human).", "refs": ["zihl1983"]},
     {"id": "f-vision", "name": "Visual perception", "level": "cognitive", "kind": "function", "aka": ["vision", "seeing"], "domains": ["sensory"],
-     "summary": "Seeing form, colour, motion and depth. These attributes are thought to be analysed in parallel subdivisions of the visual system (review), and colour and motion activate different prestriate areas, V4 and V5 (human).", "refs": ["livingstone1988", "zeki1991"]},
+     "summary": "Seeing form, colour, motion and depth. These attributes are thought to be analysed in parallel subdivisions of the visual system (review), and colour and motion activate different prestriate areas, V4 and V5 (human). Fly motion vision splits photoreceptor signals into ON and OFF channels in the lamina (fly) and computes motion along the four cardinal directions separately in each, in T4 and T5 cells (fly).", "refs": ["livingstone1988", "zeki1991", "joesch2010", "maisak2013"]},
     {"id": "f-face", "name": "Face perception", "level": "cognitive", "kind": "function", "aka": ["face recognition"], "domains": ["sensory", "social"],
      "summary": "In humans and macaques, fMRI shows cortical regions that respond more to faces than to objects; in macaques almost all visually responsive neurons in the largest such region are strongly face selective (monkey), and inferotemporal cortex holds a population of face-selective neurons whose responses depend on the configuration of facial features (monkey). In humans a region of the fusiform gyrus is selectively involved in face perception (human).", "refs": ["tsao2006", "desimone1984", "kanwisher1997"]},
     {"id": "fef", "name": "Frontal eye field", "level": "regional", "kind": "area", "aka": ["FEF", "area 8A"], "domains": ["executive", "motor"],
@@ -1951,7 +2038,7 @@
     {"id": "f-interoception", "name": "Interoception", "level": "cognitive", "kind": "function", "aka": ["interoceptive awareness", "body sense"], "domains": ["homeostasis", "sensory"],
      "summary": "Sensing the physiological condition of the body. Right anterior insula activity and gray matter volume relate to the accuracy of heartbeat detection and to visceral awareness (human), graded cooling activates the dorsal posterior insula (human), and mouse insular cortex tracks the return to homeostasis during hunger and thirst (mouse).", "refs": ["critchley2004", "craig2000", "livneh2020"]},
     {"id": "f-taste", "name": "Taste", "level": "cognitive", "kind": "function", "aka": ["gustation"], "domains": ["sensory", "reward"],
-     "summary": "Detecting sweet, bitter, umami, salty and sour tastes. In mice each quality is represented in its own field of gustatory cortex (mouse), and amygdala inputs from those fields assign taste valence separately from taste identity (mouse).", "refs": ["chen2011", "wang2018"]},
+     "summary": "Detecting sweet, bitter, umami, salty and sour tastes. In mice each quality is represented in its own field of gustatory cortex (mouse), and amygdala inputs from those fields assign taste valence separately from taste identity (mouse). Fly taste cells are tuned by category, Gr5a cells to sugars and Gr66a cells to bitter compounds, and their activity is sufficient to drive acceptance or avoidance (fly).", "refs": ["chen2011", "wang2018", "marella2006"]},
     {"id": "olfactory", "name": "Olfactory system", "level": "systems", "kind": "system", "region": "olfactory", "aka": ["olfaction", "smell", "olfactory pathway"], "domains": ["sensory"],
      "summary": "Distributed activity of sensory neurons in the nose is converted into a segregated map in the olfactory bulb and passed on to higher olfactory centres, including the piriform cortex and the cortical amygdala (mouse); a separate vomeronasal organ is thought to mediate pheromone-driven social behaviour (mouse). In humans, odours activate piriform and right orbitofrontal cortex (human), and smell identification declines markedly after the seventh decade (human). Smell is severely impaired in Alzheimer's and Parkinson's diseases (human), and impaired smell can precede clinical Parkinson's disease by at least 4 years (human).", "refs": ["sosulski2011", "stowers2002", "zatorre1992", "doty1984", "mesholam1998", "ross2008"]},
     {"id": "or-genes", "name": "Odorant receptor genes", "level": "molecular", "kind": "gene", "region": "olfactory", "aka": ["ORs", "olfactory receptors", "odorant receptors"], "domains": ["sensory"],
@@ -1973,7 +2060,7 @@
     {"id": "c-anosmia", "name": "Smell loss (anosmia)", "level": "clinical", "kind": "disorder", "region": "olfactory", "aka": ["anosmia", "hyposmia", "olfactory dysfunction"], "domains": ["sensory"],
      "summary": "More than half of people aged 65 to 80 and more than three-quarters of those over 80 have major impairment of smell identification (human). In COVID-19, infection of non-neuronal cells of the olfactory epithelium is suggested to cause anosmia (mouse, monkey, human).", "refs": ["doty1984", "brann2020"]},
     {"id": "f-smell", "name": "Smell", "level": "cognitive", "kind": "function", "aka": ["olfaction", "odour perception"], "domains": ["sensory"],
-     "summary": "Detecting and discriminating odours. Odours are encoded by combinations of receptors (mouse), rats discriminate them at maximal accuracy within a single sniff (rat), and the cerebellum is activated by odours and by sniffing (human).", "refs": ["malnic1999", "uchida2003", "sobel1998cb"]},
+     "summary": "Detecting and discriminating odours. Odours are encoded by combinations of receptors (mouse), rats discriminate them at maximal accuracy within a single sniff (rat), and the cerebellum is activated by odours and by sniffing (human). In flies each olfactory neuron likely expresses one of 57 odorant receptor genes, and neurons expressing the same gene converge on one or two antennal lobe glomeruli, a map of receptor activation (fly).", "refs": ["malnic1999", "uchida2003", "sobel1998cb", "vosshall2000"]},
     {"id": "oct-brain", "name": "Octopus brain", "level": "systems", "kind": "structure", "aka": ["central brain", "cephalopod brain"], "region": "octopus", "domains": ["architecture"],
      "summary": "The central brain of the octopus. Only about one third of octopus neurons are central; the rest lie in the peripheral nervous system, including the eight arms (octopus). A histological atlas of the adult Octopus minor brain delineates more than 70 subregions (octopus), and diffusion MRI tractography of 25 lobes found 92 connections between them, largely matching earlier studies (octopus). Its genome shows massive expansions of protocadherins and C2H2 zinc-finger transcription factors and extensive mRNA editing (octopus). In embryos, neural progenitors outside the brain cords, in the lateral lips next to the eyes, generate neurons that migrate long distances into the lobes (octopus). Cephalopod neural systems have been compared with the vertebrate cortex, thalamus, basal ganglia, cerebellum and other structures, but how far a vertebrate equivalence exists is unanswered (review). Inhibiting nitric oxide synthesis blocks touch learning (octopus), and the muscarinic antagonist scopolamine impairs memory recall without affecting predation (octopus).", "refs": ["gutnick2020", "jung2018", "jacobs2022", "albertin2015", "deryckere2021", "shigeno2018", "robertson1994", "fiorito1998"]},
     {"id": "oct-vl", "name": "Vertical lobe", "level": "regional", "kind": "structure", "aka": ["VL", "vertical lobe system", "vertical lobules"], "region": "octopus", "domains": ["learning", "memory"],
@@ -2005,9 +2092,85 @@
     {"id": "oct-sucker", "name": "Suckers", "level": "systems", "kind": "body", "aka": ["sucker", "sucker ganglion"], "region": "octopus", "domains": ["sensory", "motor"],
      "summary": "Hundreds of suckers line each arm. A ganglion in each sucker's stalk has cells expressing sensory and motor neuron markers and sends fibres to the sucker muscles and to the oral roots that extend to the axial nerve cord, suggesting local reflexes for each sucker (octopus). Suckers 'taste by touch' with cephalopod-specific chemotactile receptors, which diverged from nicotinic acetylcholine receptors and detect poorly soluble, greasy molecules (octopus). A chemical in octopus skin inhibits their attachment reflex, so that the arms do not interfere with each other (octopus).", "refs": ["olson2025b", "vangiesen2020", "allard2023", "nesher2014"]},
     {"id": "f-sleep", "name": "Sleep", "level": "cognitive", "kind": "function", "domains": ["homeostasis"],
-     "summary": "Sleep and its stages. Octopuses alternate long 'quiet' sleep with short 'active' sleep bouts with dynamic skin patterns and rapid eye movements, suggesting an ultradian cycle analogous to that of amniotes (octopus); active sleep is homeostatically regulated, and its skin patterns and brain activity resemble waking (octopus).", "refs": ["medeiros2021", "pophale2023"]},
+     "summary": "Sleep and its stages. Octopuses alternate long 'quiet' sleep with short 'active' sleep bouts with dynamic skin patterns and rapid eye movements, suggesting an ultradian cycle analogous to that of amniotes (octopus); active sleep is homeostatically regulated, and its skin patterns and brain activity resemble waking (octopus). Fly rest is sleep-like, with a raised arousal threshold and homeostatic regulation independent of the circadian clock (fly); in flies, a subset of ellipsoid body neurons generates sleep drive (fly) and the mushroom bodies regulate sleep (fly).", "refs": ["medeiros2021", "pophale2023", "shaw2000", "lius2016", "joiner2006", "pitman2006"]},
     {"id": "f-reproduction", "name": "Reproduction and maternal care", "level": "cognitive", "kind": "function", "aka": ["maternal behaviour", "brooding"], "domains": ["homeostasis", "social"],
-     "summary": "Sexual maturation, reproduction and care of offspring. In the octopus the optic glands control maturation, reproduction and lifespan; after mating, brooding females fast and decline toward death, a course that removing the glands reverses (octopus).", "refs": ["wang2022", "wangzy2018"]}
+     "summary": "Sexual maturation, reproduction and care of offspring. In the octopus the optic glands control maturation, reproduction and lifespan; after mating, brooding females fast and decline toward death, a course that removing the glands reverses (octopus).", "refs": ["wang2022", "wangzy2018"]},
+    {"id": "fly-brain", "name": "Fruit fly brain", "level": "systems", "kind": "structure", "aka": ["Drosophila brain", "insect brain"], "region": "fly", "domains": ["architecture"],
+     "summary": "The brain of the fruit fly Drosophila melanogaster. An electron microscopy wiring diagram of a whole adult female brain contains 139,255 neurons and about 5 × 10^7 chemical synapses (fly), and a connectome of the entire male central nervous system, brain and nerve cord, contains 166,700 neurons of 11,710 types, with sex-specific and dimorphic neurons concentrated in higher brain centres (fly). Network analysis of the whole-brain connectome finds rich-club organization, with about 30% of neurons highly connected (fly). The right optic lobe alone holds about 53,000 neurons of 732 types (fly).", "refs": ["dorkenwald2024", "berg2026", "lin2024", "nern2025"]},
+    {"id": "fly-sc", "name": "Structural connectome (EM wiring diagram)", "level": "systems", "kind": "network", "aka": ["connectome", "structural connectivity", "synaptic wiring diagram", "FlyWire"], "region": "fly", "domains": ["architecture"],
+     "summary": "Structural connectivity: synaptic wiring diagrams reconstructed from electron microscopy, as distinct from functional connectivity measured from activity. Connectomes now cover most of the central brain, with cell types and computational compartments (fly), the whole brain of an adult female with annotated cell types and predicted neurotransmitters (fly), the entire male central nervous system, brain and nerve cord (fly), and the right optic lobe (fly). A medulla connectome identified the cell types of a motion detection circuit whose connections fit their direction selectivity (fly), and connectomes of the mushroom body and central complex revealed new inputs, outputs and network motifs (fly). The whole-brain network has a rich club of highly connected neurons, and its data are shared in the FlyWire Codex (fly). A whole-brain spiking model built only from connectivity and predicted transmitters predicted the neurons that respond to tastes and are required for feeding initiation, and neurons that elicit motor neuron firing, which optogenetic activation and behaviour then confirmed (fly).", "refs": ["scheffer2020", "dorkenwald2024", "berg2026", "nern2025", "takemura2013", "lif2020", "hulse2021", "lin2024", "shiu2024"]},
+    {"id": "fly-fc", "name": "Resting-state functional connectivity", "level": "systems", "kind": "network", "aka": ["functional connectivity", "FC", "intrinsic functional network", "whole-brain calcium imaging"], "region": "fly", "domains": ["architecture"],
+     "summary": "Functional connectivity: correlations between the activity of brain regions, here measured by calcium imaging, as distinct from synaptic wiring. Correlating spontaneous (“resting-state”) calcium signals between atlas regions of the adult central brain reveals an intrinsic functional network (fly). Relating published connectome data to published whole-brain imaging, these correlations track direct region-to-region structural connectivity strongly, but the fit varies across the brain, and some regions, including the mushroom body, depend more on indirect connections (fly). Imaging all cells in a large volume of the brain during spontaneous behaviour shows that the activity of most neurons correlates or anticorrelates with running and flailing, alongside high-dimensional activity of small, spatially organized clusters (fly).", "refs": ["mann2017", "turner2021", "schaffer2023"]},
+    {"id": "fly-al", "name": "Antennal lobe", "level": "regional", "kind": "structure", "aka": ["AL", "antennal lobes", "olfactory glomeruli"], "region": "fly", "domains": ["sensory"],
+     "summary": "The olfactory neuropil that receives the olfactory receptor neurons, organized into glomeruli. Neurons expressing a given receptor gene project to one or two spatially invariant glomeruli, so it holds a two-dimensional map of receptor activation (fly); about 50 receptor neuron classes send axons to 50 corresponding glomeruli (fly). Its second-order neurons are more broadly tuned than their afferents in the same glomerulus, implicating lateral interactions within it (fly).", "refs": ["vosshall2000", "jefferis2007", "wilson2004"]},
+    {"id": "fly-mb", "name": "Mushroom body", "level": "regional", "kind": "structure", "aka": ["MB", "mushroom bodies", "corpora pedunculata"], "region": "fly", "domains": ["learning", "memory"],
+     "summary": "An associative centre of the insect brain (fly). Its 2,000–2,500 intrinsic Kenyon cells run as parallel fibres (fly) and integrate input from olfactory glomeruli (fly). Ablating it abolishes associative odour learning without other gross deficits (fly); output from its α/β neurons is needed to retrieve olfactory memory but not to acquire or consolidate it (fly), and long-term memory requires its vertical lobes (fly). The dendrites of its output neurons form 15 compartments that tile its lobes, and each dopaminergic neuron type sends its axons to one or at most two of them (fly), and its connectome shows extensive visual input, connections with the central complex and output neurons that contact descending neurons directly (fly). It also regulates sleep: changing PKA activity in it, or silencing, exciting or ablating it, alters sleep (fly), and blocking synaptic output in lines that share expression in it, or ablating it, reduces sleep (fly). In a comparison of connectome and resting-state imaging data, it was among the regions whose functional connectivity depends more strongly on indirect connections (fly).", "refs": ["aso2014a", "debelle1994", "caron2013", "mcguire2001", "pascual2001", "lif2020", "joiner2006", "pitman2006", "turner2021"]},
+    {"id": "fly-lh", "name": "Lateral horn", "level": "regional", "kind": "structure", "aka": ["LH"], "region": "fly", "domains": ["sensory", "emotion"],
+     "summary": "A higher olfactory centre implicated in innate behaviour (fly). Projection neurons relay olfactory information to it as well as to the mushroom body; fruit odours are represented mostly in its posterior-dorsal part and candidate pheromone channels in its anterior-ventral part, suggesting that it is organized by the biological value of odours (fly). About 30% of its projections converge with mushroom body outputs, and activating some of its cell types changes valence behaviour or drives specific locomotor programs (fly).", "refs": ["dolan2019", "jefferis2007"]},
+    {"id": "fly-cx", "name": "Central complex", "level": "regional", "kind": "structure", "aka": ["CX"], "region": "fly", "domains": ["spatial", "motor"],
+     "summary": "A collection of neuropil compartments, including the ellipsoid body, important for visually guided behaviours (fly). In insects its recurrent circuits enable directed locomotion, sleep and context- and experience-dependent spatial navigation; its complete electron microscopy connectome shows network motifs likely to extract the fly’s head direction, maintain it with attractor dynamics and combine it with other sensorimotor information for vector-based navigation, and pathways by which context and internal state may select its behaviours (fly). Behavioural genetics implicated it in innate responses to vertical visual features and in memory for visual patterns (fly).", "refs": ["omoto2017", "hulse2021", "seelig2013"]},
+    {"id": "fly-eb", "name": "Ellipsoid body", "level": "regional", "kind": "structure", "aka": ["EB"], "region": "fly", "domains": ["spatial", "homeostasis"],
+     "summary": "A toroidal neuropil at the centre of the fly brain (fly), formed largely by the axons of ring neurons (fly). Neurons whose dendrites tile it encode the fly’s heading relative to landmarks, update it from self-motion in darkness and hold it by persistent activity; their dynamics and circular layout suggest a ring attractor (fly). Its neurons are needed for visual place learning, whereas the mushroom bodies are not (fly), and its GABAergic ring neurons for a spatial orientation memory lasting seconds (fly). A subset of its neurons generates sleep drive through plasticity that tracks sleep need (fly).", "refs": ["seelig2015", "omoto2017", "ofstad2011", "neuser2008", "lius2016"]},
+    {"id": "fly-fb", "name": "Fan-shaped body", "level": "regional", "kind": "structure", "aka": ["FB", "dorsal fan-shaped body", "dFB"], "region": "fly", "domains": ["memory", "spatial", "homeostasis"],
+     "summary": "The central-most part of the fly brain (fly). Two groups of neurons forming parallel horizontal strata in it hold short-term memory traces for the elevation and contour orientation of visual patterns (fly). Its PFNd and PFNv neurons multiply velocity signals with compass heading signals, and their convergence onto hΔB neurons turns body-centred velocity into a world-centred representation; perturbing PFNd neurons disrupts path integration (fly). Activating neurons that include dorsal fan-shaped body projections induces sleep, and sleep induced after massed training lets flies form a long-term memory (fly).", "refs": ["liug2006", "lu2022", "donlea2011"]},
+    {"id": "fly-aotu", "name": "Anterior optic tubercle", "level": "regional", "kind": "structure", "aka": ["AOTU"], "region": "fly", "domains": ["sensory", "spatial"],
+     "summary": "A central-brain visual centre on the anterior visual pathway. Neurons of two lineages receive input from visual projection neurons of the medulla and connect the tubercle with the ring neurons of the ellipsoid body, forming two parallel channels, one with small retinotopic receptive fields and one with a large contralateral field, that may encode the position of a bright feature such as a celestial body; the pathway resembles the sky-compass pathway of other insects (fly).", "refs": ["omoto2017"]},
+    {"id": "fly-ol", "name": "Optic lobe", "level": "regional", "kind": "structure", "aka": ["optic lobes", "OL"], "region": "fly", "domains": ["sensory"],
+     "summary": "The visual neuropils beside the central brain, including the lamina (fly), medulla (fly), lobula (fly) and lobula plate (fly). The right optic lobe of a male fly holds about 53,000 neurons classified into 732 types, about half newly named (fly).", "refs": ["joesch2010", "takemura2013", "wum2016", "maisak2013", "nern2025"]},
+    {"id": "fly-la", "name": "Lamina", "level": "regional", "kind": "structure", "aka": ["LA"], "region": "fly", "domains": ["sensory"],
+     "summary": "The first optic neuropil, where photoreceptor signals split into five parallel pathways, L1–L5. L1 output is needed for responses to moving ON edges and L2 output for OFF edges, so the lamina splits vision into ON and OFF channels, much as bipolar cells do in the vertebrate retina (fly).", "refs": ["joesch2010"]},
+    {"id": "fly-me", "name": "Medulla", "level": "regional", "kind": "structure", "aka": ["ME", "optic medulla"], "region": "fly", "domains": ["sensory"],
+     "summary": "An optic neuropil built of a repeating module. An electron microscopy connectome of the module identified the cell types of a motion detection circuit whose connections onto individual motion-sensitive neurons fit their direction selectivity (fly). Its visual projection neurons feed the anterior visual pathway to the central complex (fly).", "refs": ["takemura2013", "omoto2017"]},
+    {"id": "fly-lo", "name": "Lobula", "level": "regional", "kind": "structure", "aka": ["LO"], "region": "fly", "domains": ["sensory"],
+     "summary": "An optic neuropil whose lobula columnar (LC) visual projection neurons carry visual features to distinct optic glomeruli in the central brain; 22 LC types have been described (fly).", "refs": ["wum2016"]},
+    {"id": "fly-lop", "name": "Lobula plate", "level": "regional", "kind": "structure", "aka": ["LOP"], "region": "fly", "domains": ["sensory"],
+     "summary": "An optic neuropil with four retinotopic layers: T4 and T5 cells tuned to the same cardinal direction terminate in the same layer, so ON and OFF motion detectors with the same tuning converge there (fly). The dendrites of LPLC2 looming detectors ramify across these layers (fly).", "refs": ["maisak2013", "klapoetke2017"]},
+    {"id": "fly-gng", "name": "Subesophageal zone (gnathal ganglia)", "level": "regional", "kind": "structure", "aka": ["SOG", "SEZ", "subesophageal ganglion", "GNG", "gnathal ganglia"], "region": "fly", "domains": ["sensory", "motor"],
+     "summary": "The region of the brain below the oesophagus, the subesophageal ganglion or zone. A pair of motor neurons there controls a subprogram of a simple taste behaviour; they are activated by sugar stimulation of gustatory neurons and inhibited by bitter compounds, though no direct connections from the sensory neurons were detected (fly).", "refs": ["gordon2009"]},
+    {"id": "fly-vnc", "name": "Ventral nerve cord", "level": "regional", "kind": "structure", "aka": ["VNC", "nerve cord"], "region": "fly", "domains": ["motor"],
+     "summary": "The fly’s nerve cord, which descending neurons connect to the brain through the neck (fly). It is a layered system of neuropils reflecting the fly’s two largely independent means of locomotion, walking and flight (fly). The male connectome covers it together with the brain (fly).", "refs": ["namiki2018", "berg2026"]},
+    {"id": "fly-retina", "name": "Photoreceptors", "level": "cellular", "kind": "cell type", "aka": ["compound eye", "retina"], "region": "fly", "domains": ["sensory"],
+     "summary": "The light-sensing cells of the compound eye. Their signals split in the lamina into five parallel pathways, L1–L5 (fly), and the whole-brain connectome traces pathways from a subset of photoreceptors to descending motor pathways (fly).", "refs": ["joesch2010", "dorkenwald2024"]},
+    {"id": "fly-orn", "name": "Olfactory receptor neurons", "level": "cellular", "kind": "cell type", "aka": ["ORNs", "olfactory sensory neurons", "OSNs"], "region": "fly", "domains": ["sensory"],
+     "summary": "Sensory neurons that detect odours. Each is likely to express a single one of 57 odorant receptor genes (fly), and about 50 classes project to 50 corresponding glomeruli in the antennal lobe (fly). A pheromone can act through a single class: Or67d neurons are necessary and sufficient for behavioural responses to the male pheromone cVA (fly).", "refs": ["vosshall2000", "jefferis2007", "kurtovic2007"]},
+    {"id": "fly-pn", "name": "Projection neurons (olfactory)", "level": "cellular", "kind": "cell type", "aka": ["PNs", "uniglomerular projection neurons", "antennal lobe projection neurons"], "region": "fly", "domains": ["sensory"],
+     "summary": "Second-order olfactory neurons that carry odour information from the antennal lobe’s glomeruli to the mushroom body and the lateral horn (fly). Second-order neurons are more broadly tuned than their afferents in the same glomerulus (fly), and the glomerular inputs to individual Kenyon cells combine apparently at random (fly). Blocking most projection neurons impairs odour detection and male courtship (fly).", "refs": ["jefferis2007", "wilson2004", "caron2013", "heimbeck2001"]},
+    {"id": "fly-kc", "name": "Kenyon cells", "level": "cellular", "kind": "cell type", "aka": ["KCs", "mushroom body intrinsic neurons"], "region": "fly", "domains": ["learning", "memory"],
+     "summary": "The intrinsic neurons of the mushroom body, about 2,000 with parallel axons (fly). Each integrates input from a different, apparently random combination of olfactory glomeruli, and together they encode odours as sparse patterns of activity (fly); feedback inhibition from the APL neuron keeps this code sparse and decorrelated, which flies need to discriminate similar odours (fly). The rutabaga adenylyl cyclase is needed only in Kenyon cells for a component of olfactory short-term memory (fly), and cAMP signalling in one subpopulation of them is necessary and sufficient for both appetitive and aversive memories (fly).", "refs": ["aso2014a", "caron2013", "linac2014", "zars2000", "schwaerzel2003"]},
+    {"id": "fly-mbon", "name": "Mushroom body output neurons", "level": "cellular", "kind": "cell type", "aka": ["MBONs", "MB-V2"], "region": "fly", "domains": ["learning", "emotion"],
+     "summary": "The output neurons of the mushroom body: 21 types whose dendrites occupy 15 compartments along the Kenyon cell axons and whose axons reach five neuropils outside it (fly). Activating them causes attraction or repulsion depending on cell type, and the ensemble is suggested to represent valence collectively (fly). Pairing an odour with activation of specific dopamine neurons depresses the odour’s synapses at the mushroom body output site (fly). MB-V2 output neurons, which project to the lateral horn among other targets, are needed to retrieve aversive memory but not to form it (fly), and some output neurons contact descending neurons directly (fly).", "refs": ["aso2014a", "aso2014b", "hige2015", "sejourne2011", "lif2020"]},
+    {"id": "fly-dan", "name": "Dopamine neurons (mushroom body)", "level": "cellular", "kind": "cell type", "aka": ["DANs", "PAM dopamine neurons"], "region": "fly", "domains": ["reward", "learning"],
+     "summary": "Dopaminergic neurons that innervate the mushroom body: 20 types, each projecting to one or at most two output-neuron compartments (fly). Dopamine is required for aversive odour conditioning (fly), while a group in the PAM cluster signals sugar reward, is activated by sugar ingestion and has its outputs mainly in the medial lobes (fly). Pairing an odour with activation of specific dopamine neurons induces learning and plasticity confined to their compartments (fly), and octopamine reinforces short-term appetitive memory through a subset of them (fly). They receive feedback from the output neurons (fly).", "refs": ["aso2014a", "schwaerzel2003", "liuc2012", "hige2015", "burke2012", "lif2020"]},
+    {"id": "fly-apl", "name": "APL neuron", "level": "cellular", "kind": "cell type", "aka": ["anterior paired lateral neuron"], "region": "fly", "domains": ["learning"],
+     "summary": "A GABAergic neuron that forms a negative feedback loop with the Kenyon cells: they activate it and it inhibits them, keeping odour responses sparse and decorrelated; disrupting the loop stops flies learning to discriminate similar, but not dissimilar, odours (fly).", "refs": ["linac2014"]},
+    {"id": "fly-ring", "name": "Ring neurons", "level": "cellular", "kind": "cell type", "aka": ["R neurons", "ellipsoid body ring neurons"], "region": "fly", "domains": ["spatial", "sensory"],
+     "summary": "Central complex neurons whose axons largely form the ellipsoid body, all generated by a single lineage (fly). Their dendrites are visually responsive and retinotopic, with excitatory and inhibitory subfields like those of simple cells in mammalian primary visual cortex and a preference for vertical features (fly). They receive the anterior visual pathway from the anterior optic tubercle (fly), and GABAergic ring neurons are needed for a spatial orientation memory lasting seconds (fly).", "refs": ["omoto2017", "seelig2013", "neuser2008"]},
+    {"id": "fly-epg", "name": "E-PG compass neurons", "level": "cellular", "kind": "cell type", "aka": ["E-PG neurons", "compass neurons"], "region": "fly", "domains": ["spatial"],
+     "summary": "Central complex neurons that function as an internal compass, similar to mammalian head-direction cells. They track a simulated sun in flight, and silencing them abolishes menotaxis, flying at an arbitrary heading to the sun, leaving only frontal phototaxis (fly).", "refs": ["giraldo2018"]},
+    {"id": "fly-shift", "name": "Heading-shifting neurons", "level": "cellular", "kind": "cell type", "aka": ["shifting neurons"], "region": "fly", "domains": ["spatial"],
+     "summary": "Clockwise- and anticlockwise-shifting neurons of the central complex whose wiring and physiology let them rotate the heading estimate according to the fly’s angular velocity; they are needed for the heading system to track heading in the dark, and stimulating them shifts the heading signal predictably (fly).", "refs": ["green2017"]},
+    {"id": "fly-t4t5", "name": "T4 and T5 motion detectors", "level": "cellular", "kind": "cell type", "aka": ["T4 cells", "T5 cells", "elementary motion detectors"], "region": "fly", "domains": ["sensory"],
+     "summary": "Direction-selective neurons, the elementary motion detectors: T4 cells respond to moving ON edges and T5 cells to OFF edges, each subpopulation is tuned to one of the four cardinal directions, and each terminates in the matching lobula plate layer; blocking T4 or T5 selectively impairs downstream responses and turning to ON or OFF motion (fly). The same design, parallel ON and OFF pathways converging onto direction-selective neurons, is found in mammalian motion vision (review).", "refs": ["maisak2013", "borst2015"]},
+    {"id": "fly-lc", "name": "Lobula columnar neurons (LC, LPLC)", "level": "cellular", "kind": "cell type", "aka": ["LC neurons", "visual projection neurons", "LPLC2"], "region": "fly", "domains": ["sensory", "motor"],
+     "summary": "Visual projection neurons that carry lobula output to distinct optic glomeruli in the central brain. Of 22 types described, several drive specific behaviours when activated, two respond to looming and resemble natural avoidance, and another responds to small moving objects (fly). LPLC2, a lobula plate/lobula columnar type, detects looming with high selectivity by radial motion opponency and terminates on the giant fibre (fly).", "refs": ["wum2016", "klapoetke2017"]},
+    {"id": "fly-gf", "name": "Giant fibre", "level": "cellular", "kind": "cell type", "aka": ["GF", "giant fiber descending neuron"], "region": "fly", "domains": ["motor"],
+     "summary": "A descending neuron that receives the LPLC2 looming detectors and drives the jump-muscle motor neuron to trigger escape take-off (fly). Facing a looming stimulus, a fly makes a long escape that initiates stable flight or a short, fast take-off, and the giant fibre’s spike timing relative to parallel escape circuits decides which (fly).", "refs": ["klapoetke2017", "vonreyn2014"]},
+    {"id": "fly-grn", "name": "Gustatory receptor neurons", "level": "cellular", "kind": "cell type", "aka": ["GRNs", "taste neurons", "Gr5a neurons", "Gr66a neurons"], "region": "fly", "domains": ["sensory"],
+     "summary": "Taste neurons on many parts of the body, including the legs and the proboscis. Their projections in the first relay of the brain are segregated by taste category, sugars versus noxious substances, and by their location in the periphery (fly). Gr5a cells respond to sugars and Gr66a cells to bitter compounds, and activating them is enough to drive acceptance or avoidance (fly). A connectome of the male gustatory system traces complete sensory-to-motor pathways from them to feeding, foraging, endocrine and social behaviour circuits (fly).", "refs": ["wangz2004", "marella2006", "tastekin2026"]},
+    {"id": "fly-dn", "name": "Descending neurons", "level": "cellular", "kind": "cell type", "aka": ["DNs", "MDN"], "region": "fly", "domains": ["motor"],
+     "summary": "Neurons that carry the brain’s output through the neck to the nerve cord. About half of all fly descending neurons have been identified and mapped from sensory neuropils in the brain to motor neuropils in the nerve cord (fly). MDN descending neurons are required for backward walking at a barrier and can trigger it (fly), and some mushroom body output neurons contact descending neurons directly (fly).", "refs": ["namiki2018", "bidaye2014", "lif2020"]},
+    {"id": "fly-fdg", "name": "Feeding (Fdg) neurons", "level": "cellular", "kind": "cell type", "aka": ["Fdg neurons"], "region": "fly", "domains": ["homeostasis", "motor"],
+     "summary": "A single pair of brain neurons whose activation induces the entire feeding sequence and whose suppression or ablation eliminates sugar-induced feeding; they respond to food only in starved flies and sit at the top of the feeding motor hierarchy (fly).", "refs": ["flood2013"]},
+    {"id": "fly-or", "name": "Odorant receptors (Or genes)", "level": "molecular", "kind": "receptor", "aka": ["Ors", "Or83b", "Or67d", "odorant receptor genes"], "region": "fly", "domains": ["sensory"],
+     "summary": "A family of 57 genes encoding the fly’s odorant receptors, of which a sensory neuron likely expresses only one (fly). Most olfactory neurons also express Or83b, a broadly expressed and conserved atypical receptor that the others need to reach the dendrites and that is essential for responses to many odorants (fly). The pheromone cVA acts through Or67d (fly).", "refs": ["vosshall2000", "larsson2004", "kurtovic2007"]},
+    {"id": "fly-camp", "name": "cAMP/PKA signalling (rutabaga)", "level": "molecular", "kind": "signaling", "aka": ["rutabaga", "adenylyl cyclase", "PKA", "cAMP"], "region": "fly", "domains": ["memory", "homeostasis"],
+     "summary": "Signalling through cyclic AMP and protein kinase A. The rutabaga adenylyl cyclase is needed only in Kenyon cells for a component of olfactory short-term memory (fly), cAMP signalling in one Kenyon cell subpopulation is necessary and sufficient for appetitive and aversive memories (fly), and enhancing PKA activity in the adult mushroom bodies changes sleep greatly (fly).", "refs": ["zars2000", "schwaerzel2003", "joiner2006"]},
+    {"id": "fly-fru", "name": "fruitless (FruM)", "level": "molecular", "kind": "transcription factor", "aka": ["fru", "FruM"], "region": "fly", "domains": ["social"],
+     "summary": "A gene spliced differently in males and females, whose male-specific transcription factors, FruM, specify the neural substrates of courtship (fly). Male splicing is essential for male courtship and sufficient to make females court other females (fly); FruM is expressed in about 2% of central neurons, inactivating them abolishes courtship and masculinizing them in females largely confers it (fly). By regulating dendrite position it connects one cluster of third-order olfactory neurons to pheromone input and disconnects another, rerouting the pheromone signal by sex (fly).", "refs": ["manoli2005", "demir2005", "kohl2013"]},
+    {"id": "fly-oa", "name": "Octopamine", "level": "molecular", "kind": "neuromodulator", "aka": ["OA", "OAMB"], "region": "fly", "domains": ["reward", "learning"],
+     "summary": "A neuromodulator presumed to be the arthropod homologue of noradrenaline. It is required for appetitive but not aversive olfactory conditioning (fly), and it reinforces only short-term appetitive memory, through dopamine neurons, partly via the OAMB receptor in a subset of mushroom-body-targeted dopamine neurons (fly).", "refs": ["schwaerzel2003", "burke2012"]},
+    {"id": "f-associative", "name": "Associative learning", "level": "cognitive", "kind": "function", "aka": ["classical conditioning", "Pavlovian conditioning", "olfactory conditioning"], "domains": ["learning"],
+     "summary": "Learning that one stimulus predicts another, as in classical conditioning. Flies learn to associate odours with electric shock, which requires the mushroom bodies (fly), and with sugar reward, which dopamine neurons of the PAM cluster signal (fly).", "refs": ["debelle1994", "liuc2012"]}
   ],
   "links": [
     {"s": "mglur1", "t": "ltd", "rel": "required for LTD induction", "status": "supported", "kind": "mechanistic", "refs": ["aiba1994", "hansel2001"]},
@@ -2683,7 +2846,68 @@
     {"s": "oct-arm-ns", "t": "f-pain", "rel": "arm injury triggers nocifensive behaviour, including arm autotomy, and hyperexcitability in injured and uninjured arms for at least 24 h (octopus)", "status": "emerging", "kind": "functional", "refs": ["alupay2014"]},
     {"s": "oct-peduncle", "t": "f-motor", "rel": "a visuo-motor centre that regulates visuomotor behaviour (octopus)", "status": "supported", "kind": "functional", "refs": ["messenger1967", "wangzy2024"]},
     {"s": "oct-olf-lobe", "t": "f-smell", "rel": "thought to receive input from the olfactory organ (octopus)", "status": "hypothesis", "kind": "functional", "refs": ["wangzy2024"]},
-    {"s": "oct-optic-gland", "t": "f-reproduction", "rel": "removing the optic glands abolishes maternal brooding and reverses the post-mating decline toward death; across reproductive stages they up- and downregulate steroid, catecholamine, insulin and feeding-peptide pathways (octopus)", "status": "supported", "kind": "causal", "refs": ["wangzy2018", "wang2022"]}
+    {"s": "oct-optic-gland", "t": "f-reproduction", "rel": "removing the optic glands abolishes maternal brooding and reverses the post-mating decline toward death; across reproductive stages they up- and downregulate steroid, catecholamine, insulin and feeding-peptide pathways (octopus)", "status": "supported", "kind": "causal", "refs": ["wangzy2018", "wang2022"]},
+    {"s": "fly-or", "t": "fly-orn", "rel": "each olfactory neuron likely expresses a single selective receptor gene (fly), most also express the broadly expressed Or83b, essential for responses to many odorants (fly), and the receptor sets the neuron’s sensitivity: replacing Or67d with moth receptors makes its neurons respond to moth pheromones (fly)", "status": "supported", "kind": "mechanistic", "refs": ["vosshall2000", "larsson2004", "kurtovic2007"]},
+    {"s": "fly-orn", "t": "fly-al", "rel": "neurons expressing the same receptor converge on one or two spatially invariant glomeruli, about 50 classes onto 50 glomeruli: a map of receptor activation (fly)", "status": "supported", "kind": "anatomical", "refs": ["vosshall2000", "jefferis2007"]},
+    {"s": "fly-orn", "t": "fly-pn", "rel": "feed second-order neurons in the same glomerulus, whose odour responses are broader and more complex than their afferents’ (fly)", "status": "emerging", "kind": "functional", "refs": ["wilson2004"]},
+    {"s": "fly-pn", "t": "fly-mb", "rel": "relay olfactory information from the antennal lobes to the mushroom body, with stereotyped inputs (fly)", "status": "supported", "kind": "anatomical", "refs": ["jefferis2007", "heimbeck2001"]},
+    {"s": "fly-pn", "t": "fly-kc", "rel": "each Kenyon cell integrates input from a different, apparently random combination of glomeruli (fly)", "status": "emerging", "kind": "anatomical", "refs": ["caron2013"]},
+    {"s": "fly-pn", "t": "fly-lh", "rel": "relay olfactory information to the lateral horn, where fruit odours map mostly posterior-dorsally and candidate pheromone channels anterior-ventrally (fly)", "status": "emerging", "kind": "anatomical", "refs": ["jefferis2007"]},
+    {"s": "fly-pn", "t": "f-smell", "rel": "blocking most projection neurons impairs odour detection, and their direct path to the lateral protocerebrum is argued to suffice for experience-independent odour responses (fly)", "status": "emerging", "kind": "causal", "refs": ["heimbeck2001"]},
+    {"s": "fly-lh", "t": "f-valence", "rel": "activating some lateral horn cell types changes valence behaviour (fly)", "status": "emerging", "kind": "causal", "refs": ["dolan2019"]},
+    {"s": "fly-mbon", "t": "fly-lh", "rel": "MB-V2 output neurons project from the vertical lobes to the lateral horn (and the middle superior medial protocerebrum); the authors propose they recruit the innate avoidance pathway during memory retrieval (fly)", "status": "emerging", "kind": "anatomical", "refs": ["sejourne2011"]},
+    {"s": "fly-kc", "t": "fly-mbon", "rel": "about 2,000 Kenyon cells converge onto 34 output neurons of 21 types, whose dendrites tile 15 compartments along the Kenyon cell axons (fly)", "status": "supported", "kind": "anatomical", "refs": ["aso2014a", "aso2014b"]},
+    {"s": "fly-dan", "t": "fly-mbon", "rel": "each dopamine neuron type targets one or at most two output-neuron compartments (fly), and pairing an odour with dopamine neuron activation depresses that odour’s synapses at the output site, within the compartment (fly)", "status": "supported", "kind": "mechanistic", "refs": ["aso2014a", "hige2015"]},
+    {"s": "fly-dan", "t": "f-reward", "rel": "PAM-cluster dopamine neurons signal sugar reward and are required for its reinforcing effect, not for the reflex to it (fly); activating a subset of mushroom-body-targeted dopamine neurons can substitute for sugar to form appetitive memory (fly)", "status": "supported", "kind": "causal", "refs": ["liuc2012", "burke2012"]},
+    {"s": "fly-dan", "t": "f-associative", "rel": "dopamine is required for aversive odour conditioning (fly), and pairing an odour with activation of specific dopamine neurons induces learning (fly)", "status": "supported", "kind": "causal", "refs": ["schwaerzel2003", "hige2015"]},
+    {"s": "fly-oa", "t": "fly-dan", "rel": "octopamine reinforces short-term appetitive memory through dopamine neurons, partly via the OAMB receptor in a subset of mushroom-body-targeted ones, and raises their intracellular calcium (fly)", "status": "emerging", "kind": "mechanistic", "refs": ["burke2012"]},
+    {"s": "fly-oa", "t": "f-reward", "rel": "octopamine is required for appetitive but not aversive conditioning (fly) and reinforces only short-term appetitive memory (fly)", "status": "supported", "kind": "causal", "refs": ["schwaerzel2003", "burke2012"]},
+    {"s": "fly-mb", "t": "f-associative", "rel": "ablating the mushroom bodies abolishes odour–shock learning without sensory or motor deficits (fly), and the rutabaga adenylyl cyclase is needed only in its Kenyon cells for a component of olfactory short-term memory (fly)", "status": "supported", "kind": "causal", "refs": ["debelle1994", "zars2000"]},
+    {"s": "fly-camp", "t": "fly-kc", "rel": "rutabaga adenylyl cyclase is needed only in Kenyon cells for a component of short-term memory (fly), and cAMP signalling in one Kenyon cell subpopulation is necessary and sufficient for appetitive and aversive memories (fly)", "status": "supported", "kind": "mechanistic", "refs": ["zars2000", "schwaerzel2003"]},
+    {"s": "fly-mb", "t": "f-consolidation", "rel": "long-term olfactory memory requires the mushroom body’s vertical lobes (fly), yet blocking α/β output during consolidation does not impair memory, which needs that output only at retrieval (fly)", "status": "emerging", "kind": "localization", "refs": ["pascual2001", "mcguire2001"]},
+    {"s": "fly-mbon", "t": "f-valence", "rel": "activating output neurons causes attraction or repulsion depending on type, and the ensemble is suggested to represent valence (fly)", "status": "emerging", "kind": "causal", "refs": ["aso2014b"]},
+    {"s": "fly-mbon", "t": "f-associative", "rel": "MB-V2 output neurons are needed to retrieve short- and long-lasting aversive memory, not to form it, and their odour responses change after conditioning (fly); perturbing output neurons has combinatorial effects across associative learning tasks (fly)", "status": "supported", "kind": "causal", "refs": ["sejourne2011", "aso2014b"]},
+    {"s": "fly-apl", "t": "fly-kc", "rel": "the GABAergic APL neuron inhibits the Kenyon cells, which activate it, keeping their odour responses sparse and decorrelated (fly)", "status": "emerging", "kind": "mechanistic", "refs": ["linac2014"]},
+    {"s": "fly-apl", "t": "f-associative", "rel": "disrupting the Kenyon cell–APL feedback loop stops flies learning to discriminate similar, but not dissimilar, odours (fly)", "status": "emerging", "kind": "causal", "refs": ["linac2014"]},
+    {"s": "fly-mbon", "t": "fly-dn", "rel": "some output neurons connect directly to descending neurons, in the mushroom body connectome (fly)", "status": "emerging", "kind": "anatomical", "refs": ["lif2020"]},
+    {"s": "fly-orn", "t": "f-social", "rel": "Or67d neurons are necessary and sufficient for behavioural responses to the male sex pheromone cVA (fly)", "status": "emerging", "kind": "causal", "refs": ["kurtovic2007"]},
+    {"s": "fly-fru", "t": "f-social", "rel": "male-specific fruitless splicing is essential for male courtship and sufficient to make females court (fly), and FruM-expressing neurons specify the neural substrates of courtship (fly)", "status": "supported", "kind": "causal", "refs": ["demir2005", "manoli2005"]},
+    {"s": "fly-retina", "t": "fly-la", "rel": "photoreceptor signals split in the lamina into five parallel pathways, L1–L5 (fly)", "status": "emerging", "kind": "anatomical", "refs": ["joesch2010"]},
+    {"s": "fly-la", "t": "fly-t4t5", "rel": "lamina neurons L1 and L2 start the ON and OFF motion pathways (fly), which lead via T4 and T5 cells to the lobula plate (fly)", "status": "supported", "kind": "functional", "refs": ["joesch2010", "maisak2013"]},
+    {"s": "fly-t4t5", "t": "f-vision", "rel": "T4 and T5 compute motion in ON and OFF pathways, each tuned to one cardinal direction, and are needed for motion-driven turning (fly); the design resembles mammalian motion vision (review)", "status": "supported", "kind": "causal", "refs": ["maisak2013", "borst2015"]},
+    {"s": "fly-me", "t": "f-vision", "rel": "a medulla connectome identified the cell types of a motion detection circuit whose connections fit their direction selectivity (fly)", "status": "emerging", "kind": "anatomical", "refs": ["takemura2013"]},
+    {"s": "fly-t4t5", "t": "fly-lc", "rel": "each dendritic arm of LPLC2 looming detectors ramifies in one of the four T4/T5 layers of the lobula plate, extending along that layer’s preferred motion direction (fly)", "status": "emerging", "kind": "anatomical", "refs": ["klapoetke2017"]},
+    {"s": "fly-lc", "t": "fly-gf", "rel": "LPLC2 looming detectors terminate onto the giant fibre descending neurons (fly)", "status": "emerging", "kind": "anatomical", "refs": ["klapoetke2017"]},
+    {"s": "fly-lc", "t": "f-vision", "rel": "LC types respond to looming or to small moving objects, and activating them evokes avoidance or turning, conveying visual features for specific behaviours (fly); LPLC2 responds selectively to looming (fly)", "status": "supported", "kind": "causal", "refs": ["wum2016", "klapoetke2017"]},
+    {"s": "fly-gf", "t": "f-motor", "rel": "the giant fibre drives the jump-muscle motor neuron to trigger escape take-off (fly), and its spike timing relative to parallel circuits selects a short, fast take-off over a long, stable one (fly)", "status": "supported", "kind": "causal", "refs": ["klapoetke2017", "vonreyn2014"]},
+    {"s": "fly-me", "t": "fly-aotu", "rel": "medulla visual projection neurons feed the anterior visual pathway neurons that connect the anterior optic tubercle with ring neurons (fly)", "status": "emerging", "kind": "anatomical", "refs": ["omoto2017"]},
+    {"s": "fly-aotu", "t": "fly-ring", "rel": "neurons of two lineages connect the anterior optic tubercle with ring neurons in the peripheral and central domains of the ellipsoid body, as two parallel channels (fly)", "status": "emerging", "kind": "anatomical", "refs": ["omoto2017"]},
+    {"s": "fly-ring", "t": "fly-eb", "rel": "the axons of ring neurons largely form the ellipsoid body (fly)", "status": "emerging", "kind": "anatomical", "refs": ["omoto2017"]},
+    {"s": "fly-ring", "t": "f-vision", "rel": "ring neurons have retinotopic receptive fields with orientation tuning that prefers vertical features (fly)", "status": "emerging", "kind": "functional", "refs": ["seelig2013"]},
+    {"s": "fly-epg", "t": "f-spatial", "rel": "E-PG compass neurons track a simulated sun in flight, and silencing them abolishes menotaxis (fly)", "status": "emerging", "kind": "causal", "refs": ["giraldo2018"]},
+    {"s": "fly-shift", "t": "f-spatial", "rel": "shifting neurons rotate the heading estimate according to angular velocity and are needed to track heading in the dark (fly)", "status": "emerging", "kind": "causal", "refs": ["green2017"]},
+    {"s": "fly-eb", "t": "f-spatial", "rel": "neurons tiling the ellipsoid body encode heading from landmarks and self-motion (fly), ellipsoid body neurons are needed for visual place learning (fly), and ring neurons for a spatial orientation memory (fly)", "status": "supported", "kind": "causal", "refs": ["seelig2015", "ofstad2011", "neuser2008"]},
+    {"s": "fly-fb", "t": "f-vision", "rel": "two groups of fan-shaped body neurons hold short-term memory traces for the elevation and contour orientation of visual patterns, part of a network for pattern recognition (fly)", "status": "emerging", "kind": "localization", "refs": ["liug2006"]},
+    {"s": "fly-fb", "t": "f-spatial", "rel": "PFNd and PFNv neurons rotate body-centred velocity into world-centred coordinates through hΔB neurons, and perturbing PFNd neurons disrupts path integration (fly)", "status": "emerging", "kind": "mechanistic", "refs": ["lu2022"]},
+    {"s": "fly-fb", "t": "f-sleep", "rel": "activating neurons that include dorsal fan-shaped body projections induces sleep (fly)", "status": "emerging", "kind": "causal", "refs": ["donlea2011"]},
+    {"s": "fly-eb", "t": "f-sleep", "rel": "a subset of ellipsoid body neurons generates sleep drive, through synaptic plasticity that is necessary and sufficient for it (fly)", "status": "emerging", "kind": "causal", "refs": ["lius2016"]},
+    {"s": "fly-mb", "t": "f-sleep", "rel": "changing PKA activity in, silencing, exciting or ablating the adult mushroom bodies alters sleep (fly), and blocking synaptic output in lines that share expression in them, or ablating them, reduces it (fly)", "status": "supported", "kind": "causal", "refs": ["joiner2006", "pitman2006"]},
+    {"s": "f-sleep", "t": "f-consolidation", "rel": "sleep induced after training that alone does not produce long-term memory lets flies form one, whereas activating the dorsal fan-shaped body without sleep does not (fly)", "status": "emerging", "kind": "causal", "refs": ["donlea2011"]},
+    {"s": "fly-grn", "t": "f-taste", "rel": "gustatory projections are segregated by taste category and by body location (fly), and Gr5a cells respond to sugars and Gr66a cells to bitter compounds (fly)", "status": "supported", "kind": "functional", "refs": ["wangz2004", "marella2006"]},
+    {"s": "fly-grn", "t": "fly-gng", "rel": "sugar stimulation of gustatory neurons activates, and bitter compounds inhibit, a pair of motor neurons in the subesophageal ganglion, although no direct connections were detected (fly)", "status": "emerging", "kind": "functional", "refs": ["gordon2009"]},
+    {"s": "fly-gng", "t": "f-taste", "rel": "a pair of subesophageal motor neurons controls a subprogram of a simple taste behaviour (fly)", "status": "emerging", "kind": "causal", "refs": ["gordon2009"]},
+    {"s": "fly-grn", "t": "f-feeding", "rel": "sugar- and bitter-sensing taste cells drive acceptance or avoidance (fly), the gustatory connectome traces complete pathways from them to feeding motor neurons (fly), and a connectome-based model predicts the neurons that respond to tastes and are required for feeding initiation (fly)", "status": "supported", "kind": "causal", "refs": ["marella2006", "tastekin2026", "shiu2024"]},
+    {"s": "fly-fdg", "t": "f-feeding", "rel": "activating this single pair of neurons induces the entire feeding sequence, and suppressing or ablating them eliminates sugar-induced feeding (fly)", "status": "emerging", "kind": "causal", "refs": ["flood2013"]},
+    {"s": "fly-dn", "t": "fly-vnc", "rel": "descending neurons traverse the neck and connect sensory neuropils in the brain with motor neuropils in the nerve cord, which is layered for walking and flight (fly)", "status": "emerging", "kind": "anatomical", "refs": ["namiki2018"]},
+    {"s": "fly-dn", "t": "f-motor", "rel": "MDN descending neurons are required for, and can trigger, backward walking (fly)", "status": "emerging", "kind": "causal", "refs": ["bidaye2014"]},
+    {"s": "fly-sc", "t": "fly-fc", "rel": "functional correlations in resting-state imaging track direct region-to-region structural (connectome) connectivity strongly, in a comparison of published connectome and imaging data; the fit varies by region, and the mushroom body depends more on indirect connections (fly)", "status": "emerging", "kind": "functional", "refs": ["turner2021"]},
+    {"s": "fly-sc", "t": "f-feeding", "rel": "a whole-brain spiking model built only from the connectome and predicted transmitters predicts the neurons that respond to tastes and are required for feeding initiation, and neurons that elicit motor neuron firing, the latter confirmed by optogenetic activation and behaviour (fly)", "status": "emerging", "kind": "theoretical", "refs": ["shiu2024"]},
+    {"s": "fly-brain", "t": "fly-vnc", "rel": "the brain controls the body through descending neurons that traverse the neck to the nerve cord (fly), and the male CNS connectome spans both, enabling analysis of full sensory-to-motor circuits (fly)", "status": "supported", "kind": "anatomical", "refs": ["namiki2018", "berg2026"]},
+    {"s": "fly-retina", "t": "fly-dn", "rel": "the whole-brain connectome traces synaptic pathways from a subset of photoreceptors to descending motor pathways (fly)", "status": "emerging", "kind": "anatomical", "refs": ["dorkenwald2024"]},
+    {"s": "fly-cx", "t": "f-spatial", "rel": "the central complex connectome shows network motifs likely to extract the fly’s head direction, maintain it with attractor dynamics and combine it with other sensorimotor information for vector-based navigation (fly)", "status": "emerging", "kind": "anatomical", "refs": ["hulse2021"]},
+    {"s": "fly-ol", "t": "f-vision", "rel": "the right optic lobe’s roughly 53,000 neurons fall into 732 types, an inventory whose shapes and connectivity form a basis for interpreting spatial vision (fly)", "status": "emerging", "kind": "anatomical", "refs": ["nern2025"]},
+    {"s": "fly-lo", "t": "fly-lc", "rel": "the lobula’s columnar (LC) visual projection neurons carry its output to distinct optic glomeruli in the central brain (fly)", "status": "emerging", "kind": "anatomical", "refs": ["wum2016"]},
+    {"s": "fly-t4t5", "t": "fly-lop", "rel": "T4 and T5 cells terminate in the lobula plate layer that matches their preferred direction, so ON and OFF detectors with the same tuning converge there (fly)", "status": "emerging", "kind": "anatomical", "refs": ["maisak2013"]}
   ],
   "chains": [
     {"id": "loop-pfc", "name": "Cerebro-cerebellar loop", "nodes": ["pfc", "pontine", "cb-cortex", "dcn", "thalamus", "pfc"],
@@ -2847,7 +3071,19 @@
     {"id": "oct-fan", "name": "The vertical lobe's fan-out fan-in network", "nodes": ["oct-sfl", "oct-vl-am", "oct-vl-ln"],
      "desc": "About 1.8 million input axons from the median superior frontal lobe innervate the amacrine interneurons, most of the lobe's roughly 25 million cells, which converge sharply onto large output neurons; plasticity sits at the input layer in the octopus and at the output layer in the cuttlefish, yet both networks perform the same computation (octopus, cuttlefish)."},
     {"id": "oct-eye-arm", "name": "From the eye to an arm", "nodes": ["oct-eye", "oct-ol", "oct-basal", "oct-arm-ns"],
-     "desc": "The optic lobe receives retinal input and exchanges fibres with the basal lobes, the higher motor centres, whose stimulation evokes movements without a body map; octopuses use vision to guide a single arm to a goal (octopus)."}
+     "desc": "The optic lobe receives retinal input and exchanges fibres with the basal lobes, the higher motor centres, whose stimulation evokes movements without a body map; octopuses use vision to guide a single arm to a goal (octopus)."},
+    {"id": "fly-olf-learn", "name": "From receptor neurons to learned odour value", "nodes": ["fly-orn", "fly-pn", "fly-kc", "fly-mbon", "f-valence"],
+     "desc": "Olfactory receptor neurons feed projection neurons in their glomerulus; each Kenyon cell combines a random set of glomerular inputs; Kenyon cells converge onto output neurons in 15 compartments, whose activation drives attraction or repulsion and whose ensemble is suggested to represent valence (fly)."},
+    {"id": "fly-reward", "name": "Octopamine and dopamine in reward", "nodes": ["fly-oa", "fly-dan", "f-reward"],
+     "desc": "Octopamine reinforces short-term appetitive memory through mushroom-body-targeted dopamine neurons, partly via their OAMB receptor, and activating a subset of these dopamine neurons can substitute for sugar (fly); PAM-cluster dopamine neurons signal sugar reward (fly)."},
+    {"id": "fly-compass", "name": "The anterior visual pathway to the compass", "nodes": ["fly-me", "fly-aotu", "fly-ring", "fly-eb", "f-spatial"],
+     "desc": "Medulla visual projection neurons feed neurons that connect the anterior optic tubercle with ring neurons, whose axons largely form the ellipsoid body; neurons tiling the ellipsoid body encode heading, and its neurons are needed for visual place learning (fly)."},
+    {"id": "fly-loom", "name": "From the eye to escape", "nodes": ["fly-retina", "fly-la", "fly-t4t5", "fly-lc", "fly-gf", "f-motor"],
+     "desc": "Photoreceptor signals split in the lamina into parallel pathways; L1 and L2 start the ON and OFF pathways to T4 and T5 motion detectors in the lobula plate; LPLC2 looming detectors ramify in the T4/T5 layers and terminate on the giant fibre, which triggers escape take-off (fly)."},
+    {"id": "fly-taste-motor", "name": "From taste neurons to a taste motor program", "nodes": ["fly-grn", "fly-gng", "f-taste"],
+     "desc": "Sugar stimulation of gustatory neurons activates, and bitter compounds inhibit, a pair of subesophageal motor neurons that control a subprogram of a simple taste behaviour, with no direct connection from the sensory neurons detected (fly)."},
+    {"id": "fly-sleep-memory", "name": "Sleep and long-term memory", "nodes": ["fly-fb", "f-sleep", "f-consolidation"],
+     "desc": "Activating neurons that include dorsal fan-shaped body projections induces sleep, and sleep induced after training that alone does not produce long-term memory lets flies form one (fly)."}
   ],
   "questions": [
     {
@@ -3596,6 +3832,66 @@
         "Give 7-dehydrocholesterol or bile acid intermediates to females without optic glands and test whether the decline returns.",
         "Trace which brain lobes signal to the optic gland around mating."
       ]
+    },
+    {
+      "id": "q-fly-sc-fc",
+      "title": "Where and why does the fly’s functional network depart from its wiring?",
+      "text": "Resting-state functional correlations across the central brain track direct region-to-region structural connectivity strongly, but in this comparison of published connectome and imaging data the fit varies, and the mushroom body depends more on indirect connections (turner2021). Spontaneous activity across the brain forms an intrinsic functional network (mann2017), yet much of whole-brain activity correlates with running and flailing (schaffer2023), and the connectome has a rich club of highly connected neurons (lin2024). Which features of the wiring, or of the fly’s behaviour during imaging, explain where structure and function diverge?",
+      "entities": ["fly-sc", "fly-fc", "fly-mb"],
+      "refs": ["turner2021", "mann2017", "schaffer2023", "lin2024"],
+      "approaches": [
+        "Image resting-state activity and then reconstruct the connectome of the same fly, so that structure and function come from one brain.",
+        "Regress behaviour-linked global activity (running, flailing) out of the imaging before computing functional connectivity, and test whether the mushroom body’s fit to direct connections improves.",
+        "Simulate activity on the whole-brain connectome, as connectome-based models do (shiu2024), and compare simulated with measured correlations region by region."
+      ]
+    },
+    {
+      "id": "q-fly-innate-learned",
+      "title": "How are innate and learned odour values combined?",
+      "text": "Projection neurons send each odour both to the mushroom body and to the lateral horn (jefferis2007). About 30% of lateral horn projections converge with mushroom body outputs (dolan2019), and MB-V2 output neurons, needed for retrieving aversive memory, project to the lateral horn (sejourne2011). Lateral horn cell types drive valence behaviour (dolan2019), as do mushroom body output neurons (aso2014b), and some output neurons contact descending neurons directly (lif2020). Where, and how, do the innate and the learned streams combine to choose an action?",
+      "entities": ["fly-lh", "fly-mb", "fly-mbon", "f-valence"],
+      "refs": ["jefferis2007", "dolan2019", "sejourne2011", "aso2014b", "lif2020"],
+      "approaches": [
+        "Record the neurons where lateral horn and mushroom body outputs converge before and after conditioning an innately attractive odour.",
+        "Silence MB-V2 neurons and test whether retrieval of a learned odour avoidance still changes lateral horn activity.",
+        "List, from the whole-brain connectome, the neurons that receive both lateral horn and mushroom body output and reach descending neurons, and test them in valence assays."
+      ]
+    },
+    {
+      "id": "q-fly-sleep-memory",
+      "title": "How does sleep help a memory become long-term?",
+      "text": "Inducing sleep after training that alone does not produce long-term memory lets flies form one, while activating the dorsal fan-shaped body without sleep does not (donlea2011). Sleep drive builds up through plasticity in a subset of ellipsoid body neurons (lius2016), and the mushroom bodies, where olfactory memories are localized (zars2000, pascual2001), also regulate sleep (joiner2006, pitman2006). Yet mushroom body α/β output is not needed during consolidation (mcguire2001). Which memory processes need sleep itself, and where in the mushroom body do they act?",
+      "entities": ["f-sleep", "f-consolidation", "fly-fb", "fly-eb", "fly-mb"],
+      "refs": ["donlea2011", "lius2016", "zars2000", "pascual2001", "joiner2006", "pitman2006", "mcguire2001"],
+      "approaches": [
+        "Induce sleep after olfactory training and test whether long-term memory forms in flies lacking the mushroom body’s vertical lobes.",
+        "Record mushroom body output synapses during sleep induced by fan-shaped body activation and during matched wakefulness after training.",
+        "Trace in the connectome the paths from sleep-promoting fan-shaped body neurons to the mushroom body."
+      ]
+    },
+    {
+      "id": "q-fly-compass-steer",
+      "title": "How does the compass heading become a steering command?",
+      "text": "Neurons tiling the ellipsoid body hold a heading estimate (seelig2015), a heading representation in the central brain shows ring-attractor dynamics (kim2017), shifting neurons rotate it according to angular velocity (green2017), and fan-shaped body neurons turn body-centred velocity into world-centred coordinates (lu2022). Silencing E-PG compass neurons reverts sun navigation to frontal phototaxis (giraldo2018), and the central complex connectome shows motifs for vector-based navigation and many pathways for context-dependent action selection (hulse2021). How is a goal heading stored and compared with the current heading to steer?",
+      "entities": ["fly-cx", "fly-eb", "fly-fb", "fly-epg", "f-spatial"],
+      "refs": ["seelig2015", "kim2017", "green2017", "lu2022", "giraldo2018", "hulse2021"],
+      "approaches": [
+        "Record central complex output neurons while flies hold a chosen heading to a simulated sun, and while that heading is perturbed.",
+        "Shift the heading representation optogenetically and measure which downstream neurons signal the resulting heading error and turning.",
+        "Use the paths from the central complex to descending neurons in the connectome to predict which descending neurons carry steering commands."
+      ]
+    },
+    {
+      "id": "q-fly-dimorphism",
+      "title": "How do sex differences in wiring produce sex-specific behaviour?",
+      "text": "Male-specific fruitless splicing specifies courtship (demir2005, manoli2005), a single class of olfactory neurons mediates responses to the pheromone cVA (kurtovic2007), and fruitless reroutes that pheromone signal by wiring different third-order neurons in males and females (kohl2013). The male CNS connectome finds 138 dimorphic, 289 male-specific and 71 female-specific neuron types, concentrated in higher brain centres while the sensory and motor periphery is largely isomorphic (berg2026). Do a few rerouting switches like the cVA one account for most behavioural differences, or do many distributed changes?",
+      "entities": ["fly-fru", "f-social", "fly-sc", "fly-orn"],
+      "refs": ["demir2005", "manoli2005", "kurtovic2007", "kohl2013", "berg2026"],
+      "approaches": [
+        "Compare male and female connectomes along the full path from Or67d neurons to descending neurons, to find where the pheromone pathways first diverge.",
+        "Masculinize single dimorphic cell types in females and score which elements of courtship each confers.",
+        "Count how many male-specific connection hotspots lie on paths from courtship-relevant sensory neurons, as a test of the few-switches view."
+      ]
     }
   ],
   "flatmap": {
@@ -3735,7 +4031,7 @@
     "note": "Fast glutamate and GABA signaling is in the Microcircuit view. An empty cell means no direct evidence among the curated papers, not evidence of absence."
   },
   "atlas3d": {
-    "species": ["human", "macaque", "mouse", "octopus"],
+    "species": ["human", "macaque", "mouse", "octopus", "fly"],
     "sides": {
       "R": [
         "cb-cortex",
@@ -3866,7 +4162,26 @@
         "oct-ol",
         "oct-peduncle",
         "oct-olf-lobe",
-        "oct-optic-gland"
+        "oct-optic-gland",
+        "fly-al",
+        "fly-mb",
+        "fly-lh",
+        "fly-aotu",
+        "fly-ol",
+        "fly-la",
+        "fly-me",
+        "fly-lo",
+        "fly-lop",
+        "fly-retina",
+        "fly-orn",
+        "fly-grn",
+        "fly-kc",
+        "fly-mbon",
+        "fly-dan",
+        "fly-apl",
+        "fly-pn",
+        "fly-t4t5",
+        "fly-lc"
       ],
       "C": ["gut", "ser-neurons", "drn"]
     },
@@ -4026,7 +4341,20 @@
         "ob-granule": "ob",
         "or-genes": "osn"
       },
-      "octopus": {"oct-vl-am": "oct-vl", "oct-vl-ln": "oct-vl"}
+      "octopus": {"oct-vl-am": "oct-vl", "oct-vl-ln": "oct-vl"},
+      "fly": {
+        "fly-kc": "fly-mb",
+        "fly-mbon": "fly-mb",
+        "fly-dan": "fly-mb",
+        "fly-apl": "fly-mb",
+        "fly-pn": "fly-al",
+        "fly-ring": "fly-eb",
+        "fly-epg": "fly-eb",
+        "fly-shift": "fly-cx",
+        "fly-t4t5": "fly-lop",
+        "fly-lc": "fly-lo",
+        "fly-gf": "fly-dn"
+      }
     },
     "groups": {"cb-cortex": "cerebellum", "dcn": "nuclei"},
     "circuits": [
@@ -4168,7 +4496,17 @@
       {"id": "oct-visual", "region": "octopus", "name": "Optic lobe connections",
        "desc": "The optic lobe receives the retina and input from the basal, subvertical and brachial lobes, and sends fibres to the superior frontal and lateral basal lobes (HRP tracing, octopus).", "links": ["oct-eye>oct-ol", "oct-basal>oct-ol", "oct-subvertical>oct-ol", "oct-brachial>oct-ol", "oct-ol>oct-sfl", "oct-ol>oct-basal"], "view": "octopus"},
       {"id": "oct-arms", "region": "octopus", "name": "Brain and arms",
-       "desc": "The basal lobes command movements without a body map, motor axons run along the cerebrobrachial tracts, the brain learns from one arm’s motion and touch, vision guides an arm, and each sucker’s ganglion sends fibres toward the arm’s nerve cord (octopus).", "links": ["oct-basal>oct-arm-ns", "oct-brain>oct-arm-ns", "oct-arm-ns>oct-brain", "oct-eye>oct-arm-ns", "oct-sucker>oct-arm-ns"], "view": "oct-arms"}
+       "desc": "The basal lobes command movements without a body map, motor axons run along the cerebrobrachial tracts, the brain learns from one arm’s motion and touch, vision guides an arm, and each sucker’s ganglion sends fibres toward the arm’s nerve cord (octopus).", "links": ["oct-basal>oct-arm-ns", "oct-brain>oct-arm-ns", "oct-arm-ns>oct-brain", "oct-eye>oct-arm-ns", "oct-sucker>oct-arm-ns"], "view": "oct-arms"},
+      {"id": "fly-olfaction", "region": "fly", "name": "Smell: antennal lobe to mushroom body and lateral horn",
+       "desc": "Olfactory receptor neurons expressing the same receptor converge on one or two antennal lobe glomeruli; projection neurons relay olfactory information to the mushroom body and the lateral horn (fly).", "links": ["fly-orn>fly-al", "fly-pn>fly-mb", "fly-pn>fly-lh"], "view": "fly"},
+      {"id": "fly-mb-out", "region": "fly", "name": "Mushroom body outputs",
+       "desc": "Projection neurons bring odours to the mushroom body; MB-V2 output neurons project to the lateral horn, and some output neurons contact descending neurons directly (fly). Kenyon cells and output neurons are shown in the mushroom body.", "links": ["fly-pn>fly-mb", "fly-mbon>fly-lh", "fly-mbon>fly-dn"], "view": "fly-mb"},
+      {"id": "fly-compass", "region": "fly", "name": "Anterior visual pathway",
+       "desc": "Medulla visual projection neurons feed neurons that connect the anterior optic tubercle with the ring neurons, whose axons largely form the ellipsoid body (fly). Ring neurons are shown in the ellipsoid body.", "links": ["fly-me>fly-aotu", "fly-aotu>fly-ring"], "view": "fly-cx"},
+      {"id": "fly-motion-escape", "region": "fly", "name": "Motion vision to escape",
+       "desc": "Photoreceptor signals split in the lamina; L1 and L2 start the ON and OFF pathways to T4 and T5 cells, which end in the lobula plate; LPLC2 looming detectors ramify in the T4/T5 layers and terminate on the giant fibre descending neuron (fly). T4/T5 are shown in the lobula plate, LPLC2 in the lobula and the giant fibre at the neck connective.", "links": ["fly-retina>fly-la", "fly-la>fly-t4t5", "fly-t4t5>fly-lc", "fly-lc>fly-gf"], "view": "fly-ol"},
+      {"id": "fly-brain-body", "region": "fly", "name": "Brain to nerve cord",
+       "desc": "Descending neurons traverse the neck and link sensory neuropils of the brain with motor neuropils of the nerve cord; some mushroom body output neurons contact them directly; sugar stimulation of taste neurons activates a pair of subesophageal motor neurons (fly).", "links": ["fly-dn>fly-vnc", "fly-mbon>fly-dn", "fly-grn>fly-gng"], "view": "fly-body"}
     ],
     "composite": {
       "motor-cortex": ["m1", "premotor"],
@@ -4181,7 +4519,22 @@
       "visual-cortex": ["v1", "mouse-hva", "v4", "mt", "it", "ffa"],
       "insula": ["ains", "pins", "gc"],
       "olfactory": ["piriform", "ob", "coa"],
-      "oct-brain": ["oct-vl", "oct-sfl", "oct-subvertical", "oct-basal", "oct-brachial"]
+      "oct-brain": ["oct-vl", "oct-sfl", "oct-subvertical", "oct-basal", "oct-brachial"],
+      "fly-cx": ["fly-eb", "fly-fb"],
+      "fly-ol": ["fly-la", "fly-me", "fly-lo", "fly-lop"],
+      "fly-brain": [
+        "fly-al",
+        "fly-mb",
+        "fly-lh",
+        "fly-eb",
+        "fly-fb",
+        "fly-aotu",
+        "fly-la",
+        "fly-me",
+        "fly-lo",
+        "fly-lop",
+        "fly-gng"
+      ]
     }
   }
 }

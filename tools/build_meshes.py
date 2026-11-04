@@ -586,6 +586,9 @@ def main():
         if cfg[sp].get('schematic'):   # no atlas volume: drawn by tools/build_octopus.py
             print(f'[{sp}] schematic: run tools/build_octopus.py')
             continue
+        if cfg[sp].get('builder'):     # built by a script of its own (the fly: tools/build_fly.py)
+            print(f"[{sp}] run {cfg[sp]['builder']}")
+            continue
         build(sp, cfg[sp])
 
 
