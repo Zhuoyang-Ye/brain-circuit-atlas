@@ -250,6 +250,15 @@ select:focus, input.text:focus { border-color: var(--accent); }
 .alabel.tx { transform: translate(-50%, -50%); font-size: .66rem; font-weight: 600; letter-spacing: .02em; padding: 0 5px; border-radius: 999px;
   border-color: var(--tx-line); color: var(--tx-text); background: var(--label-bg); }
 .alabel.tx.static { position: static; transform: none; display: inline-block; }
+/* the transmitter key: in the left panel, and as a strip at the foot of the canvas */
+.tx-key { display: grid; gap: 4px; margin: 8px 0 4px; font-size: .8rem; }
+.tx-key .txr { display: flex; align-items: baseline; gap: 7px; line-height: 1.3; }
+.txp { display: inline-block; flex: none; min-width: 34px; text-align: center; font-size: .68rem; font-weight: 700; letter-spacing: .02em;
+  padding: 0 5px; border: 1.5px solid; border-radius: 999px; background: var(--label-bg); }
+.atlas-txkey { position: absolute; left: 12px; right: 12px; bottom: 12px; width: fit-content; margin: 0 auto; display: flex; flex-wrap: wrap;
+  justify-content: center; gap: 4px 12px; padding: 6px 12px; background: var(--float-bg); border: 1px solid var(--line);
+  border-radius: var(--radius); font-size: .8rem; pointer-events: none; backdrop-filter: blur(6px); }
+.atlas-txkey .txr { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
 .alabel.lit { border-color: var(--trace); box-shadow: 0 0 0 1px var(--trace); }
 /* a label with no room near its anchor fades out (and back in), so crowded views stay readable */
 .alabel { transition: opacity .18s ease; }
@@ -434,7 +443,8 @@ table.data tr.click:hover td { background: var(--bg3); }
 @media (max-width: 860px) {
   .cols { grid-template-columns: minmax(0, 1fr); }
   .grid2 { grid-template-columns: minmax(0, 1fr); }
-  .fm-cols > .svgwrap { order: -1; }   /* phones: the map first, its controls and the region card below */
+  .fm-cols > .svgwrap { order: -1; }
+  .atlas-txkey { gap: 3px 9px; padding: 5px 9px; font-size: .74rem; }   /* phones: the map first, its controls and the region card below */
   .brand small { display: none; }
   .search { display: none; }
   .topbar { gap: 8px; }

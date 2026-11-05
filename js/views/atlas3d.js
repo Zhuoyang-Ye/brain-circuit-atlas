@@ -15,6 +15,9 @@
     modulator: { color: 0xf778ba, opacity: 0.9 },
   };
   const NM = D.neuromodulation || { tx: {}, sources: [] };
+  // one colour per transmitter, for its pathways, its tags on them and the key (dark-theme values; CA.tc maps them)
+  const TX_COLORS = { NA: 0x58a6ff, '5-HT': 0xbc8cff, DA: 0xf0883e, ACh: 0x3fb950, HA: 0xe3b341, OX: 0xf778ba, CRF: 0x39c5cf };
+  const txHex = (code) => CA.tc(TX_COLORS[code] != null ? TX_COLORS[code] : 0x8b949e);
   const MOD_SRC = new Set(NM.sources || []);   // neuromodulator source nuclei (drawn pink)
   const BODY_ANCHORS = ['spinal', 'body', 'gut', 'eyes', 'labyrinth'];
   // distinguishable warm tones for cerebellar subdivisions
@@ -131,6 +134,9 @@
   // entity -> categorical slot (kept while the circuit stays), mesh -> legend row, the hovered row
   let slotOf = new Map(), slotKey = '', ownerOf = new Map(), nameHot = null, layoutKey = '', layoutIdle = 0;
   let switching = false;   // true while a species change switches the region: the scene is rebuilt right after
+  // the structures that the pathways on screen (and the selection) touch: they keep their colours, everything else turns
+  // grey; null when nothing is drawn or selected, and the current region's structures are coloured instead
+  let focusIds = null;
   const geomCache = {};
 
   CA.register('atlas', { title: '3D atlas', mount, unmount, route, onRegion, onTheme });
@@ -151,7 +157,8 @@
     el.msg = h('div', { class: 'atlas-msg' }, 'Loading 3D anatomy…');
     el.controls = buildControls();
     el.names = h('div', { class: 'atlas-names', style: { display: 'none' } });
-    wrap.append(el.canvas, el.labels, el.controls, el.names, el.msg);
+    el.txOverlay = h('div', { class: 'atlas-txkey', style: { display: 'none' }, 'aria-label': 'Transmitter key' });
+    wrap.append(el.canvas, el.labels, el.controls, el.names, el.txOverlay, el.msg);
     if (!CA.store.get('intro.dismissed', false)) wrap.append(el.intro = buildIntro());
     root.appendChild(wrap);
 
@@ -227,12 +234,29 @@
     return box;
   }
 
-  /* circuits of the current region, plus the two generic choices */
+  /* circuits of the current region, a Neuromodulators entry (the region's own, or one built from its transmitter-tagged
+     pathways), and the two generic choices */
+  const isNMCircuit = (c) => /neuromod/i.test(c.id + ' ' + c.name);
+  // a structure's name inside a sentence: no trailing parenthesis, and lower case unless it starts with an acronym (VTA)
+  const inline = (id) => { const n = CA.ent[id].name.replace(/\s*\([^)]*\)$/, ''); return /^[A-Z][a-z]/.test(n) ? n[0].toLowerCase() + n.slice(1) : n; };
+  function nmCircuit(R) {
+    const own = A3.circuits.find((c) => c.region === R.id && isNMCircuit(c));
+    if (own) return Object.assign({ nm: true }, own, { name: 'Neuromodulators' });
+    const links = D.links.filter((l) => l.tx && NM.tx[l.tx] && l.regions.includes(R.id) && CA.has3D(l.s) && CA.has3D(l.t));
+    const byTx = {};
+    links.forEach((l) => { (byTx[l.tx] = byTx[l.tx] || new Set()).add(inline(l.s)); });
+    const parts = Object.entries(byTx).map(([tx, srcs]) => `${NM.tx[tx].label.toLowerCase()} (${tx}) from the ${[...srcs].join(' and the ')}`);
+    const desc = links.length
+      ? `Where the ${R.label.toLowerCase()} gets its neuromodulators: ${parts.join('; ')}. Each transmitter has its own colour, named in the key; arrows point from the source nucleus to its target.`
+      : `No neuromodulatory pathway with both ends placed in this atlas is curated for the ${R.label.toLowerCase()} yet.`;
+    return { id: 'nm-auto', nm: true, fit: true, name: 'Neuromodulators', desc, links: links.map((l) => l.id) };
+  }
   function regionCircuits() {
-    return [...A3.circuits.filter((c) => c.region === CA.region.id),
+    return [...A3.circuits.filter((c) => c.region === CA.region.id && !isNMCircuit(c)), nmCircuit(CA.region),
       { id: 'all', name: 'All mapped connections', desc: `Every anatomical or functional link of the ${CA.region.label.toLowerCase()} content with both ends placed in this atlas.` },
       { id: 'none', name: 'Anatomy only', desc: 'Hide pathways. Click a structure to show its own connections.' }];
   }
+  const currentCircuit = () => regionCircuits().find((c) => c.id === circuitId) || null;
   const circuitKey = () => 'atlas.circuit' + (CA.region === D.regions[0] ? '' : '.' + CA.region.id);
   function pickCircuit() {
     const list = regionCircuits(), saved = CA.store.get(circuitKey(), null);
@@ -252,6 +276,21 @@
     if (c.xray && !opts.xray) { opts.xray = true; CA.store.set('atlas.opts', opts); el.xrayBox.checked = true; applyMaterials(); }
     if (c.view && VIEWS[species][c.view]) flyTo(c.view);
     rebuildLinks();
+    if (c.fit && !c.view) flyTo(fitView(c.links));
+  }
+
+  /** A camera that frames the ends of these pathways, looking from the current direction. */
+  function fitView(linkIds) {
+    if (!camera) return null;
+    const T = window.THREE;
+    const pts = [];
+    linkIds.forEach((id) => { const l = CA.link[id]; if (l) [posOf(l.s), posOf(l.t)].forEach((p) => { if (p) pts.push(p); }); });
+    if (!pts.length) return null;
+    const box = new T.Box3().setFromPoints(pts);
+    const centre = box.getCenter(new T.Vector3()), r = Math.max(2, box.getSize(new T.Vector3()).length() / 2);
+    const dir = camera.position.clone().sub(controls.target).normalize();
+    const dist = CA.clamp(r / Math.sin((camera.fov * Math.PI / 180) / 2) * 1.1, controls.minDistance + 1, controls.maxDistance - 1);
+    return { pos: centre.clone().add(dir.multiplyScalar(dist)).toArray(), target: centre.toArray() };
   }
 
   /** The region changed (the dropdown in the left panel): swap circuits, notes and emphasis, and fly to the region. */
@@ -274,8 +313,9 @@
     applyMaterials();
     applyHighlight();
     rebuildLinks();
-    const c = A3.circuits.find((x) => x.id === circuitId);
-    flyTo(c && c.view && VIEWS[species][c.view] ? c.view : R.view);
+    const c = currentCircuit();
+    if (c && c.fit && !c.view) flyTo(fitView(c.links) || R.view);
+    else flyTo(c && c.view && VIEWS[species][c.view] ? c.view : R.view);
   }
 
   /** Switch species. The octopus and the fly have their own regions and the mammals theirs, so a switch across them also switches the
@@ -331,6 +371,7 @@
     el.speciesNote = h('div', { class: 'desc' });
     el.circs = h('div', {});
     el.circDesc = h('div', { class: 'desc' });
+    el.txKey = h('div', { class: 'tx-key', style: { display: 'none' } });
     el.traceBtn = h('button', { class: 'btn', title: 'Send one pulse through the circuit in order, lighting each structure as it arrives. The order follows the circuit\'s pathways; the timing is schematic.',
       onclick: () => (trace ? stopTrace() : startTrace()) }, '▶ Trace step by step');
     el.traceInfo = h('div', {});
@@ -346,7 +387,7 @@
     CA.append(box,
       h('h4', { style: { marginTop: 0 } }, 'Species'), seg, el.speciesNote,
       D.regions.length > 1 ? [h('h4', {}, 'Region'), CA.regionPicker()] : null,
-      h('h4', {}, 'Circuits'), el.circs, el.circDesc, el.traceBox,
+      h('h4', {}, 'Circuits'), el.circs, el.circDesc, el.txKey, el.traceBox,
       h('h4', {}, 'Display'),
       check('shell', 'Brain surface', applyMaterials),
       h('input', { type: 'range', min: 0.03, max: 0.35, step: 0.01, value: opts.opacity, style: { width: '100%' },
@@ -434,8 +475,10 @@
       buildScene(sp, bundle);
       el.msg.style.display = 'none';
       const r = CA.parseHash();
-      const circ = A3.circuits.find((c) => c.id === circuitId);
+      const circ = currentCircuit();
+      const fit = circ && circ.fit && !circ.view && fitView(circ.links);
       if (r.kind === 'e' && CA.ent[r.id]) focusEntity(r.id, true);
+      else if (fit) { camera.position.fromArray(fit.pos); controls.target.fromArray(fit.target); controls.update(); }
       else jumpTo(circ && circ.view && VIEWS[sp][circ.view] ? circ.view : 'overview');
     }).catch((e) => {
       el.msg.innerHTML = '<div><h3>Could not load 3D data</h3><p class="small">' + CA.esc(e.message) + '</p><p class="small">Run <code>python tools/build_meshes.py</code> to generate the mesh files.</p></div>';
@@ -565,6 +608,7 @@
     const mat = (c, o) => {
       const m = new T.MeshStandardMaterial({ color: c, roughness: 0.5, transparent: true, opacity: o == null ? 0.9 : o, emissive: c, emissiveIntensity: 0.12 });
       m.userData.base = c;   // restored when the legend gives the structure a colour of its own and then takes it back
+      m.userData.op0 = m.opacity;
       return m;
     };
     if (bundle.spine && bundle.spine.length > 1) {
@@ -634,49 +678,76 @@
     return s >= 0 ? o + (1 - o) * s : o * (1 + 0.85 * s);
   }
 
-  function applyMaterials() {
-    meshObjs.forEach((m) => {
-      const r = m.userData.rec, mat = m.material;
-      if (r.group === 'shell') { m.visible = opts.shell; mat.opacity = opts.opacity; return; }
+  /* Colour and opacity, in one place. Every structure is drawn in a light tint of its colour; the one under the pointer
+   * (on the model or in the legend) in a deep, solid version, so it stands out. While pathways are drawn (a circuit, or
+   * the selection's connections), only the structures they touch keep their colours and the rest of the brain turns
+   * grey and faint; the touched structures stay see-through, so the pathways and their arrowheads inside them show. */
+  const TINT = 0.45, DEEPEN = { dark: 0.15, light: 0.3 };
+  const relevant = (o) => !focusIds || [...focusIds].some((rid) => claimRank(rid, o) >= 0);
+  function meshOpacity(m, fit, hov) {
+    const r = m.userData.rec;
+    let o = m.userData.baseOpacity;
+    if (hov) o = 0.92;
+    else if (focusIds) o = !fit ? Math.min(o, 0.1) : Math.min(Math.max(o, 0.5), drawnLinks.length ? 0.55 : 0.85);
+    else {
       const reg = meshRegion(r);
-      let o = m.userData.baseOpacity;
       if (reg === CA.region.id) o = Math.max(o, 0.75);           // the current region stands out
       else if (!meshInRegion(r)) o = Math.min(o, o > 0.6 ? 0.5 : 0.2);   // structures outside its content recede
       else if (reg && o > 0.6) o = 0.5;                           // another region's structures, kept as context
-      if (legendOn() && slotOf.has(ownerOf.get(m))) o = Math.max(o, 0.45);   // a structure with a legend colour of its own shows it
-      if (r.group === 'cerebellum' && opts.xray) o = 0.22;   // x-ray keeps the cerebellum see-through
-      else o = solidify(o);
-      mat.opacity = o;
-      mat.depthWrite = o > 0.8;   // see-through surfaces must not hide the pathways behind them
-      mat.needsUpdate = true;
-    });
+    }
+    if (!hov && legendOn() && slotOf.has(ownerOf.get(m))) o = Math.max(o, 0.45);   // a structure with a legend colour of its own shows it
+    if (r.group === 'cerebellum' && opts.xray && !hov) return 0.22;   // x-ray keeps the cerebellum see-through
+    return hov ? o : solidify(o);
   }
-
-  function applyHighlight() {
+  function paint() {
+    if (!scene) return;
     showMarkers();
-    const sel = selectedSet();
     const T = window.THREE;
-    const hotRid = nameHot && resolve(nameHot);   // the structure hovered in the legend
-    meshObjs.concat(markerObjs).forEach((m) => {
-      const rel = m.userData.rec && m.userData.rec.related;
-      const on = (m.userData.entity && sel.has(m.userData.entity)) || (rel && sel.has(rel));
-      const hov = (hovered && hovered === m) || (hotRid && ownerOf.get(m) === hotRid);
-      m.traverse((c) => {
-        if (!c.material || !c.material.emissive) return;
-        c.material.emissive = new T.Color(on ? 0x4a7dff : hov ? 0x666666 : (c.material.color || new T.Color(0)).getHex());
-        c.material.emissiveIntensity = on ? 0.55 : hov ? 0.55 : (m.userData.marker ? 0.12 : 0);
+    const sel = selectedSet(), hotRid = nameHot && resolve(nameHot);   // the structure hovered in the legend
+    const pal = PALETTE[CA.theme === 'light' ? 'light' : 'dark'];
+    const grey = new T.Color(CA.tc(0x8b949e)), white = new T.Color(0xffffff), black = new T.Color(0x000000);
+    const deepen = DEEPEN[CA.theme === 'light' ? 'light' : 'dark'];
+    meshObjs.forEach((m) => { if (m.userData.rec.group === 'shell') { m.visible = opts.shell; m.material.opacity = opts.opacity; } });
+    meshObjs.filter((m) => m.userData.rec.group !== 'shell').concat(markerObjs).forEach((o) => {
+      const rel = o.userData.rec && o.userData.rec.related;
+      const on = (o.userData.entity && sel.has(o.userData.entity)) || (rel && sel.has(rel));
+      const hov = (hovered && hovered === o) || (hotRid && ownerOf.get(o) === hotRid);
+      const fit = relevant(o);
+      const slot = legendOn() ? slotOf.get(ownerOf.get(o)) : undefined;
+      if (o.userData.rec) {
+        const op = meshOpacity(o, fit, hov);
+        o.material.opacity = op;
+        o.material.depthWrite = op > 0.8;   // see-through surfaces must not hide the pathways behind them
+        o.material.needsUpdate = true;
+      }
+      o.traverse((c) => {
+        if (!c.material || !c.material.color) return;
+        const base = new T.Color(slot != null ? pal[slot] : c.material.userData.base != null ? c.material.userData.base : o.userData.base);
+        const col = hov || on ? base.clone().lerp(black, deepen)   // hovered or selected: deep and solid
+          : !fit ? grey                                            // not on the pathways shown: colourless
+            : slot != null ? base                                  // a legend colour: as its swatch shows it
+              : base.clone().lerp(white, TINT);                    // everything else: a light tint
+        c.material.color.copy(col);
+        if (!o.userData.rec && c.material.userData.op0 != null) {   // markers and body parts
+          c.material.opacity = hov ? Math.max(c.material.userData.op0, 0.92) : fit ? c.material.userData.op0 : Math.min(c.material.userData.op0, 0.25);
+        }
+        if (c.material.emissive) {
+          c.material.emissive.copy(on ? new T.Color(0x4a7dff) : col);
+          c.material.emissiveIntensity = on ? 0.45 : o.userData.marker && !hov ? 0.12 : 0;
+        }
       });
     });
     // and the legend row of whatever the pointer is on, in the legend or on the model
     const hovRid = hovered && ownerOf.get(hovered);
     if (el.names) el.names.querySelectorAll('.nm').forEach((n) => n.classList.toggle('hot', n.dataset.id === nameHot || (!!hovRid && n.dataset.rid === hovRid)));
   }
+  const applyMaterials = paint, applyHighlight = paint;
 
   /* -------- connections -------- */
   function activeLinks() {
     const ids = new Set();
     if (circuitId === 'all') D.links.forEach((l) => { if ((l.kind === 'anatomical' || l.kind === 'functional') && l.regions.includes(CA.region.id)) ids.add(l.id); });
-    else if (circuitId !== 'none') (A3.circuits.find((c) => c.id === circuitId) || { links: [] }).links.forEach((x) => ids.add(x));
+    else if (circuitId !== 'none') (currentCircuit() || { links: [] }).links.forEach((x) => ids.add(x));
     const sel = CA.selected;
     if (sel) CA.linksOf(sel).forEach((l) => { if (l.kind === 'anatomical' || l.kind === 'functional') ids.add(l.id); });
     return [...ids].map((id) => CA.link[id]).filter(Boolean);
@@ -692,10 +763,11 @@
     labelEls.forEach((l) => l.el.remove()); labelEls = []; layoutKey = '';
     const human = species !== 'mouse';   // primate tube sizes
     const sel = CA.selected;
-    const drawn = new Set(), txSeen = new Set();
+    const drawn = new Set(), txSeen = {};   // transmitter code -> names of the source structures
     const at = (id) => { const p = posOf(id); return p ? p.toArray().map((x) => x.toFixed(2)).join(',') : id; };
     const keyOf = (s, t) => at(s) + '|' + at(t);   // links between the same two points are drawn once
     const links = activeLinks();
+    const circ = currentCircuit(), nmMode = !!(circ && circ.nm);   // in a neuromodulator circuit, pathways take their transmitter's colour
     const keys = new Set(links.map((l) => keyOf(l.s, l.t)));
     const collapsed = [];   // pathways with both ends in one mesh (the human amygdala's nuclei): not drawn
     links.forEach((l) => {
@@ -716,13 +788,14 @@
         if (perp.length() > 1e-6) ctrl.add(perp.normalize().multiplyScalar(0.12 * dist + 0.2));
       }
       const curve = new T.QuadraticBezierCurve3(a, ctrl, b);
-      const color = new T.Color(CA.statusColor(l.status));
+      const txOn = nmMode && l.tx && NM.tx[l.tx];
+      const color = new T.Color(txOn ? txHex(l.tx) : CA.statusColor(l.status));
       const focus = sel && (l.s === sel || l.t === sel);
       const dashed = l.kind === 'functional' || l.status === 'hypothesis' || l.status === 'debated';
       let obj;
       if (dashed) {
         const g = new T.BufferGeometry().setFromPoints(curve.getPoints(64));
-        obj = new T.Line(g, new T.LineDashedMaterial({ color: l.kind === 'functional' && l.status !== 'hypothesis' ? CA.tc(0x9aa4b2) : color, dashSize: 0.16, gapSize: 0.1, transparent: true, opacity: 0.95 }));
+        obj = new T.Line(g, new T.LineDashedMaterial({ color: l.kind === 'functional' && l.status !== 'hypothesis' && !txOn ? CA.tc(0x9aa4b2) : color, dashSize: 0.16, gapSize: 0.1, transparent: true, opacity: 0.95 }));
         obj.computeLineDistances();
         const hit = new T.Mesh(new T.TubeGeometry(curve, 24, 0.09, 5, false), new T.MeshBasicMaterial({ visible: false }));
         obj.add(hit); hit.userData.link = l; pickables.push(hit);
@@ -735,9 +808,10 @@
       scene.add(obj); linkObjs.push(obj);
       const objs = [obj];
       // arrowheads a little past the middle show the direction, in still images too (the ends sit inside the structures)
-      const headColor = l.kind === 'functional' && l.status !== 'hypothesis' ? new T.Color(CA.tc(0x9aa4b2)) : color;
-      const headR = (human ? 0.17 : 0.135) * (focus ? 1.25 : 1);
-      (dist > 9 ? [0.36, 0.7] : [0.58]).forEach((u) => {
+      const headColor = l.kind === 'functional' && l.status !== 'hypothesis' && !txOn ? new T.Color(CA.tc(0x9aa4b2)) : color;
+      const headR = (human ? 0.17 : 0.135) * (focus ? 1.25 : 1) * (txOn ? 0.7 : 1);   // neuromodulatory pathways often converge: smaller heads
+      // two heads on a long pathway, and on every neuromodulatory one, so its direction reads even where an end is hidden
+      (dist > 9 || txOn ? [0.36, 0.7] : [0.58]).forEach((u) => {
         const cone = new T.Mesh(new T.ConeGeometry(headR, headR * 2.7, 14), new T.MeshBasicMaterial({ color: headColor, transparent: true, opacity: 0.95 }));
         cone.position.copy(curve.getPointAt(u));
         cone.quaternion.setFromUnitVectors(new T.Vector3(0, 1, 0), curve.getTangentAt(u).normalize());   // a cone points along +y
@@ -755,11 +829,12 @@
         pulses.push({ mesh: s, curve, offset: k / n, speed: 0.22 / Math.max(1, dist / 4) * (l.status === 'hypothesis' ? 0.5 : 1) });
       }
       [l.s, l.t].forEach((id) => addLabel(id, true));
-      if (l.tx && NM.tx[l.tx]) {   // transmitter tag at the middle of the pathway
-        const tag = h('div', { class: 'alabel tx' }, l.tx);
+      if (l.tx && NM.tx[l.tx]) {   // transmitter tag at the middle of the pathway, in the transmitter's colour
+        const hex = hexCss(txHex(l.tx));
+        const tag = h('div', { class: 'alabel tx', title: NM.tx[l.tx].label, style: { color: hex, borderColor: hex } }, l.tx);
         el.labels.appendChild(tag);
         labelEls.push({ id: 'tx:' + l.id, el: tag, pos: curve.getPoint(0.5), tag: true });
-        txSeen.add(l.tx);
+        (txSeen[l.tx] = txSeen[l.tx] || new Set()).add(inline(l.s));
       }
     });
     // name the structure that holds an undrawn pathway, unless a label already marks that spot
@@ -767,11 +842,15 @@
       const p = posOf(l.s), rid = resolve(l.s);
       if (rid && !labelEls.some((x) => !x.tag && x.pos.distanceTo(p) < 0.08)) addLabel(rid, true);
     });
-    if (el.txLegend) {
-      CA.clear(el.txLegend);
-      el.txLegend.style.display = txSeen.size ? '' : 'none';
-      if (txSeen.size) el.txLegend.append(h('span', { class: 'alabel tx static' }, 'tag'),
-        Object.keys(NM.tx).filter((c) => txSeen.has(c)).map((c) => (c === NM.tx[c].label ? c : c + ' ' + NM.tx[c].label.toLowerCase())).join(' · '));
+    renderTxKey(txSeen);
+    // the structures these pathways touch keep their colours; the rest of the brain turns grey
+    focusIds = null;
+    if (drawnLinks.length || collapsed.length || sel) {
+      focusIds = new Set();
+      const add = (id) => { if (!id) return; focusIds.add(id); const rid = resolve(id); if (rid) focusIds.add(rid); ((A3.composite || {})[id] || []).forEach((k) => focusIds.add(k)); };
+      drawnLinks.forEach((d) => { add(d.l.s); add(d.l.t); });
+      collapsed.forEach((l) => { add(l.s); add(l.t); });
+      add(sel);
     }
     if (sel) addLabel(sel, true);
     if (opts.labels && circuitId === 'none' && !sel) Object.keys(positions).forEach((id) => { if (CA.ent[id] && !['body', 'gut', 'spinal'].includes(id)) addLabel(id); });
@@ -786,8 +865,8 @@
    *  structure (or into one) travelling together. Only a chain or loop has an order to trace, so every step must leave
    *  from where the step before arrived; parallel pathways (several outputs of one area, say) get no steps. */
   function traceSteps() {
-    const c = A3.circuits.find((x) => x.id === circuitId);
-    if (!c) return [];
+    const c = currentCircuit();
+    if (!c || !c.links) return [];
     const steps = [];
     drawnLinks.filter((d) => c.links.includes(d.l.id)).sort((a, b) => c.links.indexOf(a.l.id) - c.links.indexOf(b.l.id)).forEach((d) => {
       const last = steps[steps.length - 1];
@@ -923,6 +1002,24 @@
     labelEls.push({ id, el: e, pos: p, path: !!path });
   }
 
+  /** The transmitter key: each transmitter on screen, its colour, full name and source; in the left panel and on the canvas. */
+  function renderTxKey(seen) {
+    const codes = Object.keys(NM.tx).filter((c) => seen[c]).concat(Object.keys(seen).filter((c) => !NM.tx[c]));
+    const pill = (c) => { const hex = hexCss(txHex(c)); return h('span', { class: 'txp', style: { color: hex, borderColor: hex } }, c); };
+    const full = (c) => (NM.tx[c] ? NM.tx[c].label : c);
+    if (el.txKey) {
+      CA.clear(el.txKey);
+      el.txKey.style.display = codes.length ? '' : 'none';
+      if (codes.length) CA.append(el.txKey, h('div', { class: 'tiny muted' }, 'Transmitters on these pathways'),
+        codes.map((c) => h('div', { class: 'txr' }, pill(c), h('span', {}, h('b', {}, full(c)), h('span', { class: 'muted' }, ' from the ' + [...seen[c]].join(' and the '))))));
+    }
+    if (el.txOverlay) {
+      CA.clear(el.txOverlay);
+      el.txOverlay.style.display = codes.length ? '' : 'none';
+      codes.forEach((c) => el.txOverlay.appendChild(h('span', { class: 'txr' }, pill(c), full(c))));
+    }
+  }
+
   /* -------- the legend at the side: names off the model, colour-coded --------
    * The header switch next to the theme button puts the names here instead of on the model. The structures on the
    * pathways on screen (and the selection) take a colour of their own, painted on the model, from one categorical
@@ -982,17 +1079,7 @@
       const k = pal.findIndex((_, i) => !used.has(i));
       if (k >= 0) slotOf.set(rid, k);
     });
-    objs.forEach((o) => {
-      const slot = slotOf.get(ownerOf.get(o));
-      o.traverse((c) => {
-        if (!c.material || !c.material.color) return;
-        const base = c.material.userData.base != null ? c.material.userData.base : o.userData.base;
-        c.material.color.setHex(slot != null ? pal[slot] : base);
-      });
-    });
-    applyMaterials();
-    applyHighlight();
-    if (el.txLegend) el.txLegend.classList.toggle('off', on);   // transmitter tags are not drawn in legend mode
+    paint();
     layoutKey = '';
     if (nameHot && !seen.has(nameHot)) nameHot = null;
     // the list: coloured structures in palette order, then the rest by name
@@ -1002,7 +1089,9 @@
     const swatchOf = (r) => {
       if (slotOf.has(r.rid)) return pal[slotOf.get(r.rid)];
       const o = objs.find((x) => ownerOf.get(x) === r.rid);
-      return o ? baseOf(o) : null;
+      if (!o) return null;
+      const c = new window.THREE.Color(baseOf(o)).lerp(new window.THREE.Color(0xffffff), TINT);   // the light tint the model shows
+      return c.getHex();
     };
     const row = (r) => {
       const pos = r.rid && positions[r.rid], approx = pos && pos.approx, marker = pos && pos.marker, hex = swatchOf(r);
