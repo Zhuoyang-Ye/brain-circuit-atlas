@@ -972,7 +972,7 @@
       "entity": "fly-brain",
       "query": "(Drosophila[tiab] OR \"fruit fly\"[tiab] OR \"fruit flies\"[tiab])",
       "view": "fly",
-      "views": ["atlas", "scales", "gaps", "lab", "library"],
+      "views": ["atlas", "map", "circuit", "molecules", "scales", "gaps", "lab", "library"],
       "levelDesc": {
         "regional": "Antennal lobe, mushroom body and lateral horn; the central complex (ellipsoid and fan-shaped bodies) and anterior optic tubercle; the optic lobes (lamina, medulla, lobula, lobula plate); the subesophageal zone and the ventral nerve cord",
         "circuit": "Olfactory receptor neurons to the antennal lobe and projection neurons to the mushroom body and lateral horn; Kenyon cells, output and dopamine neurons; medulla to tubercle to ring neurons; lamina to T4/T5 to looming detectors and the giant fibre; descending neurons to the nerve cord",
@@ -2169,8 +2169,32 @@
      "summary": "A gene spliced differently in males and females, whose male-specific transcription factors, FruM, specify the neural substrates of courtship (fly). Male splicing is essential for male courtship and sufficient to make females court other females (fly); FruM is expressed in about 2% of central neurons, inactivating them abolishes courtship and masculinizing them in females largely confers it (fly). By regulating dendrite position it connects one cluster of third-order olfactory neurons to pheromone input and disconnects another, rerouting the pheromone signal by sex (fly).", "refs": ["manoli2005", "demir2005", "kohl2013"]},
     {"id": "fly-oa", "name": "Octopamine", "level": "molecular", "kind": "neuromodulator", "aka": ["OA", "OAMB"], "region": "fly", "domains": ["reward", "learning"],
      "summary": "A neuromodulator presumed to be the arthropod homologue of noradrenaline. It is required for appetitive but not aversive olfactory conditioning (fly), and it reinforces only short-term appetitive memory, through dopamine neurons, partly via the OAMB receptor in a subset of mushroom-body-targeted dopamine neurons (fly).", "refs": ["schwaerzel2003", "burke2012"]},
+    {"id": "fly-dopr", "name": "Dopamine receptors DopR1 and DopR2", "level": "molecular", "kind": "receptor", "aka": ["dDA1", "Dop1R1", "DopR1", "DopR2", "Dop1R2", "dumb"], "region": "fly", "domains": ["learning", "reward"],
+     "summary": "D1-like dopamine receptors of the Kenyon cells. The D1 receptor dDA1 (DopR1) is enriched in the mushroom body; mutants with abnormal dDA1 expression learn very poorly with shock and less well with sugar, and restoring it in mushroom body neurons rescues both (fly). DopR1 and DopR2 couple to different second messengers and direct opposite synaptic plasticity, so that the timing of odour and dopamine decides whether an association is written or reversed (fly).", "refs": ["kimyc2007", "handler2019"]},
+    {"id": "fly-dunce", "name": "dunce (cAMP phosphodiesterase)", "level": "molecular", "kind": "enzyme", "aka": ["dnc", "phosphodiesterase", "PDE"], "region": "fly", "domains": ["learning", "memory"],
+     "summary": "The first fly learning mutant: dunce flies fail to learn to avoid a shock-paired odour although they sense odour and shock (fly), and with classical conditioning they learn appreciably but forget within the first 30 minutes (fly). Searches for mutants of learning, of cyclic AMP metabolism and of fertility led to the same gene, which appears to encode a cAMP phosphodiesterase (fly).", "refs": ["dudai1976", "tully1985", "byers1981"]},
+    {"id": "fly-creb", "name": "CREB (dCREB2)", "level": "molecular", "kind": "transcription factor", "aka": ["dCREB2", "CREB"], "region": "fly", "domains": ["memory"],
+     "summary": "A family of transcription factors needed for long-term memory. Consolidated odour memory has two components, anaesthesia-resistant memory and long-term memory, which alone needs protein synthesis (fly), and inducing a dominant-negative CREB transgene blocks long-term memory completely while sparing learning and anaesthesia-resistant memory (fly).", "refs": ["tully1994", "yin1994"]},
+    {"id": "fly-amn", "name": "Amnesiac neuropeptide", "level": "molecular", "kind": "neuropeptide", "aka": ["amnesiac", "amn", "AMN"], "region": "fly", "domains": ["memory"],
+     "summary": "The product of the amnesiac gene, an apparent neuropeptide precursor. amnesiac flies learn but forget within 30 minutes (fly). It is expressed strongly in the two DPM neurons, which project over all the mushroom body lobes; blocking their vesicle recycling shortens memory, and restoring amn in them rescues it (fly).", "refs": ["tully1985", "waddell2000"]},
+    {"id": "fly-npf", "name": "Neuropeptide F (dNPF)", "level": "molecular", "kind": "neuropeptide", "aka": ["dNPF", "NPF", "NPFR"], "region": "fly", "domains": ["reward", "homeostasis"],
+     "summary": "The fly orthologue of mammalian neuropeptide Y. Stimulating dNPF neurons mimics hunger and promotes appetitive memory performance in fed flies, which needs the dNPF receptor in six dopamine neurons of one mushroom body region (fly).", "refs": ["krashes2009"]},
+    {"id": "fly-shaker", "name": "Shaker (potassium channel)", "level": "molecular", "kind": "ion channel", "aka": ["Sh", "minisleep", "mns"], "region": "fly", "domains": ["homeostasis"],
+     "summary": "A voltage-dependent potassium channel that controls membrane repolarization and transmitter release. A screen of 9,000 mutant lines found a short sleeper, minisleep, with a point mutation in Shaker; other Shaker alleles also sleep little, and short-sleeping Shaker flies live shorter lives (fly).", "refs": ["cirelli2005"]},
+    {"id": "fly-dpm", "name": "DPM neurons", "level": "cellular", "kind": "cell type", "aka": ["dorsal paired medial neurons"], "region": "fly", "domains": ["memory"],
+     "summary": "A pair of large neurons that project over all the lobes of the mushroom body. They express the Amnesiac neuropeptide, needed for normal olfactory memory (fly), and release serotonin onto α/β Kenyon cells, needed for anaesthesia-resistant memory (fly).", "refs": ["waddell2000", "leept2011"]},
+    {"id": "fly-nb", "name": "Mushroom body neuroblasts", "level": "cellular", "kind": "progenitor", "aka": ["MB neuroblasts", "MBNb"], "region": "fly", "domains": ["development"],
+     "summary": "The four neural stem cells that build each mushroom body. Each gives rise to the whole repertoire of mushroom body neurons and glia (fly), producing γ neurons first, then α′/β′ neurons, and α/β neurons last (fly).", "refs": ["itok1997", "leet1999"]},
+    {"id": "fly-m-pd", "name": "Fly models of Parkinson’s disease", "level": "clinical", "kind": "disease model", "aka": ["α-synuclein flies", "parkin mutants"], "region": "fly", "domains": ["motor"],
+     "summary": "Expressing human α-synuclein in flies causes adult-onset loss of dopaminergic neurons, filamentous inclusions and locomotor dysfunction (fly), and flies lacking parkin, mutated in a familial juvenile parkinsonism, have locomotor defects from muscle degeneration, with mitochondrial pathology first (fly).", "refs": ["feany2000", "greene2003"]},
+    {"id": "fly-m-ad", "name": "Fly model of Alzheimer’s disease (Aβ42)", "level": "clinical", "kind": "disease model", "aka": ["Aβ42 flies", "amyloid-β"], "region": "fly", "domains": ["memory"],
+     "summary": "Expressing human Aβ42 in the fly brain causes diffuse amyloid deposits, age-dependent learning defects and extensive neurodegeneration, whereas Aβ40 causes only learning defects (fly).", "refs": ["iijima2004"]},
+    {"id": "fly-m-fxs", "name": "Fly model of fragile X syndrome (dfmr1)", "level": "clinical", "kind": "disease model", "aka": ["dfmr1 mutants", "dFMR1"], "region": "fly", "domains": ["social", "memory"],
+     "summary": "Flies lacking dfmr1 activity have courtship, courtship-memory and mushroom body defects that metabotropic glutamate receptor antagonists or lithium rescue, implicating enhanced mGluR signalling (fly).", "refs": ["mcbride2005"]},
+    {"id": "fly-m-polyq", "name": "Fly model of polyglutamine disease (SCA3)", "level": "clinical", "kind": "disease model", "aka": ["SCA3 flies", "MJD flies", "polyQ"], "region": "fly", "domains": ["motor"],
+     "summary": "An expanded-polyglutamine fragment of the spinocerebellar ataxia type 3 protein causes nuclear inclusions and late-onset degeneration in flies, to which neurons are especially susceptible; the anti-apoptotic gene P35 mitigates it (fly).", "refs": ["warrick1998"]},
     {"id": "f-associative", "name": "Associative learning", "level": "cognitive", "kind": "function", "aka": ["classical conditioning", "Pavlovian conditioning", "olfactory conditioning"], "domains": ["learning"],
-     "summary": "Learning that one stimulus predicts another, as in classical conditioning. Flies learn to associate odours with electric shock, which requires the mushroom bodies (fly), and with sugar reward, which dopamine neurons of the PAM cluster signal (fly).", "refs": ["debelle1994", "liuc2012"]}
+     "summary": "Learning that one stimulus predicts another, as in classical conditioning. Flies learn to avoid an odour paired with electric shock, a memory that lasts a day (fly); this requires the mushroom bodies (fly), and flies also learn odours paired with sugar reward, which dopamine neurons of the PAM cluster signal (fly).", "refs": ["quinn1974", "debelle1994", "liuc2012"]}
   ],
   "links": [
     {"s": "mglur1", "t": "ltd", "rel": "required for LTD induction", "status": "supported", "kind": "mechanistic", "refs": ["aiba1994", "hansel2001"]},
@@ -2851,24 +2875,24 @@
     {"s": "fly-orn", "t": "fly-al", "rel": "neurons expressing the same receptor converge on one or two spatially invariant glomeruli, about 50 classes onto 50 glomeruli: a map of receptor activation (fly)", "status": "supported", "kind": "anatomical", "refs": ["vosshall2000", "jefferis2007"]},
     {"s": "fly-orn", "t": "fly-pn", "rel": "feed second-order neurons in the same glomerulus, whose odour responses are broader and more complex than their afferents’ (fly)", "status": "emerging", "kind": "functional", "refs": ["wilson2004"]},
     {"s": "fly-pn", "t": "fly-mb", "rel": "relay olfactory information from the antennal lobes to the mushroom body, with stereotyped inputs (fly)", "status": "supported", "kind": "anatomical", "refs": ["jefferis2007", "heimbeck2001"]},
-    {"s": "fly-pn", "t": "fly-kc", "rel": "each Kenyon cell integrates input from a different, apparently random combination of glomeruli (fly)", "status": "emerging", "kind": "anatomical", "refs": ["caron2013"]},
+    {"s": "fly-pn", "t": "fly-kc", "rel": "each Kenyon cell integrates input from a different, apparently random combination of glomeruli (fly), from about ten projection neurons on average, and responds far more selectively than its inputs (fly)", "status": "supported", "kind": "anatomical", "refs": ["caron2013", "turner2008"]},
     {"s": "fly-pn", "t": "fly-lh", "rel": "relay olfactory information to the lateral horn, where fruit odours map mostly posterior-dorsally and candidate pheromone channels anterior-ventrally (fly)", "status": "emerging", "kind": "anatomical", "refs": ["jefferis2007"]},
     {"s": "fly-pn", "t": "f-smell", "rel": "blocking most projection neurons impairs odour detection, and their direct path to the lateral protocerebrum is argued to suffice for experience-independent odour responses (fly)", "status": "emerging", "kind": "causal", "refs": ["heimbeck2001"]},
     {"s": "fly-lh", "t": "f-valence", "rel": "activating some lateral horn cell types changes valence behaviour (fly)", "status": "emerging", "kind": "causal", "refs": ["dolan2019"]},
     {"s": "fly-mbon", "t": "fly-lh", "rel": "MB-V2 output neurons project from the vertical lobes to the lateral horn (and the middle superior medial protocerebrum); the authors propose they recruit the innate avoidance pathway during memory retrieval (fly)", "status": "emerging", "kind": "anatomical", "refs": ["sejourne2011"]},
     {"s": "fly-kc", "t": "fly-mbon", "rel": "about 2,000 Kenyon cells converge onto 34 output neurons of 21 types, whose dendrites tile 15 compartments along the Kenyon cell axons (fly)", "status": "supported", "kind": "anatomical", "refs": ["aso2014a", "aso2014b"]},
-    {"s": "fly-dan", "t": "fly-mbon", "rel": "each dopamine neuron type targets one or at most two output-neuron compartments (fly), and pairing an odour with dopamine neuron activation depresses that odour’s synapses at the output site, within the compartment (fly)", "status": "supported", "kind": "mechanistic", "refs": ["aso2014a", "hige2015"]},
+    {"s": "fly-dan", "t": "fly-mbon", "rel": "each dopamine neuron type targets one or at most two output-neuron compartments (fly), pairing an odour with dopamine neuron activation depresses that odour’s synapses at the output site within the compartment (fly), and dopamine modulates transmission with compartmental precision, routing the same odour to different outputs by state and experience (fly)", "status": "supported", "kind": "mechanistic", "refs": ["aso2014a", "hige2015", "cohn2015"]},
     {"s": "fly-dan", "t": "f-reward", "rel": "PAM-cluster dopamine neurons signal sugar reward and are required for its reinforcing effect, not for the reflex to it (fly); activating a subset of mushroom-body-targeted dopamine neurons can substitute for sugar to form appetitive memory (fly)", "status": "supported", "kind": "causal", "refs": ["liuc2012", "burke2012"]},
-    {"s": "fly-dan", "t": "f-associative", "rel": "dopamine is required for aversive odour conditioning (fly), and pairing an odour with activation of specific dopamine neurons induces learning (fly)", "status": "supported", "kind": "causal", "refs": ["schwaerzel2003", "hige2015"]},
-    {"s": "fly-oa", "t": "fly-dan", "rel": "octopamine reinforces short-term appetitive memory through dopamine neurons, partly via the OAMB receptor in a subset of mushroom-body-targeted ones, and raises their intracellular calcium (fly)", "status": "emerging", "kind": "mechanistic", "refs": ["burke2012"]},
+    {"s": "fly-dan", "t": "f-associative", "rel": "dopamine is required for aversive odour conditioning (fly), pairing an odour with activation of specific dopamine neurons induces learning (fly), activating the 12 PPL1 neurons writes aversive memories (fly), and single dopamine neuron types follow different learning rules, writing or reducing a memory depending on their timing (fly)", "status": "supported", "kind": "causal", "refs": ["schwaerzel2003", "hige2015", "claridgechang2009", "aso2016"]},
+    {"s": "fly-oa", "t": "fly-dan", "rel": "octopamine reinforces short-term appetitive memory through dopamine neurons, partly via the OAMB receptor in a subset of mushroom-body-targeted ones, and raises their intracellular calcium (fly)", "status": "emerging", "kind": "mechanistic", "refs": ["burke2012"], "via": "OAMB", "sign": "+"},
     {"s": "fly-oa", "t": "f-reward", "rel": "octopamine is required for appetitive but not aversive conditioning (fly) and reinforces only short-term appetitive memory (fly)", "status": "supported", "kind": "causal", "refs": ["schwaerzel2003", "burke2012"]},
-    {"s": "fly-mb", "t": "f-associative", "rel": "ablating the mushroom bodies abolishes odour–shock learning without sensory or motor deficits (fly), and the rutabaga adenylyl cyclase is needed only in its Kenyon cells for a component of olfactory short-term memory (fly)", "status": "supported", "kind": "causal", "refs": ["debelle1994", "zars2000"]},
-    {"s": "fly-camp", "t": "fly-kc", "rel": "rutabaga adenylyl cyclase is needed only in Kenyon cells for a component of short-term memory (fly), and cAMP signalling in one Kenyon cell subpopulation is necessary and sufficient for appetitive and aversive memories (fly)", "status": "supported", "kind": "mechanistic", "refs": ["zars2000", "schwaerzel2003"]},
+    {"s": "fly-mb", "t": "f-associative", "rel": "ablating the mushroom bodies abolishes odour–shock learning without sensory or motor deficits (fly), mutants with interrupted mushroom body connections cannot learn with shock and learn less with sugar (fly), and the rutabaga adenylyl cyclase is needed only in its Kenyon cells for a component of olfactory short-term memory (fly)", "status": "supported", "kind": "causal", "refs": ["debelle1994", "heisenberg1985", "zars2000"]},
+    {"s": "fly-camp", "t": "fly-kc", "rel": "rutabaga adenylyl cyclase is needed only in Kenyon cells for a component of short-term memory (fly), cAMP signalling in one Kenyon cell subpopulation is necessary and sufficient for appetitive and aversive memories (fly), regulated Gs signalling in the mushroom bodies is needed for learning (fly), and dopamine paired after depolarization raises cAMP synergistically in Kenyon cell axons (fly)", "status": "supported", "kind": "mechanistic", "refs": ["zars2000", "schwaerzel2003", "connolly1996", "tomchik2009"]},
     {"s": "fly-mb", "t": "f-consolidation", "rel": "long-term olfactory memory requires the mushroom body’s vertical lobes (fly), yet blocking α/β output during consolidation does not impair memory, which needs that output only at retrieval (fly)", "status": "emerging", "kind": "localization", "refs": ["pascual2001", "mcguire2001"]},
     {"s": "fly-mbon", "t": "f-valence", "rel": "activating output neurons causes attraction or repulsion depending on type, and the ensemble is suggested to represent valence (fly)", "status": "emerging", "kind": "causal", "refs": ["aso2014b"]},
-    {"s": "fly-mbon", "t": "f-associative", "rel": "MB-V2 output neurons are needed to retrieve short- and long-lasting aversive memory, not to form it, and their odour responses change after conditioning (fly); perturbing output neurons has combinatorial effects across associative learning tasks (fly)", "status": "supported", "kind": "causal", "refs": ["sejourne2011", "aso2014b"]},
+    {"s": "fly-mbon", "t": "f-associative", "rel": "MB-V2 output neurons are needed to retrieve short- and long-lasting aversive memory, not to form it, and their odour responses change after conditioning (fly); perturbing output neurons has combinatorial effects across associative learning tasks (fly); M4/6 output neurons are needed to express appetitive and aversive memory, and conditioning changes their odour drive in either direction (fly)", "status": "supported", "kind": "causal", "refs": ["sejourne2011", "aso2014b", "owald2015"]},
     {"s": "fly-apl", "t": "fly-kc", "rel": "the GABAergic APL neuron inhibits the Kenyon cells, which activate it, keeping their odour responses sparse and decorrelated (fly)", "status": "emerging", "kind": "mechanistic", "refs": ["linac2014"]},
-    {"s": "fly-apl", "t": "f-associative", "rel": "disrupting the Kenyon cell–APL feedback loop stops flies learning to discriminate similar, but not dissimilar, odours (fly)", "status": "emerging", "kind": "causal", "refs": ["linac2014"]},
+    {"s": "fly-apl", "t": "f-associative", "rel": "disrupting the Kenyon cell–APL feedback loop stops flies learning to discriminate similar, but not dissimilar, odours (fly); reducing GABA synthesis in APL enhances olfactory learning, and conditioning leaves a memory trace in it, a reduced response to the trained odour (fly)", "status": "supported", "kind": "causal", "refs": ["linac2014", "liux2009"]},
     {"s": "fly-mbon", "t": "fly-dn", "rel": "some output neurons connect directly to descending neurons, in the mushroom body connectome (fly)", "status": "emerging", "kind": "anatomical", "refs": ["lif2020"]},
     {"s": "fly-orn", "t": "f-social", "rel": "Or67d neurons are necessary and sufficient for behavioural responses to the male sex pheromone cVA (fly)", "status": "emerging", "kind": "causal", "refs": ["kurtovic2007"]},
     {"s": "fly-fru", "t": "f-social", "rel": "male-specific fruitless splicing is essential for male courtship and sufficient to make females court (fly), and FruM-expressing neurons specify the neural substrates of courtship (fly)", "status": "supported", "kind": "causal", "refs": ["demir2005", "manoli2005"]},
@@ -2907,7 +2931,35 @@
     {"s": "fly-cx", "t": "f-spatial", "rel": "the central complex connectome shows network motifs likely to extract the fly’s head direction, maintain it with attractor dynamics and combine it with other sensorimotor information for vector-based navigation (fly)", "status": "emerging", "kind": "anatomical", "refs": ["hulse2021"]},
     {"s": "fly-ol", "t": "f-vision", "rel": "the right optic lobe’s roughly 53,000 neurons fall into 732 types, an inventory whose shapes and connectivity form a basis for interpreting spatial vision (fly)", "status": "emerging", "kind": "anatomical", "refs": ["nern2025"]},
     {"s": "fly-lo", "t": "fly-lc", "rel": "the lobula’s columnar (LC) visual projection neurons carry its output to distinct optic glomeruli in the central brain (fly)", "status": "emerging", "kind": "anatomical", "refs": ["wum2016"]},
-    {"s": "fly-t4t5", "t": "fly-lop", "rel": "T4 and T5 cells terminate in the lobula plate layer that matches their preferred direction, so ON and OFF detectors with the same tuning converge there (fly)", "status": "emerging", "kind": "anatomical", "refs": ["maisak2013"]}
+    {"s": "fly-t4t5", "t": "fly-lop", "rel": "T4 and T5 cells terminate in the lobula plate layer that matches their preferred direction, so ON and OFF detectors with the same tuning converge there (fly)", "status": "emerging", "kind": "anatomical", "refs": ["maisak2013"]},
+    {"s": "fly-dan", "t": "dopamine", "rel": "supply dopamine to the mushroom body: 20 types, each confined to one or at most two compartments (fly); the 12 PPL1 neurons carry aversive reinforcement to the vertical lobes and heel (fly)", "status": "supported", "kind": "anatomical", "refs": ["aso2014a", "claridgechang2009"]},
+    {"s": "dopamine", "t": "fly-kc", "rel": "acts on Kenyon cells through the D1 receptor dDA1 (DopR1), needed in them for aversive and appetitive learning (fly); dopamine that follows Kenyon cell depolarization raises cAMP synergistically through rutabaga (fly) and depresses the odour’s output synapses (fly), and DopR1 and DopR2 direct depression or potentiation depending on the timing of odour and dopamine (fly)", "status": "supported", "kind": "mechanistic", "refs": ["kimyc2007", "tomchik2009", "hige2015", "handler2019"], "via": "DopR1 (dDA1), DopR2", "sign": "±"},
+    {"s": "fly-dopr", "t": "fly-camp", "rel": "DopR1 and DopR2 couple to distinct second messengers (fly); dopamine paired after depolarization raises cAMP synergistically in Kenyon cell axons, depending on rutabaga (fly)", "status": "emerging", "kind": "mechanistic", "refs": ["handler2019", "tomchik2009"]},
+    {"s": "fly-dopr", "t": "f-associative", "rel": "dDA1 mutants barely learn with shock and learn less with sugar, and dDA1 in mushroom body neurons rescues both (fly); DopR1 and DopR2 let the timing of odour and dopamine write or reverse an association (fly)", "status": "supported", "kind": "causal", "refs": ["kimyc2007", "handler2019"]},
+    {"s": "fly-oa", "t": "fly-kc", "rel": "octopamine changes cAMP in mushroom body neurons in a pattern distinct from dopamine’s, and pairing depolarization with it is subadditive (fly)", "status": "emerging", "kind": "mechanistic", "refs": ["tomchik2009"], "sign": "~"},
+    {"s": "serotonin", "t": "fly-kc", "rel": "serotonin from the DPM neurons acts through d5HT1A receptors in α/β Kenyon cells to form anaesthesia-resistant memory (fly)", "status": "emerging", "kind": "mechanistic", "refs": ["leept2011"], "via": "d5-HT1A"},
+    {"s": "fly-dpm", "t": "serotonin", "rel": "the two DPM neurons are serotonin-immunopositive, and serotonin from them, not from other serotonergic neurons, is needed for anaesthesia-resistant memory (fly)", "status": "emerging", "kind": "anatomical", "refs": ["leept2011"]},
+    {"s": "fly-dpm", "t": "fly-amn", "rel": "express the amnesiac gene product strongly (fly)", "status": "emerging", "kind": "anatomical", "refs": ["waddell2000"]},
+    {"s": "fly-amn", "t": "fly-kc", "rel": "Amnesiac neuropeptide released from the DPM neurons onto the mushroom bodies is critical for normal olfactory memory (fly)", "status": "emerging", "kind": "mechanistic", "refs": ["waddell2000"]},
+    {"s": "fly-dpm", "t": "f-consolidation", "rel": "blocking DPM transmitter release shortens memory as in amnesiac mutants (fly), and their serotonin is needed for anaesthesia-resistant memory (fly)", "status": "supported", "kind": "causal", "refs": ["waddell2000", "leept2011"]},
+    {"s": "fly-npf", "t": "fly-dan", "rel": "dNPF acts through its receptor in six dopamine neurons of one mushroom body region; blocking them releases appetitive memory in fed flies and stimulating them suppresses it in hungry flies (fly)", "status": "emerging", "kind": "mechanistic", "refs": ["krashes2009"], "via": "NPFR"},
+    {"s": "fly-npf", "t": "f-reward", "rel": "stimulating dNPF neurons mimics food deprivation and promotes appetitive memory performance in fed flies (fly)", "status": "emerging", "kind": "causal", "refs": ["krashes2009"]},
+    {"s": "fly-npf", "t": "npy", "rel": "dNPF is the fly orthologue of mammalian neuropeptide Y (fly)", "status": "emerging", "kind": "evolutionary", "refs": ["krashes2009"]},
+    {"s": "fly-dunce", "t": "fly-camp", "rel": "dunce appears to encode a cAMP phosphodiesterase, the enzyme that breaks cAMP down (fly)", "status": "emerging", "kind": "mechanistic", "refs": ["byers1981"]},
+    {"s": "fly-dunce", "t": "f-associative", "rel": "dunce flies fail to learn odour–shock associations (fly), or learn but forget within 30 minutes (fly)", "status": "supported", "kind": "causal", "refs": ["dudai1976", "tully1985"]},
+    {"s": "fly-camp", "t": "f-associative", "rel": "the rutabaga adenylyl cyclase, which in the mutant is no longer stimulated by calcium/calmodulin, is needed for learning (fly); rutabaga flies learn partly but forget within 30 minutes (fly), and constitutively active Gαs in the mushroom bodies abolishes odour–shock learning (fly)", "status": "supported", "kind": "causal", "refs": ["livingstone1984", "tully1985", "connolly1996"]},
+    {"s": "fly-creb", "t": "f-consolidation", "rel": "a dominant-negative CREB transgene blocks long-term memory, which needs protein synthesis, but spares learning and anaesthesia-resistant memory (fly)", "status": "emerging", "kind": "causal", "refs": ["yin1994", "tully1994"]},
+    {"s": "fly-mbon", "t": "f-consolidation", "rel": "long-term memory needs protein synthesis, and the RNA-binding protein ORB, in two MB-V3 output neurons, which become more active after spaced but not massed training (fly)", "status": "emerging", "kind": "causal", "refs": ["pai2013"]},
+    {"s": "fly-kc", "t": "f-smell", "rel": "Kenyon cells represent odours as sparse, selective activity patterns, equally sparse for single odours and natural smells and largely invariant to concentration, which are less correlated than receptor-neuron responses (fly)", "status": "supported", "kind": "functional", "refs": ["turner2008", "honegger2011"]},
+    {"s": "fly-nb", "t": "fly-kc", "rel": "each of the four mushroom body neuroblasts gives rise to the whole repertoire of mushroom body neurons and glia (fly), producing γ, then α′/β′, then α/β neurons (fly)", "status": "supported", "kind": "developmental", "refs": ["itok1997", "leet1999"]},
+    {"s": "fly-pn", "t": "fly-al", "rel": "projection neurons are prespecified by lineage and birth order to send their dendrites to particular glomeruli (fly)", "status": "emerging", "kind": "developmental", "refs": ["jefferis2001"]},
+    {"s": "fly-m-pd", "t": "c-parkinson", "rel": "human α-synuclein in flies reproduces adult-onset loss of dopaminergic neurons, α-synuclein inclusions and locomotor dysfunction (fly), and parkin loss causes locomotor defects with mitochondrial pathology (fly)", "status": "supported", "kind": "clinical", "refs": ["feany2000", "greene2003"]},
+    {"s": "fly-m-ad", "t": "c-alzheimers", "rel": "human Aβ42 in the fly brain causes amyloid deposits, age-dependent learning defects and neurodegeneration, Aβ40 only learning defects (fly)", "status": "emerging", "kind": "clinical", "refs": ["iijima2004"]},
+    {"s": "fly-m-ad", "t": "f-associative", "rel": "human Aβ42 or Aβ40 in the fly brain causes age-dependent learning defects (fly)", "status": "emerging", "kind": "causal", "refs": ["iijima2004"]},
+    {"s": "fly-m-fxs", "t": "c-fxs", "rel": "flies lacking dfmr1 have courtship, courtship-memory and mushroom body defects that mGluR antagonists or lithium rescue (fly)", "status": "emerging", "kind": "clinical", "refs": ["mcbride2005"]},
+    {"s": "fly-m-fxs", "t": "fly-mb", "rel": "dfmr1 mutants have mushroom body defects, rescued by mGluR antagonists or lithium (fly)", "status": "emerging", "kind": "clinical", "refs": ["mcbride2005"]},
+    {"s": "fly-m-polyq", "t": "c-sca", "rel": "an expanded-polyglutamine fragment of the SCA3 protein causes nuclear inclusions and late-onset degeneration, especially of neurons (fly)", "status": "emerging", "kind": "clinical", "refs": ["warrick1998"]},
+    {"s": "fly-shaker", "t": "f-sleep", "rel": "Shaker mutants sleep about a third of the normal amount, are not impaired by sleep deprivation and live shorter lives (fly)", "status": "emerging", "kind": "causal", "refs": ["cirelli2005"]}
   ],
   "chains": [
     {"id": "loop-pfc", "name": "Cerebro-cerebellar loop", "nodes": ["pfc", "pontine", "cb-cortex", "dcn", "thalamus", "pfc"],
@@ -3083,7 +3135,11 @@
     {"id": "fly-taste-motor", "name": "From taste neurons to a taste motor program", "nodes": ["fly-grn", "fly-gng", "f-taste"],
      "desc": "Sugar stimulation of gustatory neurons activates, and bitter compounds inhibit, a pair of subesophageal motor neurons that control a subprogram of a simple taste behaviour, with no direct connection from the sensory neurons detected (fly)."},
     {"id": "fly-sleep-memory", "name": "Sleep and long-term memory", "nodes": ["fly-fb", "f-sleep", "f-consolidation"],
-     "desc": "Activating neurons that include dorsal fan-shaped body projections induces sleep, and sleep induced after training that alone does not produce long-term memory lets flies form one (fly)."}
+     "desc": "Activating neurons that include dorsal fan-shaped body projections induces sleep, and sleep induced after training that alone does not produce long-term memory lets flies form one (fly)."},
+    {"id": "fly-memory-write", "name": "Dopamine writes an odour memory", "nodes": ["fly-dan", "dopamine", "fly-kc", "fly-mbon", "f-associative"],
+     "desc": "Dopamine neurons supply dopamine to single mushroom body compartments; acting on Kenyon cells through DopR1, dopamine that follows an odour raises cAMP through rutabaga and depresses that odour’s synapses onto the compartment’s output neurons, which changes the fly’s learned response to the odour (fly)."},
+    {"id": "fly-hunger", "name": "Hunger gates sugar memory", "nodes": ["fly-npf", "fly-dan", "f-reward"],
+     "desc": "Neuropeptide F, the fly orthologue of NPY, acts on six dopamine neurons of the mushroom body to release the expression of sugar-reward memory in hungry flies (fly)."}
   ],
   "questions": [
     {
@@ -3892,6 +3948,30 @@
         "Masculinize single dimorphic cell types in females and score which elements of courtship each confers.",
         "Count how many male-specific connection hotspots lie on paths from courtship-relevant sensory neurons, as a test of the few-switches view."
       ]
+    },
+    {
+      "id": "q-fly-timing",
+      "title": "How does the mushroom body read the order of odour and dopamine?",
+      "text": "Dopamine that follows Kenyon cell activity raises cAMP synergistically through rutabaga (tomchik2009), pairing an odour with dopamine neuron activation depresses its output synapses depending on the order of the two (hige2015), the timing of odour and dopamine writes or reverses an association through DopR1 and DopR2 (handler2019), and single dopamine neuron types follow different rules (aso2016). How do the two receptor pathways time-stamp a pairing, and do the same rules hold for natural rewards and punishments?",
+      "entities": ["fly-dopr", "fly-camp", "fly-dan", "fly-kc"],
+      "refs": ["tomchik2009", "hige2015", "handler2019", "aso2016"],
+      "approaches": [
+        "Image cAMP and the second messengers of both receptors in single Kenyon cell boutons while varying the interval between odour and dopamine.",
+        "Repeat backward pairing with sugar and shock, not only with optogenetic dopamine neuron activation, to test whether behaviour follows the same timing rule.",
+        "Model each compartment’s learning rule (aso2016) and test the predicted memory updates against behaviour."
+      ]
+    },
+    {
+      "id": "q-fly-models",
+      "title": "What can fly disease models tell us about human brain disorders?",
+      "text": "Human α-synuclein in flies causes loss of dopaminergic neurons, inclusions and locomotor dysfunction (feany2000); Aβ42 causes amyloid deposits, learning defects and neurodegeneration (iijima2004); dfmr1 mutants show courtship-memory and mushroom body defects that mGluR antagonists rescue (mcbride2005); and an expanded polyglutamine protein causes nuclear inclusions and degeneration (warrick1998). Which of these phenotypes arise in circuits the fly shares with mammals, and which treatments that work in flies also work in patients?",
+      "entities": ["fly-m-pd", "fly-m-ad", "fly-m-fxs", "fly-m-polyq"],
+      "refs": ["feany2000", "iijima2004", "mcbride2005", "warrick1998"],
+      "approaches": [
+        "Map where each model’s neurons degenerate onto the whole-brain connectome and ask whether the vulnerable neurons share wiring features.",
+        "Express each disease gene in single identified cell types, such as Kenyon cells or dopamine neurons, with split-GAL4 lines to tie phenotypes to circuits.",
+        "Test in flies the drugs now in human trials and compare effects across species."
+      ]
     }
   ],
   "flatmap": {
@@ -4535,6 +4615,100 @@
         "fly-lop",
         "fly-gng"
       ]
+    }
+  },
+  "regionViews": {
+    "fly": {
+      "map": {
+        "title": "Functional map of the fly central brain",
+        "intro": "How activity is organized across the central brain, set beside the wiring it is thought to come from. Functional connectivity is the correlation between brain regions’ spontaneous calcium signals, averaged over 20 flies; structural connectivity is the number of neurons in the hemibrain connectome with input in one region and output in the other. Both are recomputed here from the published data of Turner, Mann & Clandinin (2021). Click a region for its strongest partners.",
+        "note": "Structural and functional connectivity come from different animals: activity from 20 flies imaged with a pan-neuronal calcium indicator, wiring from the hemibrain connectome of one fly, compared through a shared atlas. This is a cross-animal comparison of structure and function, not the two measured in the same brain, and the correlations come from spontaneous activity during imaging, not from tasks. Regions follow the insect brain nomenclature; the imaging covered the right side of the central brain and the midline, so most regions are right-hemisphere ones.",
+        "refs": ["turner2021", "scheffer2020", "mann2017", "itok2014"],
+        "groups": [
+          {"id": "AL/LH", "label": "Antennal lobe & lateral horn", "color": "#3fb950", "regions": ["AL_R", "LH_R"]},
+          {"id": "MB", "label": "Mushroom body", "color": "#e3b341", "regions": ["MB_CA_R", "MB_PED_R", "MB_VL_R", "MB_ML_R", "MB_ML_L"]},
+          {"id": "CX", "label": "Central complex", "color": "#ff7b72", "regions": ["EB", "FB", "PB", "NO"]},
+          {"id": "LX", "label": "Lateral complex", "color": "#f778ba", "regions": ["BU_R", "BU_L", "LAL_R"]},
+          {"id": "VLNP", "label": "Ventrolateral neuropils", "color": "#58a6ff", "regions": ["AOTU_R", "AVLP_R", "PVLP_R", "PLP_R", "WED_R"]},
+          {"id": "SNP", "label": "Superior neuropils", "color": "#bc8cff", "regions": ["SLP_R", "SIP_R", "SMP_R", "SMP_L"]},
+          {"id": "INP", "label": "Inferior neuropils", "color": "#39c5cf", "regions": ["CRE_R", "CRE_L", "SCL_R", "ICL_R", "IB_R", "IB_L", "ATL_R", "ATL_L"]},
+          {"id": "VMNP", "label": "Ventromedial neuropils", "color": "#d29922", "regions": ["VES_R", "EPA_R", "GOR_R", "GOR_L", "SPS_R"]},
+          {"id": "PENP", "label": "Periesophageal neuropils", "color": "#8b949e", "regions": ["CAN_R"]}
+        ],
+        "regions": {
+          "AL_R": {"name": "Antennal lobe (right)", "abbr": "AL(R)", "entities": ["fly-al", "fly-orn", "fly-pn"]},
+          "LH_R": {"name": "Lateral horn (right)", "abbr": "LH(R)", "entities": ["fly-lh"]},
+          "MB_CA_R": {"name": "Mushroom body calyx (right)", "abbr": "CA(R)", "entities": ["fly-mb", "fly-kc"]},
+          "MB_PED_R": {"name": "Mushroom body pedunculus (right)", "abbr": "PED(R)", "entities": ["fly-mb", "fly-kc"]},
+          "MB_VL_R": {
+            "name": "Mushroom body vertical lobe (right)",
+            "abbr": "VL(R)",
+            "entities": ["fly-mb", "fly-kc", "fly-mbon", "fly-dan", "fly-apl", "fly-dpm"]
+          },
+          "MB_ML_R": {
+            "name": "Mushroom body medial lobe (right)",
+            "abbr": "ML(R)",
+            "entities": ["fly-mb", "fly-kc", "fly-mbon", "fly-dan", "fly-apl", "fly-dpm"]
+          },
+          "MB_ML_L": {
+            "name": "Mushroom body medial lobe (left)",
+            "abbr": "ML(L)",
+            "entities": ["fly-mb", "fly-kc", "fly-mbon", "fly-dan", "fly-apl", "fly-dpm"]
+          },
+          "EB": {"name": "Ellipsoid body", "abbr": "EB", "entities": ["fly-eb", "fly-ring", "fly-epg"]},
+          "FB": {"name": "Fan-shaped body", "abbr": "FB", "entities": ["fly-fb"]},
+          "PB": {"name": "Protocerebral bridge", "abbr": "PB", "entities": ["fly-cx"]},
+          "NO": {"name": "Noduli", "abbr": "NO", "entities": ["fly-cx"]},
+          "BU_R": {"name": "Bulb (right)", "abbr": "BU(R)", "entities": ["fly-ring"]},
+          "BU_L": {"name": "Bulb (left)", "abbr": "BU(L)", "entities": ["fly-ring"]},
+          "LAL_R": {"name": "Lateral accessory lobe (right)", "abbr": "LAL(R)", "entities": []},
+          "AOTU_R": {"name": "Anterior optic tubercle (right)", "abbr": "AOTU(R)", "entities": ["fly-aotu"]},
+          "AVLP_R": {"name": "Anterior ventrolateral protocerebrum (right)", "abbr": "AVLP(R)", "entities": []},
+          "PVLP_R": {"name": "Posterior ventrolateral protocerebrum (right)", "abbr": "PVLP(R)", "entities": []},
+          "PLP_R": {"name": "Posterior lateral protocerebrum (right)", "abbr": "PLP(R)", "entities": []},
+          "WED_R": {"name": "Wedge (right)", "abbr": "WED(R)", "entities": []},
+          "SLP_R": {"name": "Superior lateral protocerebrum (right)", "abbr": "SLP(R)", "entities": []},
+          "SIP_R": {"name": "Superior intermediate protocerebrum (right)", "abbr": "SIP(R)", "entities": []},
+          "SMP_R": {"name": "Superior medial protocerebrum (right)", "abbr": "SMP(R)", "entities": []},
+          "SMP_L": {"name": "Superior medial protocerebrum (left)", "abbr": "SMP(L)", "entities": []},
+          "CRE_R": {"name": "Crepine (right)", "abbr": "CRE(R)", "entities": []},
+          "CRE_L": {"name": "Crepine (left)", "abbr": "CRE(L)", "entities": []},
+          "SCL_R": {"name": "Superior clamp (right)", "abbr": "SCL(R)", "entities": []},
+          "ICL_R": {"name": "Inferior clamp (right)", "abbr": "ICL(R)", "entities": []},
+          "IB_R": {"name": "Inferior bridge (right)", "abbr": "IB(R)", "entities": []},
+          "IB_L": {"name": "Inferior bridge (left)", "abbr": "IB(L)", "entities": []},
+          "ATL_R": {"name": "Antler (right)", "abbr": "ATL(R)", "entities": []},
+          "ATL_L": {"name": "Antler (left)", "abbr": "ATL(L)", "entities": []},
+          "VES_R": {"name": "Vest (right)", "abbr": "VES(R)", "entities": []},
+          "EPA_R": {"name": "Epaulette (right)", "abbr": "EPA(R)", "entities": []},
+          "GOR_R": {"name": "Gorget (right)", "abbr": "GOR(R)", "entities": []},
+          "GOR_L": {"name": "Gorget (left)", "abbr": "GOR(L)", "entities": []},
+          "SPS_R": {"name": "Superior posterior slope (right)", "abbr": "SPS(R)", "entities": []},
+          "CAN_R": {"name": "Cantle (right)", "abbr": "CAN(R)", "entities": []}
+        },
+        "links": [
+          {"label": "FlyWire Codex: the whole-brain wiring diagram, neuron by neuron", "href": "https://codex.flywire.ai/"},
+          {"label": "Virtual Fly Brain: neuron and neuropil anatomy on a standard brain", "href": "https://www.virtualflybrain.org/"}
+        ]
+      },
+      "molecules": {
+        "neuromodulation": {
+          "desc": "Which neuromodulators and neuropeptides act on which cells of the fly’s olfactory learning circuit. Each cell links to the evidence.",
+          "targets": [
+            {"id": "fly-orn", "label": "Receptor neurons"},
+            {"id": "fly-pn", "label": "Projection neurons"},
+            {"id": "fly-kc", "label": "Kenyon cells"},
+            {"id": "fly-apl", "label": "APL"},
+            {"id": "fly-dan", "label": "Dopamine neurons"},
+            {"id": "fly-mbon", "label": "Output neurons"}
+          ],
+          "groups": [
+            {"label": "Monoamines", "rows": ["dopamine", "fly-oa", "serotonin"]},
+            {"label": "Neuropeptides", "rows": ["fly-npf", "fly-amn"]}
+          ],
+          "note": "Thin by design: each filled cell rests on one to four studies, and many cells of the circuit have no curated messenger yet."
+        }
+      }
     }
   }
 }

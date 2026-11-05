@@ -184,19 +184,21 @@
   /* ------------------------------------------------------------------ neuromodulator matrix */
   // Rows: messengers. Columns: cells and pathways. A cell is a curated link (messenger → target), tinted by evidence
   // grade and showing the sign of the effect and the receptor. Sources and other effects are the messenger's remaining links.
-  function neuromodMatrix() {
-    const NM = CA.D.neuromodulation;
+  // NM: { targets, groups, signs?, note? } (knowledge.json neuromodulation, or a region's regionViews.<id>.molecules.neuromodulation)
+  function neuromodMatrix(NM, home) {
+    NM = NM || CA.D.neuromodulation;
+    home = home || 'cerebellum';
     if (!NM) return h('p', { class: 'muted' }, 'No neuromodulator data.');
+    const signs = NM.signs || CA.D.neuromodulation.signs;
     const targets = NM.targets, tset = new Set(targets.map((t) => t.id));
-    // this page covers one region: leave out the messengers' links curated for other regions
-    const home = (CA.D.regions.find((r) => r.views.includes('molecules')) || CA.region).id;
+    // the matrix covers one region: leave out the messengers' links curated for other regions
     const mine = (l) => l.regions.includes(home);
     const dashed = (st) => st === 'debated' || st === 'hypothesis';
     // drop the trailing parenthetical (receptor names are in the cells; full name in the title and panel)
     const short = (id) => CA.ent[id].name.replace(/\s*\([^)]*\)$/, '');
     const tipHtml = (l) => {
       const st = CA.statusById[l.status];
-      const meta = [l.via ? 'Receptor: ' + CA.esc(l.via) : '', l.sign ? 'Effect: ' + CA.signGlyph[l.sign] + ' ' + CA.esc(NM.signs[l.sign]) : ''].filter(Boolean).join('<br>');
+      const meta = [l.via ? 'Receptor: ' + CA.esc(l.via) : '', l.sign ? 'Effect: ' + CA.signGlyph[l.sign] + ' ' + CA.esc(signs[l.sign]) : ''].filter(Boolean).join('<br>');
       return `<b>${CA.esc(CA.ent[l.s].name)} → ${CA.esc(CA.ent[l.t].name)}</b><br>${CA.esc(l.rel)}${meta ? '<br>' + meta : ''}` +
         `<br><span style="color:${st.color}">${st.label}</span> · ${(l.refs || []).length} paper(s) · click for evidence`;
     };
@@ -224,7 +226,7 @@
           h('td', { class: 'side' }, out.filter((l) => !tset.has(l.t)).map((l) => linkChip(l, l.t)))));
       });
     });
-    const table = h('table', { class: 'nmx' },
+    const table = h('table', { class: 'nmx', style: targets.length < 8 ? { minWidth: (300 + targets.length * 92) + 'px' } : null },
       h('tr', {}, h('th', { class: 'rowh' }, 'Messenger'), h('th', { class: 'sideh' }, 'Source'),
         targets.map((t) => h('th', { class: 'col', 'data-entity': t.id, title: CA.ent[t.id].name, onclick: () => CA.select(t.id) }, t.label)),
         h('th', { class: 'sideh' }, 'Other effects')),
@@ -232,10 +234,12 @@
     const legend = h('div', { class: 'nmx-legend' },
       CA.D.statuses.filter((st) => st.id !== 'gap').map((st) => h('span', {},
         h('span', { class: 'sw', style: { background: st.color + '2e', borderLeft: `3px ${dashed(st.id) ? 'dashed' : 'solid'} ${st.color}` } }), st.label)),
-      Object.entries(NM.signs).map(([k, v]) => h('span', {}, h('b', { style: { color: 'var(--text)' } }, CA.signGlyph[k]), ' ', v)),
+      Object.entries(signs).map(([k, v]) => h('span', {}, h('b', { style: { color: 'var(--text)' } }, CA.signGlyph[k]), ' ', v)),
       h('span', {}, h('b', { style: { color: 'var(--text)' } }, '•'), ' effect not graded'));
     return h('div', {}, h('div', { class: 'nmx-wrap' }, table), legend, h('p', { class: 'small muted', style: { marginTop: '8px' } }, NM.note));
   }
+
+  CA.neuromodMatrix = neuromodMatrix;
 
   /* ------------------------------------------------------------------ lineage */
   function lineage() {

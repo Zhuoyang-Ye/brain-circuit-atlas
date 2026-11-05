@@ -398,6 +398,24 @@ table.data tr.click:hover td { background: var(--bg3); }
 .qcard:hover { border-color: var(--accent); }
 .qcard b { display: block; margin-bottom: 2px; }
 
+/* ---------- fruit fly functional map ---------- */
+.flymap { display: block; max-height: calc(100vh - 150px); }
+.fm-node { cursor: pointer; }
+.fm-node:focus { outline: none; }
+.fm-node text { paint-order: stroke; stroke: var(--bg2); stroke-width: 2.4px; stroke-linejoin: round; font-weight: 600; }
+.fm-node:hover circle, .fm-node:focus-visible circle { stroke: var(--accent); stroke-width: 1.8; }
+.fm-node.sel circle { stroke: var(--accent); stroke-width: 2.2; }
+.fm-ramp { display: block; height: 8px; border-radius: 4px; margin: 6px 0 2px; min-width: 60px; }
+.fm-plist { display: grid; gap: 1px; }
+.fm-p { display: flex; align-items: center; gap: 8px; width: 100%; text-align: left; background: none; border: 0; border-radius: 5px; padding: 3px 6px; font-size: .86rem; color: var(--text); }
+.fm-p:hover { background: var(--bg3); }
+.grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
+.grid2 > .card + .card { margin-top: 0; }
+.fmx { display: block; }
+.fmx rect.cell { cursor: pointer; }
+.fmx rect.cell:hover { stroke: var(--text); stroke-width: 1; }
+.fmx rect.row-on { stroke: var(--accent); stroke-width: .7; }
+
 /* ---------- library ---------- */
 .pcard { padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg2); margin-bottom: 10px; }
 .pcard .t { font-weight: 600; margin: 2px 0 4px; cursor: pointer; }
@@ -415,6 +433,8 @@ table.data tr.click:hover td { background: var(--bg3); }
 @media (max-width: 480px) { .brand span { display: none; } }   /* phones: the logo alone, so the view tabs keep room */
 @media (max-width: 860px) {
   .cols { grid-template-columns: minmax(0, 1fr); }
+  .grid2 { grid-template-columns: minmax(0, 1fr); }
+  .fm-cols > .svgwrap { order: -1; }   /* phones: the map first, its controls and the region card below */
   .brand small { display: none; }
   .search { display: none; }
   .topbar { gap: 8px; }

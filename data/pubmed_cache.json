@@ -52,6 +52,23 @@
   "volume": "22",
   "year": 1999
  },
+ "10457015": {
+  "authors": [
+   "Lee T",
+   "Lee A",
+   "Luo L"
+  ],
+  "doi": "10.1242/dev.126.18.4065",
+  "issue": "18",
+  "journal": "Development",
+  "journalFull": "Development (Cambridge, England)",
+  "pages": "4065-76",
+  "pmc": "",
+  "pmid": "10457015",
+  "title": "Development of the Drosophila mushroom bodies: sequential generation of three distinct types of neurons from a neuroblast",
+  "volume": "126",
+  "year": 1999
+ },
  "10632234": {
   "authors": [
    "Glantz LA",
@@ -171,6 +188,22 @@
   "pmc": "",
   "pmid": "10724170",
   "title": "Inhibitory threshold for critical-period activation in primary visual cortex",
+  "volume": "404",
+  "year": 2000
+ },
+ "10746727": {
+  "authors": [
+   "Feany MB",
+   "Bender WW"
+  ],
+  "doi": "10.1038/35006074",
+  "issue": "6776",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "394-8",
+  "pmc": "",
+  "pmid": "10746727",
+  "title": "A Drosophila model of Parkinson's disease",
   "volume": "404",
   "year": 2000
  },
@@ -385,6 +418,25 @@
   "pmid": "11039938",
   "title": "Learning-induced LTP in neocortex",
   "volume": "290",
+  "year": 2000
+ },
+ "11114336": {
+  "authors": [
+   "Waddell S",
+   "Armstrong JD",
+   "Kitamoto T",
+   "Kaiser K",
+   "Quinn WG"
+  ],
+  "doi": "10.1016/s0092-8674(00)00183-5",
+  "issue": "5",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "805-13",
+  "pmc": "",
+  "pmid": "11114336",
+  "title": "The amnesiac gene product is expressed in two neurons in the Drosophila brain that are critical for memory",
+  "volume": "103",
   "year": 2000
  },
  "11157088": {
@@ -662,6 +714,24 @@
   "volume": "294",
   "year": 2001
  },
+ "11719930": {
+  "authors": [
+   "Jefferis GS",
+   "Marin EC",
+   "Stocker RF",
+   "Luo L"
+  ],
+  "doi": "10.1038/35102574",
+  "issue": "6860",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "204-8",
+  "pmc": "",
+  "pmid": "11719930",
+  "title": "Target neuron prespecification in the olfactory map of Drosophila",
+  "volume": "414",
+  "year": 2001
+ },
  "11742061": {
   "authors": [
    "Heimbeck G",
@@ -900,6 +970,26 @@
   "pmid": "12631569",
   "title": "Coordination of actions and habits in the medial prefrontal cortex of rats",
   "volume": "13",
+  "year": 2003
+ },
+ "12642658": {
+  "authors": [
+   "Greene JC",
+   "Whitworth AJ",
+   "Kuo I",
+   "Andrews LA",
+   "Feany MB",
+   "Pallanck LJ"
+  ],
+  "doi": "10.1073/pnas.0737556100",
+  "issue": "7",
+  "journal": "Proc Natl Acad Sci U S A",
+  "journalFull": "Proceedings of the National Academy of Sciences of the United States of America",
+  "pages": "4078-83",
+  "pmc": "PMC153051",
+  "pmid": "12642658",
+  "title": "Mitochondrial pathology and apoptotic muscle degeneration in Drosophila parkin mutants",
+  "volume": "100",
   "year": 2003
  },
  "12797962": {
@@ -1287,6 +1377,26 @@
   "volume": "44",
   "year": 2004
  },
+ "15069204": {
+  "authors": [
+   "Iijima K",
+   "Liu HP",
+   "Chiang AS",
+   "Hearn SA",
+   "Konsolaki M",
+   "Zhong Y"
+  ],
+  "doi": "10.1073/pnas.0400895101",
+  "issue": "17",
+  "journal": "Proc Natl Acad Sci U S A",
+  "journalFull": "Proceedings of the National Academy of Sciences of the United States of America",
+  "pages": "6623-8",
+  "pmc": "PMC404095",
+  "pmid": "15069204",
+  "title": "Dissecting the pathological effects of human Abeta40 and Abeta42 in Drosophila: a potential model for Alzheimer's disease",
+  "volume": "101",
+  "year": 2004
+ },
  "15201323": {
   "authors": [
    "Kalin NH",
@@ -1587,6 +1697,32 @@
   "volume": "45",
   "year": 2005
  },
+ "15748850": {
+  "authors": [
+   "McBride SM",
+   "Choi CH",
+   "Wang Y",
+   "Liebelt D",
+   "Braunstein E",
+   "Ferreiro D",
+   "Sehgal A",
+   "Siwicki KK",
+   "Dockendorff TC",
+   "Nguyen HT",
+   "McDonald TV",
+   "Jongens TA"
+  ],
+  "doi": "10.1016/j.neuron.2005.01.038",
+  "issue": "5",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "753-64",
+  "pmc": "",
+  "pmid": "15748850",
+  "title": "Pharmacological rescue of synaptic plasticity, courtship behavior, and mushroom body defects in a Drosophila model of fragile X syndrome",
+  "volume": "45",
+  "year": 2005
+ },
  "15803161": {
   "authors": [
    "Apps R",
@@ -1635,6 +1771,27 @@
   "title": "Modality-specific retrograde amnesia of fear",
   "volume": "256",
   "year": 1992
+ },
+ "15858564": {
+  "authors": [
+   "Cirelli C",
+   "Bushey D",
+   "Hill S",
+   "Huber R",
+   "Kreber R",
+   "Ganetzky B",
+   "Tononi G"
+  ],
+  "doi": "10.1038/nature03486",
+  "issue": "7037",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "1087-92",
+  "pmc": "",
+  "pmid": "15858564",
+  "title": "Reduced sleep in Drosophila Shaker mutants",
+  "volume": "434",
+  "year": 2005
  },
  "1590953": {
   "authors": [
@@ -2866,6 +3023,23 @@
   "volume": "82",
   "year": 1991
  },
+ "17634358": {
+  "authors": [
+   "Kim YC",
+   "Lee HG",
+   "Han KA"
+  ],
+  "doi": "10.1523/JNEUROSCI.1167-07.2007",
+  "issue": "29",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "7640-7",
+  "pmc": "PMC6672866",
+  "pmid": "17634358",
+  "title": "D1 dopamine receptor dDA1 is required in the mushroom body neurons for aversive and appetitive learning in Drosophila",
+  "volume": "27",
+  "year": 2007
+ },
  "17766532": {
   "authors": [
    "Limperopoulos C",
@@ -3033,6 +3207,23 @@
   "pmid": "18067173",
   "title": "Association of olfactory dysfunction with risk for future Parkinson's disease",
   "volume": "63",
+  "year": 2008
+ },
+ "18094099": {
+  "authors": [
+   "Turner GC",
+   "Bazhenov M",
+   "Laurent G"
+  ],
+  "doi": "10.1152/jn.01283.2007",
+  "issue": "2",
+  "journal": "J Neurophysiol",
+  "journalFull": "Journal of neurophysiology",
+  "pages": "734-46",
+  "pmc": "",
+  "pmid": "18094099",
+  "title": "Olfactory representations by Drosophila mushroom body neurons",
+  "volume": "99",
   "year": 2008
  },
  "1822724": {
@@ -3388,6 +3579,22 @@
   "title": "The medial temporal lobe memory system",
   "volume": "253",
   "year": 1991
+ },
+ "19043409": {
+  "authors": [
+   "Liu X",
+   "Davis RL"
+  ],
+  "doi": "10.1038/nn.2235",
+  "issue": "1",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "53-9",
+  "pmc": "PMC2680707",
+  "pmid": "19043409",
+  "title": "The GABAergic anterior paired lateral neuron suppresses and is suppressed by olfactory learning",
+  "volume": "12",
+  "year": 2009
  },
  "19046367": {
   "authors": [
@@ -3920,6 +4127,47 @@
   "volume": "20",
   "year": 2010
  },
+ "19837039": {
+  "authors": [
+   "Claridge-Chang A",
+   "Roorda RD",
+   "Vrontou E",
+   "Sjulson L",
+   "Li H",
+   "Hirsh J",
+   "Miesenböck G"
+  ],
+  "doi": "10.1016/j.cell.2009.08.034",
+  "issue": "2",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "405-15",
+  "pmc": "PMC3920284",
+  "pmid": "19837039",
+  "title": "Writing memories with light-addressable reinforcement circuitry",
+  "volume": "139",
+  "year": 2009
+ },
+ "19837040": {
+  "authors": [
+   "Krashes MJ",
+   "DasGupta S",
+   "Vreede A",
+   "White B",
+   "Armstrong JD",
+   "Waddell S"
+  ],
+  "doi": "10.1016/j.cell.2009.08.035",
+  "issue": "2",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "416-27",
+  "pmc": "PMC2780032",
+  "pmid": "19837040",
+  "title": "A neural circuit mechanism integrating motivational state with memory expression in Drosophila",
+  "volume": "139",
+  "year": 2009
+ },
  "19857577": {
   "authors": [
    "Balsters JH",
@@ -3977,6 +4225,22 @@
   "title": "Orexins excite neurons of the rat cerebellar nucleus interpositus via orexin 2 receptors in vitro",
   "volume": "9",
   "year": 2010
+ },
+ "19945393": {
+  "authors": [
+   "Tomchik SM",
+   "Davis RL"
+  ],
+  "doi": "10.1016/j.neuron.2009.09.029",
+  "issue": "4",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "510-21",
+  "pmc": "PMC4080329",
+  "pmid": "19945393",
+  "title": "Dynamics of learning-related cAMP signaling and stimulus integration in the Drosophila olfactory pathway",
+  "volume": "64",
+  "year": 2009
  },
  "19946265": {
   "authors": [
@@ -5015,6 +5279,45 @@
   "volume": "106",
   "year": 2011
  },
+ "21808003": {
+  "authors": [
+   "Lee PT",
+   "Lin HW",
+   "Chang YH",
+   "Fu TF",
+   "Dubnau J",
+   "Hirsh J",
+   "Lee T",
+   "Chiang AS"
+  ],
+  "doi": "10.1073/pnas.1019483108",
+  "issue": "33",
+  "journal": "Proc Natl Acad Sci U S A",
+  "journalFull": "Proceedings of the National Academy of Sciences of the United States of America",
+  "pages": "13794-9",
+  "pmc": "PMC3158232",
+  "pmid": "21808003",
+  "title": "Serotonin-mushroom body circuit modulating the formation of anesthesia-resistant memory in Drosophila",
+  "volume": "108",
+  "year": 2011
+ },
+ "21849538": {
+  "authors": [
+   "Honegger KS",
+   "Campbell RA",
+   "Turner GC"
+  ],
+  "doi": "10.1523/JNEUROSCI.1099-11.2011",
+  "issue": "33",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "11772-85",
+  "pmc": "PMC3180869",
+  "pmid": "21849538",
+  "title": "Cellular-resolution population imaging reveals robust sparse coding in the Drosophila mushroom body",
+  "volume": "31",
+  "year": 2011
+ },
  "21867888": {
   "authors": [
    "MacDonald CJ",
@@ -5801,6 +6104,28 @@
   "volume": "497",
   "year": 2013
  },
+ "23610406": {
+  "authors": [
+   "Pai TP",
+   "Chen CC",
+   "Lin HH",
+   "Chin AL",
+   "Lai JS",
+   "Lee PT",
+   "Tully T",
+   "Chiang AS"
+  ],
+  "doi": "10.1073/pnas.1216336110",
+  "issue": "19",
+  "journal": "Proc Natl Acad Sci U S A",
+  "journalFull": "Proceedings of the National Academy of Sciences of the United States of America",
+  "pages": "7898-903",
+  "pmc": "PMC3651462",
+  "pmid": "23610406",
+  "title": "Drosophila ORB protein in two mushroom body output neurons is necessary for long-term memory formation",
+  "volume": "110",
+  "year": 2013
+ },
  "23615618": {
   "authors": [
    "Caron SJ",
@@ -6393,6 +6718,37 @@
   "pmid": "24487233",
   "title": "Cortical activity in the null space: permitting preparation without movement",
   "volume": "17",
+  "year": 2014
+ },
+ "24559671": {
+  "authors": [
+   "Ito K",
+   "Shinomiya K",
+   "Ito M",
+   "Armstrong JD",
+   "Boyan G",
+   "Hartenstein V",
+   "Harzsch S",
+   "Heisenberg M",
+   "Homberg U",
+   "Jenett A",
+   "Keshishian H",
+   "Restifo LL",
+   "Rössler W",
+   "Simpson JH",
+   "Strausfeld NJ",
+   "Strauss R",
+   "Vosshall LB"
+  ],
+  "doi": "10.1016/j.neuron.2013.12.017",
+  "issue": "4",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "755-65",
+  "pmc": "",
+  "pmid": "24559671",
+  "title": "A systematic nomenclature for the insect brain",
+  "volume": "81",
   "year": 2014
  },
  "24561998": {
@@ -7089,6 +7445,27 @@
   "volume": "519",
   "year": 2015
  },
+ "25864636": {
+  "authors": [
+   "Owald D",
+   "Felsenberg J",
+   "Talbot CB",
+   "Das G",
+   "Perisse E",
+   "Huetteroth W",
+   "Waddell S"
+  ],
+  "doi": "10.1016/j.neuron.2015.03.025",
+  "issue": "2",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "417-27",
+  "pmc": "PMC4416108",
+  "pmid": "25864636",
+  "title": "Activity of defined mushroom body output neurons underlies learned olfactory behavior in Drosophila",
+  "volume": "86",
+  "year": 2015
+ },
  "25891406": {
   "authors": [
    "Levy G",
@@ -7611,6 +7988,23 @@
   "volume": "88",
   "year": 2015
  },
+ "26687359": {
+  "authors": [
+   "Cohn R",
+   "Morantte I",
+   "Ruta V"
+  ],
+  "doi": "10.1016/j.cell.2015.11.019",
+  "issue": "7",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "1742-55",
+  "pmc": "PMC4732734",
+  "pmid": "26687359",
+  "title": "Coordinated and Compartmentalized Neuromodulation Shapes Sensory Processing in Drosophila",
+  "volume": "163",
+  "year": 2015
+ },
  "26777273": {
   "authors": [
    "Mallet N",
@@ -7827,6 +8221,22 @@
   "pmid": "27398617",
   "title": "Rapid signalling in distinct dopaminergic axons during locomotion and reward",
   "volume": "535",
+  "year": 2016
+ },
+ "27441388": {
+  "authors": [
+   "Aso Y",
+   "Rubin GM"
+  ],
+  "doi": "10.7554/eLife.16135",
+  "issue": "",
+  "journal": "Elife",
+  "journalFull": "eLife",
+  "pages": "",
+  "pmc": "PMC4987137",
+  "pmid": "27441388",
+  "title": "Dopaminergic neurons write and update memories with cell-type-specific rules",
+  "volume": "5",
   "year": 2016
  },
  "27453468": {
@@ -9901,6 +10311,28 @@
   "pmid": "31205000",
   "title": "Anatomical and physiological foundations of cerebello-hippocampal interaction",
   "volume": "8",
+  "year": 2019
+ },
+ "31230716": {
+  "authors": [
+   "Handler A",
+   "Graham TGW",
+   "Cohn R",
+   "Morantte I",
+   "Siliciano AF",
+   "Zeng J",
+   "Li Y",
+   "Ruta V"
+  ],
+  "doi": "10.1016/j.cell.2019.05.040",
+  "issue": "1",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "60-75.e19",
+  "pmc": "PMC9012144",
+  "pmid": "31230716",
+  "title": "Distinct Dopamine Receptor Pathways Underlie the Temporal Sensitivity of Associative Learning",
+  "volume": "178",
   "year": 2019
  },
  "31285616": {
@@ -12932,6 +13364,22 @@
   "volume": "634",
   "year": 2024
  },
+ "3939242": {
+  "authors": [
+   "Tully T",
+   "Quinn WG"
+  ],
+  "doi": "10.1007/BF01350033",
+  "issue": "2",
+  "journal": "J Comp Physiol A",
+  "journalFull": "Journal of comparative physiology. A, Sensory, neural, and behavioral physiology",
+  "pages": "263-77",
+  "pmc": "",
+  "pmid": "3939242",
+  "title": "Classical conditioning and retention in normal and mutant Drosophila melanogaster",
+  "volume": "157",
+  "year": 1985
+ },
  "3947207": {
   "authors": [
    "Weinberger DR",
@@ -13160,6 +13608,24 @@
   "title": "Connectome-driven neural inventory of a complete visual system",
   "volume": "641",
   "year": 2025
+ },
+ "4020527": {
+  "authors": [
+   "Heisenberg M",
+   "Borst A",
+   "Wagner S",
+   "Byers D"
+  ],
+  "doi": "10.3109/01677068509100140",
+  "issue": "1",
+  "journal": "J Neurogenet",
+  "journalFull": "Journal of neurogenetics",
+  "pages": "1-30",
+  "pmc": "",
+  "pmid": "4020527",
+  "title": "Drosophila mushroom body mutants are deficient in olfactory learning",
+  "volume": "2",
+  "year": 1985
  },
  "4023713": {
   "authors": [
@@ -13439,6 +13905,23 @@
   "title": "Climbing fibres recruit disinhibition to enhance Purkinje cell calcium signals",
   "volume": "653",
   "year": 2026
+ },
+ "4207071": {
+  "authors": [
+   "Quinn WG",
+   "Harris WA",
+   "Benzer S"
+  ],
+  "doi": "10.1073/pnas.71.3.708",
+  "issue": "3",
+  "journal": "Proc Natl Acad Sci U S A",
+  "journalFull": "Proceedings of the National Academy of Sciences of the United States of America",
+  "pages": "708-12",
+  "pmc": "PMC388082",
+  "pmid": "4207071",
+  "title": "Conditioned behavior in Drosophila melanogaster",
+  "volume": "71",
+  "year": 1974
  },
  "42135511": {
   "authors": [
@@ -13895,6 +14378,23 @@
   "volume": "6",
   "year": 1981
  },
+ "6256649": {
+  "authors": [
+   "Byers D",
+   "Davis RL",
+   "Kiger JA Jr"
+  ],
+  "doi": "10.1038/289079a0",
+  "issue": "5793",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "79-81",
+  "pmc": "",
+  "pmid": "6256649",
+  "title": "Defect in cyclic AMP phosphodiesterase due to the dunce mutation of learning in Drosophila melanogaster",
+  "volume": "289",
+  "year": 1981
+ },
  "6298664": {
   "authors": [
    "Ito M",
@@ -13910,6 +14410,23 @@
   "title": "Long-lasting depression of parallel fiber-Purkinje cell transmission induced by conjunctive stimulation of parallel fibers and climbing fibers in the cerebellar cortex",
   "volume": "33",
   "year": 1982
+ },
+ "6327051": {
+  "authors": [
+   "Livingstone MS",
+   "Sziber PP",
+   "Quinn WG"
+  ],
+  "doi": "10.1016/0092-8674(84)90316-7",
+  "issue": "1",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "205-15",
+  "pmc": "",
+  "pmid": "6327051",
+  "title": "Loss of calcium/calmodulin responsiveness in adenylate cyclase of rutabaga, a Drosophila learning mutant",
+  "volume": "37",
+  "year": 1984
  },
  "6470767": {
   "authors": [
@@ -14323,6 +14840,45 @@
   "volume": "268",
   "year": 1995
  },
+ "7923375": {
+  "authors": [
+   "Tully T",
+   "Preat T",
+   "Boynton SC",
+   "Del Vecchio M"
+  ],
+  "doi": "10.1016/0092-8674(94)90398-0",
+  "issue": "1",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "35-47",
+  "pmc": "",
+  "pmid": "7923375",
+  "title": "Genetic dissection of consolidated memory in Drosophila",
+  "volume": "79",
+  "year": 1994
+ },
+ "7923376": {
+  "authors": [
+   "Yin JC",
+   "Wallach JS",
+   "Del Vecchio M",
+   "Wilder EL",
+   "Zhou H",
+   "Quinn WG",
+   "Tully T"
+  ],
+  "doi": "10.1016/0092-8674(94)90399-9",
+  "issue": "1",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "49-58",
+  "pmc": "",
+  "pmid": "7923376",
+  "title": "Induction of a dominant negative CREB transgene specifically blocks long-term memory in Drosophila",
+  "volume": "79",
+  "year": 1994
+ },
  "7939688": {
   "authors": [
    "Middleton FA",
@@ -14483,6 +15039,25 @@
   "title": "Long-distance neuronal migration in the adult mammalian brain",
   "volume": "264",
   "year": 1994
+ },
+ "818641": {
+  "authors": [
+   "Dudai Y",
+   "Jan YN",
+   "Byers D",
+   "Quinn WG",
+   "Benzer S"
+  ],
+  "doi": "10.1073/pnas.73.5.1684",
+  "issue": "5",
+  "journal": "Proc Natl Acad Sci U S A",
+  "journalFull": "Proceedings of the National Academy of Sciences of the United States of America",
+  "pages": "1684-8",
+  "pmc": "PMC430364",
+  "pmid": "818641",
+  "title": "dunce, a mutant of Drosophila deficient in learning",
+  "volume": "73",
+  "year": 1976
  },
  "8276995": {
   "authors": [
@@ -14856,6 +15431,27 @@
   "volume": "87",
   "year": 1996
  },
+ "8953046": {
+  "authors": [
+   "Connolly JB",
+   "Roberts IJ",
+   "Armstrong JD",
+   "Kaiser K",
+   "Forte M",
+   "Tully T",
+   "O'Kane CJ"
+  ],
+  "doi": "10.1126/science.274.5295.2104",
+  "issue": "5295",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "2104-7",
+  "pmc": "",
+  "pmid": "8953046",
+  "title": "Associative learning disrupted by impaired Gs signaling in Drosophila mushroom bodies",
+  "volume": "274",
+  "year": 1996
+ },
  "8957561": {
   "authors": [
    "Augustine JR"
@@ -14926,6 +15522,25 @@
   "pmid": "8988170",
   "title": "Autosomal dominant cerebellar ataxia (SCA6) associated with small polyglutamine expansions in the alpha 1A-voltage-dependent calcium channel",
   "volume": "15",
+  "year": 1997
+ },
+ "9043058": {
+  "authors": [
+   "Ito K",
+   "Awano W",
+   "Suzuki K",
+   "Hiromi Y",
+   "Yamamoto D"
+  ],
+  "doi": "10.1242/dev.124.4.761",
+  "issue": "4",
+  "journal": "Development",
+  "journalFull": "Development (Cambridge, England)",
+  "pages": "761-71",
+  "pmc": "",
+  "pmid": "9043058",
+  "title": "The Drosophila mushroom body is a quadruple structure of clonal units each of which contains a virtually identical set of neurones and glial cells",
+  "volume": "124",
   "year": 1997
  },
  "9054347": {
@@ -15249,6 +15864,27 @@
   "pmid": "9613621",
   "title": "\"Cognitive dysmetria\" as an integrative theory of schizophrenia: a dysfunction in cortical-subcortical-cerebellar circuitry?",
   "volume": "24",
+  "year": 1998
+ },
+ "9635424": {
+  "authors": [
+   "Warrick JM",
+   "Paulson HL",
+   "Gray-Board GL",
+   "Bui QT",
+   "Fischbeck KH",
+   "Pittman RN",
+   "Bonini NM"
+  ],
+  "doi": "10.1016/s0092-8674(00)81200-3",
+  "issue": "6",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "939-49",
+  "pmc": "",
+  "pmid": "9635424",
+  "title": "Expanded polyglutamine protein forms nuclear inclusions and causes neural degeneration in Drosophila",
+  "volume": "93",
   "year": 1998
  },
  "9698332": {

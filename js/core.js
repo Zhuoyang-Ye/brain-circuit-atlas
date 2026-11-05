@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   const D = window.CA_DATA;
-  const CA = window.CA = { D, views: {}, order: [], current: null, params: {}, state: {} };
+  const CA = window.CA = { D, views: {}, variants: {}, order: [], current: null, currentImpl: null, params: {}, state: {} };
 
   /* ---------- indexes ---------- */
   const byId = (arr) => Object.fromEntries(arr.map((x) => [x.id, x]));
@@ -174,7 +174,7 @@
     if (!o || typeof o !== 'object') return;
     if (typeof o.color === 'string') { o.color0 = o.color; coloured.push(o); }
     Object.values(o).forEach((v) => { if (v && typeof v === 'object') collect(v); });
-  })([D.levels, D.statuses, D.domains, D.flatmap]);
+  })([D.levels, D.statuses, D.domains, D.flatmap, D.regionViews || {}]);
   function recolour() {
     coloured.forEach((o) => { o.color = CA.tc(o.color0); });
     palettes.forEach(([p, base, light]) => Object.keys(base).forEach((k) => { p[k] = paletteValue(base, light, k); }));
@@ -524,6 +524,9 @@
 
   /* ---------- router ---------- */
   CA.register = (id, view) => { view.id = id; CA.views[id] = view; CA.order.push(id); };
+  /** A region's own version of a view, with the same tab and title (e.g. the fruit fly's Functional map). */
+  CA.registerVariant = (id, region, impl) => { (CA.variants[id] = CA.variants[id] || {})[region] = impl; };
+  const implFor = (viewId) => (CA.variants[viewId] || {})[CA.region.id] || CA.views[viewId];
   CA.go = (view, sub) => { location.hash = '#/' + view + (sub ? '/' + sub : ''); };
   CA.parseHash = () => {
     const parts = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean).map(decodeURIComponent);
@@ -532,18 +535,19 @@
 
   function mountView(viewId, r) {
     const root = document.getElementById('view');
-    const old = CA.views[CA.current];
+    const old = CA.currentImpl;
     if (old && old.unmount) { try { old.unmount(); } catch (e) { CA.reportError(e); } }
     CA.tip.hide();
     CA.clear(root);
     root.scrollTop = 0;
     CA.current = viewId;
+    CA.currentImpl = implFor(viewId);
     document.querySelectorAll('#nav a').forEach((a) => a.classList.toggle('active', a.dataset.view === viewId));
     const tab = document.querySelector('#nav a.active');
     if (tab) tab.scrollIntoView({ block: 'nearest', inline: 'nearest' });   // a tab scrolled out of a narrow bar
     document.title = CA.views[viewId].title + ' · ' + D.meta.title;
     regionBar();
-    try { CA.views[viewId].mount(root, r); } catch (e) { CA.reportError(e); }
+    try { CA.currentImpl.mount(root, r); } catch (e) { CA.reportError(e); }
     regionRow(root);
     CA.emit('view-mounted', viewId);
   }
@@ -570,18 +574,19 @@
     homes.map((x) => h('button', { class: 'btn', onclick: () => CA.setRegion(x.id) }, 'Switch to ' + x.label)));
   }
 
-  // On a region change, a view with onRegion() updates in place; any other view is mounted again.
+  // On a region change, a view with onRegion() updates in place; any other view, or one with a version of its own
+  // for the new region, is mounted again.
   CA.on('region', () => {
-    const v = CA.views[CA.current];
+    const v = CA.currentImpl;
     if (!v) return;
     regionBar();
-    if (v.onRegion) { try { v.onRegion(CA.region); } catch (e) { CA.reportError(e); } } else mountView(CA.current, CA.parseHash());
+    if (v.onRegion && implFor(CA.current) === v) { try { v.onRegion(CA.region); } catch (e) { CA.reportError(e); } } else mountView(CA.current, CA.parseHash());
   });
 
   // On a theme change, a view with onTheme() recolours in place; any other view is mounted again.
   CA.on('theme', () => {
     CA.refreshPanel();
-    const v = CA.views[CA.current];
+    const v = CA.currentImpl;
     if (!v) return;
     if (v.onTheme) { try { v.onTheme(CA.theme); } catch (e) { CA.reportError(e); } } else mountView(CA.current, CA.parseHash());
   });
@@ -591,8 +596,8 @@
     const viewId = CA.views[r.view] ? r.view : CA.order[0];
     if (viewId !== CA.current) {
       mountView(viewId, r);
-    } else if (CA.views[viewId].route) {
-      CA.views[viewId].route(r);
+    } else if (CA.currentImpl.route) {
+      CA.currentImpl.route(r);
     }
     if (r.kind === 'e' && CA.ent[r.id]) CA.select(r.id);
     else if (r.kind === 'p' && CA.paper[r.id]) CA.showPaper(r.id);
