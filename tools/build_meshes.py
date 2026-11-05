@@ -501,8 +501,7 @@ def extra_anchors(species, meshes, helpers):
         pr = right('precentral')
         a['premotor'] = sided([0.6 * pr[0], pr[1] + 0.4, pr[2] + 0.9])   # in front of and above M1 (dorsal premotor, toward SMA)
         a['s1'] = sided([pr[0], pr[1], pr[2] - 0.9])                     # postcentral gyrus, behind M1
-        ulo, _, _ = bbox(meshes, 'putamen')
-        a['basal-forebrain'] = sided([0.75, ulo[1], (right('accumbens')[2] + right('amygdala')[2]) / 2])   # below the striatum, between accumbens and amygdala
+        # (basal forebrain is now a segmented mesh, item "bf"; no anchor needed)
         # MT (V5) lies in lateral occipitotemporal cortex, which the Allen meshes here do not segment: halfway between the
         # inferior occipital gyrus and the posterior fifth of the middle temporal gyrus (right hemisphere)
         iv, tv = helpers['iog'][3], helpers['mtg'][3]

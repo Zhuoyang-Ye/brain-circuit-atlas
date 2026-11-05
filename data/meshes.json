@@ -34,6 +34,8 @@
       {"key": "gpi", "src": 10344, "name": "Globus pallidus, internal segment", "entity": "gpi", "group": "target", "faces": 800, "tone": "#2f81f7"},
       {"key": "amygdala", "src": 10361, "name": "Amygdala", "entity": "amygdala", "group": "cortex", "faces": 1500, "tone": "#ff9e64",
        "note": "The Allen human atlas does not separate the amygdaloid nuclei; the lateral, basal, central, medial and intercalated nuclei are shown in this mesh."},
+      {"key": "bf", "src": 10349, "name": "Basal forebrain", "entity": "basal-forebrain", "group": "modulator", "faces": 900,
+       "note": "The Allen human atlas segments the basal forebrain as one region (the substantia innominata, with the nucleus basalis of Meynert and the diagonal band); the mesh shows the whole region."},
       {"key": "hip-head", "src": 12171, "name": "Head of hippocampus", "entity": "vhpc", "group": "cortex", "faces": 1200, "tone": "#a5e8a0",
        "note": "The head is the anterior hippocampus, which corresponds to the rodent ventral hippocampus (Fanselow & Dong 2010)."},
       {"key": "hip-body", "src": 12173, "name": "Body of hippocampus", "entity": "dhpc", "group": "cortex", "faces": 900, "tone": "#3fb950",
