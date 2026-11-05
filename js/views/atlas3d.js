@@ -16,7 +16,7 @@
   };
   const NM = D.neuromodulation || { tx: {}, sources: [] };
   // one colour per transmitter, for its pathways, its tags on them and the key (dark-theme values; CA.tc maps them)
-  const TX_COLORS = { NA: 0x58a6ff, '5-HT': 0xbc8cff, DA: 0xf0883e, ACh: 0x3fb950, HA: 0xe3b341, OX: 0xf778ba, CRF: 0x39c5cf };
+  const TX_COLORS = { NA: 0x58a6ff, '5-HT': 0xbc8cff, DA: 0xf0883e, ACh: 0x3fb950, HA: 0xe3b341, OX: 0xf778ba, CRF: 0x39c5cf, OA: 0x2dd4bf, GnRH: 0xdb61a2 };
   const txHex = (code) => CA.tc(TX_COLORS[code] != null ? TX_COLORS[code] : 0x8b949e);
   const MOD_SRC = new Set(NM.sources || []);   // neuromodulator source nuclei (drawn pink)
   const BODY_ANCHORS = ['spinal', 'body', 'gut', 'eyes', 'labyrinth'];

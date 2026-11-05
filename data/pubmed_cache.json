@@ -52,6 +52,22 @@
   "volume": "22",
   "year": 1999
  },
+ "10339613": {
+  "authors": [
+   "Miranda MI",
+   "Bermúdez-Rattoni F"
+  ],
+  "doi": "10.1073/pnas.96.11.6478",
+  "issue": "11",
+  "journal": "Proc Natl Acad Sci U S A",
+  "journalFull": "Proceedings of the National Academy of Sciences of the United States of America",
+  "pages": "6478-82",
+  "pmc": "PMC26907",
+  "pmid": "10339613",
+  "title": "Reversible inactivation of the nucleus basalis magnocellularis induces disruption of cortical acetylcholine release and acquisition, but not retrieval, of aversive memories",
+  "volume": "96",
+  "year": 1999
+ },
  "10457015": {
   "authors": [
    "Lee T",
@@ -1284,6 +1300,26 @@
   "volume": "303",
   "year": 2004
  },
+ "14707548": {
+  "authors": [
+   "Ohara PT",
+   "Granato A",
+   "Moallem TM",
+   "Wang BR",
+   "Tillet Y",
+   "Jasmin L"
+  ],
+  "doi": "10.1023/b:neur.0000005598.09647.7f",
+  "issue": "2",
+  "journal": "J Neurocytol",
+  "journalFull": "Journal of neurocytology",
+  "pages": "131-41",
+  "pmc": "",
+  "pmid": "14707548",
+  "title": "Dopaminergic input to GABAergic neurons in the rostral agranular insular cortex of the rat",
+  "volume": "32",
+  "year": 2003
+ },
  "14730305": {
   "authors": [
    "Critchley HD",
@@ -1468,6 +1504,26 @@
   "pmid": "15254095",
   "title": "The amygdala is enlarged in children but not adolescents with autism; the hippocampus is enlarged at all ages",
   "volume": "24",
+  "year": 2004
+ },
+ "15305367": {
+  "authors": [
+   "Iwakoshi-Ukena E",
+   "Ukena K",
+   "Takuwa-Kuroda K",
+   "Kanda A",
+   "Tsutsui K",
+   "Minakata H"
+  ],
+  "doi": "10.1002/cne.20260",
+  "issue": "3",
+  "journal": "J Comp Neurol",
+  "journalFull": "The Journal of comparative neurology",
+  "pages": "310-23",
+  "pmc": "",
+  "pmid": "15305367",
+  "title": "Expression and distribution of octopus gonadotropin-releasing hormone in the central nervous system and peripheral organs of the octopus (Octopus vulgaris) by in situ hybridization and immunohistochemistry",
+  "volume": "477",
   "year": 2004
  },
  "15329401": {
@@ -2074,6 +2130,22 @@
   "title": "Endocannabinoids control the induction of cerebellar LTD",
   "volume": "48",
   "year": 2005
+ },
+ "16320256": {
+  "authors": [
+   "Sinakevitch I",
+   "Strausfeld NJ"
+  ],
+  "doi": "10.1002/cne.20799",
+  "issue": "3",
+  "journal": "J Comp Neurol",
+  "journalFull": "The Journal of comparative neurology",
+  "pages": "460-75",
+  "pmc": "",
+  "pmid": "16320256",
+  "title": "Comparison of octopamine-like immunoreactivity in the brains of the fruit fly and blow fly",
+  "volume": "494",
+  "year": 2006
  },
  "16339042": {
   "authors": [
@@ -3762,6 +3834,24 @@
   "volume": "513",
   "year": 2009
  },
+ "19235225": {
+  "authors": [
+   "Busch S",
+   "Selcho M",
+   "Ito K",
+   "Tanimoto H"
+  ],
+  "doi": "10.1002/cne.21966",
+  "issue": "6",
+  "journal": "J Comp Neurol",
+  "journalFull": "The Journal of comparative neurology",
+  "pages": "643-67",
+  "pmc": "",
+  "pmid": "19235225",
+  "title": "A map of octopaminergic neurons in the Drosophila brain",
+  "volume": "513",
+  "year": 2009
+ },
  "19286560": {
   "authors": [
    "Han JH",
@@ -3837,6 +3927,23 @@
   "pmid": "19396159",
   "title": "Parvalbumin neurons and gamma rhythms enhance cortical circuit performance",
   "volume": "459",
+  "year": 2009
+ },
+ "19430472": {
+  "authors": [
+   "Petzold GC",
+   "Hagiwara A",
+   "Murthy VN"
+  ],
+  "doi": "10.1038/nn.2335",
+  "issue": "6",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "784-91",
+  "pmc": "",
+  "pmid": "19430472",
+  "title": "Serotonergic modulation of odor input to the mammalian olfactory bulb",
+  "volume": "12",
   "year": 2009
  },
  "19455173": {
@@ -4126,6 +4233,30 @@
   "title": "Disruption of ripple-associated hippocampal activity during rest impairs spatial learning in the rat",
   "volume": "20",
   "year": 2010
+ },
+ "19833972": {
+  "authors": [
+   "Varga V",
+   "Losonczy A",
+   "Zemelman BV",
+   "Borhegyi Z",
+   "Nyiri G",
+   "Domonkos A",
+   "Hangya B",
+   "Holderith N",
+   "Magee JC",
+   "Freund TF"
+  ],
+  "doi": "10.1126/science.1178307",
+  "issue": "5951",
+  "journal": "Science",
+  "journalFull": "Science (New York, N.Y.)",
+  "pages": "449-53",
+  "pmc": "",
+  "pmid": "19833972",
+  "title": "Fast synaptic subcortical control of hippocampal circuits",
+  "volume": "326",
+  "year": 2009
  },
  "19837039": {
   "authors": [
@@ -5260,6 +5391,22 @@
   "volume": "333",
   "year": 2011
  },
+ "21745645": {
+  "authors": [
+   "Gu Z",
+   "Yakel JL"
+  ],
+  "doi": "10.1016/j.neuron.2011.04.026",
+  "issue": "1",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "155-65",
+  "pmc": "PMC3134790",
+  "pmid": "21745645",
+  "title": "Timing-dependent septal cholinergic induction of dynamic hippocampal synaptic plasticity",
+  "volume": "71",
+  "year": 2011
+ },
  "21795627": {
   "authors": [
    "Buckner RL",
@@ -5722,6 +5869,22 @@
   "volume": "488",
   "year": 2012
  },
+ "22836246": {
+  "authors": [
+   "Ma M",
+   "Luo M"
+  ],
+  "doi": "10.1523/JNEUROSCI.0058-12.2012",
+  "issue": "30",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "10105-16",
+  "pmc": "PMC6703727",
+  "pmid": "22836246",
+  "title": "Optogenetic activation of basal forebrain cholinergic neurons modulates neuronal excitability and sensory responses in the main olfactory bulb",
+  "volume": "32",
+  "year": 2012
+ },
  "22878719": {
   "authors": [
    "Lee SH",
@@ -6086,6 +6249,21 @@
   "pmid": "23473324",
   "title": "Differential control of learning and anxiety along the dorsoventral axis of the dentate gyrus",
   "volume": "77",
+  "year": 2013
+ },
+ "23558706": {
+  "authors": [
+   "Di Cristo C"
+  ],
+  "doi": "10.1007/s10158-013-0149-x",
+  "issue": "1",
+  "journal": "Invert Neurosci",
+  "journalFull": "Invertebrate neuroscience : IN",
+  "pages": "27-34",
+  "pmc": "",
+  "pmid": "23558706",
+  "title": "Nervous control of reproduction in Octopus vulgaris: a new model",
+  "volume": "13",
   "year": 2013
  },
  "23594744": {
@@ -6536,6 +6714,29 @@
   "volume": "503",
   "year": 2013
  },
+ "24162654": {
+  "authors": [
+   "Pinto L",
+   "Goard MJ",
+   "Estandian D",
+   "Xu M",
+   "Kwan AC",
+   "Lee SH",
+   "Harrison TC",
+   "Feng G",
+   "Dan Y"
+  ],
+  "doi": "10.1038/nn.3552",
+  "issue": "12",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "1857-1863",
+  "pmc": "PMC4201942",
+  "pmid": "24162654",
+  "title": "Fast modulation of visual perception by basal forebrain cholinergic neurons",
+  "volume": "16",
+  "year": 2013
+ },
  "24185423": {
   "authors": [
    "Saleem AB",
@@ -6806,6 +7007,22 @@
   "volume": "508",
   "year": 2014
  },
+ "24625748": {
+  "authors": [
+   "Purón-Sierra L",
+   "Miranda MI"
+  ],
+  "doi": "10.1371/journal.pone.0091120",
+  "issue": "3",
+  "journal": "PLoS One",
+  "journalFull": "PloS one",
+  "pages": "e91120",
+  "pmc": "PMC3953328",
+  "pmid": "24625748",
+  "title": "Histaminergic modulation of cholinergic release from the nucleus basalis magnocellularis into insular cortex during taste aversive memory formation",
+  "volume": "9",
+  "year": 2014
+ },
  "24630718": {
   "authors": [
    "Fu Y",
@@ -6843,6 +7060,25 @@
   "title": "Mediodorsal nucleus: areal, laminar, and tangential distribution of afferents and efferents in the frontal lobe of rhesus monkeys",
   "volume": "277",
   "year": 1988
+ },
+ "24672011": {
+  "authors": [
+   "Rothermel M",
+   "Carey RM",
+   "Puche A",
+   "Shipley MT",
+   "Wachowiak M"
+  ],
+  "doi": "10.1523/JNEUROSCI.5026-13.2014",
+  "issue": "13",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "4654-64",
+  "pmc": "PMC3965788",
+  "pmid": "24672011",
+  "title": "Cholinergic inputs from Basal forebrain add an excitatory bias to odor coding in the olfactory bulb",
+  "volume": "34",
+  "year": 2014
  },
  "24700860": {
   "authors": [
@@ -6897,6 +7133,23 @@
   "title": "Heterogeneous organization of the locus coeruleus projections to prefrontal and motor cortices",
   "volume": "111",
   "year": 2014
+ },
+ "2478672": {
+  "authors": [
+   "Sato H",
+   "Fox K",
+   "Daw NW"
+  ],
+  "doi": "10.1152/jn.1989.62.4.946",
+  "issue": "4",
+  "journal": "J Neurophysiol",
+  "journalFull": "Journal of neurophysiology",
+  "pages": "946-58",
+  "pmc": "",
+  "pmid": "2478672",
+  "title": "Effect of electrical stimulation of locus coeruleus on the activity of neurons in the cat visual cortex",
+  "volume": "62",
+  "year": 1989
  },
  "2479133": {
   "authors": [
@@ -7146,6 +7399,28 @@
   "volume": "34",
   "year": 2014
  },
+ "25197052": {
+  "authors": [
+   "Vandecasteele M",
+   "Varga V",
+   "Berényi A",
+   "Papp E",
+   "Barthó P",
+   "Venance L",
+   "Freund TF",
+   "Buzsáki G"
+  ],
+  "doi": "10.1073/pnas.1411233111",
+  "issue": "37",
+  "journal": "Proc Natl Acad Sci U S A",
+  "journalFull": "Proceedings of the National Academy of Sciences of the United States of America",
+  "pages": "13535-40",
+  "pmc": "PMC4169920",
+  "pmid": "25197052",
+  "title": "Optogenetic activation of septal cholinergic neurons suppresses sharp wave ripples and enhances theta oscillations in the hippocampus",
+  "volume": "111",
+  "year": 2014
+ },
  "25215491": {
   "authors": [
    "Hong W",
@@ -7342,6 +7617,23 @@
   "title": "Mushroom body output neurons encode valence and guide memory-based action selection in Drosophila",
   "volume": "3",
   "year": 2014
+ },
+ "25589777": {
+  "authors": [
+   "Unal CT",
+   "Pare D",
+   "Zaborszky L"
+  ],
+  "doi": "10.1523/JNEUROSCI.2706-14.2015",
+  "issue": "2",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "853-63",
+  "pmc": "PMC4293427",
+  "pmid": "25589777",
+  "title": "Impact of basal forebrain cholinergic inputs on basolateral amygdala neurons",
+  "volume": "35",
+  "year": 2015
  },
  "25592533": {
   "authors": [
@@ -7749,6 +8041,30 @@
   "volume": "10",
   "year": 2015
  },
+ "26232228": {
+  "authors": [
+   "Beier KT",
+   "Steinberg EE",
+   "DeLoach KE",
+   "Xie S",
+   "Miyamichi K",
+   "Schwarz L",
+   "Gao XJ",
+   "Kremer EJ",
+   "Malenka RC",
+   "Luo L"
+  ],
+  "doi": "10.1016/j.cell.2015.07.015",
+  "issue": "3",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "622-34",
+  "pmc": "PMC4522312",
+  "pmid": "26232228",
+  "title": "Circuit Architecture of VTA Dopamine Neurons Revealed by Systematic Input-Output Mapping",
+  "volume": "162",
+  "year": 2015
+ },
  "26237366": {
   "authors": [
    "Brooks JX",
@@ -8005,6 +8321,24 @@
   "volume": "163",
   "year": 2015
  },
+ "26752161": {
+  "authors": [
+   "Kapoor V",
+   "Provost AC",
+   "Agarwal P",
+   "Murthy VN"
+  ],
+  "doi": "10.1038/nn.4219",
+  "issue": "2",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "271-82",
+  "pmc": "PMC4948943",
+  "pmid": "26752161",
+  "title": "Activation of raphe nuclei triggers rapid and distinct effects on parallel olfactory bulb output channels",
+  "volume": "19",
+  "year": 2016
+ },
  "26777273": {
   "authors": [
    "Mallet N",
@@ -8126,6 +8460,50 @@
   "volume": "90",
   "year": 2016
  },
+ "27100197": {
+  "authors": [
+   "Xiao C",
+   "Cho JR",
+   "Zhou C",
+   "Treweek JB",
+   "Chan K",
+   "McKinney SL",
+   "Yang B",
+   "Gradinaru V"
+  ],
+  "doi": "10.1016/j.neuron.2016.03.028",
+  "issue": "2",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "333-47",
+  "pmc": "PMC4840478",
+  "pmid": "27100197",
+  "title": "Cholinergic Mesopontine Signals Govern Locomotion and Reward through Dissociable Midbrain Pathways",
+  "volume": "90",
+  "year": 2016
+ },
+ "27161525": {
+  "authors": [
+   "Jiang L",
+   "Kundu S",
+   "Lederman JD",
+   "López-Hernández GY",
+   "Ballinger EC",
+   "Wang S",
+   "Talmage DA",
+   "Role LW"
+  ],
+  "doi": "10.1016/j.neuron.2016.04.028",
+  "issue": "5",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "1057-70",
+  "pmc": "PMC4891303",
+  "pmid": "27161525",
+  "title": "Cholinergic Signaling Controls Conditioned Fear Behaviors and Enhances Plasticity of Cortical-Amygdala Circuits",
+  "volume": "90",
+  "year": 2016
+ },
  "27185946": {
   "authors": [
    "Popescu AT",
@@ -8205,6 +8583,31 @@
   "pmid": "27346533",
   "title": "Purkinje Cell Collaterals Enable Output Signals from the Cerebellar Cortex to Feed Back to Purkinje Cells and Interneurons",
   "volume": "91",
+  "year": 2016
+ },
+ "27348215": {
+  "authors": [
+   "Dautan D",
+   "Souza AS",
+   "Huerta-Ocampo I",
+   "Valencia M",
+   "Assous M",
+   "Witten IB",
+   "Deisseroth K",
+   "Tepper JM",
+   "Bolam JP",
+   "Gerdjikov TV",
+   "Mena-Segovia J"
+  ],
+  "doi": "10.1038/nn.4335",
+  "issue": "8",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "1025-33",
+  "pmc": "PMC5086413",
+  "pmid": "27348215",
+  "title": "Segregated cholinergic transmission modulates dopamine neurons integrated in distinct functional circuits",
+  "volume": "19",
   "year": 2016
  },
  "27398617": {
@@ -8352,6 +8755,31 @@
   "volume": "7",
   "year": 2016
  },
+ "27602521": {
+  "authors": [
+   "Takeuchi T",
+   "Duszkiewicz AJ",
+   "Sonneborn A",
+   "Spooner PA",
+   "Yamasaki M",
+   "Watanabe M",
+   "Smith CC",
+   "Fernández G",
+   "Deisseroth K",
+   "Greene RW",
+   "Morris RG"
+  ],
+  "doi": "10.1038/nature19325",
+  "issue": "7620",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "357-362",
+  "pmc": "PMC5161591",
+  "pmid": "27602521",
+  "title": "Locus coeruleus and dopaminergic consolidation of everyday memory",
+  "volume": "537",
+  "year": 2016
+ },
  "27734238": {
   "authors": [
    "Shakkottai VG",
@@ -8444,6 +8872,25 @@
   "pmid": "27927961",
   "title": "Nasal Respiration Entrains Human Limbic Oscillations and Modulates Cognitive Function",
   "volume": "36",
+  "year": 2016
+ },
+ "27930324": {
+  "authors": [
+   "Kempadoo KA",
+   "Mosharov EV",
+   "Choi SJ",
+   "Sulzer D",
+   "Kandel ER"
+  ],
+  "doi": "10.1073/pnas.1616515114",
+  "issue": "51",
+  "journal": "Proc Natl Acad Sci U S A",
+  "journalFull": "Proceedings of the National Academy of Sciences of the United States of America",
+  "pages": "14835-14840",
+  "pmc": "PMC5187750",
+  "pmid": "27930324",
+  "title": "Dopamine release from the locus coeruleus to the dorsal hippocampus promotes spatial learning and memory",
+  "volume": "113",
   "year": 2016
  },
  "28029094": {
@@ -8908,6 +9355,27 @@
   "title": "Selective impairment of learning and blockade of long-term potentiation by an N-methyl-D-aspartate receptor antagonist, AP5",
   "volume": "319",
   "year": 1986
+ },
+ "28708061": {
+  "authors": [
+   "McCall JG",
+   "Siuda ER",
+   "Bhatti DL",
+   "Lawson LA",
+   "McElligott ZA",
+   "Stuber GD",
+   "Bruchas MR"
+  ],
+  "doi": "10.7554/eLife.18247",
+  "issue": "",
+  "journal": "Elife",
+  "journalFull": "eLife",
+  "pages": "",
+  "pmc": "PMC5550275",
+  "pmid": "28708061",
+  "title": "Locus coeruleus to basolateral amygdala noradrenergic projections promote anxiety-like behavior",
+  "volume": "6",
+  "year": 2017
  },
  "28746815": {
   "authors": [
@@ -9416,6 +9884,34 @@
   "volume": "23",
   "year": 2018
  },
+ "29754752": {
+  "authors": [
+   "Teixeira CM",
+   "Rosen ZB",
+   "Suri D",
+   "Sun Q",
+   "Hersh M",
+   "Sargin D",
+   "Dincheva I",
+   "Morgan AA",
+   "Spivack S",
+   "Krok AC",
+   "Hirschfeld-Stoler T",
+   "Lambe EK",
+   "Siegelbaum SA",
+   "Ansorge MS"
+  ],
+  "doi": "10.1016/j.neuron.2018.04.030",
+  "issue": "5",
+  "journal": "Neuron",
+  "journalFull": "Neuron",
+  "pages": "992-1004.e4",
+  "pmc": "PMC6383566",
+  "pmid": "29754752",
+  "title": "Hippocampal 5-HT Input Regulates Memory Formation and Schaffer Collateral Excitation",
+  "volume": "98",
+  "year": 2018
+ },
  "29802362": {
   "authors": [
    "Ezra-Nevo G",
@@ -9587,6 +10083,49 @@
   "volume": "9",
   "year": 2018
  },
+ "30089910": {
+  "authors": [
+   "Walsh JJ",
+   "Christoffel DJ",
+   "Heifets BD",
+   "Ben-Dor GA",
+   "Selimbeyoglu A",
+   "Hung LW",
+   "Deisseroth K",
+   "Malenka RC"
+  ],
+  "doi": "10.1038/s41586-018-0416-4",
+  "issue": "7720",
+  "journal": "Nature",
+  "journalFull": "Nature",
+  "pages": "589-594",
+  "pmc": "PMC8164568",
+  "pmid": "30089910",
+  "title": "5-HT release in nucleus accumbens rescues social deficits in mouse autism model",
+  "volume": "560",
+  "year": 2018
+ },
+ "30100338": {
+  "authors": [
+   "Aitta-Aho T",
+   "Hay YA",
+   "Phillips BU",
+   "Saksida LM",
+   "Bussey TJ",
+   "Paulsen O",
+   "Apergis-Schoute J"
+  ],
+  "doi": "10.1016/j.cub.2018.06.064",
+  "issue": "16",
+  "journal": "Curr Biol",
+  "journalFull": "Current biology : CB",
+  "pages": "2557-2569.e4",
+  "pmc": "",
+  "pmid": "30100338",
+  "title": "Basal Forebrain and Brainstem Cholinergic Neurons Differentially Impact Amygdala Circuits and Learning-Related Behavior",
+  "volume": "28",
+  "year": 2018
+ },
  "30104305": {
   "authors": [
    "Wang ZY",
@@ -9705,6 +10244,35 @@
   "pmid": "30135258",
   "title": "Cerebello-spinal tDCS in ataxia: A randomized, double-blind, sham-controlled, crossover trial",
   "volume": "91",
+  "year": 2018
+ },
+ "30146164": {
+  "authors": [
+   "Ren J",
+   "Friedmann D",
+   "Xiong J",
+   "Liu CD",
+   "Ferguson BR",
+   "Weerakkody T",
+   "DeLoach KE",
+   "Ran C",
+   "Pun A",
+   "Sun Y",
+   "Weissbourd B",
+   "Neve RL",
+   "Huguenard J",
+   "Horowitz MA",
+   "Luo L"
+  ],
+  "doi": "10.1016/j.cell.2018.07.043",
+  "issue": "2",
+  "journal": "Cell",
+  "journalFull": "Cell",
+  "pages": "472-487.e20",
+  "pmc": "PMC6173627",
+  "pmid": "30146164",
+  "title": "Anatomically Defined and Functionally Distinct Dorsal Raphe Serotonin Sub-systems",
+  "volume": "175",
   "year": 2018
  },
  "30174187": {
@@ -10555,6 +11123,29 @@
   "volume": "19",
   "year": 2020
  },
+ "31611706": {
+  "authors": [
+   "Lutas A",
+   "Kucukdereli H",
+   "Alturkistani O",
+   "Carty C",
+   "Sugden AU",
+   "Fernando K",
+   "Diaz V",
+   "Flores-Maldonado V",
+   "Andermann ML"
+  ],
+  "doi": "10.1038/s41593-019-0506-0",
+  "issue": "11",
+  "journal": "Nat Neurosci",
+  "journalFull": "Nature neuroscience",
+  "pages": "1820-1833",
+  "pmc": "PMC6858554",
+  "pmid": "31611706",
+  "title": "State-specific gating of salient cues by midbrain dopaminergic input to basal amygdala",
+  "volume": "22",
+  "year": 2019
+ },
  "31624095": {
   "authors": [
    "Haldipur P",
@@ -10798,6 +11389,28 @@
   "pmc": "PMC7105376",
   "pmid": "32223891",
   "title": "Prediction signals in the cerebellum: beyond supervised motor learning",
+  "volume": "9",
+  "year": 2020
+ },
+ "32252889": {
+  "authors": [
+   "Azimi Z",
+   "Barzan R",
+   "Spoida K",
+   "Surdin T",
+   "Wollenweber P",
+   "Mark MD",
+   "Herlitze S",
+   "Jancke D"
+  ],
+  "doi": "10.7554/eLife.53552",
+  "issue": "",
+  "journal": "Elife",
+  "journalFull": "eLife",
+  "pages": "",
+  "pmc": "PMC7138610",
+  "pmid": "32252889",
+  "title": "Separable gain control of ongoing and evoked activity in the visual cortex by serotonergic input",
   "volume": "9",
   "year": 2020
  },
@@ -12023,6 +12636,26 @@
   "volume": "110",
   "year": 2022
  },
+ "35360496": {
+  "authors": [
+   "Gil-Lievana E",
+   "Ramírez-Mejía G",
+   "Urrego-Morales O",
+   "Luis-Islas J",
+   "Gutierrez R",
+   "Bermúdez-Rattoni F"
+  ],
+  "doi": "10.3389/fncel.2022.823220",
+  "issue": "",
+  "journal": "Front Cell Neurosci",
+  "journalFull": "Frontiers in cellular neuroscience",
+  "pages": "823220",
+  "pmc": "PMC8962201",
+  "pmid": "35360496",
+  "title": "Photostimulation of Ventral Tegmental Area-Insular Cortex Dopaminergic Inputs Enhances the Salience to Consolidate Aversive Taste Recognition Memory via D1-Like Receptors",
+  "volume": "16",
+  "year": 2022
+ },
  "35442745": {
   "authors": [
    "Snell HD",
@@ -12406,6 +13039,27 @@
   "title": "Cell type diversity in a developing octopus brain",
   "volume": "13",
   "year": 2022
+ },
+ "36804534": {
+  "authors": [
+   "Ramirez-Mejia G",
+   "Gil-Lievana E",
+   "Urrego-Morales O",
+   "Galvez-Marquez D",
+   "Hernández-Ortiz E",
+   "Carrillo-Lorenzo JA",
+   "Bermúdez-Rattoni F"
+  ],
+  "doi": "10.1016/j.neuropharm.2023.109464",
+  "issue": "",
+  "journal": "Neuropharmacology",
+  "journalFull": "Neuropharmacology",
+  "pages": "109464",
+  "pmc": "",
+  "pmid": "36804534",
+  "title": "Salience to remember: VTA-IC dopaminergic pathway activity is necessary for object recognition memory formation",
+  "volume": "228",
+  "year": 2023
  },
  "36827988": {
   "authors": [
@@ -13418,6 +14072,29 @@
   "volume": "10",
   "year": 2024
  },
+ "39747920": {
+  "authors": [
+   "Geng C",
+   "Li R",
+   "Li S",
+   "Liu P",
+   "Peng Y",
+   "Liu C",
+   "Wang Z",
+   "Zhang H",
+   "Li A"
+  ],
+  "doi": "10.1038/s41467-024-55609-9",
+  "issue": "1",
+  "journal": "Nat Commun",
+  "journalFull": "Nature communications",
+  "pages": "260",
+  "pmc": "PMC11697270",
+  "pmid": "39747920",
+  "title": "Noradrenergic inputs from the locus coeruleus to anterior piriform cortex and the olfactory bulb modulate olfactory outputs",
+  "volume": "16",
+  "year": 2025
+ },
  "39748107": {
   "authors": [
    "Kim SH",
@@ -13447,6 +14124,23 @@
   "title": "Cerebellar Bergmann glia integrate noxious information and modulate nocifensive behaviors",
   "volume": "28",
   "year": 2025
+ },
+ "3978450": {
+  "authors": [
+   "Shipley MT",
+   "Halloran FJ",
+   "de la Torre J"
+  ],
+  "doi": "10.1016/0006-8993(85)90537-2",
+  "issue": "1-2",
+  "journal": "Brain Res",
+  "journalFull": "Brain research",
+  "pages": "294-9",
+  "pmc": "",
+  "pmid": "3978450",
+  "title": "Surprisingly rich projection from locus coeruleus to the olfactory bulb in the rat",
+  "volume": "329",
+  "year": 1985
  },
  "39814765": {
   "authors": [
@@ -13718,6 +14412,24 @@
   "pmid": "40603888",
   "title": "Processing reliant on granule cells is essential for motor learning but dispensable for social preference and numerous other cerebellar-dependent behaviors",
   "volume": "16",
+  "year": 2025
+ },
+ "41185625": {
+  "authors": [
+   "Roach C",
+   "Rios R",
+   "Pearson J",
+   "Disney AA"
+  ],
+  "doi": "10.1002/cne.70110",
+  "issue": "11",
+  "journal": "J Comp Neurol",
+  "journalFull": "The Journal of comparative neurology",
+  "pages": "e70110",
+  "pmc": "PMC12616712",
+  "pmid": "41185625",
+  "title": "Release and Reuptake Sites for Norepinephrine Are Differently Distributed Across Layers of the Primary Visual Cortex in Macaque Monkeys",
+  "volume": "533",
   "year": 2025
  },
  "41261137": {
@@ -15358,6 +16070,25 @@
   "volume": "119 ( Pt 4)",
   "year": 1996
  },
+ "8815911": {
+  "authors": [
+   "Jiang M",
+   "Griff ER",
+   "Ennis M",
+   "Zimmer LA",
+   "Shipley MT"
+  ],
+  "doi": "10.1523/JNEUROSCI.16-19-06319.1996",
+  "issue": "19",
+  "journal": "J Neurosci",
+  "journalFull": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+  "pages": "6319-29",
+  "pmc": "PMC6579166",
+  "pmid": "8815911",
+  "title": "Activation of locus coeruleus enhances the responses of olfactory bulb mitral cells to weak olfactory nerve input",
+  "volume": "16",
+  "year": 1996
+ },
  "8893004": {
   "authors": [
    "Morris JS",
@@ -15904,6 +16635,22 @@
   "pmid": "9698332",
   "title": "Neuronal correlates of amblyopia in the visual cortex of macaque monkeys with experimental strabismus and anisometropia",
   "volume": "18",
+  "year": 1998
+ },
+ "9703024": {
+  "authors": [
+   "Di Cosmo A",
+   "Di Cristo C"
+  ],
+  "doi": "10.1002/(sici)1096-9861(19980817)398:1<1::aid-cne1>3.0.co;2-5",
+  "issue": "1",
+  "journal": "J Comp Neurol",
+  "journalFull": "The Journal of comparative neurology",
+  "pages": "1-12",
+  "pmc": "",
+  "pmid": "9703024",
+  "title": "Neuropeptidergic control of the optic gland of Octopus vulgaris: FMRF-amide and GnRH immunoreactivity",
+  "volume": "398",
   "year": 1998
  },
  "9735947": {
