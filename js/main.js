@@ -13,6 +13,8 @@
     ['library', 'Library', 'Every paper behind the atlas'],
   ];
 
+  let navOpen = () => false, setNavOpen = () => {};
+
   function buildNav() {
     const nav = document.getElementById('nav');
     NAV.filter(([id]) => CA.views[id]).forEach(([id, label, desc]) => nav.appendChild(h('a', { href: '#/' + id, 'data-view': id, title: desc }, label)));
@@ -21,6 +23,29 @@
     nav.addEventListener('scroll', more);
     window.addEventListener('resize', more);
     CA.on('view-mounted', more);
+
+    // phones (css: max-width 860px): the tabs fold into a drop-down list behind a menu button named after the current view
+    const toggle = document.getElementById('nav-toggle'), current = document.getElementById('nav-current');
+    navOpen = () => nav.classList.contains('open');
+    setNavOpen = (open) => {
+      nav.classList.toggle('open', open);
+      document.body.classList.toggle('nav-open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close the list of views' : 'Open the list of views');
+    };
+    toggle.addEventListener('click', () => setNavOpen(!navOpen()));
+    nav.addEventListener('click', (ev) => { if (ev.target.closest('a')) setNavOpen(false); });
+    document.getElementById('nav-scrim').addEventListener('click', () => setNavOpen(false));
+    if (window.matchMedia) {
+      const phone = matchMedia('(max-width: 860px)');
+      const shut = () => setNavOpen(false);
+      if (phone.addEventListener) phone.addEventListener('change', shut); else phone.addListener(shut);
+    }
+    CA.on('view-mounted', (v) => {
+      const label = (NAV.find(([id]) => id === v) || [])[1] || '';
+      current.textContent = label;
+      toggle.title = 'Views' + (label ? ': ' + label : '');
+    });
   }
 
   /* ---------- global search ---------- */
@@ -65,7 +90,8 @@
       if (ev.key === '/' && !typing) { ev.preventDefault(); input.focus(); }
       if (ev.key === 'Escape' && !typing) {
         const modal = document.getElementById('modal');
-        if (!modal.classList.contains('hidden')) closeModal(); else CA.closePanel();
+        if (navOpen()) { setNavOpen(false); document.getElementById('nav-toggle').focus(); }
+        else if (!modal.classList.contains('hidden')) closeModal(); else CA.closePanel();
       }
     });
   }

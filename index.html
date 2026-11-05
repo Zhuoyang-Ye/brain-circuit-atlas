@@ -21,6 +21,11 @@
     </svg>
     <span>Brain Circuit Atlas <small>v0.1</small></span>
   </a>
+  <!-- phones: the view tabs fold into a menu behind this button (css: max-width 860px) -->
+  <button id="nav-toggle" class="icon-btn nav-toggle" type="button" aria-controls="nav" aria-expanded="false" title="Views" aria-label="Open the list of views">
+    <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3.8h12M2 8h12M2 12.2h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <span id="nav-current"></span>
+  </button>
   <nav id="nav" aria-label="Views"></nav>
   <div class="search">
     <input id="search" type="search" placeholder="Search the atlas  ( / )" title="Search entities and papers (press / to jump here)" autocomplete="off" spellcheck="false" aria-label="Search entities and papers">
@@ -40,6 +45,7 @@
   </div>
   <button id="about-btn" class="icon-btn" type="button" title="About this atlas, sources and credits">About</button>
 </header>
+<div id="nav-scrim" class="nav-scrim"></div>
 
 <div id="regionbar" role="status"></div>
 <main id="view"></main>
