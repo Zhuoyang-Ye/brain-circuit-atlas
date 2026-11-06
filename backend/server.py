@@ -71,7 +71,7 @@ class AtlasRequestHandler(http.server.SimpleHTTPRequestHandler):
             return self.send_json({
                 "status": "ok",
                 "app": "Brain Circuit Atlas",
-                "version": "0.1.0",
+                "version": "0.2.0",
                 "database": db.path,
                 "r2_configured": r2.is_configured(),
                 "r2_bucket": r2.bucket_name if r2.is_configured() else None,

@@ -1,6 +1,6 @@
-# Brain Circuit Atlas
+# Brain Circuit Atlas (v0.2)
 
-An interactive, evidence-linked map of brain regions and their connections to the rest of the brain and body, starting with the cerebellum, the motor cortex, the prefrontal cortex, the basal ganglia, the hippocampus, the amygdala, the visual cortex, the insula and the olfactory system, and, for comparison, two invertebrate brains: the octopus brain, which evolved separately, and the fruit fly brain, whose wiring has been mapped across the whole brain by electron microscopy. For each region it runs from molecules and cells through circuits and brain-wide loops to behavior, cognition and disease. Every connection carries an evidence grade and links to the PubMed papers behind it, and a hypothesis lab turns weak or missing links into testable experiments.
+An interactive, evidence-linked map of brain regions and their connections to the rest of the brain and body, covering the cerebellum, motor cortex, prefrontal cortex, basal ganglia, hippocampus, amygdala, visual cortex, insula, olfactory system, and the basal forebrain, alongside two invertebrate brains: the octopus brain, which evolved separately, and the fruit fly brain, whose wiring has been mapped across the whole brain by electron microscopy. For each region it runs from molecules and cells through circuits and brain-wide loops to behavior, cognition and disease. Every connection carries an evidence grade and links to the PubMed papers behind it, and a hypothesis lab turns weak or missing links into testable experiments.
 
 **Live site:** <https://zhuoyang-ye.github.io/brain-circuit-atlas/>
 
@@ -47,18 +47,19 @@ Pick a region with the **Region** menu: in the left panel of the 3D atlas, under
 | Region | Entities | Links | Chains | Open questions | Papers |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | Cerebellum | 143 | 298 | 24 | 19 | 259 |
-| Motor cortex | 49 | 63 | 12 | 6 | 65 |
-| Prefrontal cortex | 61 | 78 | 13 | 6 | 60 |
-| Basal ganglia | 36 | 45 | 10 | 5 | 35 |
-| Hippocampus | 44 | 48 | 9 | 6 | 62 |
-| Amygdala | 44 | 50 | 13 | 7 | 53 |
-| Visual cortex | 35 | 37 | 9 | 5 | 45 |
-| Insula | 29 | 29 | 4 | 5 | 33 |
-| Olfactory system | 18 | 19 | 4 | 4 | 31 |
-| Octopus brain | 24 | 26 | 3 | 4 | 46 |
-| Fruit fly brain | 68 | 89 | 8 | 7 | 96 |
+| Motor cortex | 51 | 65 | 12 | 6 | 67 |
+| Prefrontal cortex | 72 | 94 | 14 | 7 | 67 |
+| Basal ganglia | 44 | 52 | 11 | 5 | 41 |
+| Hippocampus | 54 | 59 | 10 | 7 | 71 |
+| Amygdala | 54 | 61 | 14 | 7 | 62 |
+| Visual cortex | 39 | 42 | 9 | 5 | 51 |
+| Insula | 34 | 34 | 4 | 5 | 39 |
+| Olfactory system | 24 | 25 | 4 | 4 | 39 |
+| Basal forebrain | 28 | 34 | 4 | 3 | 11 |
+| Octopus brain | 25 | 28 | 3 | 4 | 49 |
+| Fruit fly brain | 68 | 94 | 8 | 7 | 98 |
 
-Some structures, such as the thalamus, striatum, VTA, amygdala, hippocampus, lateral hypothalamus, dopamine and the spinal cord, are shared and appear in several regions. So do links between regions, such as cerebellar output reaching motor and prefrontal cortex through the thalamus, or the basolateral amygdala's projections to prelimbic cortex, the nucleus accumbens and the ventral hippocampus. Fly models of human disease link the fruit fly to Parkinson's disease, Alzheimer's disease, fragile X syndrome and the spinocerebellar ataxias, which belong to the mammalian regions. The totals are 369 entities, 720 links, 89 chains, 65 open questions and 757 papers.
+Some structures, such as the thalamus, striatum, VTA, amygdala, hippocampus, lateral hypothalamus, basal forebrain, dopamine and the spinal cord, are shared and appear in several regions. So do links between regions, such as cerebellar output reaching motor and prefrontal cortex through the thalamus, septohippocampal acetylcholine/GABA cotransmission, striatal regulation of amygdalar acetylcholine via substantia innominata, or ascending arousal projections from brainstem to default mode network. The totals are 378 entities, 773 links, 93 chains, 68 open questions and 805 papers.
 
 The region sets:
 
