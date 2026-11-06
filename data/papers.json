@@ -17,7 +17,7 @@
       "learning",
       "architecture"
     ],
-    "finding": "Theory of cerebellar cortex as a learning machine: granule cells recode mossy-fiber input into a sparse expanded code, and climbing fibers instruct changes at parallel fiber\u2013Purkinje synapses (Marr predicted potentiation).",
+    "finding": "Theory of cerebellar cortex as a learning machine: granule cells recode mossy-fiber input into a sparse expanded code, and climbing fibers instruct changes at parallel fiber–Purkinje synapses (Marr predicted potentiation).",
     "regions": [
       "cerebellum"
     ]
@@ -50,7 +50,7 @@
     "domains": [
       "learning"
     ],
-    "finding": "Models the cerebellum as an adaptive pattern classifier in which climbing-fiber signals weaken co-active parallel fiber\u2013Purkinje synapses, predicting LTD a decade before it was demonstrated.",
+    "finding": "Models the cerebellum as an adaptive pattern classifier in which climbing-fiber signals weaken co-active parallel fiber–Purkinje synapses, predicting LTD a decade before it was demonstrated.",
     "regions": [
       "cerebellum"
     ]
@@ -71,7 +71,7 @@
     "domains": [
       "learning"
     ],
-    "finding": "First demonstration of LTD: conjunctive stimulation of parallel fibers and climbing fibers causes long-lasting depression of parallel fiber\u2013Purkinje transmission (rabbit flocculus).",
+    "finding": "First demonstration of LTD: conjunctive stimulation of parallel fibers and climbing fibers causes long-lasting depression of parallel fiber–Purkinje transmission (rabbit flocculus).",
     "regions": [
       "cerebellum"
     ]
@@ -95,7 +95,7 @@
       "learning",
       "timing"
     ],
-    "finding": "Lesions of the ipsilateral dentate\u2013interpositus nuclei, but not of cerebellar cortex, abolished the learned eyelid response in rabbits; nuclear neurons showed learning-related activity, and stimulating them evoked the eyelid response.",
+    "finding": "Lesions of the ipsilateral dentate–interpositus nuclei, but not of cerebellar cortex, abolished the learned eyelid response in rabbits; nuclear neurons showed learning-related activity, and stimulating them evoked the eyelid response.",
     "regions": [
       "cerebellum"
     ]
@@ -215,7 +215,7 @@
       "learning",
       "motor"
     ],
-    "finding": "mGluR1-knockout mice are ataxic and lack parallel fiber\u2013Purkinje LTD, although PF and CF transmission appear functional, and their eyeblink conditioning is impaired. The authors attribute both the ataxia and the conditioning deficit primarily to the loss of LTD.",
+    "finding": "mGluR1-knockout mice are ataxic and lack parallel fiber–Purkinje LTD, although PF and CF transmission appear functional, and their eyeblink conditioning is impaired. The authors attribute both the ataxia and the conditioning deficit primarily to the loss of LTD.",
     "regions": [
       "cerebellum"
     ]
@@ -327,7 +327,7 @@
     "domains": [
       "motor"
     ],
-    "finding": "SCA6 is caused by small polyglutamine (CAG) expansions in CACNA1A, the \u03b11A subunit of the P/Q-type voltage-gated calcium channel that is abundant in Purkinje cells.",
+    "finding": "SCA6 is caused by small polyglutamine (CAG) expansions in CACNA1A, the α1A subunit of the P/Q-type voltage-gated calcium channel that is abundant in Purkinje cells.",
     "regions": [
       "cerebellum"
     ]
@@ -350,7 +350,7 @@
     "domains": [
       "executive"
     ],
-    "finding": "'Cognitive dysmetria': schizophrenia as a disruption of coordination within a cortico\u2013thalamo\u2013cerebellar circuit, generalizing the cerebellum's role in smoothing movement to the coordination of thought.",
+    "finding": "'Cognitive dysmetria': schizophrenia as a disruption of coordination within a cortico–thalamo–cerebellar circuit, generalizing the cerebellum's role in smoothing movement to the coordination of thought.",
     "regions": [
       "cerebellum"
     ]
@@ -559,7 +559,7 @@
       "motor",
       "architecture"
     ],
-    "finding": "Transneuronal virus tracing in monkeys shows closed loops: the arm area of M1 exchanges input and output with lobules IV\u2013VI, and prefrontal area 46 with Crus II.",
+    "finding": "Transneuronal virus tracing in monkeys shows closed loops: the arm area of M1 exchanges input and output with lobules IV–VI, and prefrontal area 46 with Crus II.",
     "regions": [
       "cerebellum",
       "motor-cortex"
@@ -583,7 +583,7 @@
     "domains": [
       "learning"
     ],
-    "finding": "Parallel fiber synapses show bidirectional plasticity under climbing-fiber control: PF stimulation alone induces LTP, PF plus CF induces LTD, with a higher Ca\u00b2\u207a threshold for LTD \u2014 an inverse of the hippocampal BCM rule.",
+    "finding": "Parallel fiber synapses show bidirectional plasticity under climbing-fiber control: PF stimulation alone induces LTP, PF plus CF induces LTD, with a higher Ca²⁺ threshold for LTD — an inverse of the hippocampal BCM rule.",
     "regions": [
       "cerebellum"
     ]
@@ -699,7 +699,7 @@
     "domains": [
       "architecture"
     ],
-    "finding": "PLC\u03b23 is expressed in zebrin II-positive and PLC\u03b24 in zebrin II-negative Purkinje cells, forming complementary parasagittal stripes.",
+    "finding": "PLCβ3 is expressed in zebrin II-positive and PLCβ4 in zebrin II-negative Purkinje cells, forming complementary parasagittal stripes.",
     "regions": [
       "cerebellum"
     ]
@@ -912,7 +912,7 @@
       "motor",
       "architecture"
     ],
-    "finding": "The subthalamic nucleus projects disynaptically, via the pontine nuclei, to the cerebellar cortex: a basal ganglia \u2192 cerebellum pathway.",
+    "finding": "The subthalamic nucleus projects disynaptically, via the pontine nuclei, to the cerebellar cortex: a basal ganglia → cerebellum pathway.",
     "regions": [
       "cerebellum"
     ]
@@ -985,7 +985,7 @@
     "domains": [
       "learning"
     ],
-    "finding": "Three mutant lines that block LTD expression (AMPA-receptor internalization) learn normally in VOR adaptation, eyeblink conditioning and Erasmus Ladder locomotion: PF\u2013PC LTD is not essential for motor learning.",
+    "finding": "Three mutant lines that block LTD expression (AMPA-receptor internalization) learn normally in VOR adaptation, eyeblink conditioning and Erasmus Ladder locomotion: PF–PC LTD is not essential for motor learning.",
     "regions": [
       "cerebellum"
     ]
@@ -1010,7 +1010,7 @@
     "domains": [
       "spatial"
     ],
-    "finding": "Disrupting PKC-dependent plasticity at parallel fiber\u2013Purkinje synapses impairs hippocampal place cells only when mice rely on self-motion cues, and selectively impairs path integration.",
+    "finding": "Disrupting PKC-dependent plasticity at parallel fiber–Purkinje synapses impairs hippocampal place cells only when mice rely on self-motion cues, and selectively impairs path integration.",
     "regions": [
       "cerebellum",
       "hippocampus"
@@ -1033,7 +1033,7 @@
     "domains": [
       "learning"
     ],
-    "finding": "Review proposing that cerebellar learning relies on distributed, synergistic plasticity \u2014 potentiation and depression, synaptic and intrinsic, in cortex and nuclei \u2014 rather than on PF\u2013PC LTD alone.",
+    "finding": "Review proposing that cerebellar learning relies on distributed, synergistic plasticity — potentiation and depression, synaptic and intrinsic, in cortex and nuclei — rather than on PF–PC LTD alone.",
     "regions": [
       "cerebellum"
     ]
@@ -1200,7 +1200,7 @@
     "domains": [
       "motor"
     ],
-    "finding": "The cerebellum modulates the striatum at short latency through a disynaptic dentate\u2192intralaminar thalamus\u2192striatum pathway that can guide corticostriatal plasticity and, when cerebellar activity is aberrant, causes dystonia.",
+    "finding": "The cerebellum modulates the striatum at short latency through a disynaptic dentate→intralaminar thalamus→striatum pathway that can guide corticostriatal plasticity and, when cerebellar activity is aberrant, causes dystonia.",
     "regions": [
       "cerebellum"
     ]
@@ -1293,7 +1293,7 @@
       "social",
       "learning"
     ],
-    "finding": "Loss of Shank2 impairs Purkinje-cell intrinsic plasticity and PF\u2013PC LTP and enhances inhibitory input (most in the posterior lobe), making simple spikes irregular; PC-specific knockouts show motor-learning and social-interaction deficits.",
+    "finding": "Loss of Shank2 impairs Purkinje-cell intrinsic plasticity and PF–PC LTP and enhances inhibitory input (most in the posterior lobe), making simple spikes irregular; PC-specific knockouts show motor-learning and social-interaction deficits.",
     "regions": [
       "cerebellum"
     ]
@@ -1318,7 +1318,7 @@
       "spatial",
       "executive"
     ],
-    "finding": "In cerebellar stroke, motor deficits follow anterior-lobe (III\u2013VI) damage, whereas cognitive deficits follow posterior damage: language with right Crus I/II through IX, spatial with bilateral Crus I/II and right VIII, executive with VII\u2013VIII.",
+    "finding": "In cerebellar stroke, motor deficits follow anterior-lobe (III–VI) damage, whereas cognitive deficits follow posterior damage: language with right Crus I/II through IX, spatial with bilateral Crus I/II and right VIII, executive with VII–VIII.",
     "regions": [
       "cerebellum"
     ]
@@ -1390,7 +1390,7 @@
       "learning",
       "timing"
     ],
-    "finding": "Over days of eyeblink conditioning, about two-thirds of imaged granule cells acquired a response timed to match or precede the learned eyelid movement \u2014 a dense, redundant predictive signal at the input stage.",
+    "finding": "Over days of eyeblink conditioning, about two-thirds of imaged granule cells acquired a response timed to match or precede the learned eyelid movement — a dense, redundant predictive signal at the input stage.",
     "regions": [
       "cerebellum"
     ]
@@ -1564,7 +1564,7 @@
       "architecture",
       "reward"
     ],
-    "finding": "Review: dense disynaptic projections (subthalamic nucleus \u2192 pons \u2192 cerebellar cortex; dentate \u2192 thalamus \u2192 striatum) link the basal ganglia and cerebellum subcortically into a topographically organized network with the cerebral cortex.",
+    "finding": "Review: dense disynaptic projections (subthalamic nucleus → pons → cerebellar cortex; dentate → thalamus → striatum) link the basal ganglia and cerebellum subcortically into a topographically organized network with the cerebral cortex.",
     "regions": [
       "cerebellum"
     ]
@@ -1586,7 +1586,7 @@
     "domains": [
       "architecture"
     ],
-    "finding": "The principal functional gradient runs from motor to transmodal default-mode regions; a second separates task-focused from task-unfocused regions. Motor maps are double (I\u2013VI, VIII) and nonmotor maps triple (VI/Crus I, Crus II/VIIB, IX/X).",
+    "finding": "The principal functional gradient runs from motor to transmodal default-mode regions; a second separates task-focused from task-unfocused regions. Motor maps are double (I–VI, VIII) and nonmotor maps triple (VI/Crus I, Crus II/VIIB, IX/X).",
     "regions": [
       "cerebellum"
     ]
@@ -1610,7 +1610,7 @@
     "domains": [
       "learning"
     ],
-    "finding": "Molecular-layer interneurons grade climbing-fiber-evoked dendritic Ca\u00b2\u207a spikes, converting CF-mediated potentiation into depression; co-activating them with floccular climbing fibers reversed the direction of VOR adaptation.",
+    "finding": "Molecular-layer interneurons grade climbing-fiber-evoked dendritic Ca²⁺ spikes, converting CF-mediated potentiation into depression; co-activating them with floccular climbing fibers reversed the direction of VOR adaptation.",
     "regions": [
       "cerebellum"
     ]
@@ -1635,7 +1635,7 @@
       "learning",
       "reward"
     ],
-    "finding": "In a flexible sensorimotor task, climbing-fiber activity is preferentially driven by correctly executed movements and reward-predicting cues \u2014 a predictive, unsigned instructive signal rather than a pure motor-error signal.",
+    "finding": "In a flexible sensorimotor task, climbing-fiber activity is preferentially driven by correctly executed movements and reward-predicting cues — a predictive, unsigned instructive signal rather than a pure motor-error signal.",
     "regions": [
       "cerebellum"
     ]
@@ -1742,7 +1742,7 @@
       "executive",
       "reward"
     ],
-    "finding": "In schizophrenia, breakdown of cerebellum\u2013right DLPFC connectivity tracks negative-symptom severity, and TMS that restored the connectivity reduced negative symptoms in proportion to the connectivity change.",
+    "finding": "In schizophrenia, breakdown of cerebellum–right DLPFC connectivity tracks negative-symptom severity, and TMS that restored the connectivity reduced negative symptoms in proportion to the connectivity change.",
     "regions": [
       "cerebellum",
       "prefrontal"
@@ -1811,7 +1811,7 @@
     "domains": [
       "spatial"
     ],
-    "finding": "Dorsal hippocampus receives multisynaptic input from topographically restricted cerebellar regions, and connected regions show behavior-dependent 6\u201312 Hz synchronization with hippocampus.",
+    "finding": "Dorsal hippocampus receives multisynaptic input from topographically restricted cerebellar regions, and connected regions show behavior-dependent 6–12 Hz synchronization with hippocampus.",
     "regions": [
       "cerebellum",
       "hippocampus"
@@ -1863,7 +1863,7 @@
     "domains": [
       "development"
     ],
-    "finding": "Human cerebellar progenitor zones expand in space and time; the rhombic lip persists longer than in mouse and forms a posterior-lobule progenitor pool not seen even in macaque. Its disruption is associated with vermis hypoplasia and Dandy\u2013Walker malformation.",
+    "finding": "Human cerebellar progenitor zones expand in space and time; the rhombic lip persists longer than in mouse and forms a posterior-lobule progenitor pool not seen even in macaque. Its disruption is associated with vermis hypoplasia and Dandy–Walker malformation.",
     "regions": [
       "cerebellum"
     ]
@@ -1913,7 +1913,7 @@
       "emotion",
       "homeostasis"
     ],
-    "finding": "Five classes of glutamatergic fastigial projection neurons, each linked to specific Purkinje-cell and olive subsets, innervate distinct targets \u2014 posturomotor, oromotor, positional-autonomic, orienting and vigilance circuits \u2014 with disynaptic links to forebrain.",
+    "finding": "Five classes of glutamatergic fastigial projection neurons, each linked to specific Purkinje-cell and olive subsets, innervate distinct targets — posturomotor, oromotor, positional-autonomic, orienting and vigilance circuits — with disynaptic links to forebrain.",
     "regions": [
       "cerebellum"
     ]
@@ -1939,7 +1939,7 @@
     "domains": [
       "emotion"
     ],
-    "finding": "Fastigial glutamatergic neurons projecting to ventrolateral PAG bidirectionally control the strength of fear memories and modulate extinction; a separate fastigial \u2192 parafascicular thalamus pathway, which may relay to the amygdala, modulates anxiety.",
+    "finding": "Fastigial glutamatergic neurons projecting to ventrolateral PAG bidirectionally control the strength of fear memories and modulate extinction; a separate fastigial → parafascicular thalamus pathway, which may relay to the amygdala, modulates anxiety.",
     "regions": [
       "cerebellum"
     ]
@@ -2165,7 +2165,7 @@
       "homeostasis",
       "reward"
     ],
-    "finding": "Starting from altered cerebellar food responses in a genetic disorder of insatiable appetite (Prader\u2013Willi syndrome), anterior deep cerebellar nuclei neurons in mice are activated by gut nutrients and end meals by raising striatal dopamine.",
+    "finding": "Starting from altered cerebellar food responses in a genetic disorder of insatiable appetite (Prader–Willi syndrome), anterior deep cerebellar nuclei neurons in mice are activated by gut nutrients and end meals by raising striatal dopamine.",
     "regions": [
       "cerebellum"
     ]
@@ -2233,7 +2233,7 @@
       "executive",
       "architecture"
     ],
-    "finding": "Cerebellar networks are reliable within a person but more variable across people than cortical networks. The frontoparietal control network is the only one over-represented in the cerebellum (2.3-fold), and cerebellar signals lag the cortex by 125\u2013380 ms.",
+    "finding": "Cerebellar networks are reliable within a person but more variable across people than cortical networks. The frontoparietal control network is the only one over-represented in the cerebellum (2.3-fold), and cerebellar signals lag the cortex by 125–380 ms.",
     "regions": [
       "cerebellum"
     ]
@@ -2310,7 +2310,7 @@
       "executive",
       "spatial"
     ],
-    "finding": "In the same nine participants, finger tapping activates right lobules IV\u2013V and VIII, while verb generation, mental rotation and working memory activate lobules VI and VII (Crus I/II) with prefrontal and parietal cortex.",
+    "finding": "In the same nine participants, finger tapping activates right lobules IV–V and VIII, while verb generation, mental rotation and working memory activate lobules VI and VII (Crus I/II) with prefrontal and parietal cortex.",
     "regions": [
       "cerebellum"
     ]
@@ -2571,7 +2571,7 @@
       "motor",
       "learning"
     ],
-    "finding": "Cerebellar neurons respond weakly to self-generated head motion but robustly when the motor command\u2013movement relation is altered; their sensitivity then declines on the same time course as behavioral learning, showing an internal model being updated.",
+    "finding": "Cerebellar neurons respond weakly to self-generated head motion but robustly when the motor command–movement relation is altered; their sensitivity then declines on the same time course as behavioral learning, showing an internal model being updated.",
     "regions": [
       "cerebellum"
     ]
@@ -2784,7 +2784,7 @@
     "domains": [
       "learning"
     ],
-    "finding": "Mice lacking either parallel fiber\u2013Purkinje LTD or interneuron feedforward inhibition still learn, but losing both severely impairs eyeblink conditioning: the two mechanisms compensate for each other.",
+    "finding": "Mice lacking either parallel fiber–Purkinje LTD or interneuron feedforward inhibition still learn, but losing both severely impairs eyeblink conditioning: the two mechanisms compensate for each other.",
     "regions": [
       "cerebellum"
     ]
@@ -2810,7 +2810,7 @@
       "learning",
       "motor"
     ],
-    "finding": "Parallel fiber\u2013Purkinje LTP and VOR adaptation depend on GluA3- (not GluA1-) containing AMPA receptors, whose open probability rises through cAMP and Epac rather than receptor trafficking.",
+    "finding": "Parallel fiber–Purkinje LTP and VOR adaptation depend on GluA3- (not GluA1-) containing AMPA receptors, whose open probability rises through cAMP and Epac rather than receptor trafficking.",
     "regions": [
       "cerebellum"
     ]
@@ -2887,7 +2887,7 @@
       "learning",
       "motor"
     ],
-    "finding": "Loss of one copy of Scn2a (NaV1.2) in granule cells impairs high-frequency transmission and LTP at parallel fiber\u2013Purkinje synapses, leaving the VOR hypersensitive in mice and in children with SCN2A variants. Raising Scn2a expression with CRISPR activation rescues VOR plasticity.",
+    "finding": "Loss of one copy of Scn2a (NaV1.2) in granule cells impairs high-frequency transmission and LTP at parallel fiber–Purkinje synapses, leaving the VOR hypersensitive in mice and in children with SCN2A variants. Raising Scn2a expression with CRISPR activation rescues VOR plasticity.",
     "regions": [
       "cerebellum"
     ]
@@ -2911,7 +2911,7 @@
     "domains": [
       "learning"
     ],
-    "finding": "Climbing fibers also excite an interneuron subtype that inhibits Purkinje-targeting interneurons. Synchronous climbing fibers drive this disinhibition harder, enlarging Purkinje calcium responses, and disrupting interneuron\u2013interneuron inhibition blocks CF-instructed motor learning.",
+    "finding": "Climbing fibers also excite an interneuron subtype that inhibits Purkinje-targeting interneurons. Synchronous climbing fibers drive this disinhibition harder, enlarging Purkinje calcium responses, and disrupting interneuron–interneuron inhibition blocks CF-instructed motor learning.",
     "regions": [
       "cerebellum"
     ]
@@ -3219,7 +3219,7 @@
     "domains": [
       "learning"
     ],
-    "finding": "Review: the cerebellum implements supervised learning through input feature engineering, recurrent architecture, near-linear input\u2013output transforms, regulated and predictive instructive signals, plasticity on multiple timescales and task-specific specializations.",
+    "finding": "Review: the cerebellum implements supervised learning through input feature engineering, recurrent architecture, near-linear input–output transforms, regulated and predictive instructive signals, plasticity on multiple timescales and task-specific specializations.",
     "regions": [
       "cerebellum"
     ]
@@ -3365,7 +3365,7 @@
       "spatial",
       "learning"
     ],
-    "finding": "Whole-brain c-Fos network analysis: exploration recruits a cortex\u2013basal ganglia network, while sequence-based navigation from self-motion recruits a network dominated by hippocampus and cerebellum.",
+    "finding": "Whole-brain c-Fos network analysis: exploration recruits a cortex–basal ganglia network, while sequence-based navigation from self-motion recruits a network dominated by hippocampus and cerebellum.",
     "regions": [
       "cerebellum",
       "hippocampus"
@@ -3391,7 +3391,7 @@
       "emotion",
       "motor"
     ],
-    "finding": "Rotarod exercise engages glutamatergic dentate neurons that drive PKC\u03b4+ amygdala neurons and reduce anxiety. On an accelerating rotarod, orexinergic hypothalamic input to the dentate adds to the effect.",
+    "finding": "Rotarod exercise engages glutamatergic dentate neurons that drive PKCδ+ amygdala neurons and reduce anxiety. On an accelerating rotarod, orexinergic hypothalamic input to the dentate adds to the effect.",
     "regions": [
       "cerebellum"
     ]
@@ -3439,7 +3439,7 @@
     "domains": [
       "executive"
     ],
-    "finding": "In 983 patients and 1,349 controls from 14 samples, cerebellar grey matter is reduced in schizophrenia (d = \u22120.35), most in regions coupled with frontoparietal cortex. The reduction covaries with frontotemporal cortical thinning and is present in the youngest patients.",
+    "finding": "In 983 patients and 1,349 controls from 14 samples, cerebellar grey matter is reduced in schizophrenia (d = −0.35), most in regions coupled with frontoparietal cortex. The reduction covaries with frontotemporal cortical thinning and is present in the youngest patients.",
     "regions": [
       "cerebellum"
     ]
@@ -3514,7 +3514,7 @@
       "learning",
       "development"
     ],
-    "finding": "Mice carrying the autism-linked 15q11-13 duplication show impaired eyeblink conditioning, dysregulated parallel fiber\u2013Purkinje LTD and incomplete developmental elimination of surplus climbing fibers.",
+    "finding": "Mice carrying the autism-linked 15q11-13 duplication show impaired eyeblink conditioning, dysregulated parallel fiber–Purkinje LTD and incomplete developmental elimination of surplus climbing fibers.",
     "regions": [
       "cerebellum"
     ]
@@ -3833,7 +3833,7 @@
       "learning",
       "development"
     ],
-    "finding": "GluD2-knockout mice are ataxic, form fewer parallel fiber\u2013Purkinje synapses, keep multiple climbing fibers and lack LTD, linking synapse formation and plasticity.",
+    "finding": "GluD2-knockout mice are ataxic, form fewer parallel fiber–Purkinje synapses, keep multiple climbing fibers and lack LTD, linking synapse formation and plasticity.",
     "regions": [
       "cerebellum"
     ]
@@ -3856,7 +3856,7 @@
       "learning",
       "development"
     ],
-    "finding": "Cbln1, secreted by granule cells, is needed to match and maintain parallel fiber\u2013Purkinje synapses, to establish the climbing-fiber innervation pattern and to induce LTD; its loss mimics GluD2 loss.",
+    "finding": "Cbln1, secreted by granule cells, is needed to match and maintain parallel fiber–Purkinje synapses, to establish the climbing-fiber innervation pattern and to induce LTD; its loss mimics GluD2 loss.",
     "regions": [
       "cerebellum"
     ]
@@ -4122,7 +4122,7 @@
       "learning",
       "architecture"
     ],
-    "finding": "TRPC3 controls simple-spike firing only in zebrin-negative Purkinje cells. Losing it impairs eyeblink conditioning (zebrin\u2212 modules) but spares compensatory eye-movement adaptation (zebrin+ modules).",
+    "finding": "TRPC3 controls simple-spike firing only in zebrin-negative Purkinje cells. Losing it impairs eyeblink conditioning (zebrin− modules) but spares compensatory eye-movement adaptation (zebrin+ modules).",
     "regions": [
       "cerebellum"
     ]
@@ -4219,7 +4219,7 @@
     "domains": [
       "development"
     ],
-    "finding": "Exome sequencing of 282 people from 100 families with Dandy\u2013Walker malformation or cerebellar hypoplasia gives a diagnosis in 36 families (51% for hypoplasia, 16% for Dandy\u2013Walker), implicates vascular development (PDGFRB) and confirms large non-genetic prenatal contributions.",
+    "finding": "Exome sequencing of 282 people from 100 families with Dandy–Walker malformation or cerebellar hypoplasia gives a diagnosis in 36 families (51% for hypoplasia, 16% for Dandy–Walker), implicates vascular development (PDGFRB) and confirms large non-genetic prenatal contributions.",
     "regions": [
       "cerebellum"
     ]
@@ -4336,7 +4336,7 @@
     "domains": [
       "learning"
     ],
-    "finding": "Noradrenaline acts on \u03b12-adrenergic receptors to lower the release probability of climbing-fiber synapses, which shrinks climbing-fiber-evoked dendritic Ca\u00b2\u207a signals and reduces short- and long-term associative plasticity at parallel-fiber synapses (rat).",
+    "finding": "Noradrenaline acts on α2-adrenergic receptors to lower the release probability of climbing-fiber synapses, which shrinks climbing-fiber-evoked dendritic Ca²⁺ signals and reduces short- and long-term associative plasticity at parallel-fiber synapses (rat).",
     "regions": [
       "cerebellum"
     ]
@@ -4384,7 +4384,7 @@
     "domains": [
       "learning"
     ],
-    "finding": "Infusing the \u03b2-adrenergic blocker propranolol into lobule HVI and the interpositus impaired acquisition of conditioned eyeblink responses, and a PKA inhibitor prevented it; neither drug affected established responses (rat).",
+    "finding": "Infusing the β-adrenergic blocker propranolol into lobule HVI and the interpositus impaired acquisition of conditioned eyeblink responses, and a PKA inhibitor prevented it; neither drug affected established responses (rat).",
     "regions": [
       "cerebellum"
     ]
@@ -4431,7 +4431,7 @@
     "domains": [
       "architecture"
     ],
-    "finding": "Noradrenaline acting on \u03b22-adrenergic receptors raises cAMP in basket cells, depolarizing them and increasing their firing, which facilitates GABAergic IPSCs onto Purkinje cells (rat slices).",
+    "finding": "Noradrenaline acting on β2-adrenergic receptors raises cAMP in basket cells, depolarizing them and increasing their firing, which facilitates GABAergic IPSCs onto Purkinje cells (rat slices).",
     "regions": [
       "cerebellum"
     ]
@@ -4482,7 +4482,7 @@
       "homeostasis",
       "emotion"
     ],
-    "finding": "Noxious stimuli release noradrenaline from locus coeruleus terminals in the cerebellar cortex, and Bergmann glia integrate it as \u03b11-adrenergic Ca\u00b2\u207a 'flares'. Silencing LC terminals or Bergmann glia, or knocking down glial \u03b11 receptors, reduced nocifensive licking and neuropathic pain; activating Bergmann glia lowered Purkinje firing (mouse).",
+    "finding": "Noxious stimuli release noradrenaline from locus coeruleus terminals in the cerebellar cortex, and Bergmann glia integrate it as α1-adrenergic Ca²⁺ 'flares'. Silencing LC terminals or Bergmann glia, or knocking down glial α1 receptors, reduced nocifensive licking and neuropathic pain; activating Bergmann glia lowered Purkinje firing (mouse).",
     "regions": [
       "cerebellum"
     ]
@@ -4508,7 +4508,7 @@
       "motor",
       "emotion"
     ],
-    "finding": "In tottering mice, a model of episodic ataxia type 2, stress-released noradrenaline acts on Purkinje-cell \u03b11-adrenergic receptors and, through casein kinase 2 (likely reducing Ca\u00b2\u207a-activated K\u207a channel activity), disrupts pacemaking; the erratic firing triggers motor attacks, which blocking the cascade prevents.",
+    "finding": "In tottering mice, a model of episodic ataxia type 2, stress-released noradrenaline acts on Purkinje-cell α1-adrenergic receptors and, through casein kinase 2 (likely reducing Ca²⁺-activated K⁺ channel activity), disrupts pacemaking; the erratic firing triggers motor attacks, which blocking the cascade prevents.",
     "regions": [
       "cerebellum"
     ]
@@ -4579,7 +4579,7 @@
     "domains": [
       "development"
     ],
-    "finding": "During the first three postnatal weeks, granule cells express functional 5-HT3 receptors, including presynaptically at parallel fiber\u2013Purkinje synapses, where they modulate paired-pulse plasticity (mouse).",
+    "finding": "During the first three postnatal weeks, granule cells express functional 5-HT3 receptors, including presynaptically at parallel fiber–Purkinje synapses, where they modulate paired-pulse plasticity (mouse).",
     "regions": [
       "cerebellum"
     ]
@@ -4698,7 +4698,7 @@
       "motor",
       "executive"
     ],
-    "finding": "Review: the cerebellum contains high dopamine levels, receives midbrain dopaminergic afferents and expresses all dopamine receptor subtypes (D1\u2013D5); the cerebellar dopamine system may matter in Parkinson's disease and schizophrenia.",
+    "finding": "Review: the cerebellum contains high dopamine levels, receives midbrain dopaminergic afferents and expresses all dopamine receptor subtypes (D1–D5); the cerebellar dopamine system may matter in Parkinson's disease and schizophrenia.",
     "regions": [
       "cerebellum"
     ]
@@ -4723,7 +4723,7 @@
     "domains": [
       "architecture"
     ],
-    "finding": "Purkinje cells express D3 receptors, VMAT2 and the dopamine transporter, most strongly in lobules IX\u2013X; the depolarization-induced slow current (DISC) depends on Ca\u00b2\u207a-dependent release of vesicular dopamine from Purkinje cells acting back on them (mouse).",
+    "finding": "Purkinje cells express D3 receptors, VMAT2 and the dopamine transporter, most strongly in lobules IX–X; the depolarization-induced slow current (DISC) depends on Ca²⁺-dependent release of vesicular dopamine from Purkinje cells acting back on them (mouse).",
     "regions": [
       "cerebellum"
     ]
@@ -4750,7 +4750,7 @@
       "social",
       "motor"
     ],
-    "finding": "Bergmann glia express D1 receptors, and Purkinje cells make dopamine (via cytochrome P450) and release it in an activity-dependent way; glial D1R activation depolarizes Bergmann glia and releases Ca\u00b2\u207a, altering Purkinje-cell excitatory and inhibitory input, and deleting glial D1R reduces locomotion and social activity (mouse).",
+    "finding": "Bergmann glia express D1 receptors, and Purkinje cells make dopamine (via cytochrome P450) and release it in an activity-dependent way; glial D1R activation depolarizes Bergmann glia and releases Ca²⁺, altering Purkinje-cell excitatory and inhibitory input, and deleting glial D1R reduces locomotion and social activity (mouse).",
     "regions": [
       "cerebellum"
     ]
@@ -4828,7 +4828,7 @@
     "domains": [
       "learning"
     ],
-    "finding": "\u03b17 nicotinic receptors on mossy-fiber terminals and granule-cell dendrites let weak mossy-fiber bursts, which would otherwise cause LTD, induce LTP at mossy fiber\u2013granule cell synapses, also in vivo; activating \u03b17 receptors in the flocculus impairs VOR adaptation.",
+    "finding": "α7 nicotinic receptors on mossy-fiber terminals and granule-cell dendrites let weak mossy-fiber bursts, which would otherwise cause LTD, induce LTP at mossy fiber–granule cell synapses, also in vivo; activating α7 receptors in the flocculus impairs VOR adaptation.",
     "regions": [
       "cerebellum"
     ]
@@ -4876,7 +4876,7 @@
     "domains": [
       "architecture"
     ],
-    "finding": "Lesion experiments show that most, if not all, cerebellar nicotinic receptors are on cells intrinsic to the cerebellum rather than on afferents; \u03b24- (not \u03b22-) containing receptors regulate inhibitory synaptic efficacy at two major classes of cerebellar neurons (rat).",
+    "finding": "Lesion experiments show that most, if not all, cerebellar nicotinic receptors are on cells intrinsic to the cerebellum rather than on afferents; β4- (not β2-) containing receptors regulate inhibitory synaptic efficacy at two major classes of cerebellar neurons (rat).",
     "regions": [
       "cerebellum"
     ]
@@ -4921,7 +4921,7 @@
     "domains": [
       "motor"
     ],
-    "finding": "In a randomized, double-blind, placebo-controlled trial in SCA3, the \u03b14\u03b22 nicotinic partial agonist varenicline improved axial measures (gait, stance, rapid alternating movements) and timed walk; the total ataxia score showed only a trend (Class II evidence).",
+    "finding": "In a randomized, double-blind, placebo-controlled trial in SCA3, the α4β2 nicotinic partial agonist varenicline improved axial measures (gait, stance, rapid alternating movements) and timed walk; the total ataxia score showed only a trend (Class II evidence).",
     "regions": [
       "cerebellum"
     ]
@@ -4992,7 +4992,7 @@
       "homeostasis",
       "emotion"
     ],
-    "finding": "Review of direct, bidirectional cerebellar\u2013hypothalamic projections: hypothalamic fibers, some of them histaminergic, end in the cerebellar cortex and nuclei and excite neurons through H2 and/or H1 receptors, and all cerebellar nuclei project back to the hypothalamus.",
+    "finding": "Review of direct, bidirectional cerebellar–hypothalamic projections: hypothalamic fibers, some of them histaminergic, end in the cerebellar cortex and nuclei and excite neurons through H2 and/or H1 receptors, and all cerebellar nuclei project back to the hypothalamus.",
     "regions": [
       "cerebellum"
     ]
@@ -5135,7 +5135,7 @@
     "domains": [
       "learning"
     ],
-    "finding": "Corticotropin-releasing factor from climbing fibers is permissive for parallel fiber\u2013Purkinje LTD via PKC: CRF antagonists block LTD, and cerebella deprived of climbing fibers lack LTD until CRF is supplied (rat).",
+    "finding": "Corticotropin-releasing factor from climbing fibers is permissive for parallel fiber–Purkinje LTD via PKC: CRF antagonists block LTD, and cerebella deprived of climbing fibers lack LTD until CRF is supplied (rat).",
     "regions": [
       "cerebellum"
     ]
@@ -5210,7 +5210,7 @@
     "domains": [
       "motor"
     ],
-    "finding": "CRF raises Purkinje-cell firing by shifting the activation of persistent Na\u207a and hyperpolarization-activated (Ih) currents and activating voltage-dependent K\u207a current (rat slices).",
+    "finding": "CRF raises Purkinje-cell firing by shifting the activation of persistent Na⁺ and hyperpolarization-activated (Ih) currents and activating voltage-dependent K⁺ current (rat slices).",
     "regions": [
       "cerebellum"
     ]
@@ -5257,7 +5257,7 @@
     "domains": [
       "motor"
     ],
-    "finding": "Activating CRF2 receptors, present on climbing-fiber afferents, enhances complex spikes and climbing fiber\u2013Purkinje transmission through a presynaptic PKA pathway (mouse).",
+    "finding": "Activating CRF2 receptors, present on climbing-fiber afferents, enhances complex spikes and climbing fiber–Purkinje transmission through a presynaptic PKA pathway (mouse).",
     "regions": [
       "cerebellum"
     ]
@@ -5305,7 +5305,7 @@
     "domains": [
       "development"
     ],
-    "finding": "CGRP is transiently present in developing climbing fibers; its receptor is mainly astrocytic, and CGRP triggers Ca\u00b2\u207a signals in Bergmann glia (mouse).",
+    "finding": "CGRP is transiently present in developing climbing fibers; its receptor is mainly astrocytic, and CGRP triggers Ca²⁺ signals in Bergmann glia (mouse).",
     "regions": [
       "cerebellum"
     ]
@@ -5351,7 +5351,7 @@
     "domains": [
       "learning"
     ],
-    "finding": "Brief depolarization of Purkinje cells suppresses parallel- and climbing-fiber EPSCs for tens of seconds by releasing endogenous cannabinoids that act on presynaptic CB1 receptors and reduce presynaptic Ca\u00b2\u207a influx (depolarization-induced suppression of excitation; rat).",
+    "finding": "Brief depolarization of Purkinje cells suppresses parallel- and climbing-fiber EPSCs for tens of seconds by releasing endogenous cannabinoids that act on presynaptic CB1 receptors and reduce presynaptic Ca²⁺ influx (depolarization-induced suppression of excitation; rat).",
     "regions": [
       "cerebellum"
     ]
@@ -5376,7 +5376,7 @@
     "domains": [
       "learning"
     ],
-    "finding": "Activating mGluR1 on Purkinje cells releases endocannabinoids that act on presynaptic cannabinoid receptors to depress climbing-fiber input, without needing a postsynaptic Ca\u00b2\u207a rise; depolarization-evoked Ca\u00b2\u207a transients and repetitive parallel-fiber stimulation also trigger this retrograde inhibition.",
+    "finding": "Activating mGluR1 on Purkinje cells releases endocannabinoids that act on presynaptic cannabinoid receptors to depress climbing-fiber input, without needing a postsynaptic Ca²⁺ rise; depolarization-evoked Ca²⁺ transients and repetitive parallel-fiber stimulation also trigger this retrograde inhibition.",
     "regions": [
       "cerebellum"
     ]
@@ -5401,7 +5401,7 @@
     "domains": [
       "learning"
     ],
-    "finding": "Parallel fiber\u2013Purkinje LTD requires the endocannabinoid 2-AG and CB1 receptors: a CB1 antagonist or blocking 2-AG synthesis prevents it, and it is absent in CB1-knockout mice. Purkinje cells release 2-AG that both transiently inhibits release and induces a postsynaptic LTD.",
+    "finding": "Parallel fiber–Purkinje LTD requires the endocannabinoid 2-AG and CB1 receptors: a CB1 antagonist or blocking 2-AG synthesis prevents it, and it is absent in CB1-knockout mice. Purkinje cells release 2-AG that both transiently inhibits release and induces a postsynaptic LTD.",
     "regions": [
       "cerebellum"
     ]
@@ -5589,7 +5589,7 @@
     "domains": [
       "learning"
     ],
-    "finding": "Stimulating parallel fibers at 1 Hz induces a postsynaptically expressed LTP that depends on nitric oxide but not cAMP or cGMP and is enhanced by chelating postsynaptic Ca\u00b2\u207a, a plausible counterpart to LTD.",
+    "finding": "Stimulating parallel fibers at 1 Hz induces a postsynaptically expressed LTP that depends on nitric oxide but not cAMP or cGMP and is enhanced by chelating postsynaptic Ca²⁺, a plausible counterpart to LTD.",
     "regions": [
       "cerebellum"
     ]
@@ -5612,7 +5612,7 @@
     "domains": [
       "learning"
     ],
-    "finding": "LTD requires nitric oxide coinciding with depolarization-induced postsynaptic Ca\u00b2\u207a rise; NO acts as an anterograde messenger.",
+    "finding": "LTD requires nitric oxide coinciding with depolarization-induced postsynaptic Ca²⁺ rise; NO acts as an anterograde messenger.",
     "regions": [
       "cerebellum"
     ]
@@ -5660,7 +5660,7 @@
     "domains": [
       "architecture"
     ],
-    "finding": "Short stimulus trains in the molecular layer release adenosine (TTX- and Ca\u00b2\u207a-sensitive), probably from parallel fibers, and the adenosine feeds back to inhibit parallel fiber\u2013Purkinje transmission (rat).",
+    "finding": "Short stimulus trains in the molecular layer release adenosine (TTX- and Ca²⁺-sensitive), probably from parallel fibers, and the adenosine feeds back to inhibit parallel fiber–Purkinje transmission (rat).",
     "regions": [
       "cerebellum"
     ]
@@ -5684,7 +5684,7 @@
     "domains": [
       "architecture"
     ],
-    "finding": "Bergmann-glia Ca\u00b2\u207a responses to molecular-layer stimulation have a fast AMPA-receptor phase and a P2 purinergic phase that releases Ca\u00b2\u207a from stores; molecular-layer interneurons are the likely ATP source (rat).",
+    "finding": "Bergmann-glia Ca²⁺ responses to molecular-layer stimulation have a fast AMPA-receptor phase and a P2 purinergic phase that releases Ca²⁺ from stores; molecular-layer interneurons are the likely ATP source (rat).",
     "regions": [
       "cerebellum"
     ]
@@ -5733,7 +5733,7 @@
     "domains": [
       "architecture"
     ],
-    "finding": "\u03bc- and \u03b4- (but not \u03ba-) opioid receptors on parallel-fiber terminals reduce glutamate release onto Purkinje cells, and endogenous opioid peptides at these synapses also inhibit release (mouse slices).",
+    "finding": "μ- and δ- (but not κ-) opioid receptors on parallel-fiber terminals reduce glutamate release onto Purkinje cells, and endogenous opioid peptides at these synapses also inhibit release (mouse slices).",
     "regions": [
       "cerebellum"
     ]
@@ -5756,7 +5756,7 @@
     "domains": [
       "architecture"
     ],
-    "finding": "The \u03bc-opioid agonist DAMGO depresses parallel fiber\u2013Purkinje transmission presynaptically, through PKA and MEK signaling (mouse).",
+    "finding": "The μ-opioid agonist DAMGO depresses parallel fiber–Purkinje transmission presynaptically, through PKA and MEK signaling (mouse).",
     "regions": [
       "cerebellum"
     ]
@@ -5903,7 +5903,7 @@
     "domains": [
       "motor"
     ],
-    "finding": "Intranasal neuropeptide Y alleviated motor deficits and neuropathology in a mouse model of Machado\u2013Joseph disease (SCA3).",
+    "finding": "Intranasal neuropeptide Y alleviated motor deficits and neuropathology in a mouse model of Machado–Joseph disease (SCA3).",
     "regions": [
       "cerebellum"
     ]
@@ -5951,7 +5951,7 @@
     "domains": [
       "learning"
     ],
-    "finding": "Estradiol enhances parallel fiber\u2013Purkinje LTP (not LTD) and increases parallel-fiber synapse density; acting on Purkinje-cell estrogen receptor \u03b2, it improves gain-decrease adaptation of the VOR (mouse).",
+    "finding": "Estradiol enhances parallel fiber–Purkinje LTP (not LTD) and increases parallel-fiber synapse density; acting on Purkinje-cell estrogen receptor β, it improves gain-decrease adaptation of the VOR (mouse).",
     "regions": [
       "cerebellum"
     ]
@@ -5975,7 +5975,7 @@
     "domains": [
       "learning"
     ],
-    "finding": "In mouse cerebellum, estrogen-receptor activation of mGluR1a strongly enhances parallel fiber\u2013Purkinje transmission. Blocking local (aromatase-dependent) estrogen synthesis weakens it, lowering estrogen impairs locomotor performance, and the facilitation occurs in both sexes.",
+    "finding": "In mouse cerebellum, estrogen-receptor activation of mGluR1a strongly enhances parallel fiber–Purkinje transmission. Blocking local (aromatase-dependent) estrogen synthesis weakens it, lowering estrogen impairs locomotor performance, and the facilitation occurs in both sexes.",
     "regions": [
       "cerebellum"
     ]
@@ -5999,7 +5999,7 @@
       "development",
       "learning"
     ],
-    "finding": "Mice with a dominant-negative thyroid-hormone receptor in Purkinje cells have impaired motor coordination and learning; in them, LTD-inducing stimulation produces LTP, with smaller dendritic Ca\u00b2\u207a signals and less SERCA2 and IP3R1. Adult-onset thyroid-hormone deficiency does not do this, so the effect is developmental.",
+    "finding": "Mice with a dominant-negative thyroid-hormone receptor in Purkinje cells have impaired motor coordination and learning; in them, LTD-inducing stimulation produces LTP, with smaller dendritic Ca²⁺ signals and less SERCA2 and IP3R1. Adult-onset thyroid-hormone deficiency does not do this, so the effect is developmental.",
     "regions": [
       "cerebellum"
     ]
@@ -6045,7 +6045,7 @@
     "domains": [
       "architecture"
     ],
-    "finding": "Lugaro cell \u2192 Golgi cell IPSCs are mixed GABAergic\u2013glycinergic, whereas basket and stellate cell inputs to Golgi cells are purely GABAergic (rat).",
+    "finding": "Lugaro cell → Golgi cell IPSCs are mixed GABAergic–glycinergic, whereas basket and stellate cell inputs to Golgi cells are purely GABAergic (rat).",
     "regions": [
       "cerebellum"
     ]
@@ -6183,7 +6183,7 @@
     "domains": [
       "motor"
     ],
-    "finding": "Familial hemiplegic migraine and episodic ataxia type 2 are allelic channelopathies of CACNL1A4 (CACNA1A), the brain-specific P/Q-type Ca\u00b2\u207a-channel \u03b11 subunit: FHM families carry missense mutations, and EA-2 families carry mutations that disrupt the reading frame.",
+    "finding": "Familial hemiplegic migraine and episodic ataxia type 2 are allelic channelopathies of CACNL1A4 (CACNA1A), the brain-specific P/Q-type Ca²⁺-channel α1 subunit: FHM families carry missense mutations, and EA-2 families carry mutations that disrupt the reading frame.",
     "regions": [
       "cerebellum"
     ]
@@ -6255,7 +6255,7 @@
       "motor",
       "architecture"
     ],
-    "finding": "The main excitatory pathway of mouse motor cortex, layer 2/3 \u2192 5, splits into pathways to corticospinal neurons in upper layer 5B and corticostriatal neurons in lower layer 5A; connectivity depends on both sublayer position and long-range projection target.",
+    "finding": "The main excitatory pathway of mouse motor cortex, layer 2/3 → 5, splits into pathways to corticospinal neurons in upper layer 5B and corticostriatal neurons in lower layer 5A; connectivity depends on both sublayer position and long-range projection target.",
     "regions": [
       "motor-cortex"
     ]
@@ -6879,7 +6879,8 @@
     ],
     "finding": "Selective lesions of the basal forebrain cholinergic system disrupt the cortical map reorganization that accompanies learning a skilled motor task and impair that learning, without impairing associative fear learning or overall sensorimotor function (rat).",
     "regions": [
-      "motor-cortex"
+      "motor-cortex",
+      "basal-forebrain"
     ]
   },
   {
@@ -6926,7 +6927,7 @@
     "domains": [
       "motor"
     ],
-    "finding": "After stroke in mice, tonic inhibition in the peri-infarct zone rises through extrasynaptic GABA(A) receptors because GABA transporter (GAT-3/GAT-4) function is impaired; an \u03b15-selective inverse agonist given at a delay after stroke, or genetically lowering \u03b15- or \u03b4-subunit receptors, promotes early and sustained recovery of motor function.",
+    "finding": "After stroke in mice, tonic inhibition in the peri-infarct zone rises through extrasynaptic GABA(A) receptors because GABA transporter (GAT-3/GAT-4) function is impaired; an α5-selective inverse agonist given at a delay after stroke, or genetically lowering α5- or δ-subunit receptors, promotes early and sustained recovery of motor function.",
     "regions": [
       "motor-cortex"
     ]
@@ -8945,7 +8946,7 @@
     "domains": [
       "motor"
     ],
-    "finding": "Review: both hypokinetic (Parkinson's disease) and hyperkinetic (Huntington's disease, hemiballismus) movement disorders can be accounted for by postulating specific disturbances within the basal ganglia\u2013thalamocortical 'motor' circuit; describes the changes in its neuronal activity in primate models of these disorders."
+    "finding": "Review: both hypokinetic (Parkinson's disease) and hyperkinetic (Huntington's disease, hemiballismus) movement disorders can be accounted for by postulating specific disturbances within the basal ganglia–thalamocortical 'motor' circuit; describes the changes in its neuronal activity in primate models of these disorders."
   },
   {
     "key": "kravitz2010",
@@ -9065,7 +9066,7 @@
       "reward",
       "learning"
     ],
-    "finding": "Optogenetic activation of dopamine neurons concurrent with reward delivery, mimicking a prediction error, was sufficient to cause long-lasting increases in cue-elicited reward seeking in blocking and extinction procedures, establishing a causal role for temporally precise dopamine neuron signaling in cue\u2013reward learning (rat)."
+    "finding": "Optogenetic activation of dopamine neurons concurrent with reward delivery, mimicking a prediction error, was sufficient to cause long-lasting increases in cue-elicited reward seeking in blocking and extinction procedures, establishing a causal role for temporally precise dopamine neuron signaling in cue–reward learning (rat)."
   },
   {
     "key": "reynolds2001",
@@ -9296,7 +9297,7 @@
     "domains": [
       "motor"
     ],
-    "finding": "Review: the cortico-subthalamo-pallidal 'hyperdirect' pathway conveys powerful excitation from motor-related cortical areas to the globus pallidus, bypassing the striatum with a shorter conduction time; the authors propose a center\u2013surround model in which a hyperdirect signal first inhibits broad areas of thalamus and cortex, the direct pathway then releases only the selected motor program, and the indirect pathway possibly inhibits the targets extensively afterwards."
+    "finding": "Review: the cortico-subthalamo-pallidal 'hyperdirect' pathway conveys powerful excitation from motor-related cortical areas to the globus pallidus, bypassing the striatum with a shorter conduction time; the authors propose a center–surround model in which a hyperdirect signal first inhibits broad areas of thalamus and cortex, the direct pathway then releases only the selected motor program, and the indirect pathway possibly inhibits the targets extensively afterwards."
   },
   {
     "key": "yin2004",
@@ -9641,7 +9642,7 @@
     "domains": [
       "motor"
     ],
-    "finding": "In 8 patients with advanced Parkinson disease, subthalamic stimulation delivered only when a brain\u2013computer interface detected pathological activity in local field potentials from the stimulation electrodes (adaptive DBS) improved motor scores by 66 percent unblinded and 50 percent blinded, 29 and 27 percent more than conventional continuous stimulation, with 56 percent less stimulation time."
+    "finding": "In 8 patients with advanced Parkinson disease, subthalamic stimulation delivered only when a brain–computer interface detected pathological activity in local field potentials from the stimulation electrodes (adaptive DBS) improved motor scores by 66 percent unblinded and 50 percent blinded, 29 and 27 percent more than conventional continuous stimulation, with 56 percent less stimulation time."
   },
   {
     "key": "scoville1957",
@@ -10005,7 +10006,7 @@
     "domains": [
       "spatial"
     ],
-    "finding": "Layer II of the medial entorhinal cortex was predominated by grid cells, whereas in deeper layers grid cells colocalized with head-direction cells and conjunctive grid \u00d7 head-direction cells, and all cell types were modulated by running speed (rat)."
+    "finding": "Layer II of the medial entorhinal cortex was predominated by grid cells, whereas in deeper layers grid cells colocalized with head-direction cells and conjunctive grid × head-direction cells, and all cell types were modulated by running speed (rat)."
   },
   {
     "key": "brandon2011",
@@ -11202,7 +11203,7 @@
     "domains": [
       "emotion"
     ],
-    "finding": "PKC-\u03b4+ GABAergic neurons in the lateral central amygdala inhibit output neurons of the medial central amygdala and make reciprocal inhibitory synapses with PKC-\u03b4\u2212 neurons; silencing them suggests that they are the CEl \"off\" units inhibited by the conditioned stimulus, defining an inhibitory microcircuit that gates central amygdala output to control conditioned freezing (mouse)."
+    "finding": "PKC-δ+ GABAergic neurons in the lateral central amygdala inhibit output neurons of the medial central amygdala and make reciprocal inhibitory synapses with PKC-δ− neurons; silencing them suggests that they are the CEl \"off\" units inhibited by the conditioned stimulus, defining an inhibitory microcircuit that gates central amygdala output to control conditioned freezing (mouse)."
   },
   {
     "key": "li2013",
@@ -11349,7 +11350,7 @@
     "domains": [
       "homeostasis"
     ],
-    "finding": "PKC-\u03b4+ neurons in the lateral central amygdala were activated by diverse anorexigenic signals, were required for those signals to inhibit feeding, and strongly suppressed food intake when activated (mouse)."
+    "finding": "PKC-δ+ neurons in the lateral central amygdala were activated by diverse anorexigenic signals, were required for those signals to inhibit feeding, and strongly suppressed food intake when activated (mouse)."
   },
   {
     "key": "kalin2004",
@@ -11420,7 +11421,7 @@
       "emotion",
       "memory"
     ],
-    "finding": "Intercalated cells, which receive conditioned-stimulus information from the basolateral amygdala and send inhibitory projections to the central nucleus, were partly lesioned (34% fewer) with a toxin targeting \u03bc-opioid-receptor-expressing cells; the lesions caused a marked deficit in the expression of fear extinction, larger the fewer intercalated neurons survived (rat)."
+    "finding": "Intercalated cells, which receive conditioned-stimulus information from the basolateral amygdala and send inhibitory projections to the central nucleus, were partly lesioned (34% fewer) with a toxin targeting μ-opioid-receptor-expressing cells; the lesions caused a marked deficit in the expression of fear extinction, larger the fewer intercalated neurons survived (rat)."
   },
   {
     "key": "tye2011",
@@ -14829,7 +14830,7 @@
       "learning",
       "reward"
     ],
-    "finding": "Serotonin-immunoreactive afferent terminals innervate the neuropil, but not the cell bodies, of the vertical lobe, and 5-HT (effective at a high, 100 \u00b5M concentration) facilitated synaptic transmission and activity-dependent LTP induction without clear long-term facilitation; the authors propose it is part of a reinforcing or reward signalling system (Octopus vulgaris)."
+    "finding": "Serotonin-immunoreactive afferent terminals innervate the neuropil, but not the cell bodies, of the vertical lobe, and 5-HT (effective at a high, 100 µM concentration) facilitated synaptic transmission and activity-dependent LTP induction without clear long-term facilitation; the authors propose it is part of a reinforcing or reward signalling system (Octopus vulgaris)."
   },
   {
     "key": "shomrat2015",
@@ -15600,7 +15601,7 @@
     "domains": [
       "architecture"
     ],
-    "finding": "A neuronal wiring diagram of a whole adult female Drosophila brain, reconstructed from electron microscopy, contains 139,255 neurons and 5 \u00d7 10^7 chemical synapses annotated with cell classes and types, nerves, hemilineages and predicted neurotransmitters; tracing from sensory inputs to motor, endocrine and descending outputs, and from photoreceptors to descending motor pathways, illustrates how structure can suggest circuit mechanisms (fly)."
+    "finding": "A neuronal wiring diagram of a whole adult female Drosophila brain, reconstructed from electron microscopy, contains 139,255 neurons and 5 × 10^7 chemical synapses annotated with cell classes and types, nerves, hemilineages and predicted neurotransmitters; tracing from sensory inputs to motor, endocrine and descending outputs, and from photoreceptors to descending motor pathways, illustrates how structure can suggest circuit mechanisms (fly)."
   },
   {
     "key": "scheffer2020",
@@ -15685,7 +15686,7 @@
     "methods": [
       "connectome",
       "whole-brain in vivo calcium imaging",
-      "structural\u2013functional connectivity comparison"
+      "structural–functional connectivity comparison"
     ],
     "levels": [
       "regional",
@@ -16001,7 +16002,7 @@
     "domains": [
       "learning"
     ],
-    "finding": "Ablating the mushroom bodies with hydroxyurea fed to newly hatched larvae left adult flies normal in most respects but unable to learn odour\u2013shock associations in classical conditioning, a deficit not explained by reduced olfactory sensitivity, shock reactivity or locomotion (fly)."
+    "finding": "Ablating the mushroom bodies with hydroxyurea fed to newly hatched larvae left adult flies normal in most respects but unable to learn odour–shock associations in classical conditioning, a deficit not explained by reduced olfactory sensitivity, shock reactivity or locomotion (fly)."
   },
   {
     "key": "mcguire2001",
@@ -16022,7 +16023,7 @@
     "domains": [
       "memory"
     ],
-    "finding": "Transiently blocking synaptic output of mushroom body \u03b1/\u03b2 neurons with temperature-sensitive shibire showed that their signalling is required during olfactory memory retrieval, but not during acquisition or consolidation (fly)."
+    "finding": "Transiently blocking synaptic output of mushroom body α/β neurons with temperature-sensitive shibire showed that their signalling is required during olfactory memory retrieval, but not during acquisition or consolidation (fly)."
   },
   {
     "key": "zars2000",
@@ -16304,7 +16305,7 @@
     "domains": [
       "spatial"
     ],
-    "finding": "Imaging in flies walking in virtual reality showed that a population of neurons whose dendrites tile the ellipsoid body encodes the fly\u2019s azimuth, tracking visual landmarks when available and self-motion in darkness, and keeps it by persistent activity when both cues are absent; its dynamics and circular layout suggest a ring attractor (fly)."
+    "finding": "Imaging in flies walking in virtual reality showed that a population of neurons whose dendrites tile the ellipsoid body encodes the fly’s azimuth, tracking visual landmarks when available and self-motion in darkness, and keeps it by persistent activity when both cues are absent; its dynamics and circular layout suggest a ring attractor (fly)."
   },
   {
     "key": "seelig2013",
@@ -16370,7 +16371,7 @@
     "domains": [
       "spatial"
     ],
-    "finding": "Clockwise- and anticlockwise-shifting neurons of the central complex, whose wiring and physiology can rotate the heading estimate according to angular velocity, are required for the heading system to track the fly\u2019s heading in the dark, and stimulating them induces predictable shifts in the heading signal (fly)."
+    "finding": "Clockwise- and anticlockwise-shifting neurons of the central complex, whose wiring and physiology can rotate the heading estimate according to angular velocity, are required for the heading system to track the fly’s heading in the dark, and stimulating them induces predictable shifts in the heading signal (fly)."
   },
   {
     "key": "ofstad2011",
@@ -16534,7 +16535,7 @@
     "domains": [
       "spatial"
     ],
-    "finding": "In the fan-shaped body, PFNd and PFNv neurons conjunctively encode translational velocity and heading by multiplying velocity signals from locomotor brain regions with compass heading signals; their convergence onto h\u0394B neurons rotates body-centric velocity into a world-centric representation, and perturbing PFNd neurons disrupts path integration in walking flies (fly)."
+    "finding": "In the fan-shaped body, PFNd and PFNv neurons conjunctively encode translational velocity and heading by multiplying velocity signals from locomotor brain regions with compass heading signals; their convergence onto hΔB neurons rotates body-centric velocity into a world-centric representation, and perturbing PFNd neurons disrupts path integration in walking flies (fly)."
   },
   {
     "key": "shaw2000",
@@ -16547,7 +16548,7 @@
       "fly"
     ],
     "methods": [
-      "rest\u2013activity monitoring",
+      "rest–activity monitoring",
       "arousal thresholds",
       "rest deprivation"
     ],
@@ -16719,7 +16720,7 @@
     "domains": [
       "sensory"
     ],
-    "finding": "In the lamina, where photoreceptor signals split into five parallel pathways (L1\u2013L5), blocking L1 output eliminated downstream responses to moving ON edges and blocking L2 output responses to moving OFF edges, so photoreceptor signals segregate into ON (L1) and OFF (L2) channels (fly)."
+    "finding": "In the lamina, where photoreceptor signals split into five parallel pathways (L1–L5), blocking L1 output eliminated downstream responses to moving ON edges and blocking L2 output responses to moving OFF edges, so photoreceptor signals segregate into ON (L1) and OFF (L2) channels (fly)."
   },
   {
     "key": "borst2015",
@@ -16741,7 +16742,7 @@
     "domains": [
       "sensory"
     ],
-    "finding": "Review: fly and mammalian motion vision share a circuit design, with motion extracted in parallel ON and OFF pathways, elementary motion detection by correlating signals with different temporal dynamics, and convergence onto four groups of ON\u2013OFF neurons selective for the four cardinal directions (fly and mammals)."
+    "finding": "Review: fly and mammalian motion vision share a circuit design, with motion extracted in parallel ON and OFF pathways, elementary motion detection by correlating signals with different temporal dynamics, and convergence onto four groups of ON–OFF neurons selective for the four cardinal directions (fly and mammals)."
   },
   {
     "key": "wum2016",
@@ -17059,7 +17060,7 @@
       "fly"
     ],
     "methods": [
-      "odour\u2013shock conditioning of fly populations",
+      "odour–shock conditioning of fly populations",
       "colour discrimination learning"
     ],
     "levels": [
@@ -17083,7 +17084,7 @@
     ],
     "methods": [
       "mutant isolation",
-      "odour\u2013shock conditioning"
+      "odour–shock conditioning"
     ],
     "levels": [
       "molecular",
@@ -17150,7 +17151,7 @@
       "fly"
     ],
     "methods": [
-      "classical (Pavlovian) odour\u2013shock conditioning with a T-maze test",
+      "classical (Pavlovian) odour–shock conditioning with a T-maze test",
       "learning mutants"
     ],
     "levels": [
@@ -17161,7 +17162,7 @@
       "learning",
       "memory"
     ],
-    "finding": "A classical-conditioning version of the odour\u2013shock paradigm gave strong learning (typically 95% of trained flies avoided the shock-paired odour), best when odour and shock overlapped and absent when the shock came first; memory decayed over 7 hours but was still present at 24, and amnesiac, rutabaga and dunce mutants learned appreciably but forgot rapidly within the first 30 minutes (fly)."
+    "finding": "A classical-conditioning version of the odour–shock paradigm gave strong learning (typically 95% of trained flies avoided the shock-paired odour), best when odour and shock overlapped and absent when the shock came first; memory decayed over 7 hours but was still present at 24, and amnesiac, rutabaga and dunce mutants learned appreciably but forgot rapidly within the first 30 minutes (fly)."
   },
   {
     "key": "heisenberg1985",
@@ -17197,7 +17198,7 @@
       "fly"
     ],
     "methods": [
-      "targeted expression of a constitutively active G\u03b1s subunit"
+      "targeted expression of a constitutively active Gαs subunit"
     ],
     "levels": [
       "molecular",
@@ -17206,7 +17207,7 @@
     "domains": [
       "learning"
     ],
-    "finding": "Expressing a constitutively activated G\u03b1s in the mushroom bodies, but not the central complex, abolished odour\u2013shock learning while sensorimotor responses and gross mushroom body anatomy stayed normal, so olfactory learning depends on regulated Gs signalling in the mushroom bodies (fly)."
+    "finding": "Expressing a constitutively activated Gαs in the mushroom bodies, but not the central complex, abolished odour–shock learning while sensorimotor responses and gross mushroom body anatomy stayed normal, so olfactory learning depends on regulated Gs signalling in the mushroom bodies (fly)."
   },
   {
     "key": "tully1994",
@@ -17219,7 +17220,7 @@
       "fly"
     ],
     "methods": [
-      "extended odour\u2013shock training",
+      "extended odour–shock training",
       "protein synthesis inhibitor",
       "cold anaesthesia",
       "radish mutant"
@@ -17445,7 +17446,7 @@
       "learning",
       "reward"
     ],
-    "finding": "Glutamatergic M4/6 output neurons, whose dendrites overlap dopamine neuron projections at the tips of the \u03b2, \u03b2\u2032 and \u03b3 lobes, are needed to express appetitive and aversive memory; conditioning changes their odour drive in either direction, blocking them in naive flies turns odour avoidance into approach, and activating them induces avoidance (fly)."
+    "finding": "Glutamatergic M4/6 output neurons, whose dendrites overlap dopamine neuron projections at the tips of the β, β′ and γ lobes, are needed to express appetitive and aversive memory; conditioning changes their odour drive in either direction, blocking them in naive flies turns odour avoidance into approach, and activating them induces avoidance (fly)."
   },
   {
     "key": "pai2013",
@@ -17536,7 +17537,7 @@
     "domains": [
       "learning"
     ],
-    "finding": "The single GABAergic APL neuron in each hemisphere innervates the mushroom bodies broadly; reducing its GABA synthesis enhanced olfactory learning, it responded to odour and shock, and odour\u2013shock pairing left a memory trace in it, a reduced response to the trained odour (fly)."
+    "finding": "The single GABAergic APL neuron in each hemisphere innervates the mushroom bodies broadly; reducing its GABA synthesis enhanced olfactory learning, it responded to odour and shock, and odour–shock pairing left a memory trace in it, a reduced response to the trained odour (fly)."
   },
   {
     "key": "waddell2000",
@@ -17584,7 +17585,7 @@
     "domains": [
       "memory"
     ],
-    "finding": "Anaesthesia-resistant memory rises and falls with serotonin levels and needs serotonin released from the two DPM neurons onto the mushroom bodies, acting through d5HT1A receptors in \u03b1/\u03b2 Kenyon cells, besides the Amnesiac peptide the same neurons release for anaesthesia-sensitive memory (fly)."
+    "finding": "Anaesthesia-resistant memory rises and falls with serotonin levels and needs serotonin released from the two DPM neurons onto the mushroom bodies, acting through d5HT1A receptors in α/β Kenyon cells, besides the Amnesiac peptide the same neurons release for anaesthesia-sensitive memory (fly)."
   },
   {
     "key": "itok1997",
@@ -17628,7 +17629,7 @@
     "domains": [
       "development"
     ],
-    "finding": "A single mushroom body neuroblast generates three types of neurons in sequence: \u03b3 neurons before the mid-third larval instar, \u03b1\u2032/\u03b2\u2032 neurons until puparium formation, and \u03b1/\u03b2 neurons after it; at metamorphosis the early-born \u03b3 neurons prune their larval axon branches and then project, unbranched, into the adult \u03b3 lobe (fly)."
+    "finding": "A single mushroom body neuroblast generates three types of neurons in sequence: γ neurons before the mid-third larval instar, α′/β′ neurons until puparium formation, and α/β neurons after it; at metamorphosis the early-born γ neurons prune their larval axon branches and then project, unbranched, into the adult γ lobe (fly)."
   },
   {
     "key": "jefferis2001",
@@ -17685,7 +17686,7 @@
       "fly"
     ],
     "methods": [
-      "expression of normal and mutant human \u03b1-synuclein"
+      "expression of normal and mutant human α-synuclein"
     ],
     "levels": [
       "cellular",
@@ -17694,7 +17695,7 @@
     "domains": [
       "motor"
     ],
-    "finding": "Expressing normal or mutant human \u03b1-synuclein in flies produced adult-onset loss of dopaminergic neurons, filamentous inclusions containing \u03b1-synuclein and locomotor dysfunction, reproducing essential features of Parkinson\u2019s disease (fly)."
+    "finding": "Expressing normal or mutant human α-synuclein in flies produced adult-onset loss of dopaminergic neurons, filamentous inclusions containing α-synuclein and locomotor dysfunction, reproducing essential features of Parkinson’s disease (fly)."
   },
   {
     "key": "greene2003",
@@ -17716,7 +17717,7 @@
     "domains": [
       "motor"
     ],
-    "finding": "Flies lacking parkin, a ubiquitin\u2013protein ligase whose loss causes a familial juvenile parkinsonism, have reduced lifespan, locomotor defects from apoptotic death of muscle subsets and male sterility, with mitochondrial pathology as the earliest sign (fly)."
+    "finding": "Flies lacking parkin, a ubiquitin–protein ligase whose loss causes a familial juvenile parkinsonism, have reduced lifespan, locomotor defects from apoptotic death of muscle subsets and male sterility, with mitochondrial pathology as the earliest sign (fly)."
   },
   {
     "key": "iijima2004",
@@ -17729,7 +17730,7 @@
       "fly"
     ],
     "methods": [
-      "expression of human A\u03b240 or A\u03b242 in the brain"
+      "expression of human Aβ40 or Aβ42 in the brain"
     ],
     "levels": [
       "cognitive",
@@ -17738,7 +17739,7 @@
     "domains": [
       "memory"
     ],
-    "finding": "Expressing human A\u03b242 in the fly brain caused diffuse amyloid deposits, age-dependent learning defects and extensive neurodegeneration, whereas A\u03b240 caused only age-dependent learning defects (fly)."
+    "finding": "Expressing human Aβ42 in the fly brain caused diffuse amyloid deposits, age-dependent learning defects and extensive neurodegeneration, whereas Aβ40 caused only age-dependent learning defects (fly)."
   },
   {
     "key": "mcbride2005",
@@ -18762,7 +18763,7 @@
       "executive",
       "sensory"
     ],
-    "finding": "Identifies Ch1\u2013Ch4 cholinergic mapping in the rhesus monkey: Ch1 (medial septum) and Ch2/Ch3 (diagonal band) innervate hippocampus and entorhinal cortex, while Ch4 (nucleus basalis/substantia innominata) provides topographically organized projections to frontoparietal, cingulate, temporal, and sensory cortices and the amygdala.",
+    "finding": "Identifies Ch1–Ch4 cholinergic mapping in the rhesus monkey: Ch1 (medial septum) and Ch2/Ch3 (diagonal band) innervate hippocampus and entorhinal cortex, while Ch4 (nucleus basalis/substantia innominata) provides topographically organized projections to frontoparietal, cingulate, temporal, and sensory cortices and the amygdala.",
     "regions": [
       "basal-forebrain",
       "hippocampus",
@@ -19046,7 +19047,7 @@
       "learning",
       "architecture"
     ],
-    "finding": "Neuropeptide signaling in Drosophila operates across multiple organizational tiers\u2014from local presynaptic gain control (sNPF, Tachykinin) to context-specific routing (Leucokinin, AstA) and organism-wide behavioral state coordination (SIFamide, DSK, DILPs, AKH, PDF) (fly)."
+    "finding": "Neuropeptide signaling in Drosophila operates across multiple organizational tiers—from local presynaptic gain control (sNPF, Tachykinin) to context-specific routing (Leucokinin, AstA) and organism-wide behavioral state coordination (SIFamide, DSK, DILPs, AKH, PDF) (fly)."
   },
   {
     "key": "deng2019",
@@ -19102,7 +19103,7 @@
       "memory",
       "reward"
     ],
-    "finding": "Nitric oxide acts as an atypical diffusible cotransmitter in a subset of mushroom body dopaminergic neurons (PPL1-\u03b31pedc and PAM-\u03b35), activating soluble guanylate cyclase (Gyc88E) in Kenyon cells to generate slow cGMP signals that regulate memory decay and updating in functional opposition to rapid dopamine-driven reinforcement (fly)."
+    "finding": "Nitric oxide acts as an atypical diffusible cotransmitter in a subset of mushroom body dopaminergic neurons (PPL1-γ1pedc and PAM-γ5), activating soluble guanylate cyclase (Gyc88E) in Kenyon cells to generate slow cGMP signals that regulate memory decay and updating in functional opposition to rapid dopamine-driven reinforcement (fly)."
   },
   {
     "key": "root2011",
@@ -19362,6 +19363,392 @@
     "finding": "Reconstructs a directed, binary 32-region anatomical connectome of the octopus brain from classical and modern histological tracing, revealing small-world properties and modular organization across cognitive, visual and motor masses (octopus).",
     "regions": [
       "octopus"
+    ]
+  },
+  {
+    "key": "parikh2007",
+    "pmid": "17510363",
+    "evidence": "intervention",
+    "species": [
+      "rat",
+      "mouse"
+    ],
+    "methods": [
+      "amperometry",
+      "biosensors",
+      "behavior"
+    ],
+    "levels": [
+      "cellular",
+      "circuit",
+      "cognitive"
+    ],
+    "domains": [
+      "executive",
+      "learning"
+    ],
+    "finding": "Subsecond acetylcholine transients in prelimbic cortex time cue detection in sustained attention tasks; optogenetic cholinergic activation improves attentional accuracy.",
+    "regions": [
+      "basal-forebrain",
+      "prefrontal"
+    ]
+  },
+  {
+    "key": "hangya2015",
+    "pmid": "26317473",
+    "evidence": "intervention",
+    "species": [
+      "mouse"
+    ],
+    "methods": [
+      "optogenetic tagging",
+      "in vivo electrophysiology",
+      "behavior"
+    ],
+    "levels": [
+      "cellular",
+      "circuit",
+      "systems"
+    ],
+    "domains": [
+      "reward",
+      "executive"
+    ],
+    "finding": "Optogenetically identified basal forebrain cholinergic neurons fire fast, millisecond-precision bursts to both unpredicted rewards and punishments, broadcasting a rapid reinforcement salience signal.",
+    "regions": [
+      "basal-forebrain",
+      "prefrontal",
+      "basal-ganglia"
+    ]
+  },
+  {
+    "key": "sarter2005",
+    "pmid": "16181498",
+    "evidence": "synthesis",
+    "species": [
+      "human",
+      "macaque",
+      "rat",
+      "mouse"
+    ],
+    "methods": [
+      "review",
+      "microdialysis",
+      "amperometry"
+    ],
+    "levels": [
+      "cellular",
+      "circuit",
+      "cognitive"
+    ],
+    "domains": [
+      "executive",
+      "sensory"
+    ],
+    "finding": "Synthesizes the attentional functions of cortical cholinergic inputs, detailing how nicotinic and muscarinic receptors optimize signal detection by filtering bottom-up inputs versus top-down cognitive context.",
+    "regions": [
+      "basal-forebrain",
+      "prefrontal",
+      "visual-cortex",
+      "motor-cortex"
+    ]
+  },
+  {
+    "key": "kim2015",
+    "pmid": "26659056",
+    "evidence": "intervention",
+    "species": [
+      "mouse"
+    ],
+    "methods": [
+      "optogenetics",
+      "in vivo electrophysiology",
+      "behavior"
+    ],
+    "levels": [
+      "cellular",
+      "circuit",
+      "systems"
+    ],
+    "domains": [
+      "timing",
+      "executive"
+    ],
+    "finding": "Parvalbumin-positive GABAergic basal forebrain projection neurons directly innervate prefrontal interneurons to rhythmically synchronize cortical gamma oscillations (30–80 Hz) and enhance perceptual sensitivity.",
+    "regions": [
+      "basal-forebrain",
+      "prefrontal"
+    ]
+  },
+  {
+    "key": "zaborszky1997",
+    "pmid": "9215801",
+    "evidence": "anatomical",
+    "species": [
+      "rat"
+    ],
+    "methods": [
+      "anterograde tracing",
+      "retrograde tracing",
+      "electron microscopy"
+    ],
+    "levels": [
+      "circuit",
+      "systems"
+    ],
+    "domains": [
+      "architecture",
+      "executive"
+    ],
+    "finding": "Traces dense, topographically organized descending projections from prefrontal (prelimbic, infralimbic, anterior cingulate) cortex directly to the substantia innominata/nucleus basalis complex in the rat.",
+    "regions": [
+      "basal-forebrain",
+      "prefrontal"
+    ]
+  },
+  {
+    "key": "bloem2014",
+    "pmid": "23476003",
+    "evidence": "anatomical",
+    "species": [
+      "rat"
+    ],
+    "methods": [
+      "viral tracing",
+      "confocal microscopy",
+      "reconstruction"
+    ],
+    "levels": [
+      "circuit",
+      "systems"
+    ],
+    "domains": [
+      "architecture",
+      "executive"
+    ],
+    "finding": "Maps reciprocal topographically organized connections between the vertical limb of the diagonal band of Broca and medial prefrontal cortical areas.",
+    "regions": [
+      "basal-forebrain",
+      "prefrontal"
+    ]
+  },
+  {
+    "key": "freund1988",
+    "pmid": "2972937",
+    "evidence": "anatomical",
+    "species": [
+      "rat"
+    ],
+    "methods": [
+      "electron microscopy",
+      "immunocytochemistry",
+      "retrograde tracing"
+    ],
+    "levels": [
+      "cellular",
+      "circuit"
+    ],
+    "domains": [
+      "timing",
+      "architecture"
+    ],
+    "finding": "Demonstrates that GABAergic medial septal projection neurons selectively innervate inhibitory interneurons in the hippocampus, establishing the anatomical substrate for the hippocampal theta rhythm pacemaker.",
+    "regions": [
+      "basal-forebrain",
+      "hippocampus"
+    ]
+  },
+  {
+    "key": "buzsaki2002",
+    "pmid": "11832222",
+    "evidence": "synthesis",
+    "species": [
+      "rat",
+      "mouse",
+      "human"
+    ],
+    "methods": [
+      "review",
+      "electrophysiology",
+      "computational modeling"
+    ],
+    "levels": [
+      "circuit",
+      "systems",
+      "cognitive"
+    ],
+    "domains": [
+      "timing",
+      "memory",
+      "spatial"
+    ],
+    "finding": "Reviews the physiology and network dynamics of hippocampal theta oscillations, detailing how the medial septum acts as the primary pacemaker pacing theta frequency and phase-locking pyramidal cell firing.",
+    "regions": [
+      "basal-forebrain",
+      "hippocampus"
+    ]
+  },
+  {
+    "key": "hasselmo2006",
+    "pmid": "17011181",
+    "evidence": "synthesis",
+    "species": [
+      "rat",
+      "mouse"
+    ],
+    "methods": [
+      "computational modeling",
+      "slice electrophysiology",
+      "pharmacology"
+    ],
+    "levels": [
+      "cellular",
+      "circuit",
+      "cognitive"
+    ],
+    "domains": [
+      "memory",
+      "learning"
+    ],
+    "finding": "Reviews cholinergic modulation of hippocampal memory dynamics, detailing how acetylcholine selectively suppresses recurrent CA3 collaterals to prevent interference while enhancing entorhinal afferents during encoding.",
+    "regions": [
+      "basal-forebrain",
+      "hippocampus"
+    ]
+  },
+  {
+    "key": "fuhrmann2015",
+    "pmid": "26050040",
+    "evidence": "intervention",
+    "species": [
+      "mouse"
+    ],
+    "methods": [
+      "optogenetics",
+      "two-photon imaging",
+      "electrophysiology"
+    ],
+    "levels": [
+      "cellular",
+      "circuit",
+      "systems"
+    ],
+    "domains": [
+      "spatial",
+      "timing",
+      "motor"
+    ],
+    "finding": "Medial septal Vglut2+ glutamatergic projection neurons regulate locomotion speed-correlated theta frequency and firing rates of hippocampal pyramidal neurons.",
+    "regions": [
+      "basal-forebrain",
+      "hippocampus"
+    ]
+  },
+  {
+    "key": "risold1997",
+    "pmid": "9385454",
+    "evidence": "anatomical",
+    "species": [
+      "rat"
+    ],
+    "methods": [
+      "PHAL anterograde tracing",
+      "fluorogold retrograde tracing"
+    ],
+    "levels": [
+      "circuit",
+      "systems"
+    ],
+    "domains": [
+      "architecture",
+      "emotion"
+    ],
+    "finding": "Comprehensive monograph establishing the organization of rat lateral septal connections, including hippocampal CA1/subicular afferents and descending projections to medial septum, hypothalamus, and VTA.",
+    "regions": [
+      "basal-forebrain",
+      "hippocampus",
+      "basal-ganglia"
+    ]
+  },
+  {
+    "key": "gaykema1996",
+    "pmid": "8889947",
+    "evidence": "anatomical",
+    "species": [
+      "rat"
+    ],
+    "methods": [
+      "immuno-electron microscopy",
+      "tracing"
+    ],
+    "levels": [
+      "cellular",
+      "circuit"
+    ],
+    "domains": [
+      "architecture",
+      "reward"
+    ],
+    "finding": "Demonstrates direct catecholaminergic (dopaminergic and noradrenergic) synaptic innervation of basal forebrain cholinergic neurons in the rat.",
+    "regions": [
+      "basal-forebrain",
+      "basal-ganglia"
+    ]
+  },
+  {
+    "key": "berridge2003",
+    "pmid": "12668290",
+    "evidence": "synthesis",
+    "species": [
+      "rat",
+      "monkey",
+      "human"
+    ],
+    "methods": [
+      "review",
+      "neuropharmacology",
+      "electrophysiology"
+    ],
+    "levels": [
+      "circuit",
+      "systems",
+      "cognitive"
+    ],
+    "domains": [
+      "executive",
+      "homeostasis"
+    ],
+    "finding": "Reviews locus coeruleus-noradrenergic modulation of behavioral state, demonstrating dense noradrenergic excitation of basal forebrain cholinergic neurons promoting cortical arousal.",
+    "regions": [
+      "basal-forebrain",
+      "prefrontal",
+      "cerebellum"
+    ]
+  },
+  {
+    "key": "wirtshafter2021",
+    "pmid": "33306232",
+    "evidence": "observational",
+    "species": [
+      "rat"
+    ],
+    "methods": [
+      "tetrode recordings",
+      "spatial navigation",
+      "behavior"
+    ],
+    "levels": [
+      "circuit",
+      "systems"
+    ],
+    "domains": [
+      "spatial",
+      "reward"
+    ],
+    "finding": "Shows distinct reward-biased spatial representations in the lateral septum compared to dorsal hippocampus during goal-directed navigation.",
+    "regions": [
+      "basal-forebrain",
+      "hippocampus"
     ]
   }
 ]
