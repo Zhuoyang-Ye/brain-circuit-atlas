@@ -16,7 +16,14 @@
   };
   const NM = D.neuromodulation || { tx: {}, sources: [] };
   // one colour per transmitter, for its pathways, its tags on them and the key (dark-theme values; CA.tc maps them)
-  const TX_COLORS = { NA: 0x58a6ff, '5-HT': 0xbc8cff, DA: 0xf0883e, ACh: 0x3fb950, HA: 0xe3b341, OX: 0xf778ba, CRF: 0x39c5cf, OA: 0x2dd4bf, GnRH: 0xdb61a2 };
+  const TX_COLORS = {
+    NA: 0x58a6ff, '5-HT': 0xbc8cff, DA: 0xf0883e, ACh: 0x3fb950,
+    HA: 0xe3b341, OX: 0xf778ba, CRF: 0x39c5cf, OA: 0x2dd4bf,
+    GnRH: 0xdb61a2, TA: 0x14b8a6, NO: 0x38bdf8, CO: 0xfbbf24,
+    sNPF: 0x818cf8, Tk: 0xf43f5e, Lk: 0xc084fc, SIFa: 0x4ade80,
+    AstA: 0xf472b6, DSK: 0xfb923c, DILP: 0x60a5fa, AKH: 0xe11d48,
+    PDF: 0x2563eb, Ado: 0x94a3b8
+  };
   const txHex = (code) => CA.tc(TX_COLORS[code] != null ? TX_COLORS[code] : 0x8b949e);
   const MOD_SRC = new Set(NM.sources || []);   // neuromodulator source nuclei (drawn pink)
   const BODY_ANCHORS = ['spinal', 'body', 'gut', 'eyes', 'labyrinth'];
@@ -1030,18 +1037,42 @@
   /** The transmitter key: each transmitter on screen, its colour, full name and source; in the left panel and on the canvas. */
   function renderTxKey(seen) {
     const codes = Object.keys(NM.tx).filter((c) => seen[c]).concat(Object.keys(seen).filter((c) => !NM.tx[c]));
-    const pill = (c) => { const hex = hexCss(txHex(c)); return h('span', { class: 'txp', style: { color: hex, borderColor: hex } }, c); };
+    const pill = (c) => { const hex = hexCss(txHex(c)); return h('span', { class: 'txp', 'data-tx': c, style: { color: hex, borderColor: hex } }, c); };
     const full = (c) => (NM.tx[c] ? NM.tx[c].label : c);
+    const filterByTx = (tx) => {
+      drawnLinks.forEach((d) => {
+        const match = !tx || d.l.tx === tx;
+        d.objs.forEach((o) => {
+          o.material.opacity = match ? (o.userData.op || 0.8) : 0.12;
+        });
+      });
+      labelEls.forEach((lbl) => {
+        if (lbl.tag) {
+          const match = !tx || lbl.id === 'tx:' + tx || (lbl.el && lbl.el.textContent === tx);
+          lbl.el.style.opacity = match ? '1' : '0.15';
+        }
+      });
+    };
     if (el.txKey) {
       CA.clear(el.txKey);
       el.txKey.style.display = codes.length ? '' : 'none';
       if (codes.length) CA.append(el.txKey, h('div', { class: 'tiny muted' }, 'Transmitters on these pathways'),
-        codes.map((c) => h('div', { class: 'txr' }, pill(c), h('span', {}, h('b', {}, full(c)), h('span', { class: 'muted' }, ' from the ' + [...seen[c]].join(' and the '))))));
+        codes.map((c) => h('div', {
+          class: 'txr',
+          style: { cursor: 'pointer' },
+          onmouseenter: () => filterByTx(c),
+          onmouseleave: () => filterByTx(null)
+        }, pill(c), h('span', {}, h('b', {}, full(c)), h('span', { class: 'muted' }, ' from the ' + [...seen[c]].join(' and the '))))));
     }
     if (el.txOverlay) {
       CA.clear(el.txOverlay);
       el.txOverlay.style.display = codes.length ? '' : 'none';
-      codes.forEach((c) => el.txOverlay.appendChild(h('span', { class: 'txr' }, pill(c), full(c))));
+      codes.forEach((c) => el.txOverlay.appendChild(h('span', {
+        class: 'txr',
+        style: { cursor: 'pointer', pointerEvents: 'auto' },
+        onmouseenter: () => filterByTx(c),
+        onmouseleave: () => filterByTx(null)
+      }, pill(c), full(c))));
     }
   }
 

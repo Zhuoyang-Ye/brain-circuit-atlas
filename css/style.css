@@ -253,11 +253,35 @@ select:focus, input.text:focus { border-color: var(--accent); }
 .tx-key { display: grid; gap: 4px; margin: 8px 0 4px; font-size: .8rem; }
 .tx-key .txr { display: flex; align-items: baseline; gap: 7px; line-height: 1.3; }
 .txp { display: inline-block; flex: none; min-width: 34px; text-align: center; font-size: .68rem; font-weight: 700; letter-spacing: .02em;
-  padding: 0 5px; border: 1.5px solid; border-radius: 999px; background: var(--label-bg); }
-.atlas-txkey { position: absolute; left: 12px; right: 12px; bottom: 12px; width: fit-content; margin: 0 auto; display: flex; flex-wrap: wrap;
+  padding: 0 5px; border: 1.5px solid; border-radius: 999px; background: var(--label-bg); transition: transform .12s, box-shadow .12s; }
+.txp[data-tx="NA"] { color: #58a6ff; border-color: #58a6ff; }
+.txp[data-tx="5-HT"] { color: #bc8cff; border-color: #bc8cff; }
+.txp[data-tx="DA"] { color: #f0883e; border-color: #f0883e; }
+.txp[data-tx="ACh"] { color: #3fb950; border-color: #3fb950; }
+.txp[data-tx="HA"] { color: #e3b341; border-color: #e3b341; }
+.txp[data-tx="OX"] { color: #f778ba; border-color: #f778ba; }
+.txp[data-tx="CRF"] { color: #39c5cf; border-color: #39c5cf; }
+.txp[data-tx="OA"] { color: #2dd4bf; border-color: #2dd4bf; }
+.txp[data-tx="GnRH"] { color: #db61a2; border-color: #db61a2; }
+.txp[data-tx="TA"] { color: #14b8a6; border-color: #14b8a6; }
+.txp[data-tx="NO"] { color: #38bdf8; border-color: #38bdf8; }
+.txp[data-tx="CO"] { color: #fbbf24; border-color: #fbbf24; }
+.txp[data-tx="sNPF"] { color: #818cf8; border-color: #818cf8; }
+.txp[data-tx="Tk"] { color: #f43f5e; border-color: #f43f5e; }
+.txp[data-tx="Lk"] { color: #c084fc; border-color: #c084fc; }
+.txp[data-tx="SIFa"] { color: #4ade80; border-color: #4ade80; }
+.txp[data-tx="AstA"] { color: #f472b6; border-color: #f472b6; }
+.txp[data-tx="DSK"] { color: #fb923c; border-color: #fb923c; }
+.txp[data-tx="DILP"] { color: #60a5fa; border-color: #60a5fa; }
+.txp[data-tx="AKH"] { color: #e11d48; border-color: #e11d48; }
+.txp[data-tx="PDF"] { color: #2563eb; border-color: #2563eb; }
+.txp[data-tx="Ado"] { color: #94a3b8; border-color: #94a3b8; }
+.atlas-txkey { position: absolute; left: 12px; right: 12px; bottom: 12px; width: fit-content; max-width: calc(100% - 24px); max-height: 120px; overflow-y: auto; margin: 0 auto; display: flex; flex-wrap: wrap;
   justify-content: center; gap: 4px 12px; padding: 6px 12px; background: var(--float-bg); border: 1px solid var(--line);
-  border-radius: var(--radius); font-size: .8rem; pointer-events: none; backdrop-filter: blur(6px); }
-.atlas-txkey .txr { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+  border-radius: var(--radius); font-size: .8rem; pointer-events: auto; backdrop-filter: blur(6px); z-index: 10; box-shadow: 0 4px 16px var(--shadow, rgba(0, 0, 0, 0.15)); }
+.atlas-txkey .txr { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; transition: opacity .15s, transform .15s; }
+.atlas-txkey .txr:hover { transform: translateY(-1px); }
+.atlas-txkey .txr:hover .txp { box-shadow: 0 0 8px currentColor; }
 .alabel.lit { border-color: var(--trace); box-shadow: 0 0 0 1px var(--trace); }
 /* a label with no room near its anchor fades out (and back in), so crowded views stay readable */
 .alabel { transition: opacity .18s ease; }
