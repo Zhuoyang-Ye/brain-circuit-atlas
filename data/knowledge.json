@@ -18906,6 +18906,156 @@
       "refs": [
         "deng2019"
       ]
+    },
+    {
+      "s": "fly-dan",
+      "t": "fly-eb",
+      "rel": "dopaminergic projections from protocerebral clusters innervate the central complex ellipsoid body to modulate locomotor arousal and sleep (Drosophila)",
+      "refs": [
+        "deng2019"
+      ],
+      "tx": "DA",
+      "sign": "~",
+      "status": "supported",
+      "kind": "mechanistic"
+    },
+    {
+      "s": "fly-dan",
+      "t": "fly-lh",
+      "rel": "nitric oxide synthase (NOS)-expressing dopamine neurons project axons toward the lateral horn and superior protocerebrum (Drosophila)",
+      "refs": [
+        "aso2019no"
+      ],
+      "tx": "NO",
+      "sign": "~",
+      "status": "supported",
+      "kind": "mechanistic"
+    },
+    {
+      "s": "fly-dpm",
+      "t": "fly-eb",
+      "rel": "serotonergic afferents supply the central complex ellipsoid body to regulate visual pattern memory and sleep architecture (Drosophila)",
+      "refs": [
+        "deng2019"
+      ],
+      "tx": "5-HT",
+      "sign": "~",
+      "status": "supported",
+      "kind": "mechanistic"
+    },
+    {
+      "s": "fly-gng",
+      "t": "fly-vnc",
+      "rel": "tyraminergic descending pathways from gnathal ganglia coordinate locomotor gait switching and flight in the ventral nerve cord, distinct from octopamine (Drosophila)",
+      "refs": [
+        "roeder2005",
+        "deng2019"
+      ],
+      "tx": "TA",
+      "sign": "~",
+      "status": "supported",
+      "kind": "mechanistic"
+    },
+    {
+      "s": "fly-la",
+      "t": "fly-me",
+      "rel": "histaminergic transmission from photoreceptor axons terminates in the lamina and outer medulla to mediate fast visual contrast detection (Drosophila)",
+      "refs": [
+        "gengs2002",
+        "deng2019"
+      ],
+      "tx": "HA",
+      "sign": "-",
+      "status": "established",
+      "kind": "mechanistic"
+    },
+    {
+      "s": "fly-sif-n",
+      "t": "fly-al",
+      "rel": "SIFamide hub neurons in the pars intercerebralis send wide arborizations to the antennal lobe to modulate odor sensitivity during starvation (Drosophila)",
+      "refs": [
+        "martelli2017",
+        "nassel2022"
+      ],
+      "tx": "SIFa",
+      "sign": "+",
+      "status": "supported",
+      "kind": "mechanistic"
+    },
+    {
+      "s": "fly-sif-n",
+      "t": "fly-eb",
+      "rel": "SIFamide hub neurons project throughout the central complex to bias behavioral prioritization toward feeding over courtship (Drosophila)",
+      "refs": [
+        "martelli2017"
+      ],
+      "tx": "SIFa",
+      "sign": "~",
+      "status": "supported",
+      "kind": "mechanistic"
+    },
+    {
+      "s": "fly-lnv",
+      "t": "fly-eb",
+      "rel": "pigment-dispersing factor (PDF) from ventrolateral clock pacemakers signals to central complex ring neurons to pace morning locomotor anticipation (Drosophila)",
+      "refs": [
+        "renn1999",
+        "deng2019"
+      ],
+      "tx": "PDF",
+      "sign": "+",
+      "status": "supported",
+      "kind": "mechanistic"
+    },
+    {
+      "s": "fly-lnv",
+      "t": "fly-fb",
+      "rel": "PDF transmission from clock neurons modulates fan-shaped body dorsal neurons to gate sleep and arousal rhythms (Drosophila)",
+      "refs": [
+        "nassel2022",
+        "deng2019"
+      ],
+      "tx": "PDF",
+      "sign": "~",
+      "status": "supported",
+      "kind": "mechanistic"
+    },
+    {
+      "s": "fly-al",
+      "t": "fly-lh",
+      "rel": "tachykininergic projection pathways from antennal lobe local interneurons modulate innate odor processing in the lateral horn (Drosophila)",
+      "refs": [
+        "deng2019",
+        "nassel2022"
+      ],
+      "tx": "Tk",
+      "sign": "-",
+      "status": "supported",
+      "kind": "mechanistic"
+    },
+    {
+      "s": "fly-lh",
+      "t": "fly-fb",
+      "rel": "leucokinergic neurons projecting to the fan-shaped body coordinate context-dependent post-feeding sleep and water balance (Drosophila)",
+      "refs": [
+        "nassel2022"
+      ],
+      "tx": "Lk",
+      "sign": "~",
+      "status": "supported",
+      "kind": "mechanistic"
+    },
+    {
+      "s": "fly-ipc",
+      "t": "fly-fb",
+      "rel": "insulin-producing cells (IPCs) secrete DILPs to modulate metabolic sleep and energy state in the fan-shaped body (Drosophila)",
+      "refs": [
+        "nassel2022"
+      ],
+      "tx": "DILP",
+      "sign": "~",
+      "status": "supported",
+      "kind": "mechanistic"
     }
   ],
   "chains": [
@@ -22366,7 +22516,13 @@
         "fly-shift": "fly-cx",
         "fly-t4t5": "fly-lop",
         "fly-lc": "fly-lo",
-        "fly-gf": "fly-dn"
+        "fly-gf": "fly-dn",
+        "fly-lnv": "fly-me",
+        "fly-sif-n": "fly-mb",
+        "fly-ipc": "fly-fb",
+        "fly-dpm": "fly-mb",
+        "fly-orn": "fly-al",
+        "fly-retina": "fly-la"
       }
     },
     "groups": {
@@ -23101,6 +23257,32 @@
           "fly-grn>fly-gng"
         ],
         "view": "fly-body"
+      },
+      {
+        "id": "fly-neuromod",
+        "region": "fly",
+        "name": "Neuromodulators",
+        "view": "fly",
+        "links": [
+          "fly-gng>fly-al",
+          "fly-gng>fly-mb",
+          "fly-gng>fly-fb",
+          "fly-gng>fly-eb",
+          "fly-gng>fly-lo",
+          "fly-gng>fly-vnc",
+          "fly-dan>fly-eb",
+          "fly-dan>fly-lh",
+          "fly-dpm>fly-eb",
+          "fly-la>fly-me",
+          "fly-sif-n>fly-al",
+          "fly-sif-n>fly-eb",
+          "fly-lnv>fly-eb",
+          "fly-lnv>fly-fb",
+          "fly-al>fly-lh",
+          "fly-lh>fly-fb",
+          "fly-ipc>fly-fb"
+        ],
+        "desc": "Where the fruit fly brain gets its neuromodulators: dopamine (DA), serotonin (5-HT), octopamine (OA), tyramine (TA), histamine (HA), nitric oxide (NO), SIFamide (SIFa), pigment-dispersing factor (PDF), tachykinin (Tk), leucokinin (Lk), and insulin-like peptides (DILP). Tags name each transmitter; arrows trace source clusters to their target neuropils."
       }
     ],
     "composite": {
