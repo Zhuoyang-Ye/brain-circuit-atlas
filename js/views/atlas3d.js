@@ -334,6 +334,7 @@
     loadSpecies(sp);
   }
   function markSpecies() {
+    if (el.speciesPick) el.speciesPick.value = species;
     if (el.seg) el.seg.querySelectorAll('button').forEach((b) => b.classList.toggle('on', b.dataset.sp === species));
   }
   /** Camera presets: the regions drawn in this species, plus the fixed directions. */
@@ -366,8 +367,13 @@
       fold.title = 'Expand atlas controls';
       fold.setAttribute('aria-label', fold.title);
     }
-    const seg = el.seg = h('div', { class: 'seg species-seg' },
-      SPECIES.map(([sp, label]) => h('button', { class: sp === species ? 'on' : '', 'data-sp': sp, onclick: () => chooseSpecies(sp) }, label)));
+    const speciesPick = el.speciesPick = h('select', {
+      class: 'species-pick',
+      title: 'Species: switches between human, macaque, mouse, octopus and fruit fly 3D brain models',
+      'aria-label': 'Species',
+      onchange: () => { chooseSpecies(speciesPick.value); speciesPick.blur(); }
+    }, SPECIES.map(([sp, label]) => h('option', { value: sp }, label)));
+    speciesPick.value = species;
     el.speciesNote = h('div', { class: 'desc' });
     el.circs = h('div', {});
     el.circDesc = h('div', { class: 'desc' });
@@ -385,7 +391,7 @@
     const xrayLabel = check('xray', 'X-ray cerebellum (see nuclei)', applyMaterials);
     el.xrayBox = xrayLabel.querySelector('input');
     CA.append(box,
-      h('h4', { style: { marginTop: 0 } }, 'Species'), seg, el.speciesNote,
+      h('h4', { style: { marginTop: 0 } }, 'Species'), speciesPick, el.speciesNote,
       D.regions.length > 1 ? [h('h4', {}, 'Region'), CA.regionPicker()] : null,
       h('h4', {}, 'Circuits'), el.circs, el.circDesc, el.txKey, el.traceBox,
       h('h4', {}, 'Display'),
