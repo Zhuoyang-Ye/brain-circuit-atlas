@@ -17,6 +17,29 @@ python3 -m http.server 8000      # then open http://localhost:8000
 
 The page itself loads about 1.5 MB. The 3D atlas loads the meshes for one species when you open it: about 2.9 MB for the human brain, 1.8 MB for the mouse, 1.6 MB for the macaque, 0.5 MB for the octopus and 0.7 MB for the fruit fly.
 
+## macOS Desktop App & Local Backend
+
+Brain Circuit Atlas includes a native macOS desktop application (< 7 MB) with a local Python backend, SQLite persistence, and Cloudflare R2 cloud synchronization:
+
+- **Launch the Mac App:**
+  ```bash
+  open "dist/Brain Circuit Atlas.app"
+  ```
+- **Local Dev Server:**
+  ```bash
+  ./launch.sh                    # runs backend on http://127.0.0.1:8765/
+  ```
+- **Build the Mac App:**
+  ```bash
+  ./app/build_mac_app.sh         # compiles Swift ARM64 app into dist/
+  ```
+
+**Features enabled by the desktop app:**
+- **Persistent Hypotheses & Notes:** Stored in local SQLite (`~/Library/Application Support/BrainCircuitAtlas/atlas.db`).
+- **PubMed Caching:** Fast local SQLite lookups in Evidence & Gaps that eliminate NCBI 429 rate limits.
+- **Cloudflare R2 Integration:** Store and sync 3D brain meshes to Cloudflare R2 (10 GB free tier with \$0 download fees).
+- **Website Sync:** Rebuild and stage updated data bundles for GitHub Pages with one click from the UI.
+
 ## Regions
 
 Pick a region with the **Region** menu: in the left panel of the 3D atlas, under the species, and at the top left of every other page. The site remembers the choice.
