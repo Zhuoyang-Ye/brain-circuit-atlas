@@ -9584,6 +9584,364 @@
       "refs": [
         "edlow2024"
       ]
+    },
+    {
+      "id": "fly-ta",
+      "name": "Tyramine",
+      "level": "molecular",
+      "kind": "neuromodulator",
+      "aka": [
+        "TA",
+        "TyrR"
+      ],
+      "region": "fly",
+      "domains": [
+        "motor",
+        "homeostasis"
+      ],
+      "summary": "Synthesized from tyrosine by tyrosine decarboxylase (Tdc2). Tdc2-positive neurons label both tyramine and octopamine populations, but tyramine acts as an independent signaling molecule via distinct G-protein-coupled receptors (TyrR, TyrRII, Oct/TyrR). Tyramine regulates motor switching, walking and flight initiation, and courtship, often exerting physiological actions antagonistic to octopamine (fly).",
+      "refs": [
+        "roeder2005",
+        "deng2019"
+      ]
+    },
+    {
+      "id": "fly-ha",
+      "name": "Histamine",
+      "level": "molecular",
+      "kind": "messenger",
+      "aka": [
+        "HA",
+        "ort",
+        "HisCl"
+      ],
+      "region": "fly",
+      "domains": [
+        "sensory",
+        "architecture"
+      ],
+      "summary": "Synthesized by histidine decarboxylase (Hdc) in photoreceptors and mechanosensory neurons. Rather than slow neuromodulation, histamine mediates fast inhibitory synaptic transmission to lamina monopolar neurons (L1–L3) via histamine-gated chloride channels encoded by ort (hclA/HisCl2) and HisCl1 (fly).",
+      "refs": [
+        "gengs2002",
+        "deng2019"
+      ]
+    },
+    {
+      "id": "fly-no",
+      "name": "Nitric oxide",
+      "level": "molecular",
+      "kind": "messenger",
+      "aka": [
+        "NO",
+        "NOS",
+        "Gyc88E"
+      ],
+      "region": "fly",
+      "domains": [
+        "learning",
+        "memory",
+        "reward"
+      ],
+      "summary": "A noncanonical gaseous cotransmitter synthesized on demand by nitric oxide synthase (NOS) in a specific subset of mushroom body dopaminergic neurons (PPL1-γ1pedc and PAM-γ5). NO diffuses to activate soluble guanylate cyclase (sGC/Gyc88E) in Kenyon cells, driving slow cGMP accumulation that regulates memory decay and updating, operating in opposition to classical dopamine-mediated reinforcement (fly).",
+      "refs": [
+        "aso2019no",
+        "deng2019"
+      ]
+    },
+    {
+      "id": "fly-co",
+      "name": "Carbon monoxide",
+      "level": "molecular",
+      "kind": "messenger",
+      "aka": [
+        "CO",
+        "HO"
+      ],
+      "region": "fly",
+      "domains": [
+        "learning",
+        "memory"
+      ],
+      "summary": "A gaseous messenger synthesized in mushroom body Kenyon cells by heme oxygenase (HO). CO acts retrogradely on presynaptic dopaminergic terminals to regulate on-demand dopamine release during associative conditioning, necessary for olfactory memory consolidation (fly).",
+      "refs": [
+        "ueno2017"
+      ]
+    },
+    {
+      "id": "fly-ador",
+      "name": "Adenosine receptor (AdoR)",
+      "level": "molecular",
+      "kind": "receptor",
+      "aka": [
+        "AdoR",
+        "adenosine"
+      ],
+      "region": "fly",
+      "domains": [
+        "homeostasis",
+        "timing"
+      ],
+      "summary": "Purinergic G-protein-coupled receptor encoded by AdoR, expressed in central neurons and surface/cortex glia. Responds to extracellular adenosine to modulate sleep homeostasis, metabolic stress resistance, and neural resilience (fly).",
+      "refs": [
+        "deng2019"
+      ]
+    },
+    {
+      "id": "fly-snpf",
+      "name": "Short neuropeptide F",
+      "level": "molecular",
+      "kind": "neuropeptide",
+      "aka": [
+        "sNPF",
+        "sNPFR1"
+      ],
+      "region": "fly",
+      "domains": [
+        "sensory",
+        "homeostasis",
+        "learning"
+      ],
+      "summary": "A local peptidergic neuromodulator encoded by sNPF, signaling through sNPFR1. Functionally and genetically distinct from NPF, sNPF is upregulated during starvation to facilitate presynaptic transmitter release at Or42b olfactory receptor neuron terminals, boosting odor sensitivity and food search (fly).",
+      "refs": [
+        "root2011",
+        "nassel2022",
+        "deng2019"
+      ]
+    },
+    {
+      "id": "fly-tk",
+      "name": "Tachykinin (Tk)",
+      "level": "molecular",
+      "kind": "neuropeptide",
+      "aka": [
+        "DTK",
+        "Tk",
+        "DTKR",
+        "TkR86C"
+      ],
+      "region": "fly",
+      "domains": [
+        "sensory",
+        "social",
+        "homeostasis"
+      ],
+      "summary": "Local and central neuropeptide acting via G-protein-coupled receptors TkR86C (DTKR) and TkR99D. Provides presynaptic gain control at antennal lobe olfactory glomeruli, regulates sleep/arousal, and modulates male-male aggressive action selection (fly). Genetic manipulation of Tk neurons produces distinct phenotypes from deleting the Tk ligand itself (fly).",
+      "refs": [
+        "deng2019",
+        "nassel2022",
+        "kravitz2015"
+      ]
+    },
+    {
+      "id": "fly-lk",
+      "name": "Leucokinin (Lk)",
+      "level": "molecular",
+      "kind": "neuropeptide",
+      "aka": [
+        "LK",
+        "LkR"
+      ],
+      "region": "fly",
+      "domains": [
+        "homeostasis",
+        "motor"
+      ],
+      "summary": "Pleiotropic neuropeptide acting through the leucokinin receptor (LkR). Released by lateral horn and subesophageal/abdominal neurons to coordinate post-feeding sleep, meal size, water and ion excretion (diuresis), and metabolic balance (fly).",
+      "refs": [
+        "nassel2022",
+        "deng2019"
+      ]
+    },
+    {
+      "id": "fly-sifa",
+      "name": "SIFamide",
+      "level": "molecular",
+      "kind": "neuropeptide",
+      "aka": [
+        "SIFa",
+        "SIFaR"
+      ],
+      "region": "fly",
+      "domains": [
+        "reward",
+        "social",
+        "homeostasis"
+      ],
+      "summary": "Potent behavioral coordinator produced by four widely arborizing hub neurons in the pars intercerebralis. Released via volume transmission to act through SIFaR across multiple neuropils, translating internal starvation state into behavioral prioritization by suppressing courtship and promoting food intake (fly).",
+      "refs": [
+        "martelli2017",
+        "nassel2022",
+        "deng2019"
+      ]
+    },
+    {
+      "id": "fly-asta",
+      "name": "Allatostatin A (AstA)",
+      "level": "molecular",
+      "kind": "neuropeptide",
+      "aka": [
+        "AstA",
+        "AstA-R1",
+        "AstA-R2"
+      ],
+      "region": "fly",
+      "domains": [
+        "homeostasis",
+        "reward",
+        "motor"
+      ],
+      "summary": "Inhibitory neuropeptide signaling through AstA-R1 and AstA-R2. Coordinates context-specific switches between foraging and feeding, inhibiting sugar-sensitive dopamine neurons and feeding initiation while stimulating locomotion (fly).",
+      "refs": [
+        "nassel2022",
+        "deng2019"
+      ]
+    },
+    {
+      "id": "fly-dsk",
+      "name": "Drosulfakinin (DSK)",
+      "level": "molecular",
+      "kind": "neuropeptide",
+      "aka": [
+        "DSK",
+        "DskR1",
+        "DskR2"
+      ],
+      "region": "fly",
+      "domains": [
+        "homeostasis",
+        "social"
+      ],
+      "summary": "Cholecystokinin (CCK) homolog encoded by Dsk, acting via DskR1 and DskR2. Released by central neurons to stimulate insulin-producing cells, signal satiety, suppress meal size, and regulate male aggression (fly). Distinct from sex peptide (fly).",
+      "refs": [
+        "nassel2022",
+        "deng2019",
+        "kravitz2015"
+      ]
+    },
+    {
+      "id": "fly-dilp",
+      "name": "Drosophila insulin-like peptides (DILPs)",
+      "level": "molecular",
+      "kind": "neuropeptide",
+      "aka": [
+        "DILPs",
+        "InR"
+      ],
+      "region": "fly",
+      "domains": [
+        "homeostasis",
+        "development",
+        "reward"
+      ],
+      "summary": "Family of peptide hormones (DILP1–DILP8) signaling through a single tyrosine kinase insulin receptor (InR). Produced by median neurosecretory insulin-producing cells (IPCs) and peripheral fat body to coordinate nutrient storage, lifespan, metabolic sleep, and hunger-dependent behavior (fly).",
+      "refs": [
+        "nassel2022",
+        "deng2019"
+      ]
+    },
+    {
+      "id": "fly-akh",
+      "name": "Adipokinetic hormone (AKH)",
+      "level": "molecular",
+      "kind": "neuropeptide",
+      "aka": [
+        "AKH",
+        "AKHR"
+      ],
+      "region": "fly",
+      "domains": [
+        "homeostasis",
+        "motor"
+      ],
+      "summary": "Insect glucagon homolog produced by neuroendocrine cells of the corpora cardiaca. Signals through the G-protein-coupled AKH receptor (AKHR) to mobilize trehalose and lipids and trigger starvation-induced hyperactivity and food-seeking behavior (fly).",
+      "refs": [
+        "nassel2022",
+        "deng2019"
+      ]
+    },
+    {
+      "id": "fly-pdf",
+      "name": "Pigment-dispersing factor (PDF)",
+      "level": "molecular",
+      "kind": "neuropeptide",
+      "aka": [
+        "PDF",
+        "PDFR"
+      ],
+      "region": "fly",
+      "domains": [
+        "timing",
+        "motor",
+        "homeostasis"
+      ],
+      "summary": "Principal circadian transmitter synthesized by ventrolateral clock pacemaker neurons (s-LNvs and l-LNvs). Signals through the PDF receptor (PDFR) to dorsal clock neurons, central complex ring neurons, and sleep centers to drive morning locomotor anticipation and circadian synchronization (fly).",
+      "refs": [
+        "renn1999",
+        "nassel2022",
+        "deng2019"
+      ]
+    },
+    {
+      "id": "fly-lnv",
+      "name": "Ventrolateral clock neurons (LNvs)",
+      "level": "cellular",
+      "kind": "cell type",
+      "aka": [
+        "LNvs",
+        "s-LNvs",
+        "l-LNvs"
+      ],
+      "region": "fly",
+      "domains": [
+        "timing",
+        "motor",
+        "homeostasis"
+      ],
+      "summary": "Circadian clock pacemaker neurons consisting of four small (s-LNv) and four to five large (l-LNv) ventrolateral neurons per hemisphere. They express PER, TIM, CRY and PDF, synchronizing central circadian oscillation and driving morning arousal (fly).",
+      "refs": [
+        "renn1999",
+        "deng2019"
+      ]
+    },
+    {
+      "id": "fly-ipc",
+      "name": "Insulin-producing cells (IPCs)",
+      "level": "cellular",
+      "kind": "cell type",
+      "aka": [
+        "IPCs",
+        "mNSCs"
+      ],
+      "region": "fly",
+      "domains": [
+        "homeostasis",
+        "reward"
+      ],
+      "summary": "Fourteen median neurosecretory cells in the pars intercerebralis that synthesize and secrete DILP2, DILP3, and DILP5. They receive octopaminergic, serotonergic, and peptidergic (DSK, sNPF) inputs to regulate systemic energy metabolism, growth, and starvation-induced feeding (fly).",
+      "refs": [
+        "nassel2022",
+        "deng2019"
+      ]
+    },
+    {
+      "id": "fly-sif-n",
+      "name": "SIFamide hub neurons",
+      "level": "cellular",
+      "kind": "cell type",
+      "aka": [
+        "SIFa neurons"
+      ],
+      "region": "fly",
+      "domains": [
+        "reward",
+        "social",
+        "homeostasis"
+      ],
+      "summary": "Four large interneurons in the pars intercerebralis with extensive brain-wide arborizations reaching the antennal lobes, mushroom bodies, central complex, and subesophageal zone. They act as a central hub arbitrating competing drives, suppressing courtship to favor food search during hunger (fly).",
+      "refs": [
+        "martelli2017",
+        "nassel2022"
+      ]
     }
   ],
   "links": [
@@ -18113,6 +18471,441 @@
       "refs": [
         "takacs2018"
       ]
+    },
+    {
+      "s": "fly-dan",
+      "t": "fly-no",
+      "rel": "a subset of mushroom body dopaminergic neurons (PPL1-γ1pedc and PAM-γ5) express nitric oxide synthase and synthesize nitric oxide as an on-demand cotransmitter (fly)",
+      "status": "supported",
+      "kind": "mechanistic",
+      "refs": [
+        "aso2019no"
+      ],
+      "tx": "NO"
+    },
+    {
+      "s": "fly-no",
+      "t": "fly-kc",
+      "rel": "nitric oxide acts on soluble guanylate cyclase (Gyc88E) in Kenyon cells to generate slow cGMP signals that regulate memory decay and updating, opposing dopamine-driven reinforcement (fly)",
+      "status": "supported",
+      "kind": "mechanistic",
+      "refs": [
+        "aso2019no"
+      ],
+      "via": "sGC (Gyc88E)",
+      "sign": "~",
+      "tx": "NO"
+    },
+    {
+      "s": "fly-kc",
+      "t": "fly-co",
+      "rel": "mushroom body Kenyon cells express heme oxygenase (HO) to synthesize carbon monoxide (fly)",
+      "status": "supported",
+      "kind": "mechanistic",
+      "refs": [
+        "ueno2017"
+      ],
+      "tx": "CO"
+    },
+    {
+      "s": "fly-co",
+      "t": "fly-dan",
+      "rel": "carbon monoxide acts retrogradely from Kenyon cells onto dopaminergic terminals to regulate on-demand dopamine release for memory consolidation (fly)",
+      "status": "emerging",
+      "kind": "mechanistic",
+      "refs": [
+        "ueno2017"
+      ],
+      "via": "retrograde HO/CO",
+      "sign": "~",
+      "tx": "CO"
+    },
+    {
+      "s": "fly-snpf",
+      "t": "fly-orn",
+      "rel": "short neuropeptide F acts through sNPFR1 in Or42b olfactory receptor neurons to facilitate presynaptic transmitter release during starvation, sensitizing food search (fly)",
+      "status": "supported",
+      "kind": "mechanistic",
+      "refs": [
+        "root2011"
+      ],
+      "via": "sNPFR1",
+      "sign": "+",
+      "tx": "sNPF"
+    },
+    {
+      "s": "fly-tk",
+      "t": "fly-orn",
+      "rel": "local tachykinin release acts through DTKR to provide presynaptic inhibitory gain control in antennal lobe glomeruli (fly)",
+      "status": "supported",
+      "kind": "mechanistic",
+      "refs": [
+        "deng2019",
+        "nassel2022"
+      ],
+      "via": "DTKR (TkR86C)",
+      "sign": "-",
+      "tx": "Tk"
+    },
+    {
+      "s": "fly-tk",
+      "t": "fly-eb",
+      "rel": "tachykinin modulates central complex ellipsoid body circuits via TkR99D to regulate arousal and aggressive behavior (fly)",
+      "status": "emerging",
+      "kind": "mechanistic",
+      "refs": [
+        "kravitz2015",
+        "deng2019"
+      ],
+      "via": "TkR99D",
+      "sign": "~",
+      "tx": "Tk"
+    },
+    {
+      "s": "fly-sif-n",
+      "t": "fly-sifa",
+      "rel": "four pars intercerebralis hub neurons synthesize and release SIFamide throughout the adult brain (fly)",
+      "status": "supported",
+      "kind": "mechanistic",
+      "refs": [
+        "martelli2017"
+      ],
+      "tx": "SIFa"
+    },
+    {
+      "s": "fly-sifa",
+      "t": "fly-dan",
+      "rel": "SIFamide volume transmission activates SIFaR in appetitive dopamine neurons to promote feeding motivation during starvation (fly)",
+      "status": "supported",
+      "kind": "mechanistic",
+      "refs": [
+        "martelli2017"
+      ],
+      "via": "SIFaR",
+      "sign": "+",
+      "tx": "SIFa"
+    },
+    {
+      "s": "fly-sifa",
+      "t": "fly-mb",
+      "rel": "SIFamide acts via SIFaR in mushroom body circuits to suppress sexual courtship behavior when nutrient reserves are low (fly)",
+      "status": "supported",
+      "kind": "mechanistic",
+      "refs": [
+        "martelli2017"
+      ],
+      "via": "SIFaR",
+      "sign": "~",
+      "tx": "SIFa"
+    },
+    {
+      "s": "fly-lnv",
+      "t": "fly-pdf",
+      "rel": "ventrolateral pacemaker neurons (s-LNvs and l-LNvs) express and release pigment-dispersing factor (fly)",
+      "status": "established",
+      "kind": "mechanistic",
+      "refs": [
+        "renn1999"
+      ],
+      "tx": "PDF"
+    },
+    {
+      "s": "fly-pdf",
+      "t": "fly-eb",
+      "rel": "PDF signals through PDFR to central complex ellipsoid body ring neurons to pace circadian locomotion and morning anticipation (fly)",
+      "status": "supported",
+      "kind": "mechanistic",
+      "refs": [
+        "renn1999",
+        "deng2019"
+      ],
+      "via": "PDFR",
+      "sign": "+",
+      "tx": "PDF"
+    },
+    {
+      "s": "fly-pdf",
+      "t": "fly-fb",
+      "rel": "PDF transmission modulates fan-shaped body sleep-promoting neurons to gate circadian arousal (fly)",
+      "status": "supported",
+      "kind": "mechanistic",
+      "refs": [
+        "nassel2022",
+        "deng2019"
+      ],
+      "via": "PDFR",
+      "sign": "~",
+      "tx": "PDF"
+    },
+    {
+      "s": "serotonin",
+      "t": "fly-eb",
+      "rel": "serotonin acts on 5-HT1A and 5-HT7 receptors in ellipsoid body ring neurons to modulate visual feature detection and sleep depth (fly)",
+      "status": "supported",
+      "kind": "mechanistic",
+      "refs": [
+        "deng2019"
+      ],
+      "via": "5-HT1A / 5-HT7",
+      "sign": "~",
+      "tx": "5-HT"
+    },
+    {
+      "s": "fly-ta",
+      "t": "fly-gng",
+      "rel": "tyramine acts through TyrR in gnathal ganglia and central motor networks to coordinate motor switching and locomotion, functionally distinct from octopamine (fly)",
+      "status": "supported",
+      "kind": "mechanistic",
+      "refs": [
+        "roeder2005",
+        "deng2019"
+      ],
+      "via": "TyrR",
+      "sign": "~",
+      "tx": "TA"
+    },
+    {
+      "s": "fly-retina",
+      "t": "fly-ha",
+      "rel": "photoreceptors express histidine decarboxylase and synthesize histamine as their primary transmitter (fly)",
+      "status": "established",
+      "kind": "mechanistic",
+      "refs": [
+        "gengs2002"
+      ],
+      "tx": "HA"
+    },
+    {
+      "s": "fly-ha",
+      "t": "fly-la",
+      "rel": "histamine from photoreceptors provides fast tonic hyperpolarizing transmission to lamina monopolar neurons via ort/HisCl1 chloride channels (fly)",
+      "status": "established",
+      "kind": "mechanistic",
+      "refs": [
+        "gengs2002"
+      ],
+      "via": "ort (HisCl2) / HisCl1",
+      "sign": "-",
+      "tx": "HA"
+    },
+    {
+      "s": "fly-lk",
+      "t": "fly-fb",
+      "rel": "leucokinin acts through LkR in the fan-shaped body and clock-associated circuits to regulate sleep and post-feeding water balance (fly)",
+      "status": "supported",
+      "kind": "mechanistic",
+      "refs": [
+        "nassel2022"
+      ],
+      "via": "LkR",
+      "sign": "~",
+      "tx": "Lk"
+    },
+    {
+      "s": "fly-asta",
+      "t": "fly-dan",
+      "rel": "Allatostatin A acts through AstA-R1 to inhibit sugar-sensing dopaminergic neurons, terminating feeding and switching flies to foraging locomotion (fly)",
+      "status": "supported",
+      "kind": "mechanistic",
+      "refs": [
+        "nassel2022"
+      ],
+      "via": "AstA-R1",
+      "sign": "-",
+      "tx": "AstA"
+    },
+    {
+      "s": "fly-dsk",
+      "t": "fly-ipc",
+      "rel": "drosulfakinin stimulates DskR1 on insulin-producing cells to trigger insulin-like peptide release and promote satiety (fly)",
+      "status": "supported",
+      "kind": "mechanistic",
+      "refs": [
+        "nassel2022"
+      ],
+      "via": "DskR1",
+      "sign": "+",
+      "tx": "DSK"
+    },
+    {
+      "s": "fly-ipc",
+      "t": "fly-dilp",
+      "rel": "insulin-producing cells synthesize and secrete DILP2, DILP3, and DILP5 (fly)",
+      "status": "established",
+      "kind": "mechanistic",
+      "refs": [
+        "nassel2022"
+      ],
+      "tx": "DILP"
+    },
+    {
+      "s": "fly-dilp",
+      "t": "fly-fb",
+      "rel": "circulating and centrally released DILPs act on InR in the fan-shaped body to modulate metabolic sleep and nutrient homeostasis (fly)",
+      "status": "supported",
+      "kind": "mechanistic",
+      "refs": [
+        "nassel2022"
+      ],
+      "via": "InR",
+      "sign": "~",
+      "tx": "DILP"
+    },
+    {
+      "s": "fly-akh",
+      "t": "fly-gng",
+      "rel": "adipokinetic hormone acts on AKHR in gnathal ganglion circuits to promote food search and taste responsiveness (fly)",
+      "status": "supported",
+      "kind": "mechanistic",
+      "refs": [
+        "nassel2022"
+      ],
+      "via": "AKHR",
+      "sign": "+",
+      "tx": "AKH"
+    },
+    {
+      "s": "fly-ador",
+      "t": "fly-brain",
+      "rel": "adenosine receptor AdoR in neurons and glia mediates purinergic homeostatic sleep regulation and metabolic stress resistance (fly)",
+      "status": "emerging",
+      "kind": "mechanistic",
+      "refs": [
+        "deng2019"
+      ],
+      "via": "AdoR",
+      "sign": "~",
+      "tx": "Ado"
+    },
+    {
+      "s": "fly-no",
+      "t": "f-associative",
+      "rel": "nitric oxide cotransmission in mushroom body dopamine neurons regulates memory decay and updating (fly)",
+      "status": "supported",
+      "kind": "functional",
+      "refs": [
+        "aso2019no"
+      ]
+    },
+    {
+      "s": "fly-co",
+      "t": "f-associative",
+      "rel": "retrograde carbon monoxide from Kenyon cells regulates on-demand dopamine release during memory formation (fly)",
+      "status": "emerging",
+      "kind": "functional",
+      "refs": [
+        "ueno2017"
+      ]
+    },
+    {
+      "s": "fly-snpf",
+      "t": "f-smell",
+      "rel": "short neuropeptide F presynaptically sensitizes olfactory receptor neurons during hunger (fly)",
+      "status": "supported",
+      "kind": "functional",
+      "refs": [
+        "root2011"
+      ]
+    },
+    {
+      "s": "fly-sifa",
+      "t": "f-reward",
+      "rel": "SIFamide hub neurons arbitrate competing reward and metabolic priorities between feeding and mating (fly)",
+      "status": "supported",
+      "kind": "functional",
+      "refs": [
+        "martelli2017"
+      ]
+    },
+    {
+      "s": "fly-pdf",
+      "t": "f-timing",
+      "rel": "pigment-dispersing factor sets circadian phase and paces morning locomotor anticipation (fly)",
+      "status": "established",
+      "kind": "functional",
+      "refs": [
+        "renn1999"
+      ]
+    },
+    {
+      "s": "fly-ha",
+      "t": "f-vision",
+      "rel": "fast histaminergic transmission from photoreceptors to lamina neurons initiates visual processing (fly)",
+      "status": "established",
+      "kind": "functional",
+      "refs": [
+        "gengs2002"
+      ]
+    },
+    {
+      "s": "fly-ta",
+      "t": "f-motor",
+      "rel": "tyramine signaling regulates motor program switching and flight initiation (fly)",
+      "status": "supported",
+      "kind": "functional",
+      "refs": [
+        "roeder2005"
+      ]
+    },
+    {
+      "s": "fly-tk",
+      "t": "f-social",
+      "rel": "tachykinin modulates male-male aggressive encounters (fly)",
+      "status": "supported",
+      "kind": "functional",
+      "refs": [
+        "kravitz2015"
+      ]
+    },
+    {
+      "s": "fly-lk",
+      "t": "f-feeding",
+      "rel": "leucokinin coordinates postprandial satiety and meal termination (fly)",
+      "status": "supported",
+      "kind": "functional",
+      "refs": [
+        "nassel2022"
+      ]
+    },
+    {
+      "s": "fly-dsk",
+      "t": "f-feeding",
+      "rel": "drosulfakinin signaling induces satiety and suppresses meal consumption (fly)",
+      "status": "supported",
+      "kind": "functional",
+      "refs": [
+        "nassel2022"
+      ]
+    },
+    {
+      "s": "fly-dilp",
+      "t": "f-feeding",
+      "rel": "insulin-like peptides coordinate nutrient satiety and metabolic energy balance (fly)",
+      "status": "established",
+      "kind": "functional",
+      "refs": [
+        "nassel2022"
+      ]
+    },
+    {
+      "s": "fly-akh",
+      "t": "f-feeding",
+      "rel": "adipokinetic hormone mobilizes energy stores and stimulates hungry food search (fly)",
+      "status": "established",
+      "kind": "functional",
+      "refs": [
+        "nassel2022"
+      ]
+    },
+    {
+      "s": "fly-ador",
+      "t": "f-sleep",
+      "rel": "purinergic signaling via AdoR regulates sleep depth and homeostatic sleep pressure (fly)",
+      "status": "supported",
+      "kind": "functional",
+      "refs": [
+        "deng2019"
+      ]
     }
   ],
   "chains": [
@@ -19091,6 +19884,57 @@
         "pfc"
       ],
       "desc": "Ascending brainstem and midbrain tegmental arousal projections engage VTA, thalamus, and basal forebrain to modulate cortical default mode network coupling and sustain wakeful awareness."
+    },
+    {
+      "id": "fly-no-memory",
+      "name": "Nitric oxide cotransmission updates mushroom body memory",
+      "nodes": [
+        "fly-dan",
+        "fly-no",
+        "fly-kc",
+        "fly-mbon",
+        "f-associative"
+      ]
+    },
+    {
+      "id": "fly-co-retrograde",
+      "name": "Kenyon cell retrograde carbon monoxide signaling",
+      "nodes": [
+        "fly-kc",
+        "fly-co",
+        "fly-dan",
+        "f-associative"
+      ]
+    },
+    {
+      "id": "fly-snpf-sensory",
+      "name": "Starvation-induced sensory facilitation by sNPF",
+      "nodes": [
+        "fly-snpf",
+        "fly-orn",
+        "fly-pn",
+        "f-smell"
+      ]
+    },
+    {
+      "id": "fly-sifa-priority",
+      "name": "SIFamide coordinates feeding over courtship",
+      "nodes": [
+        "fly-sif-n",
+        "fly-sifa",
+        "fly-dan",
+        "f-reward"
+      ]
+    },
+    {
+      "id": "fly-circadian-pace",
+      "name": "Circadian synchronization by pigment-dispersing factor",
+      "nodes": [
+        "fly-lnv",
+        "fly-pdf",
+        "fly-eb",
+        "f-sleep"
+      ]
     }
   ],
   "questions": [
@@ -20608,6 +21452,57 @@
         "Use cell-type-specific tracing to identify whether LS projections to VTA synapse directly onto dopamine or GABAergic interneurons.",
         "Test spatial memory retrieval and replay fidelity following pathway-specific chemogenetic silencing of the hippocampus-LS-VTA circuit."
       ]
+    },
+    {
+      "id": "q-fly-gas-messengers",
+      "title": "How do noncanonical gaseous messengers (NO and CO) interact with classical monoamines to set memory stability?",
+      "text": "While dopamine provides rapid reinforcement at Kenyon cell output synapses, a subset of dopamine neurons co-transmits nitric oxide (NO) to stimulate soluble guanylate cyclase in Kenyon cells, promoting memory updating and decay. Conversely, retrograde carbon monoxide (CO) produced by Kenyon cell heme oxygenase regulates presynaptic dopamine release. How are these gaseous signals compartmentalized, and what determines whether a memory is consolidated, updated, or erased?",
+      "entities": [
+        "fly-no",
+        "fly-co",
+        "fly-dan",
+        "fly-kc",
+        "fly-mb"
+      ],
+      "refs": [
+        "aso2019no",
+        "ueno2017"
+      ]
+    },
+    {
+      "id": "q-fly-volume-connectome",
+      "title": "How does peptidergic volume transmission integrate with the synaptic connectome to select actions?",
+      "text": "Connectomic reconstructions map tens of thousands of chemical synapses, yet broad modulators such as SIFamide, sNPF, NPF, and Tachykinin act largely through extrasynaptic receptors and volume transmission across neuropil compartments. How do neuromodulatory states dynamically gate or reconfigure the rigid synaptic connectome during competing behavioral states like hunger versus courtship?",
+      "entities": [
+        "fly-sifa",
+        "fly-snpf",
+        "fly-npf",
+        "fly-tk",
+        "fly-mb",
+        "fly-cx"
+      ],
+      "refs": [
+        "nassel2022",
+        "deng2019",
+        "martelli2017"
+      ]
+    },
+    {
+      "id": "q-fly-amine-distinctions",
+      "title": "How do distinct biogenic amines (tyramine vs octopamine vs histamine) segregate motor and sensory actions?",
+      "text": "Because Tdc2-positive driver lines label both tyraminergic and octopaminergic neurons, earlier studies often conflated tyramine and octopamine. Tyramine acts on TyrR receptors to regulate locomotor switching, whereas octopamine signals through OAMB and OctbetaRs. Concurrently, histamine acts as a fast inhibitory transmitter on photoreceptors and mechanosensory neurons via ort/HisCl channels. What are the specific non-overlapping target circuits of these distinct amines across the brain and ventral nerve cord?",
+      "entities": [
+        "fly-ta",
+        "fly-oa",
+        "fly-ha",
+        "fly-gng",
+        "fly-la"
+      ],
+      "refs": [
+        "roeder2005",
+        "gengs2002",
+        "deng2019"
+      ]
     }
   ],
   "flatmap": {
@@ -20966,6 +21861,58 @@
       "GnRH": {
         "label": "Gonadotropin-releasing hormone",
         "entity": "oct-gnrh"
+      },
+      "TA": {
+        "label": "Tyramine",
+        "entity": "fly-ta"
+      },
+      "NO": {
+        "label": "Nitric oxide",
+        "entity": "fly-no"
+      },
+      "CO": {
+        "label": "Carbon monoxide",
+        "entity": "fly-co"
+      },
+      "sNPF": {
+        "label": "Short neuropeptide F",
+        "entity": "fly-snpf"
+      },
+      "Tk": {
+        "label": "Tachykinin",
+        "entity": "fly-tk"
+      },
+      "Lk": {
+        "label": "Leucokinin",
+        "entity": "fly-lk"
+      },
+      "SIFa": {
+        "label": "SIFamide",
+        "entity": "fly-sifa"
+      },
+      "AstA": {
+        "label": "Allatostatin A",
+        "entity": "fly-asta"
+      },
+      "DSK": {
+        "label": "Drosulfakinin",
+        "entity": "fly-dsk"
+      },
+      "DILP": {
+        "label": "Insulin-like peptide",
+        "entity": "fly-dilp"
+      },
+      "AKH": {
+        "label": "Adipokinetic hormone",
+        "entity": "fly-akh"
+      },
+      "PDF": {
+        "label": "Pigment-dispersing factor",
+        "entity": "fly-pdf"
+      },
+      "Ado": {
+        "label": "Adenosine",
+        "entity": "fly-ador"
       }
     },
     "sources": [
@@ -22373,7 +23320,9 @@
             "entities": [
               "fly-al",
               "fly-orn",
-              "fly-pn"
+              "fly-pn",
+              "fly-snpf",
+              "fly-tk"
             ]
           },
           "LH_R": {
@@ -22408,7 +23357,9 @@
               "fly-mbon",
               "fly-dan",
               "fly-apl",
-              "fly-dpm"
+              "fly-dpm",
+              "fly-no",
+              "fly-co"
             ]
           },
           "MB_ML_R": {
@@ -22420,7 +23371,9 @@
               "fly-mbon",
               "fly-dan",
               "fly-apl",
-              "fly-dpm"
+              "fly-dpm",
+              "fly-no",
+              "fly-co"
             ]
           },
           "MB_ML_L": {
@@ -22441,7 +23394,8 @@
             "entities": [
               "fly-eb",
               "fly-ring",
-              "fly-epg"
+              "fly-epg",
+              "fly-pdf"
             ]
           },
           "FB": {
@@ -22524,7 +23478,12 @@
           "SMP_R": {
             "name": "Superior medial protocerebrum (right)",
             "abbr": "SMP(R)",
-            "entities": []
+            "entities": [
+              "fly-sif-n",
+              "fly-sifa",
+              "fly-ipc",
+              "fly-dilp"
+            ]
           },
           "SMP_L": {
             "name": "Superior medial protocerebrum (left)",
@@ -22534,7 +23493,10 @@
           "CRE_R": {
             "name": "Crepine (right)",
             "abbr": "CRE(R)",
-            "entities": []
+            "entities": [
+              "fly-sif-n",
+              "fly-ipc"
+            ]
           },
           "CRE_L": {
             "name": "Crepine (left)",
@@ -22615,7 +23577,7 @@
       },
       "molecules": {
         "neuromodulation": {
-          "desc": "Which neuromodulators and neuropeptides act on which cells of the fly’s olfactory learning circuit. Each cell links to the evidence.",
+          "desc": "Which neuromodulators, neuropeptides, and diffusible gaseous messengers act on which cells of the fly brain. Each cell links to evidence grading, receptor identity, and functional sign.",
           "targets": [
             {
               "id": "fly-orn",
@@ -22640,26 +23602,49 @@
             {
               "id": "fly-mbon",
               "label": "Output neurons"
+            },
+            {
+              "id": "fly-eb",
+              "label": "Ellipsoid body"
             }
           ],
           "groups": [
             {
-              "label": "Monoamines",
+              "label": "Biogenic amines",
               "rows": [
                 "dopamine",
                 "fly-oa",
-                "serotonin"
+                "serotonin",
+                "fly-ta",
+                "fly-ha"
               ]
             },
             {
-              "label": "Neuropeptides",
+              "label": "Noncanonical gaseous & purinergic messengers",
               "rows": [
+                "fly-no",
+                "fly-co",
+                "fly-ador"
+              ]
+            },
+            {
+              "label": "Neuropeptides (local & coordinating)",
+              "rows": [
+                "fly-snpf",
                 "fly-npf",
-                "fly-amn"
+                "fly-amn",
+                "fly-tk",
+                "fly-lk",
+                "fly-sifa",
+                "fly-asta",
+                "fly-dsk",
+                "fly-pdf",
+                "fly-dilp",
+                "fly-akh"
               ]
             }
           ],
-          "note": "Thin by design: each filled cell rests on one to four studies, and many cells of the circuit have no curated messenger yet."
+          "note": "Fruit fly neuromodulation spans multiple organizational layers: synaptic and fast transmission (Histamine), presynaptic gain control (sNPF, Tachykinin), noncanonical gaseous cotransmission (NO, CO), and brain-wide state coordination (SIFamide, PDF, DILPs, AKH)."
         }
       }
     }

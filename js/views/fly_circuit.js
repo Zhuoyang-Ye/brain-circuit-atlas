@@ -46,8 +46,8 @@
             h('span', { class: 'grow' }),
             h('span', { class: 'row small muted' }, h('span', { class: 'dot', style: { background: COL.exc } }), 'excitatory', h('span', { class: 'dot', style: { background: COL.inh } }), 'inhibitory')),
           caption,
-          h('p', { class: 'tiny muted', style: { marginTop: '6px' } }, 'Schematic, not to scale; compartments named as in Aso et al. (2014), with only the γ lobe drawn horizontally and the α lobe vertically. ',
-            ...CA.citeChips(['aso2014a', 'claridgechang2009', 'liuc2012']))),
+          h('p', { class: 'tiny muted', style: { marginTop: '6px' } }, 'Schematic, not to scale; compartments named as in Aso et al. (2014), with only the γ lobe drawn horizontally and the α lobe vertically. Dopamine neurons in PPL1-γ1 and PAM-γ5 also co-transmit nitric oxide (Aso et al., 2019). ',
+            ...CA.citeChips(['aso2014a', 'claridgechang2009', 'liuc2012', 'aso2019no']))),
         lab)));
     unsub = CA.on('select', paintSel);
     paintSel();

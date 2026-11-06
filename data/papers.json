@@ -19018,5 +19018,278 @@
       "insula",
       "olfactory"
     ]
+  },
+  {
+    "key": "nassel2022",
+    "pmid": "35892199",
+    "regions": [
+      "fly"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "fly"
+    ],
+    "methods": [
+      "neuropeptide expression mapping",
+      "review",
+      "chemoconnectomics"
+    ],
+    "levels": [
+      "molecular",
+      "cellular",
+      "circuit",
+      "systems"
+    ],
+    "domains": [
+      "homeostasis",
+      "reward",
+      "learning",
+      "architecture"
+    ],
+    "finding": "Neuropeptide signaling in Drosophila operates across multiple organizational tiers—from local presynaptic gain control (sNPF, Tachykinin) to context-specific routing (Leucokinin, AstA) and organism-wide behavioral state coordination (SIFamide, DSK, DILPs, AKH, PDF) (fly)."
+  },
+  {
+    "key": "deng2019",
+    "pmid": "30905728",
+    "regions": [
+      "fly"
+    ],
+    "evidence": "anatomical",
+    "species": [
+      "fly"
+    ],
+    "methods": [
+      "chemoconnectomics knock-in Gal4/LexA lines",
+      "chemical transmission mapping",
+      "RNAi"
+    ],
+    "levels": [
+      "molecular",
+      "cellular",
+      "circuit"
+    ],
+    "domains": [
+      "architecture",
+      "sensory",
+      "motor",
+      "reward"
+    ],
+    "finding": "A chemoconnectomic map across neurotransmitters, biogenic amines (5-HT, tyramine, octopamine, histamine), purinergic signals (AdoR), and over 40 neuropeptides establishes that chemical transmission extends beyond classical synaptic connectomes and underscores that neuronal activation is distinct from ligand deletion (fly)."
+  },
+  {
+    "key": "aso2019no",
+    "pmid": "31724947",
+    "regions": [
+      "fly"
+    ],
+    "evidence": "intervention",
+    "species": [
+      "fly"
+    ],
+    "methods": [
+      "split-GAL4 optogenetics",
+      "CRISPR knockout",
+      "in vivo cGMP imaging",
+      "olfactory conditioning"
+    ],
+    "levels": [
+      "molecular",
+      "cellular",
+      "circuit"
+    ],
+    "domains": [
+      "learning",
+      "memory",
+      "reward"
+    ],
+    "finding": "Nitric oxide acts as an atypical diffusible cotransmitter in a subset of mushroom body dopaminergic neurons (PPL1-γ1pedc and PAM-γ5), activating soluble guanylate cyclase (Gyc88E) in Kenyon cells to generate slow cGMP signals that regulate memory decay and updating in functional opposition to rapid dopamine-driven reinforcement (fly)."
+  },
+  {
+    "key": "root2011",
+    "pmid": "21217785",
+    "regions": [
+      "fly"
+    ],
+    "evidence": "intervention",
+    "species": [
+      "fly"
+    ],
+    "methods": [
+      "two-photon calcium imaging",
+      "synaptic transmission recording",
+      "behavioral food search"
+    ],
+    "levels": [
+      "molecular",
+      "cellular",
+      "circuit"
+    ],
+    "domains": [
+      "sensory",
+      "homeostasis",
+      "reward"
+    ],
+    "finding": "Starvation upregulates short neuropeptide F receptor (sNPFR1) in Or42b olfactory receptor neurons; local sNPF release directly facilitates presynaptic transmitter release onto projection neurons to increase odor sensitivity during food search, independent of systemic NPF (fly)."
+  },
+  {
+    "key": "renn1999",
+    "pmid": "10515664",
+    "regions": [
+      "fly"
+    ],
+    "evidence": "intervention",
+    "species": [
+      "fly"
+    ],
+    "methods": [
+      "genetic null mutants",
+      "cell ablation",
+      "circadian locomotor monitoring"
+    ],
+    "levels": [
+      "molecular",
+      "cellular",
+      "circuit",
+      "systems"
+    ],
+    "domains": [
+      "timing",
+      "homeostasis",
+      "motor"
+    ],
+    "finding": "Pigment-dispersing factor (PDF) released by ventrolateral clock pacemaker neurons (s-LNvs and l-LNvs) synchronizes central circadian oscillation, drives morning locomotor anticipation, and signals via PDF receptor (PDFR) to central complex ring neurons (fly)."
+  },
+  {
+    "key": "martelli2017",
+    "pmid": "28700946",
+    "regions": [
+      "fly"
+    ],
+    "evidence": "intervention",
+    "species": [
+      "fly"
+    ],
+    "methods": [
+      "optogenetics",
+      "fiber photometry",
+      "courtship and feeding assays",
+      "RNAi"
+    ],
+    "levels": [
+      "cellular",
+      "circuit",
+      "systems"
+    ],
+    "domains": [
+      "reward",
+      "homeostasis",
+      "social"
+    ],
+    "finding": "Four SIFamide-expressing hub neurons in the pars intercerebralis project throughout the adult brain, translating hunger state into behavioral choices by suppressing courtship and promoting feeding through SIFaR-expressing target circuits (fly)."
+  },
+  {
+    "key": "ueno2017",
+    "pmid": "28053221",
+    "regions": [
+      "fly"
+    ],
+    "evidence": "intervention",
+    "species": [
+      "fly"
+    ],
+    "methods": [
+      "genetic mutants",
+      "electrochemical dopamine measurements",
+      "olfactory associative learning"
+    ],
+    "levels": [
+      "molecular",
+      "cellular",
+      "circuit"
+    ],
+    "domains": [
+      "learning",
+      "memory"
+    ],
+    "finding": "Heme oxygenase (HO) in Kenyon cells produces carbon monoxide (CO), which acts as a noncanonical retrograde messenger to regulate on-demand dopamine release and associative olfactory memory formation (fly)."
+  },
+  {
+    "key": "roeder2005",
+    "pmid": "15590151",
+    "regions": [
+      "fly"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "fly"
+    ],
+    "methods": [
+      "pharmacological profiling",
+      "receptor cloning",
+      "behavioral review"
+    ],
+    "levels": [
+      "molecular",
+      "cellular",
+      "systems"
+    ],
+    "domains": [
+      "motor",
+      "homeostasis",
+      "reward"
+    ],
+    "finding": "Tyramine is not merely a precursor for octopamine synthesized by tyrosine decarboxylase (Tdc2); it acts via specific tyramine receptors (TyrR) to exert distinct, often antagonistic motor and behavioral effects, establishing that Tdc2-positive neurons cannot be assumed to be purely octopaminergic (fly)."
+  },
+  {
+    "key": "gengs2002",
+    "pmid": "12040059",
+    "regions": [
+      "fly"
+    ],
+    "evidence": "intervention",
+    "species": [
+      "fly"
+    ],
+    "methods": [
+      "electrophysiology",
+      "genetic mutant analysis",
+      "receptor binding"
+    ],
+    "levels": [
+      "molecular",
+      "cellular"
+    ],
+    "domains": [
+      "sensory",
+      "architecture"
+    ],
+    "finding": "Histamine synthesized by histidine decarboxylase (Hdc) in photoreceptors mediates fast inhibitory synaptic transmission to lamina monopolar neurons via the histamine-gated chloride channel ort (hclA/HisCl2) (fly)."
+  },
+  {
+    "key": "kravitz2015",
+    "pmid": "28375770",
+    "regions": [
+      "fly"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "fly"
+    ],
+    "methods": [
+      "behavioral genetics",
+      "neuroethology",
+      "neuromodulator profiling review"
+    ],
+    "levels": [
+      "cellular",
+      "circuit",
+      "systems"
+    ],
+    "domains": [
+      "social",
+      "executive",
+      "motor"
+    ],
+    "finding": "Aggressive behavior in fruit flies is orchestrated by a combinatorial web of biogenic amines (serotonin, dopamine, octopamine) and neuropeptides (Tachykinin, DSK, NPF), demonstrating that neuromodulatory state biases action selection rather than mapping single chemicals to single behaviors (fly)."
   }
 ]
