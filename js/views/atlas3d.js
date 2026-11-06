@@ -1,7 +1,7 @@
 /* 3D atlas: real atlas meshes (human, mouse, macaque or fruit fly; a schematic octopus) with evidence-coded connections to the rest of the brain and body. */
 (function () {
   'use strict';
-  const CA = window.CA, D = CA.D, A3 = D.atlas3d, h = CA.h;
+  const CA = window.CA, D = CA.D, A3 = D.atlas3d, h = CA.h, s = CA.s;
 
   const GROUP = {
     shell: { color: 0x9aa7b8, opacity: 0.09 },
@@ -347,26 +347,45 @@
 
   function buildControls() {
     const box = h('div', { class: 'atlas-controls' });
+    const isFolded = CA.store.get('atlas.controlsFolded', window.innerWidth <= 860);
+
+    const chevron = (dir) => s('svg', { viewBox: '0 0 16 16', width: 14, height: 14, 'aria-hidden': 'true', style: { display: 'block', pointerEvents: 'none' } },
+      s('path', {
+        d: dir === 'left' ? 'M 10 3.5 L 5.5 8 L 10 12.5' : 'M 6 3.5 L 10.5 8 L 6 12.5',
+        stroke: 'currentColor', 'stroke-width': 1.6, fill: 'none', 'stroke-linecap': 'round', 'stroke-linejoin': 'round'
+      }));
+
     const fold = h('button', {
       class: 'atlas-fold-toggle icon-btn',
       type: 'button',
-      'aria-expanded': 'true',
-      title: 'Collapse atlas controls',
-      'aria-label': 'Collapse atlas controls',
-      onclick: () => {
-        const folded = box.classList.toggle('folded');
-        fold.setAttribute('aria-expanded', String(!folded));
-        fold.title = folded ? 'Expand atlas controls' : 'Collapse atlas controls';
-        fold.setAttribute('aria-label', fold.title);
+      'aria-expanded': String(!isFolded),
+      title: isFolded ? 'Expand atlas controls' : 'Collapse atlas controls',
+      'aria-label': isFolded ? 'Expand atlas controls' : 'Collapse atlas controls',
+      onclick: (ev) => {
+        ev.stopPropagation();
+        toggleFold();
       },
-    }, '‹');
-    box.append(fold);
-    if (window.matchMedia && window.matchMedia('(max-width: 860px)').matches) {
-      box.classList.add('folded');
-      fold.setAttribute('aria-expanded', 'false');
-      fold.title = 'Expand atlas controls';
+    }, chevron(isFolded ? 'right' : 'left'));
+
+    function toggleFold(forced) {
+      const folded = forced !== undefined ? forced : !box.classList.contains('folded');
+      box.classList.toggle('folded', folded);
+      fold.setAttribute('aria-expanded', String(!folded));
+      fold.title = folded ? 'Expand atlas controls' : 'Collapse atlas controls';
       fold.setAttribute('aria-label', fold.title);
+      CA.clear(fold).appendChild(chevron(folded ? 'right' : 'left'));
+      CA.store.set('atlas.controlsFolded', folded);
     }
+
+    box.addEventListener('click', () => {
+      if (box.classList.contains('folded')) toggleFold(false);
+    });
+
+    if (isFolded) {
+      box.classList.add('folded');
+    }
+
+    box.append(fold);
     const speciesPick = el.speciesPick = h('select', {
       class: 'species-pick',
       title: 'Species: switches between human, macaque, mouse, octopus and fruit fly 3D brain models',

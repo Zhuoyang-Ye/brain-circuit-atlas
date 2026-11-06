@@ -263,8 +263,10 @@ select:focus, input.text:focus { border-color: var(--accent); }
 .alabel { transition: opacity .18s ease; }
 .alabel.off { opacity: 0; }
 .atlas-controls { position: absolute; top: 12px; left: 12px; width: 268px; max-height: calc(100% - 24px); overflow: auto; background: var(--float-bg);
-  border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 14px; backdrop-filter: blur(6px); }
-.atlas-controls h4:first-child { margin-top: 0; }
+  border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 14px; backdrop-filter: blur(6px);
+  box-shadow: 0 4px 16px var(--shadow, rgba(0, 0, 0, 0.15));
+  transition: width .22s cubic-bezier(0.16, 1, 0.3, 1), max-height .22s ease, padding .22s ease; z-index: 10; }
+.atlas-controls h4:first-child { margin-top: 0; padding-right: 28px; }
 .atlas-controls .circ { display: block; width: 100%; text-align: left; background: none; border: 1px solid transparent; border-radius: 6px; padding: 4px 8px; color: var(--muted); }
 .atlas-controls .circ:hover { color: var(--text); background: var(--bg3); }
 .atlas-controls .circ.on { color: var(--text); border-color: var(--accent); background: var(--tint); }
@@ -279,10 +281,15 @@ select:focus, input.text:focus { border-color: var(--accent); }
 .trace-steps .hop b { font-weight: 600; }
 .trace-steps .rel { display: none; }
 .trace-steps li.now .rel { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: .76rem; color: var(--muted); }
-.atlas-fold-toggle { display: none; }
-.atlas-controls.folded { width: 42px; padding: 5px; overflow: hidden; }
+/* Left panel fold toggle: accessible on both desktop and mobile displays */
+.atlas-fold-toggle { display: inline-flex; align-items: center; justify-content: center; position: absolute; top: 10px; right: 10px;
+  width: 24px; height: 24px; padding: 0; border-radius: 6px; background: transparent; border: 1px solid transparent;
+  color: var(--muted); cursor: pointer; transition: background .15s, color .15s, border-color .15s; z-index: 5; }
+.atlas-fold-toggle:hover { color: var(--text); background: var(--bg3); border-color: var(--line); }
+.atlas-controls.folded { width: 44px; min-width: 44px; max-height: 44px; padding: 5px; overflow: hidden; cursor: pointer; }
+.atlas-controls.folded:hover { border-color: var(--accent); background: var(--bg2); }
 .atlas-controls.folded > :not(.atlas-fold-toggle) { display: none; }
-.atlas-controls.folded .atlas-fold-toggle { display: block; margin: 0 auto; }
+.atlas-controls.folded .atlas-fold-toggle { position: static; margin: 0 auto; width: 32px; height: 32px; color: var(--text); background: var(--bg3); border-color: var(--line); border-radius: 6px; }
 /* names in a colour-coded legend at the side (the header switch): the model stays clean */
 .atlas-names { position: absolute; top: 12px; right: 12px; width: 250px; max-height: calc(100% - 190px); overflow: auto; background: var(--float-bg);
   border: 1px solid var(--line); border-radius: var(--radius); padding: 8px 6px 8px 8px; font-size: .8rem; backdrop-filter: blur(6px); }
@@ -458,7 +465,7 @@ table.data tr.click:hover td { background: var(--bg3); }
   #nav a.active { box-shadow: inset 3px 0 0 var(--accent); }
   body.nav-open .nav-scrim { display: block; position: fixed; inset: 0; z-index: 45; background: var(--backdrop); opacity: .55; }
   .atlas-controls { width: 220px; font-size: .9rem; }
-  .atlas-fold-toggle { display: block; }
+  .atlas-controls.folded { width: 44px; }
   .intro { display: block; top: 8px; right: 8px; width: min(320px, calc(100vw - 16px)); padding: 12px 14px; }
   .intro.shut { padding-bottom: 8px; }
   .atlas-names { top: 68px; right: 8px; width: min(250px, calc(100vw - 16px)); max-height: 42%; }
