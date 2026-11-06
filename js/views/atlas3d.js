@@ -22,7 +22,7 @@
     GnRH: 0xdb61a2, TA: 0x14b8a6, NO: 0x38bdf8, CO: 0xfbbf24,
     sNPF: 0x818cf8, Tk: 0xf43f5e, Lk: 0xc084fc, SIFa: 0x4ade80,
     AstA: 0xf472b6, DSK: 0xfb923c, DILP: 0x60a5fa, AKH: 0xe11d48,
-    PDF: 0x2563eb, Ado: 0x94a3b8
+    PDF: 0x2563eb, Ado: 0x94a3b8, FMRF: 0xe879f9, Glu: 0x2ea043
   };
   const txHex = (code) => CA.tc(TX_COLORS[code] != null ? TX_COLORS[code] : 0x8b949e);
   const MOD_SRC = new Set(NM.sources || []);   // neuromodulator source nuclei (drawn pink)

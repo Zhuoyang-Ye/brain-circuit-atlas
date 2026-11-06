@@ -276,6 +276,8 @@ select:focus, input.text:focus { border-color: var(--accent); }
 .txp[data-tx="AKH"] { color: #e11d48; border-color: #e11d48; }
 .txp[data-tx="PDF"] { color: #2563eb; border-color: #2563eb; }
 .txp[data-tx="Ado"] { color: #94a3b8; border-color: #94a3b8; }
+.txp[data-tx="FMRF"] { color: #e879f9; border-color: #e879f9; }
+.txp[data-tx="Glu"] { color: #2ea043; border-color: #2ea043; }
 .atlas-txkey { position: absolute; left: 12px; right: 12px; bottom: 12px; width: fit-content; max-width: calc(100% - 24px); max-height: 120px; overflow-y: auto; margin: 0 auto; display: flex; flex-wrap: wrap;
   justify-content: center; gap: 4px 12px; padding: 6px 12px; background: var(--float-bg); border: 1px solid var(--line);
   border-radius: var(--radius); font-size: .8rem; pointer-events: auto; backdrop-filter: blur(6px); z-index: 10; box-shadow: 0 4px 16px var(--shadow, rgba(0, 0, 0, 0.15)); }

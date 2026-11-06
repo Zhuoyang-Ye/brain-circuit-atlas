@@ -1333,7 +1333,7 @@
         "library"
       ],
       "levelDesc": {
-        "regional": "Vertical, superior frontal, subvertical, basal and brachial lobes; optic lobes; the peduncle complex and optic gland; the arms\u2019 nerve cords",
+        "regional": "Vertical, superior frontal, inferior frontal, subvertical, basal, pedal, palliovisceral, superior buccal and brachial lobes; optic lobes; optic tracts, peduncle complex and optic gland; axial arm nerve cords and suckers",
         "circuit": "Retina to optic lobe; optic lobe to the superior frontal and basal lobes; superior frontal input to the vertical lobe; basal lobes and brain to the arms"
       },
       "levelQueries": {
@@ -8037,7 +8037,8 @@
         "deryckere2021",
         "shigeno2018",
         "robertson1994",
-        "fiorito1998"
+        "fiorito1998",
+        "pizzulli2025"
       ]
     },
     {
@@ -9941,6 +9942,158 @@
       "refs": [
         "martelli2017",
         "nassel2022"
+      ]
+    },
+    {
+      "id": "oct-ifl",
+      "name": "Inferior frontal lobe",
+      "level": "regional",
+      "kind": "structure",
+      "aka": [
+        "IFL",
+        "subfrontal system",
+        "tactile learning centre"
+      ],
+      "region": "octopus",
+      "domains": [
+        "learning",
+        "memory",
+        "sensory",
+        "architecture"
+      ],
+      "summary": "The chemotactile learning and memory matrix of the octopus supraesophageal brain. Analogous to the visual vertical lobe system, the inferior frontal lobe receives ascending tactile and chemical inputs from the brachial lobe and suckers (Sepela et al., 2025; van Giesen et al., 2020), contains small interneurons for sensory discrimination, and projects to the subvertical and basal motor lobes to guide sucker grasping, exploration, or rejection (Young, 1971; Jung et al., 2018; Jacobs et al., 2022).",
+      "refs": [
+        "jung2018",
+        "sepela2025",
+        "vangiesen2020",
+        "jacobs2022"
+      ]
+    },
+    {
+      "id": "oct-sbl",
+      "name": "Superior buccal lobe",
+      "level": "regional",
+      "kind": "structure",
+      "aka": [
+        "SBL",
+        "buccal mass centre"
+      ],
+      "region": "octopus",
+      "domains": [
+        "homeostasis",
+        "motor",
+        "architecture"
+      ],
+      "summary": "Anterior-most lobe of the supraesophageal mass situated directly above the esophagus and radular apparatus. Coordinates mouthparts, beak biting, radula rasping, salivary venom injection, and swallowing in response to tactile feeding inputs from the inferior frontal lobe (Young, 1971; Jung et al., 2018; Jacobs et al., 2022).",
+      "refs": [
+        "jung2018",
+        "jacobs2022"
+      ]
+    },
+    {
+      "id": "oct-pedal",
+      "name": "Pedal lobe",
+      "level": "regional",
+      "kind": "structure",
+      "aka": [
+        "anterior subesophageal motor lobe",
+        "funnel motor centre"
+      ],
+      "region": "octopus",
+      "domains": [
+        "motor",
+        "architecture"
+      ],
+      "summary": "Major subesophageal motor center coordinating somatic locomotion, the funnel, jet propulsion, head steering, and eye stabilization. Receives descending commands from anterior and median basal lobes and reciprocal connections from the palliovisceral lobe, sending motor efferents to the funnel and mantle musculature (Young, 1971; Jung et al., 2018; Jacobs et al., 2022).",
+      "refs": [
+        "jung2018",
+        "jacobs2022"
+      ]
+    },
+    {
+      "id": "oct-pvl",
+      "name": "Palliovisceral lobe",
+      "level": "regional",
+      "kind": "structure",
+      "aka": [
+        "PVL",
+        "visceromotor lobe",
+        "chromatophore motor hub"
+      ],
+      "region": "octopus",
+      "domains": [
+        "homeostasis",
+        "motor",
+        "architecture"
+      ],
+      "summary": "Posterior subesophageal motor center controlling the mantle, visceral organs, respiratory pumping, circulation, ink sac ejection, and chromatophore skin patterning. Integrates motor commands from the subvertical and basal lobes and coordinates dynamic camouflage during active sleep and predatory concealment (Young, 1971; Jung et al., 2018; Pophale et al., 2023; Jacobs et al., 2022).",
+      "refs": [
+        "jung2018",
+        "pophale2023",
+        "jacobs2022"
+      ]
+    },
+    {
+      "id": "oct-optic-tract",
+      "name": "Optic tract",
+      "level": "circuit",
+      "kind": "tract",
+      "aka": [
+        "chiasma opticum",
+        "retinotopic projection tract"
+      ],
+      "region": "octopus",
+      "domains": [
+        "sensory",
+        "architecture"
+      ],
+      "summary": "The massive bilateral tract connecting the optic lobes with the central brain. Carries retinotopic visual output from the optic lobe medulla into the superior frontal lobe for visual memory and into the lateral and anterior basal lobes for immediate motor orienting and camouflage (Pungor et al., 2023; Jacobs et al., 2022; Jung et al., 2018).",
+      "refs": [
+        "pungor2023",
+        "jacobs2022",
+        "jung2018"
+      ]
+    },
+    {
+      "id": "oct-fmrf",
+      "name": "Cephalopod FMRFamide",
+      "level": "molecular",
+      "kind": "neuropeptide",
+      "aka": [
+        "FMRF",
+        "FMRFamide-related peptide"
+      ],
+      "region": "octopus",
+      "domains": [
+        "homeostasis",
+        "architecture"
+      ],
+      "summary": "Inhibitory cardioactive and neuroendocrine neuropeptide in cephalopods. Synthesized in the subpedunculate and peduncle lobes, FMRFamide fibers innervate the optic gland to exert tonic inhibition over gonadotropic secretion, controlling sexual maturation, post-reproductive brooding, and programmed senescence (Di Cosmo et al., 1998; Iwakoshi-Ukena et al., 2004).",
+      "refs": [
+        "dicosmo1998",
+        "iwakoshiukena2004"
+      ]
+    },
+    {
+      "id": "oct-glu",
+      "name": "Glutamate",
+      "level": "molecular",
+      "kind": "molecule",
+      "aka": [
+        "L-glutamate",
+        "Glu"
+      ],
+      "region": "octopus",
+      "domains": [
+        "learning",
+        "memory",
+        "architecture"
+      ],
+      "summary": "Primary excitatory and plastogenic neurotransmitter at the median superior frontal lobe (MSFL) to vertical lobe amacrine synapse. Mediates fast depolarization that activates voltage-dependent calcium influx and triggers retrograde nitric oxide synthesis required for long-term potentiation and visual learning (Hochner et al., 2003; Shomrat et al., 2008; Bidel et al., 2023).",
+      "refs": [
+        "hochner2003",
+        "shomrat2008",
+        "bidel2023"
       ]
     }
   ],
@@ -16649,7 +16802,9 @@
       "refs": [
         "saidel1982",
         "pungor2023"
-      ]
+      ],
+      "tx": "ACh",
+      "sign": "+"
     },
     {
       "s": "oct-ol",
@@ -16680,7 +16835,9 @@
       "kind": "anatomical",
       "refs": [
         "saidel1982"
-      ]
+      ],
+      "tx": "OA",
+      "sign": "+"
     },
     {
       "s": "oct-subvertical",
@@ -16710,7 +16867,9 @@
       "kind": "anatomical",
       "refs": [
         "saidel1982"
-      ]
+      ],
+      "tx": "5-HT",
+      "sign": "~"
     },
     {
       "s": "oct-sfl",
@@ -16722,7 +16881,9 @@
         "sternmentch2022",
         "bidel2023",
         "hochner2003"
-      ]
+      ],
+      "tx": "NO",
+      "sign": "+"
     },
     {
       "s": "oct-subvertical",
@@ -16732,7 +16893,9 @@
       "kind": "anatomical",
       "refs": [
         "saidel1982"
-      ]
+      ],
+      "tx": "5-HT",
+      "sign": "~"
     },
     {
       "s": "oct-sfl",
@@ -16744,7 +16907,9 @@
         "sternmentch2022",
         "bidel2023",
         "shomrat2011"
-      ]
+      ],
+      "tx": "Glu",
+      "sign": "+"
     },
     {
       "s": "oct-vl-am",
@@ -16807,7 +16972,9 @@
       "refs": [
         "zullo2009",
         "hochner2023"
-      ]
+      ],
+      "tx": "OA",
+      "sign": "+"
     },
     {
       "s": "oct-brain",
@@ -19142,6 +19309,295 @@
       "tx": "Ado",
       "sign": "~",
       "status": "supported",
+      "kind": "mechanistic"
+    },
+    {
+      "s": "oct-ol",
+      "t": "oct-optic-tract",
+      "rel": "optic lobe projection neurons send retinotopically organized axons through the optic tract toward the central brain (octopus)",
+      "refs": [
+        "pungor2023",
+        "jacobs2022"
+      ],
+      "status": "established",
+      "kind": "anatomical"
+    },
+    {
+      "s": "oct-optic-tract",
+      "t": "oct-sfl",
+      "rel": "the optic tract delivers processed visual signals into the superior frontal lobe to initiate visual memory storage (octopus)",
+      "refs": [
+        "pungor2023",
+        "jacobs2022",
+        "bidel2023"
+      ],
+      "status": "established",
+      "kind": "anatomical"
+    },
+    {
+      "s": "oct-optic-tract",
+      "t": "oct-basal",
+      "rel": "optic tract collaterals innervate anterior and lateral basal lobes to drive rapid visually guided motor orienting and camouflage (octopus)",
+      "refs": [
+        "pungor2023",
+        "jacobs2022",
+        "pophale2023"
+      ],
+      "status": "supported",
+      "kind": "anatomical"
+    },
+    {
+      "s": "oct-ol",
+      "t": "oct-peduncle",
+      "rel": "optic lobe cholinergic interneurons project to the peduncle lobe for visuomotor integration and compensatory eye movements (octopus)",
+      "refs": [
+        "pungor2023",
+        "jacobs2022"
+      ],
+      "tx": "ACh",
+      "sign": "+",
+      "status": "supported",
+      "kind": "anatomical"
+    },
+    {
+      "s": "oct-vl",
+      "t": "oct-subvertical",
+      "rel": "vertical lobe large output neurons project through the subvertical tract into the subvertical lobe to convey consolidated memory signals (octopus)",
+      "refs": [
+        "bidel2023",
+        "jacobs2022"
+      ],
+      "status": "established",
+      "kind": "anatomical"
+    },
+    {
+      "s": "oct-subvertical",
+      "t": "oct-basal",
+      "rel": "the subvertical lobe relays learning-derived executive decisions to anterior and median basal motor control centers via dopaminergic projections (octopus)",
+      "refs": [
+        "bidel2023",
+        "jacobs2022"
+      ],
+      "tx": "DA",
+      "sign": "~",
+      "status": "supported",
+      "kind": "mechanistic"
+    },
+    {
+      "s": "oct-sfl",
+      "t": "oct-subvertical",
+      "rel": "median superior frontal axons send direct collateral projections to the subvertical lobe bypassing the vertical lobe matrix (octopus)",
+      "refs": [
+        "bidel2023",
+        "jacobs2022"
+      ],
+      "status": "supported",
+      "kind": "anatomical"
+    },
+    {
+      "s": "oct-basal",
+      "t": "oct-pedal",
+      "rel": "anterior and median basal lobes project to the pedal lobe to command funnel steering and jet-propulsion locomotion (octopus)",
+      "refs": [
+        "jacobs2022",
+        "jung2018"
+      ],
+      "status": "supported",
+      "kind": "anatomical"
+    },
+    {
+      "s": "oct-basal",
+      "t": "oct-brachial",
+      "rel": "anterior basal motor pathways project to the brachial lobe to direct goal-oriented arm extension and sucker grasping via dopamine (octopus)",
+      "refs": [
+        "jacobs2022",
+        "jung2018"
+      ],
+      "tx": "DA",
+      "sign": "+",
+      "status": "supported",
+      "kind": "mechanistic"
+    },
+    {
+      "s": "oct-subvertical",
+      "t": "oct-pvl",
+      "rel": "subvertical lobe descending tracts innervate the palliovisceral lobe to modulate autonomic tone, respiration and mantle pumping (octopus)",
+      "refs": [
+        "jacobs2022",
+        "jung2018"
+      ],
+      "status": "supported",
+      "kind": "anatomical"
+    },
+    {
+      "s": "oct-pedal",
+      "t": "oct-pvl",
+      "rel": "reciprocal tracts link the pedal and palliovisceral subesophageal motor centers to coordinate jetting with mantle cavity contraction (octopus)",
+      "refs": [
+        "jacobs2022",
+        "jung2018"
+      ],
+      "status": "supported",
+      "kind": "anatomical"
+    },
+    {
+      "s": "oct-pedal",
+      "t": "oct-brachial",
+      "rel": "subesophageal tracts connect the pedal and brachial lobes to synchronize crawling gait and sucker adhesion with mantle movement (octopus)",
+      "refs": [
+        "jacobs2022",
+        "jung2018"
+      ],
+      "status": "supported",
+      "kind": "anatomical"
+    },
+    {
+      "s": "oct-brachial",
+      "t": "oct-arm-ns",
+      "rel": "brachial lobe motor neurons descend along the cerebrobrachial tracts into axial nerve cords of the eight arms with tyraminergic modulation (octopus)",
+      "refs": [
+        "jacobs2022",
+        "jung2018",
+        "sepela2025"
+      ],
+      "tx": "TA",
+      "sign": "~",
+      "status": "established",
+      "kind": "anatomical"
+    },
+    {
+      "s": "oct-arm-ns",
+      "t": "oct-brachial",
+      "rel": "axial arm nerve cords send ascending sensory and proprioceptive fibers back into the central brachial lobe (octopus)",
+      "refs": [
+        "sepela2025",
+        "vangiesen2020",
+        "jung2018"
+      ],
+      "status": "established",
+      "kind": "anatomical"
+    },
+    {
+      "s": "oct-brachial",
+      "t": "oct-ifl",
+      "rel": "brachial lobe sensory relays ascend into the inferior frontal lobe chemotactile learning matrix (octopus)",
+      "refs": [
+        "sepela2025",
+        "jung2018",
+        "jacobs2022"
+      ],
+      "status": "supported",
+      "kind": "anatomical"
+    },
+    {
+      "s": "oct-ifl",
+      "t": "oct-sfl",
+      "rel": "associative inter-lobe tracts link the inferior frontal tactile system with the superior frontal visual system (octopus)",
+      "refs": [
+        "jacobs2022",
+        "jung2018"
+      ],
+      "status": "supported",
+      "kind": "anatomical"
+    },
+    {
+      "s": "oct-ifl",
+      "t": "oct-basal",
+      "rel": "inferior frontal output tracts innervate anterior basal motor centers to trigger arm grasping or tactile avoidance (octopus)",
+      "refs": [
+        "jacobs2022",
+        "jung2018"
+      ],
+      "status": "supported",
+      "kind": "anatomical"
+    },
+    {
+      "s": "oct-ifl",
+      "t": "oct-subvertical",
+      "rel": "inferior frontal learning outputs project to the subvertical lobe for tactile memory consolidation (octopus)",
+      "refs": [
+        "jacobs2022",
+        "bidel2023"
+      ],
+      "status": "supported",
+      "kind": "anatomical"
+    },
+    {
+      "s": "oct-ifl",
+      "t": "oct-sbl",
+      "rel": "inferior frontal lobe projects to the superior buccal lobe to initiate beak biting and radula rasping upon food recognition (octopus)",
+      "refs": [
+        "jung2018",
+        "jacobs2022"
+      ],
+      "status": "supported",
+      "kind": "anatomical"
+    },
+    {
+      "s": "oct-peduncle",
+      "t": "oct-optic-gland",
+      "rel": "subpedunculate and peduncle complex fibers supply inhibitory FMRFamide-related neuropeptides to the optic gland to halt premature reproduction and senescence (octopus)",
+      "refs": [
+        "dicosmo1998",
+        "iwakoshiukena2004"
+      ],
+      "tx": "FMRF",
+      "sign": "-",
+      "status": "established",
+      "kind": "mechanistic"
+    },
+    {
+      "s": "oct-subvertical",
+      "t": "oct-optic-gland",
+      "rel": "subvertical lobe neuroendocrine fibers reach the optic gland to modulate hormonal release during sexual maturation (octopus)",
+      "refs": [
+        "jacobs2022",
+        "dicosmo1998"
+      ],
+      "status": "supported",
+      "kind": "anatomical"
+    },
+    {
+      "s": "oct-basal",
+      "t": "oct-pvl",
+      "rel": "anterior and median basal lobes project to the palliovisceral lobe to drive dynamic chromatophore skin patterning during active sleep and camouflage (octopus)",
+      "refs": [
+        "pophale2023",
+        "jacobs2022"
+      ],
+      "status": "supported",
+      "kind": "functional"
+    },
+    {
+      "s": "oct-vl-ln",
+      "t": "oct-subvertical",
+      "rel": "large output neurons of the vertical lobe converge their axons to project into the subvertical lobe (octopus)",
+      "refs": [
+        "bidel2023"
+      ],
+      "status": "established",
+      "kind": "anatomical"
+    },
+    {
+      "s": "oct-peduncle",
+      "t": "oct-fmrf",
+      "rel": "subpedunculate and peduncle lobe fibers express FMRFamide-related neuropeptides that tonically inhibit optic gland secretion (octopus)",
+      "refs": [
+        "dicosmo1998",
+        "iwakoshiukena2004"
+      ],
+      "status": "established",
+      "kind": "mechanistic"
+    },
+    {
+      "s": "oct-sfl",
+      "t": "oct-glu",
+      "rel": "median superior frontal lobe terminals synthesize and release glutamate to excite vertical lobe amacrine interneurons (octopus)",
+      "refs": [
+        "bidel2023",
+        "shomrat2008"
+      ],
+      "status": "established",
       "kind": "mechanistic"
     }
   ],
@@ -22150,6 +22606,14 @@
       "Ado": {
         "label": "Adenosine",
         "entity": "fly-ador"
+      },
+      "FMRF": {
+        "label": "FMRFamide",
+        "entity": "oct-fmrf"
+      },
+      "Glu": {
+        "label": "Glutamate",
+        "entity": "oct-glu"
       }
     },
     "sources": [
@@ -22164,7 +22628,11 @@
       "fly-dpm",
       "fly-sif-n",
       "fly-ipc",
-      "fly-lnv"
+      "fly-lnv",
+      "oct-sfl",
+      "oct-subvertical",
+      "oct-olf-lobe",
+      "oct-peduncle"
     ],
     "targets": [
       {
@@ -22420,7 +22888,9 @@
         "fly-apl",
         "fly-pn",
         "fly-t4t5",
-        "fly-lc"
+        "fly-lc",
+        "oct-optic-tract",
+        "oct-arm-ns"
       ],
       "C": [
         "gut",
@@ -23286,9 +23756,22 @@
         "name": "Neuromodulators",
         "view": "octopus",
         "links": [
-          "oct-olf-lobe>oct-optic-gland"
+          "oct-sfl>oct-vl",
+          "oct-subvertical>oct-vl",
+          "oct-ol>oct-sfl",
+          "oct-basal>oct-brachial",
+          "oct-subvertical>oct-basal",
+          "oct-ol>oct-basal",
+          "oct-basal>oct-arm-ns",
+          "oct-brachial>oct-arm-ns",
+          "oct-olf-lobe>oct-optic-gland",
+          "oct-peduncle>oct-optic-gland",
+          "oct-eye>oct-ol",
+          "oct-ol>oct-peduncle",
+          "oct-sfl>oct-vl-am"
         ],
-        "desc": "How the octopus brain's slow messengers act. The best-placed pathway here is neuroendocrine: the olfactory lobe sends gonadotropin-releasing-hormone fibres through the optic-gland nerve to excite the optic gland (the subpedunculate lobe inhibits it with FMRFamide), the axis that controls sexual maturation. Inside the learning network, serotonin, octopamine, dopamine and nitric oxide modulate vertical-lobe plasticity, but their afferent sources are not resolved in this schematic brain."
+        "desc": "Where the octopus brain gets its neuromodulators and chemical transmitters: nitric oxide (NO) in vertical lobe long-term potentiation; serotonin (5-HT) and dopamine (DA) in learning thresholds and motor reinforcement; octopamine (OA) in predatory arousal; tyramine (TA) in arm reflex tone; GnRH and FMRFamide in neuroendocrine reproduction; acetylcholine (ACh) in visual pathways; and glutamate (Glu) in MSFL-to-VL excitation. Each transmitter has its own colour; 3D arrows trace source clusters to their target lobes.",
+        "nm": true
       },
       {
         "id": "fly-olfaction",
@@ -23383,6 +23866,68 @@
         ],
         "desc": "Where the fruit fly brain gets its neuromodulators: dopamine (DA), serotonin (5-HT), octopamine (OA), tyramine (TA), histamine (HA), nitric oxide (NO), carbon monoxide (CO), SIFamide (SIFa), pigment-dispersing factor (PDF), short neuropeptide F (sNPF), tachykinin (Tk), leucokinin (Lk), insulin-like peptides (DILP), allatostatin A (AstA), drosulfakinin (DSK), and adenosine (Ado). Each transmitter has its own colour; 3D arrows trace source clusters to their target neuropils across the brain and nerve cord.",
         "nm": true
+      },
+      {
+        "id": "oct-tractography",
+        "region": "octopus",
+        "name": "Mesoscale tractography connectome (diffusion MRI)",
+        "desc": "Mesoscale structural wiring reconstructed from high-resolution diffusion MRI tractography in Octopus bimaculoides (Jacobs et al., 2022). Illustrates the 3D scaffold linking optic lobes, optic tracts, supraesophageal cognitive centers (superior frontal, vertical, subvertical), subesophageal motor hubs (basal, pedal, palliovisceral, brachial), and peripheral arm cords.",
+        "links": [
+          "oct-ol>oct-optic-tract",
+          "oct-optic-tract>oct-sfl",
+          "oct-optic-tract>oct-basal",
+          "oct-sfl>oct-vl",
+          "oct-vl>oct-subvertical",
+          "oct-subvertical>oct-basal",
+          "oct-basal>oct-pedal",
+          "oct-pedal>oct-pvl",
+          "oct-basal>oct-brachial",
+          "oct-brachial>oct-arm-ns"
+        ],
+        "view": "octopus"
+      },
+      {
+        "id": "oct-chemotactile",
+        "region": "octopus",
+        "name": "Chemotactile sensory axis: suckers to brain",
+        "desc": "Long-range chemotactile sensorimotor stream resolved in the Octo9 whole-body microCT atlas and functional studies (Sepela et al., 2025; van Giesen et al., 2020; Jung et al., 2018). Chemotactile receptors on suckers relay chemical and mechanical touch through axial arm cords into the brachial lobe, ascending to the inferior frontal lobe tactile memory matrix and basal motor control.",
+        "links": [
+          "oct-sucker>oct-arm-ns",
+          "oct-arm-ns>oct-brachial",
+          "oct-brachial>oct-ifl",
+          "oct-ifl>oct-sfl",
+          "oct-ifl>oct-basal",
+          "oct-ifl>oct-sbl"
+        ],
+        "view": "oct-arms"
+      },
+      {
+        "id": "oct-vl-synaptic",
+        "region": "octopus",
+        "name": "Vertical lobe synaptic connectome (serial EM)",
+        "desc": "High-resolution synaptic wiring of the Octopus vulgaris vertical lobe acquisition network from serial electron microscopy (Bidel, Meirovitch et al., 2023). Median superior frontal axons fan out onto millions of amacrine interneurons, which converge onto large output neurons. Subvertical feedback and basal motor projections complete the learning loop.",
+        "links": [
+          "oct-sfl>oct-vl-am",
+          "oct-vl-am>oct-vl-ln",
+          "oct-vl-ln>oct-subvertical",
+          "oct-subvertical>oct-vl",
+          "oct-subvertical>oct-basal",
+          "oct-sfl>oct-subvertical"
+        ],
+        "view": "oct-vl"
+      },
+      {
+        "id": "oct-sleep-patterning",
+        "region": "octopus",
+        "name": "Active sleep & dynamic skin patterning",
+        "desc": "Synchronized multi-lobe oscillatory dynamics during two-stage octopus sleep recorded with Neuropixels probes (Pophale et al., Nature 2023). During active sleep, neural bursts sweep across the vertical, subvertical and basal lobes to drive rapid, awake-like chromatophore patterning via palliovisceral motor pathways.",
+        "links": [
+          "oct-vl>oct-subvertical",
+          "oct-subvertical>oct-basal",
+          "oct-basal>oct-pvl",
+          "oct-ol>oct-basal"
+        ],
+        "view": "octopus"
       }
     ],
     "composite": {
