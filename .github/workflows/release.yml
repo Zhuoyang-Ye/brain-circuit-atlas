@@ -1,0 +1,28 @@
+name: Build macOS Desktop Release
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  build-macos:
+    runs-on: macos-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build macOS Application & Distributable
+        run: |
+          chmod +x app/build_mac_app.sh
+          ./app/build_mac_app.sh
+
+      - name: Upload Release Asset
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/Brain-Circuit-Atlas-macOS.zip
