@@ -285,15 +285,23 @@
   function save() {
     const c = compose();
     if (!c) return;
+    const item = { id: Date.now(), title: c.statement, chain: chain.slice(), question: questionId, notes, date: new Date().toISOString().slice(0, 10) };
     const saved = CA.store.get('lab.saved', []);
-    saved.unshift({ id: Date.now(), title: c.statement, chain: chain.slice(), question: questionId, notes, date: new Date().toISOString().slice(0, 10) });
+    saved.unshift(item);
     CA.store.set('lab.saved', saved.slice(0, 50));
+    if (CA.hasBackend) {
+      fetch('/api/hypotheses', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ region: CA.region.id, title: item.title, summary: item.notes, chain: item.chain })
+      }).catch(() => {});
+    }
     renderSaved();
   }
   function renderSaved() {
     CA.clear(els.saved);
     const saved = CA.store.get('lab.saved', []);
-    if (!saved.length) { els.saved.append(h('p', { class: 'small muted' }, 'Saved hypotheses stay in this browser.')); return; }
+    if (!saved.length) { els.saved.append(h('p', { class: 'small muted' }, CA.hasBackend ? 'Hypotheses are saved to your local Atlas database.' : 'Saved hypotheses stay in this browser.')); return; }
     saved.forEach((x) => els.saved.append(h('div', { class: 'suggest' },
       h('a', { href: '#', class: 'small', onclick: (ev) => { ev.preventDefault(); notes = x.notes || ''; CA.store.set('lab.notes', notes); questionId = x.question; CA.store.set('lab.question', questionId); setChain(x.chain); } }, x.title),
       h('button', { class: 'btn ghost', title: 'Delete', onclick: () => { CA.store.set('lab.saved', CA.store.get('lab.saved', []).filter((y) => y.id !== x.id)); renderSaved(); } }, '✕'))));

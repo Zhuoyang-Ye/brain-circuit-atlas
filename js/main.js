@@ -151,7 +151,9 @@
           '), ', ext('https://doi.org/10.6084/m9.figshare.13349282', 'figshare'), ', MIT license; structural measures from the hemibrain connectome (Scheffer et al., 2020, eLife; ',
           ext('https://doi.org/10.7554/eLife.57443', 'doi:10.7554/eLife.57443'), ').'),
         h('li', {}, '3D rendering: ', ext('https://threejs.org/', 'three.js'), ' (MIT license).')),
-      h('p', { class: 'tiny muted', style: { marginTop: '12px' } }, `Version ${D.meta.version}, knowledge base built ${D.built}. Press / to search and Esc to close panels. The sun/moon button switches between light and dark mode.`));
+      h('p', { class: 'tiny muted', style: { marginTop: '12px' } }, `Version ${D.meta.version}, knowledge base built ${D.built}. Press / to search and Esc to close panels. The sun/moon button switches between light and dark mode.`),
+      CA.hasBackend && h('div', { style: { marginTop: '12px', borderTop: '1px solid var(--border)', paddingTop: '10px' } },
+        h('button', { class: 'btn small', onclick: (e) => { e.preventDefault(); CA.openCloudModal(); } }, 'Cloudflare R2 & Website Sync Settings')));
     m.appendChild(card);
     m.classList.remove('hidden');
   }

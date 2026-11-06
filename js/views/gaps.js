@@ -56,19 +56,32 @@
     for (let i = 0; i < jobs.length; i++) {
       if (aborted) return;
       const [d, l] = jobs[i];
-      const url = `${ESEARCH}?db=pubmed&rettype=count&retmode=json&tool=brain-circuit-atlas&term=${encodeURIComponent(qTerm(d, l))}`;
-      let n = null;
-      for (let attempt = 0; attempt < 3 && n == null; attempt++) {
+      const term = qTerm(d, l);
+      let n = null, wasCached = false;
+      if (CA.hasBackend) {
         try {
-          const r = await fetch(url);
-          if (r.ok) n = +(await r.json()).esearchresult.count;
-          else await sleep(1500);
-        } catch (e) { await sleep(1500); }
+          const r = await fetch(`/api/pubmed/count?term=${encodeURIComponent(term)}`);
+          if (r.ok) {
+            const data = await r.json();
+            n = data.count;
+            wasCached = data.cached;
+          }
+        } catch (e) {}
+      }
+      if (n == null) {
+        const url = `${ESEARCH}?db=pubmed&rettype=count&retmode=json&tool=brain-circuit-atlas&term=${encodeURIComponent(term)}`;
+        for (let attempt = 0; attempt < 3 && n == null; attempt++) {
+          try {
+            const r = await fetch(url);
+            if (r.ok) n = +(await r.json()).esearchresult.count;
+            else await sleep(1500);
+          } catch (e) { await sleep(1500); }
+        }
       }
       if (n == null) { cacheNote.textContent = 'PubMed did not respond; try again later.'; fetchBtn.disabled = false; return; }
       counts[(d || '*') + '|' + (l || '*')] = n;
       progress.firstChild.style.width = ((i + 1) / jobs.length * 100) + '%';
-      await sleep(360);   // stay under NCBI's limit of 3 requests per second
+      if (!wasCached) await sleep(360);   // stay under NCBI's limit of 3 requests per second only for live fetches
     }
     pm = { date: new Date().toISOString().slice(0, 10), counts };
     CA.store.set(key, pm);
