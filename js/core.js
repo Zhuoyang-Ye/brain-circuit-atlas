@@ -2,6 +2,7 @@
 (function () {
   'use strict';
   const D = window.CA_DATA;
+  window.CA_MESHES = window.CA_MESHES || {};
   const CA = window.CA = { D, views: {}, variants: {}, order: [], current: null, currentImpl: null, params: {}, state: {} };
 
   /* ---------- indexes ---------- */

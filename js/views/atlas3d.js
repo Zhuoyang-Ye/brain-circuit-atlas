@@ -500,7 +500,7 @@
     el.msg.textContent = 'Loading 3D anatomy…';
     el.speciesNote.textContent = (CA.region.speciesNote || {})[sp] || '';
     fillViews();
-    CA.loadScript(`js/data/meshes_${sp}.js`).then(() => {
+    CA.loadScript(`js/data/meshes_${sp}.js?v=0.2.5`).then(() => {
       if (disposed || token !== buildToken) return;
       const bundle = window.CA_MESHES && window.CA_MESHES[sp];
       if (!bundle) throw new Error('mesh bundle missing for ' + sp);
