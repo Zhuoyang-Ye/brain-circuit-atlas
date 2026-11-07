@@ -426,7 +426,7 @@
         oninput: (ev) => { opts.opacity = +ev.target.value; CA.store.set('atlas.opts', opts); applyMaterials(); } }),
       h('div', { class: 'small', style: { marginTop: '6px' } }, 'Structures: see-through ↔ solid'),
       h('input', { type: 'range', min: -1, max: 1, step: 0.05, value: opts.solid, style: { width: '100%' },
-        title: 'Opacity of the brain structures. The middle keeps the default look; double-click to reset.',
+        title: 'Opacity of involved brain structures. The middle keeps the default look; double-click to reset.',
         oninput: (ev) => { opts.solid = +ev.target.value; CA.store.set('atlas.opts', opts); applyMaterials(); },
         ondblclick: (ev) => { ev.target.value = 0; opts.solid = 0; CA.store.set('atlas.opts', opts); applyMaterials(); } }),
       xrayLabel,
@@ -729,7 +729,8 @@
     }
     if (!hov && legendOn() && slotOf.has(ownerOf.get(m))) o = Math.max(o, 0.45);   // a structure with a legend colour of its own shows it
     if (r.group === 'cerebellum' && opts.xray && !hov) return 0.22;   // x-ray keeps the cerebellum see-through
-    return hov ? o : solidify(o);
+    const isInv = focusIds ? (fit || (legendOn() && slotOf.has(ownerOf.get(m)))) : (meshInRegion(r) || meshRegion(r) === CA.region.id);
+    return hov ? o : (isInv ? solidify(o) : o);
   }
   function paint() {
     if (!scene) return;
@@ -761,7 +762,7 @@
               : base.clone().lerp(white, TINT);                    // everything else: a light tint
         c.material.color.copy(col);
         if (!o.userData.rec && c.material.userData.op0 != null) {   // markers and body parts
-          c.material.opacity = hov ? Math.max(c.material.userData.op0, 0.92) : fit ? c.material.userData.op0 : Math.min(c.material.userData.op0, 0.25);
+          c.material.opacity = hov ? Math.max(c.material.userData.op0, 0.92) : fit ? solidify(c.material.userData.op0) : Math.min(c.material.userData.op0, 0.25);
         }
         if (c.material.emissive) {
           c.material.emissive.copy(on ? new T.Color(0x4a7dff) : col);
