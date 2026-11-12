@@ -213,25 +213,61 @@
   CA.regionById = byId(D.regions);
   CA.regionMembers = Object.fromEntries(D.regions.map((r) => [r.id, new Set(D.regionEntities[r.id] || [])]));
   CA.region = CA.regionById[CA.store.get('region')] || D.regions[0];
+  // A condition (ADHD) is a profile that runs across brain regions. It is stored with the regions and works like one
+  // (its own entities, circuits, queries and papers), but it is chosen in the Condition menu, not the Region menu:
+  // the atlas is indexed by anatomy, and a condition is laid over it. While a condition is on, the Region menu reads
+  // "All regions"; choosing a region there, or "None" in the Condition menu, leaves the condition.
+  CA.isCondition = (r) => !!r && r.kind === 'condition';
+  CA.anatomy = D.regions.filter((r) => !CA.isCondition(r));
+  CA.conditions = D.regions.filter(CA.isCondition);
+  /** A region's name inside a sentence ("prefrontal cortex", "ADHD"), and with its article ("the prefrontal cortex", "ADHD"). */
+  CA.regionNoun = (r) => (CA.isCondition(r) ? r.label : r.label.toLowerCase());
+  CA.theRegion = (r) => (CA.isCondition(r) ? r.label : 'the ' + r.label.toLowerCase());
+  const lastAnatomy = () => CA.regionById[CA.store.get('region.anatomy')] || CA.anatomy[0];
+  if (!CA.isCondition(CA.region)) CA.store.set('region.anatomy', CA.region.id);
   CA.setRegion = (id) => {
     if (!CA.regionById[id] || id === CA.region.id) return;
     CA.region = CA.regionById[id];
     CA.store.set('region', id);
+    if (!CA.isCondition(CA.region)) CA.store.set('region.anatomy', id);
     CA.emit('region', CA.region);
+  };
+  /** Turn a condition on, or (with no id) off: back to the brain region shown before it. */
+  CA.setCondition = (id) => CA.setRegion(id && CA.regionById[id] ? id : lastAnatomy().id);
+  const ALL_REGIONS = '*';   // the Region menu's entry while a condition is on
+  const syncPickers = () => {
+    const cond = CA.isCondition(CA.region);
+    document.querySelectorAll('select.region-pick:not(.condition-pick)').forEach((s) => {
+      const all = s.querySelector('option[data-all]');
+      if (all) all.hidden = all.disabled = !cond;
+      s.value = cond ? ALL_REGIONS : CA.region.id;
+    });
+    document.querySelectorAll('select.condition-pick').forEach((s) => { s.value = cond ? CA.region.id : ''; });
   };
   /** The region dropdown: in the 3D atlas's left panel and at the top left of every other view. */
   CA.regionPicker = () => {
     // regions grouped by animal when there is more than one (`group` on a region; the mammalian regions leave it out)
-    const groups = [...new Set(D.regions.map((r) => r.group || 'Mammals'))];
+    const groups = [...new Set(CA.anatomy.map((r) => r.group || 'Mammals'))];
     const opt = (r) => CA.h('option', { value: r.id }, r.label);
+    const cond = CA.isCondition(CA.region);
     const sel = CA.h('select', { class: 'region-pick', title: 'Brain region: switches the circuits, layouts, queries and papers shown', 'aria-label': 'Brain region',
-      onchange: () => { CA.setRegion(sel.value); sel.blur(); } },
-    groups.length < 2 ? D.regions.map(opt)
-      : groups.map((g) => CA.h('optgroup', { label: g }, D.regions.filter((r) => (r.group || 'Mammals') === g).map(opt))));
-    sel.value = CA.region.id;
+      onchange: () => { if (sel.value !== ALL_REGIONS) CA.setRegion(sel.value); sel.blur(); } },
+    CA.conditions.length ? CA.h('option', { value: ALL_REGIONS, 'data-all': '', hidden: !cond, disabled: !cond }, 'All regions') : null,
+    groups.length < 2 ? CA.anatomy.map(opt)
+      : groups.map((g) => CA.h('optgroup', { label: g }, CA.anatomy.filter((r) => (r.group || 'Mammals') === g).map(opt))));
+    sel.value = cond ? ALL_REGIONS : CA.region.id;
     return sel;
   };
-  CA.on('region', (r) => document.querySelectorAll('select.region-pick').forEach((s) => { s.value = r.id; }));
+  /** The condition dropdown, next to the region dropdown: "None", then each condition's profile. */
+  CA.conditionPicker = () => {
+    const sel = CA.h('select', { class: 'region-pick condition-pick', 'aria-label': 'Condition',
+      title: 'Condition: lays a clinical profile over the atlas, with its circuits, neuromodulators and papers across brain regions. None shows the brain region alone.',
+      onchange: () => { CA.setCondition(sel.value); sel.blur(); } },
+    CA.h('option', { value: '' }, 'None'), CA.conditions.map((r) => CA.h('option', { value: r.id }, r.label)));
+    sel.value = CA.isCondition(CA.region) ? CA.region.id : '';
+    return sel;
+  };
+  CA.on('region', syncPickers);
   CA.inRegion = (id, r) => CA.regionMembers[(r || CA.region).id].has(id);
   CA.regionOf = (id) => (CA.ent[id] && CA.ent[id].region ? CA.regionById[CA.ent[id].region] : null);
   CA.levelDesc = (lv) => (CA.region.levelDesc || {})[lv] || (CA.levelById[lv] || {}).desc || '';
@@ -407,7 +443,7 @@
       h('div', { class: 'row' }, CA.lvlTag(e.level), e.kind ? h('span', { class: 'muted small' }, e.kind) : null),
       h('h2', {}, e.name),
       CA.regionOf(id) && CA.regionOf(id) !== CA.region ? h('div', { class: 'small muted', style: { marginTop: '-4px', marginBottom: '6px' } },
-        'Part of the ' + CA.regionOf(id).label.toLowerCase() + ' content. ',
+        'Part of the ' + CA.regionNoun(CA.regionOf(id)) + ' content. ',
         h('a', { href: '#', onclick: (ev) => { ev.preventDefault(); CA.setRegion(e.region); } }, 'Switch to ' + CA.regionOf(id).label)) : null,
       e.aka && e.aka.length ? h('div', { class: 'small muted', style: { marginTop: '-4px', marginBottom: '8px' } }, 'Also: ' + e.aka.join(', ')) : null,
       h('p', { class: 'summary' }, e.summary),
@@ -557,7 +593,9 @@
   function regionRow(root) {
     if (D.regions.length < 2 || root.querySelector('select.region-pick')) return;
     const head = root.querySelector('.page-head > div');
-    if (head) head.prepend(h('label', { class: 'region-row' }, h('span', {}, 'Region'), CA.regionPicker()));
+    if (head) head.prepend(h('div', { class: 'region-rows' },
+      h('label', { class: 'region-row' }, h('span', {}, 'Region'), CA.regionPicker()),
+      CA.conditions.length ? h('label', { class: 'region-row' }, h('span', {}, 'Condition'), CA.conditionPicker()) : null));
   }
 
   /** Views that cover other regions only say so above their content and offer a switch. */
@@ -570,8 +608,8 @@
     CA.clear(bar);
     if (!off) return;
     const homes = D.regions.filter((x) => x.views.includes(v));
-    CA.append(bar, h('span', {}, `${CA.views[v].title} covers ${homes.map((x) => 'the ' + x.label.toLowerCase()).join(' and ')} only; `
-      + `there is nothing here on the ${CA.region.label.toLowerCase()} yet.`),
+    CA.append(bar, h('span', {}, `${CA.views[v].title} covers ${homes.map((x) => CA.theRegion(x)).join(' and ')} only; `
+      + `there is nothing here on ${CA.theRegion(CA.region)} yet.`),
     homes.map((x) => h('button', { class: 'btn', onclick: () => CA.setRegion(x.id) }, 'Switch to ' + x.label)));
   }
 

@@ -74,7 +74,7 @@
     const others = D.papers.length - D.papers.filter((p) => p.regions.includes(CA.region.id)).length;
     CA.append(box,
       q,
-      D.regions.length > 1 ? h('label', { class: 'check small', style: { marginTop: '10px' }, title: `Only papers on the ${CA.region.label.toLowerCase()} are listed unless this is ticked` },
+      D.regions.length > 1 ? h('label', { class: 'check small', style: { marginTop: '10px' }, title: `Only papers on ${CA.theRegion(CA.region)} are listed unless this is ticked` },
         h('input', { type: 'checkbox', checked: f.allRegions, onchange: () => { f.allRegions = !f.allRegions; update(); } }),
         'Include other regions', h('span', { class: 'muted' }, ` +${others}`)) : null,
       h('h4', {}, 'Level'),
@@ -204,7 +204,7 @@
 
   function render() {
     const all = pool(), list = sorted(all.filter(matches));
-    els.intro.textContent = `The ${all.length} publications ${f.allRegions ? '' : 'on the ' + CA.region.label.toLowerCase() + ' '}behind every entity, connection and map score, `
+    els.intro.textContent = `The ${all.length} publications ${f.allRegions ? '' : 'on ' + CA.theRegion(CA.region) + ' '}behind every entity, connection and map score, `
       + 'with metadata verified against PubMed. Each card states the finding the atlas relies on.';
     els.count.textContent = `${list.length} of ${all.length} papers`;
     renderStack(list);

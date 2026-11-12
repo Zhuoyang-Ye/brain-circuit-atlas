@@ -102,7 +102,7 @@
     const m = CA.clear(document.getElementById('modal'));
     const ext = (href, text) => h('a', { href, target: '_blank', rel: 'noopener' }, text);
     const macaque = D.atlas3d.species.includes('macaque');   // switched off in knowledge.json atlas3d.species → no macaque credit
-    const later = D.regions.slice(1).map((r) => 'the ' + r.label.toLowerCase());
+    const later = CA.anatomy.slice(1).map((r) => 'the ' + r.label.toLowerCase());
     const followed = later.length < 2 ? later.join('') : later.slice(0, -1).join(', ') + ' and ' + later[later.length - 1];
     const card = h('div', { class: 'card', onclick: (ev) => ev.stopPropagation() },
       h('div', { class: 'row', style: { justifyContent: 'space-between' } }, h('h2', { style: { margin: 0 } }, D.meta.title),
@@ -112,6 +112,7 @@
         'It began with the cerebellum, which has several times as many neurons as the cerebral cortex and joins in motor control, cognition, emotion and social behavior',
         later.length ? `; ${followed} followed. ` : '. ',
         'Pick a region in the Region menu, at the top left of each page (in the 3D atlas, at the top of the left panel). ',
+        CA.conditions.length ? `The Condition menu next to it lays a clinical profile (${CA.conditions.map((r) => r.label).join(', ')}) over the atlas: its circuits, neuromodulators, structural findings and treatments across brain regions, with the Region menu reading “All regions”; choose None, or a region, to leave it. ` : '',
         'Every connection is graded by its evidence and linked to the papers behind it, so you can see what is established, what is debated, and where the gaps are.'),
       h('h4', {}, 'Views'),
       h('div', {}, NAV.filter(([id]) => CA.views[id]).map(([id, label, desc]) => h('div', { class: 'small', style: { margin: '3px 0' } },

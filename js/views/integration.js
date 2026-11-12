@@ -62,7 +62,7 @@
     const regionBox = D.regions.length > 1 ? h('label', { class: 'check small', title: 'Show the entities and links of every region' },
       h('input', { type: 'checkbox', checked: allRegions, onchange: (ev) => { CA.store.set('scales.allRegions', ev.target.checked); CA.clear(root); unmount(); mount(root, null); } }),
       'All regions') : null;
-    const what = scope === 'all' ? 'Every entity in the knowledge base' : `Every ${CA.region.label.toLowerCase()} entity, with the shared structures and functions it links to`;
+    const what = scope === 'all' ? 'Every entity in the knowledge base' : `Every ${CA.regionNoun(CA.region)} entity, with the shared structures and functions it links to`;
     const domChips = h('div', { class: 'chips' }, D.domains.map((d) => {
       const chip = CA.domainChip(d.id, { onclick: () => { domain = domain === d.id ? null : d.id; domChips.querySelectorAll('.chip').forEach((c) => c.classList.toggle('on', c.dataset.d === domain)); paint(); } });
       chip.dataset.d = d.id;

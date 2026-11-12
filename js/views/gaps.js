@@ -113,7 +113,7 @@
     root.appendChild(h('div', { class: 'page' },
       h('div', { class: 'page-head' }, h('div', {},
         h('h2', {}, 'Evidence & gaps'),
-        h('p', {}, `Literature on the ${R.label.toLowerCase()}: rows are functional domains, columns are levels of analysis. Thin cells, especially relative to their row and column, mark places where mechanisms are not yet connected across scales: candidate questions for new research.`))),
+        h('p', {}, `Literature on ${CA.theRegion(R)}: rows are functional domains, columns are levels of analysis. Thin cells, especially relative to their row and column, mark places where mechanisms are not yet connected across scales: candidate questions for new research.`))),
       h('div', { class: 'card' },
         h('div', { class: 'row' }, seg, h('span', { class: 'grow' }), fetchBtn, progress, cacheNote),
         helpEl = h('p', { class: 'small muted', style: { margin: '8px 0 0' } }, modeHelp())),
@@ -131,9 +131,9 @@
 
   function modeHelp() {
     const R = CA.region;
-    return mode === 'curated' ? `Papers on the ${R.label.toLowerCase()} in this site's curated library, tagged with each domain and level. Small by design: it shows what the atlas covers, not the field.`
+    return mode === 'curated' ? `Papers on ${CA.theRegion(R)} in this site's curated library, tagged with each domain and level. Small by design: it shows what the atlas covers, not the field.`
       : mode === 'pubmed' ? `Live PubMed counts for ${R.query} AND domain terms AND level terms (title/abstract keyword queries; approximate).`
-        : `Observed ÷ expected PubMed count, where expected = row total × column total ÷ all ${R.label.toLowerCase()} papers. Red = fewer papers than the row and column would predict.`;
+        : `Observed ÷ expected PubMed count, where expected = row total × column total ÷ all ${CA.regionNoun(R)} papers. Red = fewer papers than the row and column would predict.`;
   }
 
   function renderTable() {

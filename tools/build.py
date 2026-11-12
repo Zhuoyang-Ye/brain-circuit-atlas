@@ -164,6 +164,11 @@ def validate(kb, papers, meshes, ck):
             for l in r.get(f, {}):
                 if l not in levels:
                     ck.err(f'region {rid}: {f} has unknown level {l!r}')
+        # a condition (ADHD) is a profile across regions: listed in the Condition menu, not the Region menu
+        if r.get('kind') not in (None, 'condition'):
+            ck.err(f"region {rid}: kind must be 'condition' or left out, got {r.get('kind')!r}")
+    if regions and regions[0].get('kind') == 'condition':
+        ck.err('the first entry of regions must be a brain region, not a condition')
 
     link_ids = set()
     degree = {i: 0 for i in ents}
@@ -245,6 +250,11 @@ def validate(kb, papers, meshes, ck):
         for lid in c['links']:
             if lid not in link_ids:
                 ck.err(f"3D circuit {c['id']}: link {lid} not in knowledge base")
+        for i in c.get('focus', []):   # structures lit up without a pathway
+            if i not in ents:
+                ck.err(f"3D circuit {c['id']}: focus names unknown entity {i!r}")
+        if not c['links'] and not c.get('focus'):
+            ck.err(f"3D circuit {c['id']}: needs links or focus")
 
     # neuromodulator matrix, and the optional transmitter / receptor / sign fields on links
     nm = kb.get('neuromodulation', {})

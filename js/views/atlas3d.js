@@ -236,7 +236,7 @@
         h('li', {}, 'Go deeper: ', deeper.map(([v, label], i) => [i ? ', ' : '', h('a', { href: '#/' + v }, label)]), '.'),
         h('li', {}, 'Find what is unknown in ', h('a', { href: '#/gaps' }, 'Evidence & gaps'), ' and draft tests in the ', h('a', { href: '#/lab' }, 'Hypothesis lab'), '.')),
         h('div', { class: 'row' },
-          h('button', { class: 'btn primary', onclick: () => { flyTo(R.view); } }, 'Zoom to ' + R.label.toLowerCase()),
+          h('button', { class: 'btn primary', onclick: () => { flyTo(R.view); } }, 'Zoom to ' + CA.regionNoun(R)),
           h('button', { class: 'btn', onclick: () => { CA.store.set('intro.dismissed', true); box.remove(); el.intro = null; } }, 'Got it'))));
     return box;
   }
@@ -254,13 +254,13 @@
     links.forEach((l) => { (byTx[l.tx] = byTx[l.tx] || new Set()).add(inline(l.s)); });
     const parts = Object.entries(byTx).map(([tx, srcs]) => `${NM.tx[tx].label.toLowerCase()} (${tx}) from the ${[...srcs].join(' and the ')}`);
     const desc = links.length
-      ? `Where the ${R.label.toLowerCase()} gets its neuromodulators: ${parts.join('; ')}. Each transmitter has its own colour, named in the key; arrows point from the source nucleus to its target.`
-      : `No neuromodulatory pathway with both ends placed in this atlas is curated for the ${R.label.toLowerCase()} yet.`;
+      ? `Where ${CA.theRegion(R)} gets its neuromodulators: ${parts.join('; ')}. Each transmitter has its own colour, named in the key; arrows point from the source nucleus to its target.`
+      : `No neuromodulatory pathway with both ends placed in this atlas is curated for ${CA.theRegion(R)} yet.`;
     return { id: 'nm-auto', nm: true, fit: true, name: 'Neuromodulators', desc, links: links.map((l) => l.id) };
   }
   function regionCircuits() {
     return [...A3.circuits.filter((c) => c.region === CA.region.id && !isNMCircuit(c)), nmCircuit(CA.region),
-      { id: 'all', name: 'All mapped connections', desc: `Every anatomical or functional link of the ${CA.region.label.toLowerCase()} content with both ends placed in this atlas.` },
+      { id: 'all', name: 'All mapped connections', desc: `Every anatomical or functional link of the ${CA.regionNoun(CA.region)} content with both ends placed in this atlas.` },
       { id: 'none', name: 'Anatomy only', desc: 'Hide pathways. Click a structure to show its own connections.' }];
   }
   const currentCircuit = () => regionCircuits().find((c) => c.id === circuitId) || null;
@@ -335,7 +335,7 @@
     markSpecies();
     if (!speciesOK(CA.region, sp)) {
       const last = CA.store.get('atlas.region.' + groupOf(sp), null);
-      const R = D.regions.find((r) => r.id === last && speciesOK(r, sp)) || D.regions.find((r) => speciesOK(r, sp));
+      const R = D.regions.find((r) => r.id === last && speciesOK(r, sp)) || CA.anatomy.find((r) => speciesOK(r, sp));
       if (R) { switching = true; try { CA.setRegion(R.id); } finally { switching = false; } }
     }
     loadSpecies(sp);
@@ -348,7 +348,7 @@
   function fillViews() {
     if (!el.views) return;
     CA.clear(el.views);
-    [['overview', 'Overview'], ...D.regions.filter((r) => speciesOK(r, species)).map((r) => [r.view, r.label]), ['left', 'Left'], ['back', 'Back'], ['top', 'Top'], ['below', 'Below']]
+    [['overview', 'Overview'], ...CA.anatomy.filter((r) => speciesOK(r, species)).map((r) => [r.view, r.label]), ['left', 'Left'], ['back', 'Back'], ['top', 'Top'], ['below', 'Below']]
       .forEach(([k, label]) => el.views.appendChild(h('span', { class: 'chip', onclick: () => flyTo(k) }, label)));
   }
 
@@ -400,7 +400,9 @@
       onchange: () => { chooseSpecies(speciesPick.value); speciesPick.blur(); }
     }, SPECIES.map(([sp, label]) => h('option', { value: sp }, label)));
     speciesPick.value = species;
-    el.speciesNote = h('div', { class: 'desc' });
+    // the note on what this species' model shows: tucked away, shown while the pointer or keyboard focus is on the menu
+    el.speciesNote = h('div', { class: 'desc species-note', id: 'atlas-species-note', role: 'note' });
+    speciesPick.setAttribute('aria-describedby', 'atlas-species-note');
     el.circs = h('div', {});
     el.circDesc = h('div', { class: 'desc' });
     el.txKey = h('div', { class: 'tx-key', style: { display: 'none' } });
@@ -417,8 +419,9 @@
     const xrayLabel = check('xray', 'X-ray cerebellum (see nuclei)', applyMaterials);
     el.xrayBox = xrayLabel.querySelector('input');
     CA.append(box,
-      h('h4', { style: { marginTop: 0 } }, 'Species'), speciesPick, el.speciesNote,
+      h('h4', { style: { marginTop: 0 } }, 'Species'), h('div', { class: 'species-box' }, speciesPick, el.speciesNote),
       D.regions.length > 1 ? [h('h4', {}, 'Region'), CA.regionPicker()] : null,
+      CA.conditions.length ? [h('h4', {}, 'Condition'), CA.conditionPicker()] : null,
       h('h4', {}, 'Circuits'), el.circs, el.circDesc, el.txKey, el.traceBox,
       h('h4', {}, 'Display'),
       check('shell', 'Brain surface', applyMaterials),
@@ -884,6 +887,15 @@
       drawnLinks.forEach((d) => { add(d.l.s); add(d.l.t); });
       collapsed.forEach((l) => { add(l.s); add(l.t); });
       add(sel);
+    }
+    // a circuit may name structures to light up where there is no pathway to draw (`focus`: group differences in volume, say)
+    const lit = (circ && circuitId !== 'none' && circ.focus || []).filter((id) => resolve(id));
+    if (lit.length) {
+      focusIds = focusIds || new Set();
+      lit.forEach((id) => {
+        focusIds.add(id); focusIds.add(resolve(id)); ((A3.composite || {})[id] || []).forEach((k) => focusIds.add(k));
+        if (!labelEls.some((x) => !x.tag && x.pos.distanceTo(posOf(id)) < 0.08)) addLabel(id, true);
+      });
     }
     if (sel) addLabel(sel, true);
     if (opts.labels && circuitId === 'none' && !sel) Object.keys(positions).forEach((id) => { if (CA.ent[id] && !['body', 'gut', 'spinal'].includes(id)) addLabel(id); });

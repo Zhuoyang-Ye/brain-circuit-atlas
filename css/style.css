@@ -132,9 +132,17 @@ kbd { background: var(--bg3); border: 1px solid var(--line); border-radius: 4px;
 select.region-pick, select.species-pick { font-size: 1rem; font-weight: 600; color: var(--text); padding: 6px 8px; cursor: pointer; }
 .atlas-controls select.region-pick, .atlas-controls select.species-pick { width: 100%; }
 .atlas-controls select.species-pick { margin-bottom: 2px; }
+/* the note on what a species' model shows: hidden until the pointer (or keyboard focus) is on the species menu */
+.species-box { position: relative; }
+.atlas-controls .species-note { display: none; position: absolute; left: 0; right: 0; top: 100%; z-index: 6; margin: 4px 0 0; padding: 8px 10px;
+  background: var(--bg2); border: 1px solid var(--line); border-radius: 6px; box-shadow: 0 6px 18px rgba(0, 0, 0, .28); color: var(--text); pointer-events: none; }
+.species-box:hover .species-note:not(:empty), .species-box:focus-within .species-note:not(:empty) { display: block; }
+/* Region and Condition, side by side at the top left of a page */
+.region-rows { display: flex; flex-wrap: wrap; column-gap: 22px; }
 .region-row { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 12px; font-size: .9rem; font-weight: 600; color: var(--muted);
   text-transform: uppercase; letter-spacing: .04em; }
 .region-row select.region-pick { min-width: 190px; text-transform: none; letter-spacing: normal; }
+.region-row select.condition-pick { min-width: 120px; }
 #regionbar { display: none; position: fixed; top: var(--topbar); left: 0; right: 0; height: 38px; align-items: center; gap: 12px; padding: 0 16px;
   background: var(--regionbar-bg); border-bottom: 1px solid var(--line); color: var(--muted); font-size: .88rem; z-index: 40; }
 #regionbar .btn { padding: 3px 10px; }
