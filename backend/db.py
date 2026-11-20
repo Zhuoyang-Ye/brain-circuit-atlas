@@ -4,15 +4,22 @@ Brain Circuit Atlas - SQLite Database Layer
 Stores user hypotheses, research notes, bookmarks, and cached PubMed queries.
 """
 import os
+import sys
 import sqlite3
 import pathlib
 import json
 from datetime import datetime
 
 def get_db_path():
-    """Returns application data path in macOS Application Support, with fallback to local."""
+    """Returns application data path in macOS Application Support or Windows %APPDATA%, with fallback to local."""
     home = pathlib.Path.home()
-    app_dir = home / 'Library' / 'Application Support' / 'BrainCircuitAtlas'
+    if os.name == 'nt' or sys.platform == 'win32':
+        appdata = os.environ.get('APPDATA')
+        app_dir = pathlib.Path(appdata) / 'BrainCircuitAtlas' if appdata else home / 'AppData' / 'Roaming' / 'BrainCircuitAtlas'
+    elif sys.platform == 'darwin':
+        app_dir = home / 'Library' / 'Application Support' / 'BrainCircuitAtlas'
+    else:
+        app_dir = home / '.config' / 'BrainCircuitAtlas'
     try:
         app_dir.mkdir(parents=True, exist_ok=True)
         return str(app_dir / 'atlas.db')

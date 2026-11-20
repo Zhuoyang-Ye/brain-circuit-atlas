@@ -1,4 +1,4 @@
-name: Build macOS Desktop Release
+name: Build Desktop Releases
 
 on:
   release:
@@ -26,3 +26,23 @@ jobs:
         with:
           files: |
             dist/Brain-Circuit-Atlas-macOS.zip
+
+  build-windows:
+    runs-on: windows-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Windows Application & Distributable
+        run: |
+          powershell -ExecutionPolicy Bypass -File app/build_win_app.ps1 -ZipPackage
+
+      - name: Upload Release Asset
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/Brain-Circuit-Atlas-v0.3.0-Windows.zip

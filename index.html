@@ -10,7 +10,7 @@
 (function () { var t; try { t = JSON.parse(localStorage.getItem('ca.theme')); } catch (e) {}
   if (t !== 'light' && t !== 'dark') t = window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
   document.documentElement.setAttribute('data-theme', t); })();</script>
-<link rel="stylesheet" href="css/style.css?v=0.2.7">
+<link rel="stylesheet" href="css/style.css?v=0.3.0">
 </head>
 <body>
 <header class="topbar">
@@ -19,7 +19,7 @@
       <path class="logo-body" d="M3 17c0-7 6-12 13-12s13 5 13 12c0 5-5 9-13 9S3 22 3 17z" fill="#1c2230" stroke="#58a6ff" stroke-width="1.6"/>
       <path class="logo-folds" d="M7 17c2-4 5-6 9-6s7 2 9 6M9.5 21c2-2.6 4-3.6 6.5-3.6s4.5 1 6.5 3.6M16 5.2v4" fill="none" stroke="#79c0ff" stroke-width="1.3" stroke-linecap="round"/>
     </svg>
-    <span>Brain Circuit Atlas <small>v0.2</small></span>
+    <span>Brain Circuit Atlas <small>v0.3</small></span>
   </a>
   <!-- phones: the view tabs fold into a menu behind this button (css: max-width 860px) -->
   <button id="nav-toggle" class="icon-btn nav-toggle" type="button" aria-controls="nav" aria-expanded="false" title="Views" aria-label="Open the list of views">
@@ -66,20 +66,20 @@
 
 <script src="js/vendor/three.min.js"></script>
 <script src="js/vendor/OrbitControls.js"></script>
-<script src="js/data/bundle.js?v=0.2.7"></script>
-<script src="js/core.js?v=0.2.7"></script>
-<script src="js/backend.js?v=0.2.7"></script>
-<script src="js/views/atlas3d.js?v=0.2.7"></script>
-<script src="js/views/flatmap.js?v=0.2.7"></script>
-<script src="js/views/fly_map.js?v=0.2.7"></script>
-<script src="js/views/circuit.js?v=0.2.7"></script>
-<script src="js/views/fly_circuit.js?v=0.2.7"></script>
-<script src="js/views/molecular.js?v=0.2.7"></script>
-<script src="js/views/fly_molecules.js?v=0.2.7"></script>
-<script src="js/views/integration.js?v=0.2.7"></script>
-<script src="js/views/gaps.js?v=0.2.7"></script>
-<script src="js/views/hypothesis.js?v=0.2.7"></script>
-<script src="js/views/library.js?v=0.2.7"></script>
-<script src="js/main.js?v=0.2.7"></script>
+<script src="js/data/bundle.js?v=0.3.0"></script>
+<script src="js/core.js?v=0.3.0"></script>
+<script src="js/backend.js?v=0.3.0"></script>
+<script src="js/views/atlas3d.js?v=0.3.0"></script>
+<script src="js/views/flatmap.js?v=0.3.0"></script>
+<script src="js/views/fly_map.js?v=0.3.0"></script>
+<script src="js/views/circuit.js?v=0.3.0"></script>
+<script src="js/views/fly_circuit.js?v=0.3.0"></script>
+<script src="js/views/molecular.js?v=0.3.0"></script>
+<script src="js/views/fly_molecules.js?v=0.3.0"></script>
+<script src="js/views/integration.js?v=0.3.0"></script>
+<script src="js/views/gaps.js?v=0.3.0"></script>
+<script src="js/views/hypothesis.js?v=0.3.0"></script>
+<script src="js/views/library.js?v=0.3.0"></script>
+<script src="js/main.js?v=0.3.0"></script>
 </body>
 </html>

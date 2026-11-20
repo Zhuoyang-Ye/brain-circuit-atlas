@@ -7,111 +7,676 @@
       "url": "https://gin.g-node.org/brainglobe/atlases/raw/master/allen_human_500um_v0.1.tar.gz",
       "dir": "allen_human_500um_v0.1/meshes"
     },
-    "frame": {"unit_mm": 0.5, "mirror": true},
+    "frame": {
+      "unit_mm": 0.5,
+      "mirror": true
+    },
     "items": [
-      {"key": "brain", "src": 10155, "name": "Brain", "group": "shell", "faces": 32000, "smooth": 2},
-      {"key": "cb-vermis", "src": 10658, "name": "Cerebellar vermis", "group": "cerebellum", "align_only": true},
-      {"key": "cb-paravermis", "src": 12384, "name": "Paravermis", "group": "cerebellum", "align_only": true},
-      {"key": "cb-lateral", "src": 12390, "name": "Lateral hemisphere", "group": "cerebellum", "align_only": true},
-      {"key": "scp", "src": 12354, "name": "Superior cerebellar peduncle", "related": "dcn", "group": "tract", "faces": 1500,
-       "note": "Main output tract of the cerebellum, carrying dentate and interposed axons toward the red nucleus and thalamus."},
-      {"key": "pons-basilar", "src": 12405, "name": "Basilar pons (pontine nuclei)", "entity": "pontine", "group": "brainstem", "faces": 2500},
-      {"key": "pons-teg", "src": 12416, "name": "Pontine tegmentum", "related": "vestibular-nuclei", "group": "context", "faces": 1500,
-       "note": "Dorsal pons; contains parts of the vestibular nuclear complex and other cranial-nerve nuclei."},
-      {"key": "medulla", "src": 12538, "name": "Medulla (tegmentum)", "related": "io", "group": "context", "faces": 1500,
-       "note": "Contains the inferior olive (ventral) and the vestibular nuclei (dorsal). These nuclei are not segmented in this atlas; their positions are marked approximately."},
-      {"key": "midbrain-teg", "src": 12195, "name": "Midbrain tegmentum", "related": "vta", "group": "context", "faces": 1500,
-       "note": "Contains the ventral tegmental area, red nucleus and substantia nigra (not segmented in this atlas; positions marked approximately)."},
-      {"key": "sc", "src": 12292, "name": "Superior colliculus", "entity": "superior-colliculus", "group": "brainstem", "faces": 800},
-      {"key": "aqueduct", "src": 12369, "name": "Cerebral aqueduct", "group": "helper", "faces": 400},
-      {"key": "v4", "src": 12805, "name": "Fourth ventricle", "group": "helper", "faces": 600},
-      {"key": "thalamus", "src": 10390, "name": "Thalamus", "entity": "thalamus", "group": "target", "faces": 3000},
-      {"key": "stn", "src": 10466, "name": "Subthalamic nucleus", "entity": "stn", "group": "target", "faces": 800},
-      {"key": "caudate", "src": 10334, "name": "Caudate nucleus", "entity": "striatum", "group": "target", "faces": 2500},
-      {"key": "putamen", "src": 10338, "name": "Putamen", "entity": "striatum", "group": "target", "faces": 2500},
-      {"key": "accumbens", "src": 10339, "name": "Nucleus accumbens", "entity": "nac", "group": "target", "faces": 800, "tone": "#6e7bf2"},
-      {"key": "gpe", "src": 10343, "name": "Globus pallidus, external segment", "entity": "gpe", "group": "target", "faces": 1200, "tone": "#8ec5ff"},
-      {"key": "gpi", "src": 10344, "name": "Globus pallidus, internal segment", "entity": "gpi", "group": "target", "faces": 800, "tone": "#2f81f7"},
-      {"key": "amygdala", "src": 10361, "name": "Amygdala", "entity": "amygdala", "group": "cortex", "faces": 1500, "tone": "#ff9e64",
-       "note": "The Allen human atlas does not separate the amygdaloid nuclei; the lateral, basal, central, medial and intercalated nuclei are shown in this mesh."},
-      {"key": "bf", "src": 10349, "name": "Basal forebrain", "entity": "basal-forebrain", "group": "modulator", "faces": 900,
-       "note": "The Allen human atlas segments the basal forebrain as one region (the substantia innominata, with the nucleus basalis of Meynert and the diagonal band); the mesh shows the whole region."},
-      {"key": "hip-head", "src": 12171, "name": "Head of hippocampus", "entity": "vhpc", "group": "cortex", "faces": 1200, "tone": "#a5e8a0",
-       "note": "The head is the anterior hippocampus, which corresponds to the rodent ventral hippocampus (Fanselow & Dong 2010)."},
-      {"key": "hip-body", "src": 12173, "name": "Body of hippocampus", "entity": "dhpc", "group": "cortex", "faces": 900, "tone": "#3fb950",
-       "note": "The body and tail are the posterior hippocampus, which corresponds to the rodent dorsal hippocampus (Fanselow & Dong 2010)."},
-      {"key": "hip-tail", "src": 12174, "name": "Tail of hippocampus", "entity": "dhpc", "group": "cortex", "faces": 700, "tone": "#2ea043",
-       "note": "The body and tail are the posterior hippocampus, which corresponds to the rodent dorsal hippocampus (Fanselow & Dong 2010)."},
-      {"key": "aph", "src": 12163, "name": "Anterior parahippocampal gyrus", "entity": "entorhinal", "group": "cortex", "faces": 1200,
-       "note": "The Allen human atlas does not outline the entorhinal cortex, which lies in the anterior parahippocampal gyrus; this mesh shows the whole gyrus."},
-      {"key": "precentral", "src": 12114, "name": "Precentral gyrus (M1)", "entity": "m1", "group": "cortex", "faces": 5000, "tone": "#c9a7ff",
-       "note": "The precentral gyrus holds M1 and, on its anterior part, premotor cortex; this atlas does not mark the border."},
-      {"key": "mfg", "src": 12116, "name": "Middle frontal gyrus (for the DLPFC)", "entity": "dlpfc", "group": "cortex", "faces": 5000, "tone": "#7ee0a1"},
-      {"key": "acc", "src": 12157, "name": "Rostral cingulate gyrus (ACC)", "entity": "acc", "group": "cortex", "faces": 2500, "tone": "#62c99a"},
-      {"key": "orbital", "src": [12122, 12123, 12124, 12125], "name": "Orbital gyri (OFC)", "entity": "ofc", "group": "cortex", "faces": 3000, "tone": "#a8e07e"},
-      {"key": "rectus", "src": 12121, "name": "Gyrus rectus (for the vmPFC)", "entity": "vmpfc", "group": "cortex", "faces": 1200, "tone": "#c4ec9f"},
-      {"key": "subcallosal", "src": 12160, "name": "Subcallosal gyrus (for the subgenual cingulate)", "entity": "sgacc", "group": "cortex", "faces": 800, "tone": "#4fb58a",
-       "note": "Area 25 lies in the subcallosal region; this gyrus is drawn as an approximation."},
-      {"key": "ifg", "src": 12117, "name": "Inferior frontal gyrus", "related": "f-language", "group": "cortex", "faces": 3000,
-       "note": "Includes Broca's area in the language-dominant (usually left) hemisphere. Right-lateralized cerebellar language activation is thought to reflect crossed cerebro-cerebellar connections with left-hemisphere language cortex."},
-      {"key": "spl", "src": 12133, "name": "Superior parietal lobule", "entity": "parietal", "group": "cortex", "faces": 3000},
-      {"key": "ipl", "src": 12134, "name": "Inferior parietal lobule", "entity": "parietal", "group": "cortex", "faces": 3500},
-      {"key": "suit-i-iv", "suit": {"L": 1, "R": 2}, "name": "Lobules I–IV", "entity": "lob-ant", "group": "cerebellum", "faces": 1800,
-       "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.", "tone": "#f3dc7a"},
-      {"key": "suit-v", "suit": {"L": 3, "R": 4}, "name": "Lobule V", "entity": "lob-ant", "group": "cerebellum", "faces": 1800,
-       "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.", "tone": "#e2b84a"},
-      {"key": "suit-vi", "suit": {"L": 5, "R": 7}, "name": "Lobule VI", "entity": "lob-vi", "group": "cerebellum", "faces": 2500,
-       "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.", "tone": "#f0a35e"},
-      {"key": "suit-vi-v", "suit": {"C": 6}, "name": "Vermis VI", "entity": "vermis-post", "group": "cerebellum", "faces": 1200,
-       "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.", "related": "zone-vermis", "tone": "#f4bf8e"},
-      {"key": "suit-crus1", "suit": {"L": 8, "R": 10}, "name": "Crus I", "entity": "lob-crus1", "group": "cerebellum", "faces": 3000,
-       "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.", "related": "zone-lateral", "tone": "#dc6f35"},
-      {"key": "suit-crus1-v", "suit": {"C": 9}, "name": "Vermis Crus I", "entity": "vermis-post", "group": "cerebellum", "faces": 600,
-       "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.", "related": "zone-vermis", "tone": "#e69a72"},
-      {"key": "suit-crus2", "suit": {"L": 11, "R": 13}, "name": "Crus II", "entity": "lob-crus2", "group": "cerebellum", "faces": 2500,
-       "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.", "related": "zone-lateral", "tone": "#f2b07e"},
-      {"key": "suit-crus2-v", "suit": {"C": 12}, "name": "Vermis Crus II", "entity": "vermis-post", "group": "cerebellum", "faces": 600,
-       "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.", "related": "zone-vermis", "tone": "#f6c8a5"},
-      {"key": "suit-viib", "suit": {"L": 14, "R": 16}, "name": "Lobule VIIb", "entity": "lob-viib", "group": "cerebellum", "faces": 1800,
-       "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.", "related": "zone-lateral", "tone": "#c45a2a"},
-      {"key": "suit-viib-v", "suit": {"C": 15}, "name": "Vermis VIIb", "entity": "vermis-post", "group": "cerebellum", "faces": 600,
-       "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.", "related": "zone-vermis", "tone": "#d68c6a"},
-      {"key": "suit-viiia", "suit": {"L": 17, "R": 19}, "name": "Lobule VIIIa", "entity": "lob-viii", "group": "cerebellum", "faces": 1800,
-       "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.", "tone": "#e39a6a"},
-      {"key": "suit-viiia-v", "suit": {"C": 18}, "name": "Vermis VIIIa", "entity": "vermis-post", "group": "cerebellum", "faces": 800,
-       "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.", "related": "zone-vermis", "tone": "#ebb897"},
-      {"key": "suit-viiib", "suit": {"L": 20, "R": 22}, "name": "Lobule VIIIb", "entity": "lob-viii", "group": "cerebellum", "faces": 1800,
-       "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.", "tone": "#b86e3e"},
-      {"key": "suit-viiib-v", "suit": {"C": 21}, "name": "Vermis VIIIb", "entity": "vermis-post", "group": "cerebellum", "faces": 800,
-       "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.", "related": "zone-vermis", "tone": "#cd9a78"},
-      {"key": "suit-ix", "suit": {"L": 23, "R": 25}, "name": "Lobule IX", "entity": "lob-ix", "group": "cerebellum", "faces": 1500,
-       "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.", "tone": "#e9c45a"},
-      {"key": "suit-ix-v", "suit": {"C": 24}, "name": "Vermis IX (uvula)", "entity": "vermis-post", "group": "cerebellum", "faces": 1000,
-       "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.", "related": "lob-ix", "tone": "#f0d68c"},
-      {"key": "suit-x", "suit": {"L": 26, "R": 28}, "name": "Lobule X (flocculus)", "entity": "lob-x", "group": "cerebellum", "faces": 800,
-       "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.", "tone": "#c4d66a"},
-      {"key": "suit-x-v", "suit": {"C": 27}, "name": "Vermis X (nodulus)", "entity": "lob-x", "group": "cerebellum", "faces": 600,
-       "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.", "related": "zone-vermis", "tone": "#d6e297"},
-      {"key": "suit-dn", "suit": {"L": 29, "R": 30}, "name": "Dentate nucleus", "entity": "dentate", "group": "nuclei", "faces": 1200,
-       "note": "Nucleus from the SUIT probabilistic atlas (Diedrichsen et al., 2011), fitted to this brain."},
-      {"key": "suit-ip", "suit": {"L": 31, "R": 32}, "name": "Interposed nucleus", "entity": "interposed", "group": "nuclei", "faces": 500,
-       "note": "Nucleus from the SUIT probabilistic atlas (Diedrichsen et al., 2011), fitted to this brain."},
-      {"key": "suit-fn", "suit": {"L": 33, "R": 34}, "name": "Fastigial nucleus", "entity": "fastigial", "group": "nuclei", "faces": 500,
-       "note": "Nucleus from the SUIT probabilistic atlas (Diedrichsen et al., 2011), fitted to this brain. The fastigial nucleus is hard to see on MRI: its location agreed across at most ~23% of subjects, so it is drawn where at least 10% agreed and its shape is uncertain.", "suit_prob": 0.1},
-      {"key": "v1-occ", "src": [12149, 12150, 12151], "name": "Occipital pole, cuneus and lingual gyrus", "entity": "v1", "group": "cortex", "faces": 3000, "tone": "#dc8b8b",
-       "note": "V1 lies along the calcarine sulcus, between the cuneus and the lingual gyrus, and reaches the occipital pole; the atlas does not mark its borders, so these gyri, which also hold V2 and V3, stand for it."},
-      {"key": "fug-o", "src": 12152, "name": "Fusiform gyrus, occipital part", "entity": "v4", "group": "cortex", "faces": 1500, "tone": "#e7a3a3",
-       "note": "Colour activates area V4 in the lingual and fusiform gyri (Zeki et al. 1991); the occipital part of the fusiform gyrus stands for it here."},
-      {"key": "fug-t", "src": 12143, "name": "Fusiform gyrus, temporal part", "entity": "ffa", "group": "cortex", "faces": 1500, "tone": "#eb6f92",
-       "note": "The fusiform face area lies in the fusiform gyrus (Kanwisher et al. 1997); the atlas does not mark it, so the temporal part of the gyrus stands for it."},
-      {"key": "itg", "src": 12142, "name": "Inferior temporal gyrus", "entity": "it", "group": "cortex", "faces": 1500, "tone": "#c97f8f"},
-      {"key": "iog", "src": 12153, "name": "Inferior occipital gyrus", "group": "helper", "faces": 600},
-      {"key": "mtg", "src": 12141, "name": "Middle temporal gyrus", "group": "helper", "faces": 800},
-      {"key": "sig", "src": 12178, "name": "Short insular gyri (anterior insula)", "entity": "ains", "group": "cortex", "faces": 1500, "tone": "#e879f9",
-       "note": "The short insular gyri stand for the anterior insula; the atlas does not mark the taste cortex, which in humans lies in the insula and operculum, so it is shown here."},
-      {"key": "lig", "src": 12177, "name": "Long insular gyri (posterior insula)", "entity": "pins", "group": "cortex", "faces": 1200, "tone": "#c084fc"},
-      {"key": "ob", "src": 10307, "name": "Olfactory bulb", "entity": "ob", "group": "target", "faces": 600},
-      {"key": "pir", "src": 10311, "name": "Piriform cortex", "entity": "piriform", "group": "cortex", "faces": 1000, "tone": "#f0b37a"}
+      {
+        "key": "brain",
+        "src": 10155,
+        "name": "Brain",
+        "group": "shell",
+        "faces": 32000,
+        "smooth": 2
+      },
+      {
+        "key": "cb-vermis",
+        "src": 10658,
+        "name": "Cerebellar vermis",
+        "group": "cerebellum",
+        "align_only": true
+      },
+      {
+        "key": "cb-paravermis",
+        "src": 12384,
+        "name": "Paravermis",
+        "group": "cerebellum",
+        "align_only": true
+      },
+      {
+        "key": "cb-lateral",
+        "src": 12390,
+        "name": "Lateral hemisphere",
+        "group": "cerebellum",
+        "align_only": true
+      },
+      {
+        "key": "scp",
+        "src": 12354,
+        "name": "Superior cerebellar peduncle",
+        "related": "dcn",
+        "group": "tract",
+        "faces": 1500,
+        "note": "Main output tract of the cerebellum, carrying dentate and interposed axons toward the red nucleus and thalamus."
+      },
+      {
+        "key": "pons-basilar",
+        "src": 12405,
+        "name": "Basilar pons (pontine nuclei)",
+        "entity": "pontine",
+        "group": "brainstem",
+        "faces": 2500
+      },
+      {
+        "key": "pons-teg",
+        "src": 12416,
+        "name": "Pontine tegmentum",
+        "related": "vestibular-nuclei",
+        "group": "context",
+        "faces": 1500,
+        "note": "Dorsal pons; contains parts of the vestibular nuclear complex and other cranial-nerve nuclei."
+      },
+      {
+        "key": "medulla",
+        "src": 12538,
+        "name": "Medulla (tegmentum)",
+        "related": "io",
+        "group": "context",
+        "faces": 1500,
+        "note": "Contains the inferior olive (ventral) and the vestibular nuclei (dorsal). These nuclei are not segmented in this atlas; their positions are marked approximately."
+      },
+      {
+        "key": "midbrain-teg",
+        "src": 12195,
+        "name": "Midbrain tegmentum",
+        "related": "vta",
+        "group": "context",
+        "faces": 1500,
+        "note": "Contains the ventral tegmental area, red nucleus and substantia nigra (not segmented in this atlas; positions marked approximately)."
+      },
+      {
+        "key": "sc",
+        "src": 12292,
+        "name": "Superior colliculus",
+        "entity": "superior-colliculus",
+        "group": "brainstem",
+        "faces": 800
+      },
+      {
+        "key": "aqueduct",
+        "src": 12369,
+        "name": "Cerebral aqueduct",
+        "group": "helper",
+        "faces": 400
+      },
+      {
+        "key": "v4",
+        "src": 12805,
+        "name": "Fourth ventricle",
+        "group": "helper",
+        "faces": 600
+      },
+      {
+        "key": "thalamus",
+        "src": 10390,
+        "name": "Thalamus",
+        "entity": "thalamus",
+        "group": "target",
+        "faces": 3000
+      },
+      {
+        "key": "stn",
+        "src": 10466,
+        "name": "Subthalamic nucleus",
+        "entity": "stn",
+        "group": "target",
+        "faces": 800
+      },
+      {
+        "key": "caudate",
+        "src": 10334,
+        "name": "Caudate nucleus",
+        "entity": "caudate",
+        "group": "target",
+        "faces": 2500
+      },
+      {
+        "key": "putamen",
+        "src": 10338,
+        "name": "Putamen",
+        "entity": "putamen",
+        "group": "target",
+        "faces": 2500
+      },
+      {
+        "key": "accumbens",
+        "src": 10339,
+        "name": "Nucleus accumbens",
+        "entity": "nac",
+        "group": "target",
+        "faces": 800,
+        "tone": "#6e7bf2"
+      },
+      {
+        "key": "gpe",
+        "src": 10343,
+        "name": "Globus pallidus, external segment",
+        "entity": "gpe",
+        "group": "target",
+        "faces": 1200,
+        "tone": "#8ec5ff"
+      },
+      {
+        "key": "gpi",
+        "src": 10344,
+        "name": "Globus pallidus, internal segment",
+        "entity": "gpi",
+        "group": "target",
+        "faces": 800,
+        "tone": "#2f81f7"
+      },
+      {
+        "key": "amygdala",
+        "src": 10361,
+        "name": "Amygdala",
+        "entity": "amygdala",
+        "group": "cortex",
+        "faces": 1500,
+        "tone": "#ff9e64",
+        "note": "The Allen human atlas does not separate the amygdaloid nuclei; the lateral, basal, central, medial and intercalated nuclei are shown in this mesh."
+      },
+      {
+        "key": "bf",
+        "src": 10349,
+        "name": "Basal forebrain",
+        "entity": "basal-forebrain",
+        "group": "modulator",
+        "faces": 900,
+        "note": "The Allen human atlas segments the basal forebrain as one region (the substantia innominata, with the nucleus basalis of Meynert and the diagonal band); the mesh shows the whole region."
+      },
+      {
+        "key": "hip-head",
+        "src": 12171,
+        "name": "Head of hippocampus",
+        "entity": "vhpc",
+        "group": "cortex",
+        "faces": 1200,
+        "tone": "#a5e8a0",
+        "note": "The head is the anterior hippocampus, which corresponds to the rodent ventral hippocampus (Fanselow & Dong 2010)."
+      },
+      {
+        "key": "hip-body",
+        "src": 12173,
+        "name": "Body of hippocampus",
+        "entity": "dhpc",
+        "group": "cortex",
+        "faces": 900,
+        "tone": "#3fb950",
+        "note": "The body and tail are the posterior hippocampus, which corresponds to the rodent dorsal hippocampus (Fanselow & Dong 2010)."
+      },
+      {
+        "key": "hip-tail",
+        "src": 12174,
+        "name": "Tail of hippocampus",
+        "entity": "dhpc",
+        "group": "cortex",
+        "faces": 700,
+        "tone": "#2ea043",
+        "note": "The body and tail are the posterior hippocampus, which corresponds to the rodent dorsal hippocampus (Fanselow & Dong 2010)."
+      },
+      {
+        "key": "aph",
+        "src": 12163,
+        "name": "Anterior parahippocampal gyrus",
+        "entity": "entorhinal",
+        "group": "cortex",
+        "faces": 1200,
+        "note": "The Allen human atlas does not outline the entorhinal cortex, which lies in the anterior parahippocampal gyrus; this mesh shows the whole gyrus."
+      },
+      {
+        "key": "precentral",
+        "src": 12114,
+        "name": "Precentral gyrus (M1)",
+        "entity": "m1",
+        "group": "cortex",
+        "faces": 5000,
+        "tone": "#c9a7ff",
+        "note": "The precentral gyrus holds M1 and, on its anterior part, premotor cortex; this atlas does not mark the border."
+      },
+      {
+        "key": "mfg",
+        "src": 12116,
+        "name": "Middle frontal gyrus (for the DLPFC)",
+        "entity": "dlpfc",
+        "group": "cortex",
+        "faces": 5000,
+        "tone": "#7ee0a1"
+      },
+      {
+        "key": "acc",
+        "src": 12157,
+        "name": "Rostral cingulate gyrus (ACC)",
+        "entity": "acc",
+        "group": "cortex",
+        "faces": 2500,
+        "tone": "#62c99a"
+      },
+      {
+        "key": "orbital",
+        "src": [
+          12122,
+          12123,
+          12124,
+          12125
+        ],
+        "name": "Orbital gyri (OFC)",
+        "entity": "ofc",
+        "group": "cortex",
+        "faces": 3000,
+        "tone": "#a8e07e"
+      },
+      {
+        "key": "rectus",
+        "src": 12121,
+        "name": "Gyrus rectus (for the vmPFC)",
+        "entity": "vmpfc",
+        "group": "cortex",
+        "faces": 1200,
+        "tone": "#c4ec9f"
+      },
+      {
+        "key": "subcallosal",
+        "src": 12160,
+        "name": "Subcallosal gyrus (for the subgenual cingulate)",
+        "entity": "sgacc",
+        "group": "cortex",
+        "faces": 800,
+        "tone": "#4fb58a",
+        "note": "Area 25 lies in the subcallosal region; this gyrus is drawn as an approximation."
+      },
+      {
+        "key": "ifg",
+        "src": 12117,
+        "name": "Inferior frontal gyrus",
+        "related": "f-language",
+        "group": "cortex",
+        "faces": 3000,
+        "note": "Includes Broca's area in the language-dominant (usually left) hemisphere. Right-lateralized cerebellar language activation is thought to reflect crossed cerebro-cerebellar connections with left-hemisphere language cortex."
+      },
+      {
+        "key": "spl",
+        "src": 12133,
+        "name": "Superior parietal lobule",
+        "entity": "parietal",
+        "group": "cortex",
+        "faces": 3000
+      },
+      {
+        "key": "ipl",
+        "src": 12134,
+        "name": "Inferior parietal lobule",
+        "entity": "parietal",
+        "group": "cortex",
+        "faces": 3500
+      },
+      {
+        "key": "suit-i-iv",
+        "suit": {
+          "L": 1,
+          "R": 2
+        },
+        "name": "Lobules I–IV",
+        "entity": "lob-ant",
+        "group": "cerebellum",
+        "faces": 1800,
+        "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.",
+        "tone": "#f3dc7a"
+      },
+      {
+        "key": "suit-v",
+        "suit": {
+          "L": 3,
+          "R": 4
+        },
+        "name": "Lobule V",
+        "entity": "lob-ant",
+        "group": "cerebellum",
+        "faces": 1800,
+        "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.",
+        "tone": "#e2b84a"
+      },
+      {
+        "key": "suit-vi",
+        "suit": {
+          "L": 5,
+          "R": 7
+        },
+        "name": "Lobule VI",
+        "entity": "lob-vi",
+        "group": "cerebellum",
+        "faces": 2500,
+        "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.",
+        "tone": "#f0a35e"
+      },
+      {
+        "key": "suit-vi-v",
+        "suit": {
+          "C": 6
+        },
+        "name": "Vermis VI",
+        "entity": "vermis-post",
+        "group": "cerebellum",
+        "faces": 1200,
+        "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.",
+        "related": "zone-vermis",
+        "tone": "#f4bf8e"
+      },
+      {
+        "key": "suit-crus1",
+        "suit": {
+          "L": 8,
+          "R": 10
+        },
+        "name": "Crus I",
+        "entity": "lob-crus1",
+        "group": "cerebellum",
+        "faces": 3000,
+        "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.",
+        "related": "zone-lateral",
+        "tone": "#dc6f35"
+      },
+      {
+        "key": "suit-crus1-v",
+        "suit": {
+          "C": 9
+        },
+        "name": "Vermis Crus I",
+        "entity": "vermis-post",
+        "group": "cerebellum",
+        "faces": 600,
+        "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.",
+        "related": "zone-vermis",
+        "tone": "#e69a72"
+      },
+      {
+        "key": "suit-crus2",
+        "suit": {
+          "L": 11,
+          "R": 13
+        },
+        "name": "Crus II",
+        "entity": "lob-crus2",
+        "group": "cerebellum",
+        "faces": 2500,
+        "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.",
+        "related": "zone-lateral",
+        "tone": "#f2b07e"
+      },
+      {
+        "key": "suit-crus2-v",
+        "suit": {
+          "C": 12
+        },
+        "name": "Vermis Crus II",
+        "entity": "vermis-post",
+        "group": "cerebellum",
+        "faces": 600,
+        "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.",
+        "related": "zone-vermis",
+        "tone": "#f6c8a5"
+      },
+      {
+        "key": "suit-viib",
+        "suit": {
+          "L": 14,
+          "R": 16
+        },
+        "name": "Lobule VIIb",
+        "entity": "lob-viib",
+        "group": "cerebellum",
+        "faces": 1800,
+        "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.",
+        "related": "zone-lateral",
+        "tone": "#c45a2a"
+      },
+      {
+        "key": "suit-viib-v",
+        "suit": {
+          "C": 15
+        },
+        "name": "Vermis VIIb",
+        "entity": "vermis-post",
+        "group": "cerebellum",
+        "faces": 600,
+        "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.",
+        "related": "zone-vermis",
+        "tone": "#d68c6a"
+      },
+      {
+        "key": "suit-viiia",
+        "suit": {
+          "L": 17,
+          "R": 19
+        },
+        "name": "Lobule VIIIa",
+        "entity": "lob-viii",
+        "group": "cerebellum",
+        "faces": 1800,
+        "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.",
+        "tone": "#e39a6a"
+      },
+      {
+        "key": "suit-viiia-v",
+        "suit": {
+          "C": 18
+        },
+        "name": "Vermis VIIIa",
+        "entity": "vermis-post",
+        "group": "cerebellum",
+        "faces": 800,
+        "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.",
+        "related": "zone-vermis",
+        "tone": "#ebb897"
+      },
+      {
+        "key": "suit-viiib",
+        "suit": {
+          "L": 20,
+          "R": 22
+        },
+        "name": "Lobule VIIIb",
+        "entity": "lob-viii",
+        "group": "cerebellum",
+        "faces": 1800,
+        "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.",
+        "tone": "#b86e3e"
+      },
+      {
+        "key": "suit-viiib-v",
+        "suit": {
+          "C": 21
+        },
+        "name": "Vermis VIIIb",
+        "entity": "vermis-post",
+        "group": "cerebellum",
+        "faces": 800,
+        "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.",
+        "related": "zone-vermis",
+        "tone": "#cd9a78"
+      },
+      {
+        "key": "suit-ix",
+        "suit": {
+          "L": 23,
+          "R": 25
+        },
+        "name": "Lobule IX",
+        "entity": "lob-ix",
+        "group": "cerebellum",
+        "faces": 1500,
+        "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.",
+        "tone": "#e9c45a"
+      },
+      {
+        "key": "suit-ix-v",
+        "suit": {
+          "C": 24
+        },
+        "name": "Vermis IX (uvula)",
+        "entity": "vermis-post",
+        "group": "cerebellum",
+        "faces": 1000,
+        "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.",
+        "related": "lob-ix",
+        "tone": "#f0d68c"
+      },
+      {
+        "key": "suit-x",
+        "suit": {
+          "L": 26,
+          "R": 28
+        },
+        "name": "Lobule X (flocculus)",
+        "entity": "lob-x",
+        "group": "cerebellum",
+        "faces": 800,
+        "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.",
+        "tone": "#c4d66a"
+      },
+      {
+        "key": "suit-x-v",
+        "suit": {
+          "C": 27
+        },
+        "name": "Vermis X (nodulus)",
+        "entity": "lob-x",
+        "group": "cerebellum",
+        "faces": 600,
+        "note": "Lobule from the SUIT probabilistic atlas (Diedrichsen et al., 2009), fitted to this brain.",
+        "related": "zone-vermis",
+        "tone": "#d6e297"
+      },
+      {
+        "key": "suit-dn",
+        "suit": {
+          "L": 29,
+          "R": 30
+        },
+        "name": "Dentate nucleus",
+        "entity": "dentate",
+        "group": "nuclei",
+        "faces": 1200,
+        "note": "Nucleus from the SUIT probabilistic atlas (Diedrichsen et al., 2011), fitted to this brain."
+      },
+      {
+        "key": "suit-ip",
+        "suit": {
+          "L": 31,
+          "R": 32
+        },
+        "name": "Interposed nucleus",
+        "entity": "interposed",
+        "group": "nuclei",
+        "faces": 500,
+        "note": "Nucleus from the SUIT probabilistic atlas (Diedrichsen et al., 2011), fitted to this brain."
+      },
+      {
+        "key": "suit-fn",
+        "suit": {
+          "L": 33,
+          "R": 34
+        },
+        "name": "Fastigial nucleus",
+        "entity": "fastigial",
+        "group": "nuclei",
+        "faces": 500,
+        "note": "Nucleus from the SUIT probabilistic atlas (Diedrichsen et al., 2011), fitted to this brain. The fastigial nucleus is hard to see on MRI: its location agreed across at most ~23% of subjects, so it is drawn where at least 10% agreed and its shape is uncertain.",
+        "suit_prob": 0.1
+      },
+      {
+        "key": "v1-occ",
+        "src": [
+          12149,
+          12150,
+          12151
+        ],
+        "name": "Occipital pole, cuneus and lingual gyrus",
+        "entity": "v1",
+        "group": "cortex",
+        "faces": 3000,
+        "tone": "#dc8b8b",
+        "note": "V1 lies along the calcarine sulcus, between the cuneus and the lingual gyrus, and reaches the occipital pole; the atlas does not mark its borders, so these gyri, which also hold V2 and V3, stand for it."
+      },
+      {
+        "key": "fug-o",
+        "src": 12152,
+        "name": "Fusiform gyrus, occipital part",
+        "entity": "v4",
+        "group": "cortex",
+        "faces": 1500,
+        "tone": "#e7a3a3",
+        "note": "Colour activates area V4 in the lingual and fusiform gyri (Zeki et al. 1991); the occipital part of the fusiform gyrus stands for it here."
+      },
+      {
+        "key": "fug-t",
+        "src": 12143,
+        "name": "Fusiform gyrus, temporal part",
+        "entity": "ffa",
+        "group": "cortex",
+        "faces": 1500,
+        "tone": "#eb6f92",
+        "note": "The fusiform face area lies in the fusiform gyrus (Kanwisher et al. 1997); the atlas does not mark it, so the temporal part of the gyrus stands for it."
+      },
+      {
+        "key": "itg",
+        "src": 12142,
+        "name": "Inferior temporal gyrus",
+        "entity": "it",
+        "group": "cortex",
+        "faces": 1500,
+        "tone": "#c97f8f"
+      },
+      {
+        "key": "iog",
+        "src": 12153,
+        "name": "Inferior occipital gyrus",
+        "group": "helper",
+        "faces": 600
+      },
+      {
+        "key": "mtg",
+        "src": 12141,
+        "name": "Middle temporal gyrus",
+        "group": "helper",
+        "faces": 800
+      },
+      {
+        "key": "sig",
+        "src": 12178,
+        "name": "Short insular gyri (anterior insula)",
+        "entity": "ains",
+        "group": "cortex",
+        "faces": 1500,
+        "tone": "#e879f9",
+        "note": "The short insular gyri stand for the anterior insula; the atlas does not mark the taste cortex, which in humans lies in the insula and operculum, so it is shown here."
+      },
+      {
+        "key": "lig",
+        "src": 12177,
+        "name": "Long insular gyri (posterior insula)",
+        "entity": "pins",
+        "group": "cortex",
+        "faces": 1200,
+        "tone": "#c084fc"
+      },
+      {
+        "key": "ob",
+        "src": 10307,
+        "name": "Olfactory bulb",
+        "entity": "ob",
+        "group": "target",
+        "faces": 600
+      },
+      {
+        "key": "pir",
+        "src": 10311,
+        "name": "Piriform cortex",
+        "entity": "piriform",
+        "group": "cortex",
+        "faces": 1000,
+        "tone": "#f0b37a"
+      }
     ],
     "suit": {
       "url": "https://raw.githubusercontent.com/DiedrichsenLab/cerebellar_atlases/master/Diedrichsen_2009/atl-Anatom_space-MNI_dseg.nii",
@@ -125,89 +690,699 @@
       "type": "allen_ccf",
       "url": "https://download.alleninstitute.org/informatics-archive/current-release/mouse_ccf/annotation/ccf_2017/structure_meshes/{src}.obj"
     },
-    "frame": {"unit_mm": 0.001, "mirror": false, "midline": 5700},
+    "frame": {
+      "unit_mm": 0.001,
+      "mirror": false,
+      "midline": 5700
+    },
     "items": [
-      {"key": "brain", "src": 997, "name": "Brain", "group": "shell", "faces": 30000, "smooth": 3},
-      {"key": "ling", "src": 912, "name": "Lingula (I)", "entity": "lob-ant", "group": "cerebellum", "faces": 1500, "tone": "#f3dc7a"},
-      {"key": "cent", "src": 920, "name": "Central lobule (II–III)", "entity": "lob-ant", "group": "cerebellum", "faces": 3000, "tone": "#e9cc63"},
-      {"key": "cul", "src": 928, "name": "Culmen (IV–V)", "entity": "lob-ant", "group": "cerebellum", "faces": 4000, "tone": "#e2b84a"},
-      {"key": "dec", "src": 936, "name": "Declive (VI)", "entity": "vermis-post", "group": "cerebellum", "faces": 2500, "tone": "#f4bf8e"},
-      {"key": "fotu", "src": 944, "name": "Folium-tuber vermis (VII)", "entity": "vermis-post", "group": "cerebellum", "faces": 1500, "tone": "#e69a72"},
-      {"key": "pyr", "src": 951, "name": "Pyramus (VIII)", "entity": "vermis-post", "group": "cerebellum", "faces": 1500, "tone": "#ddaa84"},
-      {"key": "uvu", "src": 957, "name": "Uvula (IX)", "entity": "lob-ix", "group": "cerebellum", "faces": 2000, "tone": "#f0d68c"},
-      {"key": "nod", "src": 968, "name": "Nodulus (X)", "entity": "lob-x", "group": "cerebellum", "faces": 1500, "tone": "#d6e297"},
-      {"key": "sim", "src": 1007, "name": "Simple lobule (≈ hemispheric VI)", "entity": "lob-vi", "group": "cerebellum", "faces": 3000, "split": true, "tone": "#f0a35e"},
-      {"key": "crus1", "src": 1056, "name": "Crus 1", "entity": "lob-crus1", "group": "cerebellum", "faces": 3500, "split": true, "tone": "#dc6f35"},
-      {"key": "crus2", "src": 1064, "name": "Crus 2", "entity": "lob-crus2", "group": "cerebellum", "faces": 3000, "split": true, "tone": "#f2b07e"},
-      {"key": "prm", "src": 1025, "name": "Paramedian lobule (≈ VIIB)", "entity": "lob-viib", "group": "cerebellum", "faces": 3000, "split": true, "tone": "#c45a2a"},
-      {"key": "copy", "src": 1033, "name": "Copula pyramidis (≈ hemispheric VIII)", "entity": "lob-viii", "group": "cerebellum", "faces": 2500, "split": true, "tone": "#cf8550"},
-      {"key": "pfl", "src": 1041, "name": "Paraflocculus", "related": "lob-x", "group": "cerebellum", "faces": 3000, "split": true,
-       "note": "Lateral lobule adjacent to the flocculus; part of the oculomotor/vestibular cerebellum in rodents. Not yet curated as a separate entity.", "tone": "#d8e08a"},
-      {"key": "fl", "src": 1049, "name": "Flocculus", "entity": "lob-x", "group": "cerebellum", "faces": 1500, "split": true, "tone": "#c4d66a"},
-      {"key": "fn", "src": 989, "name": "Fastigial nucleus", "entity": "fastigial", "group": "nuclei", "faces": 1200, "split": true},
-      {"key": "ip", "src": 91, "name": "Interposed nucleus", "entity": "interposed", "group": "nuclei", "faces": 1500, "split": true},
-      {"key": "dn", "src": 846, "name": "Dentate nucleus", "entity": "dentate", "group": "nuclei", "faces": 1000, "split": true},
-      {"key": "pg", "src": 931, "name": "Pontine gray", "entity": "pontine", "group": "brainstem", "faces": 1500},
-      {"key": "io", "src": 83, "name": "Inferior olivary complex", "entity": "io", "group": "brainstem", "faces": 1200},
-      {"key": "vnc", "src": 701, "name": "Vestibular nuclei", "entity": "vestibular-nuclei", "group": "brainstem", "faces": 2000},
-      {"key": "rn", "src": 214, "name": "Red nucleus", "entity": "brainstem-motor", "group": "brainstem", "faces": 1000},
-      {"key": "vta", "src": 749, "name": "Ventral tegmental area", "entity": "vta", "group": "brainstem", "faces": 1000},
-      {"key": "snc", "src": 374, "name": "Substantia nigra, compact part", "entity": "snc", "group": "brainstem", "faces": 800},
-      {"key": "snr", "src": 381, "name": "Substantia nigra, reticular part", "entity": "snr", "group": "brainstem", "faces": 800},
-      {"key": "sc", "src": [302, 294], "name": "Superior colliculus", "entity": "superior-colliculus", "group": "brainstem", "faces": 1500},
-      {"key": "pag", "src": 795, "name": "Periaqueductal gray", "entity": "pag", "group": "brainstem", "faces": 2500},
-      {"key": "lc", "src": 147, "name": "Locus coeruleus", "entity": "lc", "group": "modulator", "faces": 400},
-      {"key": "dr", "src": 872, "name": "Dorsal raphe nucleus", "entity": "drn", "group": "modulator", "faces": 500},
-      {"key": "ppn", "src": 1052, "name": "Pedunculopontine nucleus", "entity": "ppn", "group": "modulator", "faces": 800},
-      {"key": "mrn", "src": 128, "name": "Midbrain reticular nucleus", "entity": "mrn", "group": "brainstem", "faces": 1500},
-      {"key": "tm", "src": 557, "name": "Tuberomammillary nucleus", "entity": "tmn", "group": "modulator", "faces": 800},
-      {"key": "lha", "src": 194, "name": "Lateral hypothalamic area", "entity": "lh", "group": "modulator", "faces": 1500,
-       "note": "Orexin (hypocretin) neurons lie in the lateral hypothalamic and perifornical areas; the mesh shows the whole lateral hypothalamic area."},
-      {"key": "si", "src": 342, "name": "Substantia innominata (basal forebrain)", "entity": "basal-forebrain", "group": "modulator", "faces": 1000,
-       "note": "Cholinergic basal forebrain neurons lie in and around the substantia innominata; the mesh shows the whole nucleus."},
-      {"key": "grn", "src": 1048, "name": "Gigantocellular reticular nucleus", "group": "helper", "faces": 1500},
-      {"key": "th", "src": 549, "name": "Thalamus", "entity": "thalamus", "group": "context", "faces": 4000},
-      {"key": "vm", "src": 685, "name": "Ventromedial thalamus (VM)", "entity": "thalamus", "group": "target", "faces": 1000},
-      {"key": "pf", "src": 930, "name": "Parafascicular nucleus (PF)", "entity": "thalamus", "group": "target", "faces": 800},
-      {"key": "val", "src": 629, "name": "Ventral anterior-lateral thalamus (VAL, motor thalamus)", "entity": "thalamus", "group": "target", "faces": 1000},
-      {"key": "md", "src": 362, "name": "Mediodorsal thalamus (MD)", "entity": "thalamus", "group": "target", "faces": 800},
-      {"key": "stn", "src": 470, "name": "Subthalamic nucleus", "entity": "stn", "group": "target", "faces": 600},
-      {"key": "cp", "src": 672, "name": "Caudoputamen", "entity": "striatum", "group": "target", "faces": 4000},
-      {"key": "acb", "src": 56, "name": "Nucleus accumbens", "entity": "nac", "group": "target", "faces": 2000, "tone": "#6e7bf2"},
-      {"key": "gpe", "src": 1022, "name": "Globus pallidus, external segment", "entity": "gpe", "group": "target", "faces": 1000, "tone": "#8ec5ff"},
-      {"key": "gpi", "src": 1031, "name": "Globus pallidus, internal segment", "entity": "gpi", "group": "target", "faces": 600,
-       "note": "The rodent internal pallidal segment is often called the entopeduncular nucleus.", "tone": "#2f81f7"},
-      {"key": "dg", "src": 726, "name": "Dentate gyrus", "entity": "dg", "group": "cortex", "faces": 1500, "tone": "#a5e8a0"},
-      {"key": "ca3", "src": 463, "name": "Field CA3", "entity": "ca3", "group": "cortex", "faces": 1500, "tone": "#3fb950"},
-      {"key": "ca2", "src": 423, "name": "Field CA2", "entity": "ca2", "group": "cortex", "faces": 400, "tone": "#d2f5c4"},
-      {"key": "ca1", "src": 382, "name": "Field CA1", "entity": "ca1", "group": "cortex", "faces": 2000, "tone": "#2ea043"},
-      {"key": "sub", "src": 502, "name": "Subiculum", "entity": "subiculum", "group": "cortex", "faces": 1000, "tone": "#7ee787"},
-      {"key": "ent", "src": 909, "name": "Entorhinal area", "entity": "entorhinal", "group": "cortex", "faces": 1500},
-      {"key": "ms", "src": 564, "name": "Medial septal nucleus", "entity": "medial-septum", "group": "target", "faces": 400},
-      {"key": "la", "src": 131, "name": "Lateral amygdalar nucleus", "entity": "la", "group": "cortex", "faces": 900, "tone": "#ffb27a"},
-      {"key": "bla", "src": [295, 319], "name": "Basolateral and basomedial amygdalar nuclei", "entity": "bla", "group": "cortex", "faces": 1500, "tone": "#ff9e64"},
-      {"key": "cea", "src": 536, "name": "Central amygdalar nucleus", "entity": "cea", "group": "cortex", "faces": 1200, "tone": "#e8743b"},
-      {"key": "ia", "src": 1105, "name": "Intercalated amygdalar nucleus", "entity": "itc", "group": "cortex", "faces": 300, "tone": "#fff0e0",
-       "note": "The main intercalated cell mass; smaller clusters lie along the borders of the basolateral complex."},
-      {"key": "mea", "src": 403, "name": "Medial amygdalar nucleus", "entity": "mea", "group": "cortex", "faces": 900, "tone": "#ffd0a8"},
-      {"key": "mg", "src": 475, "name": "Medial geniculate complex", "entity": "mgb", "group": "target", "faces": 900},
-      {"key": "mop", "src": 985, "name": "Primary motor cortex", "entity": "m1", "group": "cortex", "faces": 4000, "tone": "#c9a7ff"},
-      {"key": "mos", "src": 993, "name": "Secondary motor area (MOs, incl. ALM)", "entity": "premotor", "group": "cortex", "faces": 4000, "tone": "#9b7be6"},
-      {"key": "ssp", "src": 322, "name": "Primary somatosensory area", "entity": "s1", "group": "cortex", "faces": 5000, "tone": "#7aa2f7"},
-      {"key": "pl", "src": 972, "name": "Prelimbic cortex", "entity": "mpfc-pl", "group": "cortex", "faces": 1500, "tone": "#7ee0a1"},
-      {"key": "ila", "src": 44, "name": "Infralimbic cortex", "entity": "mpfc-il", "group": "cortex", "faces": 800, "tone": "#4fb58a"},
-      {"key": "aca", "src": 31, "name": "Anterior cingulate cortex", "entity": "acc", "group": "cortex", "faces": 2500, "tone": "#62c99a"},
-      {"key": "orb", "src": 714, "name": "Orbital cortex", "entity": "ofc", "group": "cortex", "faces": 2500, "tone": "#a8e07e"},
-      {"key": "ptlp", "src": 22, "name": "Posterior parietal cortex", "entity": "parietal", "group": "cortex", "faces": 1500},
-      {"key": "visp", "src": 385, "name": "Primary visual area (VISp)", "entity": "v1", "group": "cortex", "faces": 1500, "tone": "#dc8b8b"},
-      {"key": "hva", "src": [409, 402, 394, 533, 312782574, 425], "name": "Higher visual areas (LM, AL, AM, PM, LI, P)", "entity": "mouse-hva", "group": "cortex", "faces": 2000, "tone": "#e7a3a3"},
-      {"key": "lgd", "src": 170, "name": "Dorsal lateral geniculate nucleus (LGd)", "entity": "lgn", "group": "target", "faces": 800},
-      {"key": "ai-ant", "src": [104, 119], "name": "Agranular insular area, dorsal and ventral parts (anterior insula)", "entity": "ains", "group": "cortex", "faces": 1200, "tone": "#e879f9"},
-      {"key": "ai-post", "src": [111, 677], "name": "Agranular insular area, posterior part, and visceral area (posterior insula)", "entity": "pins", "group": "cortex", "faces": 1200, "tone": "#c084fc"},
-      {"key": "gu", "src": 1057, "name": "Gustatory areas (GU)", "entity": "gc", "group": "cortex", "faces": 800, "tone": "#f0abfc"},
-      {"key": "mob", "src": [507, 151], "name": "Main and accessory olfactory bulbs", "entity": "ob", "group": "cortex", "faces": 2000, "tone": "#f6c177"},
-      {"key": "pir", "src": 961, "name": "Piriform area", "entity": "piriform", "group": "cortex", "faces": 1500, "tone": "#f0b37a"},
-      {"key": "coa", "src": 631, "name": "Cortical amygdalar area", "entity": "coa", "group": "cortex", "faces": 800, "tone": "#ff9e64"}
+      {
+        "key": "brain",
+        "src": 997,
+        "name": "Brain",
+        "group": "shell",
+        "faces": 30000,
+        "smooth": 3
+      },
+      {
+        "key": "ling",
+        "src": 912,
+        "name": "Lingula (I)",
+        "entity": "lob-ant",
+        "group": "cerebellum",
+        "faces": 1500,
+        "tone": "#f3dc7a"
+      },
+      {
+        "key": "cent",
+        "src": 920,
+        "name": "Central lobule (II–III)",
+        "entity": "lob-ant",
+        "group": "cerebellum",
+        "faces": 3000,
+        "tone": "#e9cc63"
+      },
+      {
+        "key": "cul",
+        "src": 928,
+        "name": "Culmen (IV–V)",
+        "entity": "lob-ant",
+        "group": "cerebellum",
+        "faces": 4000,
+        "tone": "#e2b84a"
+      },
+      {
+        "key": "dec",
+        "src": 936,
+        "name": "Declive (VI)",
+        "entity": "vermis-post",
+        "group": "cerebellum",
+        "faces": 2500,
+        "tone": "#f4bf8e"
+      },
+      {
+        "key": "fotu",
+        "src": 944,
+        "name": "Folium-tuber vermis (VII)",
+        "entity": "vermis-post",
+        "group": "cerebellum",
+        "faces": 1500,
+        "tone": "#e69a72"
+      },
+      {
+        "key": "pyr",
+        "src": 951,
+        "name": "Pyramus (VIII)",
+        "entity": "vermis-post",
+        "group": "cerebellum",
+        "faces": 1500,
+        "tone": "#ddaa84"
+      },
+      {
+        "key": "uvu",
+        "src": 957,
+        "name": "Uvula (IX)",
+        "entity": "lob-ix",
+        "group": "cerebellum",
+        "faces": 2000,
+        "tone": "#f0d68c"
+      },
+      {
+        "key": "nod",
+        "src": 968,
+        "name": "Nodulus (X)",
+        "entity": "lob-x",
+        "group": "cerebellum",
+        "faces": 1500,
+        "tone": "#d6e297"
+      },
+      {
+        "key": "sim",
+        "src": 1007,
+        "name": "Simple lobule (≈ hemispheric VI)",
+        "entity": "lob-vi",
+        "group": "cerebellum",
+        "faces": 3000,
+        "split": true,
+        "tone": "#f0a35e"
+      },
+      {
+        "key": "crus1",
+        "src": 1056,
+        "name": "Crus 1",
+        "entity": "lob-crus1",
+        "group": "cerebellum",
+        "faces": 3500,
+        "split": true,
+        "tone": "#dc6f35"
+      },
+      {
+        "key": "crus2",
+        "src": 1064,
+        "name": "Crus 2",
+        "entity": "lob-crus2",
+        "group": "cerebellum",
+        "faces": 3000,
+        "split": true,
+        "tone": "#f2b07e"
+      },
+      {
+        "key": "prm",
+        "src": 1025,
+        "name": "Paramedian lobule (≈ VIIB)",
+        "entity": "lob-viib",
+        "group": "cerebellum",
+        "faces": 3000,
+        "split": true,
+        "tone": "#c45a2a"
+      },
+      {
+        "key": "copy",
+        "src": 1033,
+        "name": "Copula pyramidis (≈ hemispheric VIII)",
+        "entity": "lob-viii",
+        "group": "cerebellum",
+        "faces": 2500,
+        "split": true,
+        "tone": "#cf8550"
+      },
+      {
+        "key": "pfl",
+        "src": 1041,
+        "name": "Paraflocculus",
+        "related": "lob-x",
+        "group": "cerebellum",
+        "faces": 3000,
+        "split": true,
+        "note": "Lateral lobule adjacent to the flocculus; part of the oculomotor/vestibular cerebellum in rodents. Not yet curated as a separate entity.",
+        "tone": "#d8e08a"
+      },
+      {
+        "key": "fl",
+        "src": 1049,
+        "name": "Flocculus",
+        "entity": "lob-x",
+        "group": "cerebellum",
+        "faces": 1500,
+        "split": true,
+        "tone": "#c4d66a"
+      },
+      {
+        "key": "fn",
+        "src": 989,
+        "name": "Fastigial nucleus",
+        "entity": "fastigial",
+        "group": "nuclei",
+        "faces": 1200,
+        "split": true
+      },
+      {
+        "key": "ip",
+        "src": 91,
+        "name": "Interposed nucleus",
+        "entity": "interposed",
+        "group": "nuclei",
+        "faces": 1500,
+        "split": true
+      },
+      {
+        "key": "dn",
+        "src": 846,
+        "name": "Dentate nucleus",
+        "entity": "dentate",
+        "group": "nuclei",
+        "faces": 1000,
+        "split": true
+      },
+      {
+        "key": "pg",
+        "src": 931,
+        "name": "Pontine gray",
+        "entity": "pontine",
+        "group": "brainstem",
+        "faces": 1500
+      },
+      {
+        "key": "io",
+        "src": 83,
+        "name": "Inferior olivary complex",
+        "entity": "io",
+        "group": "brainstem",
+        "faces": 1200
+      },
+      {
+        "key": "vnc",
+        "src": 701,
+        "name": "Vestibular nuclei",
+        "entity": "vestibular-nuclei",
+        "group": "brainstem",
+        "faces": 2000
+      },
+      {
+        "key": "rn",
+        "src": 214,
+        "name": "Red nucleus",
+        "entity": "brainstem-motor",
+        "group": "brainstem",
+        "faces": 1000
+      },
+      {
+        "key": "vta",
+        "src": 749,
+        "name": "Ventral tegmental area",
+        "entity": "vta",
+        "group": "brainstem",
+        "faces": 1000
+      },
+      {
+        "key": "snc",
+        "src": 374,
+        "name": "Substantia nigra, compact part",
+        "entity": "snc",
+        "group": "brainstem",
+        "faces": 800
+      },
+      {
+        "key": "snr",
+        "src": 381,
+        "name": "Substantia nigra, reticular part",
+        "entity": "snr",
+        "group": "brainstem",
+        "faces": 800
+      },
+      {
+        "key": "sc",
+        "src": [
+          302,
+          294
+        ],
+        "name": "Superior colliculus",
+        "entity": "superior-colliculus",
+        "group": "brainstem",
+        "faces": 1500
+      },
+      {
+        "key": "pag",
+        "src": 795,
+        "name": "Periaqueductal gray",
+        "entity": "pag",
+        "group": "brainstem",
+        "faces": 2500
+      },
+      {
+        "key": "lc",
+        "src": 147,
+        "name": "Locus coeruleus",
+        "entity": "lc",
+        "group": "modulator",
+        "faces": 400
+      },
+      {
+        "key": "dr",
+        "src": 872,
+        "name": "Dorsal raphe nucleus",
+        "entity": "drn",
+        "group": "modulator",
+        "faces": 500
+      },
+      {
+        "key": "ppn",
+        "src": 1052,
+        "name": "Pedunculopontine nucleus",
+        "entity": "ppn",
+        "group": "modulator",
+        "faces": 800
+      },
+      {
+        "key": "mrn",
+        "src": 128,
+        "name": "Midbrain reticular nucleus",
+        "entity": "mrn",
+        "group": "brainstem",
+        "faces": 1500
+      },
+      {
+        "key": "tm",
+        "src": 557,
+        "name": "Tuberomammillary nucleus",
+        "entity": "tmn",
+        "group": "modulator",
+        "faces": 800
+      },
+      {
+        "key": "lha",
+        "src": 194,
+        "name": "Lateral hypothalamic area",
+        "entity": "lh",
+        "group": "modulator",
+        "faces": 1500,
+        "note": "Orexin (hypocretin) neurons lie in the lateral hypothalamic and perifornical areas; the mesh shows the whole lateral hypothalamic area."
+      },
+      {
+        "key": "si",
+        "src": 342,
+        "name": "Substantia innominata (basal forebrain)",
+        "entity": "basal-forebrain",
+        "group": "modulator",
+        "faces": 1000,
+        "note": "Cholinergic basal forebrain neurons lie in and around the substantia innominata; the mesh shows the whole nucleus."
+      },
+      {
+        "key": "grn",
+        "src": 1048,
+        "name": "Gigantocellular reticular nucleus",
+        "group": "helper",
+        "faces": 1500
+      },
+      {
+        "key": "th",
+        "src": 549,
+        "name": "Thalamus",
+        "entity": "thalamus",
+        "group": "context",
+        "faces": 4000
+      },
+      {
+        "key": "vm",
+        "src": 685,
+        "name": "Ventromedial thalamus (VM)",
+        "entity": "thal-vm",
+        "group": "target",
+        "faces": 1000
+      },
+      {
+        "key": "pf",
+        "src": 930,
+        "name": "Parafascicular nucleus (PF)",
+        "entity": "pf",
+        "group": "target",
+        "faces": 800
+      },
+      {
+        "key": "val",
+        "src": 629,
+        "name": "Ventral anterior-lateral thalamus (VAL, motor thalamus)",
+        "entity": "thal-val",
+        "group": "target",
+        "faces": 1000
+      },
+      {
+        "key": "md",
+        "src": 362,
+        "name": "Mediodorsal thalamus (MD)",
+        "entity": "thal-md",
+        "group": "target",
+        "faces": 800
+      },
+      {
+        "key": "stn",
+        "src": 470,
+        "name": "Subthalamic nucleus",
+        "entity": "stn",
+        "group": "target",
+        "faces": 600
+      },
+      {
+        "key": "cp",
+        "src": 672,
+        "name": "Caudoputamen",
+        "entity": "striatum",
+        "group": "target",
+        "faces": 4000
+      },
+      {
+        "key": "acb",
+        "src": 56,
+        "name": "Nucleus accumbens",
+        "entity": "nac",
+        "group": "target",
+        "faces": 2000,
+        "tone": "#6e7bf2"
+      },
+      {
+        "key": "gpe",
+        "src": 1022,
+        "name": "Globus pallidus, external segment",
+        "entity": "gpe",
+        "group": "target",
+        "faces": 1000,
+        "tone": "#8ec5ff"
+      },
+      {
+        "key": "gpi",
+        "src": 1031,
+        "name": "Globus pallidus, internal segment",
+        "entity": "gpi",
+        "group": "target",
+        "faces": 600,
+        "note": "The rodent internal pallidal segment is often called the entopeduncular nucleus.",
+        "tone": "#2f81f7"
+      },
+      {
+        "key": "dg",
+        "src": 726,
+        "name": "Dentate gyrus",
+        "entity": "dg",
+        "group": "cortex",
+        "faces": 1500,
+        "tone": "#a5e8a0"
+      },
+      {
+        "key": "ca3",
+        "src": 463,
+        "name": "Field CA3",
+        "entity": "ca3",
+        "group": "cortex",
+        "faces": 1500,
+        "tone": "#3fb950"
+      },
+      {
+        "key": "ca2",
+        "src": 423,
+        "name": "Field CA2",
+        "entity": "ca2",
+        "group": "cortex",
+        "faces": 400,
+        "tone": "#d2f5c4"
+      },
+      {
+        "key": "ca1",
+        "src": 382,
+        "name": "Field CA1",
+        "entity": "ca1",
+        "group": "cortex",
+        "faces": 2000,
+        "tone": "#2ea043"
+      },
+      {
+        "key": "sub",
+        "src": 502,
+        "name": "Subiculum",
+        "entity": "subiculum",
+        "group": "cortex",
+        "faces": 1000,
+        "tone": "#7ee787"
+      },
+      {
+        "key": "ent",
+        "src": 909,
+        "name": "Entorhinal area",
+        "entity": "entorhinal",
+        "group": "cortex",
+        "faces": 1500
+      },
+      {
+        "key": "ms",
+        "src": 564,
+        "name": "Medial septal nucleus",
+        "entity": "medial-septum",
+        "group": "target",
+        "faces": 400
+      },
+      {
+        "key": "la",
+        "src": 131,
+        "name": "Lateral amygdalar nucleus",
+        "entity": "la",
+        "group": "cortex",
+        "faces": 900,
+        "tone": "#ffb27a"
+      },
+      {
+        "key": "bla",
+        "src": [
+          295,
+          319
+        ],
+        "name": "Basolateral and basomedial amygdalar nuclei",
+        "entity": "bla",
+        "group": "cortex",
+        "faces": 1500,
+        "tone": "#ff9e64"
+      },
+      {
+        "key": "cea",
+        "src": 536,
+        "name": "Central amygdalar nucleus",
+        "entity": "cea",
+        "group": "cortex",
+        "faces": 1200,
+        "tone": "#e8743b"
+      },
+      {
+        "key": "ia",
+        "src": 1105,
+        "name": "Intercalated amygdalar nucleus",
+        "entity": "itc",
+        "group": "cortex",
+        "faces": 300,
+        "tone": "#fff0e0",
+        "note": "The main intercalated cell mass; smaller clusters lie along the borders of the basolateral complex."
+      },
+      {
+        "key": "mea",
+        "src": 403,
+        "name": "Medial amygdalar nucleus",
+        "entity": "mea",
+        "group": "cortex",
+        "faces": 900,
+        "tone": "#ffd0a8"
+      },
+      {
+        "key": "mg",
+        "src": 475,
+        "name": "Medial geniculate complex",
+        "entity": "mgb",
+        "group": "target",
+        "faces": 900
+      },
+      {
+        "key": "mop",
+        "src": 985,
+        "name": "Primary motor cortex",
+        "entity": "m1",
+        "group": "cortex",
+        "faces": 4000,
+        "tone": "#c9a7ff"
+      },
+      {
+        "key": "mos",
+        "src": 993,
+        "name": "Secondary motor area (MOs, incl. ALM)",
+        "entity": "premotor",
+        "group": "cortex",
+        "faces": 4000,
+        "tone": "#9b7be6"
+      },
+      {
+        "key": "ssp",
+        "src": 322,
+        "name": "Primary somatosensory area",
+        "entity": "s1",
+        "group": "cortex",
+        "faces": 5000,
+        "tone": "#7aa2f7"
+      },
+      {
+        "key": "pl",
+        "src": 972,
+        "name": "Prelimbic cortex",
+        "entity": "mpfc-pl",
+        "group": "cortex",
+        "faces": 1500,
+        "tone": "#7ee0a1"
+      },
+      {
+        "key": "ila",
+        "src": 44,
+        "name": "Infralimbic cortex",
+        "entity": "mpfc-il",
+        "group": "cortex",
+        "faces": 800,
+        "tone": "#4fb58a"
+      },
+      {
+        "key": "aca",
+        "src": 31,
+        "name": "Anterior cingulate cortex",
+        "entity": "acc",
+        "group": "cortex",
+        "faces": 2500,
+        "tone": "#62c99a"
+      },
+      {
+        "key": "orb",
+        "src": 714,
+        "name": "Orbital cortex",
+        "entity": "ofc",
+        "group": "cortex",
+        "faces": 2500,
+        "tone": "#a8e07e"
+      },
+      {
+        "key": "ptlp",
+        "src": 22,
+        "name": "Posterior parietal cortex",
+        "entity": "parietal",
+        "group": "cortex",
+        "faces": 1500
+      },
+      {
+        "key": "visp",
+        "src": 385,
+        "name": "Primary visual area (VISp)",
+        "entity": "v1",
+        "group": "cortex",
+        "faces": 1500,
+        "tone": "#dc8b8b"
+      },
+      {
+        "key": "hva",
+        "src": [
+          409,
+          402,
+          394,
+          533,
+          312782574,
+          425
+        ],
+        "name": "Higher visual areas (LM, AL, AM, PM, LI, P)",
+        "entity": "mouse-hva",
+        "group": "cortex",
+        "faces": 2000,
+        "tone": "#e7a3a3"
+      },
+      {
+        "key": "lgd",
+        "src": 170,
+        "name": "Dorsal lateral geniculate nucleus (LGd)",
+        "entity": "lgn",
+        "group": "target",
+        "faces": 800
+      },
+      {
+        "key": "ai-ant",
+        "src": [
+          104,
+          119
+        ],
+        "name": "Agranular insular area, dorsal and ventral parts (anterior insula)",
+        "entity": "ains",
+        "group": "cortex",
+        "faces": 1200,
+        "tone": "#e879f9"
+      },
+      {
+        "key": "ai-post",
+        "src": [
+          111,
+          677
+        ],
+        "name": "Agranular insular area, posterior part, and visceral area (posterior insula)",
+        "entity": "pins",
+        "group": "cortex",
+        "faces": 1200,
+        "tone": "#c084fc"
+      },
+      {
+        "key": "gu",
+        "src": 1057,
+        "name": "Gustatory areas (GU)",
+        "entity": "gc",
+        "group": "cortex",
+        "faces": 800,
+        "tone": "#f0abfc"
+      },
+      {
+        "key": "mob",
+        "src": [
+          507,
+          151
+        ],
+        "name": "Main and accessory olfactory bulbs",
+        "entity": "ob",
+        "group": "cortex",
+        "faces": 2000,
+        "tone": "#f6c177"
+      },
+      {
+        "key": "pir",
+        "src": 961,
+        "name": "Piriform area",
+        "entity": "piriform",
+        "group": "cortex",
+        "faces": 1500,
+        "tone": "#f0b37a"
+      },
+      {
+        "key": "coa",
+        "src": 631,
+        "name": "Cortical amygdalar area",
+        "entity": "coa",
+        "group": "cortex",
+        "faces": 800,
+        "tone": "#ff9e64"
+      }
     ]
   },
   "macaque": {
@@ -219,86 +1394,836 @@
       "dir": "NMT_v2.0_sym",
       "res": "NMT_v2.0_sym_05mm"
     },
-    "frame": {"unit_mm": 1, "mirror": false},
+    "frame": {
+      "unit_mm": 1,
+      "mirror": false
+    },
     "items": [
-      {"key": "brain", "mask": "brainmask", "name": "Brain", "group": "shell", "faces": 32000, "smooth": 2, "sigma": 1.0},
-      {"key": "ant-v", "sarm": ["Cb1V", "Cb2V", "Cb3V", "Cb4V"], "name": "Anterior vermis (I–IV)", "entity": "lob-ant", "group": "cerebellum", "faces": 1500, "tone": "#f3dc7a"},
-      {"key": "v-v", "sarm": ["Cb5V"], "name": "Vermis V", "entity": "lob-ant", "group": "cerebellum", "faces": 1500, "tone": "#e2b84a"},
-      {"key": "ant-i", "sarm": ["Cb3I", "Cb4I"], "name": "Lobules III–IV, intermediate", "entity": "lob-ant", "group": "cerebellum", "faces": 1500, "split": true, "tone": "#e9cc63"},
-      {"key": "v-i", "sarm": ["Cb5I"], "name": "Lobule V, intermediate", "entity": "lob-ant", "group": "cerebellum", "faces": 1500, "split": true, "tone": "#cfa23c"},
-      {"key": "vi-v", "sarm": ["Cb6V"], "name": "Vermis VI", "entity": "vermis-post", "related": "zone-vermis", "group": "cerebellum", "faces": 1500, "tone": "#f4bf8e"},
-      {"key": "sim", "sarm": ["Cb6I", "Sim"], "name": "Lobule VI and simple lobule", "entity": "lob-vi", "group": "cerebellum", "faces": 2500, "split": true, "tone": "#f0a35e",
-       "note": "SARM labels the intermediate part of lobule VI and the simple lobule separately; both are drawn here."},
-      {"key": "vii-v", "sarm": ["Cb7V"], "name": "Vermis VII", "entity": "vermis-post", "related": "zone-vermis", "group": "cerebellum", "faces": 1000, "tone": "#e69a72"},
-      {"key": "crus1", "sarm": ["Crus1"], "name": "Crus I", "entity": "lob-crus1", "related": "zone-lateral", "group": "cerebellum", "faces": 3000, "split": true, "tone": "#dc6f35"},
-      {"key": "crus2", "sarm": ["Crus2"], "name": "Crus II", "entity": "lob-crus2", "related": "zone-lateral", "group": "cerebellum", "faces": 2500, "split": true, "tone": "#f2b07e"},
-      {"key": "pm", "sarm": ["PM"], "name": "Paramedian lobule (≈ VIIB)", "entity": "lob-viib", "group": "cerebellum", "faces": 2500, "split": true, "tone": "#c45a2a"},
-      {"key": "viii-v", "sarm": ["Cb8V"], "name": "Vermis VIII (pyramis)", "entity": "vermis-post", "related": "zone-vermis", "group": "cerebellum", "faces": 800, "tone": "#ddaa84"},
-      {"key": "cop", "sarm": ["Cop"], "name": "Copula pyramidis (≈ hemispheric VIII)", "entity": "lob-viii", "group": "cerebellum", "faces": 1500, "split": true, "tone": "#cf8550"},
-      {"key": "ix-v", "sarm": ["Cb9V"], "name": "Uvula (IX)", "entity": "lob-ix", "group": "cerebellum", "faces": 1000, "tone": "#f0d68c"},
-      {"key": "x-v", "sarm": ["Cb10V"], "name": "Nodulus (X)", "entity": "lob-x", "group": "cerebellum", "faces": 1000, "tone": "#d6e297"},
-      {"key": "fl", "sarm": ["Fl"], "name": "Flocculus", "entity": "lob-x", "group": "cerebellum", "faces": 1200, "split": true, "tone": "#c4d66a"},
-      {"key": "pfl", "sarm": ["PFl"], "name": "Paraflocculus", "related": "lob-x", "group": "cerebellum", "faces": 2000, "split": true, "tone": "#d8e08a",
-       "note": "Lateral lobule adjacent to the flocculus. Not yet curated as a separate entity."},
-      {"key": "dn", "sarm": ["Lat"], "name": "Lateral (dentate) nucleus", "entity": "dentate", "group": "nuclei", "faces": 900, "split": true},
-      {"key": "ip", "sarm": ["IntA", "IntP"], "name": "Interposed nuclei (anterior and posterior)", "entity": "interposed", "group": "nuclei", "faces": 800, "split": true},
-      {"key": "fn", "sarm": ["Fas"], "name": "Fastigial nucleus", "entity": "fastigial", "group": "nuclei", "faces": 600, "split": true},
-      {"key": "scp", "sarm": ["scp", "xscp"], "name": "Superior cerebellar peduncle", "related": "dcn", "group": "tract", "faces": 1200, "note": "SARM superior cerebellar peduncle and its decussation."},
-      {"key": "pn", "sarm": ["Pn"], "name": "Pontine nuclei", "entity": "pontine", "group": "brainstem", "faces": 1500},
-      {"key": "io", "sarm": ["IO"], "name": "Inferior olive", "entity": "io", "group": "brainstem", "faces": 800},
-      {"key": "ve", "sarm": ["Ve"], "name": "Vestibular nuclei", "entity": "vestibular-nuclei", "group": "brainstem", "faces": 1000},
-      {"key": "rn", "sarm": ["R"], "name": "Red nucleus", "entity": "brainstem-motor", "group": "brainstem", "faces": 600},
-      {"key": "vta", "sarm": ["VTA"], "name": "Ventral tegmental area", "entity": "vta", "group": "brainstem", "faces": 600},
-      {"key": "sn", "sarm": ["SN"], "name": "Substantia nigra", "entity": "snc", "group": "brainstem", "faces": 1000,
-       "note": "SARM labels the substantia nigra as a whole; the compact part is drawn with this mesh, and the reticular part is marked approximately."},
-      {"key": "sc", "sarm": ["SC"], "name": "Superior colliculus", "entity": "superior-colliculus", "group": "brainstem", "faces": 800},
-      {"key": "pag", "sarm": ["PAG"], "name": "Periaqueductal gray", "entity": "pag", "group": "brainstem", "faces": 1000},
-      {"key": "mrt", "sarm": ["mRt"], "name": "Mesencephalic reticular formation", "entity": "mrn", "group": "brainstem", "faces": 1000},
-      {"key": "lc", "sarm": ["LC-Me5"], "name": "Locus coeruleus region", "entity": "lc", "group": "modulator", "faces": 300, "note": "SARM label 'LC-Me5' (locus coeruleus region)."},
-      {"key": "dr", "sarm": ["DR"], "name": "Dorsal raphe nucleus", "entity": "drn", "group": "modulator", "faces": 300},
-      {"key": "ptg", "sarm": ["PTg"], "name": "Pedunculopontine nucleus", "entity": "ppn", "group": "modulator", "faces": 500},
-      {"key": "lh", "sarm": ["LH"], "name": "Lateral hypothalamic area", "entity": "lh", "group": "modulator", "faces": 500},
-      {"key": "b", "sarm": ["B"], "name": "Basal nucleus (basal forebrain)", "entity": "basal-forebrain", "group": "modulator", "faces": 600},
-      {"key": "gi", "sarm": ["Gi"], "name": "Gigantocellular reticular nucleus", "group": "helper", "faces": 800},
-      {"key": "med", "sarm": ["Med"], "name": "Medulla", "group": "helper", "faces": 1500},
-      {"key": "mm", "sarm": ["MM/RM"], "name": "Mammillary bodies", "group": "helper", "faces": 400},
-      {"key": "th", "sarm": ["Thal"], "name": "Thalamus", "entity": "thalamus", "group": "context", "faces": 3000},
-      {"key": "vavl", "sarm": ["VA", "VLA", "VLPD", "VLPV", "VLX"], "name": "Ventral anterior and ventral lateral thalamus (motor thalamus)", "entity": "thalamus", "group": "target", "faces": 1200},
-      {"key": "md", "sarm": ["MD"], "name": "Mediodorsal thalamus", "entity": "thalamus", "group": "target", "faces": 800},
-      {"key": "cmpf", "sarm": ["CMn-PF"], "name": "Centromedian–parafascicular complex", "entity": "thalamus", "group": "target", "faces": 600},
-      {"key": "stn", "sarm": ["STh"], "name": "Subthalamic nucleus", "entity": "stn", "group": "target", "faces": 600},
-      {"key": "cd", "sarm": ["Cd"], "name": "Caudate nucleus", "entity": "striatum", "group": "target", "faces": 2500},
-      {"key": "pu", "sarm": ["Pu"], "name": "Putamen", "entity": "striatum", "group": "target", "faces": 2500},
-      {"key": "acb", "sarm": ["Acb"], "name": "Nucleus accumbens", "entity": "nac", "group": "target", "faces": 800, "tone": "#6e7bf2"},
-      {"key": "egp", "sarm": ["EGP"], "name": "Globus pallidus, external segment", "entity": "gpe", "group": "target", "faces": 1000, "tone": "#8ec5ff"},
-      {"key": "igp", "sarm": ["IGP"], "name": "Globus pallidus, internal segment", "entity": "gpi", "group": "target", "faces": 600, "tone": "#2f81f7"},
-      {"key": "la", "sarm": ["La"], "name": "Lateral amygdaloid nucleus", "entity": "la", "group": "cortex", "faces": 700, "tone": "#ffb27a"},
-      {"key": "bla", "sarm": ["BL", "BM", "PaL"], "name": "Basolateral, basomedial and paralaminar nuclei", "entity": "bla", "group": "cortex", "faces": 1000, "tone": "#ff9e64"},
-      {"key": "cea", "sarm": ["Ce"], "name": "Central amygdaloid nucleus", "entity": "cea", "group": "cortex", "faces": 600, "tone": "#e8743b"},
-      {"key": "mea", "sarm": ["Me"], "name": "Medial amygdaloid nucleus", "entity": "mea", "group": "cortex", "faces": 400, "tone": "#ffd0a8"},
-      {"key": "mg", "sarm": ["MG"], "name": "Medial geniculate nucleus", "entity": "mgb", "group": "target", "faces": 500},
-      {"key": "hip", "sarm": ["Hi"], "name": "Hippocampus", "entity": "hippocampus", "group": "cortex", "faces": 1500, "tone": "#3fb950"},
-      {"key": "sub", "sarm": ["S"], "name": "Subicular complex", "entity": "subiculum", "group": "cortex", "faces": 700, "tone": "#7ee787"},
-      {"key": "ent", "charm": ["ERh"], "name": "Entorhinal cortex", "entity": "entorhinal", "group": "cortex", "faces": 1000},
-      {"key": "m1", "charm": ["M1"], "name": "Primary motor cortex (M1)", "entity": "m1", "group": "cortex", "faces": 4000, "tone": "#c9a7ff"},
-      {"key": "pmc", "charm": ["PM"], "name": "Premotor cortex (PMd, PMv)", "entity": "premotor", "group": "cortex", "faces": 4000, "tone": "#9b7be6"},
-      {"key": "sma", "charm": ["SMA/preSMA"], "name": "Supplementary motor areas (SMA, pre-SMA)", "entity": "premotor", "group": "cortex", "faces": 2000, "tone": "#8a6cd8"},
-      {"key": "s1", "charm": ["SI"], "name": "Primary somatosensory cortex (SI)", "entity": "s1", "group": "cortex", "faces": 4000, "tone": "#7aa2f7"},
-      {"key": "dlpfc", "charm": ["dlPFC"], "name": "Dorsolateral prefrontal cortex", "entity": "dlpfc", "group": "cortex", "faces": 3000, "tone": "#7ee0a1"},
-      {"key": "ofc", "charm": ["OFC"], "name": "Orbitofrontal cortex (incl. frontal pole)", "entity": "ofc", "group": "cortex", "faces": 3000, "tone": "#a8e07e"},
-      {"key": "acc", "charm": ["area_24", "area_32"], "name": "Anterior cingulate cortex (areas 24, 32)", "entity": "acc", "group": "cortex", "faces": 2000, "tone": "#62c99a"},
-      {"key": "sgacc", "charm": ["area_25"], "name": "Subgenual cingulate (area 25)", "entity": "sgacc", "group": "cortex", "faces": 600, "tone": "#4fb58a"},
-      {"key": "ppc", "charm": ["SPL", "IPL"], "name": "Posterior parietal cortex (superior and inferior parietal lobules)", "entity": "parietal", "group": "cortex", "faces": 4000},
-      {"key": "v1", "charm": ["V1"], "name": "Primary visual cortex (V1)", "entity": "v1", "group": "cortex", "faces": 4000, "tone": "#dc8b8b"},
-      {"key": "v4", "charm": ["V4"], "name": "Area V4", "entity": "v4", "group": "cortex", "faces": 2000, "tone": "#e7a3a3"},
-      {"key": "mt", "charm": ["MT"], "name": "Middle temporal area (MT)", "entity": "mt", "group": "cortex", "faces": 800, "tone": "#f0b37a"},
-      {"key": "itc", "charm": ["ITC"], "name": "Inferior temporal cortex (TE and TEO)", "entity": "it", "group": "cortex", "faces": 3000, "tone": "#c97f8f"},
-      {"key": "fef", "charm": ["area_8A"], "name": "Frontal eye field (area 8A)", "entity": "fef", "group": "cortex", "faces": 1200, "tone": "#f6c177"},
-      {"key": "dlg", "sarm": ["DLG"], "name": "Dorsal lateral geniculate nucleus", "entity": "lgn", "group": "target", "faces": 600},
-      {"key": "ins-ant", "charm": ["Ia/Id"], "name": "Agranular and dysgranular insula (anterior insula)", "entity": "ains", "group": "cortex", "faces": 1500, "tone": "#e879f9"},
-      {"key": "ins-post", "charm": ["Ig"], "name": "Granular insula (posterior insula)", "entity": "pins", "group": "cortex", "faces": 1000, "tone": "#c084fc"},
-      {"key": "pir", "sarm": ["Pir"], "name": "Piriform cortex", "entity": "piriform", "group": "cortex", "faces": 1200, "tone": "#f0b37a"},
-      {"key": "vco", "sarm": ["VCo"], "name": "Ventral cortical amygdaloid nucleus", "entity": "coa", "group": "cortex", "faces": 500, "tone": "#ff9e64"}
+      {
+        "key": "brain",
+        "mask": "brainmask",
+        "name": "Brain",
+        "group": "shell",
+        "faces": 32000,
+        "smooth": 2,
+        "sigma": 1.0
+      },
+      {
+        "key": "ant-v",
+        "sarm": [
+          "Cb1V",
+          "Cb2V",
+          "Cb3V",
+          "Cb4V"
+        ],
+        "name": "Anterior vermis (I–IV)",
+        "entity": "lob-ant",
+        "group": "cerebellum",
+        "faces": 1500,
+        "tone": "#f3dc7a"
+      },
+      {
+        "key": "v-v",
+        "sarm": [
+          "Cb5V"
+        ],
+        "name": "Vermis V",
+        "entity": "lob-ant",
+        "group": "cerebellum",
+        "faces": 1500,
+        "tone": "#e2b84a"
+      },
+      {
+        "key": "ant-i",
+        "sarm": [
+          "Cb3I",
+          "Cb4I"
+        ],
+        "name": "Lobules III–IV, intermediate",
+        "entity": "lob-ant",
+        "group": "cerebellum",
+        "faces": 1500,
+        "split": true,
+        "tone": "#e9cc63"
+      },
+      {
+        "key": "v-i",
+        "sarm": [
+          "Cb5I"
+        ],
+        "name": "Lobule V, intermediate",
+        "entity": "lob-ant",
+        "group": "cerebellum",
+        "faces": 1500,
+        "split": true,
+        "tone": "#cfa23c"
+      },
+      {
+        "key": "vi-v",
+        "sarm": [
+          "Cb6V"
+        ],
+        "name": "Vermis VI",
+        "entity": "vermis-post",
+        "related": "zone-vermis",
+        "group": "cerebellum",
+        "faces": 1500,
+        "tone": "#f4bf8e"
+      },
+      {
+        "key": "sim",
+        "sarm": [
+          "Cb6I",
+          "Sim"
+        ],
+        "name": "Lobule VI and simple lobule",
+        "entity": "lob-vi",
+        "group": "cerebellum",
+        "faces": 2500,
+        "split": true,
+        "tone": "#f0a35e",
+        "note": "SARM labels the intermediate part of lobule VI and the simple lobule separately; both are drawn here."
+      },
+      {
+        "key": "vii-v",
+        "sarm": [
+          "Cb7V"
+        ],
+        "name": "Vermis VII",
+        "entity": "vermis-post",
+        "related": "zone-vermis",
+        "group": "cerebellum",
+        "faces": 1000,
+        "tone": "#e69a72"
+      },
+      {
+        "key": "crus1",
+        "sarm": [
+          "Crus1"
+        ],
+        "name": "Crus I",
+        "entity": "lob-crus1",
+        "related": "zone-lateral",
+        "group": "cerebellum",
+        "faces": 3000,
+        "split": true,
+        "tone": "#dc6f35"
+      },
+      {
+        "key": "crus2",
+        "sarm": [
+          "Crus2"
+        ],
+        "name": "Crus II",
+        "entity": "lob-crus2",
+        "related": "zone-lateral",
+        "group": "cerebellum",
+        "faces": 2500,
+        "split": true,
+        "tone": "#f2b07e"
+      },
+      {
+        "key": "pm",
+        "sarm": [
+          "PM"
+        ],
+        "name": "Paramedian lobule (≈ VIIB)",
+        "entity": "lob-viib",
+        "group": "cerebellum",
+        "faces": 2500,
+        "split": true,
+        "tone": "#c45a2a"
+      },
+      {
+        "key": "viii-v",
+        "sarm": [
+          "Cb8V"
+        ],
+        "name": "Vermis VIII (pyramis)",
+        "entity": "vermis-post",
+        "related": "zone-vermis",
+        "group": "cerebellum",
+        "faces": 800,
+        "tone": "#ddaa84"
+      },
+      {
+        "key": "cop",
+        "sarm": [
+          "Cop"
+        ],
+        "name": "Copula pyramidis (≈ hemispheric VIII)",
+        "entity": "lob-viii",
+        "group": "cerebellum",
+        "faces": 1500,
+        "split": true,
+        "tone": "#cf8550"
+      },
+      {
+        "key": "ix-v",
+        "sarm": [
+          "Cb9V"
+        ],
+        "name": "Uvula (IX)",
+        "entity": "lob-ix",
+        "group": "cerebellum",
+        "faces": 1000,
+        "tone": "#f0d68c"
+      },
+      {
+        "key": "x-v",
+        "sarm": [
+          "Cb10V"
+        ],
+        "name": "Nodulus (X)",
+        "entity": "lob-x",
+        "group": "cerebellum",
+        "faces": 1000,
+        "tone": "#d6e297"
+      },
+      {
+        "key": "fl",
+        "sarm": [
+          "Fl"
+        ],
+        "name": "Flocculus",
+        "entity": "lob-x",
+        "group": "cerebellum",
+        "faces": 1200,
+        "split": true,
+        "tone": "#c4d66a"
+      },
+      {
+        "key": "pfl",
+        "sarm": [
+          "PFl"
+        ],
+        "name": "Paraflocculus",
+        "related": "lob-x",
+        "group": "cerebellum",
+        "faces": 2000,
+        "split": true,
+        "tone": "#d8e08a",
+        "note": "Lateral lobule adjacent to the flocculus. Not yet curated as a separate entity."
+      },
+      {
+        "key": "dn",
+        "sarm": [
+          "Lat"
+        ],
+        "name": "Lateral (dentate) nucleus",
+        "entity": "dentate",
+        "group": "nuclei",
+        "faces": 900,
+        "split": true
+      },
+      {
+        "key": "ip",
+        "sarm": [
+          "IntA",
+          "IntP"
+        ],
+        "name": "Interposed nuclei (anterior and posterior)",
+        "entity": "interposed",
+        "group": "nuclei",
+        "faces": 800,
+        "split": true
+      },
+      {
+        "key": "fn",
+        "sarm": [
+          "Fas"
+        ],
+        "name": "Fastigial nucleus",
+        "entity": "fastigial",
+        "group": "nuclei",
+        "faces": 600,
+        "split": true
+      },
+      {
+        "key": "scp",
+        "sarm": [
+          "scp",
+          "xscp"
+        ],
+        "name": "Superior cerebellar peduncle",
+        "related": "dcn",
+        "group": "tract",
+        "faces": 1200,
+        "note": "SARM superior cerebellar peduncle and its decussation."
+      },
+      {
+        "key": "pn",
+        "sarm": [
+          "Pn"
+        ],
+        "name": "Pontine nuclei",
+        "entity": "pontine",
+        "group": "brainstem",
+        "faces": 1500
+      },
+      {
+        "key": "io",
+        "sarm": [
+          "IO"
+        ],
+        "name": "Inferior olive",
+        "entity": "io",
+        "group": "brainstem",
+        "faces": 800
+      },
+      {
+        "key": "ve",
+        "sarm": [
+          "Ve"
+        ],
+        "name": "Vestibular nuclei",
+        "entity": "vestibular-nuclei",
+        "group": "brainstem",
+        "faces": 1000
+      },
+      {
+        "key": "rn",
+        "sarm": [
+          "R"
+        ],
+        "name": "Red nucleus",
+        "entity": "brainstem-motor",
+        "group": "brainstem",
+        "faces": 600
+      },
+      {
+        "key": "vta",
+        "sarm": [
+          "VTA"
+        ],
+        "name": "Ventral tegmental area",
+        "entity": "vta",
+        "group": "brainstem",
+        "faces": 600
+      },
+      {
+        "key": "sn",
+        "sarm": [
+          "SN"
+        ],
+        "name": "Substantia nigra",
+        "entity": "snc",
+        "group": "brainstem",
+        "faces": 1000,
+        "note": "SARM labels the substantia nigra as a whole; the compact part is drawn with this mesh, and the reticular part is marked approximately."
+      },
+      {
+        "key": "sc",
+        "sarm": [
+          "SC"
+        ],
+        "name": "Superior colliculus",
+        "entity": "superior-colliculus",
+        "group": "brainstem",
+        "faces": 800
+      },
+      {
+        "key": "pag",
+        "sarm": [
+          "PAG"
+        ],
+        "name": "Periaqueductal gray",
+        "entity": "pag",
+        "group": "brainstem",
+        "faces": 1000
+      },
+      {
+        "key": "mrt",
+        "sarm": [
+          "mRt"
+        ],
+        "name": "Mesencephalic reticular formation",
+        "entity": "mrn",
+        "group": "brainstem",
+        "faces": 1000
+      },
+      {
+        "key": "lc",
+        "sarm": [
+          "LC-Me5"
+        ],
+        "name": "Locus coeruleus region",
+        "entity": "lc",
+        "group": "modulator",
+        "faces": 300,
+        "note": "SARM label 'LC-Me5' (locus coeruleus region)."
+      },
+      {
+        "key": "dr",
+        "sarm": [
+          "DR"
+        ],
+        "name": "Dorsal raphe nucleus",
+        "entity": "drn",
+        "group": "modulator",
+        "faces": 300
+      },
+      {
+        "key": "ptg",
+        "sarm": [
+          "PTg"
+        ],
+        "name": "Pedunculopontine nucleus",
+        "entity": "ppn",
+        "group": "modulator",
+        "faces": 500
+      },
+      {
+        "key": "lh",
+        "sarm": [
+          "LH"
+        ],
+        "name": "Lateral hypothalamic area",
+        "entity": "lh",
+        "group": "modulator",
+        "faces": 500
+      },
+      {
+        "key": "b",
+        "sarm": [
+          "B"
+        ],
+        "name": "Basal nucleus (basal forebrain)",
+        "entity": "basal-forebrain",
+        "group": "modulator",
+        "faces": 600
+      },
+      {
+        "key": "gi",
+        "sarm": [
+          "Gi"
+        ],
+        "name": "Gigantocellular reticular nucleus",
+        "group": "helper",
+        "faces": 800
+      },
+      {
+        "key": "med",
+        "sarm": [
+          "Med"
+        ],
+        "name": "Medulla",
+        "group": "helper",
+        "faces": 1500
+      },
+      {
+        "key": "mm",
+        "sarm": [
+          "MM/RM"
+        ],
+        "name": "Mammillary bodies",
+        "group": "helper",
+        "faces": 400
+      },
+      {
+        "key": "th",
+        "sarm": [
+          "Thal"
+        ],
+        "name": "Thalamus",
+        "entity": "thalamus",
+        "group": "context",
+        "faces": 3000
+      },
+      {
+        "key": "vavl",
+        "sarm": [
+          "VA",
+          "VLA",
+          "VLPD",
+          "VLPV",
+          "VLX"
+        ],
+        "name": "Ventral anterior and ventral lateral thalamus (motor thalamus)",
+        "entity": "thal-val",
+        "group": "target",
+        "faces": 1200
+      },
+      {
+        "key": "md",
+        "sarm": [
+          "MD"
+        ],
+        "name": "Mediodorsal thalamus",
+        "entity": "thal-md",
+        "group": "target",
+        "faces": 800
+      },
+      {
+        "key": "cmpf",
+        "sarm": [
+          "CMn-PF"
+        ],
+        "name": "Centromedian–parafascicular complex",
+        "entity": "thal-cmpf",
+        "group": "target",
+        "faces": 600
+      },
+      {
+        "key": "stn",
+        "sarm": [
+          "STh"
+        ],
+        "name": "Subthalamic nucleus",
+        "entity": "stn",
+        "group": "target",
+        "faces": 600
+      },
+      {
+        "key": "cd",
+        "sarm": [
+          "Cd"
+        ],
+        "name": "Caudate nucleus",
+        "entity": "caudate",
+        "group": "target",
+        "faces": 2500
+      },
+      {
+        "key": "pu",
+        "sarm": [
+          "Pu"
+        ],
+        "name": "Putamen",
+        "entity": "putamen",
+        "group": "target",
+        "faces": 2500
+      },
+      {
+        "key": "acb",
+        "sarm": [
+          "Acb"
+        ],
+        "name": "Nucleus accumbens",
+        "entity": "nac",
+        "group": "target",
+        "faces": 800,
+        "tone": "#6e7bf2"
+      },
+      {
+        "key": "egp",
+        "sarm": [
+          "EGP"
+        ],
+        "name": "Globus pallidus, external segment",
+        "entity": "gpe",
+        "group": "target",
+        "faces": 1000,
+        "tone": "#8ec5ff"
+      },
+      {
+        "key": "igp",
+        "sarm": [
+          "IGP"
+        ],
+        "name": "Globus pallidus, internal segment",
+        "entity": "gpi",
+        "group": "target",
+        "faces": 600,
+        "tone": "#2f81f7"
+      },
+      {
+        "key": "la",
+        "sarm": [
+          "La"
+        ],
+        "name": "Lateral amygdaloid nucleus",
+        "entity": "la",
+        "group": "cortex",
+        "faces": 700,
+        "tone": "#ffb27a"
+      },
+      {
+        "key": "bla",
+        "sarm": [
+          "BL",
+          "BM",
+          "PaL"
+        ],
+        "name": "Basolateral, basomedial and paralaminar nuclei",
+        "entity": "bla",
+        "group": "cortex",
+        "faces": 1000,
+        "tone": "#ff9e64"
+      },
+      {
+        "key": "cea",
+        "sarm": [
+          "Ce"
+        ],
+        "name": "Central amygdaloid nucleus",
+        "entity": "cea",
+        "group": "cortex",
+        "faces": 600,
+        "tone": "#e8743b"
+      },
+      {
+        "key": "mea",
+        "sarm": [
+          "Me"
+        ],
+        "name": "Medial amygdaloid nucleus",
+        "entity": "mea",
+        "group": "cortex",
+        "faces": 400,
+        "tone": "#ffd0a8"
+      },
+      {
+        "key": "mg",
+        "sarm": [
+          "MG"
+        ],
+        "name": "Medial geniculate nucleus",
+        "entity": "mgb",
+        "group": "target",
+        "faces": 500
+      },
+      {
+        "key": "hip",
+        "sarm": [
+          "Hi"
+        ],
+        "name": "Hippocampus",
+        "entity": "hippocampus",
+        "group": "cortex",
+        "faces": 1500,
+        "tone": "#3fb950"
+      },
+      {
+        "key": "sub",
+        "sarm": [
+          "S"
+        ],
+        "name": "Subicular complex",
+        "entity": "subiculum",
+        "group": "cortex",
+        "faces": 700,
+        "tone": "#7ee787"
+      },
+      {
+        "key": "ent",
+        "charm": [
+          "ERh"
+        ],
+        "name": "Entorhinal cortex",
+        "entity": "entorhinal",
+        "group": "cortex",
+        "faces": 1000
+      },
+      {
+        "key": "m1",
+        "charm": [
+          "M1"
+        ],
+        "name": "Primary motor cortex (M1)",
+        "entity": "m1",
+        "group": "cortex",
+        "faces": 4000,
+        "tone": "#c9a7ff"
+      },
+      {
+        "key": "pmc",
+        "charm": [
+          "PM"
+        ],
+        "name": "Premotor cortex (PMd, PMv)",
+        "entity": "premotor",
+        "group": "cortex",
+        "faces": 4000,
+        "tone": "#9b7be6"
+      },
+      {
+        "key": "sma",
+        "charm": [
+          "SMA/preSMA"
+        ],
+        "name": "Supplementary motor areas (SMA, pre-SMA)",
+        "entity": "premotor",
+        "group": "cortex",
+        "faces": 2000,
+        "tone": "#8a6cd8"
+      },
+      {
+        "key": "s1",
+        "charm": [
+          "SI"
+        ],
+        "name": "Primary somatosensory cortex (SI)",
+        "entity": "s1",
+        "group": "cortex",
+        "faces": 4000,
+        "tone": "#7aa2f7"
+      },
+      {
+        "key": "dlpfc",
+        "charm": [
+          "dlPFC"
+        ],
+        "name": "Dorsolateral prefrontal cortex",
+        "entity": "dlpfc",
+        "group": "cortex",
+        "faces": 3000,
+        "tone": "#7ee0a1"
+      },
+      {
+        "key": "ofc",
+        "charm": [
+          "OFC"
+        ],
+        "name": "Orbitofrontal cortex (incl. frontal pole)",
+        "entity": "ofc",
+        "group": "cortex",
+        "faces": 3000,
+        "tone": "#a8e07e"
+      },
+      {
+        "key": "acc",
+        "charm": [
+          "area_24",
+          "area_32"
+        ],
+        "name": "Anterior cingulate cortex (areas 24, 32)",
+        "entity": "acc",
+        "group": "cortex",
+        "faces": 2000,
+        "tone": "#62c99a"
+      },
+      {
+        "key": "sgacc",
+        "charm": [
+          "area_25"
+        ],
+        "name": "Subgenual cingulate (area 25)",
+        "entity": "sgacc",
+        "group": "cortex",
+        "faces": 600,
+        "tone": "#4fb58a"
+      },
+      {
+        "key": "ppc",
+        "charm": [
+          "SPL",
+          "IPL"
+        ],
+        "name": "Posterior parietal cortex (superior and inferior parietal lobules)",
+        "entity": "parietal",
+        "group": "cortex",
+        "faces": 4000
+      },
+      {
+        "key": "v1",
+        "charm": [
+          "V1"
+        ],
+        "name": "Primary visual cortex (V1)",
+        "entity": "v1",
+        "group": "cortex",
+        "faces": 4000,
+        "tone": "#dc8b8b"
+      },
+      {
+        "key": "v4",
+        "charm": [
+          "V4"
+        ],
+        "name": "Area V4",
+        "entity": "v4",
+        "group": "cortex",
+        "faces": 2000,
+        "tone": "#e7a3a3"
+      },
+      {
+        "key": "mt",
+        "charm": [
+          "MT"
+        ],
+        "name": "Middle temporal area (MT)",
+        "entity": "mt",
+        "group": "cortex",
+        "faces": 800,
+        "tone": "#f0b37a"
+      },
+      {
+        "key": "itc",
+        "charm": [
+          "ITC"
+        ],
+        "name": "Inferior temporal cortex (TE and TEO)",
+        "entity": "it",
+        "group": "cortex",
+        "faces": 3000,
+        "tone": "#c97f8f"
+      },
+      {
+        "key": "fef",
+        "charm": [
+          "area_8A"
+        ],
+        "name": "Frontal eye field (area 8A)",
+        "entity": "fef",
+        "group": "cortex",
+        "faces": 1200,
+        "tone": "#f6c177"
+      },
+      {
+        "key": "dlg",
+        "sarm": [
+          "DLG"
+        ],
+        "name": "Dorsal lateral geniculate nucleus",
+        "entity": "lgn",
+        "group": "target",
+        "faces": 600
+      },
+      {
+        "key": "ins-ant",
+        "charm": [
+          "Ia/Id"
+        ],
+        "name": "Agranular and dysgranular insula (anterior insula)",
+        "entity": "ains",
+        "group": "cortex",
+        "faces": 1500,
+        "tone": "#e879f9"
+      },
+      {
+        "key": "ins-post",
+        "charm": [
+          "Ig"
+        ],
+        "name": "Granular insula (posterior insula)",
+        "entity": "pins",
+        "group": "cortex",
+        "faces": 1000,
+        "tone": "#c084fc"
+      },
+      {
+        "key": "pir",
+        "sarm": [
+          "Pir"
+        ],
+        "name": "Piriform cortex",
+        "entity": "piriform",
+        "group": "cortex",
+        "faces": 1200,
+        "tone": "#f0b37a"
+      },
+      {
+        "key": "vco",
+        "sarm": [
+          "VCo"
+        ],
+        "name": "Ventral cortical amygdaloid nucleus",
+        "entity": "coa",
+        "group": "cortex",
+        "faces": 500,
+        "tone": "#ff9e64"
+      }
     ]
   },
   "octopus": {
@@ -306,27 +2231,369 @@
     "credit": "Schematic octopus brain drawn for this site: lobe shapes, sizes and positions are approximate and for orientation only, not taken from a scan or an atlas volume.",
     "schematic": true,
     "items": [
-      {"key": "outline", "name": "Central brain and optic lobes (outline)", "group": "shell", "center": [0, 0.35, -0.1], "radii": [3.55, 2.15, 2.05]},
-      {"key": "vl", "name": "Vertical lobe", "entity": "oct-vl", "group": "target", "tone": "#c9a2f0", "center": [0, 1.62, -0.45], "radii": [0.5, 0.36, 0.9]},
-      {"key": "sv", "name": "Subvertical lobe", "entity": "oct-subvertical", "group": "target", "tone": "#a98bd8", "center": [0, 1.14, -0.6], "radii": [0.62, 0.24, 0.6]},
-      {"key": "sfl", "name": "Superior frontal lobe", "entity": "oct-sfl", "group": "target", "tone": "#e6a3d6", "center": [0, 1.2, 0.62], "radii": [0.42, 0.3, 0.45]},
-      {"key": "ifl", "name": "Inferior frontal lobe", "group": "context", "center": [0, 0.78, 1.0], "radii": [0.38, 0.24, 0.34]},
-      {"key": "sbl", "name": "Superior buccal lobe", "group": "context", "center": [0, 0.5, 1.4], "radii": [0.3, 0.22, 0.28]},
-      {"key": "abl", "name": "Anterior basal lobe", "entity": "oct-basal", "group": "target", "tone": "#8cc0ec", "center": [0, 0.52, 0.32], "radii": [0.55, 0.27, 0.38]},
-      {"key": "mbl", "name": "Median basal lobe", "entity": "oct-basal", "group": "target", "tone": "#6a9fd8", "center": [0, 0.6, -0.38], "radii": [0.64, 0.3, 0.45]},
-      {"key": "dbl", "name": "Dorsal basal lobe", "entity": "oct-basal", "group": "target", "tone": "#7fb3e6", "center": [0, 0.93, -0.12], "radii": [0.52, 0.18, 0.3]},
-      {"key": "oes", "name": "Oesophagus", "group": "context", "shape": "tube", "points": [[0, 0.1, 1.9], [0, 0.08, 0.2], [0, 0.08, -1.7]], "radius": 0.15},
-      {"key": "brl", "name": "Brachial lobe", "entity": "oct-brachial", "group": "target", "tone": "#9bd27f", "center": [0, -0.45, 0.88], "radii": [0.55, 0.38, 0.45]},
-      {"key": "pdl-lobe", "name": "Pedal lobe", "group": "context", "center": [0, -0.62, 0.05], "radii": [0.6, 0.38, 0.42]},
-      {"key": "pvl", "name": "Palliovisceral lobe", "group": "context", "center": [0, -0.45, -0.8], "radii": [0.55, 0.42, 0.42]},
-      {"key": "ot", "name": "Optic tract", "group": "context", "mirror": true, "shape": "tube", "points": [[0.55, 0.45, -0.15], [1.8, 0.45, -0.15]], "radius": 0.16},
-      {"key": "ol", "name": "Optic lobe", "entity": "oct-ol", "group": "target", "tone": "#6fd0c0", "mirror": true, "center": [2.45, 0.4, -0.15], "radii": [0.72, 1.05, 1.2]},
-      {"key": "pedun", "name": "Peduncle lobe", "entity": "oct-peduncle", "group": "target", "tone": "#f2c46b", "mirror": true, "center": [1.25, 0.82, -0.3], "radii": [0.2, 0.17, 0.24]},
-      {"key": "olf", "name": "Olfactory lobe", "entity": "oct-olf-lobe", "group": "target", "tone": "#e9a07a", "mirror": true, "center": [1.3, 0.26, -0.05], "radii": [0.17, 0.15, 0.2]},
-      {"key": "og", "name": "Optic gland", "entity": "oct-optic-gland", "group": "target", "tone": "#f07f7f", "mirror": true, "center": [1.32, 0.64, 0.16], "radii": [0.12, 0.12, 0.12]},
-      {"key": "eye", "name": "Eye", "entity": "oct-eye", "group": "context", "tone": "#9ad0ff", "mirror": true, "center": [3.85, 0.35, 0.05], "radii": [0.85, 1.0, 1.0]},
-      {"key": "arm", "name": "Arm", "entity": "oct-arm-ns", "group": "target", "tone": "#e7b58f", "shape": "arms", "n": 8, "crown": [0, -1.3, 1.2], "axis": [0, -1, 0.55], "ring": 0.85, "length": 6.0, "radius": [0.24, 0.05]},
-      {"key": "suckers", "name": "Suckers", "entity": "oct-sucker", "group": "target", "tone": "#f6dcc6", "shape": "suckers", "of": "arm", "per_arm": 14}
+      {
+        "key": "outline",
+        "name": "Central brain and optic lobes (outline)",
+        "group": "shell",
+        "center": [
+          0,
+          0.35,
+          -0.1
+        ],
+        "radii": [
+          3.55,
+          2.15,
+          2.05
+        ]
+      },
+      {
+        "key": "vl",
+        "name": "Vertical lobe",
+        "entity": "oct-vl",
+        "group": "target",
+        "tone": "#c9a2f0",
+        "center": [
+          0,
+          1.62,
+          -0.45
+        ],
+        "radii": [
+          0.5,
+          0.36,
+          0.9
+        ]
+      },
+      {
+        "key": "sv",
+        "name": "Subvertical lobe",
+        "entity": "oct-subvertical",
+        "group": "target",
+        "tone": "#a98bd8",
+        "center": [
+          0,
+          1.14,
+          -0.6
+        ],
+        "radii": [
+          0.62,
+          0.24,
+          0.6
+        ]
+      },
+      {
+        "key": "sfl",
+        "name": "Superior frontal lobe",
+        "entity": "oct-sfl",
+        "group": "target",
+        "tone": "#e6a3d6",
+        "center": [
+          0,
+          1.2,
+          0.62
+        ],
+        "radii": [
+          0.42,
+          0.3,
+          0.45
+        ]
+      },
+      {
+        "key": "ifl",
+        "name": "Inferior frontal lobe",
+        "group": "context",
+        "center": [
+          0,
+          0.78,
+          1.0
+        ],
+        "radii": [
+          0.38,
+          0.24,
+          0.34
+        ]
+      },
+      {
+        "key": "sbl",
+        "name": "Superior buccal lobe",
+        "group": "context",
+        "center": [
+          0,
+          0.5,
+          1.4
+        ],
+        "radii": [
+          0.3,
+          0.22,
+          0.28
+        ]
+      },
+      {
+        "key": "abl",
+        "name": "Anterior basal lobe",
+        "entity": "oct-basal",
+        "group": "target",
+        "tone": "#8cc0ec",
+        "center": [
+          0,
+          0.52,
+          0.32
+        ],
+        "radii": [
+          0.55,
+          0.27,
+          0.38
+        ]
+      },
+      {
+        "key": "mbl",
+        "name": "Median basal lobe",
+        "entity": "oct-basal",
+        "group": "target",
+        "tone": "#6a9fd8",
+        "center": [
+          0,
+          0.6,
+          -0.38
+        ],
+        "radii": [
+          0.64,
+          0.3,
+          0.45
+        ]
+      },
+      {
+        "key": "dbl",
+        "name": "Dorsal basal lobe",
+        "entity": "oct-basal",
+        "group": "target",
+        "tone": "#7fb3e6",
+        "center": [
+          0,
+          0.93,
+          -0.12
+        ],
+        "radii": [
+          0.52,
+          0.18,
+          0.3
+        ]
+      },
+      {
+        "key": "oes",
+        "name": "Oesophagus",
+        "group": "context",
+        "shape": "tube",
+        "points": [
+          [
+            0,
+            0.1,
+            1.9
+          ],
+          [
+            0,
+            0.08,
+            0.2
+          ],
+          [
+            0,
+            0.08,
+            -1.7
+          ]
+        ],
+        "radius": 0.15
+      },
+      {
+        "key": "brl",
+        "name": "Brachial lobe",
+        "entity": "oct-brachial",
+        "group": "target",
+        "tone": "#9bd27f",
+        "center": [
+          0,
+          -0.45,
+          0.88
+        ],
+        "radii": [
+          0.55,
+          0.38,
+          0.45
+        ]
+      },
+      {
+        "key": "pdl-lobe",
+        "name": "Pedal lobe",
+        "group": "context",
+        "center": [
+          0,
+          -0.62,
+          0.05
+        ],
+        "radii": [
+          0.6,
+          0.38,
+          0.42
+        ]
+      },
+      {
+        "key": "pvl",
+        "name": "Palliovisceral lobe",
+        "group": "context",
+        "center": [
+          0,
+          -0.45,
+          -0.8
+        ],
+        "radii": [
+          0.55,
+          0.42,
+          0.42
+        ]
+      },
+      {
+        "key": "ot",
+        "name": "Optic tract",
+        "group": "context",
+        "mirror": true,
+        "shape": "tube",
+        "points": [
+          [
+            0.55,
+            0.45,
+            -0.15
+          ],
+          [
+            1.8,
+            0.45,
+            -0.15
+          ]
+        ],
+        "radius": 0.16
+      },
+      {
+        "key": "ol",
+        "name": "Optic lobe",
+        "entity": "oct-ol",
+        "group": "target",
+        "tone": "#6fd0c0",
+        "mirror": true,
+        "center": [
+          2.45,
+          0.4,
+          -0.15
+        ],
+        "radii": [
+          0.72,
+          1.05,
+          1.2
+        ]
+      },
+      {
+        "key": "pedun",
+        "name": "Peduncle lobe",
+        "entity": "oct-peduncle",
+        "group": "target",
+        "tone": "#f2c46b",
+        "mirror": true,
+        "center": [
+          1.25,
+          0.82,
+          -0.3
+        ],
+        "radii": [
+          0.2,
+          0.17,
+          0.24
+        ]
+      },
+      {
+        "key": "olf",
+        "name": "Olfactory lobe",
+        "entity": "oct-olf-lobe",
+        "group": "target",
+        "tone": "#e9a07a",
+        "mirror": true,
+        "center": [
+          1.3,
+          0.26,
+          -0.05
+        ],
+        "radii": [
+          0.17,
+          0.15,
+          0.2
+        ]
+      },
+      {
+        "key": "og",
+        "name": "Optic gland",
+        "entity": "oct-optic-gland",
+        "group": "target",
+        "tone": "#f07f7f",
+        "mirror": true,
+        "center": [
+          1.32,
+          0.64,
+          0.16
+        ],
+        "radii": [
+          0.12,
+          0.12,
+          0.12
+        ]
+      },
+      {
+        "key": "eye",
+        "name": "Eye",
+        "entity": "oct-eye",
+        "group": "context",
+        "tone": "#9ad0ff",
+        "mirror": true,
+        "center": [
+          3.85,
+          0.35,
+          0.05
+        ],
+        "radii": [
+          0.85,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "key": "arm",
+        "name": "Arm",
+        "entity": "oct-arm-ns",
+        "group": "target",
+        "tone": "#e7b58f",
+        "shape": "arms",
+        "n": 8,
+        "crown": [
+          0,
+          -1.3,
+          1.2
+        ],
+        "axis": [
+          0,
+          -1,
+          0.55
+        ],
+        "ring": 0.85,
+        "length": 6.0,
+        "radius": [
+          0.24,
+          0.05
+        ]
+      },
+      {
+        "key": "suckers",
+        "name": "Suckers",
+        "entity": "oct-sucker",
+        "group": "target",
+        "tone": "#f6dcc6",
+        "shape": "suckers",
+        "of": "arm",
+        "per_arm": 14
+      }
     ]
   },
   "fly": {
@@ -336,34 +2603,223 @@
     "source": {
       "type": "malecns",
       "url": "https://storage.googleapis.com/flyem-male-cns/rois/{set}/mesh/{name}",
-      "sets": {"roi": "fullbrain-roi-v5", "major": "malecns-major-compartments-v2"}
+      "sets": {
+        "roi": "fullbrain-roi-v5",
+        "major": "malecns-major-compartments-v2"
+      }
     },
     "frame": {
       "unit": "nm",
       "axes": "x toward the fly's left, y ventral, z posterior",
-      "midline_from": ["major:CentralBrain"]
+      "midline_from": [
+        "major:CentralBrain"
+      ]
     },
     "items": [
-      {"key": "brain", "name": "Brain (central brain and optic lobes)", "group": "shell", "src": ["major:CentralBrain", "major:Optic(L)", "major:Optic(R)"], "faces": 16000, "pitch": 4},
-      {"key": "al", "name": "Antennal lobe", "entity": "fly-al", "group": "cortex", "pair": true, "src": ["roi:AL({s})"], "faces": 1600, "tone": "#7ee787"},
-      {"key": "mb", "name": "Mushroom body", "entity": "fly-mb", "group": "cortex", "pair": true, "src": ["roi:CA({s})", "roi:PED({s})", "roi:aL({s})", "roi:a'L({s})", "roi:bL({s})", "roi:b'L({s})", "roi:gL({s})"], "faces": 3200, "tone": "#f2cc60",
-       "note": "Calyx, pedunculus and the α, α′, β, β′ and γ lobes, merged."},
-      {"key": "lh", "name": "Lateral horn", "entity": "fly-lh", "group": "cortex", "pair": true, "src": ["roi:LH({s})"], "faces": 1400, "tone": "#ffa657"},
-      {"key": "eb", "name": "Ellipsoid body", "entity": "fly-eb", "group": "cortex", "src": ["roi:EB"], "faces": 1600, "tone": "#ff7b72"},
-      {"key": "fb", "name": "Fan-shaped body", "entity": "fly-fb", "group": "cortex", "src": ["roi:FB"], "faces": 2000, "tone": "#d2a8ff"},
-      {"key": "pb", "name": "Protocerebral bridge", "related": "fly-cx", "group": "context", "src": ["roi:PB"], "faces": 1000},
-      {"key": "no", "name": "Noduli", "related": "fly-cx", "group": "context", "src": ["roi:NO"], "faces": 500},
-      {"key": "aotu", "name": "Anterior optic tubercle", "entity": "fly-aotu", "group": "cortex", "pair": true, "src": ["roi:AOTU({s})"], "faces": 800, "tone": "#79c0ff"},
-      {"key": "bu", "name": "Bulb", "group": "context", "pair": true, "src": ["roi:BU({s})"], "faces": 500},
-      {"key": "la", "name": "Lamina", "entity": "fly-la", "group": "cortex", "pair": true, "src": ["roi:LA({s})"], "faces": 1800, "tone": "#a5d6ff"},
-      {"key": "me", "name": "Medulla", "entity": "fly-me", "group": "cortex", "pair": true, "src": ["roi:ME({s})"], "faces": 3000, "tone": "#56d4dd"},
-      {"key": "lo", "name": "Lobula", "entity": "fly-lo", "group": "cortex", "pair": true, "src": ["roi:LO({s})"], "faces": 2400, "tone": "#3fb9a5"},
-      {"key": "lop", "name": "Lobula plate", "entity": "fly-lop", "group": "cortex", "pair": true, "src": ["roi:LOP({s})"], "faces": 2000, "tone": "#2f9e8f"},
-      {"key": "gng", "name": "Gnathal ganglia", "entity": "fly-gng", "group": "cortex", "src": ["roi:GNG"], "faces": 3000, "tone": "#c69c6d"},
-      {"key": "cv", "name": "Cervical (neck) connective", "entity": "fly-dn", "group": "cortex", "src": ["major:CV"], "faces": 800, "tone": "#f778ba",
-       "note": "Descending neurons are shown at the neck connective, which their axons traverse on the way to the ventral nerve cord."},
-      {"key": "vnc", "name": "Ventral nerve cord", "entity": "fly-vnc", "group": "shell", "src": ["major:VNC"], "faces": 3000, "smooth": 5, "pitch": 4, "opening": 2,
-       "note": "Drawn as a faint outline, like the brain surface, so that it does not hide the brain behind it."}
+      {
+        "key": "brain",
+        "name": "Brain (central brain and optic lobes)",
+        "group": "shell",
+        "src": [
+          "major:CentralBrain",
+          "major:Optic(L)",
+          "major:Optic(R)"
+        ],
+        "faces": 16000,
+        "pitch": 4
+      },
+      {
+        "key": "al",
+        "name": "Antennal lobe",
+        "entity": "fly-al",
+        "group": "cortex",
+        "pair": true,
+        "src": [
+          "roi:AL({s})"
+        ],
+        "faces": 1600,
+        "tone": "#7ee787"
+      },
+      {
+        "key": "mb",
+        "name": "Mushroom body",
+        "entity": "fly-mb",
+        "group": "cortex",
+        "pair": true,
+        "src": [
+          "roi:CA({s})",
+          "roi:PED({s})",
+          "roi:aL({s})",
+          "roi:a'L({s})",
+          "roi:bL({s})",
+          "roi:b'L({s})",
+          "roi:gL({s})"
+        ],
+        "faces": 3200,
+        "tone": "#f2cc60",
+        "note": "Calyx, pedunculus and the α, α′, β, β′ and γ lobes, merged."
+      },
+      {
+        "key": "lh",
+        "name": "Lateral horn",
+        "entity": "fly-lh",
+        "group": "cortex",
+        "pair": true,
+        "src": [
+          "roi:LH({s})"
+        ],
+        "faces": 1400,
+        "tone": "#ffa657"
+      },
+      {
+        "key": "eb",
+        "name": "Ellipsoid body",
+        "entity": "fly-eb",
+        "group": "cortex",
+        "src": [
+          "roi:EB"
+        ],
+        "faces": 1600,
+        "tone": "#ff7b72"
+      },
+      {
+        "key": "fb",
+        "name": "Fan-shaped body",
+        "entity": "fly-fb",
+        "group": "cortex",
+        "src": [
+          "roi:FB"
+        ],
+        "faces": 2000,
+        "tone": "#d2a8ff"
+      },
+      {
+        "key": "pb",
+        "name": "Protocerebral bridge",
+        "related": "fly-cx",
+        "group": "context",
+        "src": [
+          "roi:PB"
+        ],
+        "faces": 1000
+      },
+      {
+        "key": "no",
+        "name": "Noduli",
+        "related": "fly-cx",
+        "group": "context",
+        "src": [
+          "roi:NO"
+        ],
+        "faces": 500
+      },
+      {
+        "key": "aotu",
+        "name": "Anterior optic tubercle",
+        "entity": "fly-aotu",
+        "group": "cortex",
+        "pair": true,
+        "src": [
+          "roi:AOTU({s})"
+        ],
+        "faces": 800,
+        "tone": "#79c0ff"
+      },
+      {
+        "key": "bu",
+        "name": "Bulb",
+        "group": "context",
+        "pair": true,
+        "src": [
+          "roi:BU({s})"
+        ],
+        "faces": 500
+      },
+      {
+        "key": "la",
+        "name": "Lamina",
+        "entity": "fly-la",
+        "group": "cortex",
+        "pair": true,
+        "src": [
+          "roi:LA({s})"
+        ],
+        "faces": 1800,
+        "tone": "#a5d6ff"
+      },
+      {
+        "key": "me",
+        "name": "Medulla",
+        "entity": "fly-me",
+        "group": "cortex",
+        "pair": true,
+        "src": [
+          "roi:ME({s})"
+        ],
+        "faces": 3000,
+        "tone": "#56d4dd"
+      },
+      {
+        "key": "lo",
+        "name": "Lobula",
+        "entity": "fly-lo",
+        "group": "cortex",
+        "pair": true,
+        "src": [
+          "roi:LO({s})"
+        ],
+        "faces": 2400,
+        "tone": "#3fb9a5"
+      },
+      {
+        "key": "lop",
+        "name": "Lobula plate",
+        "entity": "fly-lop",
+        "group": "cortex",
+        "pair": true,
+        "src": [
+          "roi:LOP({s})"
+        ],
+        "faces": 2000,
+        "tone": "#2f9e8f"
+      },
+      {
+        "key": "gng",
+        "name": "Gnathal ganglia",
+        "entity": "fly-gng",
+        "group": "cortex",
+        "src": [
+          "roi:GNG"
+        ],
+        "faces": 3000,
+        "tone": "#c69c6d"
+      },
+      {
+        "key": "cv",
+        "name": "Cervical (neck) connective",
+        "entity": "fly-dn",
+        "group": "cortex",
+        "src": [
+          "major:CV"
+        ],
+        "faces": 800,
+        "tone": "#f778ba",
+        "note": "Descending neurons are shown at the neck connective, which their axons traverse on the way to the ventral nerve cord."
+      },
+      {
+        "key": "vnc",
+        "name": "Ventral nerve cord",
+        "entity": "fly-vnc",
+        "group": "shell",
+        "src": [
+          "major:VNC"
+        ],
+        "faces": 3000,
+        "smooth": 5,
+        "pitch": 4,
+        "opening": 2,
+        "note": "Drawn as a faint outline, like the brain surface, so that it does not hide the brain behind it."
+      }
     ]
   }
 }

@@ -434,6 +434,7 @@
     if (!e) return;
     const lv = CA.levelById[e.level];
     const links = CA.linksOf(id).slice().sort((a, b) => CA.rank(b.status) - CA.rank(a.status));
+    const children = D.entities.filter((x) => x.parent === id);
     const byLevel = {};
     links.forEach((l) => {
       const other = CA.ent[l.s === id ? l.t : l.s];
@@ -446,6 +447,11 @@
         'Part of the ' + CA.regionNoun(CA.regionOf(id)) + ' content. ',
         h('a', { href: '#', onclick: (ev) => { ev.preventDefault(); CA.setRegion(e.region); } }, 'Switch to ' + CA.regionOf(id).label)) : null,
       e.aka && e.aka.length ? h('div', { class: 'small muted', style: { marginTop: '-4px', marginBottom: '8px' } }, 'Also: ' + e.aka.join(', ')) : null,
+      e.parent && CA.ent[e.parent] ? h('div', { class: 'row small', style: { margin: '4px 0 8px 0', alignItems: 'center' } },
+        h('span', { class: 'muted' }, 'Parent:'), CA.entChip(e.parent)) : null,
+      children.length ? h('div', { style: { margin: '6px 0 10px 0' } },
+        h('div', { class: 'tiny muted', style: { marginBottom: '4px' } }, `Subdivisions & Subtypes (${children.length})`),
+        h('div', { class: 'chips' }, children.map((c) => CA.entChip(c.id)))) : null,
       h('p', { class: 'summary' }, e.summary),
       e.domains && e.domains.length ? h('div', { class: 'chips' }, e.domains.map((d) => CA.domainChip(d))) : null,
       h('div', { class: 'row', style: { marginTop: '12px' } },
@@ -500,6 +506,13 @@
     if (l.tx && nm.tx && nm.tx[l.tx]) parts.push(['Transmitter', `${nm.tx[l.tx].label} (${l.tx})`]);
     if (l.via) parts.push(['Receptor', l.via]);
     if (l.sign && nm.signs && nm.signs[l.sign]) parts.push(['Effect', `${CA.signGlyph[l.sign]} ${nm.signs[l.sign]}`]);
+    if (l.laminar) {
+      if (l.laminar.cell_class) parts.push(['Cell class', l.laminar.cell_class]);
+      if (l.laminar.src_layer) parts.push(['Source', l.laminar.src_layer]);
+      if (l.laminar.dst_layer) parts.push(['Target', l.laminar.dst_layer]);
+      if (l.laminar.tract) parts.push(['Tract', l.laminar.tract]);
+      if (l.laminar.hierarchy_dir) parts.push(['Direction', l.laminar.hierarchy_dir]);
+    }
     return parts.length ? h('div', { class: 'linkmeta' }, parts.map(([k, v]) => h('span', {}, h('span', { class: 'muted' }, k + ': '), v))) : null;
   };
 

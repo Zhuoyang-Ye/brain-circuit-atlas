@@ -53,6 +53,9 @@
       'visual-cortex': { pos: [-13, 3.5, -6.5], target: [-0.8, -0.6, -0.9] },   // left side, behind and above: eye to occipital lobe, temporal areas and pons
       insula: { pos: [-10.5, 5.5, 8], target: [-1.2, -0.4, 0.6] },   // left front, above: the insula under the opercula, thalamus, amygdala and cingulate
       olfactory: { pos: [-10, -4.5, 9], target: [-0.9, -1.6, 2.0] },   // left front, from below: bulb, piriform and orbitofrontal cortex on the underside
+      thalamus: { pos: [-8.5, 4.2, 5.0], target: [-0.4, -0.6, 0.1] },
+      hypothalamus: { pos: [-8.5, -2.5, 5.5], target: [0, -1.5, 0.8] },
+      colliculi: { pos: [-7.5, 3.0, -5.5], target: [0, -1.2, -1.5] },
     },
     mouse: {
       overview: { pos: [-10, 7, -9], target: [0, -0.5, -0.5] },
@@ -72,6 +75,9 @@
       'visual-cortex': { pos: [-13, 4.5, -2.5], target: [-1.0, 0.6, -0.5] },   // left side, a little above and behind: eye, geniculate and the visual areas on the dorsal cortex
       insula: { pos: [-12.5, 2.5, 5.5], target: [-2.0, -0.6, 0.6] },   // left side, in front: insular areas on the lateral cortex, amygdala and accumbens
       olfactory: { pos: [-11, -2, 8], target: [-1.5, -1.0, 1.5] },   // left front, a little below: bulb, piriform cortex and cortical amygdala
+      thalamus: { pos: [-8.5, 5.0, 1.5], target: [-0.6, -0.3, -0.8] },
+      hypothalamus: { pos: [-8.5, -3.5, 3.0], target: [0, -1.4, 0.2] },
+      colliculi: { pos: [-7.0, 4.5, -5.0], target: [0, -0.2, -2.2] },
     },
     macaque: {
       overview: { pos: [-11.5, 5.5, -11], target: [0, -0.8, 0] },
@@ -91,6 +97,9 @@
       'visual-cortex': { pos: [-13, 3.5, -6], target: [-1.0, -0.3, -0.8] },
       insula: { pos: [-12.5, 1.8, 6], target: [-1.6, -0.3, 1.0] },
       olfactory: { pos: [-10, -3.5, 9.5], target: [-0.9, -0.8, 2.5] },
+      thalamus: { pos: [-8.0, 3.8, 5.2], target: [-0.5, -0.5, 0.2] },
+      hypothalamus: { pos: [-8.0, -2.2, 5.0], target: [0, -1.2, 0.7] },
+      colliculi: { pos: [-7.5, 2.5, -5.0], target: [0, -1.0, -1.2] },
     },
     // the schematic octopus: y is dorsal, z points toward the arm crown, the optic lobes and eyes sit at the sides
     octopus: {
