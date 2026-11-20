@@ -183,7 +183,7 @@
       return;
     }
     initThree();
-    unsubs.push(CA.on('select', () => { applyHighlight(); rebuildLinks(); }));
+    unsubs.push(CA.on('select', () => { applyHighlight(); rebuildLinks(); updateSubregionChips(); }));
     unsubs.push(CA.on('labels', () => refreshNames()));
     loadSpecies(species);
   }
@@ -295,6 +295,35 @@
     if (c.fit && !c.view) flyTo(fitView(c.links));
   }
 
+  function fillSubregions() {
+    if (!el.subregions) return;
+    CA.clear(el.subregions);
+    const r = CA.region;
+    if (CA.isCondition(r)) return;
+    const subs = D.entities.filter((e) => e.region === r.id && (e.level === 'regional' || e.kind === 'subregion' || e.kind === 'nucleus' || e.kind === 'lobule') && e.id !== r.entity && e.id !== r.id);
+    if (!subs.length) return;
+    subs.forEach((s) => {
+      const chip = h('span', {
+        class: 'chip' + (CA.selected === s.id ? ' sel' : ''),
+        'data-id': s.id,
+        title: s.name,
+        onclick: () => {
+          CA.select(s.id);
+          CA.showEntity(s.id);
+          focusEntity(s.id);
+        }
+      }, s.aka && s.aka[0] ? s.aka[0] : s.name.split(' (')[0].split(' / ')[0]);
+      el.subregions.appendChild(chip);
+    });
+  }
+
+  function updateSubregionChips() {
+    if (!el.subregions) return;
+    el.subregions.querySelectorAll('.chip').forEach((c) => {
+      c.classList.toggle('sel', c.getAttribute('data-id') === CA.selected);
+    });
+  }
+
   /** A camera that frames the ends of these pathways, looking from the current direction. */
   function fitView(linkIds) {
     if (!camera) return null;
@@ -313,6 +342,7 @@
   function onRegion(R) {
     pickCircuit();
     fillCircuits();
+    fillSubregions();
     if (el.intro) { const fresh = buildIntro(); el.intro.replaceWith(fresh); el.intro = fresh; }
     if (!speciesOK(R, species)) {   // a region of another animal, picked from the menu: switch the species too
       const mammal = CA.store.get('atlas.mammal', 'human');
@@ -419,7 +449,9 @@
       onclick: () => (trace ? stopTrace() : startTrace()) }, '▶ Trace step by step');
     el.traceInfo = h('div', {});
     el.traceBox = h('div', { class: 'trace', style: { display: 'none' } }, el.traceBtn, el.traceInfo);
+    el.subregions = h('div', { class: 'chips subregion-chips', style: { marginTop: '8px', marginBottom: '4px' } });
     fillCircuits();
+    fillSubregions();
     const check = (key, label, fn, title) => h('label', { class: 'check small', title },
       h('input', { type: 'checkbox', checked: opts[key], onchange: (ev) => { opts[key] = ev.target.checked; CA.store.set('atlas.opts', opts); fn(); } }), label);
     const views = el.views = h('div', { class: 'chips' });
@@ -429,7 +461,7 @@
     el.xrayBox = xrayLabel.querySelector('input');
     CA.append(box,
       h('h4', { style: { marginTop: 0 } }, 'Species'), h('div', { class: 'species-box' }, speciesPick, el.speciesNote),
-      D.regions.length > 1 ? [h('h4', {}, 'Region'), CA.regionPicker()] : null,
+      D.regions.length > 1 ? [h('h4', {}, 'Region'), CA.regionPicker(), el.subregions] : null,
       CA.conditions.length ? [h('h4', {}, 'Condition'), CA.conditionPicker()] : null,
       h('h4', {}, 'Circuits'), el.circs, el.circDesc, el.txKey, el.traceBox,
       h('h4', {}, 'Display'),

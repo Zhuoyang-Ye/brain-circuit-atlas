@@ -240,22 +240,64 @@
     document.querySelectorAll('select.region-pick:not(.condition-pick)').forEach((s) => {
       const all = s.querySelector('option[data-all]');
       if (all) all.hidden = all.disabled = !cond;
-      s.value = cond ? ALL_REGIONS : CA.region.id;
+      if (cond) {
+        s.value = ALL_REGIONS;
+      } else if (CA.selected && s.querySelector(`option[value="e:${CA.selected}"]`)) {
+        s.value = `e:${CA.selected}`;
+      } else {
+        s.value = CA.region.id;
+      }
     });
     document.querySelectorAll('select.condition-pick').forEach((s) => { s.value = cond ? CA.region.id : ''; });
   };
-  /** The region dropdown: in the 3D atlas's left panel and at the top left of every other view. */
+  /** The region dropdown: in the 3D atlas's left panel and at the top left of every other view. Shows nested subregions. */
   CA.regionPicker = () => {
-    // regions grouped by animal when there is more than one (`group` on a region; the mammalian regions leave it out)
-    const groups = [...new Set(CA.anatomy.map((r) => r.group || 'Mammals'))];
-    const opt = (r) => CA.h('option', { value: r.id }, r.label);
     const cond = CA.isCondition(CA.region);
-    const sel = CA.h('select', { class: 'region-pick', title: 'Brain region: switches the circuits, layouts, queries and papers shown', 'aria-label': 'Brain region',
-      onchange: () => { if (sel.value !== ALL_REGIONS) CA.setRegion(sel.value); sel.blur(); } },
+    const subregionsOf = (r) => {
+      return D.entities.filter((e) => e.region === r.id && (e.level === 'regional' || e.kind === 'subregion' || e.kind === 'nucleus' || e.kind === 'lobule') && e.id !== r.entity && e.id !== r.id);
+    };
+
+    const sel = CA.h('select', { class: 'region-pick', title: 'Brain region & nested subregions', 'aria-label': 'Brain region',
+      onchange: () => {
+        const val = sel.value;
+        if (val === ALL_REGIONS) return;
+        if (val.startsWith('e:')) {
+          const eid = val.slice(2);
+          const e = CA.ent[eid];
+          if (e && e.region && e.region !== CA.region.id) {
+            CA.setRegion(e.region);
+          }
+          CA.select(eid);
+          CA.showEntity(eid);
+        } else {
+          CA.setRegion(val);
+          CA.select(null);
+        }
+        sel.blur();
+      }
+    },
     CA.conditions.length ? CA.h('option', { value: ALL_REGIONS, 'data-all': '', hidden: !cond, disabled: !cond }, 'All regions') : null,
-    groups.length < 2 ? CA.anatomy.map(opt)
-      : groups.map((g) => CA.h('optgroup', { label: g }, CA.anatomy.filter((r) => (r.group || 'Mammals') === g).map(opt))));
-    sel.value = cond ? ALL_REGIONS : CA.region.id;
+    CA.anatomy.map((r) => {
+      const subs = subregionsOf(r);
+      const overviewOpt = CA.h('option', { value: r.id }, r.label + ' (Overview)');
+      if (!subs.length) return CA.h('optgroup', { label: r.label }, overviewOpt);
+      return CA.h('optgroup', { label: r.label },
+        overviewOpt,
+        ...subs.map((s) => {
+          const name = s.name.length > 46 ? s.name.slice(0, 44) + '…' : s.name;
+          return CA.h('option', { value: 'e:' + s.id }, '   └─ ' + name);
+        })
+      );
+    }));
+
+    if (cond) {
+      sel.value = ALL_REGIONS;
+    } else if (CA.selected && sel.querySelector(`option[value="e:${CA.selected}"]`)) {
+      sel.value = `e:${CA.selected}`;
+    } else {
+      sel.value = CA.region.id;
+    }
+
     return sel;
   };
   /** The condition dropdown, next to the region dropdown: "None", then each condition's profile. */
@@ -268,6 +310,7 @@
     return sel;
   };
   CA.on('region', syncPickers);
+  CA.on('select', syncPickers);
   CA.inRegion = (id, r) => CA.regionMembers[(r || CA.region).id].has(id);
   CA.regionOf = (id) => (CA.ent[id] && CA.ent[id].region ? CA.regionById[CA.ent[id].region] : null);
   CA.levelDesc = (lv) => (CA.region.levelDesc || {})[lv] || (CA.levelById[lv] || {}).desc || '';
