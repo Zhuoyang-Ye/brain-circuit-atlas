@@ -1175,7 +1175,7 @@
       const pos = r.rid && positions[r.rid], approx = pos && pos.approx, marker = pos && pos.marker, hex = swatchOf(r);
       return h('div', {
         class: 'nm' + (r.id === CA.selected ? ' sel' : '') + (r.id === nameHot ? ' hot' : ''), 'data-id': r.id, 'data-rid': r.rid || '',
-        title: 'Click for its evidence and connections',
+        title: (approx ? '≈ Approximate position (not segmented in this atlas) · ' : '') + 'Click for its evidence and connections',
         onmouseenter: () => setNameHot(r.id), onmouseleave: () => setNameHot(null), onclick: () => CA.select(r.id),
       },
       h('span', { class: 'nsw' + (marker ? ' dia' : '') + (hex == null ? ' none' : ''), style: hex == null ? null : { background: hexCss(hex) },
@@ -1185,6 +1185,7 @@
     const coloured = rows.filter((r) => slotOf.has(r.rid)).sort((a, b) => slotOf.get(a.rid) - slotOf.get(b.rid));
     const rest = rows.filter((r) => !slotOf.has(r.rid)).sort((a, b) => labelText(a.id).localeCompare(labelText(b.id)));
     const unpainted = want.filter((rid) => owners.has(rid) && !slotOf.has(rid)).length;
+    const hasApprox = rows.some((r) => r.rid && positions[r.rid] && positions[r.rid].approx);
     const open = CA.store.get('atlas.namesOpen', window.innerWidth > 860);   // starts closed on a narrow screen
     el.names.classList.toggle('shut', !open);
     const listId = 'atlas-names-list';
@@ -1196,7 +1197,8 @@
         coloured.map(row),
         rest.length ? h('div', { class: 'nm-sub' }, coloured.length ? 'Other structures (atlas colours)' : 'In their atlas colours') : null,
         rest.map(row),
-        unpainted ? h('div', { class: 'nm-note' }, `Up to ${pal.length} structures of a circuit get a colour of their own; ${unpainted} more keep their atlas colours.`) : null));
+        unpainted ? h('div', { class: 'nm-note' }, `Up to ${pal.length} structures of a circuit get a colour of their own; ${unpainted} more keep their atlas colours.`) : null,
+        hasApprox ? h('div', { class: 'nm-note' }, '≈ Approximate position (spatial landmark; not segmented as a separate 3D mesh volume in this reference atlas).') : null));
   }
 
   function setNameHot(id) {
