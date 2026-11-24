@@ -405,6 +405,8 @@ namespace BrainCircuitAtlas
                 "• History Back / Forward:  Alt + Left / Alt + Right\n\n" +
                 "Search & Windows:\n" +
                 "• Find in Atlas:  Ctrl + F  or  /\n" +
+                "• Minimize Window:  Win + Down\n" +
+                "• Close Window:  Ctrl + W  or  Alt + F4\n" +
                 "• Close Details Panel / Esc:  Esc\n" +
                 "• Reload Page:  Ctrl + R  or  F5\n" +
                 "• Force Reload:  Ctrl + Shift + R  or  Ctrl + F5",

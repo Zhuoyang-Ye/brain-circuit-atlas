@@ -180,7 +180,61 @@
           '), ', ext('https://doi.org/10.6084/m9.figshare.13349282', 'figshare'), ', MIT license; structural measures from the hemibrain connectome (Scheffer et al., 2020, eLife; ',
           ext('https://doi.org/10.7554/eLife.57443', 'doi:10.7554/eLife.57443'), ').'),
         h('li', {}, '3D rendering: ', ext('https://threejs.org/', 'three.js'), ' (MIT license).')),
-      h('p', { class: 'tiny muted', style: { marginTop: '12px' } }, `Version ${D.meta.version}, knowledge base built ${D.built}. Press / or ⌘F to search, Esc to close panels, ⌘1–8 to switch views, ⇧⌘D for dark/light mode, and ⌘+/⌘- to zoom.`),
+
+      h('div', { class: 'shortcuts-section' },
+        h('h4', { style: { margin: '0 0 4px 0' } }, 'Keyboard Shortcuts & Navigation Menu'),
+        h('p', { class: 'small muted', style: { margin: '0 0 10px 0' } }, 'Complete hotkey reference for the Mac and Windows apps (macOS ⌘ / Windows Ctrl):'),
+        h('div', { class: 'shortcuts-grid' },
+          (() => {
+            const kbdSpan = (keys) => h('span', {}, ...keys.split(' ').map((k) => (k === '/' || k === '+' || k === 'or') ? h('span', { class: 'muted', style: { margin: '0 3px' } }, k) : h('kbd', {}, k)));
+            const scCard = (title, items) => h('div', { class: 'shortcuts-card' },
+              h('h5', {}, title),
+              h('table', { class: 'shortcuts-table' }, items.map(([desc, mac, win]) =>
+                h('tr', {},
+                  h('td', { class: 'sc-desc' }, desc),
+                  h('td', { class: 'sc-keys' },
+                    h('div', { title: 'macOS' }, kbdSpan(mac)),
+                    h('div', { title: 'Windows', class: 'tiny muted', style: { marginTop: '2px' } }, kbdSpan(win))
+                  )
+                )
+              ))
+            );
+            return [
+              scCard('Window & System', [
+                ['Minimize window', '⌘ M', 'Win + ↓'],
+                ['Close window / dialog', '⌘ W  or  Esc', 'Ctrl + W  or  Esc'],
+                ['Toggle full screen', '⌃ ⌘ F', 'F11'],
+                ['Search the atlas', '⌘ F  or  /', 'Ctrl + F  or  /'],
+                ['History back / forward', '⌘ [  /  ⌘ ]', 'Alt + ←  /  Alt + →'],
+                ['Reload / Force reload', '⌘ R  /  ⇧ ⌘ R', 'Ctrl + R  /  Ctrl + Shift + R'],
+                ['Quit application', '⌘ Q', 'Alt + F4']
+              ]),
+              scCard('Display & 3D Model', [
+                ['Zoom in (+15%)', '⌘ +  or  ⌘ =', 'Ctrl + +  or  Ctrl + ='],
+                ['Zoom out (-15%)', '⌘ -', 'Ctrl + -'],
+                ['Reset zoom (100%)', '⌘ 0', 'Ctrl + 0'],
+                ['Toggle dark / light mode', '⇧ ⌘ D', 'Ctrl + Shift + D'],
+                ['Toggle 3D labels (model/legend)', '⇧ ⌘ L', 'Ctrl + Shift + L'],
+                ['Toggle brain surface mesh', '⇧ ⌘ B', 'Ctrl + Shift + B'],
+                ['Toggle signal flow animation', '⇧ ⌘ A', 'Ctrl + Shift + A'],
+                ['Reset 3D camera / Overview', '⌥ ⌘ 0', 'Ctrl + Alt + 0']
+              ]),
+              scCard('Atlas Views (1–8)', [
+                ['3D Atlas', '⌘ 1', 'Ctrl + 1'],
+                ['Functional Map', '⌘ 2', 'Ctrl + 2'],
+                ['Microcircuit', '⌘ 3', 'Ctrl + 3'],
+                ['Cells & Molecules', '⌘ 4', 'Ctrl + 4'],
+                ['Across Scales', '⌘ 5', 'Ctrl + 5'],
+                ['Evidence & Gaps', '⌘ 6', 'Ctrl + 6'],
+                ['Hypothesis Lab', '⌘ 7', 'Ctrl + 7'],
+                ['Literature Library', '⌘ 8', 'Ctrl + 8']
+              ])
+            ];
+          })()
+        )
+      ),
+
+      h('p', { class: 'tiny muted', style: { marginTop: '14px' } }, `Version ${D.meta.version}, knowledge base built ${D.built}. Use ⌘M to minimize, / or ⌘F to search, Esc to dismiss panels, ⌘1–8 to switch views, ⇧⌘D for dark/light mode, and ⌘+/⌘- to zoom.`),
       CA.hasBackend && h('div', { style: { marginTop: '12px', borderTop: '1px solid var(--border)', paddingTop: '10px' } },
         h('button', { class: 'btn small', onclick: (e) => { e.preventDefault(); CA.openCloudModal(); } }, 'Cloudflare R2 & Website Sync Settings')));
     m.appendChild(card);
@@ -189,6 +243,9 @@
 
   /* ---------- start-up ---------- */
   function init() {
+    if (navigator.userAgent.includes('BrainCircuitAtlas') || (navigator.platform && navigator.platform.includes('Mac') && !navigator.userAgent.includes('Safari/'))) {
+      document.body.classList.add('mac-app');
+    }
     buildNav();
     initSearch();
     document.getElementById('about-btn').addEventListener('click', openAbout);

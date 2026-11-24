@@ -1,7 +1,7 @@
 import Cocoa
 import WebKit
 
-class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, WKNavigationDelegate {
     var window: NSWindow!
     var webView: WKWebView!
     var pythonProcess: Process?
@@ -32,6 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
 
         // Configure WKWebView for high performance WebGL 3D
         let config = WKWebViewConfiguration()
+        config.applicationNameForUserAgent = "BrainCircuitAtlas/0.3"
         config.preferences.setValue(true, forKey: "developerExtrasEnabled")
         let prefs = WKWebpagePreferences()
         prefs.allowsContentJavaScript = true
@@ -39,6 +40,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
 
         webView = WKWebView(frame: window.contentView!.bounds, configuration: config)
         webView.autoresizingMask = [.width, .height]
+        webView.navigationDelegate = self
         window.contentView?.addSubview(webView)
 
         window.makeKeyAndOrderFront(nil)
@@ -48,13 +50,37 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         loadAtlasUrl()
     }
 
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        webView.evaluateJavaScript("document.body.classList.add('mac-app')", completionHandler: nil)
+    }
+
     func setupEventMonitors() {
-        // Intercept standard display and zoom hotkeys at the app level
+        // Intercept standard display, window, and zoom hotkeys at the app level
         NSEvent.addLocalMonitorForEvents(matching: .keyDown) { [weak self] event in
             guard let self = self else { return event }
             let flags = event.modifierFlags.intersection(.deviceIndependentFlagsMask)
             let chars = event.charactersIgnoringModifiers ?? ""
 
+            // Cmd + M -> Minimize Window
+            if flags == [.command] && chars == "m" {
+                self.minimizeWindow()
+                return nil
+            }
+            // Cmd + W -> Close Window
+            if flags == [.command] && chars == "w" {
+                self.closeWindow()
+                return nil
+            }
+            // Cmd + H -> Hide
+            if flags == [.command] && chars == "h" {
+                NSApp.hide(nil)
+                return nil
+            }
+            // Cmd + Q -> Quit
+            if flags == [.command] && chars == "q" {
+                NSApp.terminate(nil)
+                return nil
+            }
             // Cmd + = or Cmd + + -> Zoom In
             if flags == [.command] && (chars == "=" || chars == "+") {
                 self.zoomIn()
@@ -393,7 +419,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         // --------------------------------------------------
         let windowMenuItem = NSMenuItem()
         let windowMenu = NSMenu(title: "Window")
-        let miniItem = NSMenuItem(title: "Minimize", action: #selector(NSWindow.performMiniaturize(_:)), keyEquivalent: "m")
+        let miniItem = NSMenuItem(title: "Minimize", action: #selector(minimizeWindow), keyEquivalent: "m")
+        miniItem.keyEquivalentModifierMask = [.command]
+        miniItem.target = self
         windowMenu.addItem(miniItem)
         let zoomWinItem = NSMenuItem(title: "Zoom", action: #selector(NSWindow.performZoom(_:)), keyEquivalent: "")
         windowMenu.addItem(zoomWinItem)
@@ -521,6 +549,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     }
 
     // MARK: - Window & System Actions
+    @objc func minimizeWindow() {
+        window?.miniaturize(nil)
+    }
+
     @objc func reloadWebView() {
         webView?.reload()
     }

@@ -770,6 +770,7 @@
     currentBundle = bundle;
     el.credit.textContent = 'Anatomy: ' + bundle.credit;
     bundle.meshes.forEach((rec) => {
+      if (rec.entity === 'ob' && (sp === 'human' || sp === 'macaque')) return;
       const style = GROUP[rec.group] || GROUP.context;
       let color = rec.group === 'shell' ? CA.tc(style.color) : style.color;   // the surface darkens on a light background
       if (rec.group === 'cerebellum' && CB_TONES[rec.entity || rec.related]) color = CB_TONES[rec.entity || rec.related];
@@ -904,7 +905,66 @@
     });
     if (A.gut) { const m = new T.Mesh(new T.SphereGeometry(human ? 0.55 : 0.4, 24, 16), mat(BODY_COLORS.gut, 0.6)); m.scale.set(1.4, 0.8, 1); m.position.copy(at('gut', 0)); add(m, 'gut', true); }
     if (A.body) { const m = new T.Mesh(new T.CapsuleGeometry(human ? 0.22 : 0.16, human ? 0.7 : 0.5, 6, 12), mat(BODY_COLORS.body, 0.75)); m.position.copy(at('body', 2)); add(m, 'body', true); }
-    // structures without a segmented mesh in this atlas
+
+    // 3D Olfactory Bulbs (prominent paired anatomical bulbs and tracts running along olfactory sulci)
+    if (sp === 'human' || sp === 'macaque' || !positions.ob) {
+      const isPrimate = sp !== 'mouse';
+      const bulbR = isPrimate ? 0.11 : 0.09;
+      const bulbL = isPrimate ? 0.38 : 0.24;
+      const tractL = isPrimate ? 0.65 : 0.40;
+      const tractR = isPrimate ? 0.045 : 0.035;
+      const obColor = GROUP.target.color; // 0x58a6ff
+      const bulbMat = mat(obColor, 0.95);
+      applyMicroNoiseShader(bulbMat);
+
+      const spread = isPrimate ? 0.24 : 0.18;
+      const baseY = sp === 'macaque' ? -1.75 : (sp === 'human' ? -2.32 : -0.26);
+      const baseZ = sp === 'macaque' ? 2.45 : (sp === 'human' ? 3.32 : 3.75);
+
+      const obGroup = new T.Group();
+      [-spread, spread].forEach((xOffset) => {
+        const pairG = new T.Group();
+        // Anterior bulb: elongated smoothed capsule
+        const bulbMesh = new T.Mesh(new T.CapsuleGeometry(bulbR, bulbL, 8, 16), bulbMat);
+        bulbMesh.rotation.x = Math.PI * 0.48; // align along anterior-posterior axis
+        bulbMesh.position.set(0, 0, 0);
+        pairG.add(bulbMesh);
+
+        // Posterior olfactory tract extending toward piriform cortex
+        const tractMesh = new T.Mesh(new T.CylinderGeometry(tractR * 0.75, tractR, tractL, 10), bulbMat);
+        tractMesh.rotation.x = Math.PI * 0.45;
+        tractMesh.position.set(0, isPrimate ? 0.07 : 0.04, -tractL * 0.52);
+        pairG.add(tractMesh);
+
+        pairG.position.set(xOffset, baseY, baseZ);
+        obGroup.add(pairG);
+      });
+
+      obGroup.userData = {
+        rec: { name: 'Olfactory bulb', entity: 'ob', group: 'target' },
+        entity: 'ob',
+        base: obColor,
+        baseOpacity: 0.95
+      };
+      scene.add(obGroup);
+      meshObjs.push(obGroup);
+      pickables.push(obGroup);
+      obGroup.traverse((child) => {
+        if (child.isMesh) {
+          child.userData = obGroup.userData;
+          pickables.push(child);
+        }
+      });
+
+      positions.ob = {
+        c: new T.Vector3(0, baseY, baseZ),
+        l: new T.Vector3(-spread, baseY, baseZ),
+        r: new T.Vector3(spread, baseY, baseZ),
+        approx: false
+      };
+    }
+
+    // structures without a segmented mesh in this atlas (approximate position markers / octahedra)
     Object.entries(positions).forEach(([id, p]) => {
       if (!p.approx || !p.marker) return;   // a marker only where no mesh stands for the structure
       const side = sideOf(id);
@@ -937,12 +997,15 @@
 
   /** The region a mesh belongs to: its entity's, else that of the entity drawn as its whole group; null if shared. */
   function meshRegion(r) {
-    const e = CA.ent[r.entity || r.related];
+    const id = r.entity || r.related;
+    if (id === 'ob' || id === 'piriform' || id === 'osn') return 'olfactory';
+    const e = CA.ent[id];
     return (e && e.region) || GROUP_REGION[r.group] || null;
   }
   /** Whether a mesh's structure takes part in the current region's content (shared structures and umbrella entities included). */
   function meshInRegion(r) {
     const id = r.entity || r.related;
+    if (id === 'ob' || id === 'piriform' || id === 'osn') return CA.region.id === 'olfactory';
     if (!id) return !GROUP_REGION[r.group] || GROUP_REGION[r.group] === CA.region.id;
     return CA.inRegion(id) || Object.entries(A3.composite || {}).some(([p, kids]) => kids.includes(id) && CA.inRegion(p));
   }

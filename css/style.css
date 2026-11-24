@@ -40,7 +40,7 @@
   --tint2: rgba(56,139,253,.2);
   --tint-line: rgba(56,139,253,.25);
   --radius: 8px;
-  --topbar: 52px;
+  --topbar: 56px;
   --panel-w: 400px;
   color-scheme: dark;
   font-size: 14px;
@@ -103,25 +103,40 @@ p { margin: 0 0 .7em; }
 .small { font-size: .85rem; }
 .tiny { font-size: .75rem; }
 .hidden { display: none !important; }
-kbd { background: var(--bg3); border: 1px solid var(--line); border-radius: 4px; padding: 0 4px; font-size: .8em; }
+kbd { display: inline-block; background: var(--bg3); border: 1px solid var(--line2); border-radius: 4px; padding: 1px 6px; font-size: .82em; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace; box-shadow: 0 1px 2px rgba(0,0,0,.2); color: var(--text); }
 
 /* ---------- top bar ---------- */
-.topbar { position: fixed; inset: 0 0 auto 0; height: var(--topbar); display: flex; align-items: center; gap: 14px;
-  padding: 0 14px; background: var(--topbar-bg); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); z-index: 50; }
-.brand { display: flex; align-items: center; gap: 8px; color: var(--text); font-weight: 650; white-space: nowrap; }
+.topbar { position: fixed; inset: 0 0 auto 0; height: var(--topbar); display: flex; align-items: center; gap: 12px;
+  padding: 0 18px; background: var(--topbar-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); z-index: 50; transition: padding-left .2s ease; }
+/* When running in native macOS desktop app, provide inset so traffic lights do not overlap logo */
+body.mac-app .topbar { padding-left: 88px; }
+
+.brand { display: flex; align-items: center; gap: 10px; color: var(--text); font-weight: 650; white-space: nowrap; flex-shrink: 0; margin-right: 14px; letter-spacing: -0.01em; }
 .brand:hover { text-decoration: none; }
-.brand svg { width: 26px; height: 26px; }
+.brand svg { width: 28px; height: 28px; flex-shrink: 0; }
 .brand .logo-body { fill: var(--bg3); stroke: var(--accent); }
 .brand .logo-folds { stroke: var(--accent2); }
-.brand small { color: var(--muted); font-weight: 400; }
+.brand small { color: var(--muted); font-weight: 400; font-size: .85em; margin-left: 2px; }
 /* the tabs keep their width while the search box gives way (250 → 150 px); after that the tabs scroll, with a fade at the edge */
-#nav { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; flex: 0 1 auto; min-width: 0; margin-right: auto; }
+#nav { display: flex; align-items: center; gap: 4px; overflow-x: auto; scrollbar-width: none; flex: 0 1 auto; min-width: 0; margin-right: auto; }
 #nav::-webkit-scrollbar { display: none; }
 #nav.more { -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 44px), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 44px), transparent); }
-#nav a { padding: 6px 11px; border-radius: 6px; color: var(--muted); white-space: nowrap; font-size: 1.05rem; font-weight: 500; }
+#nav a { padding: 6px 12px; border-radius: 6px; color: var(--muted); white-space: nowrap; font-size: 0.98rem; font-weight: 500; transition: color .15s ease, background .15s ease; }
 #nav a:hover { color: var(--text); background: var(--bg2); text-decoration: none; }
 #nav a.active { color: var(--text); background: var(--bg3); box-shadow: inset 0 -2px 0 var(--accent); }
 #nav a.offregion { opacity: .5; }
+
+/* Shortcuts cards inside modal */
+.shortcuts-section { margin-top: 18px; border-top: 1px solid var(--line); padding-top: 14px; }
+.shortcuts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 14px; margin-top: 10px; }
+.shortcuts-card { background: var(--bg2); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+.shortcuts-card h5 { margin: 0 0 10px 0; font-size: .92rem; color: var(--accent); display: flex; align-items: center; gap: 6px; }
+.shortcuts-table { width: 100%; border-collapse: collapse; font-size: .84rem; }
+.shortcuts-table tr { border-bottom: 1px solid rgba(255,255,255,.05); }
+.shortcuts-table tr:last-child { border-bottom: none; }
+.shortcuts-table td { padding: 6px 4px; vertical-align: middle; }
+.shortcuts-table td.sc-desc { color: var(--text2); }
+.shortcuts-table td.sc-keys { text-align: right; white-space: nowrap; }
 /* phones: a menu button (with the current view's name) in place of the tabs; see the max-width 860px block */
 .nav-toggle { display: none; align-items: center; gap: 7px; min-width: 0; margin-right: auto; padding: 6px 10px; color: var(--text); font-size: 1rem; font-weight: 500; }
 .nav-toggle svg { flex: none; width: 16px; height: 16px; color: var(--muted); }
