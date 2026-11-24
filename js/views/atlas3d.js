@@ -914,46 +914,45 @@
       const tractL = isPrimate ? 0.65 : 0.40;
       const tractR = isPrimate ? 0.045 : 0.035;
       const obColor = GROUP.target.color; // 0x58a6ff
-      const bulbMat = mat(obColor, 0.95);
-      applyMicroNoiseShader(bulbMat);
 
       const spread = isPrimate ? 0.24 : 0.18;
       const baseY = sp === 'macaque' ? -1.75 : (sp === 'human' ? -2.32 : -0.26);
       const baseZ = sp === 'macaque' ? 2.45 : (sp === 'human' ? 3.32 : 3.75);
 
-      const obGroup = new T.Group();
-      [-spread, spread].forEach((xOffset) => {
-        const pairG = new T.Group();
+      [-spread, spread].forEach((xOffset, idx) => {
+        const sideKey = idx === 0 ? 'L' : 'R';
+        const bulbMat = mat(obColor, 0.95);
+        applyMicroNoiseShader(bulbMat);
+
         // Anterior bulb: elongated smoothed capsule
         const bulbMesh = new T.Mesh(new T.CapsuleGeometry(bulbR, bulbL, 8, 16), bulbMat);
         bulbMesh.rotation.x = Math.PI * 0.48; // align along anterior-posterior axis
-        bulbMesh.position.set(0, 0, 0);
-        pairG.add(bulbMesh);
+        bulbMesh.position.set(xOffset, baseY, baseZ);
+        bulbMesh.userData = {
+          rec: { name: 'Olfactory bulb', entity: 'ob', group: 'target', side: sideKey },
+          entity: 'ob',
+          base: obColor,
+          baseOpacity: 0.95
+        };
+        scene.add(bulbMesh);
+        meshObjs.push(bulbMesh);
+        pickables.push(bulbMesh);
 
         // Posterior olfactory tract extending toward piriform cortex
-        const tractMesh = new T.Mesh(new T.CylinderGeometry(tractR * 0.75, tractR, tractL, 10), bulbMat);
+        const tractMat = mat(obColor, 0.85);
+        applyMicroNoiseShader(tractMat);
+        const tractMesh = new T.Mesh(new T.CylinderGeometry(tractR * 0.75, tractR, tractL, 10), tractMat);
         tractMesh.rotation.x = Math.PI * 0.45;
-        tractMesh.position.set(0, isPrimate ? 0.07 : 0.04, -tractL * 0.52);
-        pairG.add(tractMesh);
-
-        pairG.position.set(xOffset, baseY, baseZ);
-        obGroup.add(pairG);
-      });
-
-      obGroup.userData = {
-        rec: { name: 'Olfactory bulb', entity: 'ob', group: 'target' },
-        entity: 'ob',
-        base: obColor,
-        baseOpacity: 0.95
-      };
-      scene.add(obGroup);
-      meshObjs.push(obGroup);
-      pickables.push(obGroup);
-      obGroup.traverse((child) => {
-        if (child.isMesh) {
-          child.userData = obGroup.userData;
-          pickables.push(child);
-        }
+        tractMesh.position.set(xOffset, baseY + (isPrimate ? 0.07 : 0.04), baseZ - tractL * 0.52);
+        tractMesh.userData = {
+          rec: { name: 'Olfactory bulb', entity: 'ob', group: 'target', side: sideKey, related: 'ob' },
+          entity: 'ob',
+          base: obColor,
+          baseOpacity: 0.85
+        };
+        scene.add(tractMesh);
+        meshObjs.push(tractMesh);
+        pickables.push(tractMesh);
       });
 
       positions.ob = {
@@ -1059,19 +1058,21 @@
     const isLight = CA.theme === 'light';
     const grey = new T.Color(isLight ? 0x7c8796 : 0x3d4552);
     const deepen = DEEPEN[isLight ? 'light' : 'dark'];
-    meshObjs.forEach((m) => { if (m.userData.rec.group === 'shell') { m.visible = opts.shell; m.material.opacity = opts.opacity; } });
-    meshObjs.filter((m) => m.userData.rec.group !== 'shell').concat(markerObjs).forEach((o) => {
-      const rel = o.userData.rec && o.userData.rec.related;
-      const on = (o.userData.entity && sel.has(o.userData.entity)) || (rel && sel.has(rel));
+    meshObjs.forEach((m) => { if (m.userData && m.userData.rec && m.userData.rec.group === 'shell') { m.visible = opts.shell; if (m.material) m.material.opacity = opts.opacity; } });
+    meshObjs.filter((m) => m.userData && m.userData.rec && m.userData.rec.group !== 'shell').concat(markerObjs).forEach((o) => {
+      const rel = o.userData && o.userData.rec && o.userData.rec.related;
+      const on = (o.userData && o.userData.entity && sel.has(o.userData.entity)) || (rel && sel.has(rel));
       const hov = (hovered && hovered === o) || (hotRid && ownerOf.get(o) === hotRid);
       const fit = relevant(o);
       const inScope = isTargetScope(o);
       const slot = legendOn() ? slotOf.get(ownerOf.get(o)) : undefined;
-      if (o.userData.rec) {
+      if (o.userData && o.userData.rec) {
         const op = meshOpacity(o, fit, hov);
-        o.material.opacity = op;
-        o.material.depthWrite = op > 0.8;   // see-through surfaces must not hide the pathways behind them
-        o.material.needsUpdate = true;
+        if (o.material) {
+          o.material.opacity = op;
+          o.material.depthWrite = op > 0.8;   // see-through surfaces must not hide the pathways behind them
+          o.material.needsUpdate = true;
+        }
       }
       o.traverse((c) => {
         if (!c.material || !c.material.color) return;
