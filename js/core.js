@@ -244,19 +244,62 @@
         s.value = ALL_REGIONS;
       } else if (CA.selected && s.querySelector(`option[value="e:${CA.selected}"]`)) {
         s.value = `e:${CA.selected}`;
-      } else {
+      } else if (s.querySelector(`option[value="${CA.region.id}"]`)) {
         s.value = CA.region.id;
       }
     });
     document.querySelectorAll('select.condition-pick').forEach((s) => { s.value = cond ? CA.region.id : ''; });
   };
-  /** The region dropdown: in the 3D atlas's left panel and at the top left of every other view. Shows nested subregions. */
-  CA.regionPicker = () => {
+
+  const MAMMALS = ['human', 'macaque', 'mouse'];
+  CA.MAMMALS = MAMMALS;
+  CA.speciesOf = (r) => (r.species || MAMMALS);
+  CA.speciesOK = (r, sp) => !sp || CA.speciesOf(r).includes(sp);
+
+  CA.populateRegionPicker = (sel, sp) => {
+    sp = sp || CA.store.get('atlas.species', 'human');
+    const isMammal = MAMMALS.includes(sp);
     const cond = CA.isCondition(CA.region);
     const subregionsOf = (r) => {
       return D.entities.filter((e) => e.region === r.id && (e.level === 'regional' || e.kind === 'subregion' || e.kind === 'nucleus' || e.kind === 'lobule') && e.id !== r.entity && e.id !== r.id);
     };
 
+    CA.clear(sel);
+    if (CA.conditions.length && isMammal) {
+      sel.appendChild(CA.h('option', { value: ALL_REGIONS, 'data-all': '', hidden: !cond, disabled: !cond }, 'All regions'));
+    }
+
+    const matchingAnatomy = CA.anatomy.filter((r) => CA.speciesOK(r, sp));
+    matchingAnatomy.forEach((r) => {
+      const subs = subregionsOf(r);
+      const overviewOpt = CA.h('option', { value: r.id }, r.label + ' (Overview)');
+      if (!subs.length) {
+        sel.appendChild(CA.h('optgroup', { label: r.label }, overviewOpt));
+      } else {
+        sel.appendChild(CA.h('optgroup', { label: r.label },
+          overviewOpt,
+          ...subs.map((s) => {
+            const name = s.name.length > 46 ? s.name.slice(0, 44) + '…' : s.name;
+            return CA.h('option', { value: 'e:' + s.id }, '   └─ ' + name);
+          })
+        ));
+      }
+    });
+
+    if (cond) {
+      sel.value = isMammal ? ALL_REGIONS : (matchingAnatomy[0] ? matchingAnatomy[0].id : '');
+    } else if (CA.selected && sel.querySelector(`option[value="e:${CA.selected}"]`)) {
+      sel.value = `e:${CA.selected}`;
+    } else if (sel.querySelector(`option[value="${CA.region.id}"]`)) {
+      sel.value = CA.region.id;
+    } else if (matchingAnatomy.length) {
+      sel.value = matchingAnatomy[0].id;
+    }
+  };
+
+  /** The region dropdown: in the 3D atlas's left panel and at the top left of every other view. Shows nested subregions. */
+  CA.regionPicker = (sp) => {
+    sp = sp || CA.store.get('atlas.species', 'human');
     const sel = CA.h('select', { class: 'region-pick', title: 'Brain region & nested subregions', 'aria-label': 'Brain region',
       onchange: () => {
         const val = sel.value;
@@ -275,29 +318,9 @@
         }
         sel.blur();
       }
-    },
-    CA.conditions.length ? CA.h('option', { value: ALL_REGIONS, 'data-all': '', hidden: !cond, disabled: !cond }, 'All regions') : null,
-    CA.anatomy.map((r) => {
-      const subs = subregionsOf(r);
-      const overviewOpt = CA.h('option', { value: r.id }, r.label + ' (Overview)');
-      if (!subs.length) return CA.h('optgroup', { label: r.label }, overviewOpt);
-      return CA.h('optgroup', { label: r.label },
-        overviewOpt,
-        ...subs.map((s) => {
-          const name = s.name.length > 46 ? s.name.slice(0, 44) + '…' : s.name;
-          return CA.h('option', { value: 'e:' + s.id }, '   └─ ' + name);
-        })
-      );
-    }));
+    });
 
-    if (cond) {
-      sel.value = ALL_REGIONS;
-    } else if (CA.selected && sel.querySelector(`option[value="e:${CA.selected}"]`)) {
-      sel.value = `e:${CA.selected}`;
-    } else {
-      sel.value = CA.region.id;
-    }
-
+    CA.populateRegionPicker(sel, sp);
     return sel;
   };
   /** The condition dropdown, next to the region dropdown: "None", then categorized condition profiles. */
@@ -684,7 +707,7 @@
     const head = root.querySelector('.page-head > div');
     if (head) head.prepend(h('div', { class: 'region-rows' },
       h('label', { class: 'region-row' }, h('span', {}, 'Region'), CA.regionPicker()),
-      CA.conditions.length ? h('label', { class: 'region-row' }, h('span', {}, 'Condition'), CA.conditionPicker()) : null));
+      CA.conditions.length ? h('label', { class: 'region-row condition-row' }, h('span', {}, 'Condition'), CA.conditionPicker()) : null));
   }
 
   /** Views that cover other regions only say so above their content and offer a switch. */

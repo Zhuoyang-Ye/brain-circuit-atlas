@@ -140,7 +140,8 @@
   let species = CA.store.get('atlas.species', 'human');
   if (!SPECIES.some(([sp]) => sp === species)) species = SPECIES[0][0];
   // `flow` (moving dots) is off by default: arrowheads show direction, and the trace shows the order of steps
-  let opts = Object.assign({ shell: true, xray: false, labels: true, bodyParts: true, flow: false, opacity: 0.09, solid: 0 }, CA.store.get('atlas.opts', {}));
+  let opts = Object.assign({ shell: true, xray: false, labels: true, bodyParts: true, flow: false, opacity: 0.09, solid: 0, thickness: 0.55 }, CA.store.get('atlas.opts', {}));
+  if (opts.thickness == null || isNaN(opts.thickness)) opts.thickness = 0.55;
   let circuitId = null;   // set per region by pickCircuit()
   // meshes without an entity of their own take the region of the entity drawn as their whole group (cerebellar cortex, nuclei)
   const GROUP_REGION = Object.fromEntries(Object.entries(A3.groups).map(([id, g]) => [g, CA.ent[id] && CA.ent[id].region]));
@@ -372,6 +373,18 @@
     CA.store.set('atlas.species', sp);
     if (MAMMALS.includes(sp)) CA.store.set('atlas.mammal', sp);
     markSpecies();
+
+    // Re-populate all region pickers across the application for the selected species
+    document.querySelectorAll('select.region-pick:not(.condition-pick)').forEach((s) => CA.populateRegionPicker(s, sp));
+
+    // Hide or show condition picker (clinical psychiatric/neurological conditions belong to mammals only)
+    if (el.conditionBlock) {
+      el.conditionBlock.style.display = MAMMALS.includes(sp) ? '' : 'none';
+    }
+    document.querySelectorAll('.condition-row').forEach((row) => {
+      row.style.display = MAMMALS.includes(sp) ? '' : 'none';
+    });
+
     if (!speciesOK(CA.region, sp)) {
       const last = CA.store.get('atlas.region.' + groupOf(sp), null);
       const R = D.regions.find((r) => r.id === last && speciesOK(r, sp)) || CA.anatomy.find((r) => speciesOK(r, sp));
@@ -459,10 +472,12 @@
     el.credit = h('div', { class: 'atlas-credit' });
     const xrayLabel = check('xray', 'X-ray cerebellum (see nuclei)', applyMaterials);
     el.xrayBox = xrayLabel.querySelector('input');
+    el.conditionBlock = CA.conditions.length ? h('div', { class: 'condition-block' }, h('h4', {}, 'Condition'), CA.conditionPicker()) : null;
+    if (el.conditionBlock && !MAMMALS.includes(species)) el.conditionBlock.style.display = 'none';
     CA.append(box,
       h('h4', { style: { marginTop: 0 } }, 'Species'), h('div', { class: 'species-box' }, speciesPick, el.speciesNote),
-      D.regions.length > 1 ? [h('h4', {}, 'Region'), CA.regionPicker(), el.subregions] : null,
-      CA.conditions.length ? [h('h4', {}, 'Condition'), CA.conditionPicker()] : null,
+      D.regions.length > 1 ? [h('h4', {}, 'Region'), CA.regionPicker(species), el.subregions] : null,
+      el.conditionBlock,
       h('h4', {}, 'Circuits'), el.circs, el.circDesc, el.txKey, el.traceBox,
       h('h4', {}, 'Display'),
       check('shell', 'Brain surface', applyMaterials),
@@ -477,6 +492,11 @@
       check('labels', 'Labels', () => rebuildLinks(), 'Name the structures, on the model or in the legend at the side (switch next to the theme button).'),
       check('bodyParts', 'Body & senses', showMarkers),
       check('flow', 'Animate signal flow', () => {}, 'Dots also travel along every pathway, from source to target. Dot color follows the evidence grade, and hypothetical links move at half speed. The motion is schematic, not real conduction timing.'),
+      h('div', { class: 'small', style: { marginTop: '8px' } }, 'Signal & pathway thickness'),
+      h('input', { type: 'range', min: 0.15, max: 1.8, step: 0.05, value: opts.thickness != null ? opts.thickness : 0.55, style: { width: '100%' },
+        title: 'Adjust pathway tube and signal flow line thickness (0.15 fine to 1.8 bold). Double-click to reset.',
+        oninput: (ev) => { opts.thickness = +ev.target.value; CA.store.set('atlas.opts', opts); rebuildLinks(); },
+        ondblclick: (ev) => { ev.target.value = 0.55; opts.thickness = 0.55; CA.store.set('atlas.opts', opts); rebuildLinks(); } }),
       h('h4', {}, 'Camera'), views, el.credit);
     return box;
   }
@@ -894,73 +914,75 @@
     }
     const A = bundle.anchors || {};
     const at = (id, k) => new T.Vector3(...A[id][k]);
-    if (A.eyes) [1, 2].forEach((k) => { const m = new T.Mesh(new T.SphereGeometry(human ? 0.42 : 0.3, 24, 16), mat(BODY_COLORS.eyes, 0.75)); m.position.copy(at('eyes', k)); add(m, 'eyes', true); });
-    if (A.labyrinth) [1, 2].forEach((k) => {
-      const g = new T.Group();
-      [[0, 0, 0], [Math.PI / 2, 0, 0], [0, Math.PI / 2, 0]].forEach((rot, i) => {
-        const t = new T.Mesh(new T.TorusGeometry(human ? 0.2 : 0.15, 0.04, 8, 24), mat(BODY_COLORS.labyrinth, 0.95));
-        t.rotation.set(...rot); t.position.x = (i - 1) * 0.06; g.add(t);
+    if (MAMMALS.includes(sp)) {
+      if (A.eyes) [1, 2].forEach((k) => { const m = new T.Mesh(new T.SphereGeometry(human ? 0.42 : 0.3, 24, 16), mat(BODY_COLORS.eyes, 0.75)); m.position.copy(at('eyes', k)); add(m, 'eyes', true); });
+      if (A.labyrinth) [1, 2].forEach((k) => {
+        const g = new T.Group();
+        [[0, 0, 0], [Math.PI / 2, 0, 0], [0, Math.PI / 2, 0]].forEach((rot, i) => {
+          const t = new T.Mesh(new T.TorusGeometry(human ? 0.2 : 0.15, 0.04, 8, 24), mat(BODY_COLORS.labyrinth, 0.95));
+          t.rotation.set(...rot); t.position.x = (i - 1) * 0.06; g.add(t);
+        });
+        g.position.copy(at('labyrinth', k)); add(g, 'labyrinth', true);
       });
-      g.position.copy(at('labyrinth', k)); add(g, 'labyrinth', true);
-    });
-    if (A.gut) { const m = new T.Mesh(new T.SphereGeometry(human ? 0.55 : 0.4, 24, 16), mat(BODY_COLORS.gut, 0.6)); m.scale.set(1.4, 0.8, 1); m.position.copy(at('gut', 0)); add(m, 'gut', true); }
-    if (A.body) { const m = new T.Mesh(new T.CapsuleGeometry(human ? 0.22 : 0.16, human ? 0.7 : 0.5, 6, 12), mat(BODY_COLORS.body, 0.75)); m.position.copy(at('body', 2)); add(m, 'body', true); }
+      if (A.gut) { const m = new T.Mesh(new T.SphereGeometry(human ? 0.55 : 0.4, 24, 16), mat(BODY_COLORS.gut, 0.6)); m.scale.set(1.4, 0.8, 1); m.position.copy(at('gut', 0)); add(m, 'gut', true); }
+      if (A.body) { const m = new T.Mesh(new T.CapsuleGeometry(human ? 0.22 : 0.16, human ? 0.7 : 0.5, 6, 12), mat(BODY_COLORS.body, 0.75)); m.position.copy(at('body', 2)); add(m, 'body', true); }
 
-    // 3D Olfactory Bulbs (prominent paired anatomical bulbs and tracts running along olfactory sulci)
-    if (sp === 'human' || sp === 'macaque' || !positions.ob) {
-      const isPrimate = sp !== 'mouse';
-      const bulbR = isPrimate ? 0.11 : 0.09;
-      const bulbL = isPrimate ? 0.38 : 0.24;
-      const tractL = isPrimate ? 0.65 : 0.40;
-      const tractR = isPrimate ? 0.045 : 0.035;
-      const obColor = GROUP.target.color; // 0x58a6ff
+      // 3D Olfactory Bulbs (prominent paired anatomical bulbs and tracts running along olfactory sulci)
+      if (sp === 'human' || sp === 'macaque' || !positions.ob) {
+        const isPrimate = sp !== 'mouse';
+        const bulbR = isPrimate ? 0.11 : 0.09;
+        const bulbL = isPrimate ? 0.38 : 0.24;
+        const tractL = isPrimate ? 0.65 : 0.40;
+        const tractR = isPrimate ? 0.045 : 0.035;
+        const obColor = GROUP.target.color; // 0x58a6ff
 
-      const spread = isPrimate ? 0.24 : 0.18;
-      const baseY = sp === 'macaque' ? -1.75 : (sp === 'human' ? -2.32 : -0.26);
-      const baseZ = sp === 'macaque' ? 2.45 : (sp === 'human' ? 3.32 : 3.75);
+        const spread = isPrimate ? 0.24 : 0.18;
+        const baseY = sp === 'macaque' ? -1.75 : (sp === 'human' ? -2.32 : -0.26);
+        const baseZ = sp === 'macaque' ? 2.45 : (sp === 'human' ? 3.32 : 3.75);
 
-      [-spread, spread].forEach((xOffset, idx) => {
-        const sideKey = idx === 0 ? 'L' : 'R';
-        const bulbMat = mat(obColor, 0.95);
-        applyMicroNoiseShader(bulbMat);
+        [-spread, spread].forEach((xOffset, idx) => {
+          const sideKey = idx === 0 ? 'L' : 'R';
+          const bulbMat = mat(obColor, 0.95);
+          applyMicroNoiseShader(bulbMat);
 
-        // Anterior bulb: elongated smoothed capsule
-        const bulbMesh = new T.Mesh(new T.CapsuleGeometry(bulbR, bulbL, 8, 16), bulbMat);
-        bulbMesh.rotation.x = Math.PI * 0.48; // align along anterior-posterior axis
-        bulbMesh.position.set(xOffset, baseY, baseZ);
-        bulbMesh.userData = {
-          rec: { name: 'Olfactory bulb', entity: 'ob', group: 'target', side: sideKey },
-          entity: 'ob',
-          base: obColor,
-          baseOpacity: 0.95
+          // Anterior bulb: elongated smoothed capsule
+          const bulbMesh = new T.Mesh(new T.CapsuleGeometry(bulbR, bulbL, 8, 16), bulbMat);
+          bulbMesh.rotation.x = Math.PI * 0.48; // align along anterior-posterior axis
+          bulbMesh.position.set(xOffset, baseY, baseZ);
+          bulbMesh.userData = {
+            rec: { name: 'Olfactory bulb', entity: 'ob', group: 'target', side: sideKey },
+            entity: 'ob',
+            base: obColor,
+            baseOpacity: 0.95
+          };
+          scene.add(bulbMesh);
+          meshObjs.push(bulbMesh);
+          pickables.push(bulbMesh);
+
+          // Posterior olfactory tract extending toward piriform cortex
+          const tractMat = mat(obColor, 0.85);
+          applyMicroNoiseShader(tractMat);
+          const tractMesh = new T.Mesh(new T.CylinderGeometry(tractR * 0.75, tractR, tractL, 10), tractMat);
+          tractMesh.rotation.x = Math.PI * 0.45;
+          tractMesh.position.set(xOffset, baseY + (isPrimate ? 0.07 : 0.04), baseZ - tractL * 0.52);
+          tractMesh.userData = {
+            rec: { name: 'Olfactory bulb', entity: 'ob', group: 'target', side: sideKey, related: 'ob' },
+            entity: 'ob',
+            base: obColor,
+            baseOpacity: 0.85
+          };
+          scene.add(tractMesh);
+          meshObjs.push(tractMesh);
+          pickables.push(tractMesh);
+        });
+
+        positions.ob = {
+          c: new T.Vector3(0, baseY, baseZ),
+          l: new T.Vector3(-spread, baseY, baseZ),
+          r: new T.Vector3(spread, baseY, baseZ),
+          approx: false
         };
-        scene.add(bulbMesh);
-        meshObjs.push(bulbMesh);
-        pickables.push(bulbMesh);
-
-        // Posterior olfactory tract extending toward piriform cortex
-        const tractMat = mat(obColor, 0.85);
-        applyMicroNoiseShader(tractMat);
-        const tractMesh = new T.Mesh(new T.CylinderGeometry(tractR * 0.75, tractR, tractL, 10), tractMat);
-        tractMesh.rotation.x = Math.PI * 0.45;
-        tractMesh.position.set(xOffset, baseY + (isPrimate ? 0.07 : 0.04), baseZ - tractL * 0.52);
-        tractMesh.userData = {
-          rec: { name: 'Olfactory bulb', entity: 'ob', group: 'target', side: sideKey, related: 'ob' },
-          entity: 'ob',
-          base: obColor,
-          baseOpacity: 0.85
-        };
-        scene.add(tractMesh);
-        meshObjs.push(tractMesh);
-        pickables.push(tractMesh);
-      });
-
-      positions.ob = {
-        c: new T.Vector3(0, baseY, baseZ),
-        l: new T.Vector3(-spread, baseY, baseZ),
-        r: new T.Vector3(spread, baseY, baseZ),
-        approx: false
-      };
+      }
     }
 
     // structures without a segmented mesh in this atlas (approximate position markers / octahedra)
@@ -1146,15 +1168,17 @@
       const color = new T.Color(txOn ? txHex(l.tx) : CA.statusColor(l.status));
       const focus = sel && (l.s === sel || l.t === sel);
       const dashed = l.kind === 'functional' || l.status === 'hypothesis' || l.status === 'debated';
+      const thick = opts.thickness != null ? opts.thickness : 0.55;
+      const headScale = Math.max(0.45, Math.sqrt(thick));
       let obj;
       if (dashed) {
         const g = new T.BufferGeometry().setFromPoints(curve.getPoints(64));
-        obj = new T.Line(g, new T.LineDashedMaterial({ color: l.kind === 'functional' && l.status !== 'hypothesis' && !txOn ? CA.tc(0x9aa4b2) : color, dashSize: 0.16, gapSize: 0.1, transparent: true, opacity: 0.95 }));
+        obj = new T.Line(g, new T.LineDashedMaterial({ color: l.kind === 'functional' && l.status !== 'hypothesis' && !txOn ? CA.tc(0x9aa4b2) : color, dashSize: 0.16 * thick, gapSize: 0.1 * thick, transparent: true, opacity: 0.95 }));
         obj.computeLineDistances();
-        const hit = new T.Mesh(new T.TubeGeometry(curve, 24, 0.09, 5, false), new T.MeshBasicMaterial({ visible: false }));
+        const hit = new T.Mesh(new T.TubeGeometry(curve, 24, Math.max(0.04, 0.09 * thick), 5, false), new T.MeshBasicMaterial({ visible: false }));
         obj.add(hit); hit.userData.link = l; pickables.push(hit);
       } else {
-        const radius = ({ established: 0.055, supported: 0.045, emerging: 0.038 }[l.status] || 0.04) * (human ? 1 : 0.85) * (focus ? 1.4 : 1);
+        const radius = ({ established: 0.055, supported: 0.045, emerging: 0.038 }[l.status] || 0.04) * (human ? 1 : 0.85) * (focus ? 1.35 : 1) * thick;
         obj = new T.Mesh(new T.TubeGeometry(curve, 48, radius, 7, false), new T.MeshStandardMaterial({
           color,
           roughness: 0.4,
@@ -1171,10 +1195,10 @@
       const objs = [obj];
       // arrowheads a little past the middle show the direction, in still images too (the ends sit inside the structures)
       const headColor = l.kind === 'functional' && l.status !== 'hypothesis' && !txOn ? new T.Color(CA.tc(0x9aa4b2)) : color;
-      const headR = (human ? 0.17 : 0.135) * (focus ? 1.25 : 1) * (txOn ? 0.7 : 1);   // neuromodulatory pathways often converge: smaller heads
+      const headR = (human ? 0.17 : 0.135) * (focus ? 1.25 : 1) * (txOn ? 0.7 : 1) * headScale;
       // two heads on a long pathway, and on every neuromodulatory one, so its direction reads even where an end is hidden
       (dist > 9 || txOn ? [0.36, 0.7] : [0.58]).forEach((u) => {
-        const cone = new T.Mesh(new T.ConeGeometry(headR, headR * 2.7, 14), new T.MeshStandardMaterial({
+        const cone = new T.Mesh(new T.ConeGeometry(headR, headR * 2.5, 14), new T.MeshStandardMaterial({
           color: headColor,
           roughness: 0.35,
           metalness: 0.05,
@@ -1194,7 +1218,8 @@
       const n = Math.max(1, Math.round(dist / 3));
       for (let k = 0; k < n; k++) {
         const pulseCol = color.clone().lerp(new T.Color(0xffffff), 0.35);
-        const s = new T.Mesh(new T.SphereGeometry(human ? 0.085 : 0.07, 12, 10), new T.MeshStandardMaterial({
+        const pulseR = (human ? 0.085 : 0.07) * headScale;
+        const s = new T.Mesh(new T.SphereGeometry(pulseR, 12, 10), new T.MeshStandardMaterial({
           color: pulseCol,
           roughness: 0.25,
           metalness: 0.04,
@@ -1285,8 +1310,10 @@
     const steps = traceSteps();
     if (steps.length < 2 || !scene) return;
     const T = window.THREE, human = species !== 'mouse';
+    const thick = opts.thickness != null ? opts.thickness : 0.55;
+    const headScale = Math.max(0.45, Math.sqrt(thick));
     trace = { steps, k: -1, t0: 0, arrived: 0, ended: 0, dots: [], lit: new Map(), color: new T.Color(CA.tc(TRACE_COLOR)),
-      dotGeo: new T.SphereGeometry(human ? 0.2 : 0.15, 16, 12), haloGeo: new T.SphereGeometry(human ? 0.45 : 0.34, 16, 12) };
+      dotGeo: new T.SphereGeometry((human ? 0.2 : 0.15) * headScale, 16, 12), haloGeo: new T.SphereGeometry((human ? 0.45 : 0.34) * headScale, 16, 12) };
     drawnLinks.forEach((d) => d.objs.forEach((o) => { o.material.opacity = 0.14; }));   // every pathway dims and lights up as the pulse travels it
     CA.clear(el.traceInfo).append(el.traceList = h('ol', { class: 'trace-steps' }));
     nextStep(performance.now());
