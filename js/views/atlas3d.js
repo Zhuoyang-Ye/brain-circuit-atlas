@@ -484,33 +484,54 @@
   /** The background and labels follow the CSS theme; recolour the brain surface and pathways in place. */
   function onTheme() {
     if (!scene) return;
-    meshObjs.forEach((m) => { if (m.userData.rec.group === 'shell') m.material.color.setHex(CA.tc(GROUP.shell.color)); });
+    const isLight = CA.theme === 'light';
+    const rimColorHex = isLight ? 0x5a6578 : 0x7eb8ff;
+    meshObjs.forEach((m) => {
+      if (m.userData.rec.group === 'shell') {
+        m.material.color.setHex(CA.tc(GROUP.shell.color));
+        if (m.material.userData && m.material.userData.rimColor) {
+          m.material.userData.rimColor.setHex(rimColorHex);
+        }
+      }
+    });
+    if (currentBundle) buildGroundStaging(currentBundle);
     rebuildLinks();
   }
 
   /* ---------------------------------------------------------------- three.js */
   function initThree() {
     const T = window.THREE;
-    renderer = new T.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true });
+    renderer = new T.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true, powerPreference: 'high-performance' });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     renderer.setClearColor(0x000000, 0);
+    renderer.outputEncoding = T.sRGBEncoding;
+    renderer.toneMapping = T.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.08;
     el.canvas.appendChild(renderer.domElement);
     scene = new T.Scene();
     camera = new T.PerspectiveCamera(38, 1, 0.1, 200);
     camera.position.set(-11.5, 5.5, -11);
     scene.add(camera);
-    scene.add(new T.HemisphereLight(0xdde6ff, 0x1a1410, 0.75));
-    const key = new T.DirectionalLight(0xffffff, 0.85);
-    key.position.set(-3, 6, 4);
+
+    // Three-point biological studio lighting: warm key, cool ambient, crisp rim and soft fill
+    scene.add(new T.HemisphereLight(0xdde6ff, 0x141824, 0.72));
+    const key = new T.DirectionalLight(0xfff6ea, 0.92);
+    key.position.set(-3.5, 6.5, 4.5);
     camera.add(key);
-    const rim = new T.DirectionalLight(0x88aaff, 0.35);
-    rim.position.set(6, -2, -6);
+    const rim = new T.DirectionalLight(0x78abff, 0.65);
+    rim.position.set(6, -1.5, -8);
     scene.add(rim);
+    const fill = new T.DirectionalLight(0x9cb8df, 0.28);
+    fill.position.set(-6, -3, -2);
+    scene.add(fill);
+
     controls = new T.OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.08;
     controls.minDistance = 3;
     controls.maxDistance = 40;
+    controls.minPolarAngle = 0.05;
+    controls.maxPolarAngle = Math.PI * 0.92;
     controls.addEventListener('start', () => { tween = null; });
     clock = new T.Clock();
     resize();
@@ -561,15 +582,29 @@
     });
   }
 
+  let groundShadow = null, currentBundle = null;
+
   function clearScene() {
     const kill = (o) => {
       scene.remove(o);
       o.traverse((c) => {
         if (c.geometry && !c.geometry.userData.cached) c.geometry.dispose();
-        if (c.material) (Array.isArray(c.material) ? c.material : [c.material]).forEach((m) => m.dispose());
+        if (c.material) (Array.isArray(c.material) ? c.material : [c.material]).forEach((m) => {
+          if (m.map) m.map.dispose();
+          m.dispose();
+        });
       });
     };
     stopTrace();
+    if (groundShadow) {
+      scene.remove(groundShadow);
+      if (groundShadow.geometry) groundShadow.geometry.dispose();
+      if (groundShadow.material) {
+        if (groundShadow.material.map) groundShadow.material.map.dispose();
+        groundShadow.material.dispose();
+      }
+      groundShadow = null;
+    }
     [...meshObjs, ...linkObjs, ...markerObjs].forEach(kill);
     meshObjs = []; linkObjs = []; markerObjs = []; pickables = []; pulses = []; drawnLinks = []; ownerOf = new Map();
     labelEls.forEach((l) => l.el.remove()); labelEls = [];
@@ -599,16 +634,171 @@
     return g;
   }
 
+  /* -------- Grounded staging & shadow anchor -------- */
+  function buildGroundStaging(bundle) {
+    if (!scene) return;
+    const T = window.THREE;
+    if (groundShadow) {
+      scene.remove(groundShadow);
+      if (groundShadow.geometry) groundShadow.geometry.dispose();
+      if (groundShadow.material) {
+        if (groundShadow.material.map) groundShadow.material.map.dispose();
+        groundShadow.material.dispose();
+      }
+      groundShadow = null;
+    }
+    const bounds = bundle.bounds || [[-4, -3, -4], [4, 3, 4]];
+    let minY = bounds[0][1];
+    if (bundle.spine && bundle.spine.length) {
+      bundle.spine.forEach((p) => { if (p[1] < minY) minY = p[1]; });
+    }
+    const groundY = minY - 0.45;
+    const size = Math.max(bounds[1][0] - bounds[0][0], bounds[1][2] - bounds[0][2], 8) * 1.8;
+
+    const cv = document.createElement('canvas');
+    cv.width = cv.height = 256;
+    const ctx = cv.getContext('2d');
+    const isLight = CA.theme === 'light';
+    const darkAlpha = isLight ? 0.25 : 0.44;
+    const midAlpha = isLight ? 0.1 : 0.18;
+    const grad = ctx.createRadialGradient(128, 128, 0, 128, 128, 128);
+    const rgb = isLight ? '40, 50, 70' : '0, 0, 0';
+    grad.addColorStop(0, `rgba(${rgb}, ${darkAlpha})`);
+    grad.addColorStop(0.38, `rgba(${rgb}, ${midAlpha})`);
+    grad.addColorStop(0.72, `rgba(${rgb}, 0.03)`);
+    grad.addColorStop(1, `rgba(${rgb}, 0)`);
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, 256, 256);
+
+    // Subtle concentric staging ring to anchor depth and orientation
+    ctx.beginPath();
+    ctx.arc(128, 128, 96, 0, Math.PI * 2);
+    ctx.strokeStyle = isLight ? 'rgba(71, 85, 105, 0.08)' : 'rgba(148, 163, 184, 0.09)';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+
+    const tex = new T.CanvasTexture(cv);
+    const plane = new T.Mesh(
+      new T.PlaneGeometry(size, size),
+      new T.MeshBasicMaterial({ map: tex, transparent: true, depthWrite: false, opacity: 0.95 })
+    );
+    plane.rotation.x = -Math.PI / 2;
+    plane.position.set(0, groundY, 0);
+    plane.renderOrder = 0;
+    scene.add(plane);
+    groundShadow = plane;
+  }
+
+  /* -------- Shader Enhancements: Fresnel Edge Rim & Procedural Micro-variations -------- */
+  function applyFresnelShader(mat, rimHex, power = 2.4, intensity = 1.15) {
+    const T = window.THREE;
+    const rimCol = new T.Color(rimHex);
+    mat.userData = mat.userData || {};
+    mat.userData.rimColor = rimCol;
+
+    mat.onBeforeCompile = (shader) => {
+      shader.uniforms.uRimColor = { value: rimCol };
+      shader.uniforms.uRimPower = { value: power };
+      shader.uniforms.uRimIntensity = { value: intensity };
+      mat.userData.shader = shader;
+
+      shader.vertexShader = shader.vertexShader.replace(
+        '#include <common>',
+        `#include <common>
+         varying vec3 vViewNormal;
+         varying vec3 vViewPositionVec;`
+      );
+
+      shader.vertexShader = shader.vertexShader.replace(
+        '#include <project_vertex>',
+        `#include <project_vertex>
+         vViewNormal = normalize(normalMatrix * objectNormal);
+         vViewPositionVec = -mvPosition.xyz;`
+      );
+
+      shader.fragmentShader = shader.fragmentShader.replace(
+        '#include <common>',
+        `#include <common>
+         uniform vec3 uRimColor;
+         uniform float uRimPower;
+         uniform float uRimIntensity;
+         varying vec3 vViewNormal;
+         varying vec3 vViewPositionVec;`
+      );
+
+      shader.fragmentShader = shader.fragmentShader.replace(
+        '#include <dithering_fragment>',
+        `#include <dithering_fragment>
+         vec3 V = normalize(vViewPositionVec);
+         vec3 N = normalize(vViewNormal);
+         float rimVal = 1.0 - clamp(abs(dot(N, V)), 0.0, 1.0);
+         rimVal = pow(rimVal, uRimPower) * uRimIntensity;
+         gl_FragColor.rgb = mix(gl_FragColor.rgb, uRimColor, clamp(rimVal, 0.0, 1.0));`
+      );
+    };
+  }
+
+  function applyMicroNoiseShader(mat) {
+    mat.onBeforeCompile = (shader) => {
+      shader.vertexShader = shader.vertexShader.replace(
+        '#include <common>',
+        `#include <common>
+         varying vec3 vBioWorldPos;`
+      );
+      shader.vertexShader = shader.vertexShader.replace(
+        '#include <project_vertex>',
+        `#include <project_vertex>
+         vBioWorldPos = (modelMatrix * vec4(transformed, 1.0)).xyz;`
+      );
+      shader.fragmentShader = shader.fragmentShader.replace(
+        '#include <common>',
+        `#include <common>
+         varying vec3 vBioWorldPos;`
+      );
+      shader.fragmentShader = shader.fragmentShader.replace(
+        '#include <roughnessmap_fragment>',
+        `#include <roughnessmap_fragment>
+         float uBioNoise = sin(vBioWorldPos.x * 12.0) * cos(vBioWorldPos.y * 12.0) * sin(vBioWorldPos.z * 12.0);
+         roughnessFactor = clamp(roughnessFactor + uBioNoise * 0.05, 0.05, 0.95);`
+      );
+    };
+  }
+
   function buildScene(sp, bundle) {
     const T = window.THREE;
     clearScene();
+    currentBundle = bundle;
     el.credit.textContent = 'Anatomy: ' + bundle.credit;
     bundle.meshes.forEach((rec) => {
       const style = GROUP[rec.group] || GROUP.context;
       let color = rec.group === 'shell' ? CA.tc(style.color) : style.color;   // the surface darkens on a light background
       if (rec.group === 'cerebellum' && CB_TONES[rec.entity || rec.related]) color = CB_TONES[rec.entity || rec.related];
       if (rec.tone) color = new T.Color(rec.tone).getHex(); // per-lobule tone, alternating light/dark so neighbors separate
-      const mat = new T.MeshStandardMaterial({ color, roughness: 0.62, metalness: 0.05, transparent: true, opacity: style.opacity });
+      let mat;
+      if (rec.group === 'shell') {
+        mat = new T.MeshPhysicalMaterial({
+          color,
+          roughness: 0.32,
+          metalness: 0.02,
+          clearcoat: 0.5,
+          clearcoatRoughness: 0.2,
+          transmission: 0.35,
+          ior: 1.34,
+          transparent: true,
+          opacity: style.opacity
+        });
+        const rimColor = CA.theme === 'light' ? 0x5a6578 : 0x7eb8ff;
+        applyFresnelShader(mat, rimColor, 2.5, 1.2);
+      } else {
+        mat = new T.MeshStandardMaterial({
+          color,
+          roughness: 0.42,
+          metalness: 0.04,
+          transparent: true,
+          opacity: style.opacity
+        });
+        applyMicroNoiseShader(mat);
+      }
       const mesh = new T.Mesh(geometryFor(sp, rec, bundle.qs), mat);
       mesh.userData = { rec, base: color, baseOpacity: style.opacity, entity: rec.entity || null };
       if (rec.group === 'shell') { mesh.renderOrder = 10; mat.depthWrite = false; }
@@ -618,6 +808,7 @@
     });
     computePositions(bundle);
     buildBodyAndMarkers(sp, bundle);
+    buildGroundStaging(bundle);
     applyMaterials();
     applyHighlight();
     rebuildLinks();
@@ -682,7 +873,15 @@
       scene.add(obj); markerObjs.push(obj); pickables.push(obj);
     };
     const mat = (c, o) => {
-      const m = new T.MeshStandardMaterial({ color: c, roughness: 0.5, transparent: true, opacity: o == null ? 0.9 : o, emissive: c, emissiveIntensity: 0.12 });
+      const m = new T.MeshStandardMaterial({
+        color: c,
+        roughness: 0.38,
+        metalness: 0.04,
+        transparent: true,
+        opacity: o == null ? 0.9 : o,
+        emissive: c,
+        emissiveIntensity: 0.18
+      });
       m.userData.base = c;   // restored when the legend gives the structure a colour of its own and then takes it back
       m.userData.op0 = m.opacity;
       return m;
@@ -810,7 +1009,7 @@
         }
         if (c.material.emissive) {
           c.material.emissive.copy(on ? new T.Color(0x4a7dff) : col);
-          c.material.emissiveIntensity = on ? 0.45 : o.userData.marker && !hov ? 0.12 : 0;
+          c.material.emissiveIntensity = on ? 0.48 : (hov ? 0.22 : (o.userData.marker ? 0.12 : 0.02));
         }
       });
     });
@@ -878,7 +1077,15 @@
         obj.add(hit); hit.userData.link = l; pickables.push(hit);
       } else {
         const radius = ({ established: 0.055, supported: 0.045, emerging: 0.038 }[l.status] || 0.04) * (human ? 1 : 0.85) * (focus ? 1.4 : 1);
-        obj = new T.Mesh(new T.TubeGeometry(curve, 48, radius, 7, false), new T.MeshBasicMaterial({ color, transparent: true, opacity: 0.8 }));
+        obj = new T.Mesh(new T.TubeGeometry(curve, 48, radius, 7, false), new T.MeshStandardMaterial({
+          color,
+          roughness: 0.35,
+          metalness: 0.06,
+          emissive: color,
+          emissiveIntensity: 0.32,
+          transparent: true,
+          opacity: 0.88
+        }));
         obj.userData.link = l; pickables.push(obj);
       }
       obj.renderOrder = 5;
@@ -889,7 +1096,15 @@
       const headR = (human ? 0.17 : 0.135) * (focus ? 1.25 : 1) * (txOn ? 0.7 : 1);   // neuromodulatory pathways often converge: smaller heads
       // two heads on a long pathway, and on every neuromodulatory one, so its direction reads even where an end is hidden
       (dist > 9 || txOn ? [0.36, 0.7] : [0.58]).forEach((u) => {
-        const cone = new T.Mesh(new T.ConeGeometry(headR, headR * 2.7, 14), new T.MeshBasicMaterial({ color: headColor, transparent: true, opacity: 0.95 }));
+        const cone = new T.Mesh(new T.ConeGeometry(headR, headR * 2.7, 14), new T.MeshStandardMaterial({
+          color: headColor,
+          roughness: 0.32,
+          metalness: 0.06,
+          emissive: headColor,
+          emissiveIntensity: 0.4,
+          transparent: true,
+          opacity: 0.96
+        }));
         cone.position.copy(curve.getPointAt(u));
         cone.quaternion.setFromUnitVectors(new T.Vector3(0, 1, 0), curve.getTangentAt(u).normalize());   // a cone points along +y
         cone.renderOrder = 6;
@@ -900,7 +1115,14 @@
       drawnLinks.push({ l, curve, objs, s: at(l.s), t: at(l.t) });   // the trace joins pathways by position (two entities can share one)
       const n = Math.max(1, Math.round(dist / 3));
       for (let k = 0; k < n; k++) {
-        const s = new T.Mesh(new T.SphereGeometry(human ? 0.085 : 0.07, 10, 8), new T.MeshBasicMaterial({ color: color.clone().lerp(new T.Color(0xffffff), 0.45) }));
+        const pulseCol = color.clone().lerp(new T.Color(0xffffff), 0.55);
+        const s = new T.Mesh(new T.SphereGeometry(human ? 0.085 : 0.07, 12, 10), new T.MeshStandardMaterial({
+          color: pulseCol,
+          roughness: 0.2,
+          metalness: 0.04,
+          emissive: pulseCol,
+          emissiveIntensity: 0.85
+        }));
         s.renderOrder = 6;
         scene.add(s); linkObjs.push(s);
         pulses.push({ mesh: s, curve, offset: k / n, speed: 0.22 / Math.max(1, dist / 4) * (l.status === 'hypothesis' ? 0.5 : 1) });
