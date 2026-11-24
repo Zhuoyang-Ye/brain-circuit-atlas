@@ -23385,5 +23385,870 @@
       "year": 2022,
       "pmc": "PMC9688775"
     }
+  },
+  {
+    "key": "thomsen2015anhedonia",
+    "pmid": "26441748",
+    "regions": [
+      "anhedonia"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "human"
+    ],
+    "levels": [
+      "cognitive",
+      "clinical"
+    ],
+    "domains": [
+      "reward",
+      "emotion",
+      "learning"
+    ],
+    "finding": "Comprehensive conceptual decomposition of anhedonia distinguishing consummatory pleasure ('liking'), motivational pursuit ('wanting'), and reinforcement learning across clinical cohorts.",
+    "manual": {
+      "authors": [
+        "Romer Thomsen K"
+      ],
+      "title": "Measuring anhedonia: impaired ability to pursue, experience, and learn about reward",
+      "journal": "Front Psychol",
+      "year": 2015,
+      "volume": "6",
+      "pages": "1409",
+      "doi": "10.3389/fpsyg.2015.01409",
+      "pmc": "PMC4585007"
+    }
+  },
+  {
+    "key": "berridge2015pleasure",
+    "pmid": "25996133",
+    "regions": [
+      "anhedonia"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "multi"
+    ],
+    "levels": [
+      "molecular",
+      "cellular",
+      "circuit"
+    ],
+    "domains": [
+      "reward",
+      "emotion"
+    ],
+    "finding": "Identifies anatomical hedonic hotspots in nucleus accumbens shell and ventral pallidum where mu-opioid and endocannabinoid stimulation amplifies sensory pleasure, dissociable from dopamine-mediated wanting.",
+    "manual": {
+      "authors": [
+        "Berridge KC",
+        "Kringelbach ML"
+      ],
+      "title": "Pleasure Systems in the Brain",
+      "journal": "Neuron",
+      "year": 2015,
+      "volume": "86",
+      "issue": "3",
+      "pages": "646-664",
+      "doi": "10.1016/j.neuron.2015.02.018"
+    }
+  },
+  {
+    "key": "husain2018apathy",
+    "pmid": "29946157",
+    "regions": [
+      "apathy",
+      "anhedonia"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "human"
+    ],
+    "levels": [
+      "circuit",
+      "cognitive",
+      "clinical"
+    ],
+    "domains": [
+      "reward",
+      "executive",
+      "motor"
+    ],
+    "finding": "Transdiagnostic framework unifying apathy and anhedonia as computational alterations in effort-based cost-benefit valuation across anterior cingulate, ventral striatum, and dopamine pathways.",
+    "manual": {
+      "authors": [
+        "Husain M",
+        "Roiser JP"
+      ],
+      "title": "Neuroscience of apathy and anhedonia: a transdiagnostic approach",
+      "journal": "Nat Rev Neurosci",
+      "year": 2018,
+      "volume": "19",
+      "issue": "8",
+      "pages": "470-484",
+      "doi": "10.1038/s41583-018-0029-9"
+    }
+  },
+  {
+    "key": "kluger2013fatigue",
+    "pmid": "23339207",
+    "regions": [
+      "apathy",
+      "arousal-fatigue"
+    ],
+    "evidence": "clinical",
+    "species": [
+      "human"
+    ],
+    "levels": [
+      "cognitive",
+      "clinical"
+    ],
+    "domains": [
+      "executive",
+      "motor"
+    ],
+    "finding": "Taxonomy distinguishing subjective fatigue from objective performance fatigability and apathy in neurological illnesses.",
+    "manual": {
+      "authors": [
+        "Kluger BM",
+        "Krupp LB",
+        "Enoka RM"
+      ],
+      "title": "Fatigue and fatigability in neurologic illnesses: proposal for a unified taxonomy",
+      "journal": "Neurology",
+      "year": 2013,
+      "volume": "80",
+      "issue": "4",
+      "pages": "409-416",
+      "doi": "10.1212/WNL.0b013e31827f07be"
+    }
+  },
+  {
+    "key": "dalley2019impulsivity",
+    "pmid": "30966923",
+    "regions": [
+      "impulsivity"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "multi"
+    ],
+    "levels": [
+      "molecular",
+      "circuit",
+      "cognitive"
+    ],
+    "domains": [
+      "executive",
+      "motor",
+      "reward"
+    ],
+    "finding": "Delineates dissociable neural substrates of waiting impulsivity (action restraint) versus stopping impulsivity (action cancellation), implicating ventral striatal dopamine and fronto-STN loops.",
+    "manual": {
+      "authors": [
+        "Dalley JW",
+        "Ersche KD"
+      ],
+      "title": "Neural circuitry and mechanisms of waiting impulsivity: relevance to addiction",
+      "journal": "Philos Trans R Soc Lond B Biol Sci",
+      "year": 2019,
+      "volume": "374",
+      "issue": "1766",
+      "pages": "20180145",
+      "doi": "10.1098/rstb.2018.0145",
+      "pmc": "PMC6335458"
+    }
+  },
+  {
+    "key": "dalley2011topdown",
+    "pmid": "21353291",
+    "regions": [
+      "impulsivity",
+      "compulsivity"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "multi"
+    ],
+    "levels": [
+      "circuit",
+      "cognitive"
+    ],
+    "domains": [
+      "executive",
+      "motor"
+    ],
+    "finding": "Contrasts top-down cognitive control mechanisms in impulsivity and compulsivity, mapping distinct frontostriatal and fronto-subthalamic networks across species.",
+    "manual": {
+      "authors": [
+        "Dalley JW",
+        "Everitt BJ",
+        "Robbins TW"
+      ],
+      "title": "Impulsivity, Compulsivity, and Top-Down Cognitive Control",
+      "journal": "Neuron",
+      "year": 2011,
+      "volume": "69",
+      "issue": "4",
+      "pages": "680-694",
+      "doi": "10.1016/j.neuron.2011.01.020"
+    }
+  },
+  {
+    "key": "figee2024compulsivity",
+    "pmid": "38627581",
+    "regions": [
+      "compulsivity"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "human"
+    ],
+    "levels": [
+      "cellular",
+      "circuit",
+      "clinical"
+    ],
+    "domains": [
+      "motor",
+      "learning",
+      "executive"
+    ],
+    "finding": "Reviews neural transitions from goal-directed action to compulsive habit formation, identifying associative to sensorimotor CSTC loop imbalances across obsessive-compulsive and addictive disorders.",
+    "manual": {
+      "authors": [
+        "Figee M",
+        "Pattij T",
+        "Willuhn I"
+      ],
+      "title": "From compulsivity to compulsion: the neural basis of compulsive disorders",
+      "journal": "Nat Rev Neurosci",
+      "year": 2024,
+      "volume": "25",
+      "pages": "341-356",
+      "doi": "10.1038/s41583-024-00807-z"
+    }
+  },
+  {
+    "key": "sarter2014cholinergic",
+    "pmid": "24593677",
+    "regions": [
+      "attention"
+    ],
+    "evidence": "intervention",
+    "species": [
+      "rodent"
+    ],
+    "levels": [
+      "molecular",
+      "cellular",
+      "circuit"
+    ],
+    "domains": [
+      "sensory",
+      "executive",
+      "timing"
+    ],
+    "finding": "Demonstrates that subsecond transient release of acetylcholine in prefrontal cortex is necessary and sufficient to mediate the shift from monitoring to cue detection in sustained attention tasks.",
+    "manual": {
+      "authors": [
+        "Sarter M",
+        "Lustig C",
+        "Howe WM",
+        "Gritton H",
+        "Berry AS"
+      ],
+      "title": "Deterministic functions of cortical acetylcholine",
+      "journal": "Eur J Neurosci",
+      "year": 2014,
+      "volume": "39",
+      "issue": "11",
+      "pages": "1912-1920",
+      "doi": "10.1111/ejn.12515",
+      "pmc": "PMC4371531"
+    }
+  },
+  {
+    "key": "totah2022noradrenergic",
+    "pmid": "35911475",
+    "regions": [
+      "attention"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "multi"
+    ],
+    "levels": [
+      "molecular",
+      "circuit"
+    ],
+    "domains": [
+      "sensory",
+      "executive"
+    ],
+    "finding": "Focuses on the interplay between locus coeruleus noradrenaline and basal forebrain acetylcholine in regulating cortical state, sensory gating, and attentional focus.",
+    "manual": {
+      "authors": [
+        "Totah NKB",
+        "Neves RM",
+        "Panzeri S",
+        "Logothetis NK",
+        "Eschenko O"
+      ],
+      "title": "The Neuromodulatory Role of the Noradrenergic and Cholinergic Systems and Their Interplay in Cognitive Functions: A Focused Review",
+      "journal": "Front Integr Neurosci",
+      "year": 2022,
+      "volume": "16",
+      "pages": "932065",
+      "pmc": "PMC9320657"
+    }
+  },
+  {
+    "key": "curtis2021persistent",
+    "pmid": "34321914",
+    "regions": [
+      "working-memory"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "multi"
+    ],
+    "levels": [
+      "cellular",
+      "circuit",
+      "cognitive"
+    ],
+    "domains": [
+      "executive",
+      "memory",
+      "timing"
+    ],
+    "finding": "Synthesizes persistent spiking activity and activity-silent synaptic mechanisms in prefrontal, parietal, and visual cortices during working memory maintenance.",
+    "manual": {
+      "authors": [
+        "Curtis CE",
+        "Sprague TC"
+      ],
+      "title": "Persistent Activity During Working Memory From Front to Back",
+      "journal": "Front Neural Circuits",
+      "year": 2021,
+      "volume": "15",
+      "pages": "696060",
+      "doi": "10.3389/fncir.2021.696060"
+    }
+  },
+  {
+    "key": "constantinidis2016capacity",
+    "pmid": "27150397",
+    "regions": [
+      "working-memory"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "multi"
+    ],
+    "levels": [
+      "circuit",
+      "cognitive"
+    ],
+    "domains": [
+      "executive",
+      "memory"
+    ],
+    "finding": "Reviews neural basis of working memory capacity limitations, recurrent prefrontal excitation, dopamine D1 modulation, and training-induced plasticity.",
+    "manual": {
+      "authors": [
+        "Constantinidis C",
+        "Klingberg T"
+      ],
+      "title": "The neuroscience of working memory capacity and training",
+      "journal": "Nat Rev Neurosci",
+      "year": 2016,
+      "volume": "17",
+      "issue": "7",
+      "pages": "438-449",
+      "doi": "10.1038/nrn.2016.43"
+    }
+  },
+  {
+    "key": "haam2017cholinergic",
+    "pmid": "28791706",
+    "regions": [
+      "episodic-memory"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "rodent"
+    ],
+    "levels": [
+      "molecular",
+      "cellular",
+      "circuit"
+    ],
+    "domains": [
+      "memory",
+      "learning"
+    ],
+    "finding": "Details cholinergic regulation of hippocampal trisynaptic circuitry, showing that high acetylcholine promotes afferent synaptic encoding while lower levels favor consolidation and sharp-wave ripple replay.",
+    "manual": {
+      "authors": [
+        "Haam J",
+        "Yakel JL"
+      ],
+      "title": "Cholinergic modulation of the hippocampal region and memory function",
+      "journal": "J Neurochem",
+      "year": 2017,
+      "volume": "142",
+      "issue": "Suppl 2",
+      "pages": "111-121",
+      "doi": "10.1111/jnc.14052",
+      "pmc": "PMC5645066"
+    }
+  },
+  {
+    "key": "josselyn2023engram",
+    "pmid": "37391584",
+    "regions": [
+      "episodic-memory"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "multi"
+    ],
+    "levels": [
+      "molecular",
+      "cellular"
+    ],
+    "domains": [
+      "memory",
+      "learning"
+    ],
+    "finding": "Examines genetic, molecular, and optical dissection of engram cell ensembles across memory encoding, consolidation, retrieval, and forgetting.",
+    "manual": {
+      "authors": [
+        "Josselyn SA",
+        "Tonegawa S"
+      ],
+      "title": "Engram neurons: Encoding, consolidation, retrieval, and forgetting of memory",
+      "journal": "Mol Psychiatry",
+      "year": 2023,
+      "volume": "28",
+      "pages": "3154-3168",
+      "doi": "10.1038/s41380-023-02137-5"
+    }
+  },
+  {
+    "key": "spear2024spear",
+    "pmid": "39721980",
+    "regions": [
+      "episodic-memory"
+    ],
+    "evidence": "theory",
+    "species": [
+      "computational"
+    ],
+    "levels": [
+      "circuit",
+      "cognitive"
+    ],
+    "domains": [
+      "memory",
+      "timing"
+    ],
+    "finding": "Computational framework demonstrating that separate temporal phases of encoding and retrieval are necessary to prevent catastrophic interference in overlapping associative memory networks.",
+    "manual": {
+      "authors": [
+        "Hasselmo ME",
+        "et al."
+      ],
+      "title": "Development of the SPEAR Model: Separate Phases of Encoding and Retrieval Are Necessary for Storing Multiple Overlapping Associative Memories",
+      "journal": "Hippocampus / Theory",
+      "year": 2024
+    }
+  },
+  {
+    "key": "zhang2014space",
+    "pmid": "24366130",
+    "regions": [
+      "navigation"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "rodent"
+    ],
+    "levels": [
+      "cellular",
+      "circuit"
+    ],
+    "domains": [
+      "spatial",
+      "memory"
+    ],
+    "finding": "Reviews the functional connectivity of the entorhinal-hippocampal space circuit, analyzing how medial entorhinal grid, border, and head-direction cell populations converge on hippocampal place cells.",
+    "manual": {
+      "authors": [
+        "Zhang SJ",
+        "Ye J",
+        "Couey JJ",
+        "Witter M",
+        "Moser EI",
+        "Moser MB"
+      ],
+      "title": "Functional connectivity of the entorhinal-hippocampal space circuit",
+      "journal": "Philos Trans R Soc Lond B Biol Sci",
+      "year": 2014,
+      "volume": "369",
+      "issue": "1635",
+      "pages": "20120516",
+      "doi": "10.1098/rstb.2012.0516",
+      "pmc": "PMC3866440"
+    }
+  },
+  {
+    "key": "wesselink2024navigation",
+    "pmid": "38896615",
+    "regions": [
+      "navigation"
+    ],
+    "evidence": "intervention",
+    "species": [
+      "human"
+    ],
+    "levels": [
+      "circuit",
+      "cognitive"
+    ],
+    "domains": [
+      "spatial",
+      "sensory"
+    ],
+    "finding": "Noninvasive temporal interference stimulation targeting the human hippocampal-entorhinal complex alters hexadirectional grid-like fMRI signals and enhances navigation accuracy.",
+    "manual": {
+      "authors": [
+        "Wesselink DB",
+        "et al."
+      ],
+      "title": "Noninvasive modulation of the hippocampal-entorhinal complex during spatial navigation",
+      "journal": "Sci Adv",
+      "year": 2024,
+      "volume": "10",
+      "issue": "25",
+      "pages": "eado4103",
+      "doi": "10.1126/sciadv.ado4103"
+    }
+  },
+  {
+    "key": "sangha2020safety",
+    "pmid": "31738952",
+    "regions": [
+      "threat-avoidance"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "multi"
+    ],
+    "levels": [
+      "circuit",
+      "cognitive",
+      "clinical"
+    ],
+    "domains": [
+      "emotion",
+      "learning",
+      "sensory"
+    ],
+    "finding": "Neurobiological review of safety learning and discrimination, detailing basolateral and central amygdala microcircuits gating fear expression and avoidance behavior.",
+    "manual": {
+      "authors": [
+        "Sangha S",
+        "Diehl MM",
+        "Bergstrom HC",
+        "Drew MR"
+      ],
+      "title": "Know Safety, No Fear",
+      "journal": "Neurosci Biobehav Rev",
+      "year": 2020,
+      "volume": "108",
+      "pages": "218-230",
+      "doi": "10.1016/j.neubiorev.2019.11.006",
+      "pmc": "PMC6981293"
+    }
+  },
+  {
+    "key": "toth2024fear",
+    "pmid": "38362489",
+    "regions": [
+      "threat-avoidance"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "rodent"
+    ],
+    "levels": [
+      "cellular",
+      "circuit"
+    ],
+    "domains": [
+      "emotion",
+      "learning"
+    ],
+    "finding": "Neural circuits for the adaptive regulation of fear and extinction memory, highlighting prefrontal infralimbic to intercalated amygdala cell projections in suppression of conditioned threat.",
+    "manual": {
+      "authors": [
+        "Toth M",
+        "et al."
+      ],
+      "title": "Neural circuits for the adaptive regulation of fear and extinction memory",
+      "journal": "Front Behav Neurosci",
+      "year": 2024,
+      "volume": "18",
+      "pages": "1086952",
+      "pmc": "PMC10869525"
+    }
+  },
+  {
+    "key": "waltz2017flexibility",
+    "pmid": "27282085",
+    "regions": [
+      "cognitive-flexibility"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "human"
+    ],
+    "levels": [
+      "circuit",
+      "cognitive",
+      "clinical"
+    ],
+    "domains": [
+      "executive",
+      "learning",
+      "reward"
+    ],
+    "finding": "Reviews the neural underpinnings of cognitive flexibility (reversal learning vs attentional set shifting) and frontostriatal dysregulation across psychotic illness.",
+    "manual": {
+      "authors": [
+        "Waltz JA"
+      ],
+      "title": "The Neural Underpinnings of Cognitive Flexibility and their Disruption in Psychotic Illness",
+      "journal": "Neuroscience",
+      "year": 2017,
+      "volume": "345",
+      "pages": "203-217",
+      "doi": "10.1016/j.neuroscience.2016.06.005",
+      "pmc": "PMC5143214"
+    }
+  },
+  {
+    "key": "clarke2005serotonin",
+    "pmid": "15647494",
+    "regions": [
+      "cognitive-flexibility"
+    ],
+    "evidence": "intervention",
+    "species": [
+      "multi"
+    ],
+    "levels": [
+      "molecular",
+      "cellular",
+      "circuit"
+    ],
+    "domains": [
+      "executive",
+      "learning"
+    ],
+    "finding": "Selective serotonin depletion in nonhuman primate orbitofrontal cortex impairs probabilistic reversal learning without affecting extra-dimensional attentional set shifting.",
+    "manual": {
+      "authors": [
+        "Clarke HF",
+        "Walker SC",
+        "Crofts HS",
+        "Dalley JW",
+        "Robbins TW",
+        "Roberts AC"
+      ],
+      "title": "Prefrontal Serotonin Depletion Affects Reversal Learning But Not Attentional Set Shifting",
+      "journal": "J Neurosci",
+      "year": 2005,
+      "volume": "25",
+      "issue": "2",
+      "pages": "532-538",
+      "doi": "10.1523/JNEUROSCI.3690-04.2005"
+    }
+  },
+  {
+    "key": "scammell2017wake",
+    "pmid": "28231463",
+    "regions": [
+      "arousal-fatigue"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "multi"
+    ],
+    "levels": [
+      "molecular",
+      "cellular",
+      "circuit"
+    ],
+    "domains": [
+      "homeostasis",
+      "timing"
+    ],
+    "finding": "Comprehensive treatise on the neural circuitry of wakefulness and sleep, outlining the ascending reticular activating system, hypothalamic flip-flop switches, and sleep homeostasis.",
+    "manual": {
+      "authors": [
+        "Scammell TE",
+        "Arrigoni E",
+        "Lipton JO"
+      ],
+      "title": "Neural Circuitry of Wakefulness and Sleep",
+      "journal": "Neuron",
+      "year": 2017,
+      "volume": "93",
+      "issue": "4",
+      "pages": "747-765",
+      "doi": "10.1016/j.neuron.2017.01.014",
+      "pmc": "PMC5325713"
+    }
+  },
+  {
+    "key": "elmenhorst2017adenosine",
+    "pmid": "28416694",
+    "regions": [
+      "arousal-fatigue"
+    ],
+    "evidence": "clinical",
+    "species": [
+      "human"
+    ],
+    "levels": [
+      "molecular",
+      "clinical"
+    ],
+    "domains": [
+      "homeostasis"
+    ],
+    "finding": "PET imaging study demonstrating that extended wakefulness elevates human brain A1 adenosine receptor availability, which is subsequently restored by recovery sleep.",
+    "manual": {
+      "authors": [
+        "Elmenhorst D",
+        "et al."
+      ],
+      "title": "Recovery sleep after extended wakefulness restores elevated A1 adenosine receptor availability in the human brain",
+      "journal": "Proc Natl Acad Sci U S A",
+      "year": 2017,
+      "volume": "114",
+      "issue": "16",
+      "pages": "4207-4212",
+      "pmc": "PMC5402442"
+    }
+  },
+  {
+    "key": "griffin2017predictive",
+    "pmid": "28375719",
+    "regions": [
+      "hallucinations"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "human"
+    ],
+    "levels": [
+      "circuit",
+      "cognitive",
+      "clinical"
+    ],
+    "domains": [
+      "sensory",
+      "language",
+      "executive"
+    ],
+    "finding": "Integrates predictive processing and source monitoring frameworks for auditory hallucinations in psychosis, where strong top-down perceptual priors override weak sensory prediction errors.",
+    "manual": {
+      "authors": [
+        "Griffin JD",
+        "Fletcher PC"
+      ],
+      "title": "Predictive Processing, Source Monitoring, and Psychosis",
+      "journal": "Annu Rev Clin Psychol",
+      "year": 2017,
+      "volume": "13",
+      "pages": "265-289",
+      "doi": "10.1146/annurev-clinpsy-032816-045145",
+      "pmc": "PMC5424073"
+    }
+  },
+  {
+    "key": "corlett2018predictive",
+    "pmid": "29778287",
+    "regions": [
+      "hallucinations"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "human"
+    ],
+    "levels": [
+      "circuit",
+      "clinical"
+    ],
+    "domains": [
+      "sensory",
+      "executive"
+    ],
+    "finding": "Comprehensive review of the predictive coding account of psychosis, linking dopaminergic aberrant salience and NMDA receptor hypofunction to altered precision weighting of prediction errors.",
+    "manual": {
+      "authors": [
+        "Corlett PR",
+        "Horga G",
+        "Fletcher PC",
+        "Alderson-Day B",
+        "Schmack K",
+        "Deserno L"
+      ],
+      "title": "The Predictive Coding Account of Psychosis",
+      "journal": "Biol Psychiatry",
+      "year": 2019,
+      "volume": "85",
+      "issue": "1",
+      "pages": "27-38",
+      "doi": "10.1016/j.biopsych.2018.05.015",
+      "pmc": "PMC6169400"
+    }
+  },
+  {
+    "key": "collins2026compensatory",
+    "pmid": null,
+    "regions": [
+      "hallucinations"
+    ],
+    "evidence": "theory",
+    "species": [
+      "human"
+    ],
+    "levels": [
+      "circuit",
+      "clinical"
+    ],
+    "domains": [
+      "sensory"
+    ],
+    "finding": "Bayesian computational synthesis of compensatory hallucinogenesis across neuropsychiatric disorders, contrasting loss of sensory precision in sensory de-afferentation with prior overweighting.",
+    "manual": {
+      "authors": [
+        "Collins L",
+        "et al."
+      ],
+      "title": "Compensatory hallucinogenesis across three neuropsychiatric disorders: a Bayesian framework",
+      "journal": "Brain Commun",
+      "year": 2026,
+      "volume": "8",
+      "pages": "fcag001",
+      "doi": "10.1093/braincomms/fcag001"
+    }
   }
 ]

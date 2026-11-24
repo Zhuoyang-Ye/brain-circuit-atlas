@@ -3038,6 +3038,546 @@
         "cognitive": "Psychomotor Vigilance Task (PVT; sustained attention and lapse frequency), Maintenance of Wakefulness Test (MWT)",
         "clinical": "Epworth Sleepiness Scale (ESS), Stanford Cataplexy Questionnaire"
       }
+    },
+    {
+      "id": "anhedonia",
+      "label": "Anhedonia & Reward Processing",
+      "category": "Functional dimensions",
+      "entity": "anhedonia-dim",
+      "query": "(\"Anhedonia\"[Mesh] OR anhedonia[tiab] OR \"reward processing\"[tiab])",
+      "view": "circuit",
+      "views": [
+        "circuit",
+        "molecules",
+        "scales",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": "Transdiagnostic dimension spanning consummatory pleasure ('liking'), anticipatory valuation ('wanting'), and effort-based reward allocation, mediated by ventral striatal, orbitofrontal, and mesolimbic circuits.",
+      "speciesNote": "Human transdiagnostic assessment tasks (MID, EEfRT); rodent behavioral lick-cluster and optogenetic self-stimulation paradigms.",
+      "levelDesc": {
+        "molecular": "Dopamine D1/D2 receptor signaling mediating incentive salience; mu-opioid and endocannabinoid hotspot signaling mediating hedonic impact ('liking').",
+        "cellular": "VTA dopaminergic firing patterns, nucleus accumbens D1 vs D2 medium spiny projection neuron balance, and localized ventral pallidal hedonic hotspot ensembles.",
+        "circuit": "Mesolimbic dopamine pathway (VTA to nucleus accumbens) regulating willingness to exert effort; orbitofrontal-ventral striatal loops encoding subjective value and reward expectations.",
+        "regional": "Ventral tegmental area (VTA), ventral striatum / nucleus accumbens (shell and core), ventral pallidum, orbitofrontal cortex (OFC), and anterior cingulate cortex (ACC).",
+        "systems": "Brain reward and valuation networks, cost-benefit decision-making loops integrating effort costs with expected payoffs.",
+        "cognitive": "Dissociation between consummatory pleasure ('liking'), incentive motivation ('wanting'), reward prediction error learning, and effort expenditure allocation.",
+        "clinical": "Pervasive across major depressive disorder, negative symptoms of schizophrenia, Parkinson's apathy, and substance withdrawal states."
+      },
+      "levelQueries": {
+        "molecular": "(anhedonia[tiab] AND (dopamine[tiab] OR opioid[tiab] OR cannabinoid[tiab]))",
+        "cellular": "(anhedonia[tiab] AND (\"nucleus accumbens\" OR \"ventral pallidum\"[tiab]))",
+        "circuit": "(anhedonia[tiab] AND (\"reward circuit\" OR mesolimbic[tiab]))",
+        "regional": "(anhedonia[tiab] AND (\"orbitofrontal\" OR \"ventral striatum\"[tiab]))",
+        "systems": "(anhedonia[tiab] AND (\"reward network\" OR \"effort-based\"[tiab]))",
+        "cognitive": "(anhedonia[tiab] AND (\"anticipation\" OR \"effort expenditure\"[tiab]))",
+        "clinical": "(anhedonia[tiab] AND (\"depression\" OR \"negative symptoms\"[tiab]))"
+      },
+      "methods": {
+        "molecular": "PET raclopride/fallypride dopamine binding, opioid receptor radiotracer assays",
+        "cellular": "Fiber photometry of dopamine/calcium in NAc shell during reward consumption",
+        "circuit": "fMRI Monetary Incentive Delay (MID) task, Effort Expenditure for Rewards Task (EEfRT)",
+        "regional": "High-resolution BOLD imaging of NAc and ventral pallidal hotspots",
+        "systems": "Resting-state functional connectivity of frontostriatal reward loops",
+        "cognitive": "Probabilistic Reward Task (PRT), Sweet Taste Test, Ecological Momentary Assessment (EMA)",
+        "clinical": "Snaith-Hamilton Pleasure Scale (SHAPS), Temporal Experience of Pleasure Scale (TEPS)"
+      }
+    },
+    {
+      "id": "apathy",
+      "label": "Apathy & Goal Initiation",
+      "category": "Functional dimensions",
+      "entity": "apathy-dim",
+      "query": "(\"Apathy\"[Mesh] OR apathy[tiab] OR avolition[tiab])",
+      "view": "circuit",
+      "views": [
+        "circuit",
+        "molecules",
+        "scales",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": "Transdiagnostic reduction in self-initiated goal-directed behavior, cognitive engagement, and emotional responsiveness relative to personal baseline, driven by altered cost-benefit effort computation in anterior cingulate-striatal loops.",
+      "speciesNote": "Human clinical apathy rating scales (AES, DAS) and effort-based choice tasks; nonhuman primate and rodent anterior cingulate electrophysiology.",
+      "levelDesc": {
+        "molecular": "Mesocorticolimbic dopamine hypofunction elevating subjective effort cost; noradrenergic tone modulating behavioral activation thresholds.",
+        "cellular": "D1-receptor expressing striatal projection neurons failing to invigorate action; anterior cingulate pyramidal neuron firing rate reduction during effortful choice.",
+        "circuit": "Anterior cingulate cortex (ACC) and ventromedial prefrontal cortex (vmPFC) interactions with ventral striatum calculating net expected utility against effort cost.",
+        "regional": "Dorsal and rostral anterior cingulate cortex, ventromedial prefrontal cortex, ventral striatum, globus pallidus, and thalamus.",
+        "systems": "Frontostriatal action invigoration network, mesolimbic motivational drive system, and executive planning networks.",
+        "cognitive": "Intact reward appreciation but steep subjective discounting of effort, failure of self-generated action initiation, and early task disengagement.",
+        "clinical": "Observed across Parkinson's disease, frontotemporal dementia, Alzheimer's disease, traumatic brain injury, schizophrenia negative symptoms, and stroke."
+      },
+      "levelQueries": {
+        "molecular": "(apathy[tiab] AND (dopamine[tiab] OR norepinephrine[tiab]))",
+        "cellular": "(apathy[tiab] AND (\"anterior cingulate\" OR \"striatal\"[tiab]))",
+        "circuit": "(apathy[tiab] AND (\"effort-based\" OR frontostriatal[tiab]))",
+        "regional": "(apathy[tiab] AND (\"ventromedial prefrontal\" OR \"acc\"[tiab]))",
+        "systems": "(apathy[tiab] AND (\"goal-directed\" OR \"motivation network\"[tiab]))",
+        "cognitive": "(apathy[tiab] AND (\"initiation\" OR \"effort discounting\"[tiab]))",
+        "clinical": "(apathy[tiab] AND (\"Parkinson\" OR \"dementia\" OR \"stroke\"[tiab]))"
+      },
+      "methods": {
+        "molecular": "11C-raclopride PET measuring ventral striatal dopamine release during effortful exertion",
+        "cellular": "Electrophysiological recording of anterior cingulate neuron firing during effort negotiation",
+        "circuit": "Task-based fMRI during effort-discounting paradigms (grip force, cognitive effort)",
+        "regional": "Structural MRI voxel-based morphometry of anterior cingulate and ventral striatum",
+        "systems": "Resting-state functional connectivity between ACC, vmPFC, and striatum",
+        "cognitive": "Effort Expenditure for Rewards Task (EEfRT), Apple Gathering Task, grip-force calibration",
+        "clinical": "Apathy Evaluation Scale (AES), Lille Apathy Rating Scale (LARS), Dimensional Apathy Scale (DAS)"
+      }
+    },
+    {
+      "id": "impulsivity",
+      "label": "Impulsivity & Response Control",
+      "category": "Functional dimensions",
+      "entity": "impulsivity-dim",
+      "query": "(\"Impulsive Behavior\"[Mesh] OR impulsivity[tiab] OR \"response inhibition\"[tiab])",
+      "view": "circuit",
+      "views": [
+        "circuit",
+        "molecules",
+        "scales",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": "Multidimensional construct comprising action cancellation (stopping), action restraint (waiting), delay discounting (temporal choice), and urgency, governed by fronto-subthalamic-striatal loops.",
+      "speciesNote": "Human behavioral tasks (Stop-Signal, delay discounting); rodent 5-CSRTT premature responding and stop-signal paradigms.",
+      "levelDesc": {
+        "molecular": "Serotonin 5-HT1B/5-HT2A/5-HT2C receptor modulation of waiting impulsivity; dopamine D2/D3 striatal availability influencing delay discounting and motor restraint.",
+        "cellular": "Right inferior frontal gyrus (rIFG) and pre-SMA pyramidal projections recruiting hyperdirect subthalamic nucleus fast-stop pausing.",
+        "circuit": "Hyperdirect pathway (rIFG/pre-SMA → subthalamic nucleus) for rapid action cancellation; ventral striatal-limbic loop regulating premature responding during waiting.",
+        "regional": "Right inferior frontal gyrus (rIFG), presupplementary motor area (pre-SMA), subthalamic nucleus (STN), nucleus accumbens, and anterior insula.",
+        "systems": "Fronto-basal ganglia motor inhibition network, mesocorticolimbic delay valuation circuit.",
+        "cognitive": "Dissociation between stopping an already-initiated motor act (SSRT), waiting for a predictable cue, preferring small immediate over larger delayed rewards, and risk-taking under emotional arousal.",
+        "clinical": "Elevated across ADHD, substance use disorders, pathological gambling, mania, borderline personality disorder, and dopamine dysregulation syndrome in PD."
+      },
+      "levelQueries": {
+        "molecular": "(impulsivity[tiab] AND (serotonin[tiab] OR \"D2 receptor\"[tiab] OR dopamine[tiab]))",
+        "cellular": "(impulsivity[tiab] AND (\"subthalamic\"[tiab] OR \"pre-SMA\"[tiab]))",
+        "circuit": "(impulsivity[tiab] AND (\"hyperdirect\"[tiab] OR \"stop-signal\"[tiab]))",
+        "regional": "(impulsivity[tiab] AND (\"inferior frontal\"[tiab] OR \"STN\"[tiab]))",
+        "systems": "(impulsivity[tiab] AND (\"response inhibition\"[tiab] OR \"frontostriatal\"[tiab]))",
+        "cognitive": "(impulsivity[tiab] AND (\"delay discounting\"[tiab] OR \"SSRT\"[tiab]))",
+        "clinical": "(impulsivity[tiab] AND (\"ADHD\"[tiab] OR \"addiction\"[tiab]))"
+      },
+      "methods": {
+        "molecular": "PET 11C-DASB serotonin transporter and 11C-PHNO D2/3 receptor binding assays",
+        "cellular": "Deep brain stimulation (DBS) microelectrode recordings in human subthalamic nucleus during stopping",
+        "circuit": "Event-related fMRI during Stop-Signal Task (SST) and Go/No-Go paradigms",
+        "regional": "Structural DTI tractography of fronto-subthalamic hyperdirect white matter tracts",
+        "systems": "MEG/EEG N200/P300 event-related potentials indexing motor cancellation and error detection",
+        "cognitive": "Stop-Signal Reaction Time (SSRT), 5-Choice Serial Reaction Time Task (5-CSRTT), Kirbys Delay Discounting",
+        "clinical": "Barratt Impulsiveness Scale (BIS-11), UPPS-P Impulsive Behavior Scale"
+      }
+    },
+    {
+      "id": "compulsivity",
+      "label": "Compulsivity & Habits",
+      "category": "Functional dimensions",
+      "entity": "compulsivity-dim",
+      "query": "(\"Compulsive Behavior\"[Mesh] OR compulsivity[tiab] OR \"habit formation\"[tiab])",
+      "view": "circuit",
+      "views": [
+        "circuit",
+        "molecules",
+        "scales",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": "Transdiagnostic dimension marked by persistent, stereotyped, repetitive behaviors enacted despite adverse outcomes, reflecting shift from goal-directed action-outcome control to autonomous stimulus-response habit execution.",
+      "speciesNote": "Human OCD/addiction devaluation paradigms; rodent overtraining and operant contingency degradation protocols.",
+      "levelDesc": {
+        "molecular": "Serotonergic 5-HT2C receptor dysregulation; striatal dopamine D2-receptor downregulation; endocannabinoid retrograde suppression of corticostriatal plasticity.",
+        "cellular": "Dorsolateral striatal medium spiny neurons establishing task-bracketing ensemble firing; loss of orbitofrontal top-down outcome-value monitoring.",
+        "circuit": "Imbalance between ventral/medial frontostriatal goal-directed loops (caudate/vmPFC) and dorsolateral striatal motor habit loops (putamen/sensorimotor cortex).",
+        "regional": "Orbitofrontal cortex (OFC), anterior cingulate cortex (ACC), caudate nucleus, putamen, sensorimotor cortex, and globus pallidus.",
+        "systems": "Sensorimotor-striatal habit network, cortico-striato-thalamo-cortical (CSTC) cognitive loops.",
+        "cognitive": "Insensitivity to reward devaluation (continuing behavior when outcome is devalued), degraded contingency awareness, and negative reinforcement.",
+        "clinical": "Obsessive-compulsive disorder rituals, substance addiction relapse, trichotillomania, excoriation, and stereotyped motor movements."
+      },
+      "levelQueries": {
+        "molecular": "(compulsivity[tiab] AND (serotonin[tiab] OR \"5-HT2C\"[tiab] OR dopamine[tiab]))",
+        "cellular": "(compulsivity[tiab] AND (\"dorsal striatum\"[tiab] OR \"habit\"[tiab]))",
+        "circuit": "(compulsivity[tiab] AND (\"orbitofrontal\" OR \"frontostriatal\"[tiab]))",
+        "regional": "(compulsivity[tiab] AND (\"caudate\"[tiab] OR \"putamen\"[tiab]))",
+        "systems": "(compulsivity[tiab] AND (\"goal-directed\" OR \"habitual\"[tiab]))",
+        "cognitive": "(compulsivity[tiab] AND (\"devaluation\" OR \"contingency\"[tiab]))",
+        "clinical": "(compulsivity[tiab] AND (\"OCD\"[tiab] OR \"addiction\"[tiab]))"
+      },
+      "methods": {
+        "molecular": "PET 11C-DASB serotonin transporter and 11C-raclopride D2 binding in striatum",
+        "cellular": "In vivo calcium imaging of striosome-matrix compartments during habit consolidation",
+        "circuit": "fMRI during outcome devaluation paradigms and two-step decision tasks",
+        "regional": "Voxel-based morphometry of orbitofrontal-striatal gray matter volumes",
+        "systems": "Resting-state functional connectivity of associative vs sensorimotor CSTC loops",
+        "cognitive": "Two-Step Reinforcement Learning Task (model-free vs model-based weight), Devaluation Task",
+        "clinical": "Yale-Brown Obsessive Compulsive Scale (Y-BOCS), Obsessive-Compulsive Inventory (OCI-R)"
+      }
+    },
+    {
+      "id": "attention",
+      "label": "Attention & Signal Detection",
+      "category": "Functional dimensions",
+      "entity": "attention-dim",
+      "query": "(\"Attention\"[Mesh] OR inattention[tiab] OR \"signal detection\"[tiab])",
+      "view": "circuit",
+      "views": [
+        "circuit",
+        "molecules",
+        "scales",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": "Multicomponent cognitive dimension encompassing vigilance, selective orienting, distractor filtering, and cue detection, coordinated by frontoparietal networks modulated by phasic cholinergic and noradrenergic release.",
+      "speciesNote": "Human psychophysical and eye-tracking tasks; rodent sustained attention and optogenetic acetylcholine transient manipulation.",
+      "levelDesc": {
+        "molecular": "Phasic cortical acetylcholine (ACh) transients acting on nicotinic alpha4beta2 and muscarinic M1 receptors to mediate cue detection; locus coeruleus noradrenaline (NE) alpha2A tone.",
+        "cellular": "Basal forebrain cholinergic projection neuron burst firing; layer II/III pyramidal and PV interneuron gain modulation in sensory cortices.",
+        "circuit": "Dorsal attention network (FEF, IPS) for top-down spatial selection; ventral attention network (TPJ, VFC) for bottom-up stimulus reorienting; basal forebrain-cortical cholinergic projections.",
+        "regional": "Frontal eye fields (FEF), intraparietal sulcus (IPS), temporoparietal junction (TPJ), ventral prefrontal cortex, nucleus basalis, and locus coeruleus.",
+        "systems": "Dorsal and ventral attentional networks, ascending reticular activating system, thalamic reticular gating.",
+        "cognitive": "Signal detection sensitivity (d') versus response criterion (c), sustained vigilance maintenance, resistance to visual/auditory distractors, and rapid reorienting.",
+        "clinical": "Prominent in ADHD, traumatic brain injury, sleep deprivation, delirium, Lewy body dementia, and schizophrenia."
+      },
+      "levelQueries": {
+        "molecular": "(attention[tiab] AND (acetylcholine[tiab] OR norepinephrine[tiab] OR nicotinic[tiab]))",
+        "cellular": "(attention[tiab] AND (\"basal forebrain\"[tiab] OR \"locus coeruleus\"[tiab]))",
+        "circuit": "(attention[tiab] AND (\"frontoparietal\" OR \"cue detection\"[tiab]))",
+        "regional": "(attention[tiab] AND (\"intraparietal\"[tiab] OR \"FEF\"[tiab]))",
+        "systems": "(attention[tiab] AND (\"dorsal attention network\" OR \"vigilance\"[tiab]))",
+        "cognitive": "(attention[tiab] AND (\"signal detection\"[tiab] OR \"distractibility\"[tiab]))",
+        "clinical": "(attention[tiab] AND (\"ADHD\"[tiab] OR \"concussion\"[tiab]))"
+      },
+      "methods": {
+        "molecular": "In vivo biosensor (GRAB-ACh, GRAB-NE) imaging of cortical neurotransmitter transients during cue detection",
+        "cellular": "Optogenetic excitation/silencing of basal forebrain cholinergic projection terminals in medial PFC",
+        "circuit": "fMRI during Posner spatial cueing task and Eriksen Flanker task",
+        "regional": "Pupillometry as an indirect physiological index of locus coeruleus-noradrenergic arousal state",
+        "systems": "EEG steady-state visual evoked potentials (SSVEP) measuring sensory cortical attentional gain",
+        "cognitive": "Continuous Performance Test (CPT-3), Sustained Attention to Response Task (SART), Mackworth Clock Test",
+        "clinical": "Conners Adult ADHD Rating Scales (CAARS), Adult ADHD Self-Report Scale (ASRS)"
+      }
+    },
+    {
+      "id": "working-memory",
+      "label": "Working Memory & Updating",
+      "category": "Functional dimensions",
+      "entity": "working-memory-dim",
+      "query": "(\"Memory, Short-Term\"[Mesh] OR \"working memory\"[tiab] OR \"delay activity\"[tiab])",
+      "view": "circuit",
+      "views": [
+        "circuit",
+        "molecules",
+        "scales",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": "Fundamental executive dimension providing short-term maintenance, active manipulation, and distractor shielding of representations through recurrent prefrontal-parietal microcircuits and dynamic synaptic states.",
+      "speciesNote": "Nonhuman primate principal sulcus unit recording; human fMRI multi-voxel pattern decoding and intracranial electrophysiology.",
+      "levelDesc": {
+        "molecular": "Slow NMDA receptor (GluN2B) currents sustaining recurrent excitation; dopamine D1 receptor inverted-U modulation; GABAergic parvalbumin microcircuit tuning.",
+        "cellular": "Persistent action potential firing across delay intervals in prefrontal pyramidal neurons; activity-silent short-term synaptic facilitation.",
+        "circuit": "Recurrent microcircuits between dorsolateral PFC, posterior parietal cortex, and mediodorsal thalamus; striatal gating of working memory updating.",
+        "regional": "Dorsolateral prefrontal cortex (dlPFC), inferior parietal lobule, mediodorsal thalamus, and dorsal caudate.",
+        "systems": "Central executive frontoparietal network, thalamocortical persistent dynamic loops.",
+        "cognitive": "Storage capacity limit (K-score), delay retention precision, resistance to proactive and retroactive interference, gate opening for item updating.",
+        "clinical": "Marked deficits in schizophrenia, ADHD, major depression, Parkinson's disease, and normal cognitive aging."
+      },
+      "levelQueries": {
+        "molecular": "(\"working memory\"[tiab] AND (NMDA[tiab] OR \"D1 receptor\"[tiab] OR GABA[tiab]))",
+        "cellular": "(\"working memory\"[tiab] AND (\"persistent activity\"[tiab] OR \"pyramidal\"[tiab]))",
+        "circuit": "(\"working memory\"[tiab] AND (\"frontoparietal\"[tiab] OR \"recurrent\"[tiab]))",
+        "regional": "(\"working memory\"[tiab] AND (\"dlPFC\"[tiab] OR \"parietal\"[tiab]))",
+        "systems": "(\"working memory\"[tiab] AND (\"executive network\"[tiab] OR \"thalamocortical\"[tiab]))",
+        "cognitive": "(\"working memory\"[tiab] AND (\"updating\"[tiab] OR \"interference\"[tiab]))",
+        "clinical": "(\"working memory\"[tiab] AND (\"schizophrenia\"[tiab] OR \"ADHD\"[tiab]))"
+      },
+      "methods": {
+        "molecular": "Pharmacological micro-infusion of D1 agonists/antagonists (SCH23390) and NMDA blockers during delay",
+        "cellular": "Nonhuman primate single-unit electrophysiology recording persistent delay-period firing",
+        "circuit": "Event-related fMRI delay-period decoding using multi-voxel pattern analysis (MVPA)",
+        "regional": "Transcranial magnetic stimulation (TMS) over dlPFC during delay maintenance vs distractor presentation",
+        "systems": "MEG gamma/theta phase-amplitude coupling over frontoparietal sensors during load manipulation",
+        "cognitive": "N-Back Task, Oculomotor Delayed Response (ODR), Sternberg Item Recognition, Complex Span Tasks",
+        "clinical": "Wechsler Adult Intelligence Scale (WAIS-IV Working Memory Index: Digit Span, Letter-Number)"
+      }
+    },
+    {
+      "id": "episodic-memory",
+      "label": "Episodic Memory & Retrieval",
+      "category": "Functional dimensions",
+      "entity": "episodic-memory-dim",
+      "query": "(\"Memory, Episodic\"[Mesh] OR \"episodic memory\"[tiab] OR \"contextual binding\"[tiab])",
+      "view": "circuit",
+      "views": [
+        "circuit",
+        "molecules",
+        "scales",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": "Capacity to encode, bind, consolidate, and retrieve unique past events situated in personal time, spatial context, and emotional state, organized by hippocampal-entorhinal and neocortical engram ensembles.",
+      "speciesNote": "Human clinical amnesia and verbal recall tasks; rodent optogenetic engram labeling and sharp-wave ripple recording.",
+      "levelDesc": {
+        "molecular": "Acetylcholine modulation setting encoding vs retrieval dynamics; NMDA receptor-mediated long-term potentiation (LTP); de novo protein synthesis for consolidation.",
+        "cellular": "Dentate gyrus granule cell sparse coding (pattern separation), CA3 recurrent collateral auto-associative network (pattern completion), and tagged engram neuronal ensembles.",
+        "circuit": "Perforant path (entorhinal to DG/CA3), mossy fibers (DG to CA3), Schaffer collaterals (CA3 to CA1), and subicular-cortical projections.",
+        "regional": "Hippocampal formation (DG, CA3, CA1, subiculum), entorhinal cortex, perirhinal cortex, parahippocampal cortex, retrosplenial cortex, and medial PFC.",
+        "systems": "Medial temporal lobe memory system, default mode network during autobiographical retrieval, hippocampal-neocortical systems consolidation.",
+        "cognitive": "Associative contextual binding, recollection vs familiarity discrimination, pattern separation vs completion, and source memory monitoring.",
+        "clinical": "Classic amnestic syndromes (Korsakoff, bilateral hippocampal resection), early Alzheimer's disease, temporal lobe epilepsy, and transient global amnesia."
+      },
+      "levelQueries": {
+        "molecular": "(\"episodic memory\"[tiab] AND (acetylcholine[tiab] OR LTP[tiab] OR NMDA[tiab]))",
+        "cellular": "(\"episodic memory\"[tiab] AND (\"pattern separation\" OR engram[tiab]))",
+        "circuit": "(\"episodic memory\"[tiab] AND (\"Schaffer collateral\" OR \"perforant\"[tiab]))",
+        "regional": "(\"episodic memory\"[tiab] AND (\"hippocampus\"[tiab] OR \"entorhinal\"[tiab]))",
+        "systems": "(\"episodic memory\"[tiab] AND (\"consolidation\" OR \"autobiographical\"[tiab]))",
+        "cognitive": "(\"episodic memory\"[tiab] AND (\"recollection\" OR \"source memory\"[tiab]))",
+        "clinical": "(\"episodic memory\"[tiab] AND (\"amnesia\"[tiab] OR \"Alzheimer\"[tiab]))"
+      },
+      "methods": {
+        "molecular": "Targeted engram labeling (cFos-tTA) and optogenetic reactivation/silencing of memory traces",
+        "cellular": "High-density Neuropixels recording of hippocampal sharp-wave ripples (SWRs) during rest replay",
+        "circuit": "High-resolution 7T fMRI segmentation of hippocampal subfields (DG/CA3 vs CA1)",
+        "regional": "Structural MRI volumetry of anterior vs posterior hippocampus and entorhinal cortex",
+        "systems": "Intracranial stereo-EEG recording of hippocampal-neocortical theta-gamma phase coupling during recall",
+        "cognitive": "Mnemonic Similarity Task (MST; pattern separation), Rey Auditory Verbal Learning Test (RAVLT)",
+        "clinical": "Wechsler Memory Scale (WMS-IV), California Verbal Learning Test (CVLT-3)"
+      }
+    },
+    {
+      "id": "navigation",
+      "label": "Spatial Navigation & Mapping",
+      "category": "Functional dimensions",
+      "entity": "navigation-dim",
+      "query": "(\"Spatial Navigation\"[Mesh] OR \"spatial navigation\"[tiab] OR \"cognitive map\"[tiab])",
+      "view": "circuit",
+      "views": [
+        "circuit",
+        "molecules",
+        "scales",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": "Capacity to build internal environmental representations, track orientation and position from self-motion cues (path integration), recognize landmarks, and execute flexible route planning.",
+      "speciesNote": "Human virtual reality wayfinding and fMRI hexadirectional analysis; rodent in vivo grid cell and place cell electrophysiology.",
+      "levelDesc": {
+        "molecular": "Theta rhythm cholinergic modulation via medial septum; NMDA receptor-dependent plasticity underlying place field stability and grid cell periodic alignment.",
+        "cellular": "Hippocampal place cells, medial entorhinal grid cells (hexagonal tessellation), head-direction cells, border/boundary cells, and speed cells.",
+        "circuit": "Entorhinal-hippocampal coordinate mapping network; retrosplenial transformation between egocentric and allocentric spatial frames; head-direction thalamocortical pathway.",
+        "regional": "Hippocampus, medial entorhinal cortex, retrosplenial cortex, posterior parietal cortex, anterodorsal thalamic nucleus, and mammillary bodies.",
+        "systems": "Limbic navigation circuit, theta oscillatory coordination network (6-10 Hz in rodents, 1-4 Hz in humans).",
+        "cognitive": "Path integration from self-motion, allocentric vs egocentric viewpoint transformation, cognitive map formation, shortcut calculation, and heading estimation.",
+        "clinical": "Topographical disorientation in early Alzheimer's disease, posterior cortical atrophy, stroke lesions of retrosplenial/parahippocampal cortex."
+      },
+      "levelQueries": {
+        "molecular": "(\"spatial navigation\"[tiab] AND (theta[tiab] OR NMDA[tiab] OR acetylcholine[tiab]))",
+        "cellular": "(\"spatial navigation\"[tiab] AND (\"grid cell\" OR \"place cell\"[tiab]))",
+        "circuit": "(\"spatial navigation\"[tiab] AND (\"path integration\" OR \"entorhinal\"[tiab]))",
+        "regional": "(\"spatial navigation\"[tiab] AND (\"retrosplenial\"[tiab] OR \"hippocampus\"[tiab]))",
+        "systems": "(\"spatial navigation\"[tiab] AND (\"cognitive map\" OR \"allocentric\"[tiab]))",
+        "cognitive": "(\"spatial navigation\"[tiab] AND (\"wayfinding\" OR \"heading\"[tiab]))",
+        "clinical": "(\"spatial navigation\"[tiab] AND (\"disorientation\"[tiab] OR \"Alzheimer\"[tiab]))"
+      },
+      "methods": {
+        "molecular": "Medial septal optogenetic pacing of hippocampal theta oscillations during spatial exploration",
+        "cellular": "Tetrode and Neuropixels recording of hexagonal grid-cell periodicity and place-field remapping",
+        "circuit": "Virtual reality spatial navigation combined with two-photon calcium imaging or intracranial human EEG",
+        "regional": "Human fMRI hexadirectional 6-fold sinusoidal modulation analysis of entorhinal cortex",
+        "systems": "Temporal interference (TI) noninvasive deep brain stimulation targeting hippocampus/entorhinal cortex",
+        "cognitive": "Virtual Morris Water Maze, Sea Hero Quest spatial navigation game, triangle completion task",
+        "clinical": "Supermarket Route Task, Landmark Recognition and Heading Direction Tests"
+      }
+    },
+    {
+      "id": "threat-avoidance",
+      "label": "Threat Learning & Avoidance",
+      "category": "Functional dimensions",
+      "entity": "threat-avoidance-dim",
+      "query": "(\"Fear\"[Mesh] OR \"threat learning\"[tiab] OR \"fear extinction\"[tiab] OR avoidance[tiab])",
+      "view": "circuit",
+      "views": [
+        "circuit",
+        "molecules",
+        "scales",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": "Fundamental defensive survival dimension governing Pavlovian fear acquisition, stimulus generalization, safety discrimination, extinction learning, and active avoidance through amygdala-prefrontal-hippocampal networks.",
+      "speciesNote": "Human Pavlovian conditioning and fMRI fear extinction recall; rodent optogenetic/chemogenetic amygdala microcircuit dissection.",
+      "levelDesc": {
+        "molecular": "NMDA receptor and CaMKII signaling in basolateral amygdala; central amygdala CRF (corticotropin-releasing factor) and PKCdelta microcircuit control; endocannabinoid CB1 signaling in extinction.",
+        "cellular": "Basolateral amygdala (BLA) fear vs extinction ensemble coding; intercalated GABAergic (ITC) cell gating of central amygdala output.",
+        "circuit": "Tripartite network: BLA associative hub, ventromedial PFC (infralimbic/BA25/32) extinction suppression, and hippocampus contextual modulation of threat expression.",
+        "regional": "Basolateral amygdala (BLA), central nucleus of the amygdala (CeA), ventromedial PFC, dorsal anterior cingulate cortex (dACC), and ventral hippocampus.",
+        "systems": "Defensive survival network, periaqueductal gray (PAG) motor output and freezing control, sympathetic autonomic arousal systems.",
+        "cognitive": "Threat expectancy learning, stimulus generalization gradient width, safety cue (CS-) learning, extinction recall retention, and transition from passive freezing to active avoidance.",
+        "clinical": "Central to post-traumatic stress disorder (PTSD), panic disorder, generalized anxiety disorder, and specific phobias."
+      },
+      "levelQueries": {
+        "molecular": "(\"threat learning\"[tiab] AND (NMDA[tiab] OR CRF[tiab] OR cannabinoid[tiab]))",
+        "cellular": "(\"threat learning\"[tiab] AND (\"intercalated\" OR \"central amygdala\"[tiab]))",
+        "circuit": "(\"threat learning\"[tiab] AND (\"ventromedial prefrontal\" OR \"amygdala\"[tiab]))",
+        "regional": "(\"threat learning\"[tiab] AND (\"BLA\"[tiab] OR \"PAG\"[tiab]))",
+        "systems": "(\"threat learning\"[tiab] AND (\"fear extinction\" OR \"avoidance\"[tiab]))",
+        "cognitive": "(\"threat learning\"[tiab] AND (\"generalization\" OR \"safety signal\"[tiab]))",
+        "clinical": "(\"threat learning\"[tiab] AND (\"PTSD\"[tiab] OR \"anxiety\"[tiab]))"
+      },
+      "methods": {
+        "molecular": "Infusion of NMDA antagonist (APV) or D-cycloserine into BLA during extinction training",
+        "cellular": "Fiber photometry of genetically defined PKCdelta vs somatostatin neurons in central amygdala",
+        "circuit": "fMRI differential fear conditioning (CS+ vs CS-) and contextual renewal paradigms",
+        "regional": "Skin conductance response (SCR) and fear-potentiated startle (FPS) electromyography",
+        "systems": "Resting-state functional connectivity between vmPFC and amygdala during extinction consolidation",
+        "cognitive": "Perceptual generalization testing across stimulus morph gradients, Active Avoidance Shuttle Box",
+        "clinical": "Clinician-Administered PTSD Scale (CAPS-5), State-Trait Anxiety Inventory (STAI)"
+      }
+    },
+    {
+      "id": "cognitive-flexibility",
+      "label": "Cognitive Flexibility & Reversal",
+      "category": "Functional dimensions",
+      "entity": "cognitive-flexibility-dim",
+      "query": "(\"Cognitive Flexibility\"[Mesh] OR \"cognitive flexibility\"[tiab] OR \"reversal learning\"[tiab] OR perseveration[tiab])",
+      "view": "circuit",
+      "views": [
+        "circuit",
+        "molecules",
+        "scales",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": "Executive capacity to alter behavioral strategies, rule mappings, or reward valuations when environmental contingencies change, contrasting with rigid perseverative sticking to obsolete rules.",
+      "speciesNote": "Human clinical tasks (WCST, CANTAB IED); nonhuman primate targeted prefrontal serotonin and dopamine lesion paradigms.",
+      "levelDesc": {
+        "molecular": "Orbitofrontal serotonin (5-HT) depletion selectively impairing reversal learning; striatal dopamine D2 signaling mediating probabilistic updating; COMT enzymatic catecholamine regulation.",
+        "cellular": "Orbitofrontal cortex (OFC) pyramidal neurons encoding changing outcome values; striatal cholinergic interneurons signaling contingency shifts.",
+        "circuit": "Orbitofrontal-ventral striatal circuit for affective reversal learning; lateral prefrontal-dorsal striatal circuit for extra-dimensional set-shifting; anterior cingulate for error monitoring.",
+        "regional": "Orbitofrontal cortex (OFC), ventrolateral PFC, dorsolateral PFC, anterior cingulate cortex (ACC), and striatum (caudate and putamen).",
+        "systems": "Frontostriatal flexible cognitive control network, conflict monitoring and behavioral adaptation system.",
+        "cognitive": "Perseverative errors (inability to abandon previously rewarded rule), regressive errors, probabilistic feedback updating, and extra-dimensional attentional shifts.",
+        "clinical": "Severe perseveration in frontotemporal dementia, schizophrenia, obsessive-compulsive disorder, Parkinson's disease, and autism spectrum disorder."
+      },
+      "levelQueries": {
+        "molecular": "(\"cognitive flexibility\"[tiab] AND (serotonin[tiab] OR dopamine[tiab] OR COMT[tiab]))",
+        "cellular": "(\"cognitive flexibility\"[tiab] AND (\"orbitofrontal\"[tiab] OR \"cholinergic interneuron\"[tiab]))",
+        "circuit": "(\"cognitive flexibility\"[tiab] AND (\"reversal learning\"[tiab] OR \"set-shifting\"[tiab]))",
+        "regional": "(\"cognitive flexibility\"[tiab] AND (\"OFC\"[tiab] OR \"ACC\"[tiab]))",
+        "systems": "(\"cognitive flexibility\"[tiab] AND (\"frontostriatal\"[tiab] OR \"perseveration\"[tiab]))",
+        "cognitive": "(\"cognitive flexibility\"[tiab] AND (\"probabilistic\"[tiab] OR \"rule switching\"[tiab]))",
+        "clinical": "(\"cognitive flexibility\"[tiab] AND (\"schizophrenia\"[tiab] OR \"autism\"[tiab]))"
+      },
+      "methods": {
+        "molecular": "Targeted prefrontal serotonergic or dopaminergic neurotoxic lesions (5,7-DHT, 6-OHDA) in primates",
+        "cellular": "In vivo single-unit recording of OFC neurons during contingency reversal and omission",
+        "circuit": "Event-related fMRI during Wisconsin Card Sorting Test (WCST) and Probabilistic Reversal Learning (PRL)",
+        "regional": "Structural MRI cortical thickness of orbitofrontal and ventrolateral prefrontal cortex",
+        "systems": "Computational reinforcement learning modeling estimating separate learning rates for positive and negative feedback",
+        "cognitive": "Intra-Extra Dimensional Set Shift (IED / CANTAB), Probabilistic Reversal Learning (PRL)",
+        "clinical": "Wisconsin Card Sorting Test (WCST perseverative error count), Trail Making Test B"
+      }
+    },
+    {
+      "id": "arousal-fatigue",
+      "label": "Arousal, Sleepiness & Fatigue",
+      "category": "Functional dimensions",
+      "entity": "arousal-fatigue-dim",
+      "query": "(\"Arousal\"[Mesh] OR sleepiness[tiab] OR fatigue[tiab] OR fatigability[tiab])",
+      "view": "circuit",
+      "views": [
+        "circuit",
+        "molecules",
+        "scales",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": "Multidimensional state dimension spanning physiological activation (arousal), sleep propensity (sleepiness), subjective exhaustion (fatigue), and objective performance decline with exertion (fatigability).",
+      "speciesNote": "Human sleep deprivation PET (A1 receptor) and psychomotor vigilance testing; rodent optogenetic ascending arousal circuit control.",
+      "levelDesc": {
+        "molecular": "Adenosine A1/A2A accumulation mediating homeostatic sleep pressure; orexin/hypocretin peptide stabilization; histamine H1, noradrenaline alpha1/beta, and acetylcholine arousal modulation.",
+        "cellular": "Ascending reticular activating system (ARAS) wake-active monoaminergic and cholinergic neuronal firing; ventrolateral preoptic (VLPO) GABAergic sleep-active neurons.",
+        "circuit": "Thalamocortical ascending arousal system; hypothalamic flip-flop switch between VLPO and wake centers; insula-dlPFC subjective effort-cost valuation circuit.",
+        "regional": "Locus coeruleus, tuberomammillary nucleus, dorsal raphe, lateral hypothalamus, VLPO, anterior insula, and basal forebrain.",
+        "systems": "Sleep-wake regulatory flip-flop circuit, circadian timing network coordinated by the suprachiasmatic nucleus (SCN).",
+        "cognitive": "Psychomotor vigilance reaction time slowing, attentional lapses ('microsleeps'), subjective effort escalation during sustained cognitive work.",
+        "clinical": "Multiple sclerosis central fatigue, traumatic brain injury, post-viral fatigue, Parkinson's disease, and chronic sleep deprivation."
+      },
+      "levelQueries": {
+        "molecular": "(fatigue[tiab] AND (adenosine[tiab] OR orexin[tiab] OR histamine[tiab]))",
+        "cellular": "(fatigue[tiab] AND (\"VLPO\"[tiab] OR \"locus coeruleus\"[tiab]))",
+        "circuit": "(fatigue[tiab] AND (\"ascending arousal\" OR \"flip-flop\"[tiab]))",
+        "regional": "(fatigue[tiab] AND (\"anterior insula\"[tiab] OR \"hypothalamus\"[tiab]))",
+        "systems": "(fatigue[tiab] AND (\"sleep-wake\" OR \"circadian\"[tiab]))",
+        "cognitive": "(fatigue[tiab] AND (\"vigilance lapse\" OR \"fatigability\"[tiab]))",
+        "clinical": "(fatigue[tiab] AND (\"multiple sclerosis\"[tiab] OR \"sleepiness\"[tiab]))"
+      },
+      "methods": {
+        "molecular": "PET 18F-CPFPX measuring adenosine A1 receptor availability following sleep deprivation and recovery sleep",
+        "cellular": "In vivo optogenetic stimulation of lateral hypothalamic orexin or VLPO GABAergic neurons",
+        "circuit": "fMRI during prolonged cognitively fatiguing tasks evaluating insula and dlPFC effort-cost signals",
+        "regional": "Pupillometry tonic vs phasic baseline tracking locus coeruleus noradrenergic arousal",
+        "systems": "Polysomnography (PSG) sleep staging and EEG slow-wave activity (SWA / delta power) sleep pressure measurement",
+        "cognitive": "Psychomotor Vigilance Task (PVT; 10-minute lapse rate), Maintenance of Wakefulness Test (MWT)",
+        "clinical": "Fatigue Severity Scale (FSS), Modified Fatigue Impact Scale (MFIS), Epworth Sleepiness Scale (ESS)"
+      }
+    },
+    {
+      "id": "hallucinations",
+      "label": "Hallucinations & Perceptual Inference",
+      "category": "Functional dimensions",
+      "entity": "hallucinations-dim",
+      "query": "(\"Hallucinations\"[Mesh] OR hallucination[tiab] OR \"source monitoring\"[tiab] OR \"predictive coding\"[tiab])",
+      "view": "circuit",
+      "views": [
+        "circuit",
+        "molecules",
+        "scales",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": "Perceptual dimension characterized by conscious sensory experiences without corresponding external stimuli, conceptualized through hierarchical Bayesian predictive coding as overweighted perceptual priors relative to imprecise sensory evidence.",
+      "speciesNote": "Human clinical psychotic and neurodegenerative cohorts (fMRI source monitoring, conditioned hallucinations); computational Bayesian predictive processing simulations.",
+      "levelDesc": {
+        "molecular": "Excess presynaptic striatal dopamine synthesis and release driving aberrant salience; NMDA receptor hypofunction on cortical interneurons disrupting sensory precision weighting; cholinergic cortical de-afferentation.",
+        "cellular": "Deep layer V pyramidal feedback projections carrying top-down perceptual predictions; superficial layer II/III granular error units carrying bottom-up sensory prediction errors.",
+        "circuit": "Auditory speech production and monitoring loops (Wernicke-Broca-arcuate fasciculus-auditory cortex); ventral visual stream association networks; frontotemporal source monitoring circuits.",
+        "regional": "Primary and association auditory cortices (STG, Heschl's gyrus), Broca's area, visual association cortices, anterior cingulate, and striatum.",
+        "systems": "Hierarchical predictive processing networks, reality/source monitoring frontotemporal networks.",
+        "cognitive": "Auditory verbal hallucinations (internally generated speech misattributed to an external source), formed visual hallucinations, high-precision prior beliefs dominating weak or noisy sensory input.",
+        "clinical": "Schizophrenia spectrum psychosis, Parkinson's disease psychosis, Lewy body dementia, Charles Bonnet syndrome (visual de-afferentation), and hypnagogic sleep phenomena."
+      },
+      "levelQueries": {
+        "molecular": "(hallucination[tiab] AND (dopamine[tiab] OR NMDA[tiab] OR acetylcholine[tiab]))",
+        "cellular": "(hallucination[tiab] AND (\"prediction error\" OR \"pyramidal\"[tiab]))",
+        "circuit": "(hallucination[tiab] AND (\"source monitoring\" OR \"auditory cortex\"[tiab]))",
+        "regional": "(hallucination[tiab] AND (\"superior temporal\" OR \"Heschl\"[tiab]))",
+        "systems": "(hallucination[tiab] AND (\"predictive coding\" OR \"Bayesian\"[tiab]))",
+        "cognitive": "(hallucination[tiab] AND (\"prior\" OR \"reality monitoring\"[tiab]))",
+        "clinical": "(hallucination[tiab] AND (\"psychosis\" OR \"Lewy body\"[tiab]))"
+      },
+      "methods": {
+        "molecular": "18F-DOPA PET measuring elevated associative striatal presynaptic dopamine synthesis capacity",
+        "cellular": "Cortical laminar electrophysiology recording feedforward gamma vs feedback beta oscillations",
+        "circuit": "fMRI during conditioned auditory hallucination paradigms and speech-monitoring tasks",
+        "regional": "Morphometric MRI showing superior temporal gyrus gray matter thinning and arcuate fasciculus integrity",
+        "systems": "Bayesian hierarchical computational modeling estimating prior precision vs sensory precision parameters",
+        "cognitive": "Auditory Signal Detection Task with Pavlovian conditioning, Reality/Source Monitoring Memory Tasks",
+        "clinical": "Psychotic Symptom Rating Scales (PSYRATS), Scale for the Assessment of Positive Symptoms (SAPS)"
+      }
     }
   ],
   "methods": {
@@ -17411,6 +17951,764 @@
         "mahoney2019narcolepsy"
       ],
       "region": "narcolepsy"
+    },
+    {
+      "id": "anhedonia-dim",
+      "name": "Anhedonia & reward processing dimension",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "reward",
+        "emotion",
+        "learning"
+      ],
+      "summary": "Transdiagnostic profile spanning consummatory hedonic impact, anticipatory valuation, and effort allocation (human; review).",
+      "refs": [
+        "thomsen2015anhedonia",
+        "berridge2015pleasure",
+        "husain2018apathy"
+      ],
+      "region": "anhedonia"
+    },
+    {
+      "id": "anhedonia-opioid-hedonic-hotspot",
+      "name": "Opioid hedonic hotspot signaling",
+      "level": "molecular",
+      "kind": "mechanism",
+      "domains": [
+        "reward",
+        "emotion"
+      ],
+      "summary": "Mu-opioid and endocannabinoid stimulation in nucleus accumbens shell and ventral pallidum amplifying consummatory liking.",
+      "refs": [
+        "berridge2015pleasure"
+      ],
+      "region": "anhedonia"
+    },
+    {
+      "id": "anhedonia-mesolimbic-effort",
+      "name": "Mesolimbic dopamine effort allocation",
+      "level": "circuit",
+      "kind": "circuit",
+      "domains": [
+        "reward",
+        "motor"
+      ],
+      "summary": "VTA dopaminergic projection to nucleus accumbens energizing willingness to overcome effort costs for reward.",
+      "refs": [
+        "husain2018apathy",
+        "thomsen2015anhedonia"
+      ],
+      "region": "anhedonia"
+    },
+    {
+      "id": "anhedonia-consummatory-vs-incentive",
+      "name": "Liking vs wanting dissociation",
+      "level": "cognitive",
+      "kind": "function",
+      "domains": [
+        "reward",
+        "emotion"
+      ],
+      "summary": "Preserved in-the-moment consummatory enjoyment contrasting with deficient anticipatory drive and effort expenditure.",
+      "refs": [
+        "thomsen2015anhedonia"
+      ],
+      "region": "anhedonia"
+    },
+    {
+      "id": "apathy-dim",
+      "name": "Apathy & goal initiation dimension",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "reward",
+        "executive",
+        "motor"
+      ],
+      "summary": "Transdiagnostic deficit in initiating and sustaining self-directed goal activities due to effort discounting (human; review).",
+      "refs": [
+        "husain2018apathy",
+        "kluger2013fatigue"
+      ],
+      "region": "apathy"
+    },
+    {
+      "id": "apathy-dopamine-effort-cost",
+      "name": "Dopaminergic effort cost elevation",
+      "level": "molecular",
+      "kind": "mechanism",
+      "domains": [
+        "reward",
+        "motor"
+      ],
+      "summary": "Blunted dopamine signaling steepening the subjective cost gradient of physical and cognitive exertion.",
+      "refs": [
+        "husain2018apathy"
+      ],
+      "region": "apathy"
+    },
+    {
+      "id": "apathy-acc-striatal-invigoration",
+      "name": "ACC-striatal action invigoration circuit",
+      "level": "circuit",
+      "kind": "circuit",
+      "domains": [
+        "executive",
+        "motor"
+      ],
+      "summary": "Anterior cingulate-striatal projections integrating reward value and effort costs to drive initiation.",
+      "refs": [
+        "husain2018apathy"
+      ],
+      "region": "apathy"
+    },
+    {
+      "id": "apathy-initiation-failure",
+      "name": "Self-generated initiation failure",
+      "level": "cognitive",
+      "kind": "function",
+      "domains": [
+        "executive",
+        "motor"
+      ],
+      "summary": "Impaired internal generation of purposeful activity with responsiveness to external cues and prompts.",
+      "refs": [
+        "husain2018apathy"
+      ],
+      "region": "apathy"
+    },
+    {
+      "id": "impulsivity-dim",
+      "name": "Impulsivity & response control dimension",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "executive",
+        "motor",
+        "reward"
+      ],
+      "summary": "Multidimensional construct spanning action cancellation, waiting restraint, and delay discounting (human; review).",
+      "refs": [
+        "dalley2019impulsivity",
+        "dalley2011topdown"
+      ],
+      "region": "impulsivity"
+    },
+    {
+      "id": "impulsivity-monoamine-regulation",
+      "name": "Serotonin & dopamine control",
+      "level": "molecular",
+      "kind": "mechanism",
+      "domains": [
+        "reward",
+        "executive"
+      ],
+      "summary": "Serotonin modulating waiting impulse restraint and striatal D2 availability shaping delay preference.",
+      "refs": [
+        "dalley2019impulsivity"
+      ],
+      "region": "impulsivity"
+    },
+    {
+      "id": "impulsivity-fronto-stn-hyperdirect",
+      "name": "Fronto-subthalamic hyperdirect stopping",
+      "level": "circuit",
+      "kind": "circuit",
+      "domains": [
+        "executive",
+        "motor"
+      ],
+      "summary": "Right IFG and pre-SMA projection directly onto subthalamic nucleus triggering rapid global motor cancellation.",
+      "refs": [
+        "dalley2011topdown"
+      ],
+      "region": "impulsivity"
+    },
+    {
+      "id": "impulsivity-stopping-vs-waiting",
+      "name": "Cancellation vs restraint dissociation",
+      "level": "cognitive",
+      "kind": "function",
+      "domains": [
+        "executive",
+        "motor"
+      ],
+      "summary": "Dissociation between halting an initiated response (SSRT) and sustaining waiting restraint before a cue.",
+      "refs": [
+        "dalley2019impulsivity"
+      ],
+      "region": "impulsivity"
+    },
+    {
+      "id": "compulsivity-dim",
+      "name": "Compulsivity & habit formation dimension",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "motor",
+        "learning",
+        "executive"
+      ],
+      "summary": "Persistence of stereotyped, repetitive actions despite adverse outcomes or changed goals (human; review).",
+      "refs": [
+        "figee2024compulsivity",
+        "dalley2011topdown"
+      ],
+      "region": "compulsivity"
+    },
+    {
+      "id": "compulsivity-cstc-loop-dysregulation",
+      "name": "CSTC loop balance dysregulation",
+      "level": "molecular",
+      "kind": "mechanism",
+      "domains": [
+        "executive",
+        "learning"
+      ],
+      "summary": "Altered 5-HT and dopamine transmission shifting control from associative to sensorimotor striatal loops.",
+      "refs": [
+        "figee2024compulsivity"
+      ],
+      "region": "compulsivity"
+    },
+    {
+      "id": "compulsivity-dorsal-striatal-habit",
+      "name": "Dorsolateral striatal habit dominance",
+      "level": "circuit",
+      "kind": "circuit",
+      "domains": [
+        "motor",
+        "learning"
+      ],
+      "summary": "Autonomous stimulus-response habit network mediated by sensorimotor cortex and putamen.",
+      "refs": [
+        "figee2024compulsivity"
+      ],
+      "region": "compulsivity"
+    },
+    {
+      "id": "compulsivity-devaluation-insensitivity",
+      "name": "Outcome devaluation insensitivity",
+      "level": "cognitive",
+      "kind": "function",
+      "domains": [
+        "learning",
+        "executive"
+      ],
+      "summary": "Continued execution of actions even after the outcome has been devalued (satiated or paired with aversive consequence).",
+      "refs": [
+        "figee2024compulsivity",
+        "dalley2011topdown"
+      ],
+      "region": "compulsivity"
+    },
+    {
+      "id": "attention-dim",
+      "name": "Attention & signal detection dimension",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "sensory",
+        "executive",
+        "timing"
+      ],
+      "summary": "Capacity for sensory signal selection, vigilance maintenance, and distractor suppression (human; review).",
+      "refs": [
+        "sarter2014cholinergic",
+        "totah2022noradrenergic"
+      ],
+      "region": "attention"
+    },
+    {
+      "id": "attention-cholinergic-transients",
+      "name": "Prefrontal cholinergic transients",
+      "level": "molecular",
+      "kind": "mechanism",
+      "domains": [
+        "sensory",
+        "timing"
+      ],
+      "summary": "Phasic subsecond acetylcholine release events driving transitions from monitoring to target detection.",
+      "refs": [
+        "sarter2014cholinergic"
+      ],
+      "region": "attention"
+    },
+    {
+      "id": "attention-frontoparietal-selection",
+      "name": "Frontoparietal selective network",
+      "level": "circuit",
+      "kind": "circuit",
+      "domains": [
+        "sensory",
+        "executive"
+      ],
+      "summary": "Dorsal attention network connecting frontal eye fields and intraparietal sulcus for spatial prioritization.",
+      "refs": [
+        "totah2022noradrenergic"
+      ],
+      "region": "attention"
+    },
+    {
+      "id": "attention-signal-detection-criterion",
+      "name": "Sensitivity vs criterion control",
+      "level": "cognitive",
+      "kind": "function",
+      "domains": [
+        "sensory",
+        "executive"
+      ],
+      "summary": "Signal detection discrimination (d') distinguishing sensory perceptual capacity from liberal/conservative response policy (c).",
+      "refs": [
+        "sarter2014cholinergic"
+      ],
+      "region": "attention"
+    },
+    {
+      "id": "working-memory-dim",
+      "name": "Working memory & updating dimension",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "executive",
+        "memory",
+        "timing"
+      ],
+      "summary": "Online maintenance, distractor shielding, and flexible updating of mental representations (human; review).",
+      "refs": [
+        "curtis2021persistent",
+        "constantinidis2016capacity"
+      ],
+      "region": "working-memory"
+    },
+    {
+      "id": "working-memory-nmda-d1-recurrent",
+      "name": "Recurrent NMDA & D1 persistent excitation",
+      "level": "molecular",
+      "kind": "mechanism",
+      "domains": [
+        "executive",
+        "memory"
+      ],
+      "summary": "Slow-decaying NMDA currents and D1 receptor modulation sustaining attractor states across delay intervals.",
+      "refs": [
+        "curtis2021persistent",
+        "constantinidis2016capacity"
+      ],
+      "region": "working-memory"
+    },
+    {
+      "id": "working-memory-frontoparietal-delay",
+      "name": "Frontoparietal delay-period network",
+      "level": "circuit",
+      "kind": "circuit",
+      "domains": [
+        "executive",
+        "memory"
+      ],
+      "summary": "Distributed dlPFC and posterior parietal circuits maintaining item content and prioritizing task goals.",
+      "refs": [
+        "curtis2021persistent"
+      ],
+      "region": "working-memory"
+    },
+    {
+      "id": "working-memory-updating-interference",
+      "name": "Gating & interference resistance",
+      "level": "cognitive",
+      "kind": "function",
+      "domains": [
+        "executive",
+        "memory"
+      ],
+      "summary": "Selective gating of novel inputs while shielding currently maintained contents against distractor interference.",
+      "refs": [
+        "constantinidis2016capacity"
+      ],
+      "region": "working-memory"
+    },
+    {
+      "id": "episodic-memory-dim",
+      "name": "Episodic memory & contextual binding dimension",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "memory",
+        "learning",
+        "spatial"
+      ],
+      "summary": "Capacity to encode, bind, store, and consciously recollect personally experienced events in context (human; review).",
+      "refs": [
+        "haam2017cholinergic",
+        "josselyn2023engram",
+        "spear2024spear"
+      ],
+      "region": "episodic-memory"
+    },
+    {
+      "id": "episodic-memory-ach-encoding-switch",
+      "name": "Cholinergic encoding-retrieval dynamic switch",
+      "level": "molecular",
+      "kind": "mechanism",
+      "domains": [
+        "memory",
+        "learning"
+      ],
+      "summary": "High acetylcholine favoring external sensory input encoding and LTP while lower levels permit internal replay.",
+      "refs": [
+        "haam2017cholinergic",
+        "spear2024spear"
+      ],
+      "region": "episodic-memory"
+    },
+    {
+      "id": "episodic-memory-hippocampal-trisynaptic",
+      "name": "Hippocampal trisynaptic circuit",
+      "level": "circuit",
+      "kind": "circuit",
+      "domains": [
+        "memory",
+        "learning"
+      ],
+      "summary": "Dentate gyrus pattern separation and CA3 auto-associative pattern completion networks binding experience.",
+      "refs": [
+        "josselyn2023engram"
+      ],
+      "region": "episodic-memory"
+    },
+    {
+      "id": "episodic-memory-context-recollection",
+      "name": "Contextual recollection & source monitoring",
+      "level": "cognitive",
+      "kind": "function",
+      "domains": [
+        "memory",
+        "spatial"
+      ],
+      "summary": "Retrieval of associative details ('remembering' where and when) distinct from mere item familiarity.",
+      "refs": [
+        "haam2017cholinergic"
+      ],
+      "region": "episodic-memory"
+    },
+    {
+      "id": "navigation-dim",
+      "name": "Spatial navigation & cognitive mapping dimension",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "spatial",
+        "memory",
+        "sensory"
+      ],
+      "summary": "Capacity to construct cognitive maps, execute path integration, and navigate towards goals (human; review).",
+      "refs": [
+        "zhang2014space",
+        "wesselink2024navigation"
+      ],
+      "region": "navigation"
+    },
+    {
+      "id": "navigation-grid-place-theta",
+      "name": "Grid & place cell coordinate networks",
+      "level": "cellular",
+      "kind": "mechanism",
+      "domains": [
+        "spatial",
+        "memory"
+      ],
+      "summary": "Entorhinal hexagonal grid cells, head-direction cells, and hippocampal place fields synchronized by theta rhythms.",
+      "refs": [
+        "zhang2014space"
+      ],
+      "region": "navigation"
+    },
+    {
+      "id": "navigation-entorhinal-hippocampal-map",
+      "name": "Entorhinal-hippocampal coordinate mapping",
+      "level": "circuit",
+      "kind": "circuit",
+      "domains": [
+        "spatial",
+        "memory"
+      ],
+      "summary": "Perforant path input from medial entorhinal cortex conveying metric coordinate frames to hippocampal place cells.",
+      "refs": [
+        "zhang2014space",
+        "wesselink2024navigation"
+      ],
+      "region": "navigation"
+    },
+    {
+      "id": "navigation-allocentric-mapping",
+      "name": "Allocentric mapping & path integration",
+      "level": "cognitive",
+      "kind": "function",
+      "domains": [
+        "spatial",
+        "sensory"
+      ],
+      "summary": "World-centered spatial representations enabling shortcuts, heading computation, and self-motion dead reckoning.",
+      "refs": [
+        "wesselink2024navigation"
+      ],
+      "region": "navigation"
+    },
+    {
+      "id": "threat-avoidance-dim",
+      "name": "Threat learning & avoidance dimension",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "emotion",
+        "learning",
+        "sensory"
+      ],
+      "summary": "Mechanisms of associative fear conditioning, stimulus generalization, extinction recall, and active avoidance (human; review).",
+      "refs": [
+        "sangha2020safety",
+        "toth2024fear"
+      ],
+      "region": "threat-avoidance"
+    },
+    {
+      "id": "threat-avoidance-crf-nmda-signaling",
+      "name": "CRF & NMDA synaptic plasticity",
+      "level": "molecular",
+      "kind": "mechanism",
+      "domains": [
+        "emotion",
+        "learning"
+      ],
+      "summary": "NMDA-dependent LTP in basolateral amygdala and CRF-mediated microcircuit disinhibition in central amygdala.",
+      "refs": [
+        "sangha2020safety"
+      ],
+      "region": "threat-avoidance"
+    },
+    {
+      "id": "threat-avoidance-bla-vmpfc-extinction",
+      "name": "BLA-vmPFC extinction gating loop",
+      "level": "circuit",
+      "kind": "circuit",
+      "domains": [
+        "emotion",
+        "executive"
+      ],
+      "summary": "Ventromedial prefrontal cortex activation recruiting intercalated GABAergic cells to inhibit amygdala fear output.",
+      "refs": [
+        "toth2024fear"
+      ],
+      "region": "threat-avoidance"
+    },
+    {
+      "id": "threat-avoidance-generalization-safety",
+      "name": "Overgeneralization & safety learning deficit",
+      "level": "cognitive",
+      "kind": "function",
+      "domains": [
+        "emotion",
+        "sensory"
+      ],
+      "summary": "Broadened perceptual generalization of threat to innocuous cues and impaired discrimination of safety signals (CS-).",
+      "refs": [
+        "sangha2020safety"
+      ],
+      "region": "threat-avoidance"
+    },
+    {
+      "id": "cognitive-flexibility-dim",
+      "name": "Cognitive flexibility & reversal dimension",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "executive",
+        "learning",
+        "reward"
+      ],
+      "summary": "Capacity to adjust behavioral strategies and rules to changing contingencies vs perseverative rigidity (human; review).",
+      "refs": [
+        "waltz2017flexibility",
+        "clarke2005serotonin"
+      ],
+      "region": "cognitive-flexibility"
+    },
+    {
+      "id": "cognitive-flexibility-serotonin-dopamine",
+      "name": "Orbitofrontal serotonin & striatal dopamine",
+      "level": "molecular",
+      "kind": "mechanism",
+      "domains": [
+        "reward",
+        "executive"
+      ],
+      "summary": "Serotonin modulation of OFC reversal learning and dopamine modulation of striatal rule switching.",
+      "refs": [
+        "clarke2005serotonin",
+        "waltz2017flexibility"
+      ],
+      "region": "cognitive-flexibility"
+    },
+    {
+      "id": "cognitive-flexibility-ofc-striatal-reversal",
+      "name": "OFC-ventral striatal reversal loop",
+      "level": "circuit",
+      "kind": "circuit",
+      "domains": [
+        "executive",
+        "learning"
+      ],
+      "summary": "Frontostriatal circuit responsible for rapidly updating affective outcome expectations and suppressing obsolete choices.",
+      "refs": [
+        "waltz2017flexibility"
+      ],
+      "region": "cognitive-flexibility"
+    },
+    {
+      "id": "cognitive-flexibility-perseverative-switching",
+      "name": "Perseveration vs probabilistic switching",
+      "level": "cognitive",
+      "kind": "function",
+      "domains": [
+        "executive",
+        "learning"
+      ],
+      "summary": "Tendency to repeat an unrewarded choice (perseveration) vs excessive switching in response to misleading negative feedback.",
+      "refs": [
+        "waltz2017flexibility",
+        "clarke2005serotonin"
+      ],
+      "region": "cognitive-flexibility"
+    },
+    {
+      "id": "arousal-fatigue-dim",
+      "name": "Arousal, sleepiness & fatigue dimension",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "homeostasis",
+        "timing",
+        "executive"
+      ],
+      "summary": "State dimensions dissociating physiological arousal, sleep propensity, subjective fatigue, and performance decline (human; review).",
+      "refs": [
+        "scammell2017wake",
+        "kluger2013fatigue",
+        "elmenhorst2017adenosine"
+      ],
+      "region": "arousal-fatigue"
+    },
+    {
+      "id": "arousal-fatigue-adenosine-orexin",
+      "name": "Adenosine accumulation & orexin drive",
+      "level": "molecular",
+      "kind": "mechanism",
+      "domains": [
+        "homeostasis",
+        "timing"
+      ],
+      "summary": "Extracellular adenosine accumulation at A1 receptors tracking sleep debt counterbalanced by orexinergic wake drive.",
+      "refs": [
+        "elmenhorst2017adenosine",
+        "scammell2017wake"
+      ],
+      "region": "arousal-fatigue"
+    },
+    {
+      "id": "arousal-fatigue-aras-wake-centers",
+      "name": "Ascending reticular wake centers",
+      "level": "circuit",
+      "kind": "circuit",
+      "domains": [
+        "homeostasis",
+        "executive"
+      ],
+      "summary": "Brainstem and hypothalamic monoaminergic/cholinergic projection nuclei driving cortical desynchronization and alertness.",
+      "refs": [
+        "scammell2017wake"
+      ],
+      "region": "arousal-fatigue"
+    },
+    {
+      "id": "arousal-fatigue-sleepiness-vs-effort",
+      "name": "Sleepiness vs effort cost dissociation",
+      "level": "cognitive",
+      "kind": "function",
+      "domains": [
+        "homeostasis",
+        "executive"
+      ],
+      "summary": "Clear distinction between involuntary sleepiness (falling asleep) and cognitive fatigue (rising effort cost without sleep).",
+      "refs": [
+        "kluger2013fatigue"
+      ],
+      "region": "arousal-fatigue"
+    },
+    {
+      "id": "hallucinations-dim",
+      "name": "Hallucinations & perceptual inference dimension",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "sensory",
+        "language",
+        "executive"
+      ],
+      "summary": "Perceptual experiences without external stimuli conceptualized via Bayesian predictive coding and source monitoring (human; review).",
+      "refs": [
+        "griffin2017predictive",
+        "corlett2018predictive",
+        "collins2026compensatory"
+      ],
+      "region": "hallucinations"
+    },
+    {
+      "id": "hallucinations-dopamine-nmda-precision",
+      "name": "Aberrant salience & sensory precision loss",
+      "level": "molecular",
+      "kind": "mechanism",
+      "domains": [
+        "sensory",
+        "reward"
+      ],
+      "summary": "Presynaptic dopamine elevation and NMDA hypofunction altering precision weighting of sensory evidence vs prior beliefs.",
+      "refs": [
+        "corlett2018predictive",
+        "griffin2017predictive"
+      ],
+      "region": "hallucinations"
+    },
+    {
+      "id": "hallucinations-predictive-coding-prior",
+      "name": "Hierarchical perceptual prior overweighting",
+      "level": "circuit",
+      "kind": "circuit",
+      "domains": [
+        "sensory",
+        "executive"
+      ],
+      "summary": "Top-down perceptual priors in frontal association cortex overriding imprecise ascending sensory inputs.",
+      "refs": [
+        "griffin2017predictive",
+        "collins2026compensatory"
+      ],
+      "region": "hallucinations"
+    },
+    {
+      "id": "hallucinations-source-monitoring-misattribution",
+      "name": "Source monitoring & agency misattribution",
+      "level": "cognitive",
+      "kind": "function",
+      "domains": [
+        "sensory",
+        "language"
+      ],
+      "summary": "Internally generated inner speech or visual imagery misattributed to an external source or external agency.",
+      "refs": [
+        "griffin2017predictive"
+      ],
+      "region": "hallucinations"
     }
   ],
   "links": [
@@ -31732,6 +33030,414 @@
         "zhang2024ad",
         "bookshelf2020ad"
       ]
+    },
+    {
+      "s": "anhedonia-dim",
+      "t": "anhedonia-opioid-hedonic-hotspot",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Limbic opioid hotspots mediate sensory pleasure impact, dissociable from dopaminergic motivation.",
+      "refs": [
+        "berridge2015pleasure"
+      ]
+    },
+    {
+      "s": "anhedonia-dim",
+      "t": "anhedonia-mesolimbic-effort",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Mesolimbic dopamine pathway integrity determines willingness to accept effortful costs for rewards.",
+      "refs": [
+        "husain2018apathy"
+      ]
+    },
+    {
+      "s": "anhedonia-mesolimbic-effort",
+      "t": "anhedonia-consummatory-vs-incentive",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Dopamine depletion blunts incentive motivation ('wanting') while leaving basic hedonic reactivity ('liking') intact.",
+      "refs": [
+        "thomsen2015anhedonia",
+        "berridge2015pleasure"
+      ]
+    },
+    {
+      "s": "apathy-dim",
+      "t": "apathy-dopamine-effort-cost",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Dopamine transmission deficiency increases perceived effort cost and discourages action selection.",
+      "refs": [
+        "husain2018apathy"
+      ]
+    },
+    {
+      "s": "apathy-dopamine-effort-cost",
+      "t": "apathy-acc-striatal-invigoration",
+      "kind": "functional",
+      "status": "supported",
+      "desc": "Hypodopaminergic state blunts anterior cingulate drive onto striatal action-selection neurons.",
+      "refs": [
+        "husain2018apathy"
+      ]
+    },
+    {
+      "s": "apathy-acc-striatal-invigoration",
+      "t": "apathy-initiation-failure",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Cost-benefit network breakdown manifests as marked poverty of self-initiated behavior and cognition.",
+      "refs": [
+        "husain2018apathy"
+      ]
+    },
+    {
+      "s": "impulsivity-dim",
+      "t": "impulsivity-monoamine-regulation",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Monoaminergic modulatory tone governs distinct waiting and discounting behavioral tendencies.",
+      "refs": [
+        "dalley2019impulsivity"
+      ]
+    },
+    {
+      "s": "impulsivity-dim",
+      "t": "impulsivity-fronto-stn-hyperdirect",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Fronto-subthalamic hyperdirect circuit mediates rapid reactive action stopping.",
+      "refs": [
+        "dalley2011topdown"
+      ]
+    },
+    {
+      "s": "pfc",
+      "t": "basal-ganglia",
+      "kind": "anatomical",
+      "status": "established",
+      "desc": "Frontal cortical projections innervate the basal ganglia including subthalamic nucleus and striatum.",
+      "refs": [
+        "dalley2011topdown"
+      ]
+    },
+    {
+      "s": "impulsivity-fronto-stn-hyperdirect",
+      "t": "impulsivity-stopping-vs-waiting",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Hyperdirect tract disruption selectively lengthens stop-signal reaction time without altering waiting.",
+      "refs": [
+        "dalley2019impulsivity",
+        "dalley2011topdown"
+      ]
+    },
+    {
+      "s": "compulsivity-dim",
+      "t": "compulsivity-cstc-loop-dysregulation",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Dysregulation within cortico-striato-thalamo-cortical loops impairs flexible outcome updating.",
+      "refs": [
+        "figee2024compulsivity"
+      ]
+    },
+    {
+      "s": "compulsivity-dim",
+      "t": "compulsivity-dorsal-striatal-habit",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Sensorimotor putaminal circuits override associative caudate circuits to automate repetitive habits.",
+      "refs": [
+        "figee2024compulsivity"
+      ]
+    },
+    {
+      "s": "basal-ganglia",
+      "t": "motor-cortex",
+      "kind": "anatomical",
+      "status": "established",
+      "desc": "Basal ganglia output via thalamus projects to primary motor and premotor cortex.",
+      "refs": [
+        "figee2024compulsivity"
+      ]
+    },
+    {
+      "s": "compulsivity-dorsal-striatal-habit",
+      "t": "compulsivity-devaluation-insensitivity",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Habit autonomy decouples motor routine execution from current goal valuation.",
+      "refs": [
+        "figee2024compulsivity",
+        "dalley2011topdown"
+      ]
+    },
+    {
+      "s": "attention-dim",
+      "t": "attention-cholinergic-transients",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Prefrontal cholinergic transients are necessary for converting cue perception into behavioral response.",
+      "refs": [
+        "sarter2014cholinergic"
+      ]
+    },
+    {
+      "s": "attention-dim",
+      "t": "attention-frontoparietal-selection",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Frontoparietal network maintains top-down spatial and feature-based attentional priority.",
+      "refs": [
+        "totah2022noradrenergic"
+      ]
+    },
+    {
+      "s": "attention-frontoparietal-selection",
+      "t": "attention-signal-detection-criterion",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Attentional focus enhances perceptual signal-to-noise ratio (d') and stabilizes decision criteria.",
+      "refs": [
+        "sarter2014cholinergic",
+        "totah2022noradrenergic"
+      ]
+    },
+    {
+      "s": "working-memory-dim",
+      "t": "working-memory-nmda-d1-recurrent",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Recurrent synaptic excitation tuned by D1 and NMDA receptors underpins cellular delay maintenance.",
+      "refs": [
+        "curtis2021persistent"
+      ]
+    },
+    {
+      "s": "working-memory-dim",
+      "t": "working-memory-frontoparietal-delay",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Frontoparietal network activity sustains representation of task-relevant items across delays.",
+      "refs": [
+        "curtis2021persistent"
+      ]
+    },
+    {
+      "s": "working-memory-frontoparietal-delay",
+      "t": "working-memory-updating-interference",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Frontoparietal-thalamic coordination shields stored items from interference and mediates updating.",
+      "refs": [
+        "constantinidis2016capacity"
+      ]
+    },
+    {
+      "s": "episodic-memory-dim",
+      "t": "episodic-memory-ach-encoding-switch",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Cholinergic tone dynamically regulates synaptic transmission to switch between encoding and consolidation.",
+      "refs": [
+        "haam2017cholinergic"
+      ]
+    },
+    {
+      "s": "episodic-memory-dim",
+      "t": "episodic-memory-hippocampal-trisynaptic",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Hippocampal trisynaptic loop integrates spatial, temporal, and sensory features into unified engrams.",
+      "refs": [
+        "josselyn2023engram"
+      ]
+    },
+    {
+      "s": "episodic-memory-hippocampal-trisynaptic",
+      "t": "episodic-memory-context-recollection",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Pattern completion in CA3 and subicular outputs drive conscious contextual recollection in neocortex.",
+      "refs": [
+        "haam2017cholinergic",
+        "josselyn2023engram"
+      ]
+    },
+    {
+      "s": "navigation-dim",
+      "t": "navigation-grid-place-theta",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Grid and place cell coordinate systems establish the neural metric of internal cognitive maps.",
+      "refs": [
+        "zhang2014space"
+      ]
+    },
+    {
+      "s": "navigation-dim",
+      "t": "navigation-entorhinal-hippocampal-map",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Entorhinal-hippocampal projection coordinates self-motion velocity and landmark cues.",
+      "refs": [
+        "zhang2014space"
+      ]
+    },
+    {
+      "s": "navigation-entorhinal-hippocampal-map",
+      "t": "navigation-allocentric-mapping",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Coordinate representations allow flexible allocentric navigation and shortcut calculation.",
+      "refs": [
+        "wesselink2024navigation"
+      ]
+    },
+    {
+      "s": "threat-avoidance-dim",
+      "t": "threat-avoidance-crf-nmda-signaling",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Synaptic plasticity in basolateral amygdala mediates associative threat acquisition and retention.",
+      "refs": [
+        "sangha2020safety"
+      ]
+    },
+    {
+      "s": "threat-avoidance-dim",
+      "t": "threat-avoidance-bla-vmpfc-extinction",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Prefrontal-amygdala interactions govern extinction memory consolidation and contextual threat gating.",
+      "refs": [
+        "toth2024fear"
+      ]
+    },
+    {
+      "s": "threat-avoidance-bla-vmpfc-extinction",
+      "t": "threat-avoidance-generalization-safety",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Impaired top-down extinction gating causes persistent overgeneralized defensive responses to safe stimuli.",
+      "refs": [
+        "sangha2020safety",
+        "toth2024fear"
+      ]
+    },
+    {
+      "s": "cognitive-flexibility-dim",
+      "t": "cognitive-flexibility-serotonin-dopamine",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Prefrontal serotonergic depletion impairs reversal learning without affecting attentional set shifting.",
+      "refs": [
+        "clarke2005serotonin"
+      ]
+    },
+    {
+      "s": "cognitive-flexibility-dim",
+      "t": "cognitive-flexibility-ofc-striatal-reversal",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Orbitofrontal-striatal projections mediate feedback-based behavioral adjustments when values shift.",
+      "refs": [
+        "waltz2017flexibility"
+      ]
+    },
+    {
+      "s": "cognitive-flexibility-ofc-striatal-reversal",
+      "t": "cognitive-flexibility-perseverative-switching",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Frontostriatal loop dysfunction produces perseverative fixation on previously rewarded stimulus dimensions.",
+      "refs": [
+        "waltz2017flexibility"
+      ]
+    },
+    {
+      "s": "arousal-fatigue-dim",
+      "t": "arousal-fatigue-adenosine-orexin",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Adenosine homeostatic buildup and orexin peptide tone set fundamental biological sleep pressure.",
+      "refs": [
+        "elmenhorst2017adenosine",
+        "scammell2017wake"
+      ]
+    },
+    {
+      "s": "arousal-fatigue-dim",
+      "t": "arousal-fatigue-aras-wake-centers",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Ascending reticular activating system coordinates cortical arousal and behavioral vigilance.",
+      "refs": [
+        "scammell2017wake"
+      ]
+    },
+    {
+      "s": "hypothalamus",
+      "t": "pfc",
+      "kind": "anatomical",
+      "status": "established",
+      "desc": "Hypothalamic projection neurons innervate frontal and association neocortex to modulate behavioral state.",
+      "refs": [
+        "scammell2017wake"
+      ]
+    },
+    {
+      "s": "arousal-fatigue-aras-wake-centers",
+      "t": "arousal-fatigue-sleepiness-vs-effort",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Arousal system state modulates vigilance lapse frequency and subjective cost of cognitive exertion.",
+      "refs": [
+        "kluger2013fatigue"
+      ]
+    },
+    {
+      "s": "hallucinations-dim",
+      "t": "hallucinations-dopamine-nmda-precision",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Altered dopamine and NMDA signaling disrupts the relative precision weighting of sensory evidence.",
+      "refs": [
+        "corlett2018predictive"
+      ]
+    },
+    {
+      "s": "hallucinations-dim",
+      "t": "hallucinations-predictive-coding-prior",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Overweighted prior expectations descending from association cortex create conscious sensory perceptions.",
+      "refs": [
+        "griffin2017predictive",
+        "collins2026compensatory"
+      ]
+    },
+    {
+      "s": "pfc",
+      "t": "visual-cortex",
+      "kind": "anatomical",
+      "status": "established",
+      "desc": "Top-down feedback projections from prefrontal cortex to visual association cortex carrying perceptual expectations.",
+      "refs": [
+        "griffin2017predictive"
+      ]
+    },
+    {
+      "s": "hallucinations-predictive-coding-prior",
+      "t": "hallucinations-source-monitoring-misattribution",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Failure of corollary discharge and source-monitoring leads to external attribution of self-generated speech and imagery.",
+      "refs": [
+        "griffin2017predictive"
+      ]
     }
   ],
   "chains": [
@@ -37551,6 +39257,270 @@
         "links": [
           "narcolepsy-hypothalamic-cell-loss>narcolepsy-cataplexy-circuit",
           "narcolepsy-cataplexy-circuit>narcolepsy-sleep-attacks"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "anhedonia-mesolimbic-effort-3d",
+        "region": "anhedonia",
+        "name": "Mesolimbic effort allocation pathway",
+        "desc": "Ventral tegmental area projections to nucleus accumbens modulating willingness to expend effort for rewards.",
+        "links": [
+          "vta>striatum",
+          "anhedonia-dim>anhedonia-mesolimbic-effort"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "anhedonia-frontostriatal-valuation-3d",
+        "region": "anhedonia",
+        "name": "Frontostriatal outcome valuation circuit",
+        "desc": "Orbitofrontal and anterior cingulate projections to ventral striatum integrating reward magnitude and effort cost.",
+        "links": [
+          "ofc>striatum",
+          "anhedonia-dim>anhedonia-opioid-hedonic-hotspot"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "apathy-acc-striatal-3d",
+        "region": "apathy",
+        "name": "Anterior cingulate-striatal effort invigoration circuit",
+        "desc": "Projections from anterior cingulate cortex to ventral striatum integrating cost-benefit calculations for action initiation.",
+        "links": [
+          "dlpfc>striatum",
+          "apathy-dopamine-effort-cost>apathy-acc-striatal-invigoration"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "apathy-initiation-network-3d",
+        "region": "apathy",
+        "name": "Frontostriatal initiation loop",
+        "desc": "Prefrontal-basal ganglia network translating prospective reward value into energetic movement execution.",
+        "links": [
+          "apathy-dim>apathy-dopamine-effort-cost",
+          "apathy-acc-striatal-invigoration>apathy-initiation-failure"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "impulsivity-hyperdirect-stopping-3d",
+        "region": "impulsivity",
+        "name": "Fronto-subthalamic hyperdirect stopping circuit",
+        "desc": "Rapid pathway from pre-SMA and right inferior frontal gyrus to subthalamic nucleus for urgent motor cancellation.",
+        "links": [
+          "pfc>basal-ganglia",
+          "impulsivity-dim>impulsivity-fronto-stn-hyperdirect"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "impulsivity-waiting-ventral-striatal-3d",
+        "region": "impulsivity",
+        "name": "Ventral striatal waiting and valuation loop",
+        "desc": "Limbic corticostriatal loop mediating tolerance for delay and restraint of premature responses.",
+        "links": [
+          "impulsivity-dim>impulsivity-monoamine-regulation",
+          "impulsivity-fronto-stn-hyperdirect>impulsivity-stopping-vs-waiting"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "compulsivity-habit-sensorimotor-3d",
+        "region": "compulsivity",
+        "name": "Sensorimotor-striatal habit loop",
+        "desc": "Dorsolateral striatal connections to sensorimotor cortex maintaining automated stimulus-response routines.",
+        "links": [
+          "basal-ganglia>motor-cortex",
+          "compulsivity-dim>compulsivity-dorsal-striatal-habit"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "compulsivity-ofc-striatal-valuation-3d",
+        "region": "compulsivity",
+        "name": "Orbitofrontal-striatal contingency circuit",
+        "desc": "Top-down control from orbitofrontal cortex to ventral striatum for updating action-outcome expectations.",
+        "links": [
+          "ofc>striatum",
+          "compulsivity-dorsal-striatal-habit>compulsivity-devaluation-insensitivity"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "attention-frontoparietal-3d",
+        "region": "attention",
+        "name": "Frontoparietal selective attention network",
+        "desc": "Dorsal attention circuit connecting frontal eye fields and intraparietal sulcus for top-down spatial focus.",
+        "links": [
+          "attention-dim>attention-frontoparietal-selection",
+          "attention-frontoparietal-selection>attention-signal-detection-criterion"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "attention-cholinergic-forebrain-3d",
+        "region": "attention",
+        "name": "Basal forebrain cholinergic detection pathway",
+        "desc": "Ascending cholinergic projections to prefrontal and sensory cortex driving rapid cue detection transitions.",
+        "links": [
+          "basal-forebrain>pfc",
+          "attention-dim>attention-cholinergic-transients"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "working-memory-dlpfc-parietal-3d",
+        "region": "working-memory",
+        "name": "Dorsolateral prefrontal-parietal executive network",
+        "desc": "Recurrent delay-period activity across frontoparietal cortex holding task representations online.",
+        "links": [
+          "working-memory-dim>working-memory-frontoparietal-delay",
+          "working-memory-frontoparietal-delay>working-memory-updating-interference"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "working-memory-thalamocortical-3d",
+        "region": "working-memory",
+        "name": "Mediodorsal thalamocortical persistence loop",
+        "desc": "Reciprocal connections between dlPFC and mediodorsal thalamus stabilizing sustained activity against distraction.",
+        "links": [
+          "dlpfc>thalamus",
+          "working-memory-dim>working-memory-nmda-d1-recurrent"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "episodic-memory-trisynaptic-3d",
+        "region": "episodic-memory",
+        "name": "Hippocampal trisynaptic binding circuit",
+        "desc": "Perforant path and mossy fiber loop from entorhinal cortex through dentate gyrus and CA subfields.",
+        "links": [
+          "hippocampus>entorhinal",
+          "episodic-memory-dim>episodic-memory-hippocampal-trisynaptic"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "episodic-memory-retrieval-recollection-3d",
+        "region": "episodic-memory",
+        "name": "Medial temporal-cortical retrieval network",
+        "desc": "Hippocampal interactions with medial prefrontal and retrosplenial cortex supporting conscious contextual recollection.",
+        "links": [
+          "episodic-memory-dim>episodic-memory-ach-encoding-switch",
+          "episodic-memory-hippocampal-trisynaptic>episodic-memory-context-recollection"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "navigation-entorhinal-grid-3d",
+        "region": "navigation",
+        "name": "Entorhinal-hippocampal cognitive map circuit",
+        "desc": "Grid-cell coordinate projections from medial entorhinal cortex to hippocampal place cells establishing spatial maps.",
+        "links": [
+          "entorhinal>dg",
+          "navigation-dim>navigation-entorhinal-hippocampal-map"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "navigation-retrosplenial-wayfinding-3d",
+        "region": "navigation",
+        "name": "Retrosplenial-parietal wayfinding pathway",
+        "desc": "Transformation between egocentric self-motion cues and allocentric environmental reference frames.",
+        "links": [
+          "navigation-dim>navigation-grid-place-theta",
+          "navigation-entorhinal-hippocampal-map>navigation-allocentric-mapping"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "threat-avoidance-amygdala-vmpfc-3d",
+        "region": "threat-avoidance",
+        "name": "Amygdala-ventromedial prefrontal extinction circuit",
+        "desc": "Top-down inhibitory gating from vmPFC onto amygdala intercalated cells to suppress threat expression.",
+        "links": [
+          "amygdala>pfc",
+          "threat-avoidance-dim>threat-avoidance-bla-vmpfc-extinction"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "threat-avoidance-hippocampal-context-3d",
+        "region": "threat-avoidance",
+        "name": "Hippocampal-amygdala contextual threat network",
+        "desc": "Ventral hippocampal projections to basolateral amygdala gating threat memory expression by context.",
+        "links": [
+          "threat-avoidance-dim>threat-avoidance-crf-nmda-signaling",
+          "threat-avoidance-bla-vmpfc-extinction>threat-avoidance-generalization-safety"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "cognitive-flexibility-ofc-reversal-3d",
+        "region": "cognitive-flexibility",
+        "name": "Orbitofrontal-striatal reversal learning loop",
+        "desc": "OFC and ventral striatal projections updating affective outcome representations following contingency changes.",
+        "links": [
+          "ofc>striatum",
+          "cognitive-flexibility-dim>cognitive-flexibility-ofc-striatal-reversal"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "cognitive-flexibility-attentional-shift-3d",
+        "region": "cognitive-flexibility",
+        "name": "Dorsolateral prefrontal set-shifting network",
+        "desc": "Lateral prefrontal and dorsal striatal circuits orchestrating extra-dimensional shifts across rule categories.",
+        "links": [
+          "cognitive-flexibility-dim>cognitive-flexibility-serotonin-dopamine",
+          "cognitive-flexibility-ofc-striatal-reversal>cognitive-flexibility-perseverative-switching"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "arousal-fatigue-aras-arousal-3d",
+        "region": "arousal-fatigue",
+        "name": "Ascending reticular arousal and wake circuit",
+        "desc": "Projections from brainstem, hypothalamic, and basal forebrain wake hubs invigorating cortical alertness.",
+        "links": [
+          "hypothalamus>pfc",
+          "arousal-fatigue-dim>arousal-fatigue-aras-wake-centers"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "arousal-fatigue-effort-cost-3d",
+        "region": "arousal-fatigue",
+        "name": "Insular-prefrontal cognitive fatigue circuit",
+        "desc": "Insular and prefrontal network signaling rising subjective effort costs during prolonged cognitive exertion.",
+        "links": [
+          "arousal-fatigue-dim>arousal-fatigue-adenosine-orexin",
+          "arousal-fatigue-aras-wake-centers>arousal-fatigue-sleepiness-vs-effort"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "hallucinations-predictive-coding-3d",
+        "region": "hallucinations",
+        "name": "Hierarchical predictive sensory inference network",
+        "desc": "Top-down perceptual prior expectations from frontal cortex descending onto sensory association cortices.",
+        "links": [
+          "pfc>visual-cortex",
+          "hallucinations-dim>hallucinations-predictive-coding-prior"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "hallucinations-source-monitoring-3d",
+        "region": "hallucinations",
+        "name": "Frontotemporal source monitoring loop",
+        "desc": "Fronto-temporal language and reality-monitoring network responsible for self-other agency attribution.",
+        "links": [
+          "hallucinations-dim>hallucinations-dopamine-nmda-precision",
+          "hallucinations-predictive-coding-prior>hallucinations-source-monitoring-misattribution"
         ],
         "view": "overview"
       }

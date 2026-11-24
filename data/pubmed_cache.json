@@ -20041,5 +20041,411 @@
     "pages": "83-93",
     "doi": "10.1038/s41583-018-0097-x",
     "pmc": "PMC6492289"
+  },
+  "26441748": {
+    "pmid": "26441748",
+    "authors": [
+      "Romer Thomsen K"
+    ],
+    "title": "Measuring anhedonia: impaired ability to pursue, experience, and learn about reward",
+    "journal": "Front Psychol",
+    "journalFull": "Front Psychol",
+    "year": 2015,
+    "volume": "6",
+    "issue": "",
+    "pages": "1409",
+    "doi": "10.3389/fpsyg.2015.01409",
+    "pmc": "PMC4585007"
+  },
+  "25996133": {
+    "pmid": "25996133",
+    "authors": [
+      "Berridge KC",
+      "Kringelbach ML"
+    ],
+    "title": "Pleasure Systems in the Brain",
+    "journal": "Neuron",
+    "journalFull": "Neuron",
+    "year": 2015,
+    "volume": "86",
+    "issue": "3",
+    "pages": "646-664",
+    "doi": "10.1016/j.neuron.2015.02.018",
+    "pmc": ""
+  },
+  "29946157": {
+    "pmid": "29946157",
+    "authors": [
+      "Husain M",
+      "Roiser JP"
+    ],
+    "title": "Neuroscience of apathy and anhedonia: a transdiagnostic approach",
+    "journal": "Nat Rev Neurosci",
+    "journalFull": "Nat Rev Neurosci",
+    "year": 2018,
+    "volume": "19",
+    "issue": "8",
+    "pages": "470-484",
+    "doi": "10.1038/s41583-018-0029-9",
+    "pmc": ""
+  },
+  "23339207": {
+    "pmid": "23339207",
+    "authors": [
+      "Kluger BM",
+      "Krupp LB",
+      "Enoka RM"
+    ],
+    "title": "Fatigue and fatigability in neurologic illnesses: proposal for a unified taxonomy",
+    "journal": "Neurology",
+    "journalFull": "Neurology",
+    "year": 2013,
+    "volume": "80",
+    "issue": "4",
+    "pages": "409-416",
+    "doi": "10.1212/WNL.0b013e31827f07be",
+    "pmc": ""
+  },
+  "30966923": {
+    "pmid": "30966923",
+    "authors": [
+      "Dalley JW",
+      "Ersche KD"
+    ],
+    "title": "Neural circuitry and mechanisms of waiting impulsivity: relevance to addiction",
+    "journal": "Philos Trans R Soc Lond B Biol Sci",
+    "journalFull": "Philos Trans R Soc Lond B Biol Sci",
+    "year": 2019,
+    "volume": "374",
+    "issue": "1766",
+    "pages": "20180145",
+    "doi": "10.1098/rstb.2018.0145",
+    "pmc": "PMC6335458"
+  },
+  "21353291": {
+    "pmid": "21353291",
+    "authors": [
+      "Dalley JW",
+      "Everitt BJ",
+      "Robbins TW"
+    ],
+    "title": "Impulsivity, Compulsivity, and Top-Down Cognitive Control",
+    "journal": "Neuron",
+    "journalFull": "Neuron",
+    "year": 2011,
+    "volume": "69",
+    "issue": "4",
+    "pages": "680-694",
+    "doi": "10.1016/j.neuron.2011.01.020",
+    "pmc": ""
+  },
+  "38627581": {
+    "pmid": "38627581",
+    "authors": [
+      "Figee M",
+      "Pattij T",
+      "Willuhn I"
+    ],
+    "title": "From compulsivity to compulsion: the neural basis of compulsive disorders",
+    "journal": "Nat Rev Neurosci",
+    "journalFull": "Nat Rev Neurosci",
+    "year": 2024,
+    "volume": "25",
+    "issue": "",
+    "pages": "341-356",
+    "doi": "10.1038/s41583-024-00807-z",
+    "pmc": ""
+  },
+  "24593677": {
+    "pmid": "24593677",
+    "authors": [
+      "Sarter M",
+      "Lustig C",
+      "Howe WM",
+      "Gritton H",
+      "Berry AS"
+    ],
+    "title": "Deterministic functions of cortical acetylcholine",
+    "journal": "Eur J Neurosci",
+    "journalFull": "Eur J Neurosci",
+    "year": 2014,
+    "volume": "39",
+    "issue": "11",
+    "pages": "1912-1920",
+    "doi": "10.1111/ejn.12515",
+    "pmc": "PMC4371531"
+  },
+  "35911475": {
+    "pmid": "35911475",
+    "authors": [
+      "Totah NKB",
+      "Neves RM",
+      "Panzeri S",
+      "Logothetis NK",
+      "Eschenko O"
+    ],
+    "title": "The Neuromodulatory Role of the Noradrenergic and Cholinergic Systems and Their Interplay in Cognitive Functions: A Focused Review",
+    "journal": "Front Integr Neurosci",
+    "journalFull": "Front Integr Neurosci",
+    "year": 2022,
+    "volume": "16",
+    "issue": "",
+    "pages": "932065",
+    "doi": "",
+    "pmc": "PMC9320657"
+  },
+  "34321914": {
+    "pmid": "34321914",
+    "authors": [
+      "Curtis CE",
+      "Sprague TC"
+    ],
+    "title": "Persistent Activity During Working Memory From Front to Back",
+    "journal": "Front Neural Circuits",
+    "journalFull": "Front Neural Circuits",
+    "year": 2021,
+    "volume": "15",
+    "issue": "",
+    "pages": "696060",
+    "doi": "10.3389/fncir.2021.696060",
+    "pmc": ""
+  },
+  "27150397": {
+    "pmid": "27150397",
+    "authors": [
+      "Constantinidis C",
+      "Klingberg T"
+    ],
+    "title": "The neuroscience of working memory capacity and training",
+    "journal": "Nat Rev Neurosci",
+    "journalFull": "Nat Rev Neurosci",
+    "year": 2016,
+    "volume": "17",
+    "issue": "7",
+    "pages": "438-449",
+    "doi": "10.1038/nrn.2016.43",
+    "pmc": ""
+  },
+  "28791706": {
+    "pmid": "28791706",
+    "authors": [
+      "Haam J",
+      "Yakel JL"
+    ],
+    "title": "Cholinergic modulation of the hippocampal region and memory function",
+    "journal": "J Neurochem",
+    "journalFull": "J Neurochem",
+    "year": 2017,
+    "volume": "142",
+    "issue": "Suppl 2",
+    "pages": "111-121",
+    "doi": "10.1111/jnc.14052",
+    "pmc": "PMC5645066"
+  },
+  "37391584": {
+    "pmid": "37391584",
+    "authors": [
+      "Josselyn SA",
+      "Tonegawa S"
+    ],
+    "title": "Engram neurons: Encoding, consolidation, retrieval, and forgetting of memory",
+    "journal": "Mol Psychiatry",
+    "journalFull": "Mol Psychiatry",
+    "year": 2023,
+    "volume": "28",
+    "issue": "",
+    "pages": "3154-3168",
+    "doi": "10.1038/s41380-023-02137-5",
+    "pmc": ""
+  },
+  "39721980": {
+    "pmid": "39721980",
+    "authors": [
+      "Hasselmo ME",
+      "et al."
+    ],
+    "title": "Development of the SPEAR Model: Separate Phases of Encoding and Retrieval Are Necessary for Storing Multiple Overlapping Associative Memories",
+    "journal": "Hippocampus / Theory",
+    "journalFull": "Hippocampus / Theory",
+    "year": 2024,
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "",
+    "pmc": ""
+  },
+  "24366130": {
+    "pmid": "24366130",
+    "authors": [
+      "Zhang SJ",
+      "Ye J",
+      "Couey JJ",
+      "Witter M",
+      "Moser EI",
+      "Moser MB"
+    ],
+    "title": "Functional connectivity of the entorhinal-hippocampal space circuit",
+    "journal": "Philos Trans R Soc Lond B Biol Sci",
+    "journalFull": "Philos Trans R Soc Lond B Biol Sci",
+    "year": 2014,
+    "volume": "369",
+    "issue": "1635",
+    "pages": "20120516",
+    "doi": "10.1098/rstb.2012.0516",
+    "pmc": "PMC3866440"
+  },
+  "38896615": {
+    "pmid": "38896615",
+    "authors": [
+      "Wesselink DB",
+      "et al."
+    ],
+    "title": "Noninvasive modulation of the hippocampal-entorhinal complex during spatial navigation",
+    "journal": "Sci Adv",
+    "journalFull": "Sci Adv",
+    "year": 2024,
+    "volume": "10",
+    "issue": "25",
+    "pages": "eado4103",
+    "doi": "10.1126/sciadv.ado4103",
+    "pmc": ""
+  },
+  "31738952": {
+    "pmid": "31738952",
+    "authors": [
+      "Sangha S",
+      "Diehl MM",
+      "Bergstrom HC",
+      "Drew MR"
+    ],
+    "title": "Know Safety, No Fear",
+    "journal": "Neurosci Biobehav Rev",
+    "journalFull": "Neurosci Biobehav Rev",
+    "year": 2020,
+    "volume": "108",
+    "issue": "",
+    "pages": "218-230",
+    "doi": "10.1016/j.neubiorev.2019.11.006",
+    "pmc": "PMC6981293"
+  },
+  "38362489": {
+    "pmid": "38362489",
+    "authors": [
+      "Toth M",
+      "et al."
+    ],
+    "title": "Neural circuits for the adaptive regulation of fear and extinction memory",
+    "journal": "Front Behav Neurosci",
+    "journalFull": "Front Behav Neurosci",
+    "year": 2024,
+    "volume": "18",
+    "issue": "",
+    "pages": "1086952",
+    "doi": "",
+    "pmc": "PMC10869525"
+  },
+  "27282085": {
+    "pmid": "27282085",
+    "authors": [
+      "Waltz JA"
+    ],
+    "title": "The Neural Underpinnings of Cognitive Flexibility and their Disruption in Psychotic Illness",
+    "journal": "Neuroscience",
+    "journalFull": "Neuroscience",
+    "year": 2017,
+    "volume": "345",
+    "issue": "",
+    "pages": "203-217",
+    "doi": "10.1016/j.neuroscience.2016.06.005",
+    "pmc": "PMC5143214"
+  },
+  "15647494": {
+    "pmid": "15647494",
+    "authors": [
+      "Clarke HF",
+      "Walker SC",
+      "Crofts HS",
+      "Dalley JW",
+      "Robbins TW",
+      "Roberts AC"
+    ],
+    "title": "Prefrontal Serotonin Depletion Affects Reversal Learning But Not Attentional Set Shifting",
+    "journal": "J Neurosci",
+    "journalFull": "J Neurosci",
+    "year": 2005,
+    "volume": "25",
+    "issue": "2",
+    "pages": "532-538",
+    "doi": "10.1523/JNEUROSCI.3690-04.2005",
+    "pmc": ""
+  },
+  "28231463": {
+    "pmid": "28231463",
+    "authors": [
+      "Scammell TE",
+      "Arrigoni E",
+      "Lipton JO"
+    ],
+    "title": "Neural Circuitry of Wakefulness and Sleep",
+    "journal": "Neuron",
+    "journalFull": "Neuron",
+    "year": 2017,
+    "volume": "93",
+    "issue": "4",
+    "pages": "747-765",
+    "doi": "10.1016/j.neuron.2017.01.014",
+    "pmc": "PMC5325713"
+  },
+  "28416694": {
+    "pmid": "28416694",
+    "authors": [
+      "Elmenhorst D",
+      "et al."
+    ],
+    "title": "Recovery sleep after extended wakefulness restores elevated A1 adenosine receptor availability in the human brain",
+    "journal": "Proc Natl Acad Sci U S A",
+    "journalFull": "Proc Natl Acad Sci U S A",
+    "year": 2017,
+    "volume": "114",
+    "issue": "16",
+    "pages": "4207-4212",
+    "doi": "",
+    "pmc": "PMC5402442"
+  },
+  "28375719": {
+    "pmid": "28375719",
+    "authors": [
+      "Griffin JD",
+      "Fletcher PC"
+    ],
+    "title": "Predictive Processing, Source Monitoring, and Psychosis",
+    "journal": "Annu Rev Clin Psychol",
+    "journalFull": "Annu Rev Clin Psychol",
+    "year": 2017,
+    "volume": "13",
+    "issue": "",
+    "pages": "265-289",
+    "doi": "10.1146/annurev-clinpsy-032816-045145",
+    "pmc": "PMC5424073"
+  },
+  "29778287": {
+    "pmid": "29778287",
+    "authors": [
+      "Corlett PR",
+      "Horga G",
+      "Fletcher PC",
+      "Alderson-Day B",
+      "Schmack K",
+      "Deserno L"
+    ],
+    "title": "The Predictive Coding Account of Psychosis",
+    "journal": "Biol Psychiatry",
+    "journalFull": "Biol Psychiatry",
+    "year": 2019,
+    "volume": "85",
+    "issue": "1",
+    "pages": "27-38",
+    "doi": "10.1016/j.biopsych.2018.05.015",
+    "pmc": "PMC6169400"
   }
 }

@@ -316,7 +316,8 @@
       'Headache disorders',
       'Neuroimmunological',
       'Neurotrauma',
-      'Sleep disorders'
+      'Sleep disorders',
+      'Functional dimensions'
     ];
     const groups = {};
     CA.conditions.forEach((r) => {
