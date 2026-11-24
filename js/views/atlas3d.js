@@ -1656,5 +1656,33 @@
     });
   }
 
-  CA.atlas3d = { flyTo, focusEntity, posOf: (id) => posOf(id), resolve: (id) => resolve(id) };
+  CA.atlas3d = {
+    flyTo,
+    focusEntity,
+    posOf: (id) => posOf(id),
+    resolve: (id) => resolve(id),
+    resetCamera: () => flyTo('overview'),
+    toggleShell: () => {
+      opts.shell = !opts.shell;
+      CA.store.set('atlas.opts', opts);
+      applyMaterials();
+      const cb = Array.from(document.querySelectorAll('.atlas-controls label.check')).find((l) => l.textContent.includes('Brain surface'))?.querySelector('input');
+      if (cb) cb.checked = opts.shell;
+      return opts.shell;
+    },
+    toggleFlow: () => {
+      opts.flow = !opts.flow;
+      CA.store.set('atlas.opts', opts);
+      const cb = Array.from(document.querySelectorAll('.atlas-controls label.check')).find((l) => l.textContent.includes('Animate signal flow'))?.querySelector('input');
+      if (cb) cb.checked = opts.flow;
+      return opts.flow;
+    },
+    toggleXray: () => {
+      opts.xray = !opts.xray;
+      CA.store.set('atlas.opts', opts);
+      if (el.xrayBox) el.xrayBox.checked = opts.xray;
+      applyMaterials();
+      return opts.xray;
+    }
+  };
 })();

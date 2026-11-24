@@ -93,6 +93,34 @@
         if (navOpen()) { setNavOpen(false); document.getElementById('nav-toggle').focus(); }
         else if (!modal.classList.contains('hidden')) closeModal(); else CA.closePanel();
       }
+      // Common hotkeys when running in browser or webview:
+      if ((ev.metaKey || ev.ctrlKey) && !ev.altKey) {
+        if (ev.shiftKey && (ev.key === 'D' || ev.key === 'd')) {
+          ev.preventDefault();
+          CA.setTheme(CA.theme === 'light' ? 'dark' : 'light');
+        } else if (ev.shiftKey && (ev.key === 'L' || ev.key === 'l')) {
+          ev.preventDefault();
+          CA.setLabelMode(CA.labelMode === 'model' ? 'legend' : 'model');
+        } else if (ev.shiftKey && (ev.key === 'B' || ev.key === 'b')) {
+          ev.preventDefault();
+          if (CA.atlas3d && CA.atlas3d.toggleShell) CA.atlas3d.toggleShell();
+        } else if (ev.shiftKey && (ev.key === 'A' || ev.key === 'a')) {
+          ev.preventDefault();
+          if (CA.atlas3d && CA.atlas3d.toggleFlow) CA.atlas3d.toggleFlow();
+        } else if (!ev.shiftKey && ev.key >= '1' && ev.key <= '8') {
+          const idx = parseInt(ev.key, 10) - 1;
+          const available = NAV.filter(([id]) => CA.views[id]);
+          if (available[idx]) {
+            ev.preventDefault();
+            location.hash = '#/' + available[idx][0];
+          }
+        }
+      } else if ((ev.metaKey || ev.ctrlKey) && ev.altKey) {
+        if (ev.key === '0') {
+          ev.preventDefault();
+          if (CA.atlas3d && CA.atlas3d.resetCamera) CA.atlas3d.resetCamera();
+        }
+      }
     });
   }
 
@@ -152,7 +180,7 @@
           '), ', ext('https://doi.org/10.6084/m9.figshare.13349282', 'figshare'), ', MIT license; structural measures from the hemibrain connectome (Scheffer et al., 2020, eLife; ',
           ext('https://doi.org/10.7554/eLife.57443', 'doi:10.7554/eLife.57443'), ').'),
         h('li', {}, '3D rendering: ', ext('https://threejs.org/', 'three.js'), ' (MIT license).')),
-      h('p', { class: 'tiny muted', style: { marginTop: '12px' } }, `Version ${D.meta.version}, knowledge base built ${D.built}. Press / to search and Esc to close panels. The sun/moon button switches between light and dark mode.`),
+      h('p', { class: 'tiny muted', style: { marginTop: '12px' } }, `Version ${D.meta.version}, knowledge base built ${D.built}. Press / or ⌘F to search, Esc to close panels, ⌘1–8 to switch views, ⇧⌘D for dark/light mode, and ⌘+/⌘- to zoom.`),
       CA.hasBackend && h('div', { style: { marginTop: '12px', borderTop: '1px solid var(--border)', paddingTop: '10px' } },
         h('button', { class: 'btn small', onclick: (e) => { e.preventDefault(); CA.openCloudModal(); } }, 'Cloudflare R2 & Website Sync Settings')));
     m.appendChild(card);
