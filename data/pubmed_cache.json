@@ -19697,5 +19697,349 @@
     "pages": "629-640",
     "doi": "10.1016/j.chc.2019.05.007",
     "pmc": "PMC6709695"
+  },
+  "38956102": {
+    "pmid": "38956102",
+    "authors": [
+      "Zhang J",
+      "Zhang Y",
+      "Wang J",
+      "Cai W",
+      "Zhou Y"
+    ],
+    "title": "Recent advances in Alzheimer's disease: mechanisms, clinical trials and new drug development strategies",
+    "journal": "Signal Transduct Target Ther",
+    "journalFull": "Signal Transduct Target Ther",
+    "year": 2024,
+    "volume": "9",
+    "issue": "1",
+    "pages": "211",
+    "doi": "10.1038/s41392-024-01911-3",
+    "pmc": ""
+  },
+  "29312847": {
+    "pmid": "29312847",
+    "authors": [
+      "Zhai S",
+      "Shen W",
+      "Surmeier DJ"
+    ],
+    "title": "Dopamine and Acetylcholine, a Circuit Point of View in Parkinson's Disease",
+    "journal": "Neuroscience",
+    "journalFull": "Neuroscience",
+    "year": 2017,
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "10.1016/j.neuroscience.2017.12.030",
+    "pmc": "PMC5744635"
+  },
+  "36828795": {
+    "pmid": "36828795",
+    "authors": [
+      "Ma J",
+      "Gao J",
+      "Wang J",
+      "Xie A"
+    ],
+    "title": "Alpha-synuclein in Parkinson's disease and other synucleinopathies: from overt neurodegeneration back to early synaptic dysfunction",
+    "journal": "Cell Death Dis",
+    "journalFull": "Cell Death Dis",
+    "year": 2023,
+    "volume": "14",
+    "issue": "2",
+    "pages": "148",
+    "doi": "10.1038/s41419-023-05672-9",
+    "pmc": ""
+  },
+  "28592453": {
+    "pmid": "28592453",
+    "authors": [
+      "McKeith IG",
+      "Boeve BF",
+      "Dickson DW",
+      "Halliday G",
+      "Taylor JP",
+      "Weintraub D",
+      "Aarsland D"
+    ],
+    "title": "Diagnosis and management of dementia with Lewy bodies: Fourth consensus report of the DLB Consortium",
+    "journal": "Neurology",
+    "journalFull": "Neurology",
+    "year": 2017,
+    "volume": "89",
+    "issue": "1",
+    "pages": "88-100",
+    "doi": "10.1212/WNL.0000000000004058",
+    "pmc": "PMC5496518"
+  },
+  "31694357": {
+    "pmid": "31694357",
+    "authors": [
+      "Yamada M",
+      "Komatsu J",
+      "Nakamura K",
+      "Sakai K",
+      "Samuraki-Yokohama M",
+      "Nakajima K",
+      "Yoshita M"
+    ],
+    "title": "Diagnostic Criteria for Dementia with Lewy Bodies: Updates and Future Directions",
+    "journal": "J Mov Disord",
+    "journalFull": "J Mov Disord",
+    "year": 2020,
+    "volume": "13",
+    "issue": "1",
+    "pages": "1-10",
+    "doi": "10.14802/jmd.19052",
+    "pmc": "PMC6987529"
+  },
+  "26516089": {
+    "pmid": "26516089",
+    "authors": [
+      "Bang J",
+      "Spina S",
+      "Miller BL"
+    ],
+    "title": "Frontotemporal dementia",
+    "journal": "Lancet",
+    "journalFull": "Lancet",
+    "year": 2015,
+    "volume": "386",
+    "issue": "10004",
+    "pages": "1672-1682",
+    "doi": "10.1016/S0140-6736(15)00461-4",
+    "pmc": "PMC6519586"
+  },
+  "37511491": {
+    "pmid": "37511491",
+    "authors": [
+      "Paterno A",
+      "Lauriola M",
+      "Gaspari M",
+      "Cocchi E",
+      "Pietracaprina S"
+    ],
+    "title": "Frontotemporal Dementia, Where Do We Stand? A Narrative Review",
+    "journal": "Int J Mol Sci",
+    "journalFull": "Int J Mol Sci",
+    "year": 2023,
+    "volume": "24",
+    "issue": "14",
+    "pages": "11732",
+    "doi": "10.3390/ijms241411732",
+    "pmc": ""
+  },
+  "39537937": {
+    "pmid": "39537937",
+    "authors": [
+      "Donaldson J",
+      "Hensman Moss D",
+      "Ciosi M",
+      "et al."
+    ],
+    "title": "Huntington disease: somatic expansion, pathobiology and therapeutics",
+    "journal": "Nat Rev Neurol",
+    "journalFull": "Nat Rev Neurol",
+    "year": 2026,
+    "volume": "22",
+    "issue": "1",
+    "pages": "5-21",
+    "doi": "10.1038/s41582-025-01159-7",
+    "pmc": ""
+  },
+  "39716188": {
+    "pmid": "39716188",
+    "authors": [
+      "Handsaker RE",
+      "Kamitaki N",
+      "Pearson NM",
+      "et al."
+    ],
+    "title": "Long somatic DNA-repeat expansion drives neurodegeneration in Huntington's disease",
+    "journal": "Cell",
+    "journalFull": "Cell",
+    "year": 2025,
+    "volume": "188",
+    "issue": "3",
+    "pages": "623-639",
+    "doi": "10.1016/j.cell.2024.11.038",
+    "pmc": ""
+  },
+  "22411993": {
+    "pmid": "22411993",
+    "authors": [
+      "Catterall WA"
+    ],
+    "title": "SCN1A mutations in Dravet syndrome: Impact of interneuron dysfunction on neural networks",
+    "journal": "J Physiol",
+    "journalFull": "J Physiol",
+    "year": 2012,
+    "volume": "590",
+    "issue": "10",
+    "pages": "2241-2249",
+    "doi": "10.1113/jphysiol.2012.234120",
+    "pmc": "PMC3307886"
+  },
+  "24276707": {
+    "pmid": "24276707",
+    "authors": [
+      "Cheong E",
+      "Shin HS"
+    ],
+    "title": "The Role of T-Type Calcium Channel Genes in Absence Seizures",
+    "journal": "Pflugers Arch",
+    "journalFull": "Pflugers Arch",
+    "year": 2014,
+    "volume": "466",
+    "issue": "4",
+    "pages": "719-734",
+    "doi": "10.1007/s00424-014-1445-5",
+    "pmc": "PMC4023043"
+  },
+  "33174841": {
+    "pmid": "33174841",
+    "authors": [
+      "Paz JT",
+      "et al."
+    ],
+    "title": "Nonlinearities between inhibition and T-type calcium channel activity bidirectionally regulate thalamic oscillations",
+    "journal": "eLife",
+    "journalFull": "eLife",
+    "year": 2020,
+    "volume": "9",
+    "issue": "",
+    "pages": "e59548",
+    "doi": "10.7554/eLife.59548",
+    "pmc": ""
+  },
+  "28179394": {
+    "pmid": "28179394",
+    "authors": [
+      "Goadsby PJ",
+      "Holland PR",
+      "Martins-Oliveira M",
+      "Hoffmann J",
+      "Schankin C",
+      "Akerman S"
+    ],
+    "title": "Pathophysiology of Migraine: A Disorder of Sensory Processing",
+    "journal": "Physiol Rev",
+    "journalFull": "Physiol Rev",
+    "year": 2017,
+    "volume": "97",
+    "issue": "2",
+    "pages": "553-622",
+    "doi": "10.1152/physrev.00034.2015",
+    "pmc": "PMC5539409"
+  },
+  "29934515": {
+    "pmid": "29934515",
+    "authors": [
+      "Edvinsson L",
+      "Haanes KA",
+      "Warfvinge K",
+      "Krause DN"
+    ],
+    "title": "CGRP as the target of new migraine therapies - successful translation from bench to bedside",
+    "journal": "Nat Rev Neurol",
+    "journalFull": "Nat Rev Neurol",
+    "year": 2018,
+    "volume": "14",
+    "issue": "6",
+    "pages": "338-350",
+    "doi": "10.1038/s41582-018-0003-1",
+    "pmc": ""
+  },
+  "36289863": {
+    "pmid": "36289863",
+    "authors": [
+      "Kee R",
+      "Naughton M",
+      "McDonnell GV",
+      "Howell OW",
+      "Fitzgerald DC"
+    ],
+    "title": "A Review of Compartmentalised Inflammation and Tertiary Lymphoid Structures in the Pathophysiology of Multiple Sclerosis",
+    "journal": "Biomedicines",
+    "journalFull": "Biomedicines",
+    "year": 2022,
+    "volume": "10",
+    "issue": "10",
+    "pages": "2604",
+    "doi": "10.3390/biomedicines10102604",
+    "pmc": "PMC9599335"
+  },
+  "35025605": {
+    "pmid": "35025605",
+    "authors": [
+      "Bjornevik K",
+      "Cortese M",
+      "Healy BC",
+      "Kuhle J",
+      "Mina MJ",
+      "Leng Y",
+      "Elledge SJ",
+      "Ascherio A"
+    ],
+    "title": "Longitudinal analysis reveals high prevalence of Epstein-Barr virus associated with multiple sclerosis",
+    "journal": "Science",
+    "journalFull": "Science",
+    "year": 2022,
+    "volume": "375",
+    "issue": "6578",
+    "pages": "296-301",
+    "doi": "10.1126/science.abj8222",
+    "pmc": ""
+  },
+  "37180479": {
+    "pmid": "37180479",
+    "authors": [
+      "Voet S",
+      "et al."
+    ],
+    "title": "Microglia in the context of multiple sclerosis",
+    "journal": "Front Neurol",
+    "journalFull": "Front Neurol",
+    "year": 2023,
+    "volume": "14",
+    "issue": "",
+    "pages": "1157287",
+    "doi": "10.3389/fneur.2023.1157287",
+    "pmc": ""
+  },
+  "31832128": {
+    "pmid": "31832128",
+    "authors": [
+      "Ng SY",
+      "Lee AYW"
+    ],
+    "title": "Traumatic Brain Injuries: Pathophysiology and Potential Therapeutic Targets",
+    "journal": "Front Cell Neurosci",
+    "journalFull": "Front Cell Neurosci",
+    "year": 2019,
+    "volume": "13",
+    "issue": "",
+    "pages": "528",
+    "doi": "10.3389/fncel.2019.00528",
+    "pmc": "PMC6890857"
+  },
+  "30546103": {
+    "pmid": "30546103",
+    "authors": [
+      "Mahoney CE",
+      "Cogswell A",
+      "Koralnik IJ",
+      "Scammell TE"
+    ],
+    "title": "The neurobiological basis of narcolepsy",
+    "journal": "Nat Rev Neurosci",
+    "journalFull": "Nat Rev Neurosci",
+    "year": 2019,
+    "volume": "20",
+    "issue": "2",
+    "pages": "83-93",
+    "doi": "10.1038/s41583-018-0097-x",
+    "pmc": "PMC6492289"
   }
 }

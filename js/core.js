@@ -310,7 +310,13 @@
       'Psychotic disorders',
       'Neurodevelopmental',
       'Addiction',
-      'Eating disorders'
+      'Eating disorders',
+      'Neurodegenerative',
+      'Epilepsy & seizures',
+      'Headache disorders',
+      'Neuroimmunological',
+      'Neurotrauma',
+      'Sleep disorders'
     ];
     const groups = {};
     CA.conditions.forEach((r) => {

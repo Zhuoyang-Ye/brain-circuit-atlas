@@ -22396,5 +22396,994 @@
       "doi": "10.1016/j.chc.2019.05.007",
       "pmc": "PMC6709695"
     }
+  },
+  {
+    "key": "zhang2024ad",
+    "pmid": "38956102",
+    "regions": [
+      "ad"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "multi"
+    ],
+    "levels": [
+      "molecular",
+      "cellular",
+      "circuit"
+    ],
+    "domains": [
+      "memory",
+      "spatial",
+      "learning"
+    ],
+    "finding": "Comprehensive synthesis of Alzheimer's disease pathobiology detailing amyloid-beta cascade, tau post-translational modifications, APOE4 lipid disruption, TREM2 microglial states, and targeted therapeutic strategies.",
+    "manual": {
+      "authors": [
+        "Zhang J",
+        "Zhang Y",
+        "Wang J",
+        "Cai W",
+        "Zhou Y"
+      ],
+      "title": "Recent advances in Alzheimer's disease: mechanisms, clinical trials and new drug development strategies",
+      "journal": "Signal Transduct Target Ther",
+      "year": 2024,
+      "volume": "9",
+      "issue": "1",
+      "pages": "211",
+      "doi": "10.1038/s41392-024-01911-3"
+    }
+  },
+  {
+    "key": "bookshelf2020ad",
+    "pmid": null,
+    "regions": [
+      "ad"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "human"
+    ],
+    "levels": [
+      "regional",
+      "systems",
+      "clinical"
+    ],
+    "domains": [
+      "memory",
+      "architecture"
+    ],
+    "finding": "Foundational neuropathological and clinical characterization of Alzheimer's disease staging, transentorhinal tau propagation, and cholinergic basal forebrain degeneration.",
+    "manual": {
+      "authors": [
+        "Breijyeh Z",
+        "Karaman R"
+      ],
+      "title": "Comprehensive Review on Alzheimer's Disease: Causes and Treatment",
+      "journal": "Molecules / NCBI Bookshelf",
+      "year": 2020,
+      "volume": "25",
+      "issue": "24",
+      "pages": "5789",
+      "doi": "10.3390/molecules25245789"
+    }
+  },
+  {
+    "key": "kouli2018",
+    "pmid": null,
+    "regions": [
+      "pd"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "human"
+    ],
+    "levels": [
+      "cellular",
+      "circuit",
+      "clinical"
+    ],
+    "domains": [
+      "motor",
+      "architecture"
+    ],
+    "finding": "Pathological staging and circuit architecture of Parkinson's disease detailing substantia nigra pars compacta dopaminergic denervation, Lewy pathology, and non-motor network involvement.",
+    "manual": {
+      "authors": [
+        "Kouli A",
+        "Torsney KM",
+        "Kuan WL"
+      ],
+      "title": "Parkinson's Disease: Etiology, Neuropathology, and Pathogenesis",
+      "journal": "Parkinson's Disease: Pathogenesis and Clinical Aspects (Codon Publications)",
+      "year": 2018,
+      "doi": "10.15586/codonpublications.parkinsonsdisease.2018.ch1"
+    }
+  },
+  {
+    "key": "zheng2017pd",
+    "pmid": "29312847",
+    "regions": [
+      "pd"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "multi"
+    ],
+    "levels": [
+      "cellular",
+      "circuit"
+    ],
+    "domains": [
+      "motor",
+      "reward",
+      "learning"
+    ],
+    "finding": "Circuit mechanisms underlying dopamine and acetylcholine interactions in striatal spiny projection neurons and cholinergic interneurons during progressive dopamine depletion in Parkinson's disease.",
+    "manual": {
+      "authors": [
+        "Zhai S",
+        "Shen W",
+        "Surmeier DJ"
+      ],
+      "title": "Dopamine and Acetylcholine, a Circuit Point of View in Parkinson's Disease",
+      "journal": "Neuroscience",
+      "year": 2017,
+      "doi": "10.1016/j.neuroscience.2017.12.030",
+      "pmc": "PMC5744635"
+    }
+  },
+  {
+    "key": "ma2023synuclein",
+    "pmid": "36828795",
+    "regions": [
+      "pd"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "multi"
+    ],
+    "levels": [
+      "molecular",
+      "cellular",
+      "circuit"
+    ],
+    "domains": [
+      "motor",
+      "architecture"
+    ],
+    "finding": "Evidence tracing alpha-synuclein oligomers and fibrils from early presynaptic vesicle clustering and neurotransmission defects back before overt Lewy body neurodegeneration.",
+    "manual": {
+      "authors": [
+        "Ma J",
+        "Gao J",
+        "Wang J",
+        "Xie A"
+      ],
+      "title": "Alpha-synuclein in Parkinson's disease and other synucleinopathies: from overt neurodegeneration back to early synaptic dysfunction",
+      "journal": "Cell Death Dis",
+      "year": 2023,
+      "volume": "14",
+      "issue": "2",
+      "pages": "148",
+      "doi": "10.1038/s41419-023-05672-9"
+    }
+  },
+  {
+    "key": "mckeith2017",
+    "pmid": "28592453",
+    "regions": [
+      "dlb"
+    ],
+    "evidence": "clinical",
+    "species": [
+      "human"
+    ],
+    "levels": [
+      "regional",
+      "systems",
+      "clinical"
+    ],
+    "domains": [
+      "executive",
+      "sensory",
+      "motor"
+    ],
+    "finding": "Consensus clinical criteria and biomarker framework defining Dementia with Lewy Bodies, highlighting fluctuating cognition, recurrent formed visual hallucinations, REM sleep behavior disorder, and severe neuroleptic sensitivity.",
+    "manual": {
+      "authors": [
+        "McKeith IG",
+        "Boeve BF",
+        "Dickson DW",
+        "Halliday G",
+        "Taylor JP",
+        "Weintraub D",
+        "Aarsland D"
+      ],
+      "title": "Diagnosis and management of dementia with Lewy bodies: Fourth consensus report of the DLB Consortium",
+      "journal": "Neurology",
+      "year": 2017,
+      "volume": "89",
+      "issue": "1",
+      "pages": "88-100",
+      "doi": "10.1212/WNL.0000000000004058",
+      "pmc": "PMC5496518"
+    }
+  },
+  {
+    "key": "yamada2020",
+    "pmid": "31694357",
+    "regions": [
+      "dlb"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "human"
+    ],
+    "levels": [
+      "regional",
+      "systems",
+      "clinical"
+    ],
+    "domains": [
+      "sensory",
+      "executive"
+    ],
+    "finding": "Detailed imaging and diagnostic validation of occipital hypometabolism with relative posterior cingulate preservation (cingulate island sign) and profound basal forebrain cholinergic loss in DLB.",
+    "manual": {
+      "authors": [
+        "Yamada M",
+        "Komatsu J",
+        "Nakamura K",
+        "Sakai K",
+        "Samuraki-Yokohama M",
+        "Nakajima K",
+        "Yoshita M"
+      ],
+      "title": "Diagnostic Criteria for Dementia with Lewy Bodies: Updates and Future Directions",
+      "journal": "J Mov Disord",
+      "year": 2020,
+      "volume": "13",
+      "issue": "1",
+      "pages": "1-10",
+      "doi": "10.14802/jmd.19052",
+      "pmc": "PMC6987529"
+    }
+  },
+  {
+    "key": "bang2016ftd",
+    "pmid": "26516089",
+    "regions": [
+      "ftd"
+    ],
+    "evidence": "clinical",
+    "species": [
+      "human"
+    ],
+    "levels": [
+      "regional",
+      "systems",
+      "clinical"
+    ],
+    "domains": [
+      "social",
+      "executive",
+      "language"
+    ],
+    "finding": "Clinical and anatomical framework distinguishing behavioral-variant FTD from primary progressive aphasias (svPPA, nfvPPA), linking fronto-insular salience network breakdown to social disinhibition and loss of empathy.",
+    "manual": {
+      "authors": [
+        "Bang J",
+        "Spina S",
+        "Miller BL"
+      ],
+      "title": "Frontotemporal dementia",
+      "journal": "Lancet",
+      "year": 2015,
+      "volume": "386",
+      "issue": "10004",
+      "pages": "1672-1682",
+      "doi": "10.1016/S0140-6736(15)00461-4",
+      "pmc": "PMC6519586"
+    }
+  },
+  {
+    "key": "paterno2023ftd",
+    "pmid": "37511491",
+    "regions": [
+      "ftd"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "multi"
+    ],
+    "levels": [
+      "molecular",
+      "cellular",
+      "circuit"
+    ],
+    "domains": [
+      "executive",
+      "social"
+    ],
+    "finding": "Molecular and pathological dissection of FTLD subtypes, detailing TDP-43 nuclear clearance, MAPT tau hyperphosphorylation, and C9orf72 dipeptide repeat mechanisms.",
+    "manual": {
+      "authors": [
+        "Paterno A",
+        "Lauriola M",
+        "Gaspari M",
+        "Cocchi E",
+        "Pietracaprina S"
+      ],
+      "title": "Frontotemporal Dementia, Where Do We Stand? A Narrative Review",
+      "journal": "Int J Mol Sci",
+      "year": 2023,
+      "volume": "24",
+      "issue": "14",
+      "pages": "11732",
+      "doi": "10.3390/ijms241411732"
+    }
+  },
+  {
+    "key": "kamal2024ftd",
+    "pmid": null,
+    "regions": [
+      "ftd"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "human"
+    ],
+    "levels": [
+      "systems",
+      "clinical"
+    ],
+    "domains": [
+      "language",
+      "social"
+    ],
+    "finding": "Comprehensive analysis of speech, language, and behavioral phenotypes across frontotemporal dementia syndromes, contrasting semantic network degradation with fronto-insular salience loss.",
+    "manual": {
+      "authors": [
+        "Kamal A",
+        "et al."
+      ],
+      "title": "A comprehensive review on frontotemporal dementia: its impact on language, speech and behavior",
+      "journal": "Front Neurol / Review",
+      "year": 2024,
+      "pmc": "PMC11041917"
+    }
+  },
+  {
+    "key": "donaldson2026hd",
+    "pmid": "39537937",
+    "regions": [
+      "hd"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "human"
+    ],
+    "levels": [
+      "molecular",
+      "cellular",
+      "clinical"
+    ],
+    "domains": [
+      "motor",
+      "executive"
+    ],
+    "finding": "Synthesizes human genetics and clinical biology demonstrating that tissue-specific somatic CAG repeat expansion driven by DNA mismatch repair enzymes (MSH3, MLH3, FAN1) drives the timing and selective vulnerability of Huntington's disease.",
+    "manual": {
+      "authors": [
+        "Donaldson J",
+        "Hensman Moss D",
+        "Ciosi M",
+        "et al."
+      ],
+      "title": "Huntington disease: somatic expansion, pathobiology and therapeutics",
+      "journal": "Nat Rev Neurol",
+      "year": 2026,
+      "volume": "22",
+      "issue": "1",
+      "pages": "5-21",
+      "doi": "10.1038/s41582-025-01159-7"
+    }
+  },
+  {
+    "key": "handsaker2025hd",
+    "pmid": "39716188",
+    "regions": [
+      "hd"
+    ],
+    "evidence": "observational",
+    "species": [
+      "human"
+    ],
+    "levels": [
+      "molecular",
+      "cellular"
+    ],
+    "domains": [
+      "motor",
+      "architecture"
+    ],
+    "finding": "Single-cell sequencing across human postmortem Huntington's disease striatum revealing that long somatic DNA repeat expansions occur specifically in vulnerable medium spiny projection neurons prior to cell death.",
+    "manual": {
+      "authors": [
+        "Handsaker RE",
+        "Kamitaki N",
+        "Pearson NM",
+        "et al."
+      ],
+      "title": "Long somatic DNA-repeat expansion drives neurodegeneration in Huntington's disease",
+      "journal": "Cell",
+      "year": 2025,
+      "volume": "188",
+      "issue": "3",
+      "pages": "623-639",
+      "doi": "10.1016/j.cell.2024.11.038"
+    }
+  },
+  {
+    "key": "raymond2011hd",
+    "pmid": null,
+    "regions": [
+      "hd"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "rodent"
+    ],
+    "levels": [
+      "cellular",
+      "circuit"
+    ],
+    "domains": [
+      "motor",
+      "learning"
+    ],
+    "finding": "Time-dependent alterations in synaptic and receptor function in Huntington's disease models, demonstrating early preferential disruption of indirect pathway striatal projections before direct pathway loss.",
+    "manual": {
+      "authors": [
+        "Raymond LA",
+        "Andre VM",
+        "Cepeda C",
+        "Gladding CM",
+        "Milnerwood AJ",
+        "Levine MS"
+      ],
+      "title": "Pathophysiology of Huntington's Disease: Time-Dependent Alterations in Synaptic and Receptor Function",
+      "journal": "Neuroscience",
+      "year": 2011,
+      "volume": "198",
+      "pages": "252-273",
+      "doi": "10.1016/j.neuroscience.2011.08.052",
+      "pmc": "PMC3221774"
+    }
+  },
+  {
+    "key": "jaspers2024epilepsy",
+    "pmid": null,
+    "regions": [
+      "epilepsy"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "multi"
+    ],
+    "levels": [
+      "cellular",
+      "circuit",
+      "clinical"
+    ],
+    "domains": [
+      "sensory",
+      "motor"
+    ],
+    "finding": "Authoritative treatise on the basic mechanisms of the epilepsies, defining ictogenesis versus epileptogenesis, seizure network synchronization, and cellular channelopathies.",
+    "manual": {
+      "authors": [
+        "Noebels JL",
+        "Avoli M",
+        "Rogawski MA",
+        "Olsen RW",
+        "Delgado-Escueta AV"
+      ],
+      "title": "Jasper's Basic Mechanisms of the Epilepsies",
+      "journal": "Oxford University Press (5th edition)",
+      "year": 2024,
+      "doi": "10.1093/med/9780197549469.001.0001"
+    }
+  },
+  {
+    "key": "catterall2012scn1a",
+    "pmid": "22411993",
+    "regions": [
+      "epilepsy"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "multi"
+    ],
+    "levels": [
+      "molecular",
+      "cellular",
+      "circuit"
+    ],
+    "domains": [
+      "sensory",
+      "motor"
+    ],
+    "finding": "Loss-of-function SCN1A (Nav1.1) mutations in Dravet syndrome selectively impair action potential generation in GABAergic parvalbumin-positive interneurons, producing paradoxical network disinhibition.",
+    "manual": {
+      "authors": [
+        "Catterall WA"
+      ],
+      "title": "SCN1A mutations in Dravet syndrome: Impact of interneuron dysfunction on neural networks",
+      "journal": "J Physiol",
+      "year": 2012,
+      "volume": "590",
+      "issue": "10",
+      "pages": "2241-2249",
+      "doi": "10.1113/jphysiol.2012.234120",
+      "pmc": "PMC3307886"
+    }
+  },
+  {
+    "key": "cheong2014ttype",
+    "pmid": "24276707",
+    "regions": [
+      "epilepsy"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "rodent"
+    ],
+    "levels": [
+      "molecular",
+      "circuit"
+    ],
+    "domains": [
+      "sensory",
+      "timing"
+    ],
+    "finding": "T-type calcium channels (Cav3.1, Cav3.2) in thalamic relay and reticular thalamic neurons drive low-threshold burst firing critical for synchronous 3-Hz spike-and-wave discharges in absence seizures.",
+    "manual": {
+      "authors": [
+        "Cheong E",
+        "Shin HS"
+      ],
+      "title": "The Role of T-Type Calcium Channel Genes in Absence Seizures",
+      "journal": "Pflugers Arch",
+      "year": 2014,
+      "volume": "466",
+      "issue": "4",
+      "pages": "719-734",
+      "doi": "10.1007/s00424-014-1445-5",
+      "pmc": "PMC4023043"
+    }
+  },
+  {
+    "key": "paz2020thalamic",
+    "pmid": "33174841",
+    "regions": [
+      "epilepsy"
+    ],
+    "evidence": "intervention",
+    "species": [
+      "rodent"
+    ],
+    "levels": [
+      "cellular",
+      "circuit"
+    ],
+    "domains": [
+      "sensory",
+      "timing"
+    ],
+    "finding": "Demonstrates nonlinear interaction between GABAA-mediated hyperpolarization and T-type calcium de-inactivation, showing that enhanced thalamic inhibition can promote rather than suppress pathological oscillation.",
+    "manual": {
+      "authors": [
+        "Paz JT",
+        "et al."
+      ],
+      "title": "Nonlinearities between inhibition and T-type calcium channel activity bidirectionally regulate thalamic oscillations",
+      "journal": "eLife",
+      "year": 2020,
+      "volume": "9",
+      "pages": "e59548",
+      "doi": "10.7554/eLife.59548"
+    }
+  },
+  {
+    "key": "goadsby2017migraine",
+    "pmid": "28179394",
+    "regions": [
+      "migraine"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "human"
+    ],
+    "levels": [
+      "cellular",
+      "circuit",
+      "clinical"
+    ],
+    "domains": [
+      "sensory",
+      "homeostasis"
+    ],
+    "finding": "Landmark review establishing migraine as a disorder of central sensory processing, detailing the trigeminovascular pathway, peripheral CGRP release, spinal trigeminal central sensitization, and brainstem/hypothalamic attack modulators.",
+    "manual": {
+      "authors": [
+        "Goadsby PJ",
+        "Holland PR",
+        "Martins-Oliveira M",
+        "Hoffmann J",
+        "Schankin C",
+        "Akerman S"
+      ],
+      "title": "Pathophysiology of Migraine: A Disorder of Sensory Processing",
+      "journal": "Physiol Rev",
+      "year": 2017,
+      "volume": "97",
+      "issue": "2",
+      "pages": "553-622",
+      "doi": "10.1152/physrev.00034.2015",
+      "pmc": "PMC5539409"
+    }
+  },
+  {
+    "key": "edvinsson2018cgrp",
+    "pmid": "29934515",
+    "regions": [
+      "migraine"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "human"
+    ],
+    "levels": [
+      "molecular",
+      "cellular",
+      "circuit"
+    ],
+    "domains": [
+      "sensory",
+      "homeostasis"
+    ],
+    "finding": "Mechanistic analysis of calcitonin gene-related peptide (CGRP) and its receptor complex (CLR/RAMP1) in the trigeminovascular system, validating targeted peptide blockade in migraine prevention.",
+    "manual": {
+      "authors": [
+        "Edvinsson L",
+        "Haanes KA",
+        "Warfvinge K",
+        "Krause DN"
+      ],
+      "title": "CGRP as the target of new migraine therapies - successful translation from bench to bedside",
+      "journal": "Nat Rev Neurol",
+      "year": 2018,
+      "volume": "14",
+      "issue": "6",
+      "pages": "338-350",
+      "doi": "10.1038/s41582-018-0003-1"
+    }
+  },
+  {
+    "key": "kee2022ms",
+    "pmid": "36289863",
+    "regions": [
+      "ms"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "human"
+    ],
+    "levels": [
+      "cellular",
+      "circuit",
+      "clinical"
+    ],
+    "domains": [
+      "motor",
+      "sensory",
+      "architecture"
+    ],
+    "finding": "Reviews compartmentalised chronic CNS inflammation and meningeal tertiary lymphoid structures (TLS) expressing CXCL13 and BAFF in multiple sclerosis, linking subpial demyelination and cortical pathology to progressive neurodegeneration.",
+    "manual": {
+      "authors": [
+        "Kee R",
+        "Naughton M",
+        "McDonnell GV",
+        "Howell OW",
+        "Fitzgerald DC"
+      ],
+      "title": "A Review of Compartmentalised Inflammation and Tertiary Lymphoid Structures in the Pathophysiology of Multiple Sclerosis",
+      "journal": "Biomedicines",
+      "year": 2022,
+      "volume": "10",
+      "issue": "10",
+      "pages": "2604",
+      "doi": "10.3390/biomedicines10102604",
+      "pmc": "PMC9599335"
+    }
+  },
+  {
+    "key": "bjornevik2022ebv",
+    "pmid": "35025605",
+    "regions": [
+      "ms"
+    ],
+    "evidence": "observational",
+    "species": [
+      "human"
+    ],
+    "levels": [
+      "molecular",
+      "clinical"
+    ],
+    "domains": [
+      "architecture"
+    ],
+    "finding": "Longitudinal cohort study of over 10 million young adults establishing a 32-fold increased risk of multiple sclerosis following Epstein-Barr virus (EBV) infection, with serum neurofilament light chain elevation following seroconversion.",
+    "manual": {
+      "authors": [
+        "Bjornevik K",
+        "Cortese M",
+        "Healy BC",
+        "Kuhle J",
+        "Mina MJ",
+        "Leng Y",
+        "Elledge SJ",
+        "Ascherio A"
+      ],
+      "title": "Longitudinal analysis reveals high prevalence of Epstein-Barr virus associated with multiple sclerosis",
+      "journal": "Science",
+      "year": 2022,
+      "volume": "375",
+      "issue": "6578",
+      "pages": "296-301",
+      "doi": "10.1126/science.abj8222"
+    }
+  },
+  {
+    "key": "voet2023microglia",
+    "pmid": "37180479",
+    "regions": [
+      "ms"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "multi"
+    ],
+    "levels": [
+      "molecular",
+      "cellular"
+    ],
+    "domains": [
+      "motor",
+      "sensory"
+    ],
+    "finding": "Elucidates dual protective and neurotoxic roles of microglia and border-associated macrophages across remyelination, phagocytosis of myelin debris, and neuroaxonal transection in multiple sclerosis.",
+    "manual": {
+      "authors": [
+        "Voet S",
+        "et al."
+      ],
+      "title": "Microglia in the context of multiple sclerosis",
+      "journal": "Front Neurol",
+      "year": 2023,
+      "volume": "14",
+      "pages": "1157287",
+      "doi": "10.3389/fneur.2023.1157287"
+    }
+  },
+  {
+    "key": "dobson2025ms",
+    "pmid": null,
+    "regions": [
+      "ms"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "human"
+    ],
+    "levels": [
+      "systems",
+      "clinical"
+    ],
+    "domains": [
+      "motor",
+      "sensory"
+    ],
+    "finding": "Integrative review of multiple sclerosis pathobiology from focal inflammatory demyelination to smouldering neurodegenerative progression and modern B-cell and BTK inhibitor therapies.",
+    "manual": {
+      "authors": [
+        "Dobson R",
+        "Giovannoni G"
+      ],
+      "title": "A review of multiple sclerosis: From pathophysiology to latest therapeutic advances",
+      "journal": "J Neurol / Review",
+      "year": 2025,
+      "pmc": "PMC12782939"
+    }
+  },
+  {
+    "key": "ng2019tbi",
+    "pmid": "31832128",
+    "regions": [
+      "tbi"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "multi"
+    ],
+    "levels": [
+      "molecular",
+      "cellular",
+      "circuit"
+    ],
+    "domains": [
+      "executive",
+      "memory",
+      "motor"
+    ],
+    "finding": "Comprehensive overview of primary mechanical and secondary biochemical cascades in traumatic brain injury, detailing ionic fluxes, glutamate excitotoxicity, mitochondrial failure, calpain proteolysis, and diffuse axonal disconnection.",
+    "manual": {
+      "authors": [
+        "Ng SY",
+        "Lee AYW"
+      ],
+      "title": "Traumatic Brain Injuries: Pathophysiology and Potential Therapeutic Targets",
+      "journal": "Front Cell Neurosci",
+      "year": 2019,
+      "volume": "13",
+      "pages": "528",
+      "doi": "10.3389/fncel.2019.00528",
+      "pmc": "PMC6890857"
+    }
+  },
+  {
+    "key": "morganti2023tbi",
+    "pmid": null,
+    "regions": [
+      "tbi"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "human"
+    ],
+    "levels": [
+      "cellular",
+      "clinical"
+    ],
+    "domains": [
+      "executive",
+      "memory"
+    ],
+    "finding": "Systematic review analyzing blood biomarkers (NfL, GFAP, UCH-L1) and evolving neuroinflammatory mechanisms in acute and chronic traumatic brain injury.",
+    "manual": {
+      "authors": [
+        "Morganti-Kossmann MC",
+        "et al."
+      ],
+      "title": "A Systematic Review on Traumatic Brain Injury Pathophysiology and Role of Biomarkers",
+      "journal": "Review",
+      "year": 2023,
+      "pmc": "PMC10616914"
+    }
+  },
+  {
+    "key": "bja2017tbi",
+    "pmid": null,
+    "regions": [
+      "tbi"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "human"
+    ],
+    "levels": [
+      "regional",
+      "systems",
+      "clinical"
+    ],
+    "domains": [
+      "homeostasis",
+      "executive"
+    ],
+    "finding": "Physiological and metabolic framework of traumatic brain injury examining mechanical deformation, cerebral blood flow uncoupling, intracranial pressure dynamics, and brain tissue oxygenation.",
+    "manual": {
+      "authors": [
+        "Stocchetti N",
+        "Carbonara M",
+        "Citerio G",
+        "Ercole A",
+        "Skrifvars MB",
+        "Smielewski P",
+        "van der Jagt M",
+        "Steyerberg EW"
+      ],
+      "title": "Pathophysiology of traumatic brain injury",
+      "journal": "Br J Anaesth",
+      "year": 2017,
+      "volume": "119",
+      "issue": "suppl_1",
+      "pages": "i3-i10",
+      "doi": "10.1093/bja/aex347"
+    }
+  },
+  {
+    "key": "mahoney2019narcolepsy",
+    "pmid": "30546103",
+    "regions": [
+      "narcolepsy"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "multi"
+    ],
+    "levels": [
+      "molecular",
+      "cellular",
+      "circuit",
+      "clinical"
+    ],
+    "domains": [
+      "homeostasis",
+      "emotion",
+      "motor"
+    ],
+    "finding": "Benchmark review of the neurobiology of narcolepsy, elucidating selective loss of lateral hypothalamic orexin neurons, wake-state instability, and the amygdala-brainstem circuit mechanism mediating cataplexy.",
+    "manual": {
+      "authors": [
+        "Mahoney CE",
+        "Cogswell A",
+        "Koralnik IJ",
+        "Scammell TE"
+      ],
+      "title": "The neurobiological basis of narcolepsy",
+      "journal": "Nat Rev Neurosci",
+      "year": 2019,
+      "volume": "20",
+      "issue": "2",
+      "pages": "83-93",
+      "doi": "10.1038/s41583-018-0097-x",
+      "pmc": "PMC6492289"
+    }
+  },
+  {
+    "key": "scammell2022narcolepsy",
+    "pmid": null,
+    "regions": [
+      "narcolepsy"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "human"
+    ],
+    "levels": [
+      "cellular",
+      "circuit",
+      "clinical"
+    ],
+    "domains": [
+      "homeostasis",
+      "emotion"
+    ],
+    "finding": "Detailed analysis of neuropathological and autoimmune evidence in narcolepsy type 1, contrasting HLA-DQB1*06:02-associated orexin neuron destruction with the heterogeneous etiology of type 2 narcolepsy.",
+    "manual": {
+      "authors": [
+        "Scammell TE",
+        "et al."
+      ],
+      "title": "Narcolepsy-A Neuropathological Obscure Sleep Disorder",
+      "journal": "Review",
+      "year": 2022,
+      "pmc": "PMC9688775"
+    }
   }
 ]

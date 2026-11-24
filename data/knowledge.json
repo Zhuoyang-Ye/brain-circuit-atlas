@@ -2588,6 +2588,456 @@
           ]
         }
       }
+    },
+    {
+      "id": "ad",
+      "label": "Alzheimer's Disease",
+      "category": "Neurodegenerative",
+      "entity": "ad-profile",
+      "query": "(\"Alzheimer Disease\"[Mesh] OR \"Alzheimer's\"[tiab])",
+      "view": "circuit",
+      "views": [
+        "circuit",
+        "molecules",
+        "scales",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": "Progressive neurodegenerative dementia characterized by early episodic memory loss and spatial disorientation, pathologically defined by extracellular amyloid-β plaques and intraneuronal hyperphosphorylated tau neurofibrillary tangles, with profound basal forebrain cholinergic degeneration.",
+      "speciesNote": "Human clinical consensus and neuropathology (Braak tau staging), cross-validated with transgenic amyloid and tau rodent models.",
+      "levelDesc": {
+        "molecular": "Amyloid-β peptide oligomerization (APP processing by BACE1 and γ-secretase/PSEN1/2), hyperphosphorylated tau aggregation into paired helical filaments, APOE4 lipid disruption, and TREM2 microglial clearance failure.",
+        "cellular": "Degeneration of basal forebrain cholinergic neurons (Ch1-Ch4), synaptic loss, dystrophic neurite formation, reactive astrogliosis, and stage-dependent microglial phenotypic shifts.",
+        "circuit": "Perforant path breakdown (entorhinal cortex layer II to dentate gyrus and CA1), nucleus basalis of Meynert cholinergic denervation of neocortex, and locus coeruleus noradrenergic decline.",
+        "regional": "Transentorhinal and entorhinal cortex (early Braak tau stages), hippocampal formation, temporoparietal association cortex, and basal forebrain cholinergic nuclei.",
+        "systems": "Default mode network (DMN) hypoconnectivity, medial temporal episodic memory network disconnection, and posterior cingulate/precuneus metabolic reduction.",
+        "cognitive": "Episodic memory encoding and retrieval failure, spatial navigation and grid/place code impairment, executive slowing, and language retrieval deficits.",
+        "clinical": "Insidious onset of memory impairment, repetitive questioning, disorientation to time/place, executive decline, progressive loss of daily functional independence, and non-amnestic variants."
+      },
+      "levelQueries": {
+        "molecular": "(\"Alzheimer Disease\"[Mesh] AND (amyloid[tiab] OR tau[tiab] OR APOE[tiab] OR TREM2[tiab]))",
+        "cellular": "(\"Alzheimer Disease\"[Mesh] AND (cholinergic[tiab] OR \"synaptic loss\"[tiab] OR microglia[tiab]))",
+        "circuit": "(\"Alzheimer Disease\"[Mesh] AND (\"perforant path\"[tiab] OR entorhinal[tiab] OR \"nucleus basalis\"[tiab]))",
+        "regional": "(\"Alzheimer Disease\"[Mesh] AND (hippocampus[tiab] OR \"entorhinal cortex\"[tiab] OR \"temporoparietal\"[tiab]))",
+        "systems": "(\"Alzheimer Disease\"[Mesh] AND (\"default mode network\"[tiab] OR \"functional connectivity\"[tiab]))",
+        "cognitive": "(\"Alzheimer Disease\"[Mesh] AND (\"episodic memory\"[tiab] OR navigation[tiab]))",
+        "clinical": "(\"Alzheimer Disease\"[Mesh] AND (\"mild cognitive impairment\"[tiab] OR dementia[tiab]))"
+      },
+      "methods": {
+        "molecular": "Amyloid/tau PET radiotracers, CSF/plasma p-tau217/Aβ42 assays, single-nucleus transcriptomics",
+        "cellular": "Postmortem stereology, synaptic density SV2A PET, immunofluorescence of microglial and astrocytic markers",
+        "circuit": "High-resolution 7T hippocampal subfield volumetry, perforant path diffusion tractography",
+        "regional": "Structural MRI cortical thickness, FDG-PET temporoparietal hypometabolism",
+        "systems": "Resting-state fMRI DMN functional connectivity, task-based episodic memory fMRI",
+        "cognitive": "Rey Auditory Verbal Learning Test (RAVLT), virtual Morris water maze navigation tasks",
+        "clinical": "Clinical Dementia Rating (CDR), Mini-Mental State Examination (MMSE), ADAS-Cog"
+      }
+    },
+    {
+      "id": "pd",
+      "label": "Parkinson's Disease",
+      "category": "Neurodegenerative",
+      "entity": "pd-profile",
+      "query": "(\"Parkinson Disease\"[Mesh] OR \"Parkinson's\"[tiab])",
+      "view": "circuit",
+      "views": [
+        "circuit",
+        "molecules",
+        "scales",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": "Progressive neurodegenerative movement disorder defined by degeneration of nigrostriatal dopaminergic neurons in the substantia nigra pars compacta, intracellular α-synuclein Lewy pathology, and profound disturbance of basal ganglia-thalamocortical circuitry.",
+      "speciesNote": "Human clinical diagnosis and postmortem neuropathology (Braak synuclein staging); rodent and nonhuman primate MPTP/6-OHDA toxin and preformed alpha-synuclein fibril models.",
+      "levelDesc": {
+        "molecular": "α-Synuclein misfolding and oligomerization (SNCA mutations/multiplication), impaired mitochondrial quality control (PRKN, PINK1), lysosomal glucocerebrosidase deficiency (GBA1), and LRRK2 kinase hyperactivation.",
+        "cellular": "Selective death of neuromelanin-containing dopaminergic neurons in substantia nigra pars compacta, Lewy neurites and bodies, and reactive striatal cholinergic interneuron remodeling.",
+        "circuit": "Loss of striatal dopamine input producing pathological imbalance between direct (striatonigral D1) and indirect (striatopallidal D2) pathways, driving subthalamic nucleus and GPi hyperactivity and pathological beta-band synchrony.",
+        "regional": "Substantia nigra pars compacta, dorsal striatum (putamen/caudate), subthalamic nucleus, internal globus pallidus, pedunculopontine nucleus, and locus coeruleus.",
+        "systems": "Desynchronization of cortico-basal ganglia-thalamocortical motor loop, cerebello-thalamo-cortical tremor network recruitment, and ascending brainstem modulatory failure.",
+        "cognitive": "Bradyphrenia, executive dysfunction with set-shifting and planning deficits, working memory reduction, and visuospatial difficulty.",
+        "clinical": "Cardinal motor triad: resting tremor, cogwheel rigidity, bradykinesia/akinesia, plus postural instability, gait freezing, REM sleep behavior disorder, hyposmia, autonomic dysfunction, and levodopa-induced dyskinesias."
+      },
+      "levelQueries": {
+        "molecular": "(\"Parkinson Disease\"[Mesh] AND (\"alpha-synuclein\"[tiab] OR LRRK2[tiab] OR GBA[tiab] OR PINK1[tiab]))",
+        "cellular": "(\"Parkinson Disease\"[Mesh] AND (\"substantia nigra\"[tiab] OR \"dopaminergic\"[tiab] OR \"Lewy body\"[tiab]))",
+        "circuit": "(\"Parkinson Disease\"[Mesh] AND (\"nigrostriatal\"[tiab] OR \"subthalamic\"[tiab] OR \"basal ganglia\"[tiab]))",
+        "regional": "(\"Parkinson Disease\"[Mesh] AND (\"putamen\"[tiab] OR \"globus pallidus\"[tiab] OR \"striatum\"[tiab]))",
+        "systems": "(\"Parkinson Disease\"[Mesh] AND (\"beta oscillations\"[tiab] OR \"corticostriatal\"[tiab]))",
+        "cognitive": "(\"Parkinson Disease\"[Mesh] AND (\"executive function\"[tiab] OR bradyphrenia[tiab]))",
+        "clinical": "(\"Parkinson Disease\"[Mesh] AND (bradykinesia[tiab] OR rigidity[tiab] OR tremor[tiab]))"
+      },
+      "methods": {
+        "molecular": "123I-FP-CIT (DaTscan) SPECT imaging, CSF alpha-synuclein seed amplification assays (RT-QuIC)",
+        "cellular": "Tyrosine hydroxylase (TH) immunohistochemistry, neuromelanin-sensitive MRI of substantia nigra",
+        "circuit": "Subthalamic nucleus local field potential recording of beta oscillations (13-30 Hz) during DBS surgery",
+        "regional": "High-field 7T nigrosome-1 swallow-tail sign imaging, resting-state fMRI of striatopallidal loops",
+        "systems": "Magnetoencephalography (MEG) cortico-subthalamic coherence, PET raclopride dopamine D2 receptor occupancy",
+        "cognitive": "Tower of London planning task, Wisconsin Card Sorting Test (WCST), digit span backward",
+        "clinical": "Movement Disorder Society-Unified Parkinson's Disease Rating Scale (MDS-UPDRS), Hoehn and Yahr staging"
+      }
+    },
+    {
+      "id": "dlb",
+      "label": "Dementia with Lewy Bodies",
+      "category": "Neurodegenerative",
+      "entity": "dlb-profile",
+      "query": "(\"Lewy Body Disease\"[Mesh] OR \"Dementia with Lewy Bodies\"[tiab] OR \"DLB\"[tiab])",
+      "view": "circuit",
+      "views": [
+        "circuit",
+        "molecules",
+        "scales",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": "Progressive neurodegenerative synucleinopathy characterized by core clinical features of fluctuating cognition and alertness, recurrent formed visual hallucinations, REM sleep behavior disorder, and spontaneous parkinsonism, with profound cortical cholinergic denervation.",
+      "speciesNote": "Human clinical consensus criteria and postmortem neuropathology with cortical Lewy bodies; distinction from PDD by the 1-year rule between motor and cognitive onset.",
+      "levelDesc": {
+        "molecular": "Widespread α-synuclein aggregates forming cortical and subcortical Lewy bodies and Lewy neurites, frequently accompanied by Alzheimer-type amyloid-β and tau co-pathology.",
+        "cellular": "Severe degeneration of basal forebrain cholinergic neurons (surpassing that seen in typical AD), moderate loss of nigrostriatal dopaminergic neurons, and pontine tegmental Lewy pathology.",
+        "circuit": "Loss of basal forebrain cholinergic modulation of visual and association cortices, nigrostriatal dopaminergic depletion, and disruption of pontomedullary REM atonia circuits.",
+        "regional": "Occipital and temporoparietal association cortices (occipital hypometabolism with relative posterior cingulate preservation - cingulate island sign), basal forebrain, substantia nigra, and locus coeruleus.",
+        "systems": "Frontoparietal attentional network instability driving cognitive fluctuations; dorsal/ventral visual stream dysregulation underlying visual hallucinations; brainstem REM-sleep switch dysfunction.",
+        "cognitive": "Severe impairment in attention, executive function, and visuospatial/visuoperceptual processing, with relative preservation of early storage-phase episodic memory.",
+        "clinical": "Cognitive fluctuations with episodic confusion and daytime somnolence, well-formed recurrent visual hallucinations (often animals or people), REM sleep behavior disorder, spontaneous parkinsonism, and extreme neuroleptic hypersensitivity."
+      },
+      "levelQueries": {
+        "molecular": "(\"Lewy Body Disease\"[Mesh] AND (\"alpha-synuclein\"[tiab] OR \"amyloid\"[tiab]))",
+        "cellular": "(\"Lewy Body Disease\"[Mesh] AND (cholinergic[tiab] OR \"basal forebrain\"[tiab]))",
+        "circuit": "(\"Lewy Body Disease\"[Mesh] AND (\"visual cortex\"[tiab] OR \"thalamocortical\"[tiab]))",
+        "regional": "(\"Lewy Body Disease\"[Mesh] AND (\"occipital\"[tiab] OR \"cingulate island\"[tiab]))",
+        "systems": "(\"Lewy Body Disease\"[Mesh] AND (\"attentional networks\"[tiab] OR \"fluctuations\"[tiab]))",
+        "cognitive": "(\"Lewy Body Disease\"[Mesh] AND (visuoperceptual[tiab] OR attention[tiab]))",
+        "clinical": "(\"Lewy Body Disease\"[Mesh] AND (\"hallucinations\"[tiab] OR \"REM sleep\"[tiab] OR parkinsonism[tiab]))"
+      },
+      "methods": {
+        "molecular": "CSF alpha-synuclein seed amplification assays, amyloid/tau PET co-pathology imaging",
+        "cellular": "Choline acetyltransferase (ChAT) postmortem immunochemistry, alpha-synuclein immunohistochemistry",
+        "circuit": "Visual evoked potentials, polysomnography for REM sleep without atonia (RSWA)",
+        "regional": "18F-FDG PET (cingulate island sign: occipital hypometabolism with preserved posterior cingulate), DaTscan SPECT",
+        "systems": "EEG quantitative slowing and dominant frequency variability, resting-state fMRI attentional networks",
+        "cognitive": "Visual Object and Space Perception (VOSP) battery, Trail Making Test A/B, Letter-Number Sequencing",
+        "clinical": "Clinician Assessment of Fluctuations (CAF), Mayo Fluctuations Scale, UPDRS motor score"
+      }
+    },
+    {
+      "id": "ftd",
+      "label": "Frontotemporal Dementia",
+      "category": "Neurodegenerative",
+      "entity": "ftd-profile",
+      "query": "(\"Frontotemporal Dementia\"[Mesh] OR \"Frontotemporal Lobar Degeneration\"[tiab] OR \"FTD\"[tiab])",
+      "view": "circuit",
+      "views": [
+        "circuit",
+        "molecules",
+        "scales",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": "Clinical and pathological neurodegenerative spectrum featuring progressive changes in behavior, personality, or language, driven by frontotemporal lobar degeneration with inclusions of tau (FTLD-tau), TDP-43 (FTLD-TDP), or FUS.",
+      "speciesNote": "Human clinical subtypes (bvFTD, svPPA, nfvPPA) and genetics (MAPT, GRN, C9orf72); rodent models of TDP-43 and tau pathology.",
+      "levelDesc": {
+        "molecular": "Abnormal cytoplasmic accumulation and nuclear depletion of TDP-43 (TARDBP, C9orf72 hexanucleotide repeat expansion, GRN haploinsufficiency), MAPT tau hyperphosphorylation, or FUS aggregation.",
+        "cellular": "Selective degeneration of fronto-insular Von Economo neurons and fork cells, superficial neocortical microvacuolation, and extensive astroglial and microglial reactivity.",
+        "circuit": "Salience network breakdown (anterior insula, anterior cingulate, and ventral striatum), semantic appraisal network disconnection (anterior temporal lobes), and speech production tract atrophy (left inferior frontal/arcuate).",
+        "regional": "Frontal and anterior temporal lobes: fronto-insular cortex, anterior cingulate cortex (ACC), orbitofrontal cortex, temporal poles, and inferior frontal gyrus (Broca's area).",
+        "systems": "Salience network (mediating social valuation, empathy, and behavioral regulation) and frontotemporal language networks (semantic hub and articulatory motor networks).",
+        "cognitive": "Profound socioemotional cognitive impairment (loss of theory of mind, affective empathy, and social norm processing), semantic concept loss (svPPA), or speech motor programming failure (nfvPPA).",
+        "clinical": "Behavioral variant FTD (early behavioral disinhibition, apathy, loss of sympathy/empathy, perseverative/stereotyped movements, hyperorality), semantic-variant primary progressive aphasia (loss of single-word comprehension and naming), and nonfluent/agrammatic PPA."
+      },
+      "levelQueries": {
+        "molecular": "(\"Frontotemporal Dementia\"[Mesh] AND (TDP-43[tiab] OR tau[tiab] OR C9orf72[tiab] OR progranulin[tiab]))",
+        "cellular": "(\"Frontotemporal Dementia\"[Mesh] AND (\"von Economo\"[tiab] OR microvacuolation[tiab]))",
+        "circuit": "(\"Frontotemporal Dementia\"[Mesh] AND (\"salience network\"[tiab] OR \"uncinate\"[tiab]))",
+        "regional": "(\"Frontotemporal Dementia\"[Mesh] AND (\"fronto-insular\"[tiab] OR \"anterior cingulate\"[tiab] OR \"temporal pole\"[tiab]))",
+        "systems": "(\"Frontotemporal Dementia\"[Mesh] AND (\"social cognition\"[tiab] OR \"semantic network\"[tiab]))",
+        "cognitive": "(\"Frontotemporal Dementia\"[Mesh] AND (empathy[tiab] OR \"theory of mind\"[tiab] OR semantic[tiab]))",
+        "clinical": "(\"Frontotemporal Dementia\"[Mesh] AND (disinhibition[tiab] OR apathy[tiab] OR aphasia[tiab]))"
+      },
+      "methods": {
+        "molecular": "Genetic screening for C9orf72 repeat expansions, GRN, and MAPT; plasma neurofilament light (NfL) tracking",
+        "cellular": "Von Economo neuron stereological counts, TDP-43 phosphorylated immunohistochemistry",
+        "circuit": "Diffusion tensor imaging (DTI) of uncinate fasciculus and arcuate fasciculus, resting-state fMRI salience network",
+        "regional": "Volumetric MRI demonstrating knife-edge frontotemporal lobar atrophy, 18F-FDG PET frontotemporal hypometabolism",
+        "systems": "Task-based social cognition fMRI (empathy and moral dilemmas), language network functional connectivity",
+        "cognitive": "Social Cognition and Emotional Assessment (Mini-SEA), Boston Naming Test, Pyramids and Palm Trees Test",
+        "clinical": "Frontotemporal Lobar Degeneration-Clinical Dementia Rating (FTLD-CDR), Frontal Behavioral Inventory (FBI)"
+      }
+    },
+    {
+      "id": "hd",
+      "label": "Huntington's Disease",
+      "category": "Neurodegenerative",
+      "entity": "hd-profile",
+      "query": "(\"Huntington Disease\"[Mesh] OR \"Huntington's\"[tiab])",
+      "view": "circuit",
+      "views": [
+        "circuit",
+        "molecules",
+        "scales",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": "Fully penetrant autosomal dominant neurodegenerative disorder caused by an expanded CAG trinucleotide repeat in the HTT gene, characterized by preferential striatal spiny projection neuron loss, motor chorea transitioning to dystonia, executive dementia, and psychiatric disturbance.",
+      "speciesNote": "Human genetic diagnosis (CAG repeat >=36 in HTT), postmortem human striatal single-cell pathology, and rodent knock-in and transgenic models (zQ175, R6/2).",
+      "levelDesc": {
+        "molecular": "CAG repeat expansion in HTT (>36 repeats) encoding mutant huntingtin (mHTT) with toxic polyglutamine tract; tissue-specific somatic CAG expansion driven by mismatch repair enzymes (MSH3, MLH3, FAN1); BDNF transcriptional deficit.",
+        "cellular": "Selective early death of GABAergic medium spiny projection neurons (SPNs), especially striatal enkephalinergic indirect pathway neurons (D2-SPNs), followed by substance P direct pathway neurons (D1-SPNs) and cortical pyramidal neurons.",
+        "circuit": "Loss of striato-external pallidal (GPe) indirect pathway projection causes disinhibition of thalamocortical motor drive producing chorea; later loss of direct striatonigral projections causes hypokinesia and rigidity.",
+        "regional": "Dorsal striatum (caudate and putamen), globus pallidus, subthalamic nucleus, substantia nigra pars reticulata, and cerebral cortex layers V-VI.",
+        "systems": "Corticostriatal motor and associative loops, basal ganglia-thalamocortical motor circuits.",
+        "cognitive": "Executive dysfunction, slowed processing speed, cognitive inflexibility, impaired set-shifting, perseveration, and spatial working memory decline.",
+        "clinical": "Classic triad: chorea, motor impersistence, oculomotor saccadic impairment; progressing to dystonia, rigidity, bradykinesia, dysphagia, depression, irritability, apathy, and progressive dementia."
+      },
+      "levelQueries": {
+        "molecular": "(\"Huntington Disease\"[Mesh] AND (huntingtin[tiab] OR \"CAG repeat\"[tiab] OR \"somatic expansion\"[tiab]))",
+        "cellular": "(\"Huntington Disease\"[Mesh] AND (\"medium spiny\"[tiab] OR \"striatal\"[tiab] OR \"GABAergic\"[tiab]))",
+        "circuit": "(\"Huntington Disease\"[Mesh] AND (\"indirect pathway\"[tiab] OR \"corticostriatal\"[tiab]))",
+        "regional": "(\"Huntington Disease\"[Mesh] AND (\"caudate\"[tiab] OR \"putamen\"[tiab] OR \"globus pallidus\"[tiab]))",
+        "systems": "(\"Huntington Disease\"[Mesh] AND (\"basal ganglia\"[tiab] OR \"motor loop\"[tiab]))",
+        "cognitive": "(\"Huntington Disease\"[Mesh] AND (\"cognitive flexibility\"[tiab] OR \"executive\"[tiab]))",
+        "clinical": "(\"Huntington Disease\"[Mesh] AND (chorea[tiab] OR dystonia[tiab] OR motor[tiab]))"
+      },
+      "methods": {
+        "molecular": "HTT CAG repeat length genetic testing, single-cell DNA repeat sizing, plasma mHTT assays",
+        "cellular": "DARPP-32 and enkephalin/substance P postmortem immunohistochemistry, striatal stereology",
+        "circuit": "Corticostriatal field potential recordings in slice models, optogenetic dissection of D1 vs D2 pathways",
+        "regional": "Volumetric MRI caudate and putamen atrophy (bicaudate ratio), 18F-FDG PET striatal hypometabolism",
+        "systems": "Resting-state fMRI corticostriatal functional connectivity, motor-task fMRI",
+        "cognitive": "Stroop Color and Word Test, Symbol Digit Modalities Test (SDMT), Trail Making Test B",
+        "clinical": "Unified Huntington's Disease Rating Scale (UHDRS) Total Motor Score (TMS), Total Functional Capacity (TFC)"
+      }
+    },
+    {
+      "id": "epilepsy",
+      "label": "Epilepsy",
+      "category": "Epilepsy & seizures",
+      "entity": "epilepsy-profile",
+      "query": "(\"Epilepsy\"[Mesh] OR \"seizure disorder\"[tiab])",
+      "view": "circuit",
+      "views": [
+        "circuit",
+        "molecules",
+        "scales",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": "Neurological disorder defined by an enduring predisposition to generate recurrent unprovoked epileptic seizures, encompassing focal temporal lobe epilepsy with hippocampal sclerosis, absence epilepsy with thalamocortical oscillatory hypersynchrony, and developmental channelopathies.",
+      "speciesNote": "Human intracranial EEG, surgical resected hippocampal tissue, and rodent kainate/pilocarpine status epilepticus and genetic absence epilepsy models (GAERS, WAG/Rij).",
+      "levelDesc": {
+        "molecular": "Voltage-gated sodium channel mutations (SCN1A/Nav1.1 in Dravet syndrome), T-type calcium channel alterations (Cav3.1/Cav3.2), KCC2 chloride transporter downregulation (intracellular chloride accumulation reversing GABAA polarity), and mTOR pathway hyperactivation.",
+        "cellular": "Parvalbumin-positive interneuron hypoactivity, selective hilar mossy cell death, astrocytic Kir4.1 potassium buffering failure, and EAAT2/GLT-1 glutamate transporter downregulation.",
+        "circuit": "Dentate gyrus mossy fiber sprouting establishing recurrent excitatory collateral loops; reciprocal thalamocortical-reticular thalamic (nRT) hyperpolarization-burst firing oscillations.",
+        "regional": "Hippocampal formation (CA1, CA3, dentate gyrus), entorhinal cortex, amygdala, thalamic reticular nucleus, thalamocortical relay nuclei, and neocortex.",
+        "systems": "Hypersynchronous seizure network recruitment and propagation; thalamocortical oscillatory burst networks generating generalized spike-and-wave discharges.",
+        "cognitive": "Interictal episodic memory consolidation failure, accelerated long-term forgetting, transient post-ictal confusion, and executive slowing.",
+        "clinical": "Focal seizures with or without impaired awareness (epigastric aura, deja vu, automatisms), generalized absence seizures (3 Hz spike-wave bursts with behavioral arrest), myoclonic jerks, and generalized tonic-clonic convulsions."
+      },
+      "levelQueries": {
+        "molecular": "(\"Epilepsy\"[Mesh] AND (SCN1A[tiab] OR \"KCC2\"[tiab] OR \"T-type\"[tiab] OR \"GABA\"[tiab]))",
+        "cellular": "(\"Epilepsy\"[Mesh] AND (interneuron[tiab] OR \"mossy fiber\"[tiab] OR astrocyte[tiab] OR Kir4[tiab]))",
+        "circuit": "(\"Epilepsy\"[Mesh] AND (\"thalamocortical\"[tiab] OR \"hippocampal sclerosis\"[tiab] OR synchrony[tiab]))",
+        "regional": "(\"Epilepsy\"[Mesh] AND (hippocampus[tiab] OR \"entorhinal\"[tiab] OR \"thalamus\"[tiab]))",
+        "systems": "(\"Epilepsy\"[Mesh] AND (\"seizure network\"[tiab] OR \"spike-wave\"[tiab]))",
+        "cognitive": "(\"Epilepsy\"[Mesh] AND (\"memory consolidation\"[tiab] OR \"post-ictal\"[tiab]))",
+        "clinical": "(\"Epilepsy\"[Mesh] AND (\"temporal lobe epilepsy\"[tiab] OR absence[tiab] OR seizure[tiab]))"
+      },
+      "methods": {
+        "molecular": "Whole-exome sequencing for channelopathies (SCN1A, SCN2A, KCNQ2), KCC2/NKCC1 western blotting",
+        "cellular": "Timm staining for mossy fiber sprouting, parvalbumin/somatostatin interneuron counts in resected hippocampus",
+        "circuit": "Stereo-EEG (sEEG) intracranial depth electrode mapping of seizure onset zone (SOZ), thalamic unit burst recording",
+        "regional": "High-resolution 3T/7T MRI hippocampal volumetry and T2/FLAIR hyperintensity (hippocampal sclerosis)",
+        "systems": "Video-EEG telemetry capturing 3-Hz spike-and-wave discharges and ictal evolution, MEG source imaging",
+        "cognitive": "Wechsler Memory Scale (WMS-IV), Accelerated Long-Term Forgetting (ALF) testing",
+        "clinical": "International League Against Epilepsy (ILAE) seizure classification, seizure frequency diary"
+      }
+    },
+    {
+      "id": "migraine",
+      "label": "Migraine",
+      "category": "Headache disorders",
+      "entity": "migraine-profile",
+      "query": "(\"Migraine Disorders\"[Mesh] OR \"Migraine\"[tiab])",
+      "view": "circuit",
+      "views": [
+        "circuit",
+        "molecules",
+        "scales",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": "Common disabling neurovascular brain disorder characterized by recurrent throbbing headache attacks, sensory hypersensitivity (photophobia, phonophobia, allodynia), autonomic dysfunction, and in one-third of individuals, transient neurological aura caused by cortical spreading depolarization.",
+      "speciesNote": "Human clinical provocation (CGRP, PACAP infusions) and therapeutic trials (CGRP monoclonal antibodies and gepants); rodent cortical spreading depolarization and trigeminovascular electrophysiology.",
+      "levelDesc": {
+        "molecular": "Calcitonin gene-related peptide (CGRP) and pituitary adenylate cyclase-activating polypeptide (PACAP) release, 5-HT1B/1D/1F receptor modulation, and endothelial nitric oxide signaling.",
+        "cellular": "Trigeminal nociceptive pseudounipolar neuron activation, neurogenic dural vasodilation, and central sensitization of second-order neurons in spinal trigeminal nucleus caudalis.",
+        "circuit": "Trigeminovascular pathway: dural nociceptors → trigeminal ganglion → trigeminocervical complex (TCC) → ventral posteromedial (VPM) thalamus → primary somatosensory cortex and insula; modulated by periaqueductal gray (PAG) and hypothalamic projections.",
+        "regional": "Trigeminal ganglion, trigeminocervical complex (sp5/C1-C2), hypothalamus, periaqueductal gray (PAG), thalamus (VPM/posterior), and visual occipital cortex.",
+        "systems": "Trigeminovascular pain transmission system, descending antinociceptive control network (PAG-RVM), hypothalamic circadian/homeostatic network, and cortical spreading depolarization wave.",
+        "cognitive": "Sensory hypersensitivity processing, attack-related executive slowing ('migraine fog'), allodynic spatial mapping, and premonitory mood alterations.",
+        "clinical": "Unilateral throbbing moderate-to-severe headache aggravated by routine physical activity, photophobia, phonophobia, nausea/vomiting, cutaneous allodynia, visual/sensory aura, and premonitory fatigue and yawning."
+      },
+      "levelQueries": {
+        "molecular": "(\"Migraine Disorders\"[Mesh] AND (CGRP[tiab] OR PACAP[tiab] OR serotonin[tiab]))",
+        "cellular": "(\"Migraine Disorders\"[Mesh] AND (\"trigeminal ganglion\"[tiab] OR \"sensitization\"[tiab]))",
+        "circuit": "(\"Migraine Disorders\"[Mesh] AND (\"trigeminovascular\"[tiab] OR \"trigeminocervical\"[tiab]))",
+        "regional": "(\"Migraine Disorders\"[Mesh] AND (\"periaqueductal gray\"[tiab] OR \"hypothalamus\"[tiab] OR \"thalamus\"[tiab]))",
+        "systems": "(\"Migraine Disorders\"[Mesh] AND (\"spreading depolarization\"[tiab] OR \"pain modulation\"[tiab]))",
+        "cognitive": "(\"Migraine Disorders\"[Mesh] AND (photophobia[tiab] OR allodynia[tiab]))",
+        "clinical": "(\"Migraine Disorders\"[Mesh] AND (headache[tiab] OR aura[tiab]))"
+      },
+      "methods": {
+        "molecular": "Plasma and jugular venous CGRP immunoassay during attacks, human CGRP infusion provocation",
+        "cellular": "Extracellular microelectrode recording of spinal trigeminal nucleus caudalis (TNC) wide dynamic range neurons",
+        "circuit": "Optical intrinsic signal imaging and direct-current potential shifts during cortical spreading depolarization",
+        "regional": "High-resolution brainstem fMRI of trigeminocervical complex and periaqueductal gray (PAG)",
+        "systems": "Resting-state and visual stimulation fMRI demonstrating thalamocortical hypersensitivity and hypothalamic premonitory activation",
+        "cognitive": "Quantitative sensory testing (QST) for mechanical and thermal cutaneous allodynia, photophobia threshold testing",
+        "clinical": "International Classification of Headache Disorders (ICHD-3) criteria, Headache Impact Test (HIT-6)"
+      }
+    },
+    {
+      "id": "ms",
+      "label": "Multiple Sclerosis",
+      "category": "Neuroimmunological",
+      "entity": "ms-profile",
+      "query": "(\"Multiple Sclerosis\"[Mesh] OR \"MS\"[tiab])",
+      "view": "circuit",
+      "views": [
+        "circuit",
+        "molecules",
+        "scales",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": "Chronic immune-mediated inflammatory demyelinating disease of the central nervous system, characterized by autoreactive lymphocytes crossing the blood-brain barrier, oligodendrocyte destruction, multifocal white and gray matter sclerotic plaques, and progressive neuroaxonal transection.",
+      "speciesNote": "Human clinical diagnosis (McDonald criteria), MRI lesion dissemination in space and time, CSF oligoclonal bands, and experimental autoimmune encephalomyelitis (EAE) animal models.",
+      "levelDesc": {
+        "molecular": "Myelin autoreactive CD4+ (Th1, Th17) and CD8+ T cells, B-cell intrathecal synthesis of oligoclonal IgG, CXCL13-CXCR5 and BAFF lymphoid-organizing chemokines, and Epstein-Barr virus (EBV) etiological triggering.",
+        "cellular": "Oligodendrocyte apoptosis and myelin destruction, active microglial nodule formation, astrocytic gliosis (sclerotic plaques), and compartmentalized meningeal tertiary lymphoid follicle persistence.",
+        "circuit": "Loss of myelin saltatory conduction causing axonal conduction slowing and conduction block, compensatory redistribution of axonal sodium channels (Nav1.2/Nav1.6), and chronic energy crisis leading to axonal transection.",
+        "regional": "Optic nerves, periventricular and juxtacortical white matter, corpus callosum, brainstem, cerebellar peduncles, and cervical/thoracic spinal cord white matter tracts.",
+        "systems": "Visual pathways, corticospinal motor tracts, dorsal column-medial lemniscal sensory tracts, and distributed inter-hemispheric white matter association networks.",
+        "cognitive": "Information processing speed slowing, sustained attention fatigue, working memory retrieval decline, and executive dysfunction.",
+        "clinical": "Optic neuritis (painful unilateral vision loss), sensory paresthesias and Lhermitte sign, spastic paraparesis, cerebellar ataxia and intention tremor, neurogenic bladder, central fatigue, and relapsing-remitting or progressive disability accumulation."
+      },
+      "levelQueries": {
+        "molecular": "(\"Multiple Sclerosis\"[Mesh] AND (myelin[tiab] OR oligoclonal[tiab] OR \"Epstein-Barr\"[tiab] OR CXCL13[tiab]))",
+        "cellular": "(\"Multiple Sclerosis\"[Mesh] AND (oligodendrocyte[tiab] OR demyelination[tiab] OR microglia[tiab]))",
+        "circuit": "(\"Multiple Sclerosis\"[Mesh] AND (\"conduction block\"[tiab] OR \"axonal loss\"[tiab]))",
+        "regional": "(\"Multiple Sclerosis\"[Mesh] AND (\"optic nerve\"[tiab] OR \"spinal cord\"[tiab] OR \"periventricular\"[tiab]))",
+        "systems": "(\"Multiple Sclerosis\"[Mesh] AND (\"corticospinal\"[tiab] OR \"visual pathway\"[tiab]))",
+        "cognitive": "(\"Multiple Sclerosis\"[Mesh] AND (\"processing speed\"[tiab] OR \"cognitive fatigue\"[tiab]))",
+        "clinical": "(\"Multiple Sclerosis\"[Mesh] AND (relapse[tiab] OR \"optic neuritis\"[tiab] OR disability[tiab]))"
+      },
+      "methods": {
+        "molecular": "CSF isoelectric focusing for oligoclonal bands, serum anti-EBNA-1 titers, serum neurofilament light chain (sNfL)",
+        "cellular": "Luxol fast blue myelin histology, CD3/CD20/Iba1 immunohistochemistry of active vs chronic silent lesions",
+        "circuit": "Visual evoked potentials (VEP P100 latency delay), motor evoked potentials (MEP central motor conduction time)",
+        "regional": "Brain and spinal cord MRI (FLAIR, T2, gadolinium-enhancing T1 lesions, central vein sign, paramagnetic rim lesions)",
+        "systems": "Diffusion tensor imaging (DTI) fractional anisotropy of white matter tracts, resting-state fMRI network efficiency",
+        "cognitive": "Symbol Digit Modalities Test (SDMT), Paced Auditory Serial Addition Test (PASAT), California Verbal Learning Test",
+        "clinical": "Expanded Disability Status Scale (EDSS), Multiple Sclerosis Functional Composite (MSFC)"
+      }
+    },
+    {
+      "id": "tbi",
+      "label": "Traumatic Brain Injury",
+      "category": "Neurotrauma",
+      "entity": "tbi-profile",
+      "query": "(\"Brain Injuries, Traumatic\"[Mesh] OR \"Traumatic Brain Injury\"[tiab] OR \"TBI\"[tiab])",
+      "view": "circuit",
+      "views": [
+        "circuit",
+        "molecules",
+        "scales",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": "Biomechanically induced structural and physiological brain damage caused by external forces (impact, blast, rapid deceleration), initiating acute mechanical tissue deformation and triggering a secondary cascade of excitotoxicity, metabolic crisis, neuroinflammation, and traumatic axonal injury.",
+      "speciesNote": "Human clinical classification (Glasgow Coma Scale: mild, moderate, severe; acute vs chronic), neuroimaging; rodent controlled cortical impact, fluid percussion, and blast models.",
+      "levelDesc": {
+        "molecular": "Massive extracellular potassium efflux and intracellular calcium influx, glutamate excitotoxicity, mitochondrial calcium overload and ROS production, calpain/caspase proteolysis, and neurofilament light chain (NfL) release.",
+        "cellular": "Traumatic axonal injury (TAI) with axoplasmic transport disruption and retraction bulb formation, reactive microgliosis, astrocytic scar formation, and blood-brain barrier endothelial breakdown.",
+        "circuit": "Diffuse axonal shearing across subcortical white matter tracts, disruption of cholinergic basal forebrain and monoaminergic ascending arousal inputs, and persistent circuit hyperexcitability.",
+        "regional": "Orbitofrontal and anterior temporal cortical contusions (coup/contrecoup), corpus callosum, dorsolateral brainstem, and hippocampus.",
+        "systems": "Default mode network and central executive network functional disconnection, ascending reticular activating system (ARAS) disruption.",
+        "cognitive": "Information processing speed deceleration, sustained attention lapses, working memory deficits, post-traumatic amnesia, and executive dysfunction.",
+        "clinical": "Acute loss or alteration of consciousness, post-traumatic amnesia, headache, dizziness/vestibular symptoms, photophobia, cognitive fatigue, emotional lability, and chronic post-concussion symptoms."
+      },
+      "levelQueries": {
+        "molecular": "(\"Brain Injuries, Traumatic\"[Mesh] AND (calpain[tiab] OR \"excitotoxicity\"[tiab] OR \"neurofilament\"[tiab]))",
+        "cellular": "(\"Brain Injuries, Traumatic\"[Mesh] AND (\"traumatic axonal injury\"[tiab] OR \"retraction ball\"[tiab] OR microglia[tiab]))",
+        "circuit": "(\"Brain Injuries, Traumatic\"[Mesh] AND (\"white matter\"[tiab] OR \"disconnection\"[tiab]))",
+        "regional": "(\"Brain Injuries, Traumatic\"[Mesh] AND (\"corpus callosum\"[tiab] OR \"frontal\"[tiab] OR \"temporal\"[tiab]))",
+        "systems": "(\"Brain Injuries, Traumatic\"[Mesh] AND (\"default mode\"[tiab] OR \"processing speed\"[tiab]))",
+        "cognitive": "(\"Brain Injuries, Traumatic\"[Mesh] AND (\"post-traumatic amnesia\"[tiab] OR attention[tiab]))",
+        "clinical": "(\"Brain Injuries, Traumatic\"[Mesh] AND (concussion[tiab] OR \"post-concussion\"[tiab]))"
+      },
+      "methods": {
+        "molecular": "Serum GFAP, UCH-L1, and neurofilament light chain (NfL) ELISA assays, microdialysis glutamate measurement",
+        "cellular": "Amyloid precursor protein (APP) immunohistochemical staining for axonal retraction bulbs, Iba1 microglial density",
+        "circuit": "Diffusion tensor imaging (DTI) and tractography demonstrating reduced fractional anisotropy in corpus callosum and uncinate",
+        "regional": "High-resolution susceptibility-weighted imaging (SWI) for microhemorrhages, CT for acute contusions",
+        "systems": "Resting-state fMRI executive and default mode network connectivity, EEG quantitative power spectral analysis",
+        "cognitive": "Automated Neuropsychological Assessment Metrics (ANAM), continuous performance tests, Galveston Orientation and Amnesia Test",
+        "clinical": "Glasgow Coma Scale (GCS), Rivermead Post-Concussion Symptoms Questionnaire (RPQ)"
+      }
+    },
+    {
+      "id": "narcolepsy",
+      "label": "Narcolepsy",
+      "category": "Sleep disorders",
+      "entity": "narcolepsy-profile",
+      "query": "(\"Narcolepsy\"[Mesh] OR \"Narcolepsy\"[tiab])",
+      "view": "circuit",
+      "views": [
+        "circuit",
+        "molecules",
+        "scales",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": "Chronic neurological sleep-wake disorder defined by severe excessive daytime sleepiness, nocturnal sleep fragmentation, and REM sleep intrusion into wakefulness; type 1 (NT1) is caused by selective autoimmune destruction of lateral hypothalamic orexin/hypocretin neurons resulting in pathognomonic cataplexy.",
+      "speciesNote": "Human clinical diagnosis (ICSD-3 criteria), low CSF orexin-A (<=110 pg/mL in NT1), and HLA-DQB1*06:02 genotyping; prepro-orexin knockout, orexin-ataxin-3 ablation, and orexin receptor mutant animal models.",
+      "levelDesc": {
+        "molecular": "Severe depletion of orexin-A (hypocretin-1) and orexin-B peptides, HCRTR1/OX1R and HCRTR2/OX2R receptor loss of drive, strong genetic association with HLA-DQB1*06:02, and loss of glutamate/dynorphin cotransmission.",
+        "cellular": "Selective autoimmune destruction of ~70,000 orexin/hypocretin-synthesizing neurons in lateral/perifornical hypothalamus, with sparing of intermingled melanin-concentrating hormone (MCH) neurons.",
+        "circuit": "Loss of lateral hypothalamic orexinergic excitatory stabilization to monoaminergic and cholinergic wake centers (LC, TMN, dorsal raphe, basal forebrain); disinhibition of amygdala-driven REM atonia via vlPAG/LPT and sublaterodorsal (SLD) pathways causing cataplexy.",
+        "regional": "Lateral and perifornical hypothalamus, tuberomammillary nucleus (TMN), locus coeruleus (LC), dorsal raphe nucleus, ventrolateral periaqueductal gray (vlPAG), sublaterodorsal nucleus (SLD), and amygdala.",
+        "systems": "Ascending reticular activating system, hypothalamic sleep-wake flip-flop switch stabilization, and emotional-motor brainstem REM atonia gating circuitry.",
+        "cognitive": "Sustained attention lapses ('micro-sleeps'), cognitive fatigue, vigilance instability, and task disengagement.",
+        "clinical": "Excessive daytime sleepiness (EDS) with uncontrollable sleep attacks, cataplexy (sudden emotion-triggered loss of muscle tone with preserved consciousness), sleep paralysis, hypnagogic/hypnopompic hallucinations, and disrupted nocturnal sleep."
+      },
+      "levelQueries": {
+        "molecular": "(\"Narcolepsy\"[Mesh] AND (orexin[tiab] OR hypocretin[tiab] OR \"HLA-DQB1\"[tiab]))",
+        "cellular": "(\"Narcolepsy\"[Mesh] AND (\"orexin neuron\"[tiab] OR \"hypocretin neuron\"[tiab]))",
+        "circuit": "(\"Narcolepsy\"[Mesh] AND (\"cataplexy\"[tiab] OR \"sublaterodorsal\"[tiab] OR \"locus coeruleus\"[tiab]))",
+        "regional": "(\"Narcolepsy\"[Mesh] AND (\"lateral hypothalamus\"[tiab] OR \"tuberomammillary\"[tiab]))",
+        "systems": "(\"Narcolepsy\"[Mesh] AND (\"ascending arousal\"[tiab] OR \"flip-flop\"[tiab]))",
+        "cognitive": "(\"Narcolepsy\"[Mesh] AND (vigilance[tiab] OR \"sleepiness\"[tiab]))",
+        "clinical": "(\"Narcolepsy\"[Mesh] AND (cataplexy[tiab] OR \"sleep paralysis\"[tiab]))"
+      },
+      "methods": {
+        "molecular": "CSF orexin-A (hypocretin-1) radioimmunoassay (<110 pg/mL diagnostic for NT1), HLA-DQB1*06:02 allele typing",
+        "cellular": "Postmortem orexin and MCH immunohistochemistry, autoreactive CD4+ and CD8+ T-cell receptor sequencing",
+        "circuit": "Optogenetic and chemogenetic stimulation of lateral hypothalamic orexin projections to locus coeruleus and TMN",
+        "regional": "High-resolution hypothalamic MRI volumetry, PET imaging of orexin receptor occupancy",
+        "systems": "Overnight Polysomnography (PSG) and Multiple Sleep Latency Test (MSLT; mean sleep latency <8 min with >=2 SOREMPs)",
+        "cognitive": "Psychomotor Vigilance Task (PVT; sustained attention and lapse frequency), Maintenance of Wakefulness Test (MWT)",
+        "clinical": "Epworth Sleepiness Scale (ESS), Stanford Cataplexy Questionnaire"
+      }
     }
   ],
   "methods": {
@@ -16176,6 +16626,791 @@
         "bulik2022"
       ],
       "region": "binge-eating"
+    },
+    {
+      "id": "ad-profile",
+      "name": "Alzheimer's disease profile",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "memory",
+        "spatial",
+        "executive"
+      ],
+      "summary": "Progressive neurodegenerative dementia featuring progressive amnesia, executive decline, and entorhinal-hippocampal disconnection (human; review).",
+      "refs": [
+        "zhang2024ad",
+        "bookshelf2020ad"
+      ],
+      "region": "ad"
+    },
+    {
+      "id": "ad-abeta-tau-pathology",
+      "name": "Amyloid-β & tau cascade",
+      "level": "molecular",
+      "kind": "mechanism",
+      "domains": [
+        "memory",
+        "architecture"
+      ],
+      "summary": "Synergistic extracellular amyloid-β oligomer toxicity and hyperphosphorylated tau paired helical filament aggregation.",
+      "refs": [
+        "zhang2024ad"
+      ],
+      "region": "ad"
+    },
+    {
+      "id": "ad-cholinergic-degeneration",
+      "name": "Basal forebrain cholinergic loss",
+      "level": "cellular",
+      "kind": "mechanism",
+      "domains": [
+        "memory",
+        "learning"
+      ],
+      "summary": "Degeneration of cholinergic projection neurons in nucleus basalis of Meynert and medial septum causing cortical and hippocampal denervation.",
+      "refs": [
+        "bookshelf2020ad"
+      ],
+      "region": "ad"
+    },
+    {
+      "id": "ad-entorhinal-hippocampal-disconnection",
+      "name": "Entorhinal-hippocampal disconnection",
+      "level": "circuit",
+      "kind": "circuit",
+      "domains": [
+        "memory",
+        "spatial"
+      ],
+      "summary": "Perforant path breakdown disconnecting entorhinal grid cell inputs from hippocampal dentate gyrus and CA1 place fields.",
+      "refs": [
+        "zhang2024ad",
+        "bookshelf2020ad"
+      ],
+      "region": "ad"
+    },
+    {
+      "id": "ad-episodic-amnesia",
+      "name": "Episodic amnesia & disorientation",
+      "level": "cognitive",
+      "kind": "function",
+      "domains": [
+        "memory",
+        "spatial"
+      ],
+      "summary": "Impaired delayed recall, inability to encode new episodic representations, and loss of topographical orientation.",
+      "refs": [
+        "bookshelf2020ad"
+      ],
+      "region": "ad"
+    },
+    {
+      "id": "pd-profile",
+      "name": "Parkinson's disease profile",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "motor",
+        "executive"
+      ],
+      "summary": "Neurodegenerative disorder with cardinal bradykinesia, rigidity, rest tremor, and dopamine denervation (human; review).",
+      "refs": [
+        "kouli2018",
+        "zheng2017pd",
+        "ma2023synuclein"
+      ],
+      "region": "pd"
+    },
+    {
+      "id": "pd-synuclein-pathology",
+      "name": "α-Synuclein Lewy pathology",
+      "level": "molecular",
+      "kind": "mechanism",
+      "domains": [
+        "motor",
+        "architecture"
+      ],
+      "summary": "Toxic oligomerization and intracellular fibrillar Lewy body/neurite deposition of alpha-synuclein.",
+      "refs": [
+        "ma2023synuclein"
+      ],
+      "region": "pd"
+    },
+    {
+      "id": "pd-nigrostriatal-denervation",
+      "name": "Nigrostriatal dopaminergic denervation",
+      "level": "cellular",
+      "kind": "mechanism",
+      "domains": [
+        "motor",
+        "reward"
+      ],
+      "summary": "Loss of A9 dopaminergic projection neurons in substantia nigra pars compacta projecting to dorsal putamen.",
+      "refs": [
+        "kouli2018",
+        "zheng2017pd"
+      ],
+      "region": "pd"
+    },
+    {
+      "id": "pd-stn-pallidal-hyperactivity",
+      "name": "Subthalamic-pallidal hyperactivity",
+      "level": "circuit",
+      "kind": "circuit",
+      "domains": [
+        "motor",
+        "timing"
+      ],
+      "summary": "Disinhibition of subthalamic nucleus and GPi driving pathological 13-30 Hz beta oscillations.",
+      "refs": [
+        "zheng2017pd"
+      ],
+      "region": "pd"
+    },
+    {
+      "id": "pd-bradykinesia-rigidity",
+      "name": "Bradykinesia, rigidity & tremor",
+      "level": "clinical",
+      "kind": "function",
+      "domains": [
+        "motor"
+      ],
+      "summary": "Poverty and slowness of voluntary movement, lead-pipe/cogwheel rigidity, and 4-6 Hz rest tremor.",
+      "refs": [
+        "kouli2018"
+      ],
+      "region": "pd"
+    },
+    {
+      "id": "dlb-profile",
+      "name": "Dementia with Lewy bodies profile",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "executive",
+        "sensory",
+        "motor"
+      ],
+      "summary": "Synucleinopathy with cognitive fluctuations, formed visual hallucinations, REM sleep behavior disorder, and parkinsonism (human; review).",
+      "refs": [
+        "mckeith2017",
+        "yamada2020"
+      ],
+      "region": "dlb"
+    },
+    {
+      "id": "dlb-lewy-pathology",
+      "name": "Cortical Lewy bodies & neurites",
+      "level": "molecular",
+      "kind": "mechanism",
+      "domains": [
+        "architecture",
+        "sensory"
+      ],
+      "summary": "Alpha-synuclein inclusions distributed in neocortical, limbic, and brainstem neurons.",
+      "refs": [
+        "mckeith2017"
+      ],
+      "region": "dlb"
+    },
+    {
+      "id": "dlb-cholinergic-deficit",
+      "name": "Severe basal forebrain cholinergic deficit",
+      "level": "cellular",
+      "kind": "mechanism",
+      "domains": [
+        "sensory",
+        "executive"
+      ],
+      "summary": "Profound loss of cholinergic projection neurons in nucleus basalis of Meynert depriving visual and parietal cortices.",
+      "refs": [
+        "yamada2020"
+      ],
+      "region": "dlb"
+    },
+    {
+      "id": "dlb-visual-network-dysfunction",
+      "name": "Visual association network dysregulation",
+      "level": "circuit",
+      "kind": "circuit",
+      "domains": [
+        "sensory",
+        "executive"
+      ],
+      "summary": "Occipitoparietal hypometabolism and visual cortical de-afferentation generating recurrent formed hallucinations.",
+      "refs": [
+        "yamada2020",
+        "mckeith2017"
+      ],
+      "region": "dlb"
+    },
+    {
+      "id": "dlb-cognitive-fluctuations",
+      "name": "Cognitive fluctuations & hallucinations",
+      "level": "cognitive",
+      "kind": "function",
+      "domains": [
+        "sensory",
+        "executive"
+      ],
+      "summary": "Periodic episodes of disorientation, staring spells, attentional lapses, and vivid formed visual perceptions.",
+      "refs": [
+        "mckeith2017"
+      ],
+      "region": "dlb"
+    },
+    {
+      "id": "ftd-profile",
+      "name": "Frontotemporal dementia profile",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "social",
+        "executive",
+        "language"
+      ],
+      "summary": "Frontotemporal lobar degeneration spectrum with behavioral disinhibition, apathy, and language syndromes (human; review).",
+      "refs": [
+        "bang2016ftd",
+        "paterno2023ftd",
+        "kamal2024ftd"
+      ],
+      "region": "ftd"
+    },
+    {
+      "id": "ftd-tdp43-tau-pathology",
+      "name": "TDP-43 & tau inclusions",
+      "level": "molecular",
+      "kind": "mechanism",
+      "domains": [
+        "social",
+        "architecture"
+      ],
+      "summary": "Cytoplasmic aggregation of hyperphosphorylated TDP-43, tau, or FUS with nuclear TDP-43 clearance.",
+      "refs": [
+        "paterno2023ftd"
+      ],
+      "region": "ftd"
+    },
+    {
+      "id": "ftd-von-economo-loss",
+      "name": "Fronto-insular Von Economo neuron loss",
+      "level": "cellular",
+      "kind": "mechanism",
+      "domains": [
+        "social",
+        "emotion"
+      ],
+      "summary": "Selective early death of spindle-shaped Von Economo neurons in anterior insula and anterior cingulate cortex.",
+      "refs": [
+        "bang2016ftd"
+      ],
+      "region": "ftd"
+    },
+    {
+      "id": "ftd-salience-disconnection",
+      "name": "Salience network degradation",
+      "level": "circuit",
+      "kind": "circuit",
+      "domains": [
+        "social",
+        "executive"
+      ],
+      "summary": "Disconnection of anterior insula and anterior cingulate hubs mediating social norm processing and empathy.",
+      "refs": [
+        "bang2016ftd",
+        "paterno2023ftd"
+      ],
+      "region": "ftd"
+    },
+    {
+      "id": "ftd-social-disinhibition",
+      "name": "Social disinhibition & apathy",
+      "level": "cognitive",
+      "kind": "function",
+      "domains": [
+        "social",
+        "executive"
+      ],
+      "summary": "Loss of social manners, inappropriate familiarities, blunted empathy, apathy, and stereotyped behaviors.",
+      "refs": [
+        "bang2016ftd"
+      ],
+      "region": "ftd"
+    },
+    {
+      "id": "hd-profile",
+      "name": "Huntington's disease profile",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "motor",
+        "executive"
+      ],
+      "summary": "Autosomal dominant neurodegeneration with chorea, striatal spiny projection neuron loss, and executive decline (human; review).",
+      "refs": [
+        "donaldson2026hd",
+        "handsaker2025hd",
+        "raymond2011hd"
+      ],
+      "region": "hd"
+    },
+    {
+      "id": "hd-mhtt-somatic-expansion",
+      "name": "Mutant HTT & somatic expansion",
+      "level": "molecular",
+      "kind": "mechanism",
+      "domains": [
+        "motor",
+        "architecture"
+      ],
+      "summary": "Expanded CAG repeat encoding polyglutamine mHTT, with somatic repeat instability driven by mismatch repair enzymes.",
+      "refs": [
+        "donaldson2026hd",
+        "handsaker2025hd"
+      ],
+      "region": "hd"
+    },
+    {
+      "id": "hd-indirect-spn-degeneration",
+      "name": "Indirect pathway SPN degeneration",
+      "level": "cellular",
+      "kind": "mechanism",
+      "domains": [
+        "motor",
+        "learning"
+      ],
+      "summary": "Preferential early vulnerability and loss of D2-receptor expressing enkephalinergic medium spiny projection neurons.",
+      "refs": [
+        "handsaker2025hd",
+        "raymond2011hd"
+      ],
+      "region": "hd"
+    },
+    {
+      "id": "hd-striatopallidal-disinhibition",
+      "name": "Striato-pallidal indirect loop disinhibition",
+      "level": "circuit",
+      "kind": "circuit",
+      "domains": [
+        "motor",
+        "timing"
+      ],
+      "summary": "Loss of striato-external pallidal inhibition leading to excessive thalamocortical motor excitation.",
+      "refs": [
+        "raymond2011hd"
+      ],
+      "region": "hd"
+    },
+    {
+      "id": "hd-chorea-motor-impairment",
+      "name": "Chorea & motor impersistence",
+      "level": "clinical",
+      "kind": "function",
+      "domains": [
+        "motor"
+      ],
+      "summary": "Involuntary continuous choreiform jerking, motor impersistence (tongue protrusion, milkmaid's grip), and saccadic initiation failure.",
+      "refs": [
+        "donaldson2026hd"
+      ],
+      "region": "hd"
+    },
+    {
+      "id": "epilepsy-profile",
+      "name": "Epilepsy profile",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "sensory",
+        "motor",
+        "timing"
+      ],
+      "summary": "Enduring predisposition to unprovoked epileptic seizures spanning focal temporal, absence, and channelopathy networks (human; review).",
+      "refs": [
+        "jaspers2024epilepsy",
+        "catterall2012scn1a",
+        "cheong2014ttype",
+        "paz2020thalamic"
+      ],
+      "region": "epilepsy"
+    },
+    {
+      "id": "epilepsy-channelopathy-chloride",
+      "name": "Channelopathy & chloride reversal",
+      "level": "molecular",
+      "kind": "mechanism",
+      "domains": [
+        "sensory",
+        "motor"
+      ],
+      "summary": "SCN1A interneuron loss-of-function, T-type Cav3 enhancement, and KCC2 downregulation altering GABAA reversal potential.",
+      "refs": [
+        "catterall2012scn1a",
+        "cheong2014ttype"
+      ],
+      "region": "epilepsy"
+    },
+    {
+      "id": "epilepsy-interneuron-hypoactivity",
+      "name": "Inhibitory interneuron hypoactivity & sprouting",
+      "level": "cellular",
+      "kind": "mechanism",
+      "domains": [
+        "timing",
+        "architecture"
+      ],
+      "summary": "Parvalbumin interneuron firing impairment, mossy fiber sprouting, and impaired astrocytic potassium buffering.",
+      "refs": [
+        "catterall2012scn1a",
+        "jaspers2024epilepsy"
+      ],
+      "region": "epilepsy"
+    },
+    {
+      "id": "epilepsy-thalamocortical-synchrony",
+      "name": "Thalamocortical oscillatory hypersynchrony",
+      "level": "circuit",
+      "kind": "circuit",
+      "domains": [
+        "timing",
+        "sensory"
+      ],
+      "summary": "Reciprocal burst firing between thalamic relay and reticular thalamic neurons driving generalized spike-and-wave rhythm.",
+      "refs": [
+        "cheong2014ttype",
+        "paz2020thalamic"
+      ],
+      "region": "epilepsy"
+    },
+    {
+      "id": "epilepsy-seizure-predisposition",
+      "name": "Recurrent unprovoked seizures",
+      "level": "clinical",
+      "kind": "function",
+      "domains": [
+        "sensory",
+        "motor"
+      ],
+      "summary": "Ictal paroxysms including focal sensory/experiential auras, absence behavioral arrests, and convulsive seizures.",
+      "refs": [
+        "jaspers2024epilepsy"
+      ],
+      "region": "epilepsy"
+    },
+    {
+      "id": "migraine-profile",
+      "name": "Migraine profile",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "sensory",
+        "homeostasis"
+      ],
+      "summary": "Disorder of sensory processing featuring recurrent throbbing headache, photophobia, allodynia, and aura (human; review).",
+      "refs": [
+        "goadsby2017migraine",
+        "edvinsson2018cgrp"
+      ],
+      "region": "migraine"
+    },
+    {
+      "id": "migraine-cgrp-trigeminal",
+      "name": "CGRP release & trigeminal activation",
+      "level": "molecular",
+      "kind": "mechanism",
+      "domains": [
+        "sensory",
+        "homeostasis"
+      ],
+      "summary": "Peripheral release of calcitonin gene-related peptide from perivascular trigeminal sensory nerve endings.",
+      "refs": [
+        "edvinsson2018cgrp",
+        "goadsby2017migraine"
+      ],
+      "region": "migraine"
+    },
+    {
+      "id": "migraine-central-sensitization",
+      "name": "Central trigeminocervical sensitization",
+      "level": "cellular",
+      "kind": "mechanism",
+      "domains": [
+        "sensory"
+      ],
+      "summary": "Sensitization of second-order nociceptive neurons in spinal trigeminal nucleus caudalis and dorsal horn.",
+      "refs": [
+        "goadsby2017migraine"
+      ],
+      "region": "migraine"
+    },
+    {
+      "id": "migraine-trigeminovascular-transmission",
+      "name": "Trigeminovascular thalamocortical transmission",
+      "level": "circuit",
+      "kind": "circuit",
+      "domains": [
+        "sensory"
+      ],
+      "summary": "Ascending trigeminothalamic projection to posterior and VPM thalamus radiating to insular and somatosensory cortex.",
+      "refs": [
+        "goadsby2017migraine"
+      ],
+      "region": "migraine"
+    },
+    {
+      "id": "migraine-headache-allodynia",
+      "name": "Throbbing headache & allodynia",
+      "level": "clinical",
+      "kind": "function",
+      "domains": [
+        "sensory"
+      ],
+      "summary": "Severe pulsating cranial pain, cephalic and extracephalic cutaneous allodynia, photophobia, and phonophobia.",
+      "refs": [
+        "goadsby2017migraine"
+      ],
+      "region": "migraine"
+    },
+    {
+      "id": "ms-profile",
+      "name": "Multiple sclerosis profile",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "motor",
+        "sensory",
+        "architecture"
+      ],
+      "summary": "Immune-mediated CNS inflammatory demyelination and neuroaxonal injury causing relapsing or progressive disability (human; review).",
+      "refs": [
+        "kee2022ms",
+        "bjornevik2022ebv",
+        "voet2023microglia",
+        "dobson2025ms"
+      ],
+      "region": "ms"
+    },
+    {
+      "id": "ms-ebv-autoimmune-trigger",
+      "name": "EBV trigger & autoreactive lymphocytes",
+      "level": "molecular",
+      "kind": "mechanism",
+      "domains": [
+        "architecture"
+      ],
+      "summary": "Epstein-Barr virus triggering and activation of autoreactive T and B cells targeting myelin epitopes.",
+      "refs": [
+        "bjornevik2022ebv",
+        "kee2022ms"
+      ],
+      "region": "ms"
+    },
+    {
+      "id": "ms-oligodendrocyte-demyelination",
+      "name": "Oligodendrocyte loss & plaque formation",
+      "level": "cellular",
+      "kind": "mechanism",
+      "domains": [
+        "motor",
+        "sensory"
+      ],
+      "summary": "Perivenular inflammatory destruction of myelin sheaths, oligodendrocyte apoptosis, and reactive astrogliosis.",
+      "refs": [
+        "voet2023microglia",
+        "kee2022ms"
+      ],
+      "region": "ms"
+    },
+    {
+      "id": "ms-axonal-conduction-block",
+      "name": "Axonal conduction block & transection",
+      "level": "circuit",
+      "kind": "circuit",
+      "domains": [
+        "motor",
+        "sensory"
+      ],
+      "summary": "Loss of saltatory conduction, refractory conduction slowing, and chronic energy failure causing axonal transection.",
+      "refs": [
+        "dobson2025ms",
+        "kee2022ms"
+      ],
+      "region": "ms"
+    },
+    {
+      "id": "ms-neurological-disability",
+      "name": "Multifocal neurological disability",
+      "level": "clinical",
+      "kind": "function",
+      "domains": [
+        "motor",
+        "sensory"
+      ],
+      "summary": "Optic neuritis, spastic paraparesis, ataxia, sensory loss, central fatigue, and progressive disability accumulation.",
+      "refs": [
+        "dobson2025ms"
+      ],
+      "region": "ms"
+    },
+    {
+      "id": "tbi-profile",
+      "name": "Traumatic brain injury profile",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "executive",
+        "memory",
+        "motor"
+      ],
+      "summary": "Biomechanically induced primary mechanical injury and secondary neurochemical cascade causing acute and persistent deficits (human; review).",
+      "refs": [
+        "ng2019tbi",
+        "morganti2023tbi",
+        "bja2017tbi"
+      ],
+      "region": "tbi"
+    },
+    {
+      "id": "tbi-excitotoxic-cascade",
+      "name": "Ionic flux & excitotoxic cascade",
+      "level": "molecular",
+      "kind": "mechanism",
+      "domains": [
+        "homeostasis",
+        "executive"
+      ],
+      "summary": "Massive potassium efflux, glutamate release, calcium overload, calpain activation, and metabolic crisis.",
+      "refs": [
+        "ng2019tbi",
+        "bja2017tbi"
+      ],
+      "region": "tbi"
+    },
+    {
+      "id": "tbi-traumatic-axonal-injury",
+      "name": "Traumatic axonal injury & microgliosis",
+      "level": "cellular",
+      "kind": "mechanism",
+      "domains": [
+        "architecture",
+        "executive"
+      ],
+      "summary": "Axonal cytoskeleton disruption, axoplasmic transport failure, retraction bulbs, and reactive neuroinflammation.",
+      "refs": [
+        "ng2019tbi",
+        "morganti2023tbi"
+      ],
+      "region": "tbi"
+    },
+    {
+      "id": "tbi-white-matter-disconnection",
+      "name": "Diffuse white matter tract disconnection",
+      "level": "circuit",
+      "kind": "circuit",
+      "domains": [
+        "executive",
+        "timing"
+      ],
+      "summary": "Mechanical shearing of corpus callosum, frontoparietal, and brainstem arousal tracts impairing signal propagation.",
+      "refs": [
+        "ng2019tbi"
+      ],
+      "region": "tbi"
+    },
+    {
+      "id": "tbi-cognitive-somatic-syndrome",
+      "name": "Post-traumatic cognitive-somatic syndrome",
+      "level": "clinical",
+      "kind": "function",
+      "domains": [
+        "executive",
+        "memory"
+      ],
+      "summary": "Processing speed deceleration, sustained attention lapses, memory deficits, headache, dizziness, and cognitive fatigue.",
+      "refs": [
+        "ng2019tbi",
+        "bja2017tbi"
+      ],
+      "region": "tbi"
+    },
+    {
+      "id": "narcolepsy-profile",
+      "name": "Narcolepsy profile",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "homeostasis",
+        "emotion",
+        "motor"
+      ],
+      "summary": "Sleep-wake disorder characterized by daytime sleepiness, fragmented sleep, and cataplexy in type 1 (human; review).",
+      "refs": [
+        "mahoney2019narcolepsy",
+        "scammell2022narcolepsy"
+      ],
+      "region": "narcolepsy"
+    },
+    {
+      "id": "narcolepsy-orexin-deficiency",
+      "name": "Orexin peptide deficiency",
+      "level": "molecular",
+      "kind": "mechanism",
+      "domains": [
+        "homeostasis"
+      ],
+      "summary": "Profound loss of orexin-A (hypocretin-1) and orexin-B peptides in CSF and lateral hypothalamic projections.",
+      "refs": [
+        "mahoney2019narcolepsy"
+      ],
+      "region": "narcolepsy"
+    },
+    {
+      "id": "narcolepsy-hypothalamic-cell-loss",
+      "name": "Selective orexin neuron loss",
+      "level": "cellular",
+      "kind": "mechanism",
+      "domains": [
+        "homeostasis",
+        "architecture"
+      ],
+      "summary": "Selective autoimmune-mediated destruction of ~70,000 orexin-producing neurons in lateral and perifornical hypothalamus.",
+      "refs": [
+        "mahoney2019narcolepsy",
+        "scammell2022narcolepsy"
+      ],
+      "region": "narcolepsy"
+    },
+    {
+      "id": "narcolepsy-cataplexy-circuit",
+      "name": "Amygdala-brainstem cataplexy circuit",
+      "level": "circuit",
+      "kind": "circuit",
+      "domains": [
+        "emotion",
+        "motor"
+      ],
+      "summary": "Disinhibition of amygdala-driven atonia pathway via vlPAG/LPT and sublaterodorsal nucleus triggering daytime muscle collapse.",
+      "refs": [
+        "mahoney2019narcolepsy"
+      ],
+      "region": "narcolepsy"
+    },
+    {
+      "id": "narcolepsy-sleep-attacks",
+      "name": "Cataplexy & sleep attacks",
+      "level": "clinical",
+      "kind": "function",
+      "domains": [
+        "homeostasis",
+        "motor"
+      ],
+      "summary": "Sudden emotion-triggered loss of muscle tone (cataplexy), uncontrollable daytime sleep episodes, and sleep paralysis.",
+      "refs": [
+        "mahoney2019narcolepsy"
+      ],
+      "region": "narcolepsy"
     }
   ],
   "links": [
@@ -17396,14 +18631,16 @@
       "s": "thalamus",
       "t": "pfc",
       "rel": "to prefrontal cortex (area 46, mPFC)",
-      "status": "supported",
+      "status": "established",
       "kind": "anatomical",
       "refs": [
         "kelly2020",
         "liu2025",
         "middleton1994",
+        "paz2020thalamic",
         "pisano2021"
-      ]
+      ],
+      "desc": "Thalamocortical relay axons project reciprocally to prefrontal and association neocortex."
     },
     {
       "s": "thalamus",
@@ -29997,6 +31234,504 @@
       "refs": [
         "bulik2022"
       ]
+    },
+    {
+      "s": "ad-profile",
+      "t": "ad-abeta-tau-pathology",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Extracellular amyloid-β accumulation and intracellular tau hyperphosphorylation constitute core defining neuropathology.",
+      "refs": [
+        "zhang2024ad"
+      ]
+    },
+    {
+      "s": "ad-profile",
+      "t": "ad-cholinergic-degeneration",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Early selective loss of basal forebrain cholinergic projection neurons deprives neocortex and hippocampus of neuromodulatory tone.",
+      "refs": [
+        "bookshelf2020ad"
+      ]
+    },
+    {
+      "s": "ad-abeta-tau-pathology",
+      "t": "ad-entorhinal-hippocampal-disconnection",
+      "kind": "functional",
+      "status": "supported",
+      "desc": "Transentorhinal and entorhinal tau neurofibrillary pathology damages perforant path projection neurons to the hippocampus.",
+      "refs": [
+        "bookshelf2020ad",
+        "zhang2024ad"
+      ]
+    },
+    {
+      "s": "ad-cholinergic-degeneration",
+      "t": "pfc",
+      "kind": "anatomical",
+      "status": "established",
+      "desc": "Nucleus basalis cholinergic axons project to prefrontal cortex, supporting attention and executive processing.",
+      "refs": [
+        "bookshelf2020ad"
+      ]
+    },
+    {
+      "s": "ad-entorhinal-hippocampal-disconnection",
+      "t": "ad-episodic-amnesia",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Disruption of entorhinal-hippocampal synaptic transmission impairs episodic memory encoding and spatial navigation.",
+      "refs": [
+        "zhang2024ad"
+      ]
+    },
+    {
+      "s": "pd-profile",
+      "t": "pd-synuclein-pathology",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Alpha-synuclein aggregation into Lewy neurites and bodies represents defining molecular pathology.",
+      "refs": [
+        "ma2023synuclein"
+      ]
+    },
+    {
+      "s": "pd-profile",
+      "t": "pd-nigrostriatal-denervation",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Selective vulnerability and progressive loss of substantia nigra pars compacta dopaminergic neurons.",
+      "refs": [
+        "kouli2018"
+      ]
+    },
+    {
+      "s": "pd-nigrostriatal-denervation",
+      "t": "pd-stn-pallidal-hyperactivity",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Dopamine depletion shifts striatal projection balance, driving subthalamic nucleus hyperactivity and beta synchrony.",
+      "refs": [
+        "zheng2017pd"
+      ]
+    },
+    {
+      "s": "pd-stn-pallidal-hyperactivity",
+      "t": "pd-bradykinesia-rigidity",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Excessive inhibitory basal ganglia output to motor thalamus disrupts movement initiation and scaling.",
+      "refs": [
+        "kouli2018",
+        "zheng2017pd"
+      ]
+    },
+    {
+      "s": "dlb-profile",
+      "t": "dlb-lewy-pathology",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Cortical and limbic Lewy bodies represent defining neuropathological substrate.",
+      "refs": [
+        "mckeith2017"
+      ]
+    },
+    {
+      "s": "dlb-profile",
+      "t": "dlb-cholinergic-deficit",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Severe basal forebrain cholinergic loss exceeds that of Alzheimer's disease.",
+      "refs": [
+        "yamada2020"
+      ]
+    },
+    {
+      "s": "dlb-cholinergic-deficit",
+      "t": "dlb-visual-network-dysfunction",
+      "kind": "functional",
+      "status": "supported",
+      "desc": "Cholinergic de-afferentation impairs top-down sensory gating in visual and association cortices.",
+      "refs": [
+        "yamada2020"
+      ]
+    },
+    {
+      "s": "dlb-visual-network-dysfunction",
+      "t": "visual-cortex",
+      "kind": "anatomical",
+      "status": "established",
+      "desc": "Occipital hypometabolism and visual association cortex dysfunction underpin hallucinatory phenomena.",
+      "refs": [
+        "yamada2020"
+      ]
+    },
+    {
+      "s": "dlb-cholinergic-deficit",
+      "t": "dlb-cognitive-fluctuations",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Unstable cholinergic tone causes spontaneous waxing and waning of alertness and attention.",
+      "refs": [
+        "mckeith2017"
+      ]
+    },
+    {
+      "s": "ftd-profile",
+      "t": "ftd-tdp43-tau-pathology",
+      "kind": "functional",
+      "status": "established",
+      "desc": "TDP-43, tau, or FUS pathology drives underlying frontotemporal lobar degeneration.",
+      "refs": [
+        "paterno2023ftd"
+      ]
+    },
+    {
+      "s": "ftd-profile",
+      "t": "ftd-von-economo-loss",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Early selective vulnerability of Von Economo neurons in fronto-insular and anterior cingulate cortices.",
+      "refs": [
+        "bang2016ftd"
+      ]
+    },
+    {
+      "s": "ftd-von-economo-loss",
+      "t": "ftd-salience-disconnection",
+      "kind": "functional",
+      "status": "supported",
+      "desc": "Degeneration of large projecting spindle neurons disconnects anterior insular-cingulate salience networks.",
+      "refs": [
+        "bang2016ftd"
+      ]
+    },
+    {
+      "s": "ftd-salience-disconnection",
+      "t": "insula",
+      "kind": "anatomical",
+      "status": "established",
+      "desc": "Anterior insula represents the primary epicenter of behavioral variant FTD neurodegeneration.",
+      "refs": [
+        "bang2016ftd"
+      ]
+    },
+    {
+      "s": "ftd-salience-disconnection",
+      "t": "ftd-social-disinhibition",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Salience network disconnection causes failure to encode social cues, producing disinhibition and apathy.",
+      "refs": [
+        "bang2016ftd"
+      ]
+    },
+    {
+      "s": "hd-profile",
+      "t": "hd-mhtt-somatic-expansion",
+      "kind": "functional",
+      "status": "established",
+      "desc": "HTT CAG repeat expansion and tissue-specific somatic expansion constitute primary etiological mechanism.",
+      "refs": [
+        "donaldson2026hd",
+        "handsaker2025hd"
+      ]
+    },
+    {
+      "s": "hd-profile",
+      "t": "hd-indirect-spn-degeneration",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Medium spiny projection neurons in caudate and putamen undergo selective, early progressive cell death.",
+      "refs": [
+        "handsaker2025hd"
+      ]
+    },
+    {
+      "s": "hd-indirect-spn-degeneration",
+      "t": "hd-striatopallidal-disinhibition",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Loss of indirect pathway projection neurons releases external globus pallidus and disinhibits motor drive.",
+      "refs": [
+        "raymond2011hd"
+      ]
+    },
+    {
+      "s": "striatum",
+      "t": "basal-ganglia",
+      "kind": "anatomical",
+      "status": "established",
+      "desc": "Striatal efferents project topographically to internal and external globus pallidus and substantia nigra.",
+      "refs": [
+        "raymond2011hd"
+      ]
+    },
+    {
+      "s": "hd-striatopallidal-disinhibition",
+      "t": "hd-chorea-motor-impairment",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Disinhibited thalamocortical motor signaling drives involuntary chorea and motor impersistence.",
+      "refs": [
+        "donaldson2026hd",
+        "raymond2011hd"
+      ]
+    },
+    {
+      "s": "epilepsy-profile",
+      "t": "epilepsy-channelopathy-chloride",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Genetic channel mutations and chloride gradient shifts drive cellular hyperexcitability.",
+      "refs": [
+        "catterall2012scn1a"
+      ]
+    },
+    {
+      "s": "epilepsy-profile",
+      "t": "epilepsy-interneuron-hypoactivity",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Interneuron failure and aberrant axonal sprouting establish enduring network seizure susceptibility.",
+      "refs": [
+        "jaspers2024epilepsy"
+      ]
+    },
+    {
+      "s": "epilepsy-interneuron-hypoactivity",
+      "t": "epilepsy-thalamocortical-synchrony",
+      "kind": "functional",
+      "status": "supported",
+      "desc": "Altered inhibitory gating permits runaway burst synchronization across thalamocortical networks.",
+      "refs": [
+        "cheong2014ttype",
+        "paz2020thalamic"
+      ]
+    },
+    {
+      "s": "epilepsy-thalamocortical-synchrony",
+      "t": "epilepsy-seizure-predisposition",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Hypersynchronous network recruitment produces absence and generalized convulsive seizures.",
+      "refs": [
+        "jaspers2024epilepsy"
+      ]
+    },
+    {
+      "s": "migraine-profile",
+      "t": "migraine-cgrp-trigeminal",
+      "kind": "functional",
+      "status": "established",
+      "desc": "CGRP release from perivascular trigeminal afferents represents key validated pathway in attack initiation.",
+      "refs": [
+        "edvinsson2018cgrp"
+      ]
+    },
+    {
+      "s": "migraine-cgrp-trigeminal",
+      "t": "migraine-central-sensitization",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Repetitive primary afferent barrage drives central sensitization in spinal trigeminal nucleus caudalis.",
+      "refs": [
+        "goadsby2017migraine"
+      ]
+    },
+    {
+      "s": "migraine-central-sensitization",
+      "t": "migraine-trigeminovascular-transmission",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Second-order trigeminocervical projection transmits nociceptive signaling to ventral posteromedial thalamus.",
+      "refs": [
+        "goadsby2017migraine"
+      ]
+    },
+    {
+      "s": "thalamus",
+      "t": "insula",
+      "kind": "anatomical",
+      "status": "established",
+      "desc": "Thalamocortical sensory projections connect thalamus to anterior and posterior insular cortex.",
+      "refs": [
+        "goadsby2017migraine"
+      ]
+    },
+    {
+      "s": "migraine-trigeminovascular-transmission",
+      "t": "migraine-headache-allodynia",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Cortical and thalamic sensory gain elevation produces throbbing pain, photophobia, and cutaneous allodynia.",
+      "refs": [
+        "goadsby2017migraine"
+      ]
+    },
+    {
+      "s": "ms-profile",
+      "t": "ms-ebv-autoimmune-trigger",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Epstein-Barr virus seroconversion strongly establishes predisposition to autoreactive lymphocyte activation.",
+      "refs": [
+        "bjornevik2022ebv"
+      ]
+    },
+    {
+      "s": "ms-ebv-autoimmune-trigger",
+      "t": "ms-oligodendrocyte-demyelination",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Autoreactive T and B cells crossing the blood-brain barrier destroy oligodendrocytes and myelin sheaths.",
+      "refs": [
+        "kee2022ms"
+      ]
+    },
+    {
+      "s": "ms-oligodendrocyte-demyelination",
+      "t": "ms-axonal-conduction-block",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Demyelination impairs saltatory impulse conduction and induces energy-deficient axonal degeneration.",
+      "refs": [
+        "dobson2025ms"
+      ]
+    },
+    {
+      "s": "motor-cortex",
+      "t": "basal-ganglia",
+      "kind": "anatomical",
+      "status": "established",
+      "desc": "Corticospinal motor tract fibers descend from precentral gyrus through internal capsule adjacent to basal ganglia.",
+      "refs": [
+        "dobson2025ms"
+      ]
+    },
+    {
+      "s": "ms-axonal-conduction-block",
+      "t": "ms-neurological-disability",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Conduction failure across optic, corticospinal, and cerebellar tracts mediates clinical relapses and disability.",
+      "refs": [
+        "dobson2025ms"
+      ]
+    },
+    {
+      "s": "tbi-profile",
+      "t": "tbi-excitotoxic-cascade",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Mechanical membrane perturbation triggers immediate depolarizing ionic shifts and glutamate excitotoxicity.",
+      "refs": [
+        "ng2019tbi"
+      ]
+    },
+    {
+      "s": "tbi-profile",
+      "t": "tbi-traumatic-axonal-injury",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Tissue shear strain damages axonal neurofilaments, triggering transport arrest and swelling.",
+      "refs": [
+        "ng2019tbi"
+      ]
+    },
+    {
+      "s": "tbi-traumatic-axonal-injury",
+      "t": "tbi-white-matter-disconnection",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Widespread axonal degeneration across long tracts compromises inter-hemispheric and corticocortical networks.",
+      "refs": [
+        "ng2019tbi"
+      ]
+    },
+    {
+      "s": "pfc",
+      "t": "hippocampus",
+      "kind": "anatomical",
+      "status": "established",
+      "desc": "Uncinate and cingulum fasciculi link prefrontal executive cortices with medial temporal memory structures.",
+      "refs": [
+        "ng2019tbi"
+      ]
+    },
+    {
+      "s": "tbi-white-matter-disconnection",
+      "t": "tbi-cognitive-somatic-syndrome",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Network disconnection and metabolic exhaustion underpin slowed processing, fatigue, and memory impairment.",
+      "refs": [
+        "bja2017tbi",
+        "ng2019tbi"
+      ]
+    },
+    {
+      "s": "narcolepsy-profile",
+      "t": "narcolepsy-orexin-deficiency",
+      "kind": "functional",
+      "status": "established",
+      "desc": "CSF orexin-A deficiency (<110 pg/mL) represents definitive diagnostic biomarker of narcolepsy type 1.",
+      "refs": [
+        "mahoney2019narcolepsy"
+      ]
+    },
+    {
+      "s": "narcolepsy-profile",
+      "t": "narcolepsy-hypothalamic-cell-loss",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Autoimmune-mediated destruction of lateral hypothalamic orexin/hypocretin neurons is the primary cause of NT1.",
+      "refs": [
+        "mahoney2019narcolepsy",
+        "scammell2022narcolepsy"
+      ]
+    },
+    {
+      "s": "narcolepsy-hypothalamic-cell-loss",
+      "t": "narcolepsy-cataplexy-circuit",
+      "kind": "functional",
+      "status": "supported",
+      "desc": "Loss of orexin stabilization permits emotional activation of REM atonia circuits during wakefulness.",
+      "refs": [
+        "mahoney2019narcolepsy"
+      ]
+    },
+    {
+      "s": "amygdala",
+      "t": "hypothalamus",
+      "kind": "anatomical",
+      "status": "established",
+      "desc": "Central and basolateral amygdaloid nuclei project to lateral hypothalamus and midbrain periaqueductal gray.",
+      "refs": [
+        "mahoney2019narcolepsy"
+      ]
+    },
+    {
+      "s": "narcolepsy-cataplexy-circuit",
+      "t": "narcolepsy-sleep-attacks",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Inappropriate activation of pontomedullary atonia circuitry produces sudden loss of muscle tone during wake.",
+      "refs": [
+        "mahoney2019narcolepsy"
+      ]
+    },
+    {
+      "s": "entorhinal",
+      "t": "hippocampus",
+      "kind": "anatomical",
+      "status": "established",
+      "desc": "Perforant path projection from entorhinal cortex layer II/III to hippocampal dentate gyrus and CA subfields.",
+      "refs": [
+        "zhang2024ad",
+        "bookshelf2020ad"
+      ]
     }
   ],
   "chains": [
@@ -35598,6 +37333,226 @@
           "insula>dacc"
         ],
         "view": "prefrontal"
+      },
+      {
+        "id": "ad-entorhinal-hippocampal-3d",
+        "region": "ad",
+        "name": "Entorhinal-hippocampal memory axis",
+        "desc": "Tau pathology and perforant path disruption from entorhinal cortex to hippocampus mediating episodic memory impairment.",
+        "links": [
+          "entorhinal>hippocampus",
+          "ad-abeta-tau-pathology>ad-entorhinal-hippocampal-disconnection"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "ad-cholinergic-forebrain-3d",
+        "region": "ad",
+        "name": "Basal forebrain cholinergic projection",
+        "desc": "Degeneration of cholinergic projections from nucleus basalis and diagonal band to neocortex and hippocampus.",
+        "links": [
+          "ad-cholinergic-degeneration>pfc",
+          "ad-profile>ad-cholinergic-degeneration"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "pd-nigrostriatal-3d",
+        "region": "pd",
+        "name": "Nigrostriatal dopaminergic pathway",
+        "desc": "Degeneration of dopaminergic projection from substantia nigra pars compacta to dorsal striatum.",
+        "links": [
+          "snc>striatum",
+          "pd-profile>pd-nigrostriatal-denervation"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "pd-subthalamic-pallidal-3d",
+        "region": "pd",
+        "name": "Subthalamic-pallidal motor loop",
+        "desc": "Indirect pathway disinhibition driving subthalamic nucleus and internal pallidum hyperactivity.",
+        "links": [
+          "pd-nigrostriatal-denervation>pd-stn-pallidal-hyperactivity",
+          "pd-stn-pallidal-hyperactivity>pd-bradykinesia-rigidity"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "dlb-cholinergic-visual-3d",
+        "region": "dlb",
+        "name": "Cholinergic-visual cortical network",
+        "desc": "Severe basal forebrain cholinergic denervation targeting occipitoparietal visual association cortices.",
+        "links": [
+          "dlb-cholinergic-deficit>dlb-visual-network-dysfunction",
+          "dlb-visual-network-dysfunction>visual-cortex"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "dlb-fluctuation-network-3d",
+        "region": "dlb",
+        "name": "Attentional fluctuation circuit",
+        "desc": "Basal forebrain and frontoparietal modulatory failure producing cognitive and alertness fluctuations.",
+        "links": [
+          "dlb-profile>dlb-cholinergic-deficit",
+          "dlb-cholinergic-deficit>dlb-cognitive-fluctuations"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "ftd-salience-network-3d",
+        "region": "ftd",
+        "name": "Fronto-insular salience network",
+        "desc": "Degeneration of anterior insula and anterior cingulate connections underpinning social cognition and emotional empathy.",
+        "links": [
+          "ftd-von-economo-loss>ftd-salience-disconnection",
+          "ftd-salience-disconnection>insula"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "ftd-social-behavior-3d",
+        "region": "ftd",
+        "name": "Frontostriatal social control circuit",
+        "desc": "Prefrontal-subcortical appraisal circuit breakdown driving disinhibition, apathy, and altered social valuation.",
+        "links": [
+          "ftd-profile>ftd-tdp43-tau-pathology",
+          "ftd-salience-disconnection>ftd-social-disinhibition"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "hd-striatopallidal-indirect-3d",
+        "region": "hd",
+        "name": "Striato-pallidal indirect motor pathway",
+        "desc": "Early selective degeneration of indirect pathway medium spiny projection neurons disinhibiting thalamocortical motor output.",
+        "links": [
+          "hd-indirect-spn-degeneration>hd-striatopallidal-disinhibition",
+          "striatum>basal-ganglia"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "hd-corticostriatal-3d",
+        "region": "hd",
+        "name": "Corticostriatal motor and executive loop",
+        "desc": "Degeneration of corticostriatal inputs and striatal projection targets mediating motor impersistence and executive decline.",
+        "links": [
+          "hd-profile>hd-mhtt-somatic-expansion",
+          "hd-striatopallidal-disinhibition>hd-chorea-motor-impairment"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "epilepsy-temporal-lobe-3d",
+        "region": "epilepsy",
+        "name": "Mesial temporal seizure circuit",
+        "desc": "Hippocampal-entorhinal network reorganization and recurrent excitatory loops mediating focal temporal seizures.",
+        "links": [
+          "epilepsy-profile>epilepsy-interneuron-hypoactivity",
+          "entorhinal>hippocampus"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "epilepsy-thalamocortical-3d",
+        "region": "epilepsy",
+        "name": "Thalamocortical oscillatory burst circuit",
+        "desc": "Reciprocal thalamocortical and reticular thalamic burst firing generating generalized spike-and-wave discharges.",
+        "links": [
+          "epilepsy-interneuron-hypoactivity>epilepsy-thalamocortical-synchrony",
+          "thalamus>pfc"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "migraine-trigeminovascular-3d",
+        "region": "migraine",
+        "name": "Trigeminovascular ascending pain pathway",
+        "desc": "Dural afferent activation projecting via trigeminocervical complex and thalamus to insula and somatosensory cortex.",
+        "links": [
+          "migraine-central-sensitization>migraine-trigeminovascular-transmission",
+          "thalamus>insula"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "migraine-descending-modulatory-3d",
+        "region": "migraine",
+        "name": "Hypothalamic-brainstem pain modulatory circuit",
+        "desc": "Hypothalamic and periaqueductal gray descending networks modulating attack susceptibility and trigeminal gating.",
+        "links": [
+          "migraine-profile>migraine-cgrp-trigeminal",
+          "migraine-trigeminovascular-transmission>migraine-headache-allodynia"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "ms-visual-corticospinal-3d",
+        "region": "ms",
+        "name": "Corticospinal and optic pathway demyelination",
+        "desc": "Inflammatory demyelination along visual pathways and descending corticospinal motor projection tracts.",
+        "links": [
+          "ms-oligodendrocyte-demyelination>ms-axonal-conduction-block",
+          "motor-cortex>basal-ganglia"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "ms-autoimmune-network-3d",
+        "region": "ms",
+        "name": "Meningeal and deep white matter inflammatory circuit",
+        "desc": "Compartmentalized meningeal and perivenular inflammation driving chronic neuroaxonal disconnection and disability.",
+        "links": [
+          "ms-profile>ms-ebv-autoimmune-trigger",
+          "ms-axonal-conduction-block>ms-neurological-disability"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "tbi-frontotemporal-diffuse-3d",
+        "region": "tbi",
+        "name": "Frontotemporal traumatic axonal shearing",
+        "desc": "Mechanical shearing and axonal transport disruption across vulnerable frontotemporal and callosal tracts.",
+        "links": [
+          "tbi-traumatic-axonal-injury>tbi-white-matter-disconnection",
+          "pfc>hippocampus"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "tbi-excitotoxic-arousal-3d",
+        "region": "tbi",
+        "name": "Arousal and metabolic crisis network",
+        "desc": "Ascending arousal pathway disruption and secondary biochemical injury driving post-traumatic cognitive fatigue.",
+        "links": [
+          "tbi-profile>tbi-excitotoxic-cascade",
+          "tbi-white-matter-disconnection>tbi-cognitive-somatic-syndrome"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "narcolepsy-orexin-arousal-3d",
+        "region": "narcolepsy",
+        "name": "Hypothalamic orexin arousal projections",
+        "desc": "Loss of lateral hypothalamic orexinergic drive to brainstem and basal forebrain arousal nuclei causing wake instability.",
+        "links": [
+          "narcolepsy-profile>narcolepsy-hypothalamic-cell-loss",
+          "amygdala>hypothalamus"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "narcolepsy-cataplexy-circuit-3d",
+        "region": "narcolepsy",
+        "name": "Amygdala-brainstem cataplexy trigger circuit",
+        "desc": "Emotion-triggered recruitment of REM atonia circuits via amygdala and pontine tegmental pathways producing cataplexy.",
+        "links": [
+          "narcolepsy-hypothalamic-cell-loss>narcolepsy-cataplexy-circuit",
+          "narcolepsy-cataplexy-circuit>narcolepsy-sleep-attacks"
+        ],
+        "view": "overview"
       }
     ],
     "composite": {
