@@ -485,7 +485,7 @@
   function onTheme() {
     if (!scene) return;
     const isLight = CA.theme === 'light';
-    const rimColorHex = isLight ? 0x5a6578 : 0x7eb8ff;
+    const rimColorHex = isLight ? 0x475569 : 0x60a5fa;
     meshObjs.forEach((m) => {
       if (m.userData.rec.group === 'shell') {
         m.material.color.setHex(CA.tc(GROUP.shell.color));
@@ -506,22 +506,22 @@
     renderer.setClearColor(0x000000, 0);
     renderer.outputEncoding = T.sRGBEncoding;
     renderer.toneMapping = T.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.08;
+    renderer.toneMappingExposure = 0.88;
     el.canvas.appendChild(renderer.domElement);
     scene = new T.Scene();
     camera = new T.PerspectiveCamera(38, 1, 0.1, 200);
     camera.position.set(-11.5, 5.5, -11);
     scene.add(camera);
 
-    // Three-point biological studio lighting: warm key, cool ambient, crisp rim and soft fill
-    scene.add(new T.HemisphereLight(0xdde6ff, 0x141824, 0.72));
-    const key = new T.DirectionalLight(0xfff6ea, 0.92);
+    // Three-point biological studio lighting: soft warm key, cool ambient, crisp rim and gentle fill
+    scene.add(new T.HemisphereLight(0xdde6ff, 0x141824, 0.48));
+    const key = new T.DirectionalLight(0xfff6ea, 0.65);
     key.position.set(-3.5, 6.5, 4.5);
     camera.add(key);
-    const rim = new T.DirectionalLight(0x78abff, 0.65);
+    const rim = new T.DirectionalLight(0x78abff, 0.35);
     rim.position.set(6, -1.5, -8);
     scene.add(rim);
-    const fill = new T.DirectionalLight(0x9cb8df, 0.28);
+    const fill = new T.DirectionalLight(0x9cb8df, 0.16);
     fill.position.set(-6, -3, -2);
     scene.add(fill);
 
@@ -787,8 +787,8 @@
           transparent: true,
           opacity: style.opacity
         });
-        const rimColor = CA.theme === 'light' ? 0x5a6578 : 0x7eb8ff;
-        applyFresnelShader(mat, rimColor, 2.5, 1.2);
+        const rimColor = CA.theme === 'light' ? 0x475569 : 0x60a5fa;
+        applyFresnelShader(mat, rimColor, 3.2, 0.45);
       } else {
         mat = new T.MeshStandardMaterial({
           color,
@@ -957,23 +957,35 @@
    * (on the model or in the legend) in a deep, solid version, so it stands out. While pathways are drawn (a circuit, or
    * the selection's connections), only the structures they touch keep their colours and the rest of the brain turns
    * grey and faint; the touched structures stay see-through, so the pathways and their arrowheads inside them show. */
-  const TINT = 0.45, DEEPEN = { dark: 0.15, light: 0.3 };
+  const TINT = 0.0, DEEPEN = { dark: 0.15, light: 0.3 };
   const relevant = (o) => !focusIds || [...focusIds].some((rid) => claimRank(rid, o) >= 0);
+
+  function isTargetScope(o) {
+    if (focusIds) return relevant(o);
+    const r = o.userData && o.userData.rec;
+    if (!r) return true;
+    return meshInRegion(r) || meshRegion(r) === CA.region.id;
+  }
+
   function meshOpacity(m, fit, hov) {
     const r = m.userData.rec;
     let o = m.userData.baseOpacity;
-    if (hov) o = 0.92;
-    else if (focusIds) o = !fit ? Math.min(o, 0.1) : Math.min(Math.max(o, 0.5), drawnLinks.length ? 0.55 : 0.85);
-    else {
+    if (hov) return 0.94;
+    if (focusIds) {
+      o = !fit ? Math.min(o, 0.08) : Math.min(Math.max(o, 0.55), drawnLinks.length ? 0.6 : 0.88);
+    } else {
       const reg = meshRegion(r);
-      if (reg === CA.region.id) o = Math.max(o, 0.75);           // the current region stands out
-      else if (!meshInRegion(r)) o = Math.min(o, o > 0.6 ? 0.5 : 0.2);   // structures outside its content recede
-      else if (reg && o > 0.6) o = 0.5;                           // another region's structures, kept as context
+      const inReg = meshInRegion(r) || reg === CA.region.id;
+      if (inReg) {
+        o = Math.max(o, 0.85); // the current region stands out prominently
+      } else {
+        o = Math.min(o, 0.12); // un-highlighted regions recede into quiet translucent context
+      }
     }
-    if (!hov && legendOn() && slotOf.has(ownerOf.get(m))) o = Math.max(o, 0.45);   // a structure with a legend colour of its own shows it
-    if (r.group === 'cerebellum' && opts.xray && !hov) return 0.22;   // x-ray keeps the cerebellum see-through
-    const isInv = focusIds ? (fit || (legendOn() && slotOf.has(ownerOf.get(m)))) : (meshInRegion(r) || meshRegion(r) === CA.region.id);
-    return hov ? o : (isInv ? solidify(o) : o);
+    if (!hov && legendOn() && slotOf.has(ownerOf.get(m))) o = Math.max(o, 0.5);
+    if (r.group === 'cerebellum' && opts.xray && !hov) return 0.22;
+    const isInv = isTargetScope(m) || (legendOn() && slotOf.has(ownerOf.get(m)));
+    return isInv ? solidify(o) : o;
   }
   function paint() {
     if (!scene) return;
@@ -981,14 +993,16 @@
     const T = window.THREE;
     const sel = selectedSet(), hotRid = nameHot && resolve(nameHot);   // the structure hovered in the legend
     const pal = PALETTE[CA.theme === 'light' ? 'light' : 'dark'];
-    const grey = new T.Color(CA.tc(0x8b949e)), white = new T.Color(0xffffff), black = new T.Color(0x000000);
-    const deepen = DEEPEN[CA.theme === 'light' ? 'light' : 'dark'];
+    const isLight = CA.theme === 'light';
+    const grey = new T.Color(isLight ? 0x7c8796 : 0x3d4552);
+    const deepen = DEEPEN[isLight ? 'light' : 'dark'];
     meshObjs.forEach((m) => { if (m.userData.rec.group === 'shell') { m.visible = opts.shell; m.material.opacity = opts.opacity; } });
     meshObjs.filter((m) => m.userData.rec.group !== 'shell').concat(markerObjs).forEach((o) => {
       const rel = o.userData.rec && o.userData.rec.related;
       const on = (o.userData.entity && sel.has(o.userData.entity)) || (rel && sel.has(rel));
       const hov = (hovered && hovered === o) || (hotRid && ownerOf.get(o) === hotRid);
       const fit = relevant(o);
+      const inScope = isTargetScope(o);
       const slot = legendOn() ? slotOf.get(ownerOf.get(o)) : undefined;
       if (o.userData.rec) {
         const op = meshOpacity(o, fit, hov);
@@ -999,17 +1013,17 @@
       o.traverse((c) => {
         if (!c.material || !c.material.color) return;
         const base = new T.Color(slot != null ? pal[slot] : c.material.userData.base != null ? c.material.userData.base : o.userData.base);
-        const col = hov || on ? base.clone().lerp(black, deepen)   // hovered or selected: deep and solid
-          : !fit ? grey                                            // not on the pathways shown: colourless
-            : slot != null ? base                                  // a legend colour: as its swatch shows it
-              : base.clone().lerp(white, TINT);                    // everything else: a light tint
+        // Highlighted in-scope structures keep their rich saturated tone; un-highlighted structures recede to neutral slate
+        const col = (hov || on) ? base.clone().lerp(new T.Color(0x000000), deepen)
+          : !inScope ? grey
+            : (slot != null ? base : base.clone());
         c.material.color.copy(col);
         if (!o.userData.rec && c.material.userData.op0 != null) {   // markers and body parts
-          c.material.opacity = hov ? Math.max(c.material.userData.op0, 0.92) : fit ? solidify(c.material.userData.op0) : Math.min(c.material.userData.op0, 0.25);
+          c.material.opacity = hov ? Math.max(c.material.userData.op0, 0.92) : (inScope ? solidify(c.material.userData.op0) : Math.min(c.material.userData.op0, 0.15));
         }
         if (c.material.emissive) {
-          c.material.emissive.copy(on ? new T.Color(0x4a7dff) : col);
-          c.material.emissiveIntensity = on ? 0.48 : (hov ? 0.22 : (o.userData.marker ? 0.12 : 0.02));
+          c.material.emissive.copy(on ? new T.Color(0x4a7dff) : (hov ? col : new T.Color(0x000000)));
+          c.material.emissiveIntensity = on ? 0.45 : (hov ? 0.22 : 0);
         }
       });
     });
@@ -1079,10 +1093,10 @@
         const radius = ({ established: 0.055, supported: 0.045, emerging: 0.038 }[l.status] || 0.04) * (human ? 1 : 0.85) * (focus ? 1.4 : 1);
         obj = new T.Mesh(new T.TubeGeometry(curve, 48, radius, 7, false), new T.MeshStandardMaterial({
           color,
-          roughness: 0.35,
-          metalness: 0.06,
+          roughness: 0.4,
+          metalness: 0.05,
           emissive: color,
-          emissiveIntensity: 0.32,
+          emissiveIntensity: 0.16,
           transparent: true,
           opacity: 0.88
         }));
@@ -1098,10 +1112,10 @@
       (dist > 9 || txOn ? [0.36, 0.7] : [0.58]).forEach((u) => {
         const cone = new T.Mesh(new T.ConeGeometry(headR, headR * 2.7, 14), new T.MeshStandardMaterial({
           color: headColor,
-          roughness: 0.32,
-          metalness: 0.06,
+          roughness: 0.35,
+          metalness: 0.05,
           emissive: headColor,
-          emissiveIntensity: 0.4,
+          emissiveIntensity: 0.22,
           transparent: true,
           opacity: 0.96
         }));
@@ -1115,13 +1129,13 @@
       drawnLinks.push({ l, curve, objs, s: at(l.s), t: at(l.t) });   // the trace joins pathways by position (two entities can share one)
       const n = Math.max(1, Math.round(dist / 3));
       for (let k = 0; k < n; k++) {
-        const pulseCol = color.clone().lerp(new T.Color(0xffffff), 0.55);
+        const pulseCol = color.clone().lerp(new T.Color(0xffffff), 0.35);
         const s = new T.Mesh(new T.SphereGeometry(human ? 0.085 : 0.07, 12, 10), new T.MeshStandardMaterial({
           color: pulseCol,
-          roughness: 0.2,
+          roughness: 0.25,
           metalness: 0.04,
           emissive: pulseCol,
-          emissiveIntensity: 0.85
+          emissiveIntensity: 0.55
         }));
         s.renderOrder = 6;
         scene.add(s); linkObjs.push(s);
