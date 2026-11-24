@@ -21795,5 +21795,606 @@
       "thalamus",
       "prefrontal"
     ]
+  },
+  {
+    "key": "fries2023",
+    "pmid": "36207435",
+    "regions": [
+      "mdd"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "multi"
+    ],
+    "levels": [
+      "molecular",
+      "cellular",
+      "circuit"
+    ],
+    "domains": [
+      "emotion",
+      "reward",
+      "learning"
+    ],
+    "finding": "Synthesis of genomic, transcriptomic, epigenetic and proteomic pathways in major depressive disorder converging on synaptic maintenance, neurotrophic signaling (BDNF-TrkB, mTOR), and stress-induced glucocorticoid and inflammatory disruption.",
+    "manual": {
+      "authors": [
+        "Fries GR",
+        "Saldana VA",
+        "Finnstein J",
+        "Rein T"
+      ],
+      "title": "Molecular pathways of major depressive disorder converge on the synapse",
+      "journal": "Mol Psychiatry",
+      "year": 2023,
+      "volume": "28",
+      "issue": "1",
+      "pages": "284-297",
+      "doi": "10.1038/s41380-022-01806-1",
+      "pmc": "PMC9886616"
+    }
+  },
+  {
+    "key": "scaini2020",
+    "pmid": "32267339",
+    "regions": [
+      "bipolar"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "multi"
+    ],
+    "levels": [
+      "cellular",
+      "circuit",
+      "systems",
+      "molecular"
+    ],
+    "domains": [
+      "emotion",
+      "reward",
+      "homeostasis"
+    ],
+    "finding": "Comprehensive review integrating genetic risk loci, calcium signaling (CACNA1C), intracellular signaling (GSK3, lithium target), mitochondrial bioenergetics, and circadian dysregulation underlying episode switching in bipolar disorder.",
+    "manual": {
+      "authors": [
+        "Scaini G",
+        "Valvassori SS",
+        "Diaz AP",
+        "Lima CN",
+        "Benevenuto D",
+        "Fries GR",
+        "Quevedo J"
+      ],
+      "title": "Neurobiology of bipolar disorders: a review of genetic components, signaling pathways, biochemical changes, and neuroimaging findings",
+      "journal": "Braz J Psychiatry",
+      "year": 2020,
+      "volume": "42",
+      "issue": "5",
+      "pages": "536-551",
+      "doi": "10.1590/1516-4446-2019-0732",
+      "pmc": "PMC7524405"
+    }
+  },
+  {
+    "key": "duval2015",
+    "pmid": "25670901",
+    "regions": [
+      "gad",
+      "panic",
+      "ptsd",
+      "sad"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "human"
+    ],
+    "levels": [
+      "circuit",
+      "systems",
+      "clinical"
+    ],
+    "domains": [
+      "emotion",
+      "executive",
+      "memory"
+    ],
+    "finding": "Focused circuit review detailing fronto-limbic, insular, and hippocampal alterations across generalized anxiety, panic, social anxiety, and post-traumatic stress disorders.",
+    "manual": {
+      "authors": [
+        "Duval ER",
+        "Javanbakht A",
+        "Liberzon I"
+      ],
+      "title": "Neural circuits in anxiety and stress disorders: a focused review",
+      "journal": "Ther Clin Risk Manag",
+      "year": 2015,
+      "volume": "11",
+      "pages": "115-126",
+      "doi": "10.2147/TCRM.S48528",
+      "pmc": "PMC4310576"
+    }
+  },
+  {
+    "key": "nuss2015",
+    "pmid": "25774395",
+    "regions": [
+      "gad",
+      "panic"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "multi"
+    ],
+    "levels": [
+      "molecular",
+      "cellular",
+      "circuit"
+    ],
+    "domains": [
+      "emotion"
+    ],
+    "finding": "Review of GABA-A receptor subunit diversity, allosteric benzodiazepine modulation, and local inhibitory circuit control of threat and autonomic arousal in anxiety disorders.",
+    "manual": {
+      "authors": [
+        "Nuss P"
+      ],
+      "title": "Anxiety disorders and GABA neurotransmission: a disturbance of modulation",
+      "journal": "Neuropsychiatr Dis Treat",
+      "year": 2015,
+      "volume": "11",
+      "pages": "165-175",
+      "doi": "10.2147/NDT.S58841",
+      "pmc": "PMC4303399"
+    }
+  },
+  {
+    "key": "martin2009",
+    "pmid": "23785244",
+    "regions": [
+      "gad",
+      "panic",
+      "ptsd",
+      "sad"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "multi"
+    ],
+    "levels": [
+      "molecular",
+      "circuit",
+      "systems"
+    ],
+    "domains": [
+      "emotion",
+      "homeostasis"
+    ],
+    "finding": "Synthesis of neuroimaging, genetic association, and HPA-axis neuroendocrine signaling (CRH, cortisol) across anxiety and stress-related conditions.",
+    "manual": {
+      "authors": [
+        "Martin EI",
+        "Ressler KJ",
+        "Binder E",
+        "Nemeroff CB"
+      ],
+      "title": "The Neurobiology of Anxiety Disorders: Brain Imaging, Genetics, and Psychoneuroendocrinology",
+      "journal": "Psychiatr Clin North Am",
+      "year": 2009,
+      "volume": "32",
+      "issue": "3",
+      "pages": "549-575",
+      "doi": "10.1016/j.psc.2009.05.004",
+      "pmc": "PMC3684250"
+    }
+  },
+  {
+    "key": "sun2023ptsd",
+    "pmid": "37901377",
+    "regions": [
+      "ptsd"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "multi"
+    ],
+    "levels": [
+      "circuit",
+      "cellular",
+      "molecular"
+    ],
+    "domains": [
+      "learning",
+      "memory",
+      "emotion"
+    ],
+    "finding": "Delineates amygdala, hippocampal, and vmPFC infralimbic/prelimbic circuits in learned threat acquisition, contextual safety discrimination, and extinction retention in PTSD.",
+    "manual": {
+      "authors": [
+        "Sun L",
+        "Zheng Y",
+        "Zhang Y",
+        "Wang Z"
+      ],
+      "title": "The neural circuits and molecular mechanisms underlying fear acquisition and extinction in PTSD",
+      "journal": "Front Neurosci",
+      "year": 2023,
+      "volume": "17",
+      "pages": "1281401",
+      "doi": "10.3389/fnins.2023.1281401",
+      "pmc": "PMC10603417"
+    }
+  },
+  {
+    "key": "gargano2023",
+    "pmid": "38033477",
+    "regions": [
+      "ocd"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "multi"
+    ],
+    "levels": [
+      "circuit",
+      "systems",
+      "molecular"
+    ],
+    "domains": [
+      "executive",
+      "emotion",
+      "learning"
+    ],
+    "finding": "Detailed analysis of parallel cortico-striato-thalamo-cortical (CSTC) loops, serotonergic/dopaminergic pharmacology, and the Sapap3/Dlgap3 postsynaptic scaffolding mouse model of compulsive behavior.",
+    "manual": {
+      "authors": [
+        "Gargano SP",
+        "Santos MG",
+        "Taylor SM",
+        "Pastis I"
+      ],
+      "title": "A closer look to neural pathways and psychopharmacology of obsessive compulsive disorder",
+      "journal": "Front Behav Neurosci",
+      "year": 2023,
+      "volume": "17",
+      "pages": "1282246",
+      "doi": "10.3389/fnbeh.2023.1282246",
+      "pmc": "PMC10684826"
+    }
+  },
+  {
+    "key": "howes2015",
+    "pmid": "25586400",
+    "regions": [
+      "schizophrenia"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "human"
+    ],
+    "levels": [
+      "molecular",
+      "cellular",
+      "circuit"
+    ],
+    "domains": [
+      "executive",
+      "reward"
+    ],
+    "finding": "Integrates human PET evidence of elevated presynaptic associative striatal dopamine synthesis capacity with NMDA receptor hypofunction and cortical disinhibition models in schizophrenia.",
+    "manual": {
+      "authors": [
+        "Howes O",
+        "McCutcheon R",
+        "Stone J"
+      ],
+      "title": "Glutamate and dopamine in schizophrenia: an update for the 21st century",
+      "journal": "J Psychopharmacol",
+      "year": 2015,
+      "volume": "29",
+      "issue": "2",
+      "pages": "97-115",
+      "doi": "10.1177/0269881114563634",
+      "pmc": "PMC4350686"
+    }
+  },
+  {
+    "key": "sekar2016",
+    "pmid": "26814963",
+    "regions": [
+      "schizophrenia"
+    ],
+    "evidence": "intervention",
+    "species": [
+      "multi"
+    ],
+    "levels": [
+      "molecular",
+      "cellular"
+    ],
+    "domains": [
+      "architecture",
+      "development"
+    ],
+    "finding": "Human genetic variation in complement component 4 (C4A) correlates with schizophrenia risk and promotes microglia-mediated developmental synaptic pruning during adolescence.",
+    "manual": {
+      "authors": [
+        "Sekar A",
+        "Bialas AR",
+        "de Rivera H",
+        "Davis A",
+        "Hammond TR",
+        "Kamitaki N",
+        "Stevens B",
+        "McCarroll SA"
+      ],
+      "title": "Schizophrenia risk from complex variation of complement component 4",
+      "journal": "Nature",
+      "year": 2016,
+      "volume": "530",
+      "issue": "7589",
+      "pages": "177-183",
+      "doi": "10.1038/nature16549",
+      "pmc": "PMC4752392"
+    }
+  },
+  {
+    "key": "fda2024cobenfy",
+    "pmid": null,
+    "regions": [
+      "schizophrenia"
+    ],
+    "evidence": "clinical",
+    "species": [
+      "human"
+    ],
+    "levels": [
+      "molecular",
+      "circuit",
+      "clinical"
+    ],
+    "domains": [
+      "executive",
+      "reward"
+    ],
+    "finding": "First non-D2-receptor-antagonist antipsychotic demonstrating clinical efficacy via dual muscarinic M1/M4 receptor agonism coupled with a peripheral anticholinergic shield.",
+    "manual": {
+      "authors": [
+        "US Food and Drug Administration"
+      ],
+      "title": "NDA 216158: Cobenfy (xanomeline and trospium chloride) Multidiscipline and Medical Reviews",
+      "journal": "FDA Drug Approvals",
+      "year": 2024,
+      "doi": "10.1056/NEJMoa2017015"
+    }
+  },
+  {
+    "key": "sikich2021",
+    "pmid": "34644471",
+    "regions": [
+      "autism"
+    ],
+    "evidence": "intervention",
+    "species": [
+      "human"
+    ],
+    "levels": [
+      "clinical",
+      "cognitive",
+      "molecular"
+    ],
+    "domains": [
+      "social"
+    ],
+    "finding": "Large 24-week randomized, placebo-controlled trial showing no significant difference between intranasal oxytocin and placebo in social or cognitive measures in youth with autism.",
+    "manual": {
+      "authors": [
+        "Sikich L",
+        "Kolevzon A",
+        "King BH",
+        "McDougle CJ",
+        "Sanders KB",
+        "Kim SJ",
+        "Veenstra-VanderWeele J"
+      ],
+      "title": "Intranasal Oxytocin in Children and Adolescents with Autism Spectrum Disorder",
+      "journal": "N Engl J Med",
+      "year": 2021,
+      "volume": "385",
+      "issue": "16",
+      "pages": "1462-1473",
+      "doi": "10.1056/NEJMoa2103583",
+      "pmc": "PMC8790518"
+    }
+  },
+  {
+    "key": "liu2025",
+    "pmid": null,
+    "regions": [
+      "autism"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "multi"
+    ],
+    "levels": [
+      "circuit",
+      "systems",
+      "cellular"
+    ],
+    "domains": [
+      "social",
+      "sensory",
+      "development"
+    ],
+    "finding": "Review of social perception (STS, fusiform, vmPFC), sensory circuit gain, and corticostriatal loop alterations across heterogeneous autism etiologies.",
+    "manual": {
+      "authors": [
+        "Liu S",
+        "Zeng D",
+        "Yi C",
+        "Zhu M"
+      ],
+      "title": "Neurocognitive mechanisms underlying autism spectrum disorders: a literature review",
+      "journal": "Front Psychiatry",
+      "year": 2025,
+      "volume": "16",
+      "pages": "1633658",
+      "doi": "10.3389/fpsyt.2025.1633658"
+    }
+  },
+  {
+    "key": "felling2011",
+    "pmid": "21880899",
+    "regions": [
+      "tourette"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "multi"
+    ],
+    "levels": [
+      "circuit",
+      "cellular",
+      "molecular"
+    ],
+    "domains": [
+      "motor",
+      "executive"
+    ],
+    "finding": "Foundational neurobiological model of motor tic generation implicating focal striatal disinhibition, loss of striatal cholinergic interneurons, and aberrant CSTC motor loop gating.",
+    "manual": {
+      "authors": [
+        "Felling RJ",
+        "Singer HS"
+      ],
+      "title": "Neurobiology of Tourette Syndrome: Current Status and Need for Further Investigation",
+      "journal": "J Neurosci",
+      "year": 2011,
+      "volume": "31",
+      "issue": "35",
+      "pages": "12387-12395",
+      "doi": "10.1523/JNEUROSCI.0150-11.2011",
+      "pmc": "PMC6633215"
+    }
+  },
+  {
+    "key": "koob2016",
+    "pmid": "27475769",
+    "regions": [
+      "sud"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "multi"
+    ],
+    "levels": [
+      "circuit",
+      "systems",
+      "molecular"
+    ],
+    "domains": [
+      "reward",
+      "emotion",
+      "executive"
+    ],
+    "finding": "Established three-stage neurocircuitry model of substance use disorders: binge/intoxication (ventral striatum/dopamine), withdrawal/negative affect (extended amygdala/CRF/dynorphin), and preoccupation/anticipation (PFC/insula/glutamate).",
+    "manual": {
+      "authors": [
+        "Koob GF",
+        "Volkow ND"
+      ],
+      "title": "Neurobiology of addiction: a neurocircuitry analysis",
+      "journal": "Lancet Psychiatry",
+      "year": 2016,
+      "volume": "3",
+      "issue": "8",
+      "pages": "760-773",
+      "doi": "10.1016/S2215-0366(16)00104-8",
+      "pmc": "PMC6135092"
+    }
+  },
+  {
+    "key": "bulik2022",
+    "pmid": "35524137",
+    "regions": [
+      "anorexia",
+      "binge-eating",
+      "bulimia"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "multi"
+    ],
+    "levels": [
+      "molecular",
+      "cellular",
+      "circuit",
+      "systems"
+    ],
+    "domains": [
+      "homeostasis",
+      "reward",
+      "executive"
+    ],
+    "finding": "Genome-wide and circuit synthesis establishing eating disorders as metabo-psychiatric conditions: distinct and overlapping frontostriatal, insular taste/interoceptive, and hypothalamic homeostatic signaling across anorexia, bulimia, and binge-eating disorder.",
+    "manual": {
+      "authors": [
+        "Bulik CM",
+        "Coleman JRI",
+        "Hardaway JA",
+        "Breithaupt L",
+        "Watson HJ",
+        "Bryant CD",
+        "Breen G"
+      ],
+      "title": "Genetics and Neurobiology of Eating Disorders",
+      "journal": "Nat Neurosci",
+      "year": 2022,
+      "volume": "25",
+      "issue": "5",
+      "pages": "543-554",
+      "doi": "10.1038/s41593-022-01071-z",
+      "pmc": "PMC9085526"
+    }
+  },
+  {
+    "key": "frank2019",
+    "pmid": "31448378",
+    "regions": [
+      "anorexia",
+      "binge-eating",
+      "bulimia"
+    ],
+    "evidence": "synthesis",
+    "species": [
+      "multi"
+    ],
+    "levels": [
+      "circuit",
+      "systems",
+      "molecular"
+    ],
+    "domains": [
+      "homeostasis",
+      "reward",
+      "emotion"
+    ],
+    "finding": "Neuroimaging and pharmacological evidence comparing reward valuation (striatum), cognitive control (dorsal ACC, lateral PFC), and interoceptive processing (anterior insula) across eating disorder phenotypes.",
+    "manual": {
+      "authors": [
+        "Frank GKW",
+        "Shott ME",
+        "DeGuzman MC"
+      ],
+      "title": "The Neurobiology of Eating Disorders",
+      "journal": "Child Adolesc Psychiatr Clin N Am",
+      "year": 2019,
+      "volume": "28",
+      "issue": "4",
+      "pages": "629-640",
+      "doi": "10.1016/j.chc.2019.05.007",
+      "pmc": "PMC6709695"
+    }
   }
 ]

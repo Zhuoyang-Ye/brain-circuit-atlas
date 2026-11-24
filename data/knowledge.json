@@ -1475,7 +1475,8 @@
           ]
         }
       },
-      "kind": "condition"
+      "kind": "condition",
+      "category": "Neurodevelopmental"
     },
     {
       "id": "octopus",
@@ -1692,6 +1693,900 @@
       },
       "speciesNote": {
         "fly": "Fruit fly: neuropil meshes from the Janelia FlyEM male CNS connectome (CC-BY), simplified; paired neuropils are labelled on the fly’s left. Kenyon cells and the output, dopamine and APL neurons are shown in the mushroom body, projection neurons in the antennal lobe, T4/T5 cells in the lobula plate, LC neurons in the lobula, ring and E-PG neurons in the ellipsoid body, and descending neurons, with the giant fibre, at the neck connective. Photoreceptors and olfactory and gustatory receptor neurons lie outside the brain and are shown as approximate markers. Findings are from Drosophila melanogaster; the connectomes come from different flies, female and male."
+      }
+    },
+    {
+      "id": "mdd",
+      "label": "Major Depressive Disorder",
+      "category": "Mood disorders",
+      "entity": "mdd-profile",
+      "query": "(\"major depressive disorder\"[tiab] OR \"unipolar depression\"[tiab])",
+      "view": "overview",
+      "views": [
+        "atlas",
+        "scales",
+        "gaps",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": {
+        "title": "MDD: synaptic maintenance, network dynamics, and stress susceptibility",
+        "text": "A circuit–molecule profile of major depressive disorder across brain regions: frontolimbic affect regulation, hippocampal plasticity and stress feedback, and mesocorticolimbic valuation. Molecular targets include monoaminergic, glutamatergic (NMDA/ketamine), GABAergic/neurosteroid, neurotrophic (BDNF-TrkB, mTOR), glucocorticoid (FKBP5), and neuroinflammatory signaling. Antidepressant response identifies modifiable biology, not a universal monoamine deficiency."
+      },
+      "speciesNote": {
+        "human": "Human: clinical, fMRI, PET, postmortem, and GWAS associations across frontolimbic networks; reuses standard anatomical meshes.",
+        "mouse": "Mouse: chronic stress paradigms assay specific behavioral domains (avoidance, sucrose preference, effort); they do not reproduce human guilt or subjective grief.",
+        "macaque": "Macaque: translational subcortical and frontolimbic connectivity provides homologous anatomical context."
+      },
+      "levelDesc": {
+        "clinical": "Course, treatment resistance, symptom dimensions",
+        "cognitive": "Anhedonia, effort, negative interpretive biases",
+        "systems": "Frontolimbic, DMN and reward networks",
+        "regional": "Hippocampal and prefrontal structural findings",
+        "circuit": "Cortical-limbic and mesocorticolimbic loops",
+        "molecular": "BDNF, TrkB, NMDA, 5-HT, glucocorticoids, cytokines"
+      },
+      "levelQueries": {
+        "clinical": "(\"major depressive disorder\"[tiab] AND (treatment[tiab] OR antidepressant[tiab] OR ketamine[tiab]))",
+        "cognitive": "(\"major depressive disorder\"[tiab] AND (anhedonia[tiab] OR reward[tiab] OR bias[tiab]))",
+        "systems": "(\"major depressive disorder\"[tiab] AND (fMRI[tiab] OR \"default mode\"[tiab] OR connectivity[tiab]))",
+        "regional": "(\"major depressive disorder\"[tiab] AND (hippocampus[tiab] OR volume[tiab] OR \"prefrontal cortex\"[tiab]))",
+        "circuit": "(\"major depressive disorder\"[tiab] AND (synapse*[tiab] OR plasticity[tiab] OR circuit*[tiab]))",
+        "molecular": "(\"major depressive disorder\"[tiab] AND (BDNF[tiab] OR glutamate[tiab] OR serotonin[tiab] OR glucocorticoid*[tiab]))"
+      },
+      "methods": {
+        "clinical": {
+          "manipulate": [
+            "Antidepressant trials with clinical stratification",
+            "Rapid-acting ketamine challenge",
+            "rTMS and ECT protocols"
+          ],
+          "readout": [
+            "Hamilton/MADRS scores",
+            "Reward effort tasks (EEfRT)",
+            "Cognitive bias batteries"
+          ]
+        },
+        "circuit": {
+          "manipulate": [
+            "Chronic unpredictable stress in animal models",
+            "TrkB/mTOR pharmacology",
+            "Optogenetic VTA-NAc pacing"
+          ],
+          "readout": [
+            "Spine density and synaptic transmission",
+            "Social avoidance / sucrose preference",
+            "Local field potential coherence"
+          ]
+        }
+      }
+    },
+    {
+      "id": "bipolar",
+      "label": "Bipolar Disorder",
+      "category": "Mood disorders",
+      "entity": "bipolar-profile",
+      "query": "(\"bipolar disorder\"[tiab] OR mania[tiab] OR bipolar[tiab])",
+      "view": "overview",
+      "views": [
+        "atlas",
+        "scales",
+        "gaps",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": {
+        "title": "Bipolar disorder: reward sensitivity, excitability, and circadian instability",
+        "text": "A neurobiological profile of bipolar disorder spanning manic, depressive, and euthymic states. Emphasizes interacting reward hypersensitivity (ventral striatum, prefrontal cortex), emotional appraisal (amygdala), cellular excitability/calcium handling (CACNA1C, GSK3/lithium target), and circadian misalignment. Mania is not uniform global dopamine excess, and reduced need for sleep is distinct from insomnia with fatigue."
+      },
+      "speciesNote": {
+        "human": "Human: state-dependent fMRI, genetic risk loci, and postmortem findings; measures vary between euthymia, depression, and mania.",
+        "mouse": "Mouse: circadian mutants (Clock) and stimulant hyperactivity assay specific aspects of arousal and reward; not full clinical mania.",
+        "macaque": "Macaque: primate frontostriatal and circadian wiring models homologous circuitry."
+      },
+      "levelDesc": {
+        "clinical": "Mania, depression, euthymia, episode switching",
+        "cognitive": "Reward pursuit, goal-directed activity, risk-taking",
+        "systems": "Ventral striatal-prefrontal and circadian systems",
+        "regional": "Cortical thinning and subcortical volume dynamics",
+        "circuit": "Amygdala-PFC and striatopallidal loops",
+        "molecular": "CACNA1C, GSK3, lithium action, clock genes, dopamine"
+      },
+      "levelQueries": {
+        "clinical": "(\"bipolar disorder\"[tiab] AND (lithium[tiab] OR mania[tiab] OR \"episode switching\"[tiab]))",
+        "cognitive": "(\"bipolar disorder\"[tiab] AND (\"reward sensitivity\"[tiab] OR impulsivity[tiab] OR sleep[tiab]))",
+        "systems": "(\"bipolar disorder\"[tiab] AND (fMRI[tiab] OR connectivity[tiab] OR \"ventral striatum\"[tiab]))",
+        "regional": "(\"bipolar disorder\"[tiab] AND (volume[tiab] OR \"cortical thickness\"[tiab] OR amygdala[tiab]))",
+        "circuit": "(\"bipolar disorder\"[tiab] AND (circuit*[tiab] OR excitability[tiab] OR \"calcium channel\"[tiab]))",
+        "molecular": "(\"bipolar disorder\"[tiab] AND (CACNA1C[tiab] OR GSK3[tiab] OR lithium[tiab] OR dopamine[tiab]))"
+      },
+      "methods": {
+        "clinical": {
+          "manipulate": [
+            "Lithium and mood stabilizer maintenance therapy",
+            "Sleep deprivation and circadian phase advance challenge"
+          ],
+          "readout": [
+            "YMRS and MADRS mood ratings",
+            "Actigraphy sleep and circadian tracking",
+            "Incentive reward tasks"
+          ]
+        },
+        "circuit": {
+          "manipulate": [
+            "Patient iPSC-derived neuronal excitability assays",
+            "Circadian clock gene knockout in rodents"
+          ],
+          "readout": [
+            "Spontaneous neuronal firing rate and calcium transients",
+            "Wheel-running circadian rhythmicity"
+          ]
+        }
+      }
+    },
+    {
+      "id": "gad",
+      "label": "Generalized Anxiety Disorder",
+      "category": "Anxiety disorders",
+      "entity": "gad-profile",
+      "query": "(\"generalized anxiety disorder\"[tiab] OR GAD[tiab])",
+      "view": "overview",
+      "views": [
+        "atlas",
+        "scales",
+        "gaps",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": {
+        "title": "GAD: sustained uncertain threat and elaborative worry networks",
+        "text": "A neural profile of generalized anxiety disorder centered on sustained apprehensive anticipation, cognitive worry, and difficulty resolving uncertainty. Implicates medial and lateral prefrontal regulation, anterior insular and dACC salience processing, bed nucleus of the stria terminalis (BNST), and amygdalar threat circuits. Modulated by GABA-A inhibitory tone, serotonin, norepinephrine, and neuroendocrine stress pathways."
+      },
+      "speciesNote": {
+        "human": "Human: fMRI during threat anticipation and worry induction; task-dependent regulatory coupling between PFC and limbic areas.",
+        "mouse": "Mouse: uncertain-threat paradigms engage extended amygdala (BNST); rodents assay avoidance, not verbal worry.",
+        "macaque": "Macaque: primate amygdala and extended amygdala homologous connectivity."
+      },
+      "levelDesc": {
+        "clinical": "Chronic excessive worry, somatic tension, sleep disturbance",
+        "cognitive": "Apprehensive anticipation, intolerance of uncertainty",
+        "systems": "Salience, default mode, and frontolimbic networks",
+        "regional": "Amygdala, BNST, anterior insula, dACC, mPFC",
+        "circuit": "Prefrontal-amygdala and extended amygdala pathways",
+        "molecular": "GABA-A subunits, 5-HT, NE, CRH, cortisol"
+      },
+      "levelQueries": {
+        "clinical": "(\"generalized anxiety disorder\"[tiab] AND (worry[tiab] OR benzodiazepine[tiab] OR SSRI[tiab]))",
+        "cognitive": "(\"generalized anxiety disorder\"[tiab] AND (\"intolerance of uncertainty\"[tiab] OR anticipation[tiab]))",
+        "systems": "(\"generalized anxiety disorder\"[tiab] AND (fMRI[tiab] OR \"anterior insula\"[tiab] OR amygdala[tiab]))",
+        "regional": "(\"generalized anxiety disorder\"[tiab] AND (BNST[tiab] OR prefrontal[tiab] OR cingulate[tiab]))",
+        "circuit": "(\"generalized anxiety disorder\"[tiab] AND (inhibition[tiab] OR circuit*[tiab] OR \"threat anticipation\"[tiab]))",
+        "molecular": "(\"generalized anxiety disorder\"[tiab] AND (GABA[tiab] OR serotonin[tiab] OR CRH[tiab]))"
+      },
+      "methods": {
+        "clinical": {
+          "manipulate": [
+            "Benzodiazepine and SSRI challenge",
+            "Cognitive restructuring and worry exposure"
+          ],
+          "readout": [
+            "Penn State Worry Questionnaire (PSWQ)",
+            "Threat-anticipation skin conductance",
+            "fMRI during uncertain threat"
+          ]
+        },
+        "circuit": {
+          "manipulate": [
+            "GABA-A alpha subunit selective allosteric modulation",
+            "BNST projection-specific optogenetics in rodents"
+          ],
+          "readout": [
+            "Elevated plus maze open-arm exploration",
+            "Sustained startle potentiation"
+          ]
+        }
+      }
+    },
+    {
+      "id": "panic",
+      "label": "Panic Disorder",
+      "category": "Anxiety disorders",
+      "entity": "panic-profile",
+      "query": "(\"panic disorder\"[tiab] OR \"panic attack\"[tiab])",
+      "view": "overview",
+      "views": [
+        "atlas",
+        "scales",
+        "gaps",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": {
+        "title": "Panic disorder: interoceptive alarm, autonomic escalation, and avoidance",
+        "text": "A neurobiological profile of panic disorder characterized by sudden surges of overwhelming terror and autonomic alarm (palpitations, dyspnea, dizziness), with persistent anticipatory fear of future attacks. Central circuits include anterior insula (visceral sensation), amygdala and dACC (alarm evaluation), brainstem/PAG (defensive panic outputs), and locus coeruleus noradrenergic hyperreactivity. Supported by positive-feedback interoceptive escalation models."
+      },
+      "speciesNote": {
+        "human": "Human: interoceptive challenge (sodium lactate, CO2 inhalation) evokes panic attacks in vulnerable patients; fMRI shows insula-brainstem engagement.",
+        "mouse": "Mouse: dorsal PAG stimulation triggers flight and explosive escape behavior homologous to human panic outputs.",
+        "macaque": "Macaque: primate visceral sensory insular pathways and brainstem autonomic nuclei."
+      },
+      "levelDesc": {
+        "clinical": "Recurrent panic attacks, agoraphobia, interoceptive avoidance",
+        "cognitive": "Catastrophic misinterpretation of bodily sensations",
+        "systems": "Interoceptive, salience, and brainstem defense networks",
+        "regional": "Anterior insula, amygdala, PAG, locus coeruleus",
+        "circuit": "Insular-amygdala-brainstem autonomic feedback loop",
+        "molecular": "Norepinephrine, GABA-A, 5-HT, lactate/CO2 chemosensing"
+      },
+      "levelQueries": {
+        "clinical": "(\"panic disorder\"[tiab] AND (\"panic attack\"[tiab] OR agoraphobia[tiab]))",
+        "cognitive": "(\"panic disorder\"[tiab] AND (interoception[tiab] OR catastrophic[tiab] OR fear[tiab]))",
+        "systems": "(\"panic disorder\"[tiab] AND (insula[tiab] OR amygdala[tiab] OR fMRI[tiab]))",
+        "regional": "(\"panic disorder\"[tiab] AND (PAG[tiab] OR \"locus coeruleus\"[tiab] OR brainstem[tiab]))",
+        "circuit": "(\"panic disorder\"[tiab] AND (autonomic[tiab] OR \"defensive behavior\"[tiab] OR circuit*[tiab]))",
+        "molecular": "(\"panic disorder\"[tiab] AND (norepinephrine[tiab] OR GABA[tiab] OR serotonin[tiab]))"
+      },
+      "methods": {
+        "clinical": {
+          "manipulate": [
+            "Inhalation of 35% CO2 or intravenous sodium lactate challenge",
+            "Interoceptive exposure therapy"
+          ],
+          "readout": [
+            "Acute Panic Inventory scores",
+            "Heart rate variability and respiratory volume",
+            "Insula-dACC BOLD response"
+          ]
+        },
+        "circuit": {
+          "manipulate": [
+            "Dorsal periaqueductal gray (dPAG) electrical/optogenetic stimulation in rodents"
+          ],
+          "readout": [
+            "Explosive jumping and flight velocity",
+            "Immediate tachypnea and tachycardia"
+          ]
+        }
+      }
+    },
+    {
+      "id": "sad",
+      "label": "Social Anxiety Disorder",
+      "category": "Anxiety disorders",
+      "entity": "sad-profile",
+      "query": "(\"social anxiety disorder\"[tiab] OR \"social phobia\"[tiab])",
+      "view": "overview",
+      "views": [
+        "atlas",
+        "scales",
+        "gaps",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": {
+        "title": "Social anxiety: evaluative threat, self-referential appraisal, and gaze bias",
+        "text": "A neurobiological profile of social anxiety disorder marked by intense, persistent fear of negative evaluation, humiliation, or scrutiny in social and performance situations. Involves hyperreactivity of the amygdala and anterior insula to harsh/evaluative facial expressions, altered fusiform face processing, elevated self-focused mentalizing in medial PFC, and inadequate lateral prefrontal regulation. Avoidance reinforces negative expectations."
+      },
+      "speciesNote": {
+        "human": "Human: fMRI during public speaking anticipation, harsh face viewing, and real-time social evaluation tasks.",
+        "mouse": "Mouse: social defeat assays measure generic social avoidance, not human fear of negative evaluation or embarrassment.",
+        "macaque": "Macaque: primate social gaze, facial emotion viewing, and dominance hierarchy neurocircuits."
+      },
+      "levelDesc": {
+        "clinical": "Social scrutiny fear, performance anxiety, safety behaviors",
+        "cognitive": "Fear of negative evaluation, self-focused attention",
+        "systems": "Social-perceptual, mentalizing, and salience networks",
+        "regional": "Amygdala, anterior insula, fusiform gyrus, mPFC, dlPFC",
+        "circuit": "Frontolimbic and occipitotemporal social perceptual loops",
+        "molecular": "5-HT (SSRIs), NE, GABA, oxytocin"
+      },
+      "levelQueries": {
+        "clinical": "(\"social anxiety disorder\"[tiab] AND (\"negative evaluation\"[tiab] OR scrutiny[tiab] OR SSRI[tiab]))",
+        "cognitive": "(\"social anxiety disorder\"[tiab] AND (\"self-focused\"[tiab] OR \"face processing\"[tiab] OR gaze[tiab]))",
+        "systems": "(\"social anxiety disorder\"[tiab] AND (amygdala[tiab] OR insula[tiab] OR \"fusiform\"[tiab] OR fMRI[tiab]))",
+        "regional": "(\"social anxiety disorder\"[tiab] AND (prefrontal[tiab] OR cingulate[tiab] OR \"superior temporal\"[tiab]))",
+        "circuit": "(\"social anxiety disorder\"[tiab] AND (circuit*[tiab] OR \"social threat\"[tiab] OR frontolimbic[tiab]))",
+        "molecular": "(\"social anxiety disorder\"[tiab] AND (serotonin[tiab] OR dopamine[tiab] OR oxytocin[tiab]))"
+      },
+      "methods": {
+        "clinical": {
+          "manipulate": [
+            "Public speaking challenge under observation (Trier Social Stress Test)",
+            "SSRI vs placebo trials"
+          ],
+          "readout": [
+            "Liebowitz Social Anxiety Scale (LSAS)",
+            "Eye-tracking social gaze dwell time",
+            "Amygdalar reactivity to harsh faces"
+          ]
+        },
+        "circuit": {
+          "manipulate": [
+            "Primate amygdala/fusiform single-unit electrophysiology during gaze interaction"
+          ],
+          "readout": [
+            "Neuronal tuning to direct vs averted gaze and emotional expression"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ptsd",
+      "label": "Post-Traumatic Stress Disorder",
+      "category": "Trauma-related",
+      "entity": "ptsd-profile",
+      "query": "(\"post-traumatic stress disorder\"[tiab] OR \"posttraumatic stress disorder\"[tiab] OR PTSD[tiab])",
+      "view": "overview",
+      "views": [
+        "atlas",
+        "scales",
+        "gaps",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": {
+        "title": "PTSD: fear conditioning, context gating deficits, and extinction failure",
+        "text": "A circuit–molecule profile of post-traumatic stress disorder characterized by intrusive re-experiencing, persistent avoidance, negative alterations in mood, and hyperarousal. Key neural mechanisms: amygdala hyperreactivity (conditioned threat acquisition/expression), hippocampal context gating deficit (failure to restrict fear to original trauma context), and vmPFC hypoactivity (impaired extinction learning and recall). Noradrenergic hyperreactivity sustains consolidation and hyperarousal."
+      },
+      "speciesNote": {
+        "human": "Human: Pavlovian fear conditioning, extinction recall, and trauma script-driven fMRI; smaller mean hippocampal volume in meta-analyses.",
+        "mouse": "Mouse: rodent infralimbic/prelimbic, CA1/CA3, and central amygdala circuits demonstrate causal mechanisms of extinction acquisition and context gating.",
+        "macaque": "Macaque: primate prefrontal-amygdala homology and extinction retrieval networks."
+      },
+      "levelDesc": {
+        "clinical": "Intrusions, nightmares, hyperarousal, avoidance, dissociation",
+        "cognitive": "Overgeneralization, contextual amnesia, extinction recall deficit",
+        "systems": "Threat, contextual memory, and default mode networks",
+        "regional": "Amygdala (BLA/CeA), hippocampus (CA1/CA3), vmPFC, dACC",
+        "circuit": "Infralimbic-amygdala and hippocampal-PFC extinction loops",
+        "molecular": "Norepinephrine (prazosin target), NMDA, GABA, BDNF, CRH"
+      },
+      "levelQueries": {
+        "clinical": "(\"post-traumatic stress disorder\"[tiab] AND (intrusion[tiab] OR nightmare[tiab] OR prazosin[tiab]))",
+        "cognitive": "(\"post-traumatic stress disorder\"[tiab] AND (\"fear extinction\"[tiab] OR \"contextual memory\"[tiab]))",
+        "systems": "(\"post-traumatic stress disorder\"[tiab] AND (hippocampus[tiab] OR amygdala[tiab] OR vmPFC[tiab] OR fMRI[tiab]))",
+        "regional": "(\"post-traumatic stress disorder\"[tiab] AND (\"hippocampal volume\"[tiab] OR cingulate[tiab]))",
+        "circuit": "(\"post-traumatic stress disorder\"[tiab] AND (circuit*[tiab] OR extinction[tiab] OR conditioning[tiab]))",
+        "molecular": "(\"post-traumatic stress disorder\"[tiab] AND (norepinephrine[tiab] OR NMDA[tiab] OR glucocorticoid*[tiab]))"
+      },
+      "methods": {
+        "clinical": {
+          "manipulate": [
+            "Prolonged exposure therapy and extinction recall",
+            "Alpha-1 adrenergic antagonism (prazosin) challenge"
+          ],
+          "readout": [
+            "CAPS-5 diagnostic interview",
+            "Fear-potentiated startle and skin conductance",
+            "Extinction retention test BOLD"
+          ]
+        },
+        "circuit": {
+          "manipulate": [
+            "Infralimbic-to-amygdala pathway optogenetic stimulation during extinction",
+            "D-cycloserine NMDA co-agonist administration"
+          ],
+          "readout": [
+            "Freezing behavior suppression during CS+ presentation",
+            "Hippocampal dendritic spine remodeling"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ocd",
+      "label": "Obsessive-Compulsive Disorder",
+      "category": "Obsessive-compulsive",
+      "entity": "ocd-profile",
+      "query": "(\"obsessive-compulsive disorder\"[tiab] OR OCD[tiab])",
+      "view": "overview",
+      "views": [
+        "atlas",
+        "scales",
+        "gaps",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": {
+        "title": "OCD: cortico-striato-thalamo-cortical loops, error signaling, and habit capture",
+        "text": "A neurobiological profile of obsessive-compulsive disorder centered on intrusive distress-inducing obsessions and repetitive neutralizing compulsions. Organized around parallel cortico-striato-thalamo-cortical (CSTC) loops: orbitofrontal–ventral striatal (valuation/distress), dACC–striatal (hyperactive error-monitoring), and sensorimotor putaminal loops (habit-like motor routines). Postsynaptic scaffolding (Sapap3/Dlgap3) models corticostriatal synaptic dysfunction; SSRIs and D2 augmentation modulate loop dynamics."
+      },
+      "speciesNote": {
+        "human": "Human: symptom provocation fMRI shows elevated OFC, ACC, and caudate activation; deep brain stimulation targets ventral capsule/striatum.",
+        "mouse": "Mouse: Sapap3/Dlgap3 knockout exhibits excessive compulsive grooming responsive to SSRIs and optogenetic corticostriatal rescue.",
+        "macaque": "Macaque: primate CSTC loop parcellation (associative, sensorimotor, and limbic territories)."
+      },
+      "levelDesc": {
+        "clinical": "Obsessions (contamination, symmetry, harm), compulsions (checking, washing)",
+        "cognitive": "Error monitoring, habit bias, impaired cognitive flexibility",
+        "systems": "Parallel CSTC loops (OFC, ACC, DLPFC, sensorimotor)",
+        "regional": "Orbitofrontal cortex, caudate, putamen, anterior cingulate, thalamus",
+        "circuit": "Direct vs indirect striatal pathway balance, Sapap3 synapses",
+        "molecular": "5-HT, DA (D1/D2 balance), Glutamate, DLGAP3/SAPAP3"
+      },
+      "levelQueries": {
+        "clinical": "(\"obsessive-compulsive disorder\"[tiab] AND (compulsion[tiab] OR obsession[tiab] OR SSRI[tiab]))",
+        "cognitive": "(\"obsessive-compulsive disorder\"[tiab] AND (\"error-related negativity\"[tiab] OR habit[tiab] OR flexibility[tiab]))",
+        "systems": "(\"obsessive-compulsive disorder\"[tiab] AND (CSTC[tiab] OR \"orbitofrontal\"[tiab] OR striatum[tiab] OR fMRI[tiab]))",
+        "regional": "(\"obsessive-compulsive disorder\"[tiab] AND (caudate[tiab] OR \"anterior cingulate\"[tiab] OR thalamus[tiab]))",
+        "circuit": "(\"obsessive-compulsive disorder\"[tiab] AND (circuit*[tiab] OR \"corticostriatal\"[tiab] OR Sapap3[tiab]))",
+        "molecular": "(\"obsessive-compulsive disorder\"[tiab] AND (glutamate[tiab] OR serotonin[tiab] OR dopamine[tiab] OR DLGAP3[tiab]))"
+      },
+      "methods": {
+        "clinical": {
+          "manipulate": [
+            "Exposure and response prevention (ERP)",
+            "SSRI pharmacotherapy with dopamine antagonist augmentation",
+            "Subthalamic/striatal DBS"
+          ],
+          "readout": [
+            "Yale-Brown Obsessive Compulsive Scale (Y-BOCS)",
+            "Error-related negativity (ERN) amplitude",
+            "Symptom provocation BOLD"
+          ]
+        },
+        "circuit": {
+          "manipulate": [
+            "Genetic disruption of Sapap3/Dlgap3 in mice",
+            "Optogenetic stimulation of lateral OFC-to-striatum projection"
+          ],
+          "readout": [
+            "Video-tracked facial grooming bouts and skin lesions",
+            "Medium spiny neuron miniature EPSCs"
+          ]
+        }
+      }
+    },
+    {
+      "id": "schizophrenia",
+      "label": "Schizophrenia",
+      "category": "Psychotic disorders",
+      "entity": "schizophrenia-profile",
+      "query": "(\"schizophrenia\"[tiab] OR psychosis[tiab])",
+      "view": "overview",
+      "views": [
+        "atlas",
+        "scales",
+        "gaps",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": {
+        "title": "Schizophrenia: dopamine salience, NMDA hypofunction, and complement synaptic pruning",
+        "text": "A multidimensional neurobiological profile of schizophrenia distinguishing positive symptoms (psychosis/delusions), negative symptoms (avolition/anhedonia), and cognitive impairments. Converging mechanisms include elevated presynaptic dopamine synthesis in associative striatum (aberrant salience), cortical NMDA receptor hypofunction on parvalbumin GABA interneurons (disinhibition), novel muscarinic M1/M4 modulation (Cobenfy), and genetic C4A complement-mediated adolescent synaptic pruning."
+      },
+      "speciesNote": {
+        "human": "Human: [18F]-DOPA PET confirms elevated presynaptic dopamine synthesis in associative striatum; genetic C4A locus linked to microglial pruning.",
+        "mouse": "Mouse: NMDA NR1 knockout and C4 overexpression demonstrate cellular disinhibition and developmental spine loss.",
+        "macaque": "Macaque: primate dorsolateral prefrontal microcircuits support delay-period working memory models."
+      },
+      "levelDesc": {
+        "clinical": "Positive symptoms, negative symptoms, cognitive deficits",
+        "cognitive": "Aberrant salience, working memory, cognitive control",
+        "systems": "Thalamocortical, frontotemporal, and hippocampal-midbrain loops",
+        "regional": "Associative striatum (caudate), DLPFC, hippocampus, superior temporal",
+        "circuit": "Cortical microcircuit E/I balance, hippocampal-VTA dopamine drive",
+        "molecular": "D2/D3, NMDA, parvalbumin GABA, M1/M4 muscarinic, C4A complement"
+      },
+      "levelQueries": {
+        "clinical": "(\"schizophrenia\"[tiab] AND (antipsychotic[tiab] OR xanomeline[tiab] OR psychosis[tiab]))",
+        "cognitive": "(\"schizophrenia\"[tiab] AND (\"aberrant salience\"[tiab] OR \"working memory\"[tiab]))",
+        "systems": "(\"schizophrenia\"[tiab] AND (fMRI[tiab] OR dysconnectivity[tiab] OR PET[tiab]))",
+        "regional": "(\"schizophrenia\"[tiab] AND (striatum[tiab] OR prefrontal[tiab] OR hippocampus[tiab]))",
+        "circuit": "(\"schizophrenia\"[tiab] AND (parvalbumin[tiab] OR NMDA[tiab] OR circuit*[tiab]))",
+        "molecular": "(\"schizophrenia\"[tiab] AND (dopamine[tiab] OR C4A[tiab] OR \"complement component 4\"[tiab] OR muscarinic[tiab]))"
+      },
+      "methods": {
+        "clinical": {
+          "manipulate": [
+            "D2 antagonist vs M1/M4 agonist (xanomeline/trospium) treatment",
+            "Ketamine/PCP NMDA antagonist challenge in healthy controls"
+          ],
+          "readout": [
+            "PANSS score rating",
+            "[18F]-DOPA PET striatal influx Ki",
+            "N-back working memory fMRI"
+          ]
+        },
+        "circuit": {
+          "manipulate": [
+            "C4A overexpression in developing mouse cerebral cortex",
+            "Fast-spiking parvalbumin interneuron optogenetics"
+          ],
+          "readout": [
+            "Microglia engulfment of synaptic inputs",
+            "Gamma oscillation synchrony and working memory tasks"
+          ]
+        }
+      }
+    },
+    {
+      "id": "autism",
+      "label": "Autism Spectrum Disorder",
+      "category": "Neurodevelopmental",
+      "entity": "autism-profile",
+      "query": "(\"autism spectrum disorder\"[tiab] OR autism[tiab] OR ASD[tiab])",
+      "view": "overview",
+      "views": [
+        "atlas",
+        "scales",
+        "gaps",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": {
+        "title": "Autism spectrum disorder: developmental wiring, synaptic organization, and sensory gating",
+        "text": "A multidimensional neurodevelopmental profile of autism spectrum disorder characterized by differences in social communication and restricted, repetitive patterns of behavior, interests, or routines. Genetic risk loci converge on postsynaptic scaffolding (SHANK3), synaptic adhesion (NRXN, NLGN), ion channels (SCN2A/Nav1.2), and chromatin remodeling (CHD8). Circuit features include altered sensory gain, atypical corticostriatal loop modulation, and distributed social-perceptual network differences. Placebo-controlled trials constrain simple oxytocin-deficiency models."
+      },
+      "speciesNote": {
+        "human": "Human: heterogeneous functional connectivity; sensory hyper/hypo-reactivity; 24-week trial demonstrated no oxytocin efficacy over placebo.",
+        "mouse": "Mouse: Shank3 and Cntnap2 knockouts show altered corticostriatal synaptic transmission and repetitive grooming; assay limited animal behaviors.",
+        "macaque": "Macaque: primate eye contact, social vocalization, and social brain network architecture."
+      },
+      "levelDesc": {
+        "clinical": "Social communication, restricted interests, sensory sensitivities",
+        "cognitive": "Social perceptual integration, local vs global perceptual bias",
+        "systems": "Sensory networks, corticostriatal loops, cerebellum, social brain",
+        "regional": "Superior temporal sulcus, fusiform, vmPFC, striatum, cerebellum",
+        "circuit": "E/I balance, thalamocortical sensory filtering, corticostriatal gating",
+        "molecular": "SHANK3, NLGN, NRXN, SCN2A, CHD8, GRIN2B, GABA/glutamate"
+      },
+      "levelQueries": {
+        "clinical": "(\"autism spectrum disorder\"[tiab] AND (\"social communication\"[tiab] OR repetitive[tiab]))",
+        "cognitive": "(\"autism spectrum disorder\"[tiab] AND (\"sensory processing\"[tiab] OR \"social cognition\"[tiab]))",
+        "systems": "(\"autism spectrum disorder\"[tiab] AND (connectivity[tiab] OR \"corticostriatal\"[tiab] OR fMRI[tiab]))",
+        "regional": "(\"autism spectrum disorder\"[tiab] AND (cerebellum[tiab] OR \"temporal cortex\"[tiab] OR striatum[tiab]))",
+        "circuit": "(\"autism spectrum disorder\"[tiab] AND (synapse*[tiab] OR \"E/I balance\"[tiab] OR circuit*[tiab]))",
+        "molecular": "(\"autism spectrum disorder\"[tiab] AND (SHANK3[tiab] OR SCN2A[tiab] OR oxytocin[tiab] OR NLGN[tiab]))"
+      },
+      "methods": {
+        "clinical": {
+          "manipulate": [
+            "Intranasal oxytocin vs placebo randomized trial (Sikich et al., NEJM 2021)",
+            "Early behavioral social communication intervention"
+          ],
+          "readout": [
+            "ADOS-2 and ADI-R diagnostic scores",
+            "Eye-tracking social scene preference",
+            "Sensory profile questionnaires"
+          ]
+        },
+        "circuit": {
+          "manipulate": [
+            "Cell-type-specific Shank3 deletion in mouse striatum",
+            "In vitro patch-clamp in human cortical organoids"
+          ],
+          "readout": [
+            "Cortical miniature EPSC/IPSC ratio",
+            "Ultrasonic vocalizations and repetitive grooming bouts"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tourette",
+      "label": "Tourette Syndrome",
+      "category": "Neurodevelopmental",
+      "entity": "tourette-profile",
+      "query": "(\"Tourette syndrome\"[tiab] OR \"tic disorder\"[tiab] OR Tourette[tiab])",
+      "view": "overview",
+      "views": [
+        "atlas",
+        "scales",
+        "gaps",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": {
+        "title": "Tourette syndrome: striatal disinhibition, sensorimotor CSTC loops, and premonitory urges",
+        "text": "A neurobiological profile of Tourette syndrome and chronic tic disorders characterized by motor and vocal tics, premonitory somatosensory urges, and temporary suppressibility. The core model involves focal striatal disinhibition (loss of striatal cholinergic and parvalbumin interneurons) that permits unwanted competing motor fragments to break through thalamic gating, accompanied by insular urge processing and frontal control networks during voluntary suppression."
+      },
+      "speciesNote": {
+        "human": "Human: fMRI during tic suppression and urge onset; small postmortem series identify loss of striatal cholinergic interneurons.",
+        "mouse": "Mouse: focal striatal GABA-A antagonism (bicuculline infusion) reliably evokes acute tic-like motor jerks.",
+        "macaque": "Macaque: primate basal ganglia sensorimotor striatal microcircuits."
+      },
+      "levelDesc": {
+        "clinical": "Motor and phonic tics, premonitory urges, voluntary suppression",
+        "cognitive": "Urge perception, action selection, effortful motor control",
+        "systems": "Sensorimotor CSTC loops, insula, supplementary motor area (SMA)",
+        "regional": "Putamen, SMA, premotor cortex, GPi/SNr, thalamus, insula",
+        "circuit": "Striatal cholinergic interneurons, direct/indirect basal ganglia pathways",
+        "molecular": "Dopamine (D2 sensitivity), GABA, acetylcholine (CINs), histamine (HDC)"
+      },
+      "levelQueries": {
+        "clinical": "(\"Tourette syndrome\"[tiab] AND (tic[tiab] OR urge[tiab] OR haloperidol[tiab]))",
+        "cognitive": "(\"Tourette syndrome\"[tiab] AND (\"premonitory urge\"[tiab] OR suppression[tiab]))",
+        "systems": "(\"Tourette syndrome\"[tiab] AND (striatum[tiab] OR \"sensorimotor\"[tiab] OR SMA[tiab]))",
+        "regional": "(\"Tourette syndrome\"[tiab] AND (putamen[tiab] OR thalamus[tiab] OR insula[tiab]))",
+        "circuit": "(\"Tourette syndrome\"[tiab] AND (circuit*[tiab] OR \"interneuron\"[tiab] OR \"basal ganglia\"[tiab]))",
+        "molecular": "(\"Tourette syndrome\"[tiab] AND (dopamine[tiab] OR acetylcholine[tiab] OR GABA[tiab]))"
+      },
+      "methods": {
+        "clinical": {
+          "manipulate": [
+            "Comprehensive Behavioral Intervention for Tics (CBIT)",
+            "D2 receptor antagonist (aripiprazole, haloperidol) challenge"
+          ],
+          "readout": [
+            "Yale Global Tic Severity Scale (YGTSS)",
+            "Premonitory Urge for Tics Scale (PUTS)",
+            "fMRI during voluntary tic suppression"
+          ]
+        },
+        "circuit": {
+          "manipulate": [
+            "Focal microinfusion of GABA-A antagonist bicuculline into rat motor putamen",
+            "Selective ablation of striatal cholinergic interneurons"
+          ],
+          "readout": [
+            "High-speed video EMG recording of tic-like jerks",
+            "Striatal medium spiny neuron burst firing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "sud",
+      "label": "Substance Use Disorders",
+      "category": "Addiction",
+      "entity": "sud-profile",
+      "query": "(\"substance use disorder\"[tiab] OR addiction[tiab] OR \"drug dependence\"[tiab])",
+      "view": "overview",
+      "views": [
+        "atlas",
+        "scales",
+        "gaps",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": {
+        "title": "Substance use disorders: three-stage addiction cycle and neuroadaptations",
+        "text": "A comprehensive neurocircuitry profile of addiction structured around the established three-stage heuristic: (1) Binge/intoxication: ventral tegmental area and ventral/dorsal striatum (incentive salience, positive reinforcement, habit formation); (2) Withdrawal/negative affect: extended amygdala (CeA, BNST; recruited CRF and dynorphin driving negative reinforcement); (3) Preoccupation/anticipation: prefrontal cortex, anterior insula, and dACC (cue reactivity, craving, and impaired executive control). Shifts from voluntary to compulsive seeking."
+      },
+      "speciesNote": {
+        "human": "Human: drug cue-reactivity fMRI, PET measures of striatal D2 receptor and dopamine transporter availability.",
+        "mouse": "Mouse: rodent operant self-administration, progressive ratio, and reinstatement (relapse) assays.",
+        "macaque": "Macaque: primate self-administration demonstrating long-term neuroadaptations in striatal and prefrontal circuitry."
+      },
+      "levelDesc": {
+        "clinical": "Compulsive use, tolerance, withdrawal, craving, relapse vulnerability",
+        "cognitive": "Incentive salience, negative reinforcement, habit bias, cue reactivity",
+        "systems": "Mesolimbic reward, extended amygdala stress, and prefrontal control systems",
+        "regional": "Ventral tegmental area, nucleus accumbens, dorsal striatum, CeA, BNST, insula, PFC",
+        "circuit": "Binge (VTA-NAc), withdrawal (extended amygdala), craving (PFC-striatal)",
+        "molecular": "Dopamine, endogenous opioids, CRF, dynorphin/kappa, glutamate"
+      },
+      "levelQueries": {
+        "clinical": "(\"substance use disorder\"[tiab] AND (craving[tiab] OR relapse[tiab] OR addiction[tiab]))",
+        "cognitive": "(\"substance use disorder\"[tiab] AND (\"incentive salience\"[tiab] OR \"cue reactivity\"[tiab]))",
+        "systems": "(\"substance use disorder\"[tiab] AND (\"ventral striatum\"[tiab] OR \"extended amygdala\"[tiab] OR fMRI[tiab]))",
+        "regional": "(\"substance use disorder\"[tiab] AND (VTA[tiab] OR accumbens[tiab] OR insula[tiab]))",
+        "circuit": "(\"substance use disorder\"[tiab] AND (circuit*[tiab] OR neuroadaptation[tiab] OR \"self-administration\"[tiab]))",
+        "molecular": "(\"substance use disorder\"[tiab] AND (dopamine[tiab] OR opioid[tiab] OR CRF[tiab] OR dynorphin[tiab]))"
+      },
+      "methods": {
+        "clinical": {
+          "manipulate": [
+            "Drug cue exposure during fMRI",
+            "Agonist/antagonist pharmacotherapy (buprenorphine, naltrexone)"
+          ],
+          "readout": [
+            "Visual analog craving scale",
+            "[11C]-raclopride PET striatal dopamine displacement",
+            "Relapse rate post-discharge"
+          ]
+        },
+        "circuit": {
+          "manipulate": [
+            "Operant intravenous self-administration in rodents",
+            "Optogenetic inhibition of VTA-to-accumbens projection during cue re-exposure"
+          ],
+          "readout": [
+            "Extinction lever presses and cue-induced reinstatement",
+            "AMPA/NMDA silent synapse remodeling in NAc"
+          ]
+        }
+      }
+    },
+    {
+      "id": "anorexia",
+      "label": "Anorexia Nervosa",
+      "category": "Eating disorders",
+      "entity": "anorexia-profile",
+      "query": "(\"anorexia nervosa\"[tiab])",
+      "view": "overview",
+      "views": [
+        "atlas",
+        "scales",
+        "gaps",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": {
+        "title": "Anorexia nervosa: metabo-psychiatric etiology, interoceptive mismatch, and restrictive habit",
+        "text": "A neurobiological profile of anorexia nervosa characterized by persistent restriction of energy intake, intense fear of gaining weight, and distorted body experience. Conceptualized as a metabo-psychiatric disorder combining psychiatric risk (anxiety, perfectionism, cognitive rigidity) with metabolic vulnerability. Key circuits: anterior insula (mismatched taste and visceral feedback), dorsal striatum (shift to rigid restrictive habits), and hypothalamic feeding regulation. Starvation physiology maintains and reinforces symptoms."
+      },
+      "speciesNote": {
+        "human": "Human: fMRI during food taste and body image exposure; weight-restored vs acutely ill cohorts differentiate trait vs state effects.",
+        "mouse": "Mouse: activity-based anorexia (ABA) models food restriction and running wheel hyperactivity; rodents lack body image beliefs.",
+        "macaque": "Macaque: primate hypothalamic and insular feeding circuits."
+      },
+      "levelDesc": {
+        "clinical": "Severe dietary restriction, low weight, fear of weight gain, body image distortion",
+        "cognitive": "Interoceptive blunting, cognitive rigidity, delayed gratification, anhedonia",
+        "systems": "Insular interoceptive, frontostriatal habit, and hypothalamic feeding networks",
+        "regional": "Anterior insula, dorsal caudate/putamen, ventral striatum, hypothalamus, OFC",
+        "circuit": "Frontostriatal restrictive choice, taste-reward insular loops",
+        "molecular": "Serotonin (5-HT1A/2A), dopamine (D2/D3), leptin, ghrelin, CADM1, FOXP1"
+      },
+      "levelQueries": {
+        "clinical": "(\"anorexia nervosa\"[tiab] AND (restriction[tiab] OR starvation[tiab] OR weight[tiab]))",
+        "cognitive": "(\"anorexia nervosa\"[tiab] AND (interoception[tiab] OR \"body image\"[tiab] OR rigidity[tiab]))",
+        "systems": "(\"anorexia nervosa\"[tiab] AND (insula[tiab] OR striatum[tiab] OR fMRI[tiab]))",
+        "regional": "(\"anorexia nervosa\"[tiab] AND (hypothalamus[tiab] OR caudate[tiab] OR prefrontal[tiab]))",
+        "circuit": "(\"anorexia nervosa\"[tiab] AND (circuit*[tiab] OR habit[tiab] OR \"taste reward\"[tiab]))",
+        "molecular": "(\"anorexia nervosa\"[tiab] AND (serotonin[tiab] OR dopamine[tiab] OR leptin[tiab] OR ghrelin[tiab]))"
+      },
+      "methods": {
+        "clinical": {
+          "manipulate": [
+            "Sucrose/water taste administration fMRI under hunger vs satiety",
+            "Weight restoration nutritional rehabilitation"
+          ],
+          "readout": [
+            "Eating Disorder Examination (EDE) scores",
+            "Insula and ventral striatum taste BOLD response",
+            "Plasma leptin and ghrelin"
+          ]
+        },
+        "circuit": {
+          "manipulate": [
+            "Activity-based anorexia (ABA) rodent paradigm (restricted food access + running wheel)"
+          ],
+          "readout": [
+            "Survival rate, wheel running activity, hippocampal neurogenesis"
+          ]
+        }
+      }
+    },
+    {
+      "id": "bulimia",
+      "label": "Bulimia Nervosa",
+      "category": "Eating disorders",
+      "entity": "bulimia-profile",
+      "query": "(\"bulimia nervosa\"[tiab] OR bulimia[tiab])",
+      "view": "overview",
+      "views": [
+        "atlas",
+        "scales",
+        "gaps",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": {
+        "title": "Bulimia nervosa: binge-purge cycles, reward hypersensitivity, and compensatory regulation",
+        "text": "A neurobiological profile of bulimia nervosa marked by recurrent episodes of loss-of-control binge eating followed by inappropriate compensatory behaviors (self-induced vomiting, fasting, laxative misuse). Involves sensitized mesolimbic reward responses to palatable food cues, intermittent dietary restriction that triggers subsequent loss of control, altered anterior insular taste valuation, and frontostriatal regulation fatigue. SSRIs (fluoxetine) provide established pharmacotherapeutic efficacy."
+      },
+      "speciesNote": {
+        "human": "Human: fMRI shows altered striatal and insular response during food anticipation and receipt; PET reports altered 5-HT and mGluR5 binding.",
+        "mouse": "Mouse: intermittent access to palatable food models loss-of-control binge intake; animal models lack self-evaluation or body shape shame.",
+        "macaque": "Macaque: primate frontolimbic reward and feeding regulation circuits."
+      },
+      "levelDesc": {
+        "clinical": "Binge eating, purging, compensatory fasting, weight-based self-worth",
+        "cognitive": "Loss of control, food cue craving, post-binge anxiety relief via compensation",
+        "systems": "Mesolimbic reward, cognitive control, and interoceptive networks",
+        "regional": "Ventral striatum, anterior insula, lateral PFC, dorsal ACC",
+        "circuit": "Frontostriatal inhibitory control and insular-striatal reward loops",
+        "molecular": "Serotonin (5-HT transporter), dopamine, mGluR5, gut peptides"
+      },
+      "levelQueries": {
+        "clinical": "(\"bulimia nervosa\"[tiab] AND (purge[tiab] OR \"binge eating\"[tiab] OR fluoxetine[tiab]))",
+        "cognitive": "(\"bulimia nervosa\"[tiab] AND (\"loss of control\"[tiab] OR craving[tiab] OR compensation[tiab]))",
+        "systems": "(\"bulimia nervosa\"[tiab] AND (striatum[tiab] OR insula[tiab] OR fMRI[tiab]))",
+        "regional": "(\"bulimia nervosa\"[tiab] AND (\"prefrontal cortex\"[tiab] OR cingulate[tiab]))",
+        "circuit": "(\"bulimia nervosa\"[tiab] AND (circuit*[tiab] OR \"reward sensitivity\"[tiab]))",
+        "molecular": "(\"bulimia nervosa\"[tiab] AND (serotonin[tiab] OR dopamine[tiab] OR mGluR5[tiab]))"
+      },
+      "methods": {
+        "clinical": {
+          "manipulate": [
+            "High-dose fluoxetine (SSRI) therapy",
+            "Palatable food cue exposure under acute negative affect"
+          ],
+          "readout": [
+            "Binge and purge episode frequency logs",
+            "Ventral striatum food cue BOLD response",
+            "[11C]-ABP688 mGluR5 PET binding"
+          ]
+        },
+        "circuit": {
+          "manipulate": [
+            "Intermittent limited access to high-fat/high-sugar diet in rats"
+          ],
+          "readout": [
+            "Binge-like consumption in short time window",
+            "Accumbens dopamine release during food access"
+          ]
+        }
+      }
+    },
+    {
+      "id": "binge-eating",
+      "label": "Binge-Eating Disorder",
+      "category": "Eating disorders",
+      "entity": "binge-eating-profile",
+      "query": "(\"binge-eating disorder\"[tiab] OR \"binge eating disorder\"[tiab] OR BED[tiab])",
+      "view": "overview",
+      "views": [
+        "atlas",
+        "scales",
+        "gaps",
+        "lab",
+        "library"
+      ],
+      "kind": "condition",
+      "intro": {
+        "title": "Binge-eating disorder: food-cue incentive salience, inhibitory fatigue, and metabolic interplay",
+        "text": "A neurobiological profile of binge-eating disorder characterized by recurrent, distressing episodes of consuming large quantities of food with a subjective sense of loss of control, without regular compensatory purging. Core mechanisms include heightened mesolimbic dopamine incentive salience for palatable food cues, frontostriatal inhibitory control fatigue, and altered insular satiety signaling. Supported by pharmacological efficacy of lisdexamfetamine (dopamine/norepinephrine reuptake inhibitor)."
+      },
+      "speciesNote": {
+        "human": "Human: fMRI demonstrates elevated ventral striatal response to food anticipation and reduced prefrontal recruitment during food-specific inhibitory tasks.",
+        "mouse": "Mouse: intermittent high-fat access produces compulsive-like bingeing despite foot-shock punishment.",
+        "macaque": "Macaque: primate hypothalamic-ventral striatal feeding networks."
+      },
+      "levelDesc": {
+        "clinical": "Objective binge episodes, subjective loss of control, guilt, absence of purging",
+        "cognitive": "Food reward hypersensitivity, delay discounting, emotional eating",
+        "systems": "Mesocorticolimbic reward and frontostriatal cognitive control networks",
+        "regional": "Ventral striatum (accumbens), anterior insula, ventromedial PFC, dACC",
+        "circuit": "Mesolimbic dopamine incentive salience and frontostriatal termination loops",
+        "molecular": "Dopamine (DAT), norepinephrine (NET), lisdexamfetamine target, opioids"
+      },
+      "levelQueries": {
+        "clinical": "(\"binge-eating disorder\"[tiab] AND (\"loss of control\"[tiab] OR lisdexamfetamine[tiab]))",
+        "cognitive": "(\"binge-eating disorder\"[tiab] AND (\"incentive salience\"[tiab] OR impulsivity[tiab]))",
+        "systems": "(\"binge-eating disorder\"[tiab] AND (fMRI[tiab] OR \"ventral striatum\"[tiab] OR insula[tiab]))",
+        "regional": "(\"binge-eating disorder\"[tiab] AND (\"prefrontal cortex\"[tiab] OR accumbens[tiab]))",
+        "circuit": "(\"binge-eating disorder\"[tiab] AND (circuit*[tiab] OR dopamine[tiab] OR \"food reward\"[tiab]))",
+        "molecular": "(\"binge-eating disorder\"[tiab] AND (dopamine[tiab] OR norepinephrine[tiab] OR amphetamine[tiab]))"
+      },
+      "methods": {
+        "clinical": {
+          "manipulate": [
+            "Lisdexamfetamine (prodrug stimulant) randomized trial",
+            "Palatable food go/no-go inhibitory challenge"
+          ],
+          "readout": [
+            "Binge-eating days per week",
+            "fMRI ventral striatum response to palatable food cues",
+            "Yale Food Addiction Scale"
+          ]
+        },
+        "circuit": {
+          "manipulate": [
+            "Limited-access intermittent sugar/fat diet in rodents",
+            "Dopamine D1/D2 receptor antagonist infusion into nucleus accumbens"
+          ],
+          "readout": [
+            "High-rate consumption of palatable diet in 2-hour window",
+            "Fos activation in nucleus accumbens and lateral hypothalamus"
+          ]
+        }
       }
     }
   ],
@@ -14799,6 +15694,488 @@
         "hartig2021sarm"
       ],
       "region": "insula"
+    },
+    {
+      "id": "mdd-profile",
+      "name": "Major depressive disorder profile",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "emotion",
+        "reward"
+      ],
+      "summary": "Major depressive disorder involves persistent low mood, anhedonia, neurovegetative symptoms, and negative cognitive biases arising from distributed network, synaptic, and neuroendocrine vulnerabilities (human; review).",
+      "refs": [
+        "fries2023"
+      ],
+      "region": "mdd"
+    },
+    {
+      "id": "mdd-anhedonia",
+      "name": "Anhedonia & motivational valuation",
+      "level": "cognitive",
+      "kind": "function",
+      "domains": [
+        "reward",
+        "emotion"
+      ],
+      "summary": "Impairments in willingness to expend effort for reward, reward anticipation, and reinforcement learning in MDD, distinct from consummatory hedonic experience.",
+      "refs": [
+        "fries2023"
+      ],
+      "region": "mdd"
+    },
+    {
+      "id": "mdd-synaptic-maintenance",
+      "name": "Synaptic maintenance & BDNF-TrkB",
+      "level": "cellular",
+      "kind": "mechanism",
+      "domains": [
+        "learning",
+        "architecture"
+      ],
+      "summary": "Neurotrophic signaling via BDNF, TrkB, and mTOR that supports dendritic spine stability, modulated by chronic glucocorticoids and rapid-acting ketamine.",
+      "refs": [
+        "fries2023"
+      ],
+      "region": "mdd"
+    },
+    {
+      "id": "bipolar-profile",
+      "name": "Bipolar disorder profile",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "emotion",
+        "reward",
+        "homeostasis"
+      ],
+      "summary": "Bipolar disorder features recurrent mood episodes (mania, hypomania, depression, euthymia) characterized by mood instability, altered goal-directed activity, and circadian disruption (human; review).",
+      "refs": [
+        "scaini2020"
+      ],
+      "region": "bipolar"
+    },
+    {
+      "id": "bipolar-reward-hypersensitivity",
+      "name": "Incentive reward hypersensitivity",
+      "level": "cognitive",
+      "kind": "function",
+      "domains": [
+        "reward",
+        "executive"
+      ],
+      "summary": "Heightened ventral striatal and orbitofrontal responsiveness to reward cues and excessive goal-directed pursuit characteristic of manic states.",
+      "refs": [
+        "scaini2020"
+      ],
+      "region": "bipolar"
+    },
+    {
+      "id": "bipolar-circadian-rhythm",
+      "name": "Circadian pacemaker & sleep timing",
+      "level": "systems",
+      "kind": "system",
+      "domains": [
+        "homeostasis",
+        "timing"
+      ],
+      "summary": "Suprachiasmatic and hypothalamic timing networks that coordinate diurnal sleep architecture, endocrine rhythms, and mood state transitions.",
+      "refs": [
+        "scaini2020"
+      ],
+      "region": "bipolar"
+    },
+    {
+      "id": "gad-profile",
+      "name": "Generalized anxiety disorder profile",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "emotion",
+        "executive"
+      ],
+      "summary": "GAD is characterized by persistent, excessive, difficult-to-control worry across life domains, apprehensive anticipation of uncertain threat, and autonomic/somatic tension (human; review).",
+      "refs": [
+        "duval2015",
+        "nuss2015"
+      ],
+      "region": "gad"
+    },
+    {
+      "id": "gad-worry-anticipation",
+      "name": "Elaborative worry & threat anticipation",
+      "level": "cognitive",
+      "kind": "function",
+      "domains": [
+        "emotion",
+        "executive"
+      ],
+      "summary": "Sustained cognitive elaboration of potential negative outcomes under conditions of uncertainty, mediated by medial prefrontal and rostral ACC networks.",
+      "refs": [
+        "duval2015"
+      ],
+      "region": "gad"
+    },
+    {
+      "id": "panic-profile",
+      "name": "Panic disorder profile",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "emotion",
+        "homeostasis"
+      ],
+      "summary": "Panic disorder features recurrent unexpected panic attacks characterized by sudden surges of intense somatic distress and catastrophic fear of death or loss of control (human; review).",
+      "refs": [
+        "duval2015",
+        "martin2009"
+      ],
+      "region": "panic"
+    },
+    {
+      "id": "panic-interoceptive-alarm",
+      "name": "Interoceptive threat amplification",
+      "level": "cognitive",
+      "kind": "function",
+      "domains": [
+        "emotion",
+        "sensory"
+      ],
+      "summary": "Positive-feedback loop wherein normal benign bodily sensations (tachycardia, dyspnea) are catastrophically appraised as catastrophic emergencies.",
+      "refs": [
+        "duval2015"
+      ],
+      "region": "panic"
+    },
+    {
+      "id": "sad-profile",
+      "name": "Social anxiety disorder profile",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "social",
+        "emotion"
+      ],
+      "summary": "Social anxiety disorder is defined by persistent, disproportionate fear of negative evaluation and embarrassment in social or performance situations, leading to severe avoidance (human; review).",
+      "refs": [
+        "duval2015"
+      ],
+      "region": "sad"
+    },
+    {
+      "id": "sad-evaluative-threat",
+      "name": "Social evaluative threat processing",
+      "level": "cognitive",
+      "kind": "function",
+      "domains": [
+        "social",
+        "emotion"
+      ],
+      "summary": "Selective attentional and affective hypersensitivity to social evaluation, critical faces, and potential social rejection.",
+      "refs": [
+        "duval2015"
+      ],
+      "region": "sad"
+    },
+    {
+      "id": "ptsd-profile",
+      "name": "Post-traumatic stress disorder profile",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "memory",
+        "emotion"
+      ],
+      "summary": "PTSD develops after exposure to traumatic events, manifesting as intrusive re-experiencing, persistent cue avoidance, hyperarousal, and emotional numbing (human; review).",
+      "refs": [
+        "duval2015",
+        "sun2023ptsd"
+      ],
+      "region": "ptsd"
+    },
+    {
+      "id": "ptsd-extinction-deficit",
+      "name": "Fear extinction retention deficit",
+      "level": "cognitive",
+      "kind": "function",
+      "domains": [
+        "learning",
+        "memory"
+      ],
+      "summary": "Failure of vmPFC-mediated safety memories to inhibit conditioned fear responses in safe environments, leading to persistent trauma intrusions.",
+      "refs": [
+        "sun2023ptsd"
+      ],
+      "region": "ptsd"
+    },
+    {
+      "id": "ocd-profile",
+      "name": "Obsessive-compulsive disorder profile",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "executive",
+        "emotion",
+        "learning"
+      ],
+      "summary": "OCD is characterized by intrusive distressing thoughts (obsessions) and ritualistic repetitive behaviors or mental acts (compulsions) performed to neutralize distress (human; review).",
+      "refs": [
+        "gargano2023"
+      ],
+      "region": "ocd"
+    },
+    {
+      "id": "ocd-error-signaling",
+      "name": "Hyperactive error-monitoring & habit capture",
+      "level": "cognitive",
+      "kind": "function",
+      "domains": [
+        "executive",
+        "learning"
+      ],
+      "summary": "Exaggerated internal 'something is wrong' error signals (increased ERN) accompanied by an excessive shift from goal-directed action to rigid compulsive habits.",
+      "refs": [
+        "gargano2023"
+      ],
+      "region": "ocd"
+    },
+    {
+      "id": "schizophrenia-profile",
+      "name": "Schizophrenia profile",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "executive",
+        "reward"
+      ],
+      "summary": "Schizophrenia is a severe psychiatric syndrome characterized by positive symptoms (delusions, hallucinations), negative symptoms (avolition), and cognitive impairment linked to dopaminergic and glutamatergic dysregulation (human; review).",
+      "refs": [
+        "howes2015",
+        "sekar2016",
+        "fda2024cobenfy"
+      ],
+      "region": "schizophrenia"
+    },
+    {
+      "id": "schizophrenia-aberrant-salience",
+      "name": "Aberrant salience & presynaptic dopamine",
+      "level": "cognitive",
+      "kind": "function",
+      "domains": [
+        "reward",
+        "executive"
+      ],
+      "summary": "Elevated presynaptic dopamine release in associative striatum driving inappropriate assignment of personal significance to neutral environmental stimuli.",
+      "refs": [
+        "howes2015"
+      ],
+      "region": "schizophrenia"
+    },
+    {
+      "id": "schizophrenia-c4-pruning",
+      "name": "C4-mediated synaptic pruning",
+      "level": "molecular",
+      "kind": "mechanism",
+      "domains": [
+        "development",
+        "architecture"
+      ],
+      "summary": "Complement component 4 (C4A) promotes microglial elimination of cortical synapses during adolescent developmental remodeling.",
+      "refs": [
+        "sekar2016"
+      ],
+      "region": "schizophrenia"
+    },
+    {
+      "id": "autism-profile",
+      "name": "Autism spectrum disorder profile",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "social",
+        "sensory",
+        "development"
+      ],
+      "summary": "Autism spectrum disorder is a heterogeneous neurodevelopmental condition characterized by differences in social communication and interaction alongside restricted, repetitive patterns of behavior (human; review).",
+      "refs": [
+        "sikich2021",
+        "liu2025"
+      ],
+      "region": "autism"
+    },
+    {
+      "id": "autism-synaptic-organization",
+      "name": "Synaptic scaffolds & developmental assembly",
+      "level": "molecular",
+      "kind": "mechanism",
+      "domains": [
+        "development",
+        "architecture"
+      ],
+      "summary": "High-confidence risk genes converging on postsynaptic density assembly (SHANK3), cell adhesion (NRXN, NLGN), and chromatin remodeling (CHD8) regulating early circuit assembly.",
+      "refs": [
+        "liu2025"
+      ],
+      "region": "autism"
+    },
+    {
+      "id": "tourette-profile",
+      "name": "Tourette syndrome profile",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "motor",
+        "executive"
+      ],
+      "summary": "Tourette syndrome is a childhood-onset neurodevelopmental movement disorder characterized by multiple motor and one or more vocal tics, waxing and waning in severity (human; review).",
+      "refs": [
+        "felling2011"
+      ],
+      "region": "tourette"
+    },
+    {
+      "id": "tourette-striatal-disinhibition",
+      "name": "Focal striatal disinhibition & urge gating",
+      "level": "cellular",
+      "kind": "mechanism",
+      "domains": [
+        "motor",
+        "architecture"
+      ],
+      "summary": "Reduction of striatal cholinergic interneurons and focal loss of local GABAergic inhibition, allowing inappropriate motor bursts to escape basal ganglia filtering.",
+      "refs": [
+        "felling2011"
+      ],
+      "region": "tourette"
+    },
+    {
+      "id": "sud-profile",
+      "name": "Substance use disorder profile",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "reward",
+        "emotion",
+        "executive"
+      ],
+      "summary": "Substance use disorder is a chronic relapsing condition characterized by compulsive drug seeking and use despite catastrophic consequences (human; review).",
+      "refs": [
+        "koob2016"
+      ],
+      "region": "sud"
+    },
+    {
+      "id": "sud-3stage-cycle",
+      "name": "Three-stage addiction cycle",
+      "level": "systems",
+      "kind": "system",
+      "domains": [
+        "reward",
+        "emotion",
+        "executive"
+      ],
+      "summary": "Heuristic addiction framework: binge/intoxication (basal ganglia), withdrawal/negative affect (extended amygdala), and preoccupation/anticipation (prefrontal cortex).",
+      "refs": [
+        "koob2016"
+      ],
+      "region": "sud"
+    },
+    {
+      "id": "anorexia-profile",
+      "name": "Anorexia nervosa profile",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "homeostasis",
+        "reward",
+        "executive"
+      ],
+      "summary": "Anorexia nervosa is a life-threatening psychiatric condition marked by persistent energy restriction, emaciation, and an intense fear of weight gain, maintained by starvation biology (human; review).",
+      "refs": [
+        "bulik2022",
+        "frank2019"
+      ],
+      "region": "anorexia"
+    },
+    {
+      "id": "anorexia-interoceptive-habit",
+      "name": "Interoceptive mismatch & restrictive habit",
+      "level": "cognitive",
+      "kind": "function",
+      "domains": [
+        "homeostasis",
+        "learning"
+      ],
+      "summary": "Altered insular integration of visceral hunger cues coupled with dorsal striatal habit capture, establishing rigid automatic food avoidance.",
+      "refs": [
+        "bulik2022"
+      ],
+      "region": "anorexia"
+    },
+    {
+      "id": "bulimia-profile",
+      "name": "Bulimia nervosa profile",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "homeostasis",
+        "reward",
+        "emotion"
+      ],
+      "summary": "Bulimia nervosa involves recurrent episodes of uncontrollable binge eating alternating with compensatory purging or fasting to prevent weight gain (human; review).",
+      "refs": [
+        "bulik2022",
+        "frank2019"
+      ],
+      "region": "bulimia"
+    },
+    {
+      "id": "bulimia-binge-purge",
+      "name": "Binge-purge reward & relief cycle",
+      "level": "cognitive",
+      "kind": "function",
+      "domains": [
+        "reward",
+        "emotion"
+      ],
+      "summary": "Heightened food cue reward anticipation triggering loss-of-control consumption, followed by purging negatively reinforced through acute reduction of distress and weight fear.",
+      "refs": [
+        "bulik2022"
+      ],
+      "region": "bulimia"
+    },
+    {
+      "id": "binge-eating-profile",
+      "name": "Binge-eating disorder profile",
+      "level": "clinical",
+      "kind": "disorder",
+      "domains": [
+        "homeostasis",
+        "reward",
+        "executive"
+      ],
+      "summary": "Binge-eating disorder features recurrent distressing episodes of uncontrolled food consumption without compensatory behaviors, distinct from obesity (human; review).",
+      "refs": [
+        "bulik2022",
+        "frank2019"
+      ],
+      "region": "binge-eating"
+    },
+    {
+      "id": "binge-eating-incentive-salience",
+      "name": "Palatable food incentive salience & inhibitory loss",
+      "level": "cognitive",
+      "kind": "function",
+      "domains": [
+        "reward",
+        "executive"
+      ],
+      "summary": "Sensitized mesolimbic response to high-calorie food cues combined with impaired frontostriatal action termination, producing unconstrained eating bouts.",
+      "refs": [
+        "bulik2022"
+      ],
+      "region": "binge-eating"
     }
   ],
   "links": [
@@ -16022,8 +17399,9 @@
       "status": "supported",
       "kind": "anatomical",
       "refs": [
-        "middleton1994",
         "kelly2020",
+        "liu2025",
+        "middleton1994",
         "pisano2021"
       ]
     },
@@ -19009,6 +20387,7 @@
       "status": "established",
       "kind": "anatomical",
       "refs": [
+        "gargano2023",
         "giguere1988"
       ]
     },
@@ -19051,7 +20430,8 @@
       "status": "supported",
       "kind": "anatomical",
       "refs": [
-        "barbas1995"
+        "barbas1995",
+        "fries2023"
       ]
     },
     {
@@ -21000,8 +22380,9 @@
       "status": "supported",
       "kind": "anatomical",
       "refs": [
-        "mesulam1982b",
-        "augustine1996"
+        "augustine1996",
+        "duval2015",
+        "mesulam1982b"
       ]
     },
     {
@@ -24851,7 +26232,9 @@
       "status": "supported",
       "kind": "functional",
       "refs": [
+        "bulik2022",
         "faraone2015",
+        "koob2016",
         "posner2020"
       ],
       "note": "Converging functional and structural findings link this loop to ADHD; cognitive, motor and motivational territories should be kept apart."
@@ -28286,6 +29669,333 @@
       "refs": [
         "wang2020ccf",
         "hartig2021sarm"
+      ]
+    },
+    {
+      "s": "mdd-profile",
+      "t": "mdd-anhedonia",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Anhedonia and reduced reward motivation are core defining dimensions of major depressive disorder.",
+      "refs": [
+        "fries2023"
+      ]
+    },
+    {
+      "s": "mdd-profile",
+      "t": "mdd-synaptic-maintenance",
+      "kind": "functional",
+      "status": "supported",
+      "desc": "Impaired neuroplasticity and dendritic spine loss in prefrontal and hippocampal circuits represent key cellular hallmarks of depression.",
+      "refs": [
+        "fries2023"
+      ]
+    },
+    {
+      "s": "dlpfc",
+      "t": "amygdala",
+      "kind": "functional",
+      "status": "supported",
+      "desc": "Altered top-down prefrontal regulatory control over amygdalar threat and emotional salience signaling in depression.",
+      "refs": [
+        "duval2015",
+        "fries2023"
+      ]
+    },
+    {
+      "s": "vta",
+      "t": "striatum",
+      "kind": "anatomical",
+      "status": "established",
+      "desc": "Mesolimbic dopamine projection from VTA to striatum/accumbens modulating reward valuation and incentive motivation in anhedonic states.",
+      "refs": [
+        "bulik2022",
+        "fries2023",
+        "howes2015",
+        "koob2016"
+      ]
+    },
+    {
+      "s": "bipolar-profile",
+      "t": "bipolar-reward-hypersensitivity",
+      "kind": "functional",
+      "status": "supported",
+      "desc": "Elevated reward sensitivity and goal-directed activation distinguish manic and hypomanic states in bipolar disorder.",
+      "refs": [
+        "scaini2020"
+      ]
+    },
+    {
+      "s": "bipolar-profile",
+      "t": "bipolar-circadian-rhythm",
+      "kind": "functional",
+      "status": "supported",
+      "desc": "Circadian rhythm disruption and reduced need for sleep trigger and exacerbate mood episode switching.",
+      "refs": [
+        "scaini2020"
+      ]
+    },
+    {
+      "s": "ofc",
+      "t": "striatum",
+      "kind": "anatomical",
+      "status": "established",
+      "desc": "Orbitofrontal–striatal projection modulating valuation, incentive salience, and behavioral disinhibition in mania.",
+      "refs": [
+        "gargano2023",
+        "scaini2020"
+      ]
+    },
+    {
+      "s": "amygdala",
+      "t": "pfc",
+      "kind": "anatomical",
+      "status": "established",
+      "desc": "Amygdala–prefrontal interactions supporting affective appraisal and emotional reactivity across episode phases.",
+      "refs": [
+        "scaini2020"
+      ]
+    },
+    {
+      "s": "gad-profile",
+      "t": "gad-worry-anticipation",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Chronic apprehensive anticipation and elaborative worry represent the hallmark cognitive phenotype of GAD.",
+      "refs": [
+        "duval2015"
+      ]
+    },
+    {
+      "s": "insula",
+      "t": "dacc",
+      "kind": "anatomical",
+      "status": "established",
+      "desc": "Anterior insula–dorsal ACC salience network coupling encoding anticipatory visceral arousal and threat certainty.",
+      "refs": [
+        "bulik2022",
+        "duval2015"
+      ]
+    },
+    {
+      "s": "panic-profile",
+      "t": "panic-interoceptive-alarm",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Interoceptive catastrophic misinterpretation drives autonomic escalation during panic attacks.",
+      "refs": [
+        "duval2015"
+      ]
+    },
+    {
+      "s": "amygdala",
+      "t": "pag",
+      "kind": "anatomical",
+      "status": "established",
+      "desc": "Central amygdalar descending projection to the periaqueductal gray executing rapid autonomic and escape responses.",
+      "refs": [
+        "duval2015"
+      ]
+    },
+    {
+      "s": "sad-profile",
+      "t": "sad-evaluative-threat",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Hypersensitivity to social-evaluative threat forms the primary cognitive and behavioral driver of social anxiety disorder.",
+      "refs": [
+        "duval2015"
+      ]
+    },
+    {
+      "s": "ptsd-profile",
+      "t": "ptsd-extinction-deficit",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Impaired extinction recall and context overgeneralization constitute core cognitive computational deficits in PTSD.",
+      "refs": [
+        "sun2023ptsd"
+      ]
+    },
+    {
+      "s": "hippocampus",
+      "t": "amygdala",
+      "kind": "anatomical",
+      "status": "established",
+      "desc": "Hippocampal contextual projections to the basolateral amygdala gating fear expression based on environmental safety signals.",
+      "refs": [
+        "sun2023ptsd"
+      ]
+    },
+    {
+      "s": "pfc",
+      "t": "amygdala",
+      "kind": "anatomical",
+      "status": "established",
+      "desc": "Ventromedial prefrontal cortex projections to intercalated amygdalar cells mediating fear extinction retention.",
+      "refs": [
+        "sun2023ptsd"
+      ]
+    },
+    {
+      "s": "ocd-profile",
+      "t": "ocd-error-signaling",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Hyperactive error-related negativity and habit bias represent core neurocomputational markers of OCD.",
+      "refs": [
+        "gargano2023"
+      ]
+    },
+    {
+      "s": "striatum",
+      "t": "thalamus",
+      "kind": "anatomical",
+      "status": "established",
+      "desc": "Striatal-pallidal-thalamic projection gating CSTC information flow and action termination signals.",
+      "refs": [
+        "gargano2023"
+      ]
+    },
+    {
+      "s": "schizophrenia-profile",
+      "t": "schizophrenia-aberrant-salience",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Replicated human PET findings demonstrate elevated associative striatal dopamine synthesis capacity linked to psychosis and aberrant salience.",
+      "refs": [
+        "howes2015"
+      ]
+    },
+    {
+      "s": "schizophrenia-profile",
+      "t": "schizophrenia-c4-pruning",
+      "kind": "functional",
+      "status": "supported",
+      "desc": "Genomic C4A copy number variation links structural complement expression with adolescent cortical synaptic refinement.",
+      "refs": [
+        "sekar2016"
+      ]
+    },
+    {
+      "s": "dlpfc",
+      "t": "thalamus",
+      "kind": "anatomical",
+      "status": "established",
+      "desc": "Thalamocortical connectivity mediating cognitive coordination and working memory deficits.",
+      "refs": [
+        "howes2015"
+      ]
+    },
+    {
+      "s": "autism-profile",
+      "t": "autism-synaptic-organization",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Postsynaptic scaffolding and developmental synaptic genes represent high-confidence monogenic risk loci across autism cohorts.",
+      "refs": [
+        "liu2025"
+      ]
+    },
+    {
+      "s": "striatum",
+      "t": "pfc",
+      "kind": "anatomical",
+      "status": "established",
+      "desc": "Corticostriatal loops implicated in behavioral flexibility, repetitive motor patterns, and insistence on sameness.",
+      "refs": [
+        "liu2025"
+      ]
+    },
+    {
+      "s": "tourette-profile",
+      "t": "tourette-striatal-disinhibition",
+      "kind": "functional",
+      "status": "supported",
+      "desc": "Focal striatal disinhibition and loss of cholinergic interneuron regulation permit motor tic bursts.",
+      "refs": [
+        "felling2011"
+      ]
+    },
+    {
+      "s": "sma",
+      "t": "putamen",
+      "kind": "anatomical",
+      "status": "established",
+      "desc": "Supplementary motor area corticostriatal projection driving motor pattern execution in tic generation.",
+      "refs": [
+        "felling2011"
+      ]
+    },
+    {
+      "s": "putamen",
+      "t": "thalamus",
+      "kind": "anatomical",
+      "status": "established",
+      "desc": "Putamen-pallidal-thalamic projection disinhibiting cortical motor return pathways.",
+      "refs": [
+        "felling2011"
+      ]
+    },
+    {
+      "s": "sud-profile",
+      "t": "sud-3stage-cycle",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Neurocircuit progression through binge, withdrawal, and craving stages underpins the chronic relapsing course of addiction.",
+      "refs": [
+        "koob2016"
+      ]
+    },
+    {
+      "s": "insula",
+      "t": "striatum",
+      "kind": "anatomical",
+      "status": "established",
+      "desc": "Insular-striatal projections integrating subjective visceral interoception and conscious drug craving.",
+      "refs": [
+        "bulik2022",
+        "koob2016"
+      ]
+    },
+    {
+      "s": "anorexia-profile",
+      "t": "anorexia-interoceptive-habit",
+      "kind": "functional",
+      "status": "supported",
+      "desc": "Altered insular taste/interoceptive encoding and dorsal striatal habit automation sustain chronic restrictive eating.",
+      "refs": [
+        "bulik2022"
+      ]
+    },
+    {
+      "s": "hypothalamus",
+      "t": "vta",
+      "kind": "anatomical",
+      "status": "established",
+      "desc": "Hypothalamic metabolic signaling interacting with midbrain dopamine reward circuits during prolonged starvation.",
+      "refs": [
+        "bulik2022"
+      ]
+    },
+    {
+      "s": "bulimia-profile",
+      "t": "bulimia-binge-purge",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Recurrent binge consumption followed by negatively reinforced compensatory behavior forms the diagnostic cycle of bulimia nervosa.",
+      "refs": [
+        "bulik2022"
+      ]
+    },
+    {
+      "s": "binge-eating-profile",
+      "t": "binge-eating-incentive-salience",
+      "kind": "functional",
+      "status": "established",
+      "desc": "Heightened food cue incentive salience and executive inhibitory failure drive objective binge episodes.",
+      "refs": [
+        "bulik2022"
       ]
     }
   ],
@@ -33623,6 +35333,271 @@
           "ic-dcic>mgd",
           "ic-ecic>sc-deep"
         ]
+      },
+      {
+        "id": "mdd-frontolimbic-3d",
+        "region": "mdd",
+        "name": "Frontolimbic affect regulation",
+        "desc": "Prefrontal and anterior cingulate interactions with the amygdala, mediating emotional appraisal, rumination, and negative interpretive bias.",
+        "links": [
+          "dlpfc>amygdala"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "mdd-reward-3d",
+        "region": "mdd",
+        "name": "Mesocorticolimbic valuation & anhedonia",
+        "desc": "Ventral tegmental area dopaminergic projections to the striatum/accumbens and prefrontal cortex governing reward effort and valuation.",
+        "links": [
+          "vta>striatum"
+        ],
+        "view": "prefrontal"
+      },
+      {
+        "id": "mdd-hippocampus-stress-3d",
+        "region": "mdd",
+        "name": "Hippocampal stress & context feedback",
+        "desc": "Hippocampal connections to the prefrontal cortex involved in contextual memory, stress susceptibility, and neurotrophic plasticity.",
+        "links": [
+          "hippocampus>pfc"
+        ],
+        "view": "hippocampus"
+      },
+      {
+        "id": "bipolar-reward-3d",
+        "region": "bipolar",
+        "name": "Orbitofrontal-striatal reward pursuit",
+        "desc": "Ventral striatal and orbitofrontal networks underlying heightened incentive salience and goal-directed risk-taking in mania.",
+        "links": [
+          "ofc>striatum"
+        ],
+        "view": "prefrontal"
+      },
+      {
+        "id": "bipolar-affective-3d",
+        "region": "bipolar",
+        "name": "Amygdala-prefrontal appraisal",
+        "desc": "Cortical-limbic circuitry engaged in emotion generation, affective appraisal, and mood state regulation.",
+        "links": [
+          "amygdala>pfc"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "gad-salience-3d",
+        "region": "gad",
+        "name": "Insula-cingulate threat anticipation",
+        "desc": "Anterior insula and dorsal ACC salience hub processing visceral anticipation and heightened subjective uncertainty.",
+        "links": [
+          "insula>dacc"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "gad-regulation-3d",
+        "region": "gad",
+        "name": "Frontolimbic regulatory control",
+        "desc": "Dorsolateral prefrontal and amygdala pathways engaged during cognitive reappraisal and worry inhibition.",
+        "links": [
+          "dlpfc>amygdala"
+        ],
+        "view": "prefrontal"
+      },
+      {
+        "id": "panic-interoceptive-3d",
+        "region": "panic",
+        "name": "Insular-amygdalar visceral alarm",
+        "desc": "Insular cortex relaying catastrophic bodily sensations to the amygdala, triggering immediate threat appraisal.",
+        "links": [
+          "insula>amygdala"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "panic-brainstem-3d",
+        "region": "panic",
+        "name": "Amygdala-PAG autonomic defense",
+        "desc": "Descending projection from the amygdala to the periaqueductal gray initiating explosive tachycardia and flight responses.",
+        "links": [
+          "amygdala>pag"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "sad-evaluative-3d",
+        "region": "sad",
+        "name": "Social scrutiny & prefrontal regulation",
+        "desc": "Prefrontal regulation of amygdalar threat reactivity during direct social evaluation and presentation.",
+        "links": [
+          "dlpfc>amygdala"
+        ],
+        "view": "prefrontal"
+      },
+      {
+        "id": "sad-salience-3d",
+        "region": "sad",
+        "name": "Visceral embarrassment network",
+        "desc": "Anterior insula and dorsal ACC circuits mediating visceral arousal, blushing, and acute embarrassment.",
+        "links": [
+          "insula>dacc"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "ptsd-extinction-3d",
+        "region": "ptsd",
+        "name": "vmPFC-amygdala extinction recall",
+        "desc": "Prefrontal projections to the amygdala that fail to adequately inhibit conditioned fear responses following trauma.",
+        "links": [
+          "pfc>amygdala"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "ptsd-context-3d",
+        "region": "ptsd",
+        "name": "Hippocampal contextual gating",
+        "desc": "Hippocampus-to-amygdala contextual gating pathways that normally restrict conditioned defensive responses to danger contexts.",
+        "links": [
+          "hippocampus>amygdala"
+        ],
+        "view": "hippocampus"
+      },
+      {
+        "id": "ocd-cstc-3d",
+        "region": "ocd",
+        "name": "Orbitofrontal-striato-thalamic loop",
+        "desc": "Classic CSTC recurrent loop linking OFC, ventral/dorsal striatum, and thalamus, mediating compulsive ritual execution.",
+        "links": [
+          "ofc>striatum",
+          "striatum>thalamus",
+          "thalamus>ofc"
+        ],
+        "view": "prefrontal"
+      },
+      {
+        "id": "scz-dopamine-salience-3d",
+        "region": "schizophrenia",
+        "name": "Striatal dopamine & aberrant salience",
+        "desc": "Midbrain dopamine projections to the striatum displaying elevated synthesis capacity underlying psychosis.",
+        "links": [
+          "vta>striatum"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "scz-thalamocortical-3d",
+        "region": "schizophrenia",
+        "name": "Thalamocortical cognitive coordination",
+        "desc": "Reciprocal connections between dorsolateral PFC and thalamus impaired in working memory and sensory gating.",
+        "links": [
+          "dlpfc>thalamus"
+        ],
+        "view": "prefrontal"
+      },
+      {
+        "id": "autism-corticostriatal-3d",
+        "region": "autism",
+        "name": "Corticostriatal repetitive behavior",
+        "desc": "Striatal-prefrontal circuitry linked to restricted interests, repetitive behaviors, and motor stereotypies.",
+        "links": [
+          "striatum>pfc"
+        ],
+        "view": "prefrontal"
+      },
+      {
+        "id": "autism-thalamic-sensory-3d",
+        "region": "autism",
+        "name": "Thalamocortical sensory filtering",
+        "desc": "Thalamocortical sensory transmission circuits modulating sensory gain and perceptual gating.",
+        "links": [
+          "thalamus>pfc"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "tourette-motor-cstc-3d",
+        "region": "tourette",
+        "name": "Sensorimotor CSTC tic loop",
+        "desc": "Motor cortex, SMA, putamen, and thalamic loop mediating premature release of motor tic fragments.",
+        "links": [
+          "sma>putamen",
+          "putamen>thalamus"
+        ],
+        "view": "motor"
+      },
+      {
+        "id": "sud-reward-3d",
+        "region": "sud",
+        "name": "Binge & incentive salience",
+        "desc": "VTA dopaminergic projections to the striatum/accumbens mediating acute intoxication and learned cue reward salience.",
+        "links": [
+          "vta>striatum"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "sud-craving-3d",
+        "region": "sud",
+        "name": "Preoccupation & craving network",
+        "desc": "Prefrontal and insular projections to the striatum driving conscious craving and weakened impulse inhibition.",
+        "links": [
+          "insula>striatum",
+          "dlpfc>striatum"
+        ],
+        "view": "prefrontal"
+      },
+      {
+        "id": "anorexia-habit-3d",
+        "region": "anorexia",
+        "name": "Insular-striatal restrictive habit",
+        "desc": "Insula and dorsal striatum pathways supporting automatic restrictive food avoidance and altered interoception.",
+        "links": [
+          "insula>striatum"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "anorexia-homeostatic-3d",
+        "region": "anorexia",
+        "name": "Hypothalamic-midbrain metabolic feedback",
+        "desc": "Interactions between hypothalamic feeding centers and midbrain dopamine reward systems under negative energy balance.",
+        "links": [
+          "hypothalamus>vta"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "bulimia-reward-control-3d",
+        "region": "bulimia",
+        "name": "Reward hypersensitivity & prefrontal control",
+        "desc": "Dopaminergic reward drive interacting with prefrontal inhibitory networks during binge eating and purging episodes.",
+        "links": [
+          "vta>striatum",
+          "dlpfc>striatum"
+        ],
+        "view": "prefrontal"
+      },
+      {
+        "id": "bed-reward-salience-3d",
+        "region": "binge-eating",
+        "name": "Food cue incentive salience",
+        "desc": "Ventral tegmental area and striatum reward circuits modulating heightened palatable food wanting and binge consumption.",
+        "links": [
+          "vta>striatum"
+        ],
+        "view": "overview"
+      },
+      {
+        "id": "bed-taste-salience-3d",
+        "region": "binge-eating",
+        "name": "Insula-cingulate taste valuation",
+        "desc": "Insula and anterior cingulate networks processing visceral feedback, taste reward, and satiety signaling.",
+        "links": [
+          "insula>dacc"
+        ],
+        "view": "prefrontal"
       }
     ],
     "composite": {

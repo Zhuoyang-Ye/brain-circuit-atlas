@@ -300,12 +300,38 @@
 
     return sel;
   };
-  /** The condition dropdown, next to the region dropdown: "None", then each condition's profile. */
+  /** The condition dropdown, next to the region dropdown: "None", then categorized condition profiles. */
   CA.conditionPicker = () => {
+    const categoryOrder = [
+      'Mood disorders',
+      'Anxiety disorders',
+      'Trauma-related',
+      'Obsessive-compulsive',
+      'Psychotic disorders',
+      'Neurodevelopmental',
+      'Addiction',
+      'Eating disorders'
+    ];
+    const groups = {};
+    CA.conditions.forEach((r) => {
+      const cat = r.category || 'Other conditions';
+      (groups[cat] = groups[cat] || []).push(r);
+    });
+    const sortedCats = Object.keys(groups).sort((a, b) => {
+      const ia = categoryOrder.indexOf(a);
+      const ib = categoryOrder.indexOf(b);
+      if (ia !== -1 && ib !== -1) return ia - ib;
+      if (ia !== -1) return -1;
+      if (ib !== -1) return 1;
+      return a.localeCompare(b);
+    });
+    const items = [CA.h('option', { value: '' }, 'None')];
+    sortedCats.forEach((cat) => {
+      items.push(CA.h('optgroup', { label: cat }, groups[cat].map((r) => CA.h('option', { value: r.id }, r.label))));
+    });
     const sel = CA.h('select', { class: 'region-pick condition-pick', 'aria-label': 'Condition',
       title: 'Condition: lays a clinical profile over the atlas, with its circuits, neuromodulators and papers across brain regions. None shows the brain region alone.',
-      onchange: () => { CA.setCondition(sel.value); sel.blur(); } },
-    CA.h('option', { value: '' }, 'None'), CA.conditions.map((r) => CA.h('option', { value: r.id }, r.label)));
+      onchange: () => { CA.setCondition(sel.value); sel.blur(); } }, items);
     sel.value = CA.isCondition(CA.region) ? CA.region.id : '';
     return sel;
   };
