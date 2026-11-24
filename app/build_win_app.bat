@@ -15,8 +15,12 @@ if not exist "%CSC%" (
 
 if not exist "..\dist" mkdir "..\dist"
 
-echo Compiling BrainCircuitAtlas.cs...
-"%CSC%" /nologo /optimize+ /target:winexe /out:"..\dist\BrainCircuitAtlas.exe" /r:System.dll /r:System.Drawing.dll /r:System.Windows.Forms.dll "%~dp0BrainCircuitAtlas.cs"
+echo Compiling BrainCircuitAtlas.cs with embedded icon...
+if exist "%~dp0AppIcon.ico" (
+    "%CSC%" /nologo /optimize+ /target:winexe /win32icon:"%~dp0AppIcon.ico" /out:"..\dist\BrainCircuitAtlas.exe" /r:System.dll /r:System.Drawing.dll /r:System.Windows.Forms.dll "%~dp0BrainCircuitAtlas.cs"
+) else (
+    "%CSC%" /nologo /optimize+ /target:winexe /out:"..\dist\BrainCircuitAtlas.exe" /r:System.dll /r:System.Drawing.dll /r:System.Windows.Forms.dll "%~dp0BrainCircuitAtlas.cs"
+)
 
 if %ERRORLEVEL% NEQ 0 (
     echo Compilation failed with code %ERRORLEVEL%.

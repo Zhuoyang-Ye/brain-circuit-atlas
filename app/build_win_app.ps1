@@ -44,9 +44,11 @@ $OutExe = "$DistDir\BrainCircuitAtlas.exe"
 
 Write-Host "Compiling $SourceFile -> $OutExe..." -ForegroundColor Yellow
 
+$IconArg = if (Test-Path "$ScriptDir\AppIcon.ico") { "/win32icon:`"$ScriptDir\AppIcon.ico`"" } else { "" }
+
 & $CscPath /nologo /optimize+ /target:winexe /out:"$OutExe" `
     /r:System.dll /r:System.Drawing.dll /r:System.Windows.Forms.dll `
-    "$SourceFile"
+    $IconArg "$SourceFile"
 
 if ($LASTEXITCODE -ne 0) {
     Write-Error "Compilation failed with exit code $LASTEXITCODE."
